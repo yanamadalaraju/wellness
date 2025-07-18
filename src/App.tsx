@@ -1,0 +1,60 @@
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Layout from './components/Layout'
+import Home from './pages/Home'
+import Experience from './pages/Experience'
+import HealthOffers from './pages/HealthOffers'
+import Testimonials from './pages/Testimonials'
+import Gallery from './pages/Gallery'
+import Contact from './pages/Contact'
+import HealthPackages from './pages/HealthPackages'
+import Booking from './pages/Booking'
+import Programs from './pages/Programs'
+import Treatments from './pages/Treatments'
+import HealingTeam from './pages/HealingTeam'
+import WhatsAppButton from './components/WhatsAppButton'
+import ChatBot from './components/ChatBot'
+import OurStory from './pages/OurStory'
+import VirtualTourPage from './pages/VirtualTourPage'
+import DinacharyaPage from './pages/DinacharyaPage'
+import Narutopathy from './pages/Narutopathy'
+import AyurvedsTherapySection from './components/Ayurvedtheraphy'
+import Ayurveda from './pages/Ayurveda'
+import Yoga from './pages/Yoga'
+import Physiotheraphy from './pages/Physiotheraphy'
+import Holistictheraphy from './pages/Holistictherapy'
+
+function App() {
+  return (
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/experience" element={<Experience />} />
+           <Route path="/Ourstory" element={<OurStory />} />
+          <Route path="/health-offers" element={<HealthOffers />} />
+          <Route path="/programs" element={<Programs />} />
+          <Route path="/treatments" element={<Treatments />} />
+          <Route path="/healing-team" element={<HealingTeam />} />
+          <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/health-packages" element={<HealthPackages />} />
+          <Route path="/booking" element={<Booking />} />
+          <Route path="/dincharya" element={<DinacharyaPage />} />
+          <Route path="/narutopathy" element={<Narutopathy />} />
+          <Route path="/ayurveda" element={<Ayurveda />} />
+           <Route path="/yoga" element={<Yoga />} />
+            <Route path="/physiotheraphy" element={<Physiotheraphy />} />
+            <Route path="/Holistictherapy" element={<Holistictheraphy />} />
+          <Route path="/virtual-tour" element={<VirtualTourPage />} />
+
+        </Routes>
+        <WhatsAppButton />
+        <ChatBot />
+      </Layout>
+    </Router>
+  )
+}
+
+export default App
