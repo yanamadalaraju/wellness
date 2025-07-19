@@ -5,7 +5,7 @@
 //   return (
 //     <div className="bg-black text-white min-h-screen">
 //       <Helmet>
-//         <title>Virtual Tour | Nimba</title>
+//         <title>Virtual Tour | Wellness</title>
 //       </Helmet>
 
 //       <section className="relative h-[100vh] overflow-hidden">
@@ -19,7 +19,7 @@
 
 //         <div className="absolute top-0 left-0 w-full h-full bg-black/40 flex items-center justify-center">
 //           <h1 className="text-4xl md:text-6xl font-bold text-white text-center px-4">
-//             Explore Nimba Through Our Virtual Tour
+//             Explore Wellness Through Our Virtual Tour
 //           </h1>
 //         </div>
 //       </section>

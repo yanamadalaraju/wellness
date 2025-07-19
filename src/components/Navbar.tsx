@@ -1,375 +1,411 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react'
+// import React, { useState, useEffect } from 'react';
+// import { Link } from 'react-router-dom';
+// import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
 
-const Navbar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
+// const Navbar: React.FC = () => {
+//   const [isOpen, setIsOpen] = useState(false);
+//   const [scrolled, setScrolled] = useState(false);
+//   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       setScrolled(window.scrollY > 50);
+//     };
+//     window.addEventListener('scroll', handleScroll);
+//     return () => window.removeEventListener('scroll', handleScroll);
+//   }, []);
 
-  const toggleDropdown = (dropdown: string) => {
-    setOpenDropdown(openDropdown === dropdown ? null : dropdown)
-  }
+//   const toggleDropdown = (dropdown: string) => {
+//     setOpenDropdown(openDropdown === dropdown ? null : dropdown);
+//   };
 
-  const experienceDropdown = [
-    { name: 'The Mantra', path: '/experience#mantra' },
-    { name: 'Our Story', path: '/Ourstory' },
-    { name: 'Healing Team', path: '/healing-team' },
-    { name: 'Dincharya (Daily Routine)', path: '/dincharya' },
-  ]
+//   const experienceDropdown = [
+//     { name: 'The Mantra', path: '/experience#mantra' },
+//     { name: 'Our Story', path: '/Ourstory' },
+//     { name: 'Healing Team', path: '/healing-team' },
+//     { name: 'Dincharya (Daily Routine)', path: '/dincharya' },
+//   ];
 
-  const healthOffersDropdown = [
-    { 
-      name: 'Holistic Programs', 
-      path: '/programs',
-      submenu: [
-        { name: 'Naturopathy Wonders', path: '/narutopathy' },
-        { name: 'Ayurveda', path: '/ayurveda' },
-        { name: 'Yoga & Meditation', path: '/yoga' },
-        { name: 'Physiotherapy', path: '/physiotheraphy' },
-        { name: 'Holistic Therapies', path: '/Holistictherapy' },
-      ]
-    },
-    { 
-      name: 'True Treatments', 
-      path: '/treatments',
-      submenu: [
-        { name: 'Respiratory Alignments', path: '/treatments/respiratory' },
-        { name: 'Gastro-intestinal Disorders', path: '/treatments/gastro' },
-        { name: 'Musculoskeletal Conditions', path: '/treatments/musculoskeletal' },
-        { name: 'Endocrine Disorders', path: '/treatments/endocrine' },
-        { name: 'Lifestyle Preventive Wellness', path: '/treatments/lifestyle' },
-      ]
-    },
-    { 
-      name: 'Retreat Amenities', 
-      path: '/health-offers#amenities',
-      submenu: [
-        { name: 'Healing Abode', path: '/amenities/healing-abode' },
-        { name: 'Recreation Spaces', path: '/amenities/recreation' },
-        { name: 'Meditation Caves', path: '/amenities/meditation' },
-        { name: 'Cardio Gym', path: '/amenities/gym' },
-        { name: 'Wellness Spa', path: '/amenities/spa' },
-      ]
-    },
-  ]
+//   const healthOffersDropdown = [
+//     { 
+//       name: 'Holistic Programs', 
+//       path: '/programs',
+//       submenu: [
+//         { name: 'Naturopathy Wonders', path: '/narutopathy' },
+//         { name: 'Ayurveda', path: '/ayurveda' },
+//         { name: 'Yoga & Meditation', path: '/yoga' },
+//         { name: 'Physiotherapy', path: '/physiotheraphy' },
+//         { name: 'Holistic Therapies', path: '/Holistictherapy' },
+//       ]
+//     },
+//     { 
+//       name: 'True Treatments', 
+//       path: '/treatments',
+//       submenu: [
+//         { name: 'Respiratory Alignments', path: '/Respiratory' },
+//         { name: 'Gastro-intestinal Disorders', path: '/gastro' },
+//         { name: 'Musculoskeletal Conditions', path: '/Musculoskeletal' },
+//         { name: 'Endocrine Disorders', path: '/Endocrine' },
+//         { name: 'Lifestyle Preventive Wellness', path: '/lifestyle' },
+//       ]
+//     },
+//     { 
+//       name: 'Retreat Amenities', 
+//       path: '/health-offers#amenities',
+//       submenu: [
+//         { name: 'Healing Abode', path: '/Healingabode' },
+//         { name: 'Recreation Spaces', path: '/Recreation' },
+//         { name: 'Meditation Caves', path: '/meditation' },
+//         { name: 'Cardio Gym', path: '/gym' },
+//       ]
+//     },
+//   ];
 
-  const galleryDropdown = [
-    { name: 'Virtual Tours', path: '/gallery/virtual-tours' },
-    { name: 'Images', path: '/gallery/images' },
-    { name: 'Events', path: '/gallery/events' },
-  ]
+//   const galleryDropdown = [
+//     { name: 'Virtual Tours', path: '/virtual-tour' },
+//     { name: 'Images', path: '/gallery/images' },
+//     { name: 'Events', path: '/gallery/events' },
+//   ];
 
-  const contactDropdown = [
-    { name: 'Contact Us', path: '/contact' },
-    { name: 'Career', path: '/career' },
-  ]
+//   const contactDropdown = [
+//     { name: 'Contact Us', path: '/contact' },
+//     { name: 'Career', path: '/career' },
+//   ];
 
-  const packagesDropdown = [
-    { name: 'Download', path: '/packages/download' },
-    { name: 'Tariff', path: '/packages/tariff' },
-    { name: 'Rules & Regulations', path: '/packages/rules' },
-  ]
+//   const packagesDropdown = [
+//     { 
+//       name: 'Download', 
+//       path: '/packages/download',
+//       pdf: '/downloads/wellness-packages.pdf' // Path to your PDF file in public folder
+//     },
+//     { name: 'Tariff', path: '/tariff' },
+//     { name: 'Rules & Regulations', path: '/rules' },
+//   ];
 
-  return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      scrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-md'
-    }`}>
-      <div className="container-max">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo - Shown on mobile and as part of desktop nav */}
-          <div className="lg:hidden flex items-center space-x-2">
-            <Link to="/">
-              <div className="w-10 h-10 bg-sage-400 rounded-full flex items-center justify-center">
-                <span className="text-white font-playfair font-bold text-xl">W</span>
-              </div>
-            </Link>
-          </div>
+//   return (
+//     <nav className={`fixed w-full z-50 transition-all duration-300 ${
+//       scrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-md'
+//     }`}>
+//       <div className="container-max">
+//         <div className="flex justify-between items-center h-20">
+//           {/* Mobile Logo */}
+//           <div className="lg:hidden flex items-center space-x-2">
+//             <Link to="/">
+//               <div className="w-10 h-10 bg-sage-400 rounded-full flex items-center justify-center">
+//                 <span className="text-white font-playfair font-bold text-xl">W</span>
+//               </div>
+//             </Link>
+//           </div>
 
-          {/* Desktop Navigation - Left Side */}
-          <div className="hidden lg:flex items-center space-x-8">
-            <div className="relative group">
-              <button className="navbar-item flex items-center space-x-1">
-                <span>The Wellness Experience</span>
-                <ChevronDown className="w-4 h-4" />
-              </button>
-              <div className="dropdown-menu">
-                {experienceDropdown.map((item, index) => (
-                  <Link key={index} to={item.path} className="dropdown-item">
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
+//           {/* Desktop Navigation - Left Side */}
+//           <div className="hidden lg:flex items-center space-x-8">
+//             <div className="relative group">
+//               <button className="navbar-item flex items-center space-x-1">
+//                 <span>The Wellness Experience</span>
+//                 <ChevronDown className="w-4 h-4" />
+//               </button>
+//               <div className="dropdown-menu">
+//                 {experienceDropdown.map((item, index) => (
+//                   <Link key={index} to={item.path} className="dropdown-item">
+//                     {item.name}
+//                   </Link>
+//                 ))}
+//               </div>
+//             </div>
 
-            <div className="relative group">
-              <button className="navbar-item flex items-center space-x-1">
-                <span>Health Offers</span>
-                <ChevronDown className="w-4 h-4" />
-              </button>
-              <div className="dropdown-menu w-[300px]">
-                {healthOffersDropdown.map((item, index) => (
-                  <div key={index} className="relative group/sub">
-                    <Link 
-                      to={item.path} 
-                      className="dropdown-item flex justify-between items-center"
-                      onMouseEnter={() => item.submenu && toggleDropdown(`health-${index}`)}
-                    >
-                      <span>{item.name}</span>
-                      {item.submenu && <ChevronRight className="w-4 h-4" />}
-                    </Link>
-                    {item.submenu && (
-                      <div 
-                        className={`absolute left-full top-0 ml-1 dropdown-menu w-[250px] ${
-                          openDropdown === `health-${index}` ? 'block' : 'hidden'
-                        } group-hover/sub:block`}
-                      >
-                        {item.submenu.map((subItem, subIndex) => (
-                          <Link 
-                            key={subIndex} 
-                            to={subItem.path} 
-                            className="dropdown-item"
-                          >
-                            {subItem.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
+//             <div className="relative group">
+//               <button className="navbar-item flex items-center space-x-1">
+//                 <span>Health Offers</span>
+//                 <ChevronDown className="w-4 h-4" />
+//               </button>
+//               <div className="dropdown-menu w-[300px]">
+//                 {healthOffersDropdown.map((item, index) => (
+//                   <div key={index} className="relative group/sub">
+//                     <Link 
+//                       to={item.path} 
+//                       className="dropdown-item flex justify-between items-center"
+//                       onMouseEnter={() => item.submenu && toggleDropdown(`health-${index}`)}
+//                     >
+//                       <span>{item.name}</span>
+//                       {item.submenu && <ChevronRight className="w-4 h-4" />}
+//                     </Link>
+//                     {item.submenu && (
+//                       <div 
+//                         className={`absolute left-full top-0 ml-1 dropdown-menu w-[250px] ${
+//                           openDropdown === `health-${index}` ? 'block' : 'hidden'
+//                         } group-hover/sub:block`}
+//                       >
+//                         {item.submenu.map((subItem, subIndex) => (
+//                           <Link 
+//                             key={subIndex} 
+//                             to={subItem.path} 
+//                             className="dropdown-item"
+//                           >
+//                             {subItem.name}
+//                           </Link>
+//                         ))}
+//                       </div>
+//                     )}
+//                   </div>
+//                 ))}
+//               </div>
+//             </div>
 
-            <Link to="/testimonials" className="navbar-item">
-              The Healed Speaks
-            </Link>
-          </div>
+//             <Link to="/testimonials" className="navbar-item">
+//               The Healed Speaks
+//             </Link>
+//           </div>
 
-          {/* Centered Logo in Desktop Navigation */}
-          <div className="hidden lg:flex items-center mx-4">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-sage-400 rounded-full flex items-center justify-center">
-                <span className="text-white font-playfair font-bold text-xl">W</span>
-              </div>
-              <span className="text-2xl font-playfair font-bold text-sage-600">Wellness</span>
-            </Link>
-          </div>
+//           {/* Centered Logo in Desktop Navigation */}
+//           <div className="hidden lg:flex items-center mx-4">
+//             <Link to="/" className="flex items-center space-x-2">
+//               <div className="w-10 h-10 bg-sage-400 rounded-full flex items-center justify-center">
+//                 <span className="text-white font-playfair font-bold text-xl">W</span>
+//               </div>
+//               <span className="text-2xl font-playfair font-bold text-sage-600">Wellness</span>
+//             </Link>
+//           </div>
 
-          {/* Desktop Navigation - Right Side */}
-          <div className="hidden lg:flex items-center space-x-8">
-            <div className="relative group">
-              <button className="navbar-item flex items-center space-x-1">
-                <span>Gallery</span>
-                <ChevronDown className="w-4 h-4" />
-              </button>
-              <div className="dropdown-menu">
-                {galleryDropdown.map((item, index) => (
-                  <Link key={index} to={item.path} className="dropdown-item">
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
+//           {/* Desktop Navigation - Right Side */}
+//           <div className="hidden lg:flex items-center space-x-8">
+//             <div className="relative group">
+//               <button className="navbar-item flex items-center space-x-1">
+//                 <span>Gallery</span>
+//                 <ChevronDown className="w-4 h-4" />
+//               </button>
+//               <div className="dropdown-menu">
+//                 {galleryDropdown.map((item, index) => (
+//                   <Link key={index} to={item.path} className="dropdown-item">
+//                     {item.name}
+//                   </Link>
+//                 ))}
+//               </div>
+//             </div>
 
-            <div className="relative group">
-              <button className="navbar-item flex items-center space-x-1">
-                <span>Get in Touch</span>
-                <ChevronDown className="w-4 h-4" />
-              </button>
-              <div className="dropdown-menu">
-                {contactDropdown.map((item, index) => (
-                  <Link key={index} to={item.path} className="dropdown-item">
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
+//             <div className="relative group">
+//               <button className="navbar-item flex items-center space-x-1">
+//                 <span>Get in Touch</span>
+//                 <ChevronDown className="w-4 h-4" />
+//               </button>
+//               <div className="dropdown-menu">
+//                 {contactDropdown.map((item, index) => (
+//                   <Link key={index} to={item.path} className="dropdown-item">
+//                     {item.name}
+//                   </Link>
+//                 ))}
+//               </div>
+//             </div>
 
-            <div className="relative group">
-              <button className="navbar-item flex items-center space-x-1">
-                <span>Health Packages</span>
-                <ChevronDown className="w-4 h-4" />
-              </button>
-              <div className="dropdown-menu">
-                {packagesDropdown.map((item, index) => (
-                  <Link key={index} to={item.path} className="dropdown-item">
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
+//             <div className="relative group">
+//               <button className="navbar-item flex items-center space-x-1">
+//                 <span>Health Packages</span>
+//                 <ChevronDown className="w-4 h-4" />
+//               </button>
+//               <div className="dropdown-menu">
+//                 {packagesDropdown.map((item, index) => (
+//                   item.pdf ? (
+//                     <a 
+//                       key={index} 
+//                       href={item.pdf} 
+//                       target="_blank" 
+//                       rel="noopener noreferrer"
+//                       className="dropdown-item"
+//                       download="Wellness-Packages.pdf"
+//                     >
+//                       {item.name}
+//                     </a>
+//                   ) : (
+//                     <Link 
+//                       key={index} 
+//                       to={item.path} 
+//                       className="dropdown-item"
+//                     >
+//                       {item.name}
+//                     </Link>
+//                   )
+//                 ))}
+//               </div>
+//             </div>
             
-            <div className="ml-4">
-              <Link to="/booking" className="btn-primary">
-                HEAL NOW
-              </Link>
-            </div>
-          </div>
+//             <div className="ml-4">
+//               <Link to="/booking" className="btn-primary">
+//                 HEAL NOW
+//               </Link>
+//             </div>
+//           </div>
 
-          {/* Mobile menu button */}
-          <button
-            className="lg:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
+//           {/* Mobile menu button */}
+//           <button
+//             className="lg:hidden"
+//             onClick={() => setIsOpen(!isOpen)}
+//           >
+//             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+//           </button>
+//         </div>
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="lg:hidden bg-white border-t">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              <Link to="/experience" className="block px-3 py-2 text-gray-700 hover:text-sage-500">
-                The Wellness Experience
-              </Link>
+//         {/* Mobile Navigation */}
+//         {isOpen && (
+//           <div className="lg:hidden bg-white border-t">
+//             <div className="px-2 pt-2 pb-3 space-y-1">
+//               <Link to="/experience" className="block px-3 py-2 text-gray-700 hover:text-sage-500">
+//                 The Wellness Experience
+//               </Link>
               
-              {/* Mobile Health Offers with dropdown */}
-              <div>
-                <button 
-                  className="flex justify-between items-center w-full px-3 py-2 text-gray-700 hover:text-sage-500"
-                  onClick={() => toggleDropdown('mobile-health-offers')}
-                >
-                  <span>Health Offers</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform ${
-                    openDropdown === 'mobile-health-offers' ? 'rotate-180' : ''
-                  }`} />
-                </button>
-                {openDropdown === 'mobile-health-offers' && (
-                  <div className="pl-4 space-y-1">
-                    {healthOffersDropdown.map((item, index) => (
-                      <div key={index}>
-                        <button 
-                          className="flex justify-between items-center w-full px-3 py-2 text-gray-700 hover:text-sage-500"
-                          onClick={() => toggleDropdown(`mobile-health-${index}`)}
-                        >
-                          <span>{item.name}</span>
-                          {item.submenu && (
-                            <ChevronDown className={`w-4 h-4 transition-transform ${
-                              openDropdown === `mobile-health-${index}` ? 'rotate-180' : ''
-                            }`} />
-                          )}
-                        </button>
-                        {item.submenu && openDropdown === `mobile-health-${index}` && (
-                          <div className="pl-4 space-y-1">
-                            {item.submenu.map((subItem, subIndex) => (
-                              <Link 
-                                key={subIndex} 
-                                to={subItem.path} 
-                                className="block px-3 py-2 text-gray-700 hover:text-sage-500"
-                              >
-                                {subItem.name}
-                              </Link>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
+//               {/* Mobile Health Offers with dropdown */}
+//               <div>
+//                 <button 
+//                   className="flex justify-between items-center w-full px-3 py-2 text-gray-700 hover:text-sage-500"
+//                   onClick={() => toggleDropdown('mobile-health-offers')}
+//                 >
+//                   <span>Health Offers</span>
+//                   <ChevronDown className={`w-4 h-4 transition-transform ${
+//                     openDropdown === 'mobile-health-offers' ? 'rotate-180' : ''
+//                   }`} />
+//                 </button>
+//                 {openDropdown === 'mobile-health-offers' && (
+//                   <div className="pl-4 space-y-1">
+//                     {healthOffersDropdown.map((item, index) => (
+//                       <div key={index}>
+//                         <button 
+//                           className="flex justify-between items-center w-full px-3 py-2 text-gray-700 hover:text-sage-500"
+//                           onClick={() => toggleDropdown(`mobile-health-${index}`)}
+//                         >
+//                           <span>{item.name}</span>
+//                           {item.submenu && (
+//                             <ChevronDown className={`w-4 h-4 transition-transform ${
+//                               openDropdown === `mobile-health-${index}` ? 'rotate-180' : ''
+//                             }`} />
+//                           )}
+//                         </button>
+//                         {item.submenu && openDropdown === `mobile-health-${index}` && (
+//                           <div className="pl-4 space-y-1">
+//                             {item.submenu.map((subItem, subIndex) => (
+//                               <Link 
+//                                 key={subIndex} 
+//                                 to={subItem.path} 
+//                                 className="block px-3 py-2 text-gray-700 hover:text-sage-500"
+//                               >
+//                                 {subItem.name}
+//                               </Link>
+//                             ))}
+//                           </div>
+//                         )}
+//                       </div>
+//                     ))}
+//                   </div>
+//                 )}
+//               </div>
 
-              <Link to="/testimonials" className="block px-3 py-2 text-gray-700 hover:text-sage-500">
-                The Healed Speaks
-              </Link>
+//               <Link to="/testimonials" className="block px-3 py-2 text-gray-700 hover:text-sage-500">
+//                 The Healed Speaks
+//               </Link>
 
-              {/* Mobile Gallery with dropdown */}
-              <div>
-                <button 
-                  className="flex justify-between items-center w-full px-3 py-2 text-gray-700 hover:text-sage-500"
-                  onClick={() => toggleDropdown('mobile-gallery')}
-                >
-                  <span>Gallery</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform ${
-                    openDropdown === 'mobile-gallery' ? 'rotate-180' : ''
-                  }`} />
-                </button>
-                {openDropdown === 'mobile-gallery' && (
-                  <div className="pl-4 space-y-1">
-                    {galleryDropdown.map((item, index) => (
-                      <Link 
-                        key={index} 
-                        to={item.path} 
-                        className="block px-3 py-2 text-gray-700 hover:text-sage-500"
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+//               {/* Mobile Gallery with dropdown */}
+//               <div>
+//                 <button 
+//                   className="flex justify-between items-center w-full px-3 py-2 text-gray-700 hover:text-sage-500"
+//                   onClick={() => toggleDropdown('mobile-gallery')}
+//                 >
+//                   <span>Gallery</span>
+//                   <ChevronDown className={`w-4 h-4 transition-transform ${
+//                     openDropdown === 'mobile-gallery' ? 'rotate-180' : ''
+//                   }`} />
+//                 </button>
+//                 {openDropdown === 'mobile-gallery' && (
+//                   <div className="pl-4 space-y-1">
+//                     {galleryDropdown.map((item, index) => (
+//                       <Link 
+//                         key={index} 
+//                         to={item.path} 
+//                         className="block px-3 py-2 text-gray-700 hover:text-sage-500"
+//                       >
+//                         {item.name}
+//                       </Link>
+//                     ))}
+//                   </div>
+//                 )}
+//               </div>
 
-              {/* Mobile Get in Touch with dropdown */}
-              <div>
-                <button 
-                  className="flex justify-between items-center w-full px-3 py-2 text-gray-700 hover:text-sage-500"
-                  onClick={() => toggleDropdown('mobile-contact')}
-                >
-                  <span>Get in Touch</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform ${
-                    openDropdown === 'mobile-contact' ? 'rotate-180' : ''
-                  }`} />
-                </button>
-                {openDropdown === 'mobile-contact' && (
-                  <div className="pl-4 space-y-1">
-                    {contactDropdown.map((item, index) => (
-                      <Link 
-                        key={index} 
-                        to={item.path} 
-                        className="block px-3 py-2 text-gray-700 hover:text-sage-500"
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+//               {/* Mobile Get in Touch with dropdown */}
+//               <div>
+//                 <button 
+//                   className="flex justify-between items-center w-full px-3 py-2 text-gray-700 hover:text-sage-500"
+//                   onClick={() => toggleDropdown('mobile-contact')}
+//                 >
+//                   <span>Get in Touch</span>
+//                   <ChevronDown className={`w-4 h-4 transition-transform ${
+//                     openDropdown === 'mobile-contact' ? 'rotate-180' : ''
+//                   }`} />
+//                 </button>
+//                 {openDropdown === 'mobile-contact' && (
+//                   <div className="pl-4 space-y-1">
+//                     {contactDropdown.map((item, index) => (
+//                       <Link 
+//                         key={index} 
+//                         to={item.path} 
+//                         className="block px-3 py-2 text-gray-700 hover:text-sage-500"
+//                       >
+//                         {item.name}
+//                       </Link>
+//                     ))}
+//                   </div>
+//                 )}
+//               </div>
 
-              {/* Mobile Health Packages with dropdown */}
-              <div>
-                <button 
-                  className="flex justify-between items-center w-full px-3 py-2 text-gray-700 hover:text-sage-500"
-                  onClick={() => toggleDropdown('mobile-packages')}
-                >
-                  <span>Health Packages</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform ${
-                    openDropdown === 'mobile-packages' ? 'rotate-180' : ''
-                  }`} />
-                </button>
-                {openDropdown === 'mobile-packages' && (
-                  <div className="pl-4 space-y-1">
-                    {packagesDropdown.map((item, index) => (
-                      <Link 
-                        key={index} 
-                        to={item.path} 
-                        className="block px-3 py-2 text-gray-700 hover:text-sage-500"
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+//               {/* Mobile Health Packages with dropdown */}
+//               <div>
+//                 <button 
+//                   className="flex justify-between items-center w-full px-3 py-2 text-gray-700 hover:text-sage-500"
+//                   onClick={() => toggleDropdown('mobile-packages')}
+//                 >
+//                   <span>Health Packages</span>
+//                   <ChevronDown className={`w-4 h-4 transition-transform ${
+//                     openDropdown === 'mobile-packages' ? 'rotate-180' : ''
+//                   }`} />
+//                 </button>
+//                 {openDropdown === 'mobile-packages' && (
+//                   <div className="pl-4 space-y-1">
+//                     {packagesDropdown.map((item, index) => (
+//                       item.pdf ? (
+//                         <a 
+//                           key={index} 
+//                           href={item.pdf} 
+//                           target="_blank" 
+//                           rel="noopener noreferrer"
+//                           className="block px-3 py-2 text-gray-700 hover:text-sage-500"
+//                           download="Wellness-Packages.pdf"
+//                         >
+//                           {item.name}
+//                         </a>
+//                       ) : (
+//                         <Link 
+//                           key={index} 
+//                           to={item.path} 
+//                           className="block px-3 py-2 text-gray-700 hover:text-sage-500"
+//                         >
+//                           {item.name}
+//                         </Link>
+//                       )
+//                     ))}
+//                   </div>
+//                 )}
+//               </div>
 
-              <Link to="/booking" className="block px-3 py-2 btn-primary mt-4">
-                HEAL NOW
-              </Link>
-            </div>
-          </div>
-        )}
-      </div>
-    </nav>
-  )
-}
+//               <Link to="/booking" className="block px-3 py-2 btn-primary mt-4">
+//                 HEAL NOW
+//               </Link>
+//             </div>
+//           </div>
+//         )}
+//       </div>
+//     </nav>
+//   );
+// };
 
-export default Navbar
+// export default Navbar;
+
+
+//----------working------------//
 
 // import React, { useState, useEffect } from 'react'
 // import { Link } from 'react-router-dom'
@@ -609,3 +645,470 @@ export default Navbar
 // }
 
 // export default Navbar
+
+
+
+
+//--------final -----------//
+
+
+import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
+import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
+
+const Navbar: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleDropdown = (dropdown: string) => {
+    setOpenDropdown(openDropdown === dropdown ? null : dropdown);
+  };
+
+  // Define dropdown arrays
+  const experienceDropdown = [
+    { name: 'The Mantra', path: '/experience#mantra' },
+    { name: 'Our Story', path: '/Ourstory' },
+    { name: 'Healing Team', path: '/healing-team' },
+    { name: 'Dincharya (Daily Routine)', path: '/dincharya' },
+  ];
+
+  const healthOffersDropdown = [
+    { 
+      name: 'Holistic Programs', 
+      path: '/programs',
+      submenu: [
+        { name: 'Naturopathy Wonders', path: '/narutopathy' },
+        { name: 'Ayurveda', path: '/ayurveda' },
+        { name: 'Yoga & Meditation', path: '/yoga' },
+        { name: 'Physiotherapy', path: '/physiotheraphy' },
+        { name: 'Holistic Therapies', path: '/Holistictherapy' },
+      ]
+    },
+    { 
+      name: 'True Treatments', 
+      path: '/treatments',
+      submenu: [
+        { name: 'Respiratory Alignments', path: '/Respiratory' },
+        { name: 'Gastro-intestinal Disorders', path: '/gastro' },
+        { name: 'Musculoskeletal Conditions', path: '/Musculoskeletal' },
+        { name: 'Endocrine Disorders', path: '/Endocrine' },
+        { name: 'Lifestyle Preventive Wellness', path: '/lifestyle' },
+      ]
+    },
+    { 
+      name: 'Retreat Amenities', 
+      path: '/health-offers#amenities',
+      submenu: [
+        { name: 'Healing Abode', path: '/Healingabode' },
+        { name: 'Recreation Spaces', path: '/Recreation' },
+        { name: 'Meditation Caves', path: '/meditation' },
+        { name: 'Cardio Gym', path: '/gym' },
+      ]
+    },
+  ];
+
+  const galleryDropdown = [
+    { name: 'Virtual Tours', path: '/virtual-tour' },
+    { name: 'Images', path: '/gallery/images' },
+    { name: 'Events', path: '/gallery/events' },
+  ];
+
+  const contactDropdown = [
+    { name: 'Contact Us', path: '/contact' },
+    { name: 'Career', path: '/career' },
+  ];
+
+  const packagesDropdown = [
+    { 
+      name: 'Download', 
+      path: '/packages/download',
+      pdf: '/downloads/wellness-packages.pdf' // Path to your PDF file in public folder
+    },
+    { name: 'Tariff', path: '/tariff' },
+    { name: 'Rules & Regulations', path: '/rules' },
+  ];
+
+  return (
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${
+      scrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-md'
+    }`}>
+      <div className="container-max">
+        <div className="flex justify-between items-center h-20">
+          {/* Mobile Logo */}
+          <div className="lg:hidden flex items-center space-x-2">
+            <NavLink to="/" className={({ isActive }) => (isActive ? 'text-sage-600 font-medium' : 'text-gray-700 hover:text-sage-500')}>
+              <div className="w-10 h-10 bg-sage-400 rounded-full flex items-center justify-center">
+                <span className="text-white font-playfair font-bold text-xl">W</span>
+              </div>
+            </NavLink>
+          </div>
+
+          {/* Desktop Navigation - Left Side */}
+          <div className="hidden lg:flex items-center space-x-8">
+            <div className="relative group">
+              <button className="navbar-item flex items-center space-x-1">
+                <span>The Wellness Experience</span>
+                <ChevronDown className="w-4 h-4" />
+              </button>
+              <div className="dropdown-menu">
+                {experienceDropdown.map((item, index) => (
+                  <NavLink 
+                    key={index} 
+                    to={item.path} 
+                    className={({ isActive }) => 
+                      `dropdown-item ${isActive ? 'text-sage-600 font-medium' : ''}`
+                    }
+                  >
+                    {item.name}
+                  </NavLink>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative group">
+              <button className="navbar-item flex items-center space-x-1">
+                <span>Health Offers</span>
+                <ChevronDown className="w-4 h-4" />
+              </button>
+              <div className="dropdown-menu w-[300px]">
+                {healthOffersDropdown.map((item, index) => (
+                  <div key={index} className="relative group/sub">
+                    <NavLink 
+                      to={item.path} 
+                      className={({ isActive }) => 
+                        `dropdown-item flex justify-between items-center ${isActive ? 'text-sage-600 font-medium' : ''}`
+                      }
+                      onMouseEnter={() => item.submenu && toggleDropdown(`health-${index}`)}
+                    >
+                      <span>{item.name}</span>
+                      {item.submenu && <ChevronRight className="w-4 h-4" />}
+                    </NavLink>
+                    {item.submenu && (
+                      <div 
+                        className={`absolute left-full top-0 ml-1 dropdown-menu w-[250px] ${
+                          openDropdown === `health-${index}` ? 'block' : 'hidden'
+                        } group-hover/sub:block`}
+                      >
+                        {item.submenu.map((subItem, subIndex) => (
+                          <NavLink 
+                            key={subIndex} 
+                            to={subItem.path} 
+                            className={({ isActive }) => 
+                              `dropdown-item ${isActive ? 'text-sage-600 font-medium' : ''}`
+                            }
+                          >
+                            {subItem.name}
+                          </NavLink>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <NavLink to="/testimonials" className={({ isActive }) => (isActive ? 'text-sage-600 font-medium' : 'text-gray-700 hover:text-sage-500')}>
+              The Healed Speaks
+            </NavLink>
+          </div>
+
+          {/* Centered Logo in Desktop Navigation */}
+          <div className="hidden lg:flex items-center mx-4">
+            <NavLink to="/" className="flex items-center space-x-2">
+              <div className="w-10 h-10 bg-sage-400 rounded-full flex items-center justify-center">
+                <span className="text-white font-playfair font-bold text-xl">W</span>
+              </div>
+              <span className="text-2xl font-playfair font-bold text-sage-600">Wellness</span>
+            </NavLink>
+          </div>
+
+          {/* Desktop Navigation - Right Side */}
+          <div className="hidden lg:flex items-center space-x-8">
+            <div className="relative group">
+              <button className="navbar-item flex items-center space-x-1">
+                <span>Gallery</span>
+                <ChevronDown className="w-4 h-4" />
+              </button>
+              <div className="dropdown-menu">
+                {galleryDropdown.map((item, index) => (
+                  <NavLink 
+                    key={index} 
+                    to={item.path} 
+                    className={({ isActive }) => 
+                      `dropdown-item ${isActive ? 'text-sage-600 font-medium' : ''}`
+                    }
+                  >
+                    {item.name}
+                  </NavLink>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative group">
+              <button className="navbar-item flex items-center space-x-1">
+                <span>Get in Touch</span>
+                <ChevronDown className="w-4 h-4" />
+              </button>
+              <div className="dropdown-menu">
+                {contactDropdown.map((item, index) => (
+                  <NavLink 
+                    key={index} 
+                    to={item.path} 
+                    className={({ isActive }) => 
+                      `dropdown-item ${isActive ? 'text-sage-600 font-medium' : ''}`
+                    }
+                  >
+                    {item.name}
+                  </NavLink>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative group">
+              <button className="navbar-item flex items-center space-x-1">
+                <span>Health Packages</span>
+                <ChevronDown className="w-4 h-4" />
+              </button>
+              <div className="dropdown-menu">
+                {packagesDropdown.map((item, index) => (
+                  item.pdf ? (
+                    <a 
+                      key={index} 
+                      href={item.pdf} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="dropdown-item"
+                      download="Wellness-Packages.pdf"
+                    >
+                      {item.name}
+                    </a>
+                  ) : (
+                    <NavLink 
+                      key={index} 
+                      to={item.path} 
+                      className={({ isActive }) => 
+                        `dropdown-item ${isActive ? 'text-sage-600 font-medium' : ''}`
+                      }
+                    >
+                      {item.name}
+                    </NavLink>
+                  )
+                ))}
+              </div>
+            </div>
+            
+            <div className="ml-4">
+              <NavLink 
+                to="/booking" 
+                className={({ isActive }) => 
+                  `btn-primary ${isActive ? 'bg-sage-600' : ''}`
+                }
+              >
+                HEAL NOW
+              </NavLink>
+            </div>
+          </div>
+
+          {/* Mobile menu button */}
+          <button
+            className="lg:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <div className="lg:hidden bg-white border-t">
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              <NavLink 
+                to="/experience" 
+                className={({ isActive }) => 
+                  `block px-3 py-2 ${isActive ? 'text-sage-600 font-medium' : 'text-gray-700 hover:text-sage-500'}`
+                }
+              >
+                The Wellness Experience
+              </NavLink>
+              
+              {/* Mobile Health Offers with dropdown */}
+              <div>
+                <button 
+                  className="flex justify-between items-center w-full px-3 py-2 text-gray-700 hover:text-sage-500"
+                  onClick={() => toggleDropdown('mobile-health-offers')}
+                >
+                  <span>Health Offers</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform ${
+                    openDropdown === 'mobile-health-offers' ? 'rotate-180' : ''
+                  }`} />
+                </button>
+                {openDropdown === 'mobile-health-offers' && (
+                  <div className="pl-4 space-y-1">
+                    {healthOffersDropdown.map((item, index) => (
+                      <div key={index}>
+                        <button 
+                          className="flex justify-between items-center w-full px-3 py-2 text-gray-700 hover:text-sage-500"
+                          onClick={() => toggleDropdown(`mobile-health-${index}`)}
+                        >
+                          <span>{item.name}</span>
+                          {item.submenu && (
+                            <ChevronDown className={`w-4 h-4 transition-transform ${
+                              openDropdown === `mobile-health-${index}` ? 'rotate-180' : ''
+                            }`} />
+                          )}
+                        </button>
+                        {item.submenu && openDropdown === `mobile-health-${index}` && (
+                          <div className="pl-4 space-y-1">
+                            {item.submenu.map((subItem, subIndex) => (
+                              <NavLink 
+                                key={subIndex} 
+                                to={subItem.path}
+                                className={({ isActive }) => 
+                                  `block px-3 py-2 ${isActive ? 'text-sage-600 font-medium' : 'text-gray-700 hover:text-sage-500'}`
+                                }
+                              >
+                                {subItem.name}
+                              </NavLink>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <NavLink 
+                to="/testimonials" 
+                className={({ isActive }) => 
+                  `block px-3 py-2 ${isActive ? 'text-sage-600 font-medium' : 'text-gray-700 hover:text-sage-500'}`
+                }
+              >
+                The Healed Speaks
+              </NavLink>
+
+              {/* Mobile Gallery with dropdown */}
+              <div>
+                <button 
+                  className="flex justify-between items-center w-full px-3 py-2 text-gray-700 hover:text-sage-500"
+                  onClick={() => toggleDropdown('mobile-gallery')}
+                >
+                  <span>Gallery</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform ${
+                    openDropdown === 'mobile-gallery' ? 'rotate-180' : ''
+                  }`} />
+                </button>
+                {openDropdown === 'mobile-gallery' && (
+                  <div className="pl-4 space-y-1">
+                    {galleryDropdown.map((item, index) => (
+                      <NavLink 
+                        key={index} 
+                        to={item.path}
+                        className={({ isActive }) => 
+                          `block px-3 py-2 ${isActive ? 'text-sage-600 font-medium' : 'text-gray-700 hover:text-sage-500'}`
+                        }
+                      >
+                        {item.name}
+                      </NavLink>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Mobile Get in Touch with dropdown */}
+              <div>
+                <button 
+                  className="flex justify-between items-center w-full px-3 py-2 text-gray-700 hover:text-sage-500"
+                  onClick={() => toggleDropdown('mobile-contact')}
+                >
+                  <span>Get in Touch</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform ${
+                    openDropdown === 'mobile-contact' ? 'rotate-180' : ''
+                  }`} />
+                </button>
+                {openDropdown === 'mobile-contact' && (
+                  <div className="pl-4 space-y-1">
+                    {contactDropdown.map((item, index) => (
+                      <NavLink 
+                        key={index} 
+                        to={item.path}
+                        className={({ isActive }) => 
+                          `block px-3 py-2 ${isActive ? 'text-sage-600 font-medium' : 'text-gray-700 hover:text-sage-500'}`
+                        }
+                      >
+                        {item.name}
+                      </NavLink>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Mobile Health Packages with dropdown */}
+              <div>
+                <button 
+                  className="flex justify-between items-center w-full px-3 py-2 text-gray-700 hover:text-sage-500"
+                  onClick={() => toggleDropdown('mobile-packages')}
+                >
+                  <span>Health Packages</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform ${
+                    openDropdown === 'mobile-packages' ? 'rotate-180' : ''
+                  }`} />
+                </button>
+                {openDropdown === 'mobile-packages' && (
+                  <div className="pl-4 space-y-1">
+                    {packagesDropdown.map((item, index) => (
+                      item.pdf ? (
+                        <a 
+                          key={index} 
+                          href={item.pdf} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="block px-3 py-2 text-gray-700 hover:text-sage-500"
+                          download="Wellness-Packages.pdf"
+                        >
+                          {item.name}
+                        </a>
+                      ) : (
+                        <NavLink 
+                          key={index} 
+                          to={item.path}
+                          className={({ isActive }) => 
+                            `block px-3 py-2 ${isActive ? 'text-sage-600 font-medium' : 'text-gray-700 hover:text-sage-500'}`
+                          }
+                        >
+                          {item.name}
+                        </NavLink>
+                      )
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <NavLink 
+                to="/booking" 
+                className={({ isActive }) => 
+                  `block px-3 py-2 btn-primary mt-4 ${isActive ? 'bg-sage-600' : ''}`
+                }
+              >
+                HEAL NOW
+              </NavLink>
+            </div>
+          </div>
+        )}
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
+
+

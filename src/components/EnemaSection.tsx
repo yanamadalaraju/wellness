@@ -3,21 +3,21 @@
 // const therapies = [
 //   {
 //     name: 'Colon Hydrotherapy',
-//     image: 'https://www.nimba.in/wp-content/uploads/2020/08/nimba-nature-service-img.jpg',
+//     image: 'https://www.Wellness.in/wp-content/uploads/2020/08/Wellness-nature-service-img.jpg',
 //     content:
 //       'Colon hydrotherapy is a gentle infusion of water into the colon to remove waste. It helps relieve constipation, improve digestion, and promote detoxification. This technique is used as a natural detox process and is highly effective for people suffering from chronic constipation, gas, and bloating.',
 //     benefits: ['Improves digestion', 'Removes toxins', 'Boosts hydration'],
 //   },
 //   {
 //     name: 'Manipulative Therapy',
-//     image: 'https://www.nimba.in/wp-content/uploads/2020/10/MANIPULATIVE_THERAPY.jpg',
+//     image: 'https://www.Wellness.in/wp-content/uploads/2020/10/MANIPULATIVE_THERAPY.jpg',
 //     content:
 //       'Manipulative therapy involves manual techniques to alleviate musculoskeletal pain and improve mobility. It is commonly used in physiotherapy and chiropractic treatment. This therapy also helps restore joint function and reduce inflammation through controlled movements and pressure.',
 //     benefits: ['Relieves pain', 'Improves mobility', 'Reduces stress'],
 //   },
 //   {
 //     name: 'Enema',
-//     image: 'https://www.nimba.in/wp-content/uploads/2020/08/nimba-nature-service-img.jpg',
+//     image: 'https://www.Wellness.in/wp-content/uploads/2020/08/Wellness-nature-service-img.jpg',
 //     content:
 //       'Enema is used to clean the colon by injecting fluid into the rectum. It promotes bowel movements and treats constipation effectively. This therapy is a natural way to remove toxins and reset your digestive health, especially helpful during fasting or detoxification routines.',
 //     benefits: [
@@ -29,14 +29,14 @@
 //   },
 //   {
 //     name: 'Mud Pack',
-//     image: 'https://www.nimba.in/wp-content/uploads/2020/07/MUD_PACK.jpg',
+//     image: 'https://www.Wellness.in/wp-content/uploads/2020/07/MUD_PACK.jpg',
 //     content:
 //       'Mud pack therapy uses natural mud applied to the body or specific areas to reduce inflammation, improve skin health, and relax the body. It is especially useful in managing acne, arthritis, and general fatigue through cooling and mineral absorption.',
 //     benefits: ['Relieves pain', 'Improves skin texture', 'Cools the body'],
 //   },
 //   {
 //     name: 'Vibro Massage',
-//     image: 'https://www.nimba.in/wp-content/uploads/2020/07/VIBRO_MASSAGE.jpg',
+//     image: 'https://www.Wellness.in/wp-content/uploads/2020/07/VIBRO_MASSAGE.jpg',
 //     content:
 //       'Vibro massage is a therapeutic technique using vibration to stimulate muscles and improve blood flow. It’s ideal for relaxation and rehabilitation. The gentle vibrations reduce muscle stiffness and are beneficial post-injury or surgery.',
 //     benefits: ['Stimulates circulation', 'Relieves muscle tension', 'Promotes relaxation'],
@@ -125,7 +125,7 @@ const therapies = [
   },
   {
     name: 'Enema',
-    image: 'https://www.nimba.in/wp-content/uploads/2020/08/nimba-nature-service-img.jpg',
+    image: 'https://www.nimba.in/wp-content/uploads/2020/08/Wellness-nature-service-img.jpg',
     content:
       'Enema is used to clean the colon by injecting fluid into the rectum. It promotes bowel movements and treats constipation effectively. This therapy is a natural way to remove toxins and reset your digestive health, especially helpful during fasting or detoxification routines.',
     benefits: [

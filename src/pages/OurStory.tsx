@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const OurStory: React.FC = () => {
   return (
@@ -7,7 +8,7 @@ const OurStory: React.FC = () => {
       <section className="relative min-h-96 flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://media.istockphoto.com/id/614133098/photo/happy-woman-sitting-on-a-pier-getting-inspired-by-nature.jpg?s=612x612&w=0&k=20&c=9BKYealoJJqt7ggQWAehn6_6r2WKlgqazxMFLpYVll4="
+            src="https://media.istockphoto.com/id/477473902/photo/tea-plantations.jpg?s=612x612&w=0&k=20&c=6V4oFEe4iqofERaro5Ivw4O-8tZVtxIUOOpZiIhUBlk="
             alt="Our Story"
             className="w-full h-full object-cover"
           />
@@ -23,6 +24,26 @@ const OurStory: React.FC = () => {
         </div>
       </section>
 
+      {/* Breadcrumbs */}
+                  <div className="container mx-auto px-4 py-4 flex justify-center">
+              <nav className="flex" aria-label="Breadcrumb">
+                <ol className="inline-flex items-center space-x-2 md:space-x-2">
+                  <li className="inline-flex items-center">
+                    <Link to="/" className="text-sage-600 hover:text-sage-800">
+                      Home
+                    </Link>
+                  </li>
+                  <li className="flex items-center">
+                    <span className="mx text-sage-500">{'>'}</span>
+                    <span className="mx text-sage-500">{'>'}</span>
+                  </li>
+                  <li>
+                    <span className="text-sage-800 font-medium">Our Story</span>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+
       {/* Intro Section */}
       <section className="bg-[#F2F1E8] text-[#435334] py-24 px-6 text-center">
         <div className="max-w-5xl mx-auto">
@@ -33,7 +54,7 @@ const OurStory: React.FC = () => {
             A Journey of Reawakening Body, Mind & Soul
           </h3>
           <p className="text-lg md:text-xl leading-relaxed mb-6">
-            Nimba was born from a dream to create a sanctuary where nature leads the way to healing —
+            Wellness was born from a dream to create a sanctuary where nature leads the way to healing —
             a haven where traditional wisdom and modern science meet.
           </p>
           <p className="text-base md:text-lg leading-relaxed">
@@ -55,12 +76,12 @@ const OurStory: React.FC = () => {
         </h2>
       </div>
       <p className="text-[#435334] text-base md:text-lg leading-relaxed">
-        Nimba is a mystical tree, every part of it overflowing with nourishing, selfless qualities.
-        Our healers are just as treasured as the Nimba tree is. The roots welcome you with <span className="font-semibold">Asana</span>, 
+        Wellness is a mystical tree, every part of it overflowing with nourishing, selfless qualities.
+        Our healers are just as treasured as the Wellness tree is. The roots welcome you with <span className="font-semibold">Asana</span>, 
         where we can accommodate you with honour. Its bark acts as our <span className="font-semibold">Ashray</span>, 
         as we support you in this wonderful experience of wellness. 
-        Just like the branches of the Nimba tree bestow us with <span className="font-semibold">Sharan</span>, 
-        our aim at Nimba is to protect you from diseases and ailments.
+        Just like the branches of the Wellness tree bestow us with <span className="font-semibold">Sharan</span>, 
+        our aim at Wellness is to protect you from diseases and ailments.
         The <span className="font-semibold">Virya</span>, the cooling energy of the leaves, teach us to provide you with utmost relaxation and energy.
         You are our <span className="font-semibold">Humsafars</span>, our companions, and we welcome you to an exquisite journey of health and healing.
       </p>
@@ -69,8 +90,8 @@ const OurStory: React.FC = () => {
     {/* Right Image */}
     <div className="flex justify-center">
       <img
-        src="https://www.nimba.in/wp-content/uploads/2020/08/nimba-gif-1.gif"
-        alt="Nimba Tree Graphic"
+        src="https://www.Wellness.in/wp-content/uploads/2020/08/Wellness-gif-1.gif"
+        alt="Wellness Tree Graphic"
         className="max-w-full h-auto rounded-lg shadow-md"
       />
     </div>
@@ -81,7 +102,7 @@ const OurStory: React.FC = () => {
 <section className="relative h-[600px] bg-[#F2F1E8] text-[#435334] overflow-visible mt-[300px]">
   <img
     src="https://media.istockphoto.com/id/508136324/photo/woman-on-tea-plantation-in-india.jpg?s=612x612&w=0&k=20&c=BW02dl3us_J0zKeummJXvtXBYtHBQU9PlcpVem1_AKw="
-    alt="Nimba Story Background"
+    alt="Wellness Story Background"
     className="w-full h-full object-cover"
   />
 
@@ -102,7 +123,7 @@ const OurStory: React.FC = () => {
       </h3>
       <p className="text-lg md:text-xl leading-relaxed mb-4">
         From ancient ayurvedic rituals to scientifically supported wellness practices, 
-        <span className="font-semibold"> every offering at Nimba is crafted to restore your wholeness.</span>
+        <span className="font-semibold"> every offering at Wellness is crafted to restore your wholeness.</span>
       </p>
       <p className="text-lg md:text-xl leading-relaxed mb-4">
         Our dedicated experts — healers, nutritionists, yogis — come together with one goal: 

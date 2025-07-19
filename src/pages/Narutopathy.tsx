@@ -30,7 +30,7 @@ const Narutopathy: React.FC = () => {
             Holistic Wellness Programs
           </h1>
           <p className="text-xl md:text-2xl mb-8">
-            At Nimba Nature Cure
+            At Wellness Nature Cure
           </p>
           <Link 
             to="/programs" 
@@ -41,6 +41,37 @@ const Narutopathy: React.FC = () => {
         </div>
       </section>
 
+
+      {/* Breadcrumbs */}
+<div className="container mx-auto px-4 py-4 flex justify-center">
+  <nav className="flex" aria-label="Breadcrumb">
+    <ol className="inline-flex items-center space-x-2 md:space-x-2">
+      <li className="inline-flex items-center">
+        <Link to="/" className="text-sage-600 hover:text-sage-800">
+          Home
+        </Link>
+      </li>
+      <li className="flex items-center">
+        <span className="mx text-sage-500">{'>'}</span>
+        <span className="mx text-sage-500">{'>'}</span>
+      </li>
+      <li className="inline-flex items-center">
+        <Link to="/programs" className="text-sage-600 hover:text-sage-800">
+          Holistic Programmes
+
+        </Link>
+      </li>
+      <li className="flex items-center">
+        <span className="mx text-sage-500">{'>'}</span>
+        <span className="mx text-sage-500">{'>'}</span>
+      </li>
+      <li>
+        <span className="text-sage-800 font-medium">Naturopathy Wonders</span>
+      </li>
+    </ol>
+  </nav>
+</div>
+
       {/* New Content Section */}
    <section className="py-16 px-4 md:px-8 bg-white">
   <div className="max-w-4xl mx-auto text-center">
@@ -49,12 +80,12 @@ const Narutopathy: React.FC = () => {
     </h2>
 
     <blockquote className="text-xl md:text-2xl font-playfair italic text-sage-500 mb-8">
-      "Nature cures, not the physician. At Nimba, we simply facilitate the body's innate healing capacity through time-tested naturopathic principles."
+      "Nature cures, not the physician. At Wellness, we simply facilitate the body's innate healing capacity through time-tested naturopathic principles."
     </blockquote>
 
     <div className="space-y-6 text-lg text-gray-700">
       <p>
-        Naturopathy at Nimba is more than treatment - it's a return to harmony with nature's rhythms. Our retreats combine ancient healing wisdom with modern understanding to address root causes, not just symptoms.
+        Naturopathy at Wellness is more than treatment - it's a return to harmony with nature's rhythms. Our retreats combine ancient healing wisdom with modern understanding to address root causes, not just symptoms.
       </p>
     </div>
 
@@ -83,7 +114,7 @@ const Narutopathy: React.FC = () => {
 
     {/* <div className="mt-12 bg-sage-100 p-6 rounded-lg border-l-4 border-sage-600">
       <p className="text-gray-800 italic">
-        "Our naturopaths don't just treat diseases - they educate guests in the laws of healthy living. What you learn at Nimba becomes lifelong wellness wisdom you carry home."
+        "Our naturopaths don't just treat diseases - they educate guests in the laws of healthy living. What you learn at Wellness becomes lifelong wellness wisdom you carry home."
       </p>
     </div> */}
   </div>

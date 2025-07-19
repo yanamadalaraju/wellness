@@ -1,6 +1,8 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { MapPin, Phone, Mail, Clock, MessageCircle, Send } from 'lucide-react'
+import ReachSection from '../components/Reachsection'
+import { Link } from 'react-router-dom'
 
 interface ContactFormData {
   name: string
@@ -29,7 +31,7 @@ const Contact: React.FC = () => {
             alt="Get in Touch"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-overlay"></div>
+          
         </div>
         
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
@@ -41,6 +43,26 @@ const Contact: React.FC = () => {
           </p>
         </div>
       </section>
+
+      {/* Breadcrumbs */}
+                  <div className="container mx-auto px-4 py-4 flex justify-center">
+              <nav className="flex" aria-label="Breadcrumb">
+                <ol className="inline-flex items-center space-x-2 md:space-x-2">
+                  <li className="inline-flex items-center">
+                    <Link to="/" className="text-sage-600 hover:text-sage-800">
+                      Home
+                    </Link>
+                  </li>
+                  <li className="flex items-center">
+                    <span className="mx text-sage-500">{'>'}</span>
+                    <span className="mx text-sage-500">{'>'}</span>
+                  </li>
+                  <li>
+                    <span className="text-sage-800 font-medium">Contact Us</span>
+                  </li>
+                </ol>
+              </nav>
+            </div>
 
       {/* Contact Information */}
       <section className="section-padding bg-white">
@@ -220,78 +242,142 @@ const Contact: React.FC = () => {
       </section>
 
       {/* Map Section */}
-      <section className="section-padding bg-sage-50">
-        <div className="container-max">
-          <h2 className="text-4xl font-playfair font-bold text-sage-600 mb-8 text-center">
-            Find Us
-          </h2>
-          
-          <div className="bg-gray-200 rounded-xl overflow-hidden aspect-video">
-            <div className="w-full h-full flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-16 h-16 text-sage-400 mx-auto mb-4" />
-                <h3 className="text-xl font-playfair font-semibold text-sage-600 mb-2">
-                  Interactive Map
-                </h3>
-                <p className="text-gray-600">
-                  Map integration would be implemented here using Google Maps API
-                </p>
-              </div>
-            </div>
+   <section className="section-padding bg-sage-50">
+  <div className="container-max">
+    <h2 className="text-4xl font-playfair font-bold text-sage-600 mb-8 text-center">
+      Find Us
+    </h2>
+    
+    <div className="rounded-xl overflow-hidden aspect-video relative shadow-lg">
+      {/* Embedded Google Map */}
+      <iframe
+        className="w-full h-full"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3662.778119072864!2d72.3667497!3d23.587959999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c5a1b00000000%3A0x0!2zMjPCsDM1JzE2LjciTiA3MsKwMjInMDAuNyJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+        width="800"
+        height="400"
+        style={{ border: 0 }}
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        title="Wellness Nature Cure Location"
+      ></iframe>
+      
+      {/* Floating location card */}
+      <div className="absolute bottom-4 left-4 bg-white p-6 rounded-lg max-w-xs shadow-md">
+        <div className="flex items-start gap-3">
+          <MapPin className="w-6 h-6 text-sage-600 mt-1 flex-shrink-0" />
+          <div>
+            <h3 className="font-playfair font-semibold text-sage-700">Wellness Nature Cure</h3>
+            <address className="not-italic text-sm text-gray-600 mt-1">
+              Baliyasan, Nr. Mccain Foods<br />
+              Ahmedabad–Mehsana Expressway<br />
+              Mehsana – 382732, Gujarat
+            </address>
           </div>
         </div>
-      </section>
+        <a
+          href="https://goo.gl/maps/example"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 inline-block w-full bg-sage-600 hover:bg-sage-700 text-white text-center py-2 rounded transition-colors"
+        >
+          Get Directions
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<ReachSection />
+
 
       {/* FAQ Section */}
       <section className="section-padding bg-white">
-        <div className="container-max">
-          <h2 className="text-4xl font-playfair font-bold text-sage-600 mb-12 text-center">
-            Frequently Asked Questions
-          </h2>
-          
-          <div className="max-w-3xl mx-auto space-y-6">
-            <div className="card">
-              <h3 className="text-lg font-semibold text-sage-600 mb-2">
-                What is the best time to visit?
-              </h3>
-              <p className="text-gray-600">
-                Our retreat is open year-round, but the best time depends on your preferences. 
-                Spring (March-May) and fall (September-November) offer pleasant weather and beautiful scenery.
-              </p>
-            </div>
-            
-            <div className="card">
-              <h3 className="text-lg font-semibold text-sage-600 mb-2">
-                Do I need to bring anything specific?
-              </h3>
-              <p className="text-gray-600">
-                We provide most essentials including towels, yoga mats, and meditation cushions. 
-                We recommend bringing comfortable clothing, personal items, and any medications you may need.
-              </p>
-            </div>
-            
-            <div className="card">
-              <h3 className="text-lg font-semibold text-sage-600 mb-2">
-                Are meals included in the programs?
-              </h3>
-              <p className="text-gray-600">
-                Yes, all our programs include three nutritious meals daily, plus healthy snacks. 
-                Our meals are prepared according to Ayurvedic principles using organic, locally-sourced ingredients.
-              </p>
-            </div>
-            
-            <div className="card">
-              <h3 className="text-lg font-semibold text-sage-600 mb-2">
-                What if I have dietary restrictions?
-              </h3>
-              <p className="text-gray-600">
-                We accommodate various dietary needs including vegetarian, vegan, gluten-free, and allergy-specific requirements. 
-                Please inform us about your dietary restrictions when booking.
-              </p>
-            </div>
-          </div>
+  <div className="container-max">
+    <div className="text-center mb-16">
+      <h2 className="text-4xl font-playfair font-bold text-sage-600 mb-3">
+        Frequently Asked Questions
+      </h2>
+      <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+        Everything you need to know about your wellness journey at Nimba
+      </p>
+    </div>
+    
+    <div className="max-w-4xl mx-auto space-y-4">
+      {/* FAQ Item 1 */}
+      <div className="group overflow-hidden rounded-xl border border-sage-100 bg-sage-50 transition-all duration-300 hover:border-sage-200 hover:shadow-md">
+        <div className="flex items-center justify-between p-6 cursor-pointer">
+          <h3 className="text-xl font-semibold text-sage-700">
+            What is the best time to visit?
+          </h3>
+          <svg className="w-5 h-5 text-sage-500 group-hover:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
         </div>
-      </section>
+        <div className="px-6 pb-6 pt-0 text-gray-600">
+          Our retreat is open year-round, but the best time depends on your preferences. 
+          Spring (March-May) and fall (September-November) offer pleasant weather and beautiful scenery.
+        </div>
+      </div>
+
+      {/* FAQ Item 2 */}
+      <div className="group overflow-hidden rounded-xl border border-sage-100 bg-sage-50 transition-all duration-300 hover:border-sage-200 hover:shadow-md">
+        <div className="flex items-center justify-between p-6 cursor-pointer">
+          <h3 className="text-xl font-semibold text-sage-700">
+            Do I need to bring anything specific?
+          </h3>
+          <svg className="w-5 h-5 text-sage-500 group-hover:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
+        <div className="px-6 pb-6 pt-0 text-gray-600">
+          We provide most essentials including towels, yoga mats, and meditation cushions. 
+          We recommend bringing comfortable clothing, personal items, and any medications you may need.
+        </div>
+      </div>
+
+      {/* FAQ Item 3 */}
+      <div className="group overflow-hidden rounded-xl border border-sage-100 bg-sage-50 transition-all duration-300 hover:border-sage-200 hover:shadow-md">
+        <div className="flex items-center justify-between p-6 cursor-pointer">
+          <h3 className="text-xl font-semibold text-sage-700">
+            Are meals included in the programs?
+          </h3>
+          <svg className="w-5 h-5 text-sage-500 group-hover:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
+        <div className="px-6 pb-6 pt-0 text-gray-600">
+          Yes, all our programs include three nutritious meals daily, plus healthy snacks. 
+          Our meals are prepared according to Ayurvedic principles using organic, locally-sourced ingredients.
+        </div>
+      </div>
+
+      {/* FAQ Item 4 */}
+      <div className="group overflow-hidden rounded-xl border border-sage-100 bg-sage-50 transition-all duration-300 hover:border-sage-200 hover:shadow-md">
+        <div className="flex items-center justify-between p-6 cursor-pointer">
+          <h3 className="text-xl font-semibold text-sage-700">
+            What if I have dietary restrictions?
+          </h3>
+          <svg className="w-5 h-5 text-sage-500 group-hover:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
+        <div className="px-6 pb-6 pt-0 text-gray-600">
+          We accommodate various dietary needs including vegetarian, vegan, gluten-free, and allergy-specific requirements. 
+          Please inform us about your dietary restrictions when booking.
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div className="text-center mt-10">
+        <p className="text-gray-500 mb-4">Still have questions?</p>
+        <button className="bg-sage-600 hover:bg-sage-700 text-white font-medium py-3 px-8 rounded-full transition-colors shadow-md hover:shadow-lg">
+          Contact Our Team
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Careers Section */}
       <section className="section-padding bg-sage-400 text-white">

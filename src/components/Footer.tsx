@@ -101,7 +101,7 @@
 //       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 //         {/* Logo + Address */}
 //         <div>
-//           <img src="/logo.png" alt="Nimba Logo" className="mb-4 w-40" />
+//           <img src="/logo.png" alt="Wellness Logo" className="mb-4 w-40" />
 //           <address className="not-italic leading-relaxed">
 //             Baliyasan, Nr. Mccain Foods, <br />
 //             Ahmedabad – Mehsana Expressway, <br />
@@ -122,7 +122,7 @@
 //         {/* Contact */}
 //         <div>
 //           <h3 className="text-lg font-semibold mb-2">WhatsApp/Call Now: 834731 3333</h3>
-//           <p className="mb-2">For inquiries, contact <a href="mailto:info@nimba.in" className="text-[#435334] underline">info@nimba.in</a> or call +91 81550 12274</p>
+//           <p className="mb-2">For inquiries, contact <a href="mailto:info@Wellness.in" className="text-[#435334] underline">info@Wellness.in</a> or call +91 81550 12274</p>
 //           <h4 className="font-semibold mb-1 mt-4">Newsletter</h4>
 //           <label className="block text-sm font-semibold mb-1 mt-2" htmlFor="email">Your email address *</label>
 //           <input
@@ -140,7 +140,7 @@
 //         <div>
 //           <ul className="space-y-2">
 //             <li><Link to="#" className="hover:text-[#9EB384]">The Mantra</Link></li>
-//             <li><Link to="#" className="hover:text-[#9EB384]">Story of Nimba</Link></li>
+//             <li><Link to="#" className="hover:text-[#9EB384]">Story of Wellness</Link></li>
 //             <li><Link to="#" className="hover:text-[#9EB384]">Healing Team</Link></li>
 //             <li><Link to="#" className="hover:text-[#9EB384]">Blog</Link></li>
 //             <li><Link to="#" className="hover:text-[#9EB384]">Dinacharya</Link></li>
@@ -164,7 +164,7 @@
 
 //       {/* Copyright */}
 //       <div className="text-center text-xs text-[#435334] mt-10">
-//         © 2025 All Rights reserved by Nimba.
+//         © 2025 All Rights reserved by Wellness.
 //       </div>
 //     </footer>
 //   )
@@ -195,7 +195,7 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* Logo + Address */}
         <div className="space-y-4">
-          <img src="/logo.png" alt="Nimba Logo" className="w-48" />
+          <img src="https://t4.ftcdn.net/jpg/01/67/90/13/240_F_167901303_pdGE0AoACAwJk9H8mNWfookRLgJWLdj1.jpg" alt="Wellness Logo" className="w-48" />
           <div className="flex items-start gap-3">
             <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
             <address className="not-italic leading-relaxed">
@@ -230,7 +230,7 @@ const Footer: React.FC = () => {
           
           <div className="flex items-start gap-3">
             <Mail className="w-5 h-5 mt-1 flex-shrink-0" />
-            <a href="mailto:info@nimba.in" className="hover:underline">info@nimba.in</a>
+            <a href="mailto:info@Wellness.in" className="hover:underline">info@Wellness.in</a>
           </div>
           
           <div className="flex items-start gap-3">
@@ -257,7 +257,7 @@ const Footer: React.FC = () => {
         <div>
           <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-3">
-            <li><Link to="/about" className="hover:text-[#9EB384] transition-colors">About Nimba</Link></li>
+            <li><Link to="/about" className="hover:text-[#9EB384] transition-colors">About Wellness</Link></li>
             <li><Link to="/treatments" className="hover:text-[#9EB384] transition-colors">Our Treatments</Link></li>
             <li><Link to="/ayurveda" className="hover:text-[#9EB384] transition-colors">Ayurveda Principles</Link></li>
             <li><Link to="/gallery" className="hover:text-[#9EB384] transition-colors">Photo Gallery</Link></li>
@@ -266,32 +266,52 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Awards & Recognition */}
-        <div className="space-y-6">
-          <h3 className="text-xl font-semibold">Awards & Recognition</h3>
-          
-          <div className="grid grid-cols-2 gap-4">
-            <img src="https://media.istockphoto.com/id/2206391716/photo/standing-golden-trophy-cup-on-light-green-background.jpg?s=612x612&w=0&k=20&c=odm6azR5ySVwy1hvfIpcGnMB9jzD2Pp3rF2Rrn9MvmQ=" alt="NABH Accredited" className="h-16 object-contain" />
-            <img src="https://media.istockphoto.com/id/2163592890/photo/close-up-of-trophies.jpg?s=612x612&w=0&k=20&c=r9EOlJywiZ0qU214lh62dtD6oo07qdp2Z9PRd1xyfJg=" alt="TripAdvisor Award" className="h-16 object-contain" />
-            <img src="https://media.istockphoto.com/id/1212486807/vector/aura-meditation-sitting-in-the-lotus-position-group-of-people-healthy-lifestyle-relaxation.jpg?s=612x612&w=0&k=20&c=nS96ZimVE7HK9oClxEO-Ct55dGIn4LpcvYSzzG8BOXc=" alt="Times Health Icon" className="h-16 object-contain" />
-            <div className="flex items-center justify-center bg-white p-2 rounded">
-              <SiTrustpilot className="text-3xl text-[#00B67A]" />
-            </div>
-          </div>
-          
-          <div className="pt-4">
-            <h4 className="font-semibold mb-3">Legal</h4>
-            <ul className="space-y-2 text-sm">
-              <li><Link to="/privacy" className="hover:text-[#9EB384] transition-colors">Privacy Policy</Link></li>
-              <li><Link to="/terms" className="hover:text-[#9EB384] transition-colors">Terms of Service</Link></li>
-              <li><Link to="/cancellation" className="hover:text-[#9EB384] transition-colors">Cancellation Policy</Link></li>
-            </ul>
-          </div>
-        </div>
+        {/* Awards & Recognition */}
+<div className="space-y-6">
+  <h3 className="text-xl font-semibold">Awards & Recognition</h3>
+  
+  <div className="grid grid-cols-2 gap-4">
+    {/* Each award image wrapped in a container with fixed dimensions */}
+    <div className="h-24 bg-white flex items-center justify-center p-2 rounded">
+      <img 
+        src="https://media.istockphoto.com/id/2206391716/photo/standing-golden-trophy-cup-on-light-green-background.jpg?s=612x612&w=0&k=20&c=odm6azR5ySVwy1hvfIpcGnMB9jzD2Pp3rF2Rrn9MvmQ=" 
+        alt="NABH Accredited" 
+        className="h-full w-full object-contain" 
+      />
+    </div>
+    <div className="h-24 bg-white flex items-center justify-center p-2 rounded">
+      <img 
+        src="https://media.istockphoto.com/id/2163592890/photo/close-up-of-trophies.jpg?s=612x612&w=0&k=20&c=r9EOlJywiZ0qU214lh62dtD6oo07qdp2Z9PRd1xyfJg=" 
+        alt="TripAdvisor Award" 
+        className="h-full w-full object-contain" 
+      />
+    </div>
+    <div className="h-24 bg-white flex items-center justify-center p-2 rounded">
+      <img 
+        src="https://media.istockphoto.com/id/1212486807/vector/aura-meditation-sitting-in-the-lotus-position-group-of-people-healthy-lifestyle-relaxation.jpg?s=612x612&w=0&k=20&c=nS96ZimVE7HK9oClxEO-Ct55dGIn4LpcvYSzzG8BOXc=" 
+        alt="Times Health Icon" 
+        className="h-full w-full object-contain" 
+      />
+    </div>
+    <div className="h-24 bg-white flex items-center justify-center p-2 rounded">
+      <SiTrustpilot className="text-4xl text-[#00B67A]" />
+    </div>
+  </div>
+  
+  <div className="pt-4">
+    <h4 className="font-semibold mb-3">Legal</h4>
+    <ul className="space-y-2 text-sm">
+      <li><Link to="/privacy" className="hover:text-[#9EB384] transition-colors">Privacy Policy</Link></li>
+      <li><Link to="/terms" className="hover:text-[#9EB384] transition-colors">Terms of Service</Link></li>
+      <li><Link to="/cancellation" className="hover:text-[#9EB384] transition-colors">Cancellation Policy</Link></li>
+    </ul>
+  </div>
+</div>
       </div>
 
       {/* Copyright */}
       <div className="border-t border-[#9EB384]/30 mt-12 pt-6 text-center text-sm">
-        <p>© {new Date().getFullYear()} Nimba Nature Cure. All Rights Reserved.</p>
+        <p>© {new Date().getFullYear()} Wellness Nature Cure. All Rights Reserved.</p>
         <p className="mt-1">Designed with ❤️ for holistic wellness</p>
       </div>
     </footer>

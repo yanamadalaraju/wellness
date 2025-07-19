@@ -1,5 +1,6 @@
 import React from 'react'
 import { Award, BookOpen, Heart, Star } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const HealingTeam: React.FC = () => {
   const teamMembers = [
@@ -105,7 +106,7 @@ const HealingTeam: React.FC = () => {
             alt="Healing Team"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-overlay"></div>
+         
         </div>
         
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
@@ -117,6 +118,26 @@ const HealingTeam: React.FC = () => {
           </p>
         </div>
       </section>
+
+        {/* Breadcrumbs */}
+                        <div className="container mx-auto px-4 py-4 flex justify-center">
+                    <nav className="flex" aria-label="Breadcrumb">
+                      <ol className="inline-flex items-center space-x-2 md:space-x-2">
+                        <li className="inline-flex items-center">
+                          <Link to="/" className="text-sage-600 hover:text-sage-800">
+                            Home
+                          </Link>
+                        </li>
+                        <li className="flex items-center">
+                          <span className="mx text-sage-500">{'>'}</span>
+                          <span className="mx text-sage-500">{'>'}</span>
+                        </li>
+                        <li>
+                          <span className="text-sage-800 font-medium">Healing Team</span>
+                        </li>
+                      </ol>
+                    </nav>
+                  </div>
 
       {/* Team Introduction */}
       <section className="section-padding bg-white">

@@ -143,6 +143,7 @@
 
 
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const DinacharyaPage: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -249,6 +250,26 @@ const DinacharyaPage: React.FC = () => {
           ))}
         </div>
       </section>
+
+        {/* Breadcrumbs */}
+                        <div className="container mx-auto px-4 py-4 flex justify-center">
+                    <nav className="flex" aria-label="Breadcrumb">
+                      <ol className="inline-flex items-center space-x-2 md:space-x-2">
+                        <li className="inline-flex items-center">
+                          <Link to="/" className="text-sage-600 hover:text-sage-800">
+                            Home
+                          </Link>
+                        </li>
+                        <li className="flex items-center">
+                          <span className="mx text-sage-500">{'>'}</span>
+                          <span className="mx text-sage-500">{'>'}</span>
+                        </li>
+                        <li>
+                          <span className="text-sage-800 font-medium">Dincharya</span>
+                        </li>
+                      </ol>
+                    </nav>
+                  </div>
 
       {/* 3D Content Block with Heal Now Button */}
       <section className="content-block py-12 px-4 md:px-8">

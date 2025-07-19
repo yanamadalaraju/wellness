@@ -5,7 +5,7 @@
 
 // const videos = [
 //   {
-//     title: "Vivek Oberoi goes for complete Detox and Rejuvenation at Nimba Nature Cure",
+//     title: "Vivek Oberoi goes for complete Detox and Rejuvenation at Wellness Nature Cure",
 //     url: "https://youtu.be/BfWPhJuokX8",
 //   },
 //   {
@@ -17,19 +17,19 @@
 //     url: "https://youtu.be/BfWPhJuokX8",
 //   },
 //   {
-//     title: "Reyhna Malhotra shares her Nimba experience",
+//     title: "Reyhna Malhotra shares her Wellness experience",
 //     url: "https://youtu.be/BfWPhJuokX8",
 //   },
 //   {
-//     title: "Words for Nimba from Mr Oliver – Germany",
+//     title: "Words for Wellness from Mr Oliver – Germany",
 //     url: "https://youtu.be/BfWPhJuokX8",
 //   },
 //   {
-//     title: "Our Happy Client speaks about her wonderful experience at Nimba",
+//     title: "Our Happy Client speaks about her wonderful experience at Wellness",
 //     url: "https://youtu.be/BfWPhJuokX8",
 //   },
 //   {
-//     title: "Nimba transformed my health - Priya Sharma",
+//     title: "Wellness transformed my health - Priya Sharma",
 //     url: "https://youtu.be/BfWPhJuokX8",
 //   },
 //   {
@@ -37,7 +37,7 @@
 //     url: "https://youtu.be/BfWPhJuokX8",
 //   },
 //   {
-//     title: "My 2-week detox journey at Nimba - Rohan Patel",
+//     title: "My 2-week detox journey at Wellness - Rohan Patel",
 //     url: "https://youtu.be/BfWPhJuokX8",
 //   },
 //   {
@@ -45,7 +45,7 @@
 //     url: "https://youtu.be/BfWPhJuokX8",
 //   },
 //   {
-//     title: "Why I keep coming back to Nimba - Sanjay Verma",
+//     title: "Why I keep coming back to Wellness - Sanjay Verma",
 //     url: "https://youtu.be/BfWPhJuokX8",
 //   },
 //   {
@@ -116,7 +116,7 @@ import "keen-slider/keen-slider.min.css"
 
 const videos = [
   {
-    title: "Vivek Oberoi goes for complete Detox and Rejuvenation at Nimba Nature Cure",
+    title: "Vivek Oberoi goes for complete Detox and Rejuvenation at Wellness Nature Cure",
     url: "https://youtu.be/BfWPhJuokX8",
   },
   {
@@ -128,19 +128,19 @@ const videos = [
     url: "https://youtu.be/BfWPhJuokX8",
   },
   {
-    title: "Reyhna Malhotra shares her Nimba experience",
+    title: "Reyhna Malhotra shares her Wellness experience",
     url: "https://youtu.be/BfWPhJuokX8",
   },
   {
-    title: "Words for Nimba from Mr Oliver – Germany",
+    title: "Words for Wellness from Mr Oliver – Germany",
     url: "https://youtu.be/BfWPhJuokX8",
   },
   {
-    title: "Our Happy Client speaks about her wonderful experience at Nimba",
+    title: "Our Happy Client speaks about her wonderful experience at Wellness",
     url: "https://youtu.be/BfWPhJuokX8",
   },
   {
-    title: "Nimba transformed my health - Priya Sharma",
+    title: "Wellness transformed my health - Priya Sharma",
     url: "https://youtu.be/BfWPhJuokX8",
   },
   {
@@ -148,7 +148,7 @@ const videos = [
     url: "https://youtu.be/BfWPhJuokX8",
   },
   {
-    title: "My 2-week detox journey at Nimba - Rohan Patel",
+    title: "My 2-week detox journey at Wellness - Rohan Patel",
     url: "https://youtu.be/BfWPhJuokX8",
   },
   {
@@ -156,7 +156,7 @@ const videos = [
     url: "https://youtu.be/BfWPhJuokX8",
   },
   {
-    title: "Why I keep coming back to Nimba - Sanjay Verma",
+    title: "Why I keep coming back to Wellness - Sanjay Verma",
     url: "https://youtu.be/BfWPhJuokX8",
   },
   {
@@ -164,7 +164,7 @@ const videos = [
     url: "https://youtu.be/BfWPhJuokX8",
   },
   {
-    title: "Life-changing experience at Nimba - David Wilson",
+    title: "Life-changing experience at Wellness - David Wilson",
     url: "https://youtu.be/BfWPhJuokX8",
   },
   {
@@ -172,11 +172,11 @@ const videos = [
     url: "https://youtu.be/BfWPhJuokX8",
   },
   {
-    title: "Nimba's ayurvedic treatments - Rajiv Mehta",
+    title: "Wellness's ayurvedic treatments - Rajiv Mehta",
     url: "https://youtu.be/BfWPhJuokX8",
   },
   {
-    title: "Finding balance at Nimba - Sophie Martin",
+    title: "Finding balance at Wellness - Sophie Martin",
     url: "https://youtu.be/BfWPhJuokX8",
   },
 ]

@@ -42,12 +42,12 @@ const blogPosts = [
   {
     title: 'Manage Cervical Spondylitis with Ayurvedic Treatment',
     desc: 'Cervical spondylitis, or cervical osteoarthritis, is a degenerative disease primarily affecting...',
-    image: 'https://www.nimba.in/wp-content/uploads/2025/06/Nimba-Blogs.jpg',
+    image: 'https://www.nimba.in/wp-content/uploads/2025/06/nimba-Blogs.jpg',
   },
 ];
 
 const galleryItems = [
-  { title: 'Wellness', image: 'https://www.nimba.in/wp-content/uploads/2020/10/Wellness-Main-Image-min.jpg' },
+  { title: 'nimba', image: 'https://www.nimba.in/wp-content/uploads/2020/10/nimba-Main-Image-min.jpg' },
   { title: 'Amenities', image: 'https://www.nimba.in/wp-content/uploads/2020/10/Swimming-Pool.jpg' },
   { title: 'Media & Events', image: 'https://www.nimba.in/wp-content/uploads/2020/10/TAFI-1.jpg' },
   { title: 'Living Space', image: 'https://www.nimba.in/wp-content/uploads/2020/10/Deluxe-Room-1.jpg' },
@@ -56,7 +56,7 @@ const testimonials = [
   {
     name: 'Vivek Oberoi',
     role: 'Actor, Bollywood, India',
-    quote: `I was truly taken by surprise & my experience at Nimba has been exceptional. I believe Naturopathy is the need of the hour as people are done with allopathic treatments and their side effects.`,
+    quote: `I was truly taken by surprise & my experience at nimba has been exceptional. I believe Naturopathy is the need of the hour as people are done with allopathic treatments and their side effects.`,
     image: 'https://www.nimba.in/wp-content/uploads/2020/07/Vivek-Oberoi-%E2%80%93-Actor-Bollywood-India.png',
   },
   {
@@ -68,7 +68,7 @@ const testimonials = [
   {
     name: 'Reyhna Malhotra',
     role: 'Model & Actress',
-    quote: `I have had a good detox & inch loss which is always welcoming. Nice wellness retreat with holistic approach and goodness of Naturopathy, Ayurveda, Yoga, Hydrotherapy, Raga therapy and many international therapies.`,
+    quote: `I have had a good detox & inch loss which is always welcoming. Nice nimba retreat with holistic approach and goodness of Naturopathy, Ayurveda, Yoga, Hydrotherapy, Raga therapy and many international therapies.`,
     image: 'https://www.nimba.in/wp-content/uploads/2020/07/Reyhna-Malhotra-min.png',
   },
 ];
@@ -104,7 +104,7 @@ const testimonials = [
     {
       video: "https://media.istockphoto.com/id/1994316862/video/old-man-meditating-on-yoga-mat-in-yard.mp4?s=mp4-640x640-is&k=20&c=79ZoUDn_S-mBE3_O8XbMnUwcWR4ZFG5MDp4pcmMlxHk=",
       title: "Luxury Healing Experience",
-      subtitle: "Premium wellness treatments in a serene environment."
+      subtitle: "Premium nimba treatments in a serene environment."
     }
   ]
 
@@ -212,10 +212,10 @@ const testimonials = [
         <div className="absolute top-0 left-0 right-0 h-1 bg-sage-400"></div>
         
         <h2 className="text-xl font-bold text-gray-800 mb-2 whitespace-nowrap">
-          Welcome to Nimba Nature Cure & Holistic Healthcare Centre
+          Welcome to nimba Nature Cure & Holistic Healthcare Centre
         </h2>
         <p className="text-xl text-sage-700 font-medium whitespace-nowrap">
-          Gujarat's Premier NABH Accredited Wellness Destination
+          Gujarat's Premier NABH Accredited nimba Destination
         </p>
         
         {/* Bottom strip */}
@@ -229,7 +229,7 @@ const testimonials = [
 <section className="bg-sage-50 py-16 px-4">
   <div className="max-w-6xl mx-auto text-center">
     <h2 className="text-4xl font-playfair text-gray-700 mb-4">
-      True Treatments for Chronic Wellness
+      True Treatments for Chronic nimba
     </h2>
     <div className="flex justify-center items-center mb-6">
       <div className="w-16 h-1 bg-sage-400 mr-2"></div>
@@ -274,7 +274,7 @@ const testimonials = [
     <div className="flex flex-col items-center transition-transform duration-300 hover:scale-105 hover:shadow-lg overflow-hidden min-h-[160px]">
       <Sparkles className="w-12 h-12 mb-3 text-pink-600" />
       <h3 className="font-semibold text-lg mb-1">Holistic Therapies</h3>
-      <p className="text-center text-sm text-gray-600">Whole-body wellness</p>
+      <p className="text-center text-sm text-gray-600">Whole-body nimba</p>
     </div>
   </div>
 </div>
@@ -297,7 +297,7 @@ const testimonials = [
       <div className="relative max-w-7xl mx-auto z-10">
         <h2 className="text-4xl font-bold text-center mb-4">Diseases Treated</h2>
         <p className="text-center text-gray-300 max-w-3xl mx-auto mb-12">
-          At Nimba, we adopt a holistic approach to treating various ailments by detoxifying the body to promote health and well-being.
+          At nimba, we adopt a holistic approach to treating various ailments by detoxifying the body to promote health and well-being.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

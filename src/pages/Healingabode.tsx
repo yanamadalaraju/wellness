@@ -11,16 +11,21 @@ import {
 import EnemaSection from '../components/EnemaSection';
 import TherapySection from '../components/EnemaSection';
 import AyurvedsTherapySection from '../components/Ayurvedtheraphy';
-import YogaTherapySection from '../components/Yogaandmeditation';
+import PhysioTherapySection from '../components/PhysioTherapySection';
+import Respiratoryalignments from '../components/Respiratoryalignments';
+import Gastrosection from '../components/Gastrosection';
+import Musculoskeletalsection from '../components/Musculoskeletalsection';
+import ImageCarouselSection from '../components/Imagecarousalsection';
+import TherapyImageCarousel from '../components/Imagecarousalsection';
 
-const Yoga: React.FC = () => {
+const Healingabode: React.FC = () => {
   return (
     <div className="min-h-screen bg-cream-50">
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://media.istockphoto.com/id/1194094647/photo/handsome-young-man-practicing-yoga-at-park.jpg?s=612x612&w=0&k=20&c=pOc8R7KLJiYd8A6LOvOctwStEFvN775spziJqocadlk="
+            src="https://media.istockphoto.com/id/2195632746/photo/asian-man-sporting-calf-cramping.jpg?s=612x612&w=0&k=20&c=UfOt23n9mf_Fe5IN8_hbNq_Ot_46l0FHky5PaZLCuLk="
             alt="Holistic Programs"
             className="w-full h-full object-cover"
           />
@@ -43,35 +48,36 @@ const Yoga: React.FC = () => {
         </div>
       </section>
 
-       {/* Breadcrumbs */}
-      <div className="container mx-auto px-4 py-4 flex justify-center">
-        <nav className="flex" aria-label="Breadcrumb">
-          <ol className="inline-flex items-center space-x-2 md:space-x-2">
-            <li className="inline-flex items-center">
-              <Link to="/" className="text-sage-600 hover:text-sage-800">
-                Home
-              </Link>
-            </li>
-            <li className="flex items-center">
-              <span className="mx text-sage-500">{'>'}</span>
-              <span className="mx text-sage-500">{'>'}</span>
-            </li>
-            <li className="inline-flex items-center">
-              <Link to="/programs" className="text-sage-600 hover:text-sage-800">
-                Holistic Programmes
+      {/* Breadcrumbs */}
+          <div className="container mx-auto px-4 py-4 flex justify-center">
+              <nav className="flex" aria-label="Breadcrumb">
+              <ol className="inline-flex items-center space-x-2 md:space-x-2">
+                  <li className="inline-flex items-center">
+                  <Link to="/" className="text-sage-600 hover:text-sage-800">
+                      Home
+                  </Link>
+                  </li>
+                  <li className="flex items-center">
+                  <span className="mx text-sage-500">{'>'}</span>
+                  <span className="mx text-sage-500">{'>'}</span>
+                  </li>
+                  <li className="inline-flex items-center">
+                  <Link to="/health-offers" className="text-sage-600 hover:text-sage-800">
+                      Retreat & Revive
+          
+                  </Link>
+                  </li>
+                  <li className="flex items-center">
+                  <span className="mx text-sage-500">{'>'}</span>
+                  <span className="mx text-sage-500">{'>'}</span>
+                  </li>
+                  <li>
+                  <span className="text-sage-800 font-medium">Healing Abode</span>
+                  </li>
+              </ol>
+              </nav>
+          </div>
       
-              </Link>
-            </li>
-            <li className="flex items-center">
-              <span className="mx text-sage-500">{'>'}</span>
-              <span className="mx text-sage-500">{'>'}</span>
-            </li>
-            <li>
-              <span className="text-sage-800 font-medium">Yoga & Meditation</span>
-            </li>
-          </ol>
-        </nav>
-      </div>
 
       {/* New Content Section */}
    <section className="py-16 px-4 md:px-8 bg-white">
@@ -93,7 +99,7 @@ const Yoga: React.FC = () => {
 </section>
 
 
- <YogaTherapySection />
+<TherapyImageCarousel />
 
       
 
@@ -126,4 +132,4 @@ const Yoga: React.FC = () => {
   );
 };
 
-export default Yoga;
+export default Healingabode;

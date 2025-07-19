@@ -349,7 +349,7 @@ const Programs: React.FC = () => {
             Holistic Wellness Programs
           </h1>
           <p className="text-xl md:text-2xl mb-8">
-            At Nimba Nature Cure
+            At Wellness Nature Cure
           </p>
           <Link 
             to="/programs" 
@@ -360,6 +360,26 @@ const Programs: React.FC = () => {
         </div>
       </section>
 
+      {/* Breadcrumbs */}
+                  <div className="container mx-auto px-4 py-4 flex justify-center">
+              <nav className="flex" aria-label="Breadcrumb">
+                <ol className="inline-flex items-center space-x-2 md:space-x-2">
+                  <li className="inline-flex items-center">
+                    <Link to="/" className="text-sage-600 hover:text-sage-800">
+                      Home
+                    </Link>
+                  </li>
+                  <li className="flex items-center">
+                    <span className="mx text-sage-500">{'>'}</span>
+                    <span className="mx text-sage-500">{'>'}</span>
+                  </li>
+                  <li>
+                    <span className="text-sage-800 font-medium">The Healed Speaks</span>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+
       {/* New Content Section */}
     <section className="py-16 px-4 md:px-8 bg-white">
   <div className="max-w-4xl mx-auto text-center">
@@ -368,7 +388,7 @@ const Programs: React.FC = () => {
     </h2>
 
     <blockquote className="text-xl md:text-2xl font-playfair italic text-sage-500 mb-8">
-      "Our holistic approach to physiotherapy and stress relief has transformed lives. Our guests share how their wellness journey at Nimba redefined healing for them."
+      "Our holistic approach to physiotherapy and stress relief has transformed lives. Our guests share how their wellness journey at Wellness redefined healing for them."
     </blockquote>
 
     <div className="space-y-6 text-lg text-gray-700">
@@ -381,7 +401,7 @@ const Programs: React.FC = () => {
 
     <div className="mt-12 bg-sage-50 p-6 rounded-lg border border-sage-100">
       <p className="text-gray-700 italic">
-        "Nimba helped me rediscover a pain-free and stress-free life — something I never thought possible again." — A Nimba Guest
+        "Wellness helped me rediscover a pain-free and stress-free life — something I never thought possible again." — A Wellness Guest
       </p>
     </div>
   </div>

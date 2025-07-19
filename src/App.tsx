@@ -23,6 +23,17 @@ import Ayurveda from './pages/Ayurveda'
 import Yoga from './pages/Yoga'
 import Physiotheraphy from './pages/Physiotheraphy'
 import Holistictheraphy from './pages/Holistictherapy'
+import Respiratory from './pages/Respiratory'
+import Gastro from './pages/Gastro'
+import Musculoskeletal from './pages/Musculoskeletal'
+import Endocrine from './pages/Endocrine'
+import Lifestyle from './pages/lifestyle'
+import Healingabode from './pages/Healingabode'
+import Meditation from './pages/Meditation'
+import Recreation from './pages/Recreation'
+import Gym from './pages/Gym'
+import Carrer from './pages/Career'
+import TariffPage from './pages/TariffPage'
 
 function App() {
   return (
@@ -44,9 +55,20 @@ function App() {
           <Route path="/dincharya" element={<DinacharyaPage />} />
           <Route path="/narutopathy" element={<Narutopathy />} />
           <Route path="/ayurveda" element={<Ayurveda />} />
-           <Route path="/yoga" element={<Yoga />} />
-            <Route path="/physiotheraphy" element={<Physiotheraphy />} />
-            <Route path="/Holistictherapy" element={<Holistictheraphy />} />
+          <Route path="/yoga" element={<Yoga />} />
+          <Route path="/physiotheraphy" element={<Physiotheraphy />} />
+          <Route path="/Holistictherapy" element={<Holistictheraphy />} />
+          <Route path="/Respiratory" element={<Respiratory />} />
+          <Route path="/gastro" element={<Gastro />} />
+          <Route path="/Musculoskeletal" element={<Musculoskeletal />} />
+          <Route path="/Endocrine" element={<Endocrine />} />
+          <Route path="/lifestyle" element={<Lifestyle />} />
+          <Route path="/Healingabode" element={<Healingabode />} />
+          <Route path="/Recreation" element={<Recreation />} />
+          <Route path="/meditation" element={<Meditation />} />
+          <Route path="/gym" element={<Gym />} />
+          <Route path="/career" element={<Carrer />} />
+          <Route path="/tariff" element={<TariffPage />} />
           <Route path="/virtual-tour" element={<VirtualTourPage />} />
 
         </Routes>

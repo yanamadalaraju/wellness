@@ -270,7 +270,7 @@ const Programs: React.FC = () => {
             Holistic Wellness Programs
           </h1>
           <p className="text-xl md:text-2xl mb-8">
-            At Nimba Nature Cure
+            At Wellness Nature Cure
           </p>
           <Link 
             to="/programs" 
@@ -280,6 +280,26 @@ const Programs: React.FC = () => {
           </Link>
         </div>
       </section>
+
+      {/* Breadcrumbs */}
+                  <div className="container mx-auto px-4 py-4 flex justify-center">
+              <nav className="flex" aria-label="Breadcrumb">
+                <ol className="inline-flex items-center space-x-2 md:space-x-2">
+                  <li className="inline-flex items-center">
+                    <Link to="/" className="text-sage-600 hover:text-sage-800">
+                      Home
+                    </Link>
+                  </li>
+                  <li className="flex items-center">
+                    <span className="mx text-sage-500">{'>'}</span>
+                    <span className="mx text-sage-500">{'>'}</span>
+                  </li>
+                  <li>
+                    <span className="text-sage-800 font-medium">Retreat Amenities</span>
+                  </li>
+                </ol>
+              </nav>
+            </div>
 
       {/* New Content Section */}
     <section className="py-16 px-4 md:px-8 bg-white">
@@ -294,7 +314,7 @@ const Programs: React.FC = () => {
 
     <div className="space-y-6 text-lg text-gray-700">
       <p>
-        An amalgamation of deeply understood and well-curated physical, psychological, or spiritual activities — Nimba’s retreats are going to bless you with a healed and healthy mind, body, and soul.
+        An amalgamation of deeply understood and well-curated physical, psychological, or spiritual activities — Wellness’s retreats are going to bless you with a healed and healthy mind, body, and soul.
       </p>
     </div>
 
@@ -321,7 +341,7 @@ const Programs: React.FC = () => {
 
     <div className="mt-12 bg-sage-50 p-6 rounded-lg border border-sage-100">
       <p className="text-gray-700 italic">
-        "Every retreat at Nimba is crafted to offer not just relaxation but transformation — a deep connection to your true self and natural rhythm."
+        "Every retreat at Wellness is crafted to offer not just relaxation but transformation — a deep connection to your true self and natural rhythm."
       </p>
     </div>
   </div>
@@ -338,7 +358,7 @@ const Programs: React.FC = () => {
         <HeartPulse className="w-10 h-10 text-green-800" />
         <h2 className="text-3xl font-serif text-gray-700">Healing Abode</h2>
         <p className="text-gray-600 leading-relaxed">
-          The wellness care at Nimba transcends beyond just the Wholesome Wellness
+          The wellness care at Wellness transcends beyond just the Wholesome Wellness
           Programs and True Treatments. The healing continues even when you are asleep…
         </p>
         <Link
@@ -386,7 +406,7 @@ const Programs: React.FC = () => {
     <div className="md:w-1/2 -mr-[10%] relative z-10">
       <div className="relative">
         <img
-          src="https://www.nimba.in/wp-content/uploads/2020/12/Gastro-intestinal-disorders-min-1.png"
+          src="https://www.nimba.in/wp-content/uploads/2021/02/recreation-spaces-image.png"
           alt="Holistic Treatment"
           className="rounded shadow-[-20px_20px_20px_-5px_rgba(0,0,0,0.1)] w-full"
         />
@@ -404,7 +424,7 @@ const Programs: React.FC = () => {
         <Flower className="w-10 h-10 text-green-800" />
         <h2 className="text-3xl font-serif text-gray-700">Meditation Caves</h2>
         <p className="text-gray-600 leading-relaxed">
-          “Release the entanglements in your mind and free the chaos within you.” Nimba Nature Cure and Holistic
+          “Release the entanglements in your mind and free the chaos within you.” Wellness Nature Cure and Holistic
           Healthcare Centre is in close connection with spirituality and the potential…
         </p>
         <Link
@@ -419,7 +439,7 @@ const Programs: React.FC = () => {
     <div className="md:w-1/2 -ml-[10%] relative z-10">
       <div className="relative">
         <img
-          src="https://www.nimba.in/wp-content/uploads/2021/02/recreation-spaces-image.png"
+          src="https://www.nimba.in/wp-content/uploads/2021/02/meditation-caves-services.png"
           alt="Ayurvedic Treatment"
           className="rounded shadow-[20px_20px_20px_-5px_rgba(0,0,0,0.1)] w-full"
         />
@@ -469,7 +489,7 @@ const Programs: React.FC = () => {
         <Dumbbell className="w-10 h-10 text-green-800" />
         <h2 className="text-3xl font-serif text-gray-700">Cardio Gym</h2>
         <p className="text-gray-600 leading-relaxed">
-          A healthy mind and a healthy body are two sides of the same coin. At Nimba, we are committed
+          A healthy mind and a healthy body are two sides of the same coin. At Wellness, we are committed
           to providing you with an assortment of experiences, all directed towards…
         </p>
         <Link

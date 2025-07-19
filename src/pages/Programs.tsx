@@ -320,7 +320,7 @@
 //             Holistic Wellness Programs
 //           </h1>
 //           <p className="text-xl md:text-2xl mb-8">
-//             At Nimba Nature Cure
+//             At Wellness Nature Cure
 //           </p>
 //           <Link 
 //             to="/programs" 
@@ -345,7 +345,7 @@
 //             </p>
             
 //             <p>
-//               A safe haven to indulge into the holistic betterment of every individual, Nimba's 
+//               A safe haven to indulge into the holistic betterment of every individual, Wellness's 
 //               Wellness Programmes enable one to lead a rejuvenating, stimulating and healthy life 
 //               through an effective blend of western and natural treatments.
 //             </p>
@@ -402,7 +402,7 @@
 //         {/* Image - overlaps on the left card */}
 //         <div className="md:w-1/2 -ml-[10%] relative z-10">
 //           <img
-//             src='https://www.nimba.in/wp-content/uploads/2020/12/Naturopathy-wonders-min.png'
+//             src='https://www.Wellness.in/wp-content/uploads/2020/12/Naturopathy-wonders-min.png'
 //             alt="Naturopathy Treatment"
 //             className="rounded shadow-lg w-full"
 //           />
@@ -437,7 +437,7 @@
 //         {/* Image - Left Side with 10% overlap */}
 //         <div className="md:w-1/2 -mr-[10%] relative z-10">
 //           <img
-//              src='https://www.nimba.in/wp-content/uploads/2020/12/Naturopathy-wonders-min.png'
+//              src='https://www.Wellness.in/wp-content/uploads/2020/12/Naturopathy-wonders-min.png'
 //             alt="Naturopathy Treatment"
 //             className="rounded shadow-lg w-full"
 //           />
@@ -479,7 +479,7 @@ const Programs: React.FC = () => {
             Holistic Wellness Programs
           </h1>
           <p className="text-xl md:text-2xl mb-8">
-            At Nimba Nature Cure
+            At Wellness Nature Cure
           </p>
           <Link 
             to="/programs" 
@@ -489,6 +489,26 @@ const Programs: React.FC = () => {
           </Link>
         </div>
       </section>
+
+      {/* Breadcrumbs */}
+                  <div className="container mx-auto px-4 py-4 flex justify-center">
+              <nav className="flex" aria-label="Breadcrumb">
+                <ol className="inline-flex items-center space-x-2 md:space-x-2">
+                  <li className="inline-flex items-center">
+                    <Link to="/" className="text-sage-600 hover:text-sage-800">
+                      Home
+                    </Link>
+                  </li>
+                  <li className="flex items-center">
+                    <span className="mx text-sage-500">{'>'}</span>
+                    <span className="mx text-sage-500">{'>'}</span>
+                  </li>
+                  <li>
+                    <span className="text-sage-800 font-medium">Holistic Programmes</span>
+                  </li>
+                </ol>
+              </nav>
+            </div>
 
       {/* New Content Section */}
       <section className="py-16 px-4 md:px-8 bg-white">
@@ -504,7 +524,7 @@ const Programs: React.FC = () => {
             </p>
             
             <p>
-              A safe haven to indulge into the holistic betterment of every individual, Nimba's 
+              A safe haven to indulge into the holistic betterment of every individual, Wellness's 
               Wellness Programmes enable one to lead a rejuvenating, stimulating and healthy life 
               through an effective blend of western and natural treatments.
             </p>
@@ -560,7 +580,7 @@ const Programs: React.FC = () => {
        
           <div className="md:w-1/2 -ml-[10%] relative z-10">
             <img
-              src='https://www.nimba.in/wp-content/uploads/2020/12/Naturopathy-wonders-min.png'
+              src='https://www.Wellness.in/wp-content/uploads/2020/12/Naturopathy-wonders-min.png'
               alt="Naturopathy Treatment"
               className="rounded shadow-[20px_20px_20px_-5px_rgba(0,0,0,0.1)] w-full"
             />
@@ -593,7 +613,7 @@ const Programs: React.FC = () => {
           
           <div className="md:w-1/2 -mr-[10%] relative z-10">
             <img
-              src='https://www.nimba.in/wp-content/uploads/2020/12/Naturopathy-wonders-min.png'
+              src='https://www.Wellness.in/wp-content/uploads/2020/12/Naturopathy-wonders-min.png'
               alt="Holistic Treatment"
               className="rounded shadow-[-20px_20px_20px_-5px_rgba(0,0,0,0.1)] w-full"
             />
