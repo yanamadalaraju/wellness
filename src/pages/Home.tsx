@@ -42,12 +42,12 @@ const blogPosts = [
   {
     title: 'Manage Cervical Spondylitis with Ayurvedic Treatment',
     desc: 'Cervical spondylitis, or cervical osteoarthritis, is a degenerative disease primarily affecting...',
-    image: 'https://www.nimba.in/wp-content/uploads/2025/06/nimba-Blogs.jpg',
+    image: 'https://www.nimba.in/wp-content/uploads/2025/06/Nimba-Blogs.jpg',
   },
 ];
 
 const galleryItems = [
-  { title: 'nimba', image: 'https://www.nimba.in/wp-content/uploads/2020/10/nimba-Main-Image-min.jpg' },
+  { title: 'nimba', image: 'https://www.nimba.in/wp-content/uploads/2020/10/Wellness-Main-Image-min.jpg' },
   { title: 'Amenities', image: 'https://www.nimba.in/wp-content/uploads/2020/10/Swimming-Pool.jpg' },
   { title: 'Media & Events', image: 'https://www.nimba.in/wp-content/uploads/2020/10/TAFI-1.jpg' },
   { title: 'Living Space', image: 'https://www.nimba.in/wp-content/uploads/2020/10/Deluxe-Room-1.jpg' },

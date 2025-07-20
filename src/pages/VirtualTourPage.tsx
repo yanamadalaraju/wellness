@@ -1,333 +1,250 @@
-// import React from 'react'
-// import { Helmet } from 'react-helmet'
-
-// const VirtualTourPage = () => {
-//   return (
-//     <div className="bg-black text-white min-h-screen">
-//       <Helmet>
-//         <title>Virtual Tour | Wellness</title>
-//       </Helmet>
-
-//       <section className="relative h-[100vh] overflow-hidden">
-//         {/* Hero background video or panorama */}
-//         <iframe
-//           src="https://youtu.be/pDyRYcxFJH8"
-//           title="Virtual Tour"
-//           className="w-full h-full"
-//           allowFullScreen
-//         ></iframe>
-
-//         <div className="absolute top-0 left-0 w-full h-full bg-black/40 flex items-center justify-center">
-//           <h1 className="text-4xl md:text-6xl font-bold text-white text-center px-4">
-//             Explore Wellness Through Our Virtual Tour
-//           </h1>
-//         </div>
-//       </section>
-
-//       {/* About Virtual Tour */}
-//       <section className="bg-[#F2F1E8] text-[#435334] py-20 px-6 text-center">
-//         <div className="max-w-4xl mx-auto">
-//           <h2 className="text-3xl md:text-4xl font-semibold mb-6">
-//             A Glimpse Into Holistic Wellness
-//           </h2>
-//           <p className="text-lg md:text-xl leading-relaxed">
-//             Walk through our serene environments, from the yoga halls and therapy rooms to organic farms and accommodations – all virtually. Feel the essence before you arrive.
-//           </p>
-//         </div>
-//       </section>
-//     </div>
-//   )
-// }
-
-// export default VirtualTourPage
 
 
-// import React from 'react'
-// import { Helmet } from 'react-helmet'
-// import VirtualTourSphere from '../components/VirtualTourSphere'
+//--------working-------243//
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+import { Pannellum } from 'pannellum-react';
 
-// const VirtualTourPage = () => {
-//   return (
-//     <div className="bg-black text-white min-h-screen p-4">
-//       <Helmet>
-//         <title>Virtual Tour | Retreat Wellness</title>
-//       </Helmet>
+// Manual CSS import solution (guaranteed to work)
+// 1. Download from: https://cdn.jsdelivr.net/npm/pannellum@2.5.6/src/css/pannellum.css
+// 2. Save to public/css/pannellum.css
+// 3. Add <link rel="stylesheet" href="/css/pannellum.css" /> to your index.html
 
-//       <section className="text-center py-8">
-//         <h1 className="text-4xl font-bold mb-2">Explore Our Retreat</h1>
-//         <p className="text-lg text-gray-300 max-w-xl mx-auto">
-//           Take a 360° immersive journey through our spaces. Experience the tranquility and beauty of our retreat from the comfort of your screen.
-//         </p>
-//       </section>
+interface Hotspot {
+  pitch: number;
+  yaw: number;
+  type: 'scene' | 'info';
+  text: string;
+  sceneId?: string;
+  info?: string;
+}
 
-//       <div className="max-w-6xl mx-auto">
-//         <VirtualTourSphere />
-//       </div>
+interface Scene {
+  title: string;
+  image: string;
+  hotspots: Hotspot[];
+}
 
-//       <section className="mt-12">
-//         <h2 className="text-3xl font-semibold text-center mb-6">Retreat Walkthrough</h2>
-//         <div className="aspect-w-16 aspect-h-9">
-//           <iframe
-//             className="w-full h-full rounded-xl"
-//             src="https://youtu.be/pDyRYcxFJH8"
-//             title="360° Retreat Walkthrough"
-//             allowFullScreen
-//           ></iframe>
-//         </div>
-//       </section>
-//     </div>
-//   )
-// }
+const VirtualTourPage: React.FC = () => {
+  const [activeInfo, setActiveInfo] = useState<string | null>(null);
+  const navigate = useNavigate();
 
-// export default VirtualTourPage;
+  // Tour scenes configuration
+  const scenes: Record<string, Scene> = {
+    lobby: {
+      title: "Main Lobby",
+      image: "https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://pannellum.org/images/alma.jpg",
+      hotspots: [
+        { pitch: -10, yaw: 180, type: "scene", text: "Yoga Hall", sceneId: "yoga-hall" },
+        { pitch: 5, yaw: 90, type: "info", text: "Reception Area", info: "Our welcoming reception area..." }
+      ]
+    },
+    "yoga-hall": {
+      title: "Yoga Hall",
+      image: "https://i0.wp.com/thevalemagazine.com/wp-content/uploads/2022/04/zenbo-seinei-awaji-island.jpeg?fit=1024%2C683&ssl=1",
+      hotspots: [
+        { pitch: 0, yaw: 0, type: "scene", text: "Back to Lobby", sceneId: "lobby" },
+        { pitch: -5, yaw: -90, type: "info", text: "Meditation Space", info: "Peaceful area for meditation..." }
+      ]
+    }
+  };
 
+  const [currentScene, setCurrentScene] = useState<keyof typeof scenes>("lobby");
 
-//-----------------working fine-------------------//
+  const handleHotspotClick = (hotspot: Hotspot) => {
+    if (hotspot.type === "scene" && hotspot.sceneId) {
+      setCurrentScene(hotspot.sceneId);
+    } else if (hotspot.type === "info" && hotspot.info) {
+      setActiveInfo(hotspot.info);
+    }
+  };
 
-// import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
-// import styled from 'styled-components';
-// import { Pannellum } from 'pannellum-react';
+  return (
+    <TourContainer>
+      <TourHeader>
+        <BackButton onClick={() => navigate(-1)}>
+          &larr; Back
+        </BackButton>
+        <TourTitle>{scenes[currentScene].title}</TourTitle>
+        <TourControls>
+          <ControlButton onClick={() => setCurrentScene("lobby")}>
+            Reset View
+          </ControlButton>
+          <ControlButton onClick={() => document.documentElement.requestFullscreen()}>
+            Fullscreen
+          </ControlButton>
+        </TourControls>
+      </TourHeader>
 
-// // Manual CSS import solution (guaranteed to work)
-// // 1. Download from: https://cdn.jsdelivr.net/npm/pannellum@2.5.6/src/css/pannellum.css
-// // 2. Save to public/css/pannellum.css
-// // 3. Add <link rel="stylesheet" href="/css/pannellum.css" /> to your index.html
+      <PannellumViewer>
+        <Pannellum
+          width="100%"
+          height="100%"
+          image={scenes[currentScene].image}
+          pitch={10}
+          yaw={180}
+          hfov={100}
+          autoLoad
+          showZoomCtrl={false}
+          showFullscreenCtrl={false}
+          hotspotDebug={false}
+          hotspots={scenes[currentScene].hotspots.map(hotspot => ({
+            pitch: hotspot.pitch,
+            yaw: hotspot.yaw,
+            type: hotspot.type,
+            text: hotspot.text,
+            sceneId: hotspot.sceneId,
+            clickHandlerFunc: () => handleHotspotClick(hotspot),
+            clickHandlerArgs: hotspot
+          }))}
+        />
+      </PannellumViewer>
 
-// interface Hotspot {
-//   pitch: number;
-//   yaw: number;
-//   type: 'scene' | 'info';
-//   text: string;
-//   sceneId?: string;
-//   info?: string;
-// }
+      {activeInfo && (
+        <InfoOverlay>
+          <InfoContent>
+            <p>{activeInfo}</p>
+            <CloseButton onClick={() => setActiveInfo(null)}>×</CloseButton>
+          </InfoContent>
+        </InfoOverlay>
+      )}
 
-// interface Scene {
-//   title: string;
-//   image: string;
-//   hotspots: Hotspot[];
-// }
+      <NavigationDots>
+        {Object.keys(scenes).map((sceneId) => (
+          <Dot
+            key={sceneId}
+            $active={currentScene === sceneId}
+            onClick={() => setCurrentScene(sceneId)}
+          />
+        ))}
+      </NavigationDots>
+    </TourContainer>
+  );
+};
 
-// const VirtualTourPage: React.FC = () => {
-//   const [activeInfo, setActiveInfo] = useState<string | null>(null);
-//   const navigate = useNavigate();
+// Styled components
+const TourContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+`;
 
-//   // Tour scenes configuration
-//   const scenes: Record<string, Scene> = {
-//     lobby: {
-//       title: "Main Lobby",
-//       image: "https://m.media-amazon.com/images/I/51o1IkAGs9L.jpg",
-//       hotspots: [
-//         { pitch: -10, yaw: 180, type: "scene", text: "Yoga Hall", sceneId: "yoga-hall" },
-//         { pitch: 5, yaw: 90, type: "info", text: "Reception Area", info: "Our welcoming reception area..." }
-//       ]
-//     },
-//     "yoga-hall": {
-//       title: "Yoga Hall",
-//       image: "https://i0.wp.com/thevalemagazine.com/wp-content/uploads/2022/04/zenbo-seinei-awaji-island.jpeg?fit=1024%2C683&ssl=1",
-//       hotspots: [
-//         { pitch: 0, yaw: 0, type: "scene", text: "Back to Lobby", sceneId: "lobby" },
-//         { pitch: -5, yaw: -90, type: "info", text: "Meditation Space", info: "Peaceful area for meditation..." }
-//       ]
-//     }
-//   };
+const TourHeader = styled.header`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  z-index: 10;
+`;
 
-//   const [currentScene, setCurrentScene] = useState<keyof typeof scenes>("lobby");
+const BackButton = styled.button`
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+`;
 
-//   const handleHotspotClick = (hotspot: Hotspot) => {
-//     if (hotspot.type === "scene" && hotspot.sceneId) {
-//       setCurrentScene(hotspot.sceneId);
-//     } else if (hotspot.type === "info" && hotspot.info) {
-//       setActiveInfo(hotspot.info);
-//     }
-//   };
+const TourTitle = styled.h1`
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+`;
 
-//   return (
-//     <TourContainer>
-//       <TourHeader>
-//         <BackButton onClick={() => navigate(-1)}>
-//           &larr; Back
-//         </BackButton>
-//         <TourTitle>{scenes[currentScene].title}</TourTitle>
-//         <TourControls>
-//           <ControlButton onClick={() => setCurrentScene("lobby")}>
-//             Reset View
-//           </ControlButton>
-//           <ControlButton onClick={() => document.documentElement.requestFullscreen()}>
-//             Fullscreen
-//           </ControlButton>
-//         </TourControls>
-//       </TourHeader>
+const TourControls = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
 
-//       <PannellumViewer>
-//         <Pannellum
-//           width="100%"
-//           height="100%"
-//           image={scenes[currentScene].image}
-//           pitch={10}
-//           yaw={180}
-//           hfov={100}
-//           autoLoad
-//           showZoomCtrl={false}
-//           showFullscreenCtrl={false}
-//           hotspotDebug={false}
-//           hotspots={scenes[currentScene].hotspots.map(hotspot => ({
-//             pitch: hotspot.pitch,
-//             yaw: hotspot.yaw,
-//             type: hotspot.type,
-//             text: hotspot.text,
-//             sceneId: hotspot.sceneId,
-//             clickHandlerFunc: () => handleHotspotClick(hotspot),
-//             clickHandlerArgs: hotspot
-//           }))}
-//         />
-//       </PannellumViewer>
+const ControlButton = styled.button`
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid white;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
 
-//       {activeInfo && (
-//         <InfoOverlay>
-//           <InfoContent>
-//             <p>{activeInfo}</p>
-//             <CloseButton onClick={() => setActiveInfo(null)}>×</CloseButton>
-//           </InfoContent>
-//         </InfoOverlay>
-//       )}
+  &:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+`;
 
-//       <NavigationDots>
-//         {Object.keys(scenes).map((sceneId) => (
-//           <Dot
-//             key={sceneId}
-//             $active={currentScene === sceneId}
-//             onClick={() => setCurrentScene(sceneId)}
-//           />
-//         ))}
-//       </NavigationDots>
-//     </TourContainer>
-//   );
-// };
+const PannellumViewer = styled.div`
+  flex: 1;
+  width: 100%;
+`;
 
-// // Styled components
-// const TourContainer = styled.div`
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   display: flex;
-//   flex-direction: column;
-//   background-color: #000;
-// `;
+const InfoOverlay = styled.div`
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  max-width: 400px;
+  z-index: 10;
+`;
 
-// const TourHeader = styled.header`
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   padding: 1rem;
-//   background-color: rgba(0, 0, 0, 0.7);
-//   color: white;
-//   z-index: 10;
-// `;
+const InfoContent = styled.div`
+  position: relative;
+`;
 
-// const BackButton = styled.button`
-//   background: none;
-//   border: none;
-//   color: white;
-//   font-size: 1rem;
-//   cursor: pointer;
-//   padding: 0.5rem;
-// `;
+const CloseButton = styled.button`
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: black;
+`;
 
-// const TourTitle = styled.h1`
-//   margin: 0;
-//   font-size: 1.5rem;
-//   font-weight: 400;
-// `;
+const NavigationDots = styled.div`
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+`;
 
-// const TourControls = styled.div`
-//   display: flex;
-//   gap: 1rem;
-// `;
+const Dot = styled.div<{ $active: boolean }>`
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: ${(props) => (props.$active ? 'white' : 'rgba(255, 255, 255, 0.5)')};
+  cursor: pointer;
+  transition: all 0.3s;
 
-// const ControlButton = styled.button`
-//   background: rgba(255, 255, 255, 0.2);
-//   border: 1px solid white;
-//   color: white;
-//   padding: 0.5rem 1rem;
-//   border-radius: 4px;
-//   cursor: pointer;
-//   transition: all 0.3s;
+  &:hover {
+    transform: scale(1.2);
+  }
+`;
 
-//   &:hover {
-//     background: rgba(255, 255, 255, 0.3);
-//   }
-// `;
-
-// const PannellumViewer = styled.div`
-//   flex: 1;
-//   width: 100%;
-// `;
-
-// const InfoOverlay = styled.div`
-//   position: absolute;
-//   bottom: 2rem;
-//   left: 2rem;
-//   background: rgba(0, 0, 0, 0.7);
-//   color: white;
-//   padding: 1.5rem;
-//   border-radius: 8px;
-//   max-width: 400px;
-//   z-index: 10;
-// `;
-
-// const InfoContent = styled.div`
-//   position: relative;
-// `;
-
-// const CloseButton = styled.button`
-//   position: absolute;
-//   top: -1rem;
-//   right: -1rem;
-//   background: white;
-//   border: none;
-//   border-radius: 50%;
-//   width: 2rem;
-//   height: 2rem;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   cursor: pointer;
-//   font-size: 1.2rem;
-//   color: black;
-// `;
-
-// const NavigationDots = styled.div`
-//   position: absolute;
-//   bottom: 1rem;
-//   left: 50%;
-//   transform: translateX(-50%);
-//   display: flex;
-//   gap: 0.5rem;
-//   z-index: 10;
-// `;
-
-// const Dot = styled.div<{ $active: boolean }>`
-//   width: 12px;
-//   height: 12px;
-//   border-radius: 50%;
-//   background-color: ${(props) => (props.$active ? 'white' : 'rgba(255, 255, 255, 0.5)')};
-//   cursor: pointer;
-//   transition: all 0.3s;
-
-//   &:hover {
-//     transform: scale(1.2);
-//   }
-// `;
-
-// export default VirtualTourPage;
+export default VirtualTourPage;
 
 
 
-
+//--------247-641----//
 // import React, { useState } from 'react';
 // import { useNavigate } from 'react-router-dom';
 // import styled from 'styled-components';
@@ -358,7 +275,7 @@
 //   const scenes: Record<string, Scene> = {
 //     lobby: {
 //       title: "Main Lobby",
-//       video: "https://videos.pexels.com/video-files/4781574/4781574-hd_1920_1080_25fps.mp4",
+//       video: "https://cdn-icons-png.flaticon.com/512/744/744555.png",
 //       hotspots: [
 //         { pitch: -10, yaw: 180, type: "scene", text: "Yoga Hall", sceneId: "yoga-hall" },
 //         { pitch: 5, yaw: 90, type: "info", text: "Reception Area", info: "Our welcoming reception area with comfortable seating and helpful staff ready to assist you." }
@@ -726,385 +643,385 @@
 
 
 
-import React, { useState, useRef, useEffect } from 'react';
-import styled from 'styled-components';
-import { PannellumVideo, Pannellum } from 'pannellum-react';
+// import React, { useState, useRef, useEffect } from 'react';
+// import styled from 'styled-components';
+// import { PannellumVideo, Pannellum } from 'pannellum-react';
 
-interface Hotspot {
-  pitch: number;
-  yaw: number;
-  type: 'scene' | 'info';
-  text: string;
-  sceneId?: string;
-  info?: string;
-}
+// interface Hotspot {
+//   pitch: number;
+//   yaw: number;
+//   type: 'scene' | 'info';
+//   text: string;
+//   sceneId?: string;
+//   info?: string;
+// }
 
-interface Scene {
-  title: string;
-  video: string;
-  hotspots: Hotspot[];
-}
+// interface Scene {
+//   title: string;
+//   video: string;
+//   hotspots: Hotspot[];
+// }
 
-const VirtualTourPage: React.FC = () => {
-  const [currentScene, setCurrentScene] = useState<string>('lobby');
-  const [videoLoaded, setVideoLoaded] = useState<boolean>(false);
-  const [videoError, setVideoError] = useState<boolean>(false);
-  const [isMuted, setIsMuted] = useState<boolean>(true);
-  const [activeInfo, setActiveInfo] = useState<string | null>(null);
-  const playerRef = useRef<Pannellum | null>(null);
+// const VirtualTourPage: React.FC = () => {
+//   const [currentScene, setCurrentScene] = useState<string>('lobby');
+//   const [videoLoaded, setVideoLoaded] = useState<boolean>(false);
+//   const [videoError, setVideoError] = useState<boolean>(false);
+//   const [isMuted, setIsMuted] = useState<boolean>(true);
+//   const [activeInfo, setActiveInfo] = useState<string | null>(null);
+//   const playerRef = useRef<Pannellum | null>(null);
 
-  // Tour scenes configuration
-  const scenes: Record<string, Scene> = {
-    lobby: {
-      title: "Main Lobby",
-      video: "https://cdn.jsdelivr.net/gh/pannellum/pannellum@master/examples/test-videos/stockholm.mp4",
-      hotspots: [
-        { pitch: -10, yaw: 180, type: "scene", text: "Yoga Hall", sceneId: "yoga-hall" },
-        { pitch: 5, yaw: 90, type: "info", text: "Reception", info: "Our welcoming reception area..." }
-      ]
-    },
-    "yoga-hall": {
-      title: "Yoga Studio",
-      video: "https://cdn.jsdelivr.net/gh/pannellum/pannellum@master/examples/test-videos/stockholm.mp4",
-      hotspots: [
-        { pitch: 0, yaw: 0, type: "scene", text: "Back to Lobby", sceneId: "lobby" },
-        { pitch: -5, yaw: -90, type: "info", text: "Meditation", info: "Peaceful meditation space..." }
-      ]
-    }
-  };
+//   // Tour scenes configuration
+//   const scenes: Record<string, Scene> = {
+//     lobby: {
+//       title: "Main Lobby",
+//       video: "https://cdn.jsdelivr.net/gh/pannellum/pannellum@master/examples/test-videos/stockholm.mp4",
+//       hotspots: [
+//         { pitch: -10, yaw: 180, type: "scene", text: "Yoga Hall", sceneId: "yoga-hall" },
+//         { pitch: 5, yaw: 90, type: "info", text: "Reception", info: "Our welcoming reception area..." }
+//       ]
+//     },
+//     "yoga-hall": {
+//       title: "Yoga Studio",
+//       video: "https://cdn.jsdelivr.net/gh/pannellum/pannellum@master/examples/test-videos/stockholm.mp4",
+//       hotspots: [
+//         { pitch: 0, yaw: 0, type: "scene", text: "Back to Lobby", sceneId: "lobby" },
+//         { pitch: -5, yaw: -90, type: "info", text: "Meditation", info: "Peaceful meditation space..." }
+//       ]
+//     }
+//   };
 
-  const handleSceneChange = (sceneId: string) => {
-    setVideoLoaded(false);
-    setVideoError(false);
-    setActiveInfo(null);
+//   const handleSceneChange = (sceneId: string) => {
+//     setVideoLoaded(false);
+//     setVideoError(false);
+//     setActiveInfo(null);
     
-    // Safely stop player if it exists and has the stop method
-    if (playerRef.current && typeof playerRef.current.stop === 'function') {
-      playerRef.current.stop();
-    }
-    setCurrentScene(sceneId);
-  };
+//     // Safely stop player if it exists and has the stop method
+//     if (playerRef.current && typeof playerRef.current.stop === 'function') {
+//       playerRef.current.stop();
+//     }
+//     setCurrentScene(sceneId);
+//   };
 
-  const handleHotspotClick = (hotspot: Hotspot) => {
-    if (hotspot.type === 'scene' && hotspot.sceneId) {
-      handleSceneChange(hotspot.sceneId);
-    } else if (hotspot.type === 'info' && hotspot.info) {
-      setActiveInfo(hotspot.info);
-    }
-  };
+//   const handleHotspotClick = (hotspot: Hotspot) => {
+//     if (hotspot.type === 'scene' && hotspot.sceneId) {
+//       handleSceneChange(hotspot.sceneId);
+//     } else if (hotspot.type === 'info' && hotspot.info) {
+//       setActiveInfo(hotspot.info);
+//     }
+//   };
 
-  const toggleMute = () => {
-    setIsMuted(!isMuted);
-  };
+//   const toggleMute = () => {
+//     setIsMuted(!isMuted);
+//   };
 
-  useEffect(() => {
-    return () => {
-      // Cleanup on unmount
-      if (playerRef.current && typeof playerRef.current.stop === 'function') {
-        playerRef.current.stop();
-      }
-    };
-  }, []);
+//   useEffect(() => {
+//     return () => {
+//       // Cleanup on unmount
+//       if (playerRef.current && typeof playerRef.current.stop === 'function') {
+//         playerRef.current.stop();
+//       }
+//     };
+//   }, []);
 
-  return (
-    <TourContainer>
-      <TourHeader>
-        <TourTitle>{scenes[currentScene].title}</TourTitle>
-        <TourControls>
-          <ControlButton onClick={toggleMute}>
-            {isMuted ? 'Unmute' : 'Mute'}
-          </ControlButton>
-          <ControlButton onClick={() => document.documentElement.requestFullscreen()}>
-            Fullscreen
-          </ControlButton>
-        </TourControls>
-      </TourHeader>
+//   return (
+//     <TourContainer>
+//       <TourHeader>
+//         <TourTitle>{scenes[currentScene].title}</TourTitle>
+//         <TourControls>
+//           <ControlButton onClick={toggleMute}>
+//             {isMuted ? 'Unmute' : 'Mute'}
+//           </ControlButton>
+//           <ControlButton onClick={() => document.documentElement.requestFullscreen()}>
+//             Fullscreen
+//           </ControlButton>
+//         </TourControls>
+//       </TourHeader>
 
-      <PannellumViewer>
-        {!videoLoaded && !videoError && (
-          <LoadingOverlay>
-            <Spinner />
-            <LoadingText>Loading 360° Experience...</LoadingText>
-          </LoadingOverlay>
-        )}
+//       <PannellumViewer>
+//         {!videoLoaded && !videoError && (
+//           <LoadingOverlay>
+//             <Spinner />
+//             <LoadingText>Loading 360° Experience...</LoadingText>
+//           </LoadingOverlay>
+//         )}
 
-        {videoError && (
-          <ErrorOverlay>
-            <h3>Video Loading Failed</h3>
-            <p>Please check your internet connection</p>
-            <RetryButton onClick={() => window.location.reload()}>
-              Retry
-            </RetryButton>
-          </ErrorOverlay>
-        )}
+//         {videoError && (
+//           <ErrorOverlay>
+//             <h3>Video Loading Failed</h3>
+//             <p>Please check your internet connection</p>
+//             <RetryButton onClick={() => window.location.reload()}>
+//               Retry
+//             </RetryButton>
+//           </ErrorOverlay>
+//         )}
 
-        <PannellumVideo
-          ref={playerRef}
-          width="100%"
-          height="100%"
-          video={scenes[currentScene].video}
-          pitch={10}
-          yaw={180}
-          hfov={100}
-          autoLoad
-          autoPlay
-          loop
-          muted={isMuted}
-          showZoomCtrl={false}
-          showFullscreenCtrl={false}
-          hotspotDebug={false}
-          onLoad={() => {
-            setVideoLoaded(true);
-            setVideoError(false);
-          }}
-          onError={() => {
-            setVideoError(true);
-            setVideoLoaded(false);
-          }}
-          hotspots={scenes[currentScene].hotspots.map(hotspot => ({
-            pitch: hotspot.pitch,
-            yaw: hotspot.yaw,
-            type: hotspot.type,
-            text: hotspot.text,
-            sceneId: hotspot.sceneId,
-            clickHandlerFunc: () => handleHotspotClick(hotspot),
-            clickHandlerArgs: hotspot
-          }))}
-        />
-      </PannellumViewer>
+//         <PannellumVideo
+//           ref={playerRef}
+//           width="100%"
+//           height="100%"
+//           video={scenes[currentScene].video}
+//           pitch={10}
+//           yaw={180}
+//           hfov={100}
+//           autoLoad
+//           autoPlay
+//           loop
+//           muted={isMuted}
+//           showZoomCtrl={false}
+//           showFullscreenCtrl={false}
+//           hotspotDebug={false}
+//           onLoad={() => {
+//             setVideoLoaded(true);
+//             setVideoError(false);
+//           }}
+//           onError={() => {
+//             setVideoError(true);
+//             setVideoLoaded(false);
+//           }}
+//           hotspots={scenes[currentScene].hotspots.map(hotspot => ({
+//             pitch: hotspot.pitch,
+//             yaw: hotspot.yaw,
+//             type: hotspot.type,
+//             text: hotspot.text,
+//             sceneId: hotspot.sceneId,
+//             clickHandlerFunc: () => handleHotspotClick(hotspot),
+//             clickHandlerArgs: hotspot
+//           }))}
+//         />
+//       </PannellumViewer>
 
-      {activeInfo && (
-        <InfoOverlay>
-          <InfoContent>
-            <p>{activeInfo}</p>
-            <CloseButton onClick={() => setActiveInfo(null)}>×</CloseButton>
-          </InfoContent>
-        </InfoOverlay>
-      )}
+//       {activeInfo && (
+//         <InfoOverlay>
+//           <InfoContent>
+//             <p>{activeInfo}</p>
+//             <CloseButton onClick={() => setActiveInfo(null)}>×</CloseButton>
+//           </InfoContent>
+//         </InfoOverlay>
+//       )}
 
-      <NavigationDots>
-        {Object.keys(scenes).map((sceneId) => (
-          <Dot
-            key={sceneId}
-            $active={currentScene === sceneId}
-            onClick={() => handleSceneChange(sceneId)}
-            title={scenes[sceneId].title}
-          />
-        ))}
-      </NavigationDots>
-    </TourContainer>
-  );
-};
+//       <NavigationDots>
+//         {Object.keys(scenes).map((sceneId) => (
+//           <Dot
+//             key={sceneId}
+//             $active={currentScene === sceneId}
+//             onClick={() => handleSceneChange(sceneId)}
+//             title={scenes[sceneId].title}
+//           />
+//         ))}
+//       </NavigationDots>
+//     </TourContainer>
+//   );
+// };
 
-// Styled Components
-const TourContainer = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: #000;
-`;
+// // Styled Components
+// const TourContainer = styled.div`
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   background-color: #000;
+// `;
 
-const TourHeader = styled.header`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  z-index: 10;
-`;
+// const TourHeader = styled.header`
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   padding: 1rem;
+//   background-color: rgba(0, 0, 0, 0.7);
+//   color: white;
+//   z-index: 10;
+// `;
 
-const TourTitle = styled.h1`
-  margin: 0;
-  font-size: 1.5rem;
-  font-weight: 400;
-`;
+// const TourTitle = styled.h1`
+//   margin: 0;
+//   font-size: 1.5rem;
+//   font-weight: 400;
+// `;
 
-const TourControls = styled.div`
-  display: flex;
-  gap: 1rem;
-`;
+// const TourControls = styled.div`
+//   display: flex;
+//   gap: 1rem;
+// `;
 
-const ControlButton = styled.button`
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid white;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.3s;
+// const ControlButton = styled.button`
+//   background: rgba(255, 255, 255, 0.2);
+//   border: 1px solid white;
+//   color: white;
+//   padding: 0.5rem 1rem;
+//   border-radius: 4px;
+//   cursor: pointer;
+//   transition: all 0.3s;
 
-  &:hover {
-    background: rgba(255, 255, 255, 0.3);
-  }
-`;
+//   &:hover {
+//     background: rgba(255, 255, 255, 0.3);
+//   }
+// `;
 
-const PannellumViewer = styled.div`
-  flex: 1;
-  width: 100%;
-  position: relative;
-`;
+// const PannellumViewer = styled.div`
+//   flex: 1;
+//   width: 100%;
+//   position: relative;
+// `;
 
-const LoadingOverlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  z-index: 5;
-`;
+// const LoadingOverlay = styled.div`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   background-color: rgba(0, 0, 0, 0.7);
+//   color: white;
+//   z-index: 5;
+// `;
 
-const Spinner = styled.div`
-  border: 4px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  border-top: 4px solid white;
-  width: 40px;
-  height: 40px;
-  animation: spin 1s linear infinite;
+// const Spinner = styled.div`
+//   border: 4px solid rgba(255, 255, 255, 0.3);
+//   border-radius: 50%;
+//   border-top: 4px solid white;
+//   width: 40px;
+//   height: 40px;
+//   animation: spin 1s linear infinite;
 
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-`;
+//   @keyframes spin {
+//     0% { transform: rotate(0deg); }
+//     100% { transform: rotate(360deg); }
+//   }
+// `;
 
-const LoadingText = styled.p`
-  margin-top: 1rem;
-  font-size: 1.2rem;
-`;
+// const LoadingText = styled.p`
+//   margin-top: 1rem;
+//   font-size: 1.2rem;
+// `;
 
-const ErrorOverlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.9);
-  color: white;
-  z-index: 10;
-  padding: 2rem;
-  text-align: center;
+// const ErrorOverlay = styled.div`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   background-color: rgba(0, 0, 0, 0.9);
+//   color: white;
+//   z-index: 10;
+//   padding: 2rem;
+//   text-align: center;
 
-  h3 {
-    margin-bottom: 0.5rem;
-  }
+//   h3 {
+//     margin-bottom: 0.5rem;
+//   }
 
-  p {
-    margin-bottom: 1.5rem;
-  }
-`;
+//   p {
+//     margin-bottom: 1.5rem;
+//   }
+// `;
 
-const RetryButton = styled.button`
-  padding: 0.75rem 1.5rem;
-  background: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s;
+// const RetryButton = styled.button`
+//   padding: 0.75rem 1.5rem;
+//   background: #4CAF50;
+//   color: white;
+//   border: none;
+//   border-radius: 4px;
+//   font-size: 1rem;
+//   cursor: pointer;
+//   transition: background 0.3s;
 
-  &:hover {
-    background: #45a049;
-  }
-`;
+//   &:hover {
+//     background: #45a049;
+//   }
+// `;
 
-const NavigationDots = styled.div`
-  position: absolute;
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 0.8rem;
-  z-index: 10;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 0.8rem;
-  border-radius: 2rem;
-`;
+// const NavigationDots = styled.div`
+//   position: absolute;
+//   bottom: 1rem;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   display: flex;
+//   gap: 0.8rem;
+//   z-index: 10;
+//   background: rgba(0, 0, 0, 0.5);
+//   padding: 0.8rem;
+//   border-radius: 2rem;
+// `;
 
-const Dot = styled.div<{ $active: boolean }>`
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background-color: ${(props) => (props.$active ? 'white' : 'rgba(255, 255, 255, 0.5)')};
-  cursor: pointer;
-  transition: all 0.3s;
-  border: ${(props) => (props.$active ? '2px solid #fff' : 'none')};
+// const Dot = styled.div<{ $active: boolean }>`
+//   width: 14px;
+//   height: 14px;
+//   border-radius: 50%;
+//   background-color: ${(props) => (props.$active ? 'white' : 'rgba(255, 255, 255, 0.5)')};
+//   cursor: pointer;
+//   transition: all 0.3s;
+//   border: ${(props) => (props.$active ? '2px solid #fff' : 'none')};
 
-  &:hover {
-    transform: scale(1.3);
-    background-color: white;
-  }
-`;
+//   &:hover {
+//     transform: scale(1.3);
+//     background-color: white;
+//   }
+// `;
 
 
-const InfoOverlay = styled.div`
-  position: absolute;
-  bottom: 2rem;
-  left: 2rem;
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 1.5rem;
-  border-radius: 8px;
-  max-width: 400px;
-  z-index: 10;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+// const InfoOverlay = styled.div`
+//   position: absolute;
+//   bottom: 2rem;
+//   left: 2rem;
+//   background: rgba(0, 0, 0, 0.8);
+//   color: white;
+//   padding: 1.5rem;
+//   border-radius: 8px;
+//   max-width: 400px;
+//   z-index: 10;
+//   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 
-  @media (max-width: 768px) {
-    max-width: 80%;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 5rem;
-  }
-`;
+//   @media (max-width: 768px) {
+//     max-width: 80%;
+//     left: 50%;
+//     transform: translateX(-50%);
+//     bottom: 5rem;
+//   }
+// `;
 
-const InfoContent = styled.div`
-  position: relative;
-  padding-right: 1.5rem;
+// const InfoContent = styled.div`
+//   position: relative;
+//   padding-right: 1.5rem;
 
-  p {
-    margin: 0;
-    line-height: 1.5;
-  }
-`;
+//   p {
+//     margin: 0;
+//     line-height: 1.5;
+//   }
+// `;
 
-const CloseButton = styled.button`
-  position: absolute;
-  top: -0.5rem;
-  right: -0.5rem;
-  background: white;
-  border: none;
-  border-radius: 50%;
-  width: 1.8rem;
-  height: 1.8rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 1.2rem;
-  color: black;
-  font-weight: bold;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s;
+// const CloseButton = styled.button`
+//   position: absolute;
+//   top: -0.5rem;
+//   right: -0.5rem;
+//   background: white;
+//   border: none;
+//   border-radius: 50%;
+//   width: 1.8rem;
+//   height: 1.8rem;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   cursor: pointer;
+//   font-size: 1.2rem;
+//   color: black;
+//   font-weight: bold;
+//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+//   transition: all 0.2s;
 
-  &:hover {
-    transform: scale(1.1);
-    background: #f0f0f0;
-  }
-`;
+//   &:hover {
+//     transform: scale(1.1);
+//     background: #f0f0f0;
+//   }
+// `;
 
-export default VirtualTourPage;
+// export default VirtualTourPage;

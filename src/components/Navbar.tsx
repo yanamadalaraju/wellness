@@ -718,8 +718,8 @@ const Navbar: React.FC = () => {
 
   const galleryDropdown = [
     { name: 'Virtual Tours', path: '/virtual-tour' },
-    { name: 'Images', path: '/gallery/images' },
-    { name: 'Events', path: '/gallery/events' },
+    { name: 'Images', path: '/image' },
+    { name: 'Events', path: '/Events' },
   ];
 
   const contactDropdown = [
@@ -734,7 +734,7 @@ const Navbar: React.FC = () => {
       pdf: '/downloads/wellness-packages.pdf' // Path to your PDF file in public folder
     },
     { name: 'Tariff', path: '/tariff' },
-    { name: 'Rules & Regulations', path: '/rules' },
+    { name: 'Rules & Regulations', path: '/Rulesandregulations' },
   ];
 
   return (

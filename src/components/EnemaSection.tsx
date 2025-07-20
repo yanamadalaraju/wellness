@@ -125,7 +125,7 @@ const therapies = [
   },
   {
     name: 'Enema',
-    image: 'https://www.nimba.in/wp-content/uploads/2020/08/Wellness-nature-service-img.jpg',
+    image: 'https://www.nimba.in/wp-content/uploads/2020/08/nimba-nature-service-img.jpg',
     content:
       'Enema is used to clean the colon by injecting fluid into the rectum. It promotes bowel movements and treats constipation effectively. This therapy is a natural way to remove toxins and reset your digestive health, especially helpful during fasting or detoxification routines.',
     benefits: [

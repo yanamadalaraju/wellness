@@ -34,6 +34,14 @@ import Recreation from './pages/Recreation'
 import Gym from './pages/Gym'
 import Carrer from './pages/Career'
 import TariffPage from './pages/TariffPage'
+import Image from './pages/Imagepage'
+import Gallerywellness from './pages/Gallery_wellness'
+import Amenitieswellness from './pages/AmenitiesGallery'
+import MediaEventswellness from './pages/MediaandEventsWellness'
+import LivingSpaceWellness from './pages/LivingSpaceGallery'
+import Events from './pages/Events'
+import EventsGallerySet from './pages/EventsGallerySet'
+import RulesAndRegulations from './pages/RulesAndRegulations'
 
 function App() {
   return (
@@ -49,6 +57,10 @@ function App() {
           <Route path="/healing-team" element={<HealingTeam />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/gallery-wellness" element={<Gallerywellness />} />
+          <Route path="/Media-wellness" element={<MediaEventswellness />} />
+          <Route path="/Living-wellness" element={<LivingSpaceWellness />} />
+          <Route path="/Amenities-wellness" element={<Amenitieswellness />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/health-packages" element={<HealthPackages />} />
           <Route path="/booking" element={<Booking />} />
@@ -69,6 +81,10 @@ function App() {
           <Route path="/gym" element={<Gym />} />
           <Route path="/career" element={<Carrer />} />
           <Route path="/tariff" element={<TariffPage />} />
+          <Route path="/image" element={<Image />} />
+          <Route path="/Events" element={<Events />} />
+          <Route path="/EventsGallerySet" element={<EventsGallerySet />} />
+          <Route path="/Rulesandregulations" element={<RulesAndRegulations />} />
           <Route path="/virtual-tour" element={<VirtualTourPage />} />
 
         </Routes>

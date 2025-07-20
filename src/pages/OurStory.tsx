@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Video360Viewer from './Video360Viewer'
 
 const OurStory: React.FC = () => {
   return (
@@ -90,7 +91,7 @@ const OurStory: React.FC = () => {
     {/* Right Image */}
     <div className="flex justify-center">
       <img
-        src="https://www.Wellness.in/wp-content/uploads/2020/08/Wellness-gif-1.gif"
+        src="https://www.nimba.in/wp-content/uploads/2020/08/nimba-gif-1.gif"
         alt="Wellness Tree Graphic"
         className="max-w-full h-auto rounded-lg shadow-md"
       />
@@ -136,7 +137,7 @@ const OurStory: React.FC = () => {
   </div>
 </section>
 
-
+{/* <Video360Viewer /> */}
 
 
       {/* Quote Section with Button */}
