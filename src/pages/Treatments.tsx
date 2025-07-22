@@ -398,58 +398,142 @@ const Programs: React.FC = () => {
             </div>
 
       {/* New Content Section */}
-      <section className="py-16 px-4 md:px-8 bg-white">
-  <div className="max-w-4xl mx-auto text-center">
-    <h2 className="text-3xl md:text-4xl font-playfair text-sage-600 mb-6">
-      Experience Best Naturopathic Treatments At Our Panchakarma Centre
-    </h2>
-    
-    <blockquote className="text-xl md:text-2xl font-playfair italic text-sage-500 mb-8">
-      "In any imbalance, there is always a path to restoration."
-    </blockquote>
-    
-    <div className="space-y-6 text-lg text-gray-700">
-      <p>
-        Our carefully curated, customized treatment plans are tailored to your unique constitution (Prakriti) 
-        and current imbalances (Vikriti). At Wellness's Panchakarma Centre, we blend ancient wisdom with 
-        modern understanding to create profound healing experiences.
-      </p>
+   <section className="py-20 px-4 md:px-8 bg-gradient-to-b from-white to-cream-50">
+  <div className="max-w-6xl mx-auto">
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-4xl font-playfair font-bold text-sage-800 mb-6 relative">
+        <span className="relative z-10">
+          Experience <span className="text-sage-600">Authentic</span> Naturopathic Treatments
+        </span>
+        <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-sage-400 opacity-80"></span>
+      </h2>
       
-      <p>
-        Each treatment protocol is designed to address root causes rather than symptoms, utilizing the 
-        powerful five-fold purification process of Panchakarma supported by naturopathic therapies. 
-        Your journey begins with thorough consultation and continues with personalized care at every step.
-      </p>
-    </div>
-
-    <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div className="bg-cream-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-        <h3 className="text-xl font-semibold text-sage-600 mb-3">Personalized Panchakarma</h3>
-        <p className="text-gray-600">
-          Deep cleansing therapies tailored to your doshic imbalance, including Abhyanga, 
-          Shirodhara, and Basti treatments.
-        </p>
-      </div>
-      <div className="bg-cream-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-        <h3 className="text-xl font-semibold text-sage-600 mb-3">Naturopathic Healing</h3>
-        <p className="text-gray-600">
-          Hydrotherapy, mud therapy, and fasting protocols to activate your body's innate healing intelligence.
-        </p>
-      </div>
-      <div className="bg-cream-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-        <h3 className="text-xl font-semibold text-sage-600 mb-3">Post-Treatment Care</h3>
-        <p className="text-gray-600">
-          Customized diet plans, lifestyle recommendations, and follow-up care to maintain your renewed vitality.
-        </p>
+      <div className="relative max-w-3xl mx-auto mt-10 mb-12">
+        <blockquote className="text-2xl md:text-3xl font-playfair italic text-sage-700 relative z-10 px-8 py-6 bg-white rounded-lg shadow-lg transform rotate-1 hover:rotate-0 transition-transform duration-300">
+          <svg 
+            className="absolute -left-4 -top-4 w-10 h-10 text-sage-200" 
+            fill="currentColor" 
+            viewBox="0 0 20 20"
+          >
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+          "In any imbalance, there is always a path to <span className="text-sage-600 font-semibold">restoration</span>."
+          <svg 
+            className="absolute -right-4 -bottom-4 w-10 h-10 text-sage-200 transform rotate-180" 
+            fill="currentColor" 
+            viewBox="0 0 20 20"
+          >
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+        </blockquote>
       </div>
     </div>
 
-    <div className="mt-12 bg-sage-50 p-6 rounded-lg border border-sage-100">
-      <p className="text-gray-700 italic">
-        "Therapy protocols are determined after comprehensive consultation and may include varying 
-        combinations of treatments based on individual constitution and health concerns. Your journey 
-        is as unique as you are."
-      </p>
+    <div className="grid md:grid-cols-2 gap-12 mb-16">
+      <div className="space-y-6 text-lg text-gray-700">
+        <p className="relative pl-8 before:absolute before:left-0 before:top-3 before:h-2 before:w-2 before:rounded-full before:bg-sage-400">
+          Our carefully curated, customized treatment plans are tailored to your unique constitution (Prakriti) 
+          and current imbalances (Vikriti). At Wellness's Panchakarma Centre, we blend <span className="font-medium text-sage-700">ancient wisdom</span> with 
+          modern understanding to create profound healing experiences.
+        </p>
+        
+        <p className="relative pl-8 before:absolute before:left-0 before:top-3 before:h-2 before:w-2 before:rounded-full before:bg-sage-400">
+          Each treatment protocol is designed to address <span className="font-medium text-sage-700">root causes</span> rather than symptoms, utilizing the 
+          powerful five-fold purification process of Panchakarma supported by naturopathic therapies. 
+          Your journey begins with thorough consultation and continues with personalized care at every step.
+        </p>
+      </div>
+      
+      <div className="relative group">
+        <div className="absolute -inset-2 bg-sage-100 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+        <div className="relative h-full bg-[url('https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')] bg-cover bg-center rounded-xl overflow-hidden shadow-lg">
+          <div className="absolute inset-0 bg-sage-800/40"></div>
+          <div className="relative z-10 p-8 h-full flex flex-col justify-center">
+            <h3 className="text-2xl font-playfair text-white font-bold mb-4">Begin Your Healing Journey</h3>
+            <p className="text-sage-100 mb-6">Experience the transformative power of authentic Panchakarma in our serene healing space.</p>
+            <button className="self-start px-6 py-3 bg-white text-sage-700 rounded-full font-medium hover:bg-sage-100 transition-all transform hover:scale-105 shadow-md flex items-center">
+              Book Consultation
+              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+      {[
+        {
+          title: "Personalized Panchakarma",
+          description: "Deep cleansing therapies tailored to your doshic imbalance, including Abhyanga, Shirodhara, and Basti treatments.",
+          icon: (
+            <svg className="w-10 h-10 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          ),
+          color: "bg-indigo-50",
+          hover: "hover:border-indigo-200"
+        },
+        {
+          title: "Naturopathic Healing",
+          description: "Hydrotherapy, mud therapy, and fasting protocols to activate your body's innate healing intelligence.",
+          icon: (
+            <svg className="w-10 h-10 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+            </svg>
+          ),
+          color: "bg-teal-50",
+          hover: "hover:border-teal-200"
+        },
+        {
+          title: "Post-Treatment Care",
+          description: "Customized diet plans, lifestyle recommendations, and follow-up care to maintain your renewed vitality.",
+          icon: (
+            <svg className="w-10 h-10 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          ),
+          color: "bg-amber-50",
+          hover: "hover:border-amber-200"
+        }
+      ].map((item, index) => (
+        <div 
+          key={index} 
+          className={`${item.color} p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-transparent ${item.hover} group transform hover:-translate-y-2`}
+        >
+          <div className="w-14 h-14 mb-6 flex items-center justify-center bg-white rounded-full shadow-sm group-hover:bg-sage-50 transition-colors">
+            {item.icon}
+          </div>
+          <h3 className="text-xl font-semibold text-sage-800 mb-4">{item.title}</h3>
+          <p className="text-gray-600 mb-5">
+            {item.description}
+          </p>
+          <a href="#" className="inline-flex items-center text-sage-600 font-medium group-hover:text-sage-700">
+            Learn more
+            <svg className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <div className="relative bg-sage-700 rounded-xl overflow-hidden shadow-xl">
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')] bg-cover bg-center opacity-20"></div>
+      <div className="relative z-10 p-8 md:p-12 text-center">
+        <svg className="w-12 h-12 mx-auto text-sage-300 mb-4" fill="currentColor" viewBox="0 0 20 20">
+          <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd"></path>
+        </svg>
+        <p className="text-xl italic text-sage-100 mb-6">
+          "Therapy protocols are determined after comprehensive consultation and may include varying 
+          combinations of treatments based on individual constitution and health concerns. Your journey 
+          is as unique as you are."
+        </p>
+        <button className="px-8 py-3 bg-white text-sage-700 rounded-full font-medium hover:bg-sage-100 transition-all transform hover:scale-105 shadow-md">
+          Discover Your Path
+        </button>
+      </div>
     </div>
   </div>
 </section>

@@ -302,51 +302,140 @@ const Programs: React.FC = () => {
             </div>
 
       {/* New Content Section */}
-    <section className="py-16 px-4 md:px-8 bg-white">
-  <div className="max-w-4xl mx-auto text-center">
-    <h2 className="text-3xl md:text-4xl font-playfair text-sage-600 mb-6">
-      In Healing, There Is a Power Beyond Our Understanding
-    </h2>
+    <section className="py-20 px-4 md:px-8 bg-gradient-to-b from-white to-sage-50/30 relative overflow-hidden">
+  {/* Decorative elements */}
+  <div className="absolute top-0 left-0 w-full h-full opacity-5">
+    <div className="absolute top-20 left-10 w-40 h-40 rounded-full bg-sage-200 blur-xl"></div>
+    <div className="absolute bottom-10 right-20 w-60 h-60 rounded-full bg-amber-100 blur-xl"></div>
+  </div>
 
-    <blockquote className="text-xl md:text-2xl font-playfair italic text-sage-500 mb-8">
-      "Our bodies are temples that need to be worshipped for all it endures inside out, and there is no time like today to truly care for its well-being."
-    </blockquote>
-
-    <div className="space-y-6 text-lg text-gray-700">
-      <p>
-        An amalgamation of deeply understood and well-curated physical, psychological, or spiritual activities — Wellness’s retreats are going to bless you with a healed and healthy mind, body, and soul.
-      </p>
+  <div className="max-w-6xl mx-auto relative z-10">
+    <div className="text-center mb-16">
+      <h2 className="text-4xl md:text-5xl font-playfair font-bold text-sage-800 mb-8 leading-tight">
+        In <span className="text-sage-600">Healing</span>, There Is a Power <br className="hidden md:block"/> Beyond Our Understanding
+      </h2>
+      
+      <div className="relative max-w-3xl mx-auto">
+        <blockquote className="text-2xl md:text-3xl font-playfair italic text-sage-700 relative z-10 px-8 py-6 bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-sage-100 transform rotate-0 hover:rotate-1 transition-transform duration-300">
+          <svg 
+            className="absolute -left-4 -top-4 w-10 h-10 text-sage-300" 
+            fill="currentColor" 
+            viewBox="0 0 20 20"
+          >
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+          <span className="relative z-20">
+            "Our bodies are temples that need to be worshipped for all it endures inside out, and there is no time like today to truly care for its well-being."
+          </span>
+          <svg 
+            className="absolute -right-4 -bottom-4 w-10 h-10 text-sage-300 transform rotate-180" 
+            fill="currentColor" 
+            viewBox="0 0 20 20"
+          >
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+        </blockquote>
+      </div>
     </div>
 
-    <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div className="bg-cream-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-        <h3 className="text-xl font-semibold text-sage-600 mb-3">Mindful Healing</h3>
-        <p className="text-gray-600">
-          Discover tranquility through meditative and therapeutic practices, calming the mind and rejuvenating the spirit.
+    <div className="grid md:grid-cols-2 gap-12 mb-16">
+      <div className="space-y-6 text-lg text-gray-700 md:pr-8">
+        <p className="relative pl-8 before:absolute before:left-0 before:top-3 before:h-2 before:w-2 before:rounded-full before:bg-sage-400">
+          An amalgamation of deeply understood and well-curated physical, psychological, or spiritual activities — <span className="font-medium text-sage-700">Wellness's retreats</span> are going to bless you with a healed and healthy mind, body, and soul.
         </p>
+        
+        <div className="relative group mt-10">
+          <div className="absolute -inset-2 bg-sage-100 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+          <div className="relative h-full bg-[url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')] bg-cover bg-center rounded-xl overflow-hidden shadow-lg min-h-[300px]">
+            <div className="absolute inset-0 bg-sage-800/40"></div>
+            <div className="relative z-10 p-8 h-full flex flex-col justify-end">
+              <h3 className="text-2xl font-playfair text-white font-bold mb-4">Begin Your Sacred Journey</h3>
+              <button className="self-start px-6 py-3 bg-white text-sage-700 rounded-full font-medium hover:bg-sage-100 transition-all transform hover:scale-105 shadow-md flex items-center">
+                Explore Retreats
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="bg-cream-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-        <h3 className="text-xl font-semibold text-sage-600 mb-3">Holistic Treatments</h3>
-        <p className="text-gray-600">
-          Personalized care with naturopathic and ayurvedic therapies that restore balance and vitality.
-        </p>
-      </div>
-      <div className="bg-cream-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-        <h3 className="text-xl font-semibold text-sage-600 mb-3">Spiritual Awakening</h3>
-        <p className="text-gray-600">
-          Engage in soulful activities that align body, mind, and soul — from yoga to nature therapy.
-        </p>
+      
+      <div className="grid grid-cols-1 gap-8">
+        {[
+          {
+            title: "Mindful Healing",
+            description: "Discover tranquility through meditative and therapeutic practices, calming the mind and rejuvenating the spirit.",
+            icon: (
+              <svg className="w-8 h-8 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+              </svg>
+            ),
+            color: "bg-indigo-50/70",
+            hover: "hover:border-indigo-200"
+          },
+          {
+            title: "Holistic Treatments",
+            description: "Personalized care with naturopathic and ayurvedic therapies that restore balance and vitality.",
+            icon: (
+              <svg className="w-8 h-8 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+              </svg>
+            ),
+            color: "bg-amber-50/70",
+            hover: "hover:border-amber-200"
+          },
+          {
+            title: "Spiritual Awakening",
+            description: "Engage in soulful activities that align body, mind, and soul — from yoga to nature therapy.",
+            icon: (
+              <svg className="w-8 h-8 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+            ),
+            color: "bg-purple-50/70",
+            hover: "hover:border-purple-200"
+          }
+        ].map((item, index) => (
+          <div 
+            key={index} 
+            className={`${item.color} p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-transparent ${item.hover} group transform hover:-translate-y-2 flex items-start`}
+          >
+            <div className="w-12 h-12 mr-6 flex-shrink-0 flex items-center justify-center bg-white rounded-full shadow-sm group-hover:bg-sage-50 transition-colors">
+              {item.icon}
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-sage-800 mb-3">{item.title}</h3>
+              <p className="text-gray-600">
+                {item.description}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
 
-    <div className="mt-12 bg-sage-50 p-6 rounded-lg border border-sage-100">
-      <p className="text-gray-700 italic">
-        "Every retreat at Wellness is crafted to offer not just relaxation but transformation — a deep connection to your true self and natural rhythm."
-      </p>
+    <div className="relative bg-sage-700 rounded-xl overflow-hidden shadow-2xl">
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1548602088-9d12a4f9c839?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')] bg-cover bg-center opacity-20"></div>
+      <div className="relative z-10 p-10 text-center">
+        <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-sage-600/20 rounded-full backdrop-blur-sm">
+          <svg className="w-8 h-8 text-sage-200" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd"></path>
+          </svg>
+        </div>
+        <p className="text-xl md:text-2xl italic text-sage-100 mb-8 leading-relaxed">
+          "Every retreat at Wellness is crafted to offer not just relaxation but transformation — a deep connection to your true self and natural rhythm."
+        </p>
+        <button className="px-8 py-3 bg-white text-sage-700 rounded-full font-medium hover:bg-sage-100 transition-all transform hover:scale-105 shadow-md flex items-center mx-auto">
+          Begin Your Transformation
+          <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </section>
-
 
       
        {/* First Section: Image Right, L shape top-right */}

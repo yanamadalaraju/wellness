@@ -944,72 +944,109 @@ const Programs: React.FC = () => {
       </div>
 
       {/* Enhanced Content Section */}
-      <section className="py-16 px-4 md:px-8 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <blockquote className="text-2xl md:text-3xl font-playfair italic text-sage-600 mb-8 relative">
-            <svg 
-              className="absolute -left-8 -top-4 w-8 h-8 text-sage-300" 
-              fill="currentColor" 
-              viewBox="0 0 20 20"
-            >
-              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
-            </svg>
-            "In a healthy body resides a happy soul."
-            <svg 
-              className="absolute -right-8 -bottom-4 w-8 h-8 text-sage-300" 
-              fill="currentColor" 
-              viewBox="0 0 20 20"
-            >
-              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
-            </svg>
-          </blockquote>
-          
-          <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-            <p>
-              The wholesome wellness of our bodies is the stepping stone to an empowering spiritual, 
-              physical and mental well-being instantly.
-            </p>
-            
-            <p>
-              A safe haven to indulge into the holistic betterment of every individual, Wellness's 
-              Wellness Programmes enable one to lead a rejuvenating, stimulating and healthy life 
-              through an effective blend of western and natural treatments.
-            </p>
-          </div>
+     <section className="py-20 px-4 md:px-8 bg-gradient-to-b from-white to-cream-50">
+  <div className="max-w-6xl mx-auto">
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-4xl font-playfair font-bold text-sage-800 mb-4">
+        Holistic Wellness Journey
+      </h2>
+      <div className="w-24 h-1 bg-sage-400 mx-auto mb-8"></div>
+      
+      <div className="relative max-w-3xl mx-auto">
+        <blockquote className="text-2xl md:text-3xl font-playfair italic text-sage-700 relative z-10 px-8 py-6 bg-white rounded-lg shadow-lg">
+          <svg 
+            className="absolute -left-2 -top-4 w-10 h-10 text-sage-300 opacity-80" 
+            fill="currentColor" 
+            viewBox="0 0 20 20"
+          >
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+          <span className="relative z-20">
+            "In a healthy body resides a <span className="text-sage-600 font-semibold">happy soul</span>."
+          </span>
+          <svg 
+            className="absolute -right-2 -bottom-4 w-10 h-10 text-sage-300 opacity-80 transform rotate-180" 
+            fill="currentColor" 
+            viewBox="0 0 20 20"
+          >
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+        </blockquote>
+        <div className="absolute -inset-4 bg-sage-100 rounded-xl opacity-30 -z-0"></div>
+      </div>
+    </div>
 
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Spiritual Well-being",
-                description: "Connect with your inner self through meditation, yoga, and mindfulness practices.",
-                icon: "🧘‍♂️"
-              },
-              {
-                title: "Physical Health",
-                description: "Restore balance with natural therapies, detox programs, and personalized treatments.",
-                icon: "💆‍♀️"
-              },
-              {
-                title: "Mental Clarity",
-                description: "Achieve peace of mind through stress management and holistic counseling.",
-                icon: "🧠"
-              }
-            ].map((item, index) => (
-              <div 
-                key={index} 
-                className="bg-cream-50 p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-cream-100 hover:border-sage-200"
-              >
-                <div className="text-4xl mb-4">{item.icon}</div>
-                <h3 className="text-xl font-semibold text-sage-600 mb-3">{item.title}</h3>
-                <p className="text-gray-600">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
+    <div className="grid md:grid-cols-2 gap-10 mb-16">
+      <div className="space-y-6 text-lg text-gray-700 leading-relaxed bg-white p-8 rounded-xl shadow-sm border border-cream-100">
+        <p className="relative pl-6 before:absolute before:left-0 before:top-3 before:h-3 before:w-3 before:rounded-full before:bg-sage-400">
+          The wholesome wellness of our bodies is the stepping stone to an empowering spiritual, 
+          physical and mental well-being instantly.
+        </p>
+        
+        <p className="relative pl-6 before:absolute before:left-0 before:top-3 before:h-3 before:w-3 before:rounded-full before:bg-sage-400">
+          A safe haven to indulge into the holistic betterment of every individual, Wellness's 
+          Programmes enable one to lead a rejuvenating, stimulating and healthy life 
+          through an effective blend of western and natural treatments.
+        </p>
+      </div>
+      
+      <div className="bg-sage-700 rounded-xl overflow-hidden shadow-lg">
+        <div className="h-full bg-[url('https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')] bg-cover bg-center bg-blend-overlay bg-sage-800/80 p-8 flex flex-col justify-center">
+          <h3 className="text-2xl font-playfair text-white font-bold mb-4">Begin Your Transformation</h3>
+          <p className="text-sage-100 mb-6">Experience the perfect harmony of body, mind and spirit through our tailored wellness programs.</p>
+          <button className="self-start px-6 py-3 bg-white text-sage-700 rounded-full font-medium hover:bg-sage-100 transition-all transform hover:scale-105 shadow-md">
+            Explore Programs
+          </button>
         </div>
-      </section>
+      </div>
+    </div>
 
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {[
+        {
+          title: "Spiritual Well-being",
+          description: "Connect with your inner self through meditation, yoga, and mindfulness practices.",
+          icon: "🧘‍♂️",
+          color: "bg-indigo-50",
+          hover: "hover:border-indigo-200"
+        },
+        {
+          title: "Physical Health",
+          description: "Restore balance with natural therapies, detox programs, and personalized treatments.",
+          icon: "💆‍♀️",
+          color: "bg-teal-50",
+          hover: "hover:border-teal-200"
+        },
+        {
+          title: "Mental Clarity",
+          description: "Achieve peace of mind through stress management and holistic counseling.",
+          icon: "🧠",
+          color: "bg-purple-50",
+          hover: "hover:border-purple-200"
+        }
+      ].map((item, index) => (
+        <div 
+          key={index} 
+          className={`${item.color} p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-transparent ${item.hover} group transform hover:-translate-y-2`}
+        >
+          <div className="text-5xl mb-6 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+            {item.icon}
+          </div>
+          <h3 className="text-xl font-semibold text-sage-800 mb-3">{item.title}</h3>
+          <p className="text-gray-600 mb-4">
+            {item.description}
+          </p>
+          <a href="#" className="inline-flex items-center text-sage-600 font-medium group-hover:text-sage-700">
+            Learn more
+            <svg className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
       {/* Enhanced Image-Text Sections */}
     {[
   {
