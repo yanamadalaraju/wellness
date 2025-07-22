@@ -505,7 +505,6 @@
 // export default Home
 
 
-
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Play, Star, Award, Users, Heart, Mountain, Waves } from 'lucide-react'
@@ -674,7 +673,7 @@ const Home: React.FC = () => {
           >
             <Link 
               to="/booking" 
-              className="bg-emerald-700 hover:bg-emerald-600 text-white text-lg px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center"
+              className="bg-[#3E5F44] hover:bg-[#2E4A34] text-white text-lg px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center"
             >
               Start Your Healing Journey
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -688,7 +687,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Promo Banner */}
-      <div className="bg-gradient-to-r from-emerald-800 to-teal-700 py-3 overflow-hidden text-white">
+      <div className="bg-gradient-to-r from-[#3E5F44] to-[#2E4A34] py-3 overflow-hidden text-white">
         <div className="animate-marquee whitespace-nowrap">
           <span className="text-lg font-medium mx-8">✨ 20% off for 10 days & above stays</span>
           <span className="text-lg font-medium mx-8">🌿 10% off for 5 days & above stays</span>
@@ -700,11 +699,11 @@ const Home: React.FC = () => {
       </div>
 
       {/* Accreditation Banner */}
-      <section className="bg-gradient-to-b from-white to-emerald-50 py-12 px-4">
+      <section className="bg-gradient-to-b from-white to-[#f0f5f1] py-12 px-4">
         <div className="max-w-6xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
           <div className="flex flex-col md:flex-row items-center p-8">
-            <div className="w-40 h-40 bg-emerald-50 rounded-full flex items-center justify-center border-4 border-emerald-200 shadow-inner shrink-0">
-              <Award className="w-16 h-16 text-emerald-600" />
+            <div className="w-40 h-40 bg-[#f0f5f1] rounded-full flex items-center justify-center border-4 border-[#d1e0d4] shadow-inner shrink-0">
+              <Award className="w-16 h-16 text-[#3E5F44]" />
             </div>
             
             <div className="md:ml-8 mt-6 md:mt-0 text-center md:text-left">
@@ -712,9 +711,9 @@ const Home: React.FC = () => {
                 <h2 className="text-2xl font-serif font-bold text-gray-800 mb-2">
                   Welcome to nimba Nature Cure & Holistic Healthcare Centre
                 </h2>
-                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 to-teal-300"></div>
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#4a7d52] to-[#3E5F44]"></div>
               </div>
-              <p className="text-xl text-emerald-700 font-medium mt-4">
+              <p className="text-xl text-[#3E5F44] font-medium mt-4">
                 Gujarat's Premier NABH Accredited Wellness Destination
               </p>
             </div>
@@ -723,15 +722,15 @@ const Home: React.FC = () => {
       </section>
 
       {/* Treatments Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-emerald-50 to-white">
+      <section className="py-20 px-4 bg-gradient-to-b from-[#f0f5f1] to-white">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-4">
             True Treatments for Chronic Wellness
           </h2>
           <div className="flex justify-center items-center mb-8">
-            <div className="w-16 h-1 bg-emerald-400 mr-3"></div>
-            <Leaf className="text-emerald-600 w-6 h-6" />
-            <div className="w-16 h-1 bg-emerald-400 ml-3"></div>
+            <div className="w-16 h-1 bg-[#4a7d52] mr-3"></div>
+            <Leaf className="text-[#3E5F44] w-6 h-6" />
+            <div className="w-16 h-1 bg-[#4a7d52] ml-3"></div>
           </div>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg mb-12">
             Our therapeutic programs target root causes to promote deep, sustainable healing through personalized natural treatments.
@@ -762,12 +761,12 @@ const Home: React.FC = () => {
 
       {/* Diseases Treated Section */}
       <section className="relative py-20 px-4 text-white bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')" }}>
-        <div className="absolute inset-0 bg-emerald-900/90 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-[#3E5F44]/90 backdrop-blur-sm"></div>
         <div className="relative max-w-7xl mx-auto z-10">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-6">
             Conditions We Treat
           </h2>
-          <p className="text-center text-emerald-100 max-w-3xl mx-auto mb-12 text-lg">
+          <p className="text-center text-[#c8d5cb] max-w-3xl mx-auto mb-12 text-lg">
             At nimba, we adopt a holistic approach to treating various ailments by detoxifying the body to promote health and well-being.
           </p>
 
@@ -779,7 +778,7 @@ const Home: React.FC = () => {
                 className="flex items-center gap-4 bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-5 rounded-xl shadow-md transition-all"
               >
                 <div className="bg-white p-2 rounded-lg shadow-sm">
-                  <item.icon className="w-6 h-6 text-emerald-800" />
+                  <item.icon className="w-6 h-6 text-[#3E5F44]" />
                 </div>
                 <h3 className="font-semibold text-lg">{item.title}</h3>
               </motion.div>
@@ -789,15 +788,15 @@ const Home: React.FC = () => {
       </section>
 
       {/* Therapies Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-white to-emerald-50">
+      <section className="py-20 px-4 bg-gradient-to-b from-white to-[#f0f5f1]">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-2">
             Popular Therapies
           </h2>
           <div className="flex justify-center items-center mb-8">
-            <div className="w-16 h-1 bg-emerald-400 mr-3"></div>
-            <HeartPulse className="text-emerald-600 w-6 h-6" />
-            <div className="w-16 h-1 bg-emerald-400 ml-3"></div>
+            <div className="w-16 h-1 bg-[#4a7d52] mr-3"></div>
+            <HeartPulse className="text-[#3E5F44] w-6 h-6" />
+            <div className="w-16 h-1 bg-[#4a7d52] ml-3"></div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -838,7 +837,7 @@ const Home: React.FC = () => {
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-800 mb-1">{therapy.title}</h3>
                   <p className="text-gray-600 text-sm mb-4">{therapy.duration}</p>
-                  <button className="w-full bg-emerald-700 hover:bg-emerald-600 text-white font-medium py-2 px-4 rounded-lg transition-all">
+                  <button className="w-full bg-[#3E5F44] hover:bg-[#2E4A34] text-white font-medium py-2 px-4 rounded-lg transition-all">
                     Book Now
                   </button>
                 </div>
@@ -850,16 +849,16 @@ const Home: React.FC = () => {
 
       {/* Testimonials Section */}
       <section className="relative py-20 px-4 text-white bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')" }}>
-        <div className="absolute inset-0 bg-emerald-900/90 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-[#3E5F44]/90 backdrop-blur-sm"></div>
         <div className="relative max-w-7xl mx-auto z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
               Healing Stories
             </h2>
             <div className="flex justify-center items-center">
-              <div className="w-16 h-1 bg-emerald-400 mr-3"></div>
-              <Star className="text-emerald-200 w-5 h-5" />
-              <div className="w-16 h-1 bg-emerald-400 ml-3"></div>
+              <div className="w-16 h-1 bg-[#4a7d52] mr-3"></div>
+              <Star className="text-[#c8d5cb] w-5 h-5" />
+              <div className="w-16 h-1 bg-[#4a7d52] ml-3"></div>
             </div>
           </div>
           
@@ -873,16 +872,16 @@ const Home: React.FC = () => {
                 <img
                   src={t.image}
                   alt={t.name}
-                  className="mx-auto rounded-full w-32 h-32 object-cover border-4 border-emerald-200 shadow-md"
+                  className="mx-auto rounded-full w-32 h-32 object-cover border-4 border-[#c8d5cb] shadow-md"
                 />
                 <div className="mt-6 relative">
-                  <FaQuoteLeft className="inline mr-2 text-emerald-200 text-xl" />
-                  <p className="inline leading-relaxed text-emerald-50">{t.quote}</p>
-                  <FaQuoteRight className="inline ml-2 text-emerald-200 text-xl" />
+                  <FaQuoteLeft className="inline mr-2 text-[#c8d5cb] text-xl" />
+                  <p className="inline leading-relaxed text-[#e8f0ea]">{t.quote}</p>
+                  <FaQuoteRight className="inline ml-2 text-[#c8d5cb] text-xl" />
                 </div>
                 <div className="mt-6 flex flex-col items-center">
                   <span className="font-semibold text-lg">{t.name}</span>
-                  <span className="text-emerald-200 text-sm">{t.role}</span>
+                  <span className="text-[#c8d5cb] text-sm">{t.role}</span>
                 </div>
               </motion.div>
             ))}
@@ -891,15 +890,15 @@ const Home: React.FC = () => {
       </section>
 
       {/* Gallery Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-emerald-50 to-white">
+      <section className="py-20 px-4 bg-gradient-to-b from-[#f0f5f1] to-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-center text-gray-800 mb-4">
             Our Sanctuary
           </h2>
           <div className="flex justify-center items-center mb-12">
-            <div className="w-16 h-1 bg-emerald-400 mr-3"></div>
-            <Sprout className="text-emerald-600 w-6 h-6" />
-            <div className="w-16 h-1 bg-emerald-400 ml-3"></div>
+            <div className="w-16 h-1 bg-[#4a7d52] mr-3"></div>
+            <Sprout className="text-[#3E5F44] w-6 h-6" />
+            <div className="w-16 h-1 bg-[#4a7d52] ml-3"></div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
@@ -915,7 +914,7 @@ const Home: React.FC = () => {
                   className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <button className="bg-emerald-700 hover:bg-emerald-600 text-white px-6 py-2 rounded-full flex items-center gap-2 transition-all">
+                  <button className="bg-[#3E5F44] hover:bg-[#2E4A34] text-white px-6 py-2 rounded-full flex items-center gap-2 transition-all">
                     {item.title} <FaArrowRight />
                   </button>
                 </div>
@@ -932,9 +931,9 @@ const Home: React.FC = () => {
             Wellness Wisdom
           </h2>
           <div className="flex justify-center items-center mb-12">
-            <div className="w-16 h-1 bg-emerald-400 mr-3"></div>
-            <BadgePlus className="text-emerald-600 w-6 h-6" />
-            <div className="w-16 h-1 bg-emerald-400 ml-3"></div>
+            <div className="w-16 h-1 bg-[#4a7d52] mr-3"></div>
+            <BadgePlus className="text-[#3E5F44] w-6 h-6" />
+            <div className="w-16 h-1 bg-[#4a7d52] ml-3"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -960,7 +959,7 @@ const Home: React.FC = () => {
                   </p>
                   <Link 
                     to="#" 
-                    className="text-emerald-700 hover:text-emerald-600 font-medium inline-flex items-center gap-1 transition-colors"
+                    className="text-[#3E5F44] hover:text-[#2E4A34] font-medium inline-flex items-center gap-1 transition-colors"
                   >
                     Read More
                     <ArrowRight className="w-4 h-4 mt-1" />
@@ -970,7 +969,7 @@ const Home: React.FC = () => {
             ))}
           </div>
 
-          <button className="mt-12 bg-emerald-700 hover:bg-emerald-600 text-white font-semibold px-8 py-3 rounded-full transition-all shadow-md hover:shadow-lg">
+          <button className="mt-12 bg-[#3E5F44] hover:bg-[#2E4A34] text-white font-semibold px-8 py-3 rounded-full transition-all shadow-md hover:shadow-lg">
             Explore All Articles
           </button>
         </div>
