@@ -289,6 +289,7 @@ import React, { useState } from 'react';
 import { FaLungs, FaAllergies, FaHeadSideCough, FaWind, FaCheckCircle } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 
+
 const therapies = [
   {
     name: 'Pulmonary Fibrosis',

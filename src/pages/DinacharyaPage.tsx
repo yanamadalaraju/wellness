@@ -147,6 +147,7 @@ import { Link } from 'react-router-dom';
 import { Sun, Moon, Droplets, Leaf, ChevronRight, Quote, Clock, Heart, Activity } from 'lucide-react';
 
 import { FaPersonPraying } from 'react-icons/fa6';
+import DinHeroSection from '../components/Dincharyacompo/Dincharyahero';
 
 const DinacharyaPage: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -259,7 +260,7 @@ const DinacharyaPage: React.FC = () => {
   return (
     <div className="dinacharya-page bg-gradient-to-b from-amber-50/30 to-white">
       {/* Hero Section with Custom Carousel */}
-      <section className="hero-section relative h-[500px] md:h-[700px] lg:h-[800px] overflow-hidden">
+      {/* <section className="hero-section relative h-[500px] md:h-[700px] lg:h-[800px] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent z-10"></div>
         <div className="relative w-full h-full">
           {carouselItems.map((item, index) => (
@@ -282,7 +283,7 @@ const DinacharyaPage: React.FC = () => {
           ))}
         </div>
         
-        {/* Carousel Indicators */}
+    
         <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-3 z-20">
           {carouselItems.map((_, index) => (
             <button
@@ -294,13 +295,15 @@ const DinacharyaPage: React.FC = () => {
           ))}
         </div>
 
-        {/* Scrolling indicator */}
+        
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
           <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
           </svg>
         </div>
-      </section>
+      </section> */}
+
+    <DinHeroSection />
 
       {/* Breadcrumbs */}
       <div className="container mx-auto px-4 py-6">

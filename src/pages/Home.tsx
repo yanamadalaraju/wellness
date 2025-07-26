@@ -527,6 +527,7 @@ import {
 import { motion } from 'framer-motion'
 import './Home.css';
 import { FaArrowRight } from 'react-icons/fa6';
+import AlertPopup from './NimbaGallery';
 
 const Home: React.FC = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
@@ -619,6 +620,7 @@ const Home: React.FC = () => {
 
   return (
     <div className="min-h-screen font-sans">
+       <AlertPopup />
       {/* Hero Section with Video Carousel */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">

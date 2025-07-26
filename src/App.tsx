@@ -43,6 +43,7 @@ import Events from './pages/Events'
 import EventsGallerySet from './pages/EventsGallerySet'
 import RulesAndRegulations from './pages/RulesAndRegulations'
 
+
 function App() {
   return (
     <Router>
@@ -83,6 +84,7 @@ function App() {
           <Route path="/tariff" element={<TariffPage />} />
           <Route path="/image" element={<Image />} />
           <Route path="/Events" element={<Events />} />
+          
           <Route path="/EventsGallerySet" element={<EventsGallerySet />} />
           <Route path="/Rulesandregulations" element={<RulesAndRegulations />} />
           <Route path="/virtual-tour" element={<VirtualTourPage />} />

@@ -381,28 +381,77 @@ const Programs: React.FC = () => {
             </div>
 
       {/* New Content Section */}
-    <section className="py-16 px-4 md:px-8 bg-white">
-  <div className="max-w-4xl mx-auto text-center">
-    <h2 className="text-3xl md:text-4xl font-playfair text-sage-600 mb-6">
-      Learn Our Stress Management & Physiotherapy Wonders Through Our Guests
-    </h2>
-
-    <blockquote className="text-xl md:text-2xl font-playfair italic text-sage-500 mb-8">
-      "Our holistic approach to physiotherapy and stress relief has transformed lives. Our guests share how their wellness journey at Wellness redefined healing for them."
-    </blockquote>
-
-    <div className="space-y-6 text-lg text-gray-700">
-      <p>
-        From chronic pain relief to emotional balance and mobility improvement, our treatments have helped individuals regain control of their lives. We blend age-old healing practices with modern therapeutic techniques for long-term well-being.
+    <section className="py-20 px-4 md:px-8 bg-gradient-to-b from-white to-sage-50">
+  <div className="max-w-5xl mx-auto">
+    <div className="text-center mb-16">
+      <h2 className="text-4xl md:text-5xl font-playfair font-bold text-sage-700 mb-6">
+        Transformative Healing Journeys
+      </h2>
+      <div className="w-24 h-1.5 bg-sage-400 mx-auto mb-8"></div>
+      <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
+        Discover how our integrative approach to physiotherapy and stress management has helped our guests reclaim their vitality
       </p>
     </div>
 
-    
+    <div className="grid md:grid-cols-2 gap-12 items-center">
+      {/* Testimonial Card */}
+      <div className="bg-white p-8 rounded-2xl shadow-lg border border-sage-100 transform transition hover:scale-[1.02] hover:shadow-xl">
+        <div className="flex items-center mb-6">
+          <div className="w-12 h-12 rounded-full bg-sage-100 flex items-center justify-center text-sage-600 mr-4">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+          </div>
+          <div>
+            <h4 className="font-semibold text-lg text-sage-800">Sarah K.</h4>
+            <p className="text-sage-500">Chronic Back Pain Relief</p>
+          </div>
+        </div>
+        <blockquote className="text-gray-700 italic text-lg border-l-4 border-sage-300 pl-6 py-2 mb-6">
+          "After years of suffering, the team at Wellness gave me my life back. Their holistic approach addressed not just my pain but the stress that was making it worse."
+        </blockquote>
+        <div className="flex space-x-1 text-sage-400">
+          {[...Array(5)].map((_, i) => (
+            <svg key={i} xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+          ))}
+        </div>
+      </div>
 
-    <div className="mt-12 bg-sage-50 p-6 rounded-lg border border-sage-100">
-      <p className="text-gray-700 italic">
-        "Wellness helped me rediscover a pain-free and stress-free life — something I never thought possible again." — A Wellness Guest
-      </p>
+      {/* Features List */}
+      <div>
+        <h3 className="text-2xl font-playfair text-sage-700 mb-6">Our Healing Approach</h3>
+        <ul className="space-y-4">
+          {[
+            "Personalized treatment plans combining physiotherapy and stress management",
+            "Evidence-based techniques with ancient wellness traditions",
+            "Mind-body connection focus for lasting results",
+            "Non-invasive, drug-free pain relief solutions",
+            "Emotional and physical healing in harmony"
+          ].map((item, index) => (
+            <li key={index} className="flex items-start">
+              <svg className="h-6 w-6 text-sage-500 mr-3 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+              <span className="text-gray-700">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    {/* Highlight Quote */}
+    <div className="mt-16 bg-sage-600 p-8 md:p-10 rounded-2xl text-center text-white relative overflow-hidden">
+      <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-sage-700 opacity-20"></div>
+      <div className="absolute -bottom-10 -left-10 w-40 h-40 rounded-full bg-sage-800 opacity-20"></div>
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-sage-300 mx-auto mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+      </svg>
+      <blockquote className="text-xl md:text-2xl font-playfair italic mb-6 relative z-10">
+        "Wellness didn't just treat my symptoms - they helped me understand and heal the root causes of my pain and stress. I've never felt more empowered in my health journey."
+      </blockquote>
+      <p className="font-semibold text-sage-200 relative z-10">— Michael T., Wellness Guest Since 2020</p>
     </div>
   </div>
 </section>
