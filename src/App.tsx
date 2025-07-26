@@ -153,6 +153,8 @@ function AppRoutes() {
   const location = useLocation()
   const hideLayout = location.pathname === '/login' || location.pathname === '/register' || location.pathname === '/customers'
 
+
+function App() {
   return (
     <>
       {!hideLayout && <Layout>
@@ -192,6 +194,7 @@ function AppRoutes() {
           <Route path="/tariff" element={<TariffPage />} />
           <Route path="/image" element={<Image />} />
           <Route path="/Events" element={<Events />} />
+          
           <Route path="/EventsGallerySet" element={<EventsGallerySet />} />
           <Route path="/Rulesandregulations" element={<RulesAndRegulations />} />
           <Route path="/virtual-tour" element={<VirtualTourPage />} />
