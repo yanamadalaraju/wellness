@@ -104,6 +104,7 @@
 
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
+
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import Experience from './pages/Experience'
@@ -145,71 +146,72 @@ import LivingSpaceWellness from './pages/LivingSpaceGallery'
 import Events from './pages/Events'
 import EventsGallerySet from './pages/EventsGallerySet'
 import RulesAndRegulations from './pages/RulesAndRegulations'
+
 import Register from './admin/Register'
-import Login from './admin/login'
+import Login from './admin/Login'
 import AdminContactDashboard from './admin/AdminContactDashboard'
 
 function AppRoutes() {
   const location = useLocation()
-  const hideLayout = location.pathname === '/login' || location.pathname === '/register' || location.pathname === '/customers'
 
+  // Define routes where layout should be hidden
+  const hideLayoutPaths = ['/login', '/register', '/customers']
+  const hideLayout = hideLayoutPaths.includes(location.pathname)
 
-function App() {
   return (
     <>
-      {!hideLayout && <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/Ourstory" element={<OurStory />} />
-          <Route path="/health-offers" element={<HealthOffers />} />
-          <Route path="/programs" element={<Programs />} />
-          <Route path="/treatments" element={<Treatments />} />
-          <Route path="/healing-team" element={<HealingTeam />} />
-          <Route path="/testimonials" element={<Testimonials />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/gallery-wellness" element={<Gallerywellness />} />
-          <Route path="/Media-wellness" element={<MediaEventswellness />} />
-          <Route path="/Living-wellness" element={<LivingSpaceWellness />} />
-          <Route path="/Amenities-wellness" element={<Amenitieswellness />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/health-packages" element={<HealthPackages />} />
-          <Route path="/booking" element={<Booking />} />
-          <Route path="/dincharya" element={<DinacharyaPage />} />
-          <Route path="/narutopathy" element={<Narutopathy />} />
-          <Route path="/ayurveda" element={<Ayurveda />} />
-          <Route path="/yoga" element={<Yoga />} />
-          <Route path="/physiotheraphy" element={<Physiotheraphy />} />
-          <Route path="/Holistictherapy" element={<Holistictheraphy />} />
-          <Route path="/Respiratory" element={<Respiratory />} />
-          <Route path="/gastro" element={<Gastro />} />
-          <Route path="/Musculoskeletal" element={<Musculoskeletal />} />
-          <Route path="/Endocrine" element={<Endocrine />} />
-          <Route path="/lifestyle" element={<Lifestyle />} />
-          <Route path="/Healingabode" element={<Healingabode />} />
-          <Route path="/Recreation" element={<Recreation />} />
-          <Route path="/meditation" element={<Meditation />} />
-          <Route path="/gym" element={<Gym />} />
-          <Route path="/career" element={<Carrer />} />
-          <Route path="/tariff" element={<TariffPage />} />
-          <Route path="/image" element={<Image />} />
-          <Route path="/Events" element={<Events />} />
-          
-          <Route path="/EventsGallerySet" element={<EventsGallerySet />} />
-          <Route path="/Rulesandregulations" element={<RulesAndRegulations />} />
-          <Route path="/virtual-tour" element={<VirtualTourPage />} />
-        </Routes>
-        <WhatsAppButton />
-        <ChatBot />
-      </Layout>}
+      {!hideLayout && (
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/Ourstory" element={<OurStory />} />
+            <Route path="/health-offers" element={<HealthOffers />} />
+            <Route path="/programs" element={<Programs />} />
+            <Route path="/treatments" element={<Treatments />} />
+            <Route path="/healing-team" element={<HealingTeam />} />
+            <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/gallery-wellness" element={<Gallerywellness />} />
+            <Route path="/Media-wellness" element={<MediaEventswellness />} />
+            <Route path="/Living-wellness" element={<LivingSpaceWellness />} />
+            <Route path="/Amenities-wellness" element={<Amenitieswellness />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/health-packages" element={<HealthPackages />} />
+            <Route path="/booking" element={<Booking />} />
+            <Route path="/dincharya" element={<DinacharyaPage />} />
+            <Route path="/narutopathy" element={<Narutopathy />} />
+            <Route path="/ayurveda" element={<Ayurveda />} />
+            <Route path="/yoga" element={<Yoga />} />
+            <Route path="/physiotheraphy" element={<Physiotheraphy />} />
+            <Route path="/Holistictherapy" element={<Holistictheraphy />} />
+            <Route path="/Respiratory" element={<Respiratory />} />
+            <Route path="/gastro" element={<Gastro />} />
+            <Route path="/Musculoskeletal" element={<Musculoskeletal />} />
+            <Route path="/Endocrine" element={<Endocrine />} />
+            <Route path="/lifestyle" element={<Lifestyle />} />
+            <Route path="/Healingabode" element={<Healingabode />} />
+            <Route path="/Recreation" element={<Recreation />} />
+            <Route path="/meditation" element={<Meditation />} />
+            <Route path="/gym" element={<Gym />} />
+            <Route path="/career" element={<Carrer />} />
+            <Route path="/tariff" element={<TariffPage />} />
+            <Route path="/image" element={<Image />} />
+            <Route path="/Events" element={<Events />} />
+            <Route path="/EventsGallerySet" element={<EventsGallerySet />} />
+            <Route path="/Rulesandregulations" element={<RulesAndRegulations />} />
+            <Route path="/virtual-tour" element={<VirtualTourPage />} />
+          </Routes>
+          <WhatsAppButton />
+          <ChatBot />
+        </Layout>
+      )}
 
       {hideLayout && (
         <Routes>
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/customers" element={<AdminContactDashboard />} />
-         
-          
         </Routes>
       )}
     </>
@@ -225,3 +227,4 @@ function App() {
 }
 
 export default App
+

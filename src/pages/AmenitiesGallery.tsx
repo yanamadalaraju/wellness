@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import SectionGallery from '../components/SectionGallery';
 import GalleryVideoSection from '../components/GalleryVideosection';
 import ImageGridSection from '../components/ImageGridSection';
+import image from '../assets/3d2-6.jpg'
 
 const Amenitieswellness: React.FC = () => {
   const location = useLocation();
@@ -25,21 +26,21 @@ const Amenitieswellness: React.FC = () => {
       <section className="relative min-h-96 flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://media.istockphoto.com/id/941328776/photo/artists-collection-at-showroom.jpg?s=612x612&w=0&k=20&c=8SgKEsLZiRQ8bseHfiUk18FIagXCHZcE17nT1ApaPJY="
+            src={image}
             alt="Career Opportunities"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black bg-opacity-40"></div>
         </div>
         
-        <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+        {/* <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
           <h1 className="text-5xl md:text-6xl font-playfair font-bold mb-6 text-shadow">
             Join Our Team
           </h1>
           <p className="text-xl md:text-2xl text-shadow">
             We're looking for passionate individuals to join our wellness journey
           </p>
-        </div>
+        </div> */}
       </section>
 
       {/* Breadcrumbs */}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import image from "../assets/3d1-1 (1).jpg";
 const NimbaGallery: React.FC = () => {
   const [showAlert, setShowAlert] = useState(true);
 
@@ -49,7 +49,7 @@ const NimbaGallery: React.FC = () => {
             <h3>Special Summer Offer!</h3>
             <p>Get 20% off on all wellness packages this season. Book now!</p>
             <img 
-              src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+              src= {image}
               alt="Summer Special" 
               style={{
                 width: '100%',
