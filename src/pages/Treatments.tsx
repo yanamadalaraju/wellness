@@ -345,7 +345,12 @@ HeartHandshake ,
   Droplet,
   
 } from "lucide-react";
-
+import imagehero from "../assets/resbanner.jpg";
+import image1 from "../assets/respiratory.jpg";
+import image2 from "../assets/gastro.jpg";
+import image3 from "../assets/musclularimage.jpg";
+import image4 from "../assets/nuts.jpg";
+import image5 from "../assets/lifestyle.jpg";
 
 const Programs: React.FC = () => {
   return (
@@ -354,7 +359,7 @@ const Programs: React.FC = () => {
       <section className="relative min-h-[70vh] flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://media.istockphoto.com/id/1393416667/photo/cancer-patient-woman.jpg?s=612x612&w=0&k=20&c=3soR1X1MbWfFFyNuqxPKxtKoB1WdM0AuA0gQQMdCOOQ="
+            src={imagehero}
             alt="Holistic Programs"
             className="w-full h-full object-cover"
           />
@@ -628,7 +633,7 @@ const Programs: React.FC = () => {
     <div className="md:w-1/2 -ml-[10%] relative z-10">
       <div className="relative">
         <img
-          src="https://www.nimba.in/wp-content/uploads/2020/12/Respiratory-ailments-min-1.png"
+          src= {image1}
           alt="Naturopathy Treatment"
           className="rounded shadow-[20px_20px_20px_-5px_rgba(0,0,0,0.1)] w-full"
         />
@@ -658,7 +663,7 @@ const Programs: React.FC = () => {
     <div className="md:w-1/2 -mr-[10%] relative z-10">
       <div className="relative">
         <img
-          src="https://www.nimba.in/wp-content/uploads/2020/12/Gastro-intestinal-disorders-min-1.png"
+          src={image2}
           alt="Holistic Treatment"
           className="rounded shadow-[-20px_20px_20px_-5px_rgba(0,0,0,0.1)] w-full"
         />
@@ -688,7 +693,7 @@ const Programs: React.FC = () => {
     <div className="md:w-1/2 -ml-[10%] relative z-10">
       <div className="relative">
         <img
-          src="https://www.nimba.in/wp-content/uploads/2020/12/Musculoskeletal-Conditions-min.png"
+          src={image3}
           alt="Ayurvedic Treatment"
           className="rounded shadow-[20px_20px_20px_-5px_rgba(0,0,0,0.1)] w-full"
         />
@@ -718,7 +723,7 @@ const Programs: React.FC = () => {
     <div className="md:w-1/2 -mr-[10%] relative z-10">
       <div className="relative">
         <img
-          src="https://www.nimba.in/wp-content/uploads/2020/12/endocrine-disorders-min.png"
+          src={image4}
           alt="Yoga Meditation"
           className="rounded shadow-[-20px_20px_20px_-5px_rgba(0,0,0,0.1)] w-full"
         />
@@ -748,7 +753,7 @@ const Programs: React.FC = () => {
     <div className="md:w-1/2 -ml-[10%] relative z-10">
       <div className="relative">
         <img
-          src="https://www.nimba.in/wp-content/uploads/2020/12/Lifestyle-preventive-wellness-min.png"
+          src={image5}
           alt="Physiotherapy Session"
           className="rounded shadow-[20px_20px_20px_-5px_rgba(0,0,0,0.1)] w-full"
         />

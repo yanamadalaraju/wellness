@@ -8,7 +8,7 @@
 //       id: 'ayurveda',
 //       icon: <Leaf className="w-12 h-12 text-sage-400" />,
 //       title: "Ayurveda Healing Program",
-//       subtitle: "Ancient Wisdom for Modern Wellness",
+//       subtitle: "Ancient Wisdom for Modern Nowal",
 //       description: "Experience the profound healing power of Ayurveda through personalized treatments, herbal medicine, and lifestyle guidance based on your unique constitution.",
 //       duration: "7-21 days",
 //       price: "From $599",
@@ -121,7 +121,7 @@
 //       icon: <Brain className="w-12 h-12 text-sage-400" />,
 //       title: "Stress Management Program",
 //       subtitle: "Find Your Inner Peace",
-//       description: "Comprehensive program addressing stress, anxiety, and mental wellness through proven therapeutic techniques.",
+//       description: "Comprehensive program addressing stress, anxiety, and mental Nowal through proven therapeutic techniques.",
 //       duration: "7-14 days",
 //       price: "From $549",
 //       image: "https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -145,9 +145,9 @@
 //       ]
 //     },
 //     {
-//       id: 'wellness',
+//       id: 'Nowal',
 //       icon: <Heart className="w-12 h-12 text-sage-400" />,
-//       title: "Complete Wellness Program",
+//       title: "Complete Nowal Program",
 //       subtitle: "Total Body-Mind Transformation",
 //       description: "Our most comprehensive program combining multiple healing modalities for complete physical, mental, and spiritual transformation.",
 //       duration: "14-21 days",
@@ -169,7 +169,7 @@
 //         "Optimal physical health",
 //         "Mental and emotional balance",
 //         "Spiritual growth",
-//         "Long-term wellness"
+//         "Long-term Nowal"
 //       ]
 //     }
 //   ]
@@ -280,7 +280,7 @@
 //             Not Sure Which Program is Right for You?
 //           </h2>
 //           <p className="text-xl mb-8 max-w-2xl mx-auto">
-//             Our wellness experts are here to help you choose the perfect program based on your individual needs and goals.
+//             Our Nowal experts are here to help you choose the perfect program based on your individual needs and goals.
 //           </p>
 //           <div className="flex flex-col sm:flex-row gap-4 justify-center">
 //             <Link to="/contact" className="btn-secondary">
@@ -317,10 +317,10 @@
         
 //         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
 //           <h1 className="text-5xl md:text-6xl font-playfair font-bold mb-6">
-//             Holistic Wellness Programs
+//             Holistic Nowal Programs
 //           </h1>
 //           <p className="text-xl md:text-2xl mb-8">
-//             At Wellness Nature Cure
+//             At Nowal Nature Cure
 //           </p>
 //           <Link 
 //             to="/programs" 
@@ -340,13 +340,13 @@
           
 //           <div className="space-y-6 text-lg text-gray-700">
 //             <p>
-//               The wholesome wellness of our bodies is the stepping stone to an empowering spiritual, 
+//               The wholesome Nowal of our bodies is the stepping stone to an empowering spiritual, 
 //               physical and mental well-being instantly.
 //             </p>
             
 //             <p>
-//               A safe haven to indulge into the holistic betterment of every individual, Wellness's 
-//               Wellness Programmes enable one to lead a rejuvenating, stimulating and healthy life 
+//               A safe haven to indulge into the holistic betterment of every individual, Nowal's 
+//               Nowal Programmes enable one to lead a rejuvenating, stimulating and healthy life 
 //               through an effective blend of western and natural treatments.
 //             </p>
 //           </div>
@@ -402,7 +402,7 @@
 //         {/* Image - overlaps on the left card */}
 //         <div className="md:w-1/2 -ml-[10%] relative z-10">
 //           <img
-//             src='https://www.Wellness.in/wp-content/uploads/2020/12/Naturopathy-wonders-min.png'
+//             src='https://www.Nowal.in/wp-content/uploads/2020/12/Naturopathy-wonders-min.png'
 //             alt="Naturopathy Treatment"
 //             className="rounded shadow-lg w-full"
 //           />
@@ -437,7 +437,7 @@
 //         {/* Image - Left Side with 10% overlap */}
 //         <div className="md:w-1/2 -mr-[10%] relative z-10">
 //           <img
-//              src='https://www.Wellness.in/wp-content/uploads/2020/12/Naturopathy-wonders-min.png'
+//              src='https://www.Nowal.in/wp-content/uploads/2020/12/Naturopathy-wonders-min.png'
 //             alt="Naturopathy Treatment"
 //             className="rounded shadow-lg w-full"
 //           />
@@ -476,10 +476,10 @@
         
 //         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
 //           <h1 className="text-5xl md:text-6xl font-playfair font-bold mb-6">
-//             Holistic Wellness Programs
+//             Holistic Nowal Programs
 //           </h1>
 //           <p className="text-xl md:text-2xl mb-8">
-//             At Wellness Nature Cure
+//             At Nowal Nature Cure
 //           </p>
 //           <Link 
 //             to="/programs" 
@@ -519,13 +519,13 @@
           
 //           <div className="space-y-6 text-lg text-gray-700">
 //             <p>
-//               The wholesome wellness of our bodies is the stepping stone to an empowering spiritual, 
+//               The wholesome Nowal of our bodies is the stepping stone to an empowering spiritual, 
 //               physical and mental well-being instantly.
 //             </p>
             
 //             <p>
-//               A safe haven to indulge into the holistic betterment of every individual, Wellness's 
-//               Wellness Programmes enable one to lead a rejuvenating, stimulating and healthy life 
+//               A safe haven to indulge into the holistic betterment of every individual, Nowal's 
+//               Nowal Programmes enable one to lead a rejuvenating, stimulating and healthy life 
 //               through an effective blend of western and natural treatments.
 //             </p>
 //           </div>
@@ -580,7 +580,7 @@
        
 //           <div className="md:w-1/2 -ml-[10%] relative z-10">
 //             <img
-//               src='https://www.Wellness.in/wp-content/uploads/2020/12/Naturopathy-wonders-min.png'
+//               src='https://www.Nowal.in/wp-content/uploads/2020/12/Naturopathy-wonders-min.png'
 //               alt="Naturopathy Treatment"
 //               className="rounded shadow-[20px_20px_20px_-5px_rgba(0,0,0,0.1)] w-full"
 //             />
@@ -613,7 +613,7 @@
           
 //           <div className="md:w-1/2 -mr-[10%] relative z-10">
 //             <img
-//               src='https://www.Wellness.in/wp-content/uploads/2020/12/Naturopathy-wonders-min.png'
+//               src='https://www.Nowal.in/wp-content/uploads/2020/12/Naturopathy-wonders-min.png'
 //               alt="Holistic Treatment"
 //               className="rounded shadow-[-20px_20px_20px_-5px_rgba(0,0,0,0.1)] w-full"
 //             />
@@ -824,7 +824,7 @@
 //           Holistic Therapies
 //         </h2>
 //         <p className="text-gray-600 leading-relaxed">
-//           Our integrative approach combines the best of ancient healing traditions with modern wellness science. From acupuncture to sound healing, these therapies work on physical, emotional and energetic levels to promote complete wellbeing.
+//           Our integrative approach combines the best of ancient healing traditions with modern Nowal science. From acupuncture to sound healing, these therapies work on physical, emotional and energetic levels to promote complete wellbeing.
 //         </p>
 //         <Link
 //           to="/holistic-therapies"
@@ -879,6 +879,11 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import hero from '../assets/narutopathy.jpg';
+import image1 from '../assets/narutopathy.jpg';
+import image2 from '../assets/ayurveda.jpg';
+import image3 from '../assets/ayurveda.jpg';
+import image4 from '../assets/yoga.jpg';
 
 const Programs: React.FC = () => {
   useEffect(() => {
@@ -891,7 +896,7 @@ const Programs: React.FC = () => {
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.pexels.com/photos/3768128/pexels-photo-3768128.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            src={hero}
             alt="Holistic Programs"
             className="w-full h-full object-cover transform scale-105"
           />
@@ -901,11 +906,11 @@ const Programs: React.FC = () => {
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
           <h1 className="text-5xl md:text-6xl font-playfair font-bold mb-6 leading-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-sage-300 to-white">
-              Holistic Wellness Programs
+              Holistic Nowal Programs
             </span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 font-light tracking-wide">
-            At Wellness Nature Cure
+            At Nowal Nature Cure
           </p>
           <Link 
             to="/programs" 
@@ -948,7 +953,7 @@ const Programs: React.FC = () => {
   <div className="max-w-6xl mx-auto">
     <div className="text-center mb-16">
       <h2 className="text-3xl md:text-4xl font-playfair font-bold text-sage-800 mb-4">
-        Holistic Wellness Journey
+        Holistic Nowal Journey
       </h2>
       <div className="w-24 h-1 bg-sage-400 mx-auto mb-8"></div>
       
@@ -979,12 +984,12 @@ const Programs: React.FC = () => {
     <div className="grid md:grid-cols-2 gap-10 mb-16">
       <div className="space-y-6 text-lg text-gray-700 leading-relaxed bg-white p-8 rounded-xl shadow-sm border border-cream-100">
         <p className="relative pl-6 before:absolute before:left-0 before:top-3 before:h-3 before:w-3 before:rounded-full before:bg-sage-400">
-          The wholesome wellness of our bodies is the stepping stone to an empowering spiritual, 
+          The wholesome Nowal of our bodies is the stepping stone to an empowering spiritual, 
           physical and mental well-being instantly.
         </p>
         
         <p className="relative pl-6 before:absolute before:left-0 before:top-3 before:h-3 before:w-3 before:rounded-full before:bg-sage-400">
-          A safe haven to indulge into the holistic betterment of every individual, Wellness's 
+          A safe haven to indulge into the holistic betterment of every individual, Nowal's 
           Programmes enable one to lead a rejuvenating, stimulating and healthy life 
           through an effective blend of western and natural treatments.
         </p>
@@ -993,7 +998,7 @@ const Programs: React.FC = () => {
       <div className="bg-sage-700 rounded-xl overflow-hidden shadow-lg">
         <div className="h-full bg-[url('https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')] bg-cover bg-center bg-blend-overlay bg-sage-800/80 p-8 flex flex-col justify-center">
           <h3 className="text-2xl font-playfair text-white font-bold mb-4">Begin Your Transformation</h3>
-          <p className="text-sage-100 mb-6">Experience the perfect harmony of body, mind and spirit through our tailored wellness programs.</p>
+          <p className="text-sage-100 mb-6">Experience the perfect harmony of body, mind and spirit through our tailored Nowal programs.</p>
           <button className="self-start px-6 py-3 bg-white text-sage-700 rounded-full font-medium hover:bg-sage-100 transition-all transform hover:scale-105 shadow-md">
             Explore Programs
           </button>
@@ -1053,7 +1058,7 @@ const Programs: React.FC = () => {
     title: "Naturopathy Wonders",
     description:
       "In this age of mainstream healthcare dictating the terms, it's difficult to realize the long-term benefits of traditional healing practices. There's no medicine as strong as the healing power of nature.",
-    image: "https://www.nimba.in/wp-content/uploads/2020/12/Naturopathy-wonders-min.png",
+    image: image1,
     link: "/naturopathy",
     reverse: false,
     icon: "🌿",
@@ -1062,7 +1067,7 @@ const Programs: React.FC = () => {
     title: "Holistic Healing",
     description:
       "Our natural therapies work in harmony with your body's innate healing abilities to restore balance and vitality from within — naturally and sustainably.",
-    image: "https://www.nimba.in/wp-content/uploads/2020/12/Naturopathy-wonders-min.png",
+    image: image2,
     link: "/holistic-healing",
     reverse: true,
     icon: "🌱",
@@ -1071,7 +1076,7 @@ const Programs: React.FC = () => {
     title: "Authentic Ayurveda",
     description:
       "Experience the 5,000-year-old healing wisdom of Ayurveda. Panchakarma therapies and herbal formulations harmonize your body, mind, and spirit through personalized care.",
-    image: "https://www.nimba.in/wp-content/uploads/2020/12/Authentic-Ayurveda-min.png",
+    image: image3,
     link: "/ayurveda",
     reverse: false,
     icon: "🪔",
@@ -1080,7 +1085,7 @@ const Programs: React.FC = () => {
     title: "Yoga & Meditation",
     description:
       "Our yoga and meditation sessions go beyond fitness. From gentle Hatha to deep breathwork, experience a complete body-mind-spirit transformation.",
-    image: "https://www.nimba.in/wp-content/uploads/2020/12/yoga-meditation-min.png",
+    image: image4,
     link: "/yoga-meditation",
     reverse: true,
     icon: "🧘",
@@ -1185,7 +1190,7 @@ const Programs: React.FC = () => {
             {/* Content */}
             <div className="lg:w-1/2">
               <h2 className="text-4xl md:text-5xl font-playfair font-bold text-sage-800 mb-6 leading-tight">
-                Our <span className="text-sage-600">Signature</span> Wellness Experience
+                Our <span className="text-sage-600">Signature</span> Nowal Experience
               </h2>
               
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
@@ -1240,7 +1245,7 @@ const Programs: React.FC = () => {
       <section className="py-20 px-4 md:px-8 bg-gradient-to-r from-sage-600 to-sage-700 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-6">
-            Begin Your Wellness Journey Today
+            Begin Your Nowal Journey Today
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
             Our experts are ready to guide you to the perfect program for your needs.

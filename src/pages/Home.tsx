@@ -528,6 +528,14 @@ import { motion } from 'framer-motion'
 import './Home.css';
 import { FaArrowRight } from 'react-icons/fa6';
 import AlertPopup from './NimbaGallery';
+import image1 from "../assets/panchakarma.jpg";
+import image2 from "../assets/mudtherapy.jpg";
+import image3 from "../assets/hydrotherapy.jpg";
+import image4 from "../assets/massage.jpg";
+import image5 from "../assets/wellness.jpg";
+import image6 from "../assets/303.jpg";
+import image7 from "../assets/3d2-1.jpg";
+import image8 from "../assets/Dormitory .jpg";
 
 const Home: React.FC = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
@@ -551,10 +559,10 @@ const Home: React.FC = () => {
   ];
 
   const galleryItems = [
-    { title: 'Wellness', image: 'https://www.nimba.in/wp-content/uploads/2020/10/Wellness-Main-Image-min.jpg' },
-    { title: 'Amenities', image: 'https://www.nimba.in/wp-content/uploads/2020/10/Swimming-Pool.jpg' },
-    { title: 'Media & Events', image: 'https://www.nimba.in/wp-content/uploads/2020/10/TAFI-1.jpg' },
-    { title: 'Living Space', image: 'https://www.nimba.in/wp-content/uploads/2020/10/Deluxe-Room-1.jpg' },
+    { title: 'Wellness', image: image5 },
+    { title: 'Amenities', image: image6 },
+    { title: 'Media & Events', image: image7 },
+    { title: 'Living Space', image: image8 },
   ];
 
   const testimonials = [
@@ -806,22 +814,22 @@ const Home: React.FC = () => {
               { 
                 title: "Panchakarma Therapy", 
                 duration: "Minimum 7 days", 
-                image: "https://www.nimba.in/wp-content/uploads/2022/01/Asset-6-min.png" 
+                image: image1, 
               },
               { 
                 title: "Mud Therapy", 
                 duration: "Minimum 5 days", 
-                image: "https://www.nimba.in/wp-content/uploads/2022/01/Asset-5.png" 
+                image: image2 
               },
               { 
                 title: "Hydro Therapy", 
                 duration: "Minimum 3-7 days", 
-                image: "https://www.nimba.in/wp-content/uploads/2022/01/Asset-4-1.png" 
+                image: image3
               },
               { 
                 title: "Massage Therapy", 
                 duration: "Minimum 5 days", 
-                image: "https://www.nimba.in/wp-content/uploads/2023/11/IMG_9162-1.png" 
+                image: image4 
               },
             ].map((therapy, index) => (
               <motion.div 
