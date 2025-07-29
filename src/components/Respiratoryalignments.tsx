@@ -293,7 +293,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const therapies = [
   {
     name: 'Pulmonary Fibrosis',
-    image: 'https://www.nimba.in/wp-content/uploads/2020/10/RESPIRATORY_AILMENTS_PULMONARY_FIBROSIS.png',
+    image: 'https://i.pinimg.com/736x/d4/f8/8a/d4f88a46b92b3f1b3b8798227878f80c.jpg',
     content: 'Our integrative approach combines natural therapies with breathing techniques to support lung tissue regeneration. Specialized treatments help reduce inflammation, improve oxygenation, and enhance respiratory function.',
     benefits: [
       'Reduces lung inflammation',
@@ -305,7 +305,7 @@ const therapies = [
   },
   {
     name: 'Sinusitis',
-    image: 'https://www.nimba.in/wp-content/uploads/2020/07/RESPIRATORY_AILMENTS_PULMONARY_SINUSITIS.png',
+    image: 'https://i.pinimg.com/1200x/02/ee/33/02ee33945b08549def427eb65255e233.jpg',
     content: 'Holistic sinus relief combining nasal irrigation, herbal therapies, and steam treatments. Our natural protocols effectively drain sinuses, reduce congestion, and prevent recurrent infections without side effects.',
     benefits: [
       'Clears sinus congestion',
@@ -317,7 +317,7 @@ const therapies = [
   },
   {
     name: 'Allergic Bronchitis',
-    image: 'https://www.nimba.in/wp-content/uploads/2020/07/RESPIRATORY_AILMENTS_PULMONARY_ALLERGIC_BRONCHITIS.png',
+    image: 'https://i.pinimg.com/736x/77/d4/c5/77d4c508118ec3f61f03acc4ae63f0bc.jpg',
     content: 'Comprehensive allergy management program that addresses both symptoms and root causes. Our therapies strengthen respiratory immunity while reducing bronchial hypersensitivity and allergic reactions.',
     benefits: [
       'Reduces bronchial spasms',
@@ -329,7 +329,7 @@ const therapies = [
   },
   {
     name: 'Asthma',
-    image: 'https://www.nimba.in/wp-content/uploads/2020/07/RESPIRATORY_AILMENTS_ASTHAMA.png',
+    image: 'https://i.pinimg.com/1200x/fc/e0/92/fce0922fc2caaf7206e18588fa0b98ed.jpg',
     content: 'Natural asthma care program focusing on airway relaxation and inflammation control. Through specialized breathing techniques and herbal formulations, we help restore normal respiratory patterns.',
     benefits: [
       'Reduces asthma attacks',

@@ -112,7 +112,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const therapies = [
   {
     name: 'Hyper Acidity',
-    image: 'https://www.nimba.in/wp-content/uploads/2020/07/GASTRO_INTESTINAL_DISORDERS_HYPER_ACIDITY.png',
+    image: 'https://i.pinimg.com/736x/1b/c9/67/1bc9671a130c96050205a59c9081f517.jpg',
     content: 'Our natural approach to hyper acidity focuses on balancing stomach acid levels through dietary adjustments, herbal remedies, and stress management techniques. We address the root causes rather than just suppressing symptoms.',
     benefits: [
       'Balances stomach acid levels',
@@ -124,7 +124,7 @@ const therapies = [
   },
   {
     name: 'Gastritis',
-    image: 'https://www.nimba.in/wp-content/uploads/2020/07/GASTRO_INTESTINAL_DISORDERS_GASTRITIS.png',
+    image: 'https://i.pinimg.com/736x/5b/41/39/5b413966ff9fd544cba73ff2297a0434.jpg',
     content: 'Holistic gastritis treatment combines anti-inflammatory herbs, gut-healing nutrients, and lifestyle modifications to soothe irritated stomach lining and promote long-term digestive health.',
     benefits: [
       'Reduces stomach inflammation',
@@ -136,7 +136,7 @@ const therapies = [
   },
   {
     name: 'Fatty Liver',
-    image: 'https://www.nimba.in/wp-content/uploads/2020/07/GASTRO_INTESTINAL_DISORDERS_FATTY_LIVER.png',
+    image: 'https://i.pinimg.com/736x/81/fd/fb/81fdfbe0428601718b29b00ff6d41c4e.jpg',
     content: 'Our comprehensive fatty liver program focuses on liver detoxification, metabolic support, and dietary changes to reduce liver fat accumulation and improve liver function naturally.',
     benefits: [
       'Reduces liver fat accumulation',
@@ -148,7 +148,7 @@ const therapies = [
   },
   {
     name: 'Ulcerative Colitis',
-    image: 'https://www.nimba.in/wp-content/uploads/2020/07/GASTRO_INTESTINAL_DISORDERS_ULCERATIVE_COLITIS.png',
+    image: 'https://i.pinimg.com/1200x/cc/31/5b/cc315b5671bf8f1c32d9ed084c8d4098.jpg',
     content: 'Natural management of ulcerative colitis through gut microbiome restoration, anti-inflammatory protocols, and stress reduction techniques to reduce flare-ups and promote remission.',
     benefits: [
       'Reduces intestinal inflammation',

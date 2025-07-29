@@ -129,7 +129,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // Import images from assets
-import wellnessImage from '../assets/wellness.jpg';
+import wellnessImage from '../assets/Wellness.jpg';
 import amenitiesImage from '../assets/2ps-7.png';
 import mediaEventsImage from '../assets/3d1-1.jpg';
 import livingSpaceImage from '../assets/Dormitory .jpg';
