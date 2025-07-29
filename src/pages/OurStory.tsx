@@ -196,25 +196,24 @@ const OurStory: React.FC = () => {
       </section>
 
       {/* Breadcrumbs - Elegant */}
-      <div className="container mx-auto px-4 py-8">
-        <nav className="flex justify-center">
-          <ol className="flex items-center space-x-3 text-sm">
-            <li className="inline-flex items-center">
-              <Link to="/" className="text-[#9CAF88] hover:text-[#435334] transition-colors">
-                Home
-              </Link>
-            </li>
-            <li className="flex items-center">
-              <svg className="w-4 h-4 text-[#9CAF88] mx-1" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path d="M9 18l6-6-6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </li>
-            <li aria-current="page">
-              <span className="text-[#435334] font-medium">Our Story</span>
-            </li>
-          </ol>
-        </nav>
-      </div>
+           <div className="container mx-auto px-4 py-4 flex justify-center">
+                   <nav className="flex" aria-label="Breadcrumb">
+                     <ol className="inline-flex items-center space-x-2 md:space-x-2">
+                       <li className="inline-flex items-center">
+                         <Link to="/" className="text-sage-600 hover:text-sage-800">
+                           Home
+                         </Link>
+                       </li>
+                       <li className="flex items-center">
+                         <span className="mx text-sage-500">{'>'}</span>
+                         <span className="mx text-sage-500">{'>'}</span>
+                       </li>
+                       <li>
+                         <span className="text-sage-800 font-medium">Our Story</span>
+                       </li>
+                     </ol>
+                   </nav>
+                 </div>
 
       {/* Intro Section - Luxury Card */}
       <section className="py-24 px-6 relative">
