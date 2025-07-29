@@ -528,6 +528,14 @@ import { motion } from 'framer-motion'
 import './Home.css';
 import { FaArrowRight } from 'react-icons/fa6';
 import AlertPopup from './NimbaGallery';
+import image1 from "../assets/panchakarma.jpg";
+import image2 from "../assets/mudtherapy.jpg";
+import image3 from "../assets/hydrotherapy.jpg";
+import image4 from "../assets/massage.jpg";
+import image5 from "../assets/wellness.jpg";
+import image6 from "../assets/303.jpg";
+import image7 from "../assets/3d2-1.jpg";
+import image8 from "../assets/Dormitory .jpg";
 
 const Home: React.FC = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
@@ -551,17 +559,17 @@ const Home: React.FC = () => {
   ];
 
   const galleryItems = [
-    { title: 'Wellness', image: 'https://www.nimba.in/wp-content/uploads/2020/10/Wellness-Main-Image-min.jpg' },
-    { title: 'Amenities', image: 'https://www.nimba.in/wp-content/uploads/2020/10/Swimming-Pool.jpg' },
-    { title: 'Media & Events', image: 'https://www.nimba.in/wp-content/uploads/2020/10/TAFI-1.jpg' },
-    { title: 'Living Space', image: 'https://www.nimba.in/wp-content/uploads/2020/10/Deluxe-Room-1.jpg' },
+    { title: 'Wellness', image: image5 },
+    { title: 'Amenities', image: image6 },
+    { title: 'Media & Events', image: image7 },
+    { title: 'Living Space', image: image8 },
   ];
 
   const testimonials = [
     {
       name: 'Vivek Oberoi',
       role: 'Actor, Bollywood, India',
-      quote: `I was truly taken by surprise & my experience at nimba has been exceptional. I believe Naturopathy is the need of the hour as people are done with allopathic treatments and their side effects.`,
+      quote: `I was truly taken by surprise & my experience at nowal has been exceptional. I believe Naturopathy is the need of the hour as people are done with allopathic treatments and their side effects.`,
       image: 'https://www.nimba.in/wp-content/uploads/2020/07/Vivek-Oberoi-%E2%80%93-Actor-Bollywood-India.png',
     },
     {
@@ -573,7 +581,7 @@ const Home: React.FC = () => {
     {
       name: 'Reyhna Malhotra',
       role: 'Model & Actress',
-      quote: `I have had a good detox & inch loss which is always welcoming. Nice nimba retreat with holistic approach and goodness of Naturopathy, Ayurveda, Yoga, Hydrotherapy, Raga therapy and many international therapies.`,
+      quote: `I have had a good detox & inch loss which is always welcoming. Nice nowal retreat with holistic approach and goodness of Naturopathy, Ayurveda, Yoga, Hydrotherapy, Raga therapy and many international therapies.`,
       image: 'https://www.nimba.in/wp-content/uploads/2020/07/Reyhna-Malhotra-min.png',
     },
   ];
@@ -604,7 +612,7 @@ const Home: React.FC = () => {
     {
       video: "https://media.istockphoto.com/id/1994316862/video/old-man-meditating-on-yoga-mat-in-yard.mp4?s=mp4-640x640-is&k=20&c=79ZoUDn_S-mBE3_O8XbMnUwcWR4ZFG5MDp4pcmMlxHk=",
       title: "Luxury Healing Experience",
-      subtitle: "Premium nimba treatments in a serene environment."
+      subtitle: "Premium nowal treatments in a serene environment."
     }
   ]
 
@@ -711,7 +719,7 @@ const Home: React.FC = () => {
             <div className="md:ml-8 mt-6 md:mt-0 text-center md:text-left">
               <div className="relative inline-block">
                 <h2 className="text-2xl font-serif font-bold text-gray-800 mb-2">
-                  Welcome to nimba Nature Cure & Holistic Healthcare Centre
+                  Welcome to Nowal Nature Care & Holistic Healthcare Centre
                 </h2>
                 <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#4a7d52] to-[#3E5F44]"></div>
               </div>
@@ -769,7 +777,7 @@ const Home: React.FC = () => {
             Conditions We Treat
           </h2>
           <p className="text-center text-[#c8d5cb] max-w-3xl mx-auto mb-12 text-lg">
-            At nimba, we adopt a holistic approach to treating various ailments by detoxifying the body to promote health and well-being.
+            At nowal, we adopt a holistic approach to treating various ailments by detoxifying the body to promote health and well-being.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -806,22 +814,22 @@ const Home: React.FC = () => {
               { 
                 title: "Panchakarma Therapy", 
                 duration: "Minimum 7 days", 
-                image: "https://www.nimba.in/wp-content/uploads/2022/01/Asset-6-min.png" 
+                image: image1, 
               },
               { 
                 title: "Mud Therapy", 
                 duration: "Minimum 5 days", 
-                image: "https://www.nimba.in/wp-content/uploads/2022/01/Asset-5.png" 
+                image: image2 
               },
               { 
                 title: "Hydro Therapy", 
                 duration: "Minimum 3-7 days", 
-                image: "https://www.nimba.in/wp-content/uploads/2022/01/Asset-4-1.png" 
+                image: image3
               },
               { 
                 title: "Massage Therapy", 
                 duration: "Minimum 5 days", 
-                image: "https://www.nimba.in/wp-content/uploads/2023/11/IMG_9162-1.png" 
+                image: image4 
               },
             ].map((therapy, index) => (
               <motion.div 

@@ -13,7 +13,7 @@ const HealingTeam: React.FC = () => {
       education: "BAMS, MD (Ayurveda), Certified Panchakarma Specialist",
       description: "Dr. Priya is a renowned Ayurvedic physician with over two decades of experience in traditional healing. She has treated thousands of patients worldwide and is passionate about making ancient wisdom accessible to modern lives.",
       achievements: [
-        "Founder of Wellness Retreat Center",
+        "Founder of Nowal Retreat Center",
         "Published author of 'Ayurveda for Modern Life'",
         "International speaker on holistic health",
         "Winner of Excellence in Ayurveda Award 2020"
@@ -21,7 +21,7 @@ const HealingTeam: React.FC = () => {
     },
     {
       name: "Dr. Michael Chen",
-      title: "Naturopathic Doctor & Wellness Director",
+      title: "Naturopathic Doctor & Nowal Director",
       image: "https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=400",
       specialization: "Naturopathy, Nutrition, Detoxification",
       experience: "15+ years",
@@ -61,12 +61,12 @@ const HealingTeam: React.FC = () => {
         "Expert in Nadi Pariksha (pulse diagnosis)",
         "Herbalist with extensive plant knowledge",
         "Trained in traditional Gurukula system",
-        "Consultant to international wellness centers"
+        "Consultant to international Nowal centers"
       ]
     },
     {
       name: "Emma Williams",
-      title: "Nutritionist & Wellness Coach",
+      title: "Nutritionist & Nowal Coach",
       image: "https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=400",
       specialization: "Holistic Nutrition, Lifestyle Coaching, Meal Planning",
       experience: "10+ years",
@@ -86,7 +86,7 @@ const HealingTeam: React.FC = () => {
       specialization: "Abhyanga, Deep Tissue, Lymphatic Drainage",
       experience: "14+ years",
       education: "LMT, Certified Ayurvedic Massage Therapist, Craniosacral Therapy",
-      description: "Marcus brings healing touch to our wellness programs. His skilled hands and intuitive understanding of the body's energy systems provide deep relaxation and therapeutic benefits.",
+      description: "Marcus brings healing touch to our Nowal programs. His skilled hands and intuitive understanding of the body's energy systems provide deep relaxation and therapeutic benefits.",
       achievements: [
         "Licensed Massage Therapist",
         "Trained in traditional Ayurvedic massage",
@@ -114,7 +114,7 @@ const HealingTeam: React.FC = () => {
             Our Healing Team
           </h1>
           <p className="text-xl md:text-2xl text-shadow">
-            Meet the compassionate experts guiding your wellness journey
+            Meet the compassionate experts guiding your Nowal journey
           </p>
         </div>
       </section>
@@ -148,7 +148,7 @@ const HealingTeam: React.FC = () => {
           <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-12">
             Our diverse team of healing professionals brings together centuries of traditional wisdom 
             with modern expertise. Each member is carefully selected for their deep knowledge, 
-            compassionate approach, and commitment to your complete wellness.
+            compassionate approach, and commitment to your complete Nowal.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -272,7 +272,7 @@ const HealingTeam: React.FC = () => {
             Ready to Meet Your Healing Team?
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Our experts are here to guide you on your wellness journey with personalized care and proven expertise.
+            Our experts are here to guide you on your Nowal journey with personalized care and proven expertise.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/booking" className="btn-secondary">

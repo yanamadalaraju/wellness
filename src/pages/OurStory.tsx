@@ -55,17 +55,17 @@
 //             A Journey of Reawakening Body, Mind & Soul
 //           </h3>
 //           <p className="text-lg md:text-xl leading-relaxed mb-6">
-//             Wellness was born from a dream to create a sanctuary where nature leads the way to healing —
+//             Nowals was born from a dream to create a sanctuary where nature leads the way to healing —
 //             a haven where traditional wisdom and modern science meet.
 //           </p>
 //           <p className="text-base md:text-lg leading-relaxed">
 //             Over the years, our vision has remained unwavering: to restore balance in people’s lives through holistic care,
-//             mindful experiences, and soulful healing. What began as a simple wellness retreat is now a
+//             mindful experiences, and soulful healing. What began as a simple Nowals retreat is now a
 //             growing movement — one that believes in the innate power of the human spirit and the magic of nature.
 //           </p>
 //         </div>
 //       </section>
-// {/* Section 1: Wholeness of Wellness */}
+// {/* Section 1: Wholeness of Nowals */}
 // <section className="bg-[#F2F1E8] py-20 px-6">
 //   <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
     
@@ -73,16 +73,16 @@
 //     <div className="bg-white shadow-xl rounded-lg p-10">
 //       <div className="mb-4">
 //         <h2 className="text-3xl md:text-4xl font-semibold text-center text-[#435334] mb-6">
-//           Wholeness of wellness
+//           Wholeness of Nowals
 //         </h2>
 //       </div>
 //       <p className="text-[#435334] text-base md:text-lg leading-relaxed">
-//         Wellness is a mystical tree, every part of it overflowing with nourishing, selfless qualities.
-//         Our healers are just as treasured as the Wellness tree is. The roots welcome you with <span className="font-semibold">Asana</span>, 
+//         Nowals is a mystical tree, every part of it overflowing with nourishing, selfless qualities.
+//         Our healers are just as treasured as the Nowals tree is. The roots welcome you with <span className="font-semibold">Asana</span>, 
 //         where we can accommodate you with honour. Its bark acts as our <span className="font-semibold">Ashray</span>, 
-//         as we support you in this wonderful experience of wellness. 
-//         Just like the branches of the Wellness tree bestow us with <span className="font-semibold">Sharan</span>, 
-//         our aim at Wellness is to protect you from diseases and ailments.
+//         as we support you in this wonderful experience of Nowals. 
+//         Just like the branches of the Nowals tree bestow us with <span className="font-semibold">Sharan</span>, 
+//         our aim at Nowals is to protect you from diseases and ailments.
 //         The <span className="font-semibold">Virya</span>, the cooling energy of the leaves, teach us to provide you with utmost relaxation and energy.
 //         You are our <span className="font-semibold">Humsafars</span>, our companions, and we welcome you to an exquisite journey of health and healing.
 //       </p>
@@ -92,7 +92,7 @@
 //     <div className="flex justify-center">
 //       <img
 //         src="https://www.nimba.in/wp-content/uploads/2020/08/nimba-gif-1.gif"
-//         alt="Wellness Tree Graphic"
+//         alt="Nowals Tree Graphic"
 //         className="max-w-full h-auto rounded-lg shadow-md"
 //       />
 //     </div>
@@ -103,7 +103,7 @@
 // <section className="relative h-[600px] bg-[#F2F1E8] text-[#435334] overflow-visible mt-[300px]">
 //   <img
 //     src="https://media.istockphoto.com/id/508136324/photo/woman-on-tea-plantation-in-india.jpg?s=612x612&w=0&k=20&c=BW02dl3us_J0zKeummJXvtXBYtHBQU9PlcpVem1_AKw="
-//     alt="Wellness Story Background"
+//     alt="Nowals Story Background"
 //     className="w-full h-full object-cover"
 //   />
 
@@ -123,8 +123,8 @@
 //         A legacy of care rooted in timeless traditions.
 //       </h3>
 //       <p className="text-lg md:text-xl leading-relaxed mb-4">
-//         From ancient ayurvedic rituals to scientifically supported wellness practices, 
-//         <span className="font-semibold"> every offering at Wellness is crafted to restore your wholeness.</span>
+//         From ancient ayurvedic rituals to scientifically supported Nowals practices, 
+//         <span className="font-semibold"> every offering at Nowals is crafted to restore your wholeness.</span>
 //       </p>
 //       <p className="text-lg md:text-xl leading-relaxed mb-4">
 //         Our dedicated experts — healers, nutritionists, yogis — come together with one goal: 
@@ -162,7 +162,8 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Leaf, Heart, Users, Award, Clock, Mountain, ChevronRight, Quote } from 'lucide-react'
+import { Leaf, Heart, Users, Award, Clock, Mountain, ChevronRight, Quote } from 'lucide-react';
+import image from '../assets/wellgif.jpg';
 
 const OurStory: React.FC = () => {
   return (
@@ -180,7 +181,7 @@ const OurStory: React.FC = () => {
         
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4 transform transition-all duration-1000 animate-fade-in">
           <div className="mb-6">
-            <span className="text-[#D1D5C8] tracking-widest text-sm md:text-base font-medium">THE WELLNESS JOURNEY</span>
+            <span className="text-[#D1D5C8] tracking-widest text-sm md:text-base font-medium">THE NOWAL JOURNEY</span>
           </div>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-playfair font-bold mb-6 leading-tight">
             Our <span className="text-[#9CAF88]">Story</span>
@@ -236,7 +237,7 @@ const OurStory: React.FC = () => {
               </h3>
               <div className="space-y-6">
                 <p className="text-lg leading-relaxed text-[#435334]">
-                  Wellness was born from a dream to create a sanctuary where nature leads the way to healing —
+                  Nowal was born from a dream to create a sanctuary where nature leads the way to healing —
                   a haven where traditional wisdom and modern science meet.
                 </p>
                 <p className="text-lg leading-relaxed text-[#435334]">
@@ -249,12 +250,12 @@ const OurStory: React.FC = () => {
         </div>
       </section>
 
-      {/* Wholeness of Wellness Section */}
+      {/* Wholeness of Nowals Section */}
       <section className="py-20 px-6 bg-[#F2F1E8]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-[#435334] mb-4 font-playfair">
-              Wholeness of Wellness
+              Wholeness of Nowal
             </h2>
             <div className="w-20 h-0.5 bg-[#9CAF88] mx-auto"></div>
           </div>
@@ -264,13 +265,13 @@ const OurStory: React.FC = () => {
             <div className="bg-white p-10 rounded-xl shadow-lg">
               <p className="text-[#435334] text-lg leading-relaxed space-y-6">
                 <span className="block">
-                  Wellness is a mystical tree, every part of it overflowing with nourishing, selfless qualities.
-                  Our healers are just as treasured as the Wellness tree is.
+                  Nowals is a mystical tree, every part of it overflowing with nourishing, selfless qualities.
+                  Our healers are just as treasured as the Nowals tree is.
                 </span>
                 <span className="block">
                   The roots welcome you with <span className="font-semibold">Asana</span>, 
                   where we can accommodate you with honour. Its bark acts as our <span className="font-semibold">Ashray</span>, 
-                  as we support you in this wonderful experience of wellness.
+                  as we support you in this wonderful experience of Nowals.
                 </span>
                 <span className="block">
                   Just like the branches bestow us with <span className="font-semibold">Sharan</span>, 
@@ -289,8 +290,8 @@ const OurStory: React.FC = () => {
             <div className="flex justify-center">
               <div className="relative w-full h-96 rounded-xl overflow-hidden shadow-xl">
                 <img
-                  src="https://www.nimba.in/wp-content/uploads/2020/08/nimba-gif-1.gif"
-                  alt="Wellness Tree Graphic"
+                  src={image}
+                  alt="Nowals Tree Graphic"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#435334]/30 to-transparent"></div>
@@ -318,7 +319,7 @@ const OurStory: React.FC = () => {
               <div className="relative rounded-xl overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                  alt="Wellness Practice"
+                  alt="Nowals Practice"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#435334]/50 to-transparent"></div>
@@ -331,8 +332,8 @@ const OurStory: React.FC = () => {
                 </h3>
                 <div className="space-y-6">
                   <p className="text-lg leading-relaxed text-[#435334]">
-                    From ancient ayurvedic rituals to scientifically supported wellness practices, 
-                    <span className="font-semibold"> every offering at Wellness is crafted to restore your wholeness.</span>
+                    From ancient ayurvedic rituals to scientifically supported Nowals practices, 
+                    <span className="font-semibold"> every offering at Nowals is crafted to restore your wholeness.</span>
                   </p>
                   <p className="text-lg leading-relaxed text-[#435334]">
                     Our dedicated experts — healers, nutritionists, yogis — come together with one goal: 
