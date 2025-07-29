@@ -112,7 +112,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const therapies = [
   {
     name: 'Osteoarthritis',
-    image: 'https://www.nimba.in/wp-content/uploads/2020/07/MUSCULOSKELETAL-CONDITIONS_OSTEOARTHRITIS.png',
+    image: 'https://i.pinimg.com/736x/d2/7e/69/d27e69e36a8b9db3f837b1ab9819fdad.jpg',
     content: 'Our natural approach to osteoarthritis focuses on reducing joint inflammation, improving mobility, and supporting cartilage health through specialized therapies, herbal remedies, and gentle exercises.',
     benefits: [
       'Reduces joint pain and stiffness',
@@ -124,7 +124,7 @@ const therapies = [
   },
   {
     name: 'Rheumatoid Arthritis',
-    image: 'https://www.nimba.in/wp-content/uploads/2020/07/MUSCULOSKELETAL-CONDITIONS_RHEUMATOID_ARTHRITIS.png',
+    image: 'https://i.pinimg.com/736x/59/c4/74/59c47418b16f27cc0b900499e327ed06.jpg',
     content: 'Holistic treatment for rheumatoid arthritis that addresses autoimmune factors while reducing inflammation and joint damage. Our protocol includes anti-inflammatory therapies and immune-modulating approaches.',
     benefits: [
       'Reduces autoimmune activity',
@@ -136,7 +136,7 @@ const therapies = [
   },
   {
     name: 'Cervical Spondylitis',
-    image: 'https://www.nimba.in/wp-content/uploads/2020/07/MUSCULOSKELETAL-CONDITIONS_CERVICAL_SPONDYLOSIS.png',
+    image: 'https://i.pinimg.com/736x/60/6a/ae/606aae0e90b6102bb54ef29a38baf50b.jpg',
     content: 'Comprehensive neck care program combining posture correction, spinal therapies, and muscle relaxation techniques to relieve cervical spondylitis symptoms and prevent progression.',
     benefits: [
       'Relieves neck pain and stiffness',
@@ -148,7 +148,7 @@ const therapies = [
   },
   {
     name: 'Sciatica',
-    image: 'https://www.nimba.in/wp-content/uploads/2020/07/MUSCULOSKELETAL-CONDITIONS_SCIATICA.png',
+    image: 'https://i.pinimg.com/1200x/dd/d5/48/ddd548a3bcfc697538b0be77e088589e.jpg',
     content: 'Natural sciatica treatment focusing on nerve decompression, muscle relaxation, and inflammation reduction to alleviate radiating leg pain and restore normal function.',
     benefits: [
       'Reduces sciatic nerve pain',

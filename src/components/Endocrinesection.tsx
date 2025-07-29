@@ -112,7 +112,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const therapies = [
   {
     name: 'PCOD/PCOS',
-    image: 'https://www.nimba.in/wp-content/uploads/2021/02/ENDOCRINE_DISORDERS_PCOS_PCOD.png',
+    image: 'https://i.pinimg.com/1200x/80/62/e4/8062e4bfdbc36dcdf8e48e2839afbbae.jpg',
     content: 'Our holistic approach to PCOD/PCOS focuses on hormonal balance, improving metabolism, and supporting reproductive health through specialized therapies, dietary guidance, and stress management techniques.',
     benefits: [
       'Regulates menstrual cycles',
@@ -124,7 +124,7 @@ const therapies = [
   },
   {
     name: 'Hyperthyroidism',
-    image: 'https://www.nimba.in/wp-content/uploads/2021/02/ENDOCRINE_DISORDERS_THYROIDISM.png',
+    image: 'https://i.pinimg.com/736x/58/14/c9/5814c9dffec2ac39bb34746852bc8b3e.jpg',
     content: 'Natural treatment protocol for hyperthyroidism that helps regulate thyroid function, reduce symptoms, and restore metabolic balance through targeted therapies and nutritional support.',
     benefits: [
       'Regulates thyroid hormones',
@@ -136,7 +136,7 @@ const therapies = [
   },
   {
     name: 'Diabetes Mellitus',
-    image: 'https://www.nimba.in/wp-content/uploads/2020/07/ENDOCRINE_DISORDERS_DIABETES_MELLITUS.png',
+    image: 'https://i.pinimg.com/736x/c1/73/3b/c1733bfc1c44707cbeb08e87bc931f81.jpg',
     content: 'Comprehensive diabetes management program focusing on blood sugar regulation, improving insulin sensitivity, and preventing complications through lifestyle modifications and natural therapies.',
     benefits: [
       'Lowers blood sugar levels',
@@ -148,7 +148,7 @@ const therapies = [
   },
   {
     name: 'Osteoporosis',
-    image: 'https://www.nimba.in/wp-content/uploads/2020/07/ENDOCRINE_DISORDERS_OSTEOPOROSIS.png',
+    image: 'https://i.pinimg.com/1200x/b3/05/6c/b3056c89ea3d8e412449f6b707a03d47.jpg',
     content: 'Our bone health program strengthens skeletal system, improves calcium absorption, and reduces fracture risk through specialized therapies, nutritional support, and weight-bearing exercises.',
     benefits: [
       'Increases bone density',
