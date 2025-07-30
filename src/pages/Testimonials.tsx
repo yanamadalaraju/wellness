@@ -59,9 +59,9 @@
 //       location: "Florida, USA",
 //       image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=300",
 //       rating: 5,
-//       program: "Women's Wellness",
+//       program: "Women's Nowal",
 //       condition: "Hormonal Issues",
-//       testimonial: "The women's wellness program was exactly what I needed during perimenopause. The holistic approach addressed my hormonal imbalances naturally. I feel more balanced, energetic, and confident than I have in years. The retreat environment was perfect for deep healing, and the staff made me feel truly cared for.",
+//       testimonial: "The women's Nowal program was exactly what I needed during perimenopause. The holistic approach addressed my hormonal imbalances naturally. I feel more balanced, energetic, and confident than I have in years. The retreat environment was perfect for deep healing, and the staff made me feel truly cared for.",
 //       video: false,
 //       featured: false
 //     },
@@ -95,9 +95,9 @@
 //       location: "Washington, USA",
 //       image: "https://images.pexels.com/photos/1300402/pexels-photo-1300402.jpeg?auto=compress&cs=tinysrgb&w=300",
 //       rating: 5,
-//       program: "Complete Wellness",
+//       program: "Complete Nowal",
 //       condition: "Overall Health",
-//       testimonial: "The complete wellness program exceeded all my expectations. As someone who wanted to optimize their health preventatively, I found the comprehensive approach perfect. The combination of treatments, education, and lifestyle guidance gave me tools for lifelong wellness. This investment in my health was worth every penny.",
+//       testimonial: "The complete Nowal program exceeded all my expectations. As someone who wanted to optimize their health preventatively, I found the comprehensive approach perfect. The combination of treatments, education, and lifestyle guidance gave me tools for lifelong Nowal. This investment in my health was worth every penny.",
 //       video: false,
 //       featured: false
 //     }
@@ -142,7 +142,7 @@
 //             The Healed Speaks
 //           </h1>
 //           <p className="text-xl md:text-2xl text-shadow">
-//             Real stories of transformation from our wellness community
+//             Real stories of transformation from our Nowal community
 //           </p>
 //         </div>
 //       </section>
@@ -349,7 +349,7 @@ const Programs: React.FC = () => {
           Customer Experience Sharing
           </h1>
           <p className="text-xl md:text-2xl mb-8">
-            At Wellness Nature Cure
+            At Nowal Nature Cure
           </p>
           <Link 
             to="/programs" 
@@ -408,7 +408,7 @@ const Programs: React.FC = () => {
           </div>
         </div>
         <blockquote className="text-gray-700 italic text-lg border-l-4 border-sage-300 pl-6 py-2 mb-6">
-          "After years of suffering, the team at Wellness gave me my life back. Their holistic approach addressed not just my pain but the stress that was making it worse."
+          "After years of suffering, the team at Nowal gave me my life back. Their holistic approach addressed not just my pain but the stress that was making it worse."
         </blockquote>
         <div className="flex space-x-1 text-sage-400">
           {[...Array(5)].map((_, i) => (
@@ -425,7 +425,7 @@ const Programs: React.FC = () => {
         <ul className="space-y-4">
           {[
             "Personalized treatment plans combining physiotherapy and stress management",
-            "Evidence-based techniques with ancient wellness traditions",
+            "Evidence-based techniques with ancient Nowal traditions",
             "Mind-body connection focus for lasting results",
             "Non-invasive, drug-free pain relief solutions",
             "Emotional and physical healing in harmony"
@@ -449,9 +449,9 @@ const Programs: React.FC = () => {
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
       </svg>
       <blockquote className="text-xl md:text-2xl font-playfair italic mb-6 relative z-10">
-        "Wellness didn't just treat my symptoms - they helped me understand and heal the root causes of my pain and stress. I've never felt more empowered in my health journey."
+        "Nowal didn't just treat my symptoms - they helped me understand and heal the root causes of my pain and stress. I've never felt more empowered in my health journey."
       </blockquote>
-      <p className="font-semibold text-sage-200 relative z-10">— Michael T., Wellness Guest Since 2020</p>
+      <p className="font-semibold text-sage-200 relative z-10">— Michael T., Nowal Guest Since 2020</p>
     </div>
   </div>
 </section>
