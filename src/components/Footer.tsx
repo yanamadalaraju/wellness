@@ -185,9 +185,10 @@ import {
   MapPin,
   Phone,
   Calendar
-} from 'lucide-react'
-import { FaPinterest, FaTripadvisor } from 'react-icons/fa'
-import { SiTrustpilot } from 'react-icons/si'
+} from 'lucide-react';
+import logo from "../assets/logo.png";
+import { FaPinterest, FaTripadvisor } from 'react-icons/fa';
+import { SiTrustpilot } from 'react-icons/si';
 
 const Footer: React.FC = () => {
   return (
@@ -195,7 +196,7 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* Logo + Address */}
         <div className="space-y-4">
-          <img src="https://t4.ftcdn.net/jpg/01/67/90/13/240_F_167901303_pdGE0AoACAwJk9H8mNWfookRLgJWLdj1.jpg" alt="Wellness Logo" className="w-48" />
+          <img src={logo} alt="Wellness Logo" className="w-48" />
           <div className="flex items-start gap-3">
             <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
             <address className="not-italic leading-relaxed">

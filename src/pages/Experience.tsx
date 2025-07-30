@@ -10,7 +10,7 @@
 //         <div className="absolute inset-0 z-0">
 //           <img
 //             src="https://media.istockphoto.com/id/1496615469/photo/serene-latin-woman-enjoy-sunset-with-gratitude.jpg?s=612x612&w=0&k=20&c=LXeGeLgKznGamU25tLajijCVuV5lxWIZH0RW5qN3k5g="
-//             alt="Wellness Experience"
+//             alt="Nowal Experience"
 //             className="w-full h-full object-cover"
 //           />
 //           {/* <div className="absolute inset-0 bg-overlay"></div> */}
@@ -18,7 +18,7 @@
         
 //         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
 //           <h1 className="text-5xl md:text-6xl font-playfair font-bold mb-6 text-shadow">
-//             The Wellness Experience
+//             The Nowal Experience
 //           </h1>
 //           <p className="text-xl md:text-2xl text-shadow">
 //             Discover the essence of holistic healing through our time-tested approach
@@ -50,20 +50,20 @@
 //       <section className="bg-[#F2F1E8] text-[#435334] py-24 px-6 text-center">
 //   <div className="max-w-5xl mx-auto">
 //     <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-wide">
-//       Wellness Nature Care
+//       Nowal Nature Care
 //     </h2>
 //     <h3 className="text-2xl md:text-3xl font-medium mb-8 italic">
-//       A Sanctuary for Natural Healing & Holistic Wellness
+//       A Sanctuary for Natural Healing & Holistic Nowal
 //     </h3>
 //     <p className="text-lg md:text-xl leading-relaxed mb-6">
 //       In the rush of modern life, it's the mindful pause — the moment of embracing natural healing — 
 //       that brings us closer to true balance and vitality.
 //     </p>
 //     <p className="text-base md:text-lg leading-relaxed">
-//       At Wellness, our philosophy is simple yet profound: <span className="font-semibold">health and healing always come first.</span> 
+//       At Nowal, our philosophy is simple yet profound: <span className="font-semibold">health and healing always come first.</span> 
 //       We believe that every individual deserves the time and space to rejuvenate, rediscover their 
 //       inner strength, and heal holistically — not just from today’s stressors, but from the deeper, 
-//       unseen imbalances of our times. Step into a journey where wellness is a way of life.
+//       unseen imbalances of our times. Step into a journey where Nowal is a way of life.
 //     </p>
 //   </div>
 // </section>
@@ -75,17 +75,17 @@
 //   {/* Background Image */}
 //   <img
 //     src="https://media.istockphoto.com/id/1140510027/photo/rabindra-sarovar-lake-kolkata-india.jpg?s=612x612&w=0&k=20&c=-644i3pAovgQ7XqyEg_edR1uTTDXlTpdbwSeOXAwDbM="
-//     alt="Wellness Wellness Retreat"
+//     alt="Nowal Nowal Retreat"
 //     className="w-full h-full object-cover"
 //   />
 
 //   {/* Content Block extending outside */}
 //   <div className="absolute left-1/2 bottom-[-180px] transform -translate-x-1/2 w-full max-w-5xl bg-[#F2F1E8] text-center px-6 py-14 shadow-2xl rounded-xl">
 //     <h3 className="text-2xl md:text-3xl font-semibold mb-6 leading-snug">
-//       A perfect harmony of greenery, serenity and positivity, every corner at Wellness will speak to your inner peace.
+//       A perfect harmony of greenery, serenity and positivity, every corner at Nowal will speak to your inner peace.
 //     </h3>
 //     <p className="text-lg md:text-xl leading-relaxed mb-4">
-//       Here, at Wellness, we take your hand and walk you through the truth of life — that <span className="font-semibold">health is under our control, always.</span>
+//       Here, at Nowal, we take your hand and walk you through the truth of life — that <span className="font-semibold">health is under our control, always.</span>
 //     </p>
 //     <p className="text-lg md:text-xl leading-relaxed mb-4">
 //       In our holistic haven, <span className="font-semibold">healing and health are interlinked.</span>
@@ -95,7 +95,7 @@
 //       <span className="font-semibold"> modern science, traditional practices and ancient wisdom.</span>
 //     </p>
 //     <p className="text-lg md:text-xl leading-relaxed">
-//       So, to experience the holistic force of wellness, trace your steps to Wellness. 
+//       So, to experience the holistic force of Nowal, trace your steps to Nowal. 
 //       We are just the catalyst for life-altering healing of the soul and healthification of the body — 
 //       all the magic of organic and natural wonders comes from within.
 //     </p>
@@ -109,7 +109,7 @@
 //     <blockquote className="text-2xl md:text-3xl italic font-medium leading-relaxed">
 //       “Your healing journey begins with a single breath, grounded in nature and nurtured by intention.”
 //     </blockquote>
-//     <p className="mt-4 text-sm uppercase tracking-wider text-[#6B7A4C]">— Wellness Philosophy</p>
+//     <p className="mt-4 text-sm uppercase tracking-wider text-[#6B7A4C]">— Nowal Philosophy</p>
 
 //     {/* Heal Now Button */}
 //     <button className="mt-10 px-8 py-3 bg-[#435334] text-white rounded-full text-base font-semibold hover:bg-[#6B7A4C] transition-all duration-300">
@@ -163,7 +163,7 @@ const Experience: React.FC = () => {
             </div>
           </div>
           <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight animate-fadeIn">
-            The <span className="text-[#A8D8B9]">Wellness</span> Experience
+            The <span className="text-[#A8D8B9]">Nowal</span> Experience
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto font-light leading-relaxed">
             Discover the essence of holistic healing through our time-tested approach to mind-body harmony
@@ -229,11 +229,11 @@ const Experience: React.FC = () => {
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-wide font-serif">
-            <span className="text-[#2C3E50]">Wellness</span> <span className="text-[#27AE60]">Nature</span> <span className="text-[#2C3E50]">Care</span>
+            <span className="text-[#2C3E50]">Nowal</span> <span className="text-[#27AE60]">Nature</span> <span className="text-[#2C3E50]">Care</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-[#27AE60] to-[#A8D8B9] mx-auto mb-8"></div>
           <h3 className="text-2xl md:text-3xl font-medium mb-8 italic text-[#27AE60]">
-            A Sanctuary for Natural Healing & Holistic Wellness
+            A Sanctuary for Natural Healing & Holistic Nowal
           </h3>
           <div className="max-w-3xl mx-auto">
             <p className="text-lg md:text-xl leading-relaxed mb-6">
@@ -241,10 +241,10 @@ const Experience: React.FC = () => {
               that brings us closer to true balance and vitality.
             </p>
             <p className="text-base md:text-lg leading-relaxed">
-              At Wellness, our philosophy is simple yet profound: <span className="font-semibold text-[#2C3E50]">health and healing always come first.</span> 
+              At Nowal, our philosophy is simple yet profound: <span className="font-semibold text-[#2C3E50]">health and healing always come first.</span> 
               We believe that every individual deserves the time and space to rejuvenate, rediscover their 
               inner strength, and heal holistically — not just from today's stressors, but from the deeper, 
-              unseen imbalances of our times. Step into a journey where wellness is a way of life.
+              unseen imbalances of our times. Step into a journey where Nowal is a way of life.
             </p>
           </div>
         </div>
@@ -290,7 +290,7 @@ const Experience: React.FC = () => {
                 <div className="absolute -inset-2 border-2 border-[#27AE60]/30 rounded-full pointer-events-none animate-ping-slow opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <p className="text-xl leading-relaxed pt-1">
-                Here, at Wellness, we take your hand and walk you through the truth of life — that <span className="font-semibold text-[#27AE60]">health is under our control, always.</span>
+                Here, at Nowal, we take your hand and walk you through the truth of life — that <span className="font-semibold text-[#27AE60]">health is under our control, always.</span>
               </p>
             </div>
             
@@ -328,7 +328,7 @@ const Experience: React.FC = () => {
                 <div className="absolute -inset-2 border-2 border-[#27AE60]/30 rounded-full pointer-events-none animate-ping-slow opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <p className="text-xl leading-relaxed pt-1">
-                So, to experience the holistic force of wellness, trace your steps to Wellness. We are just the catalyst for life-altering healing of the soul and healthification of the body.
+                So, to experience the holistic force of Nowal, trace your steps to Nowal. We are just the catalyst for life-altering healing of the soul and healthification of the body.
               </p>
             </div>
           </div>
@@ -365,7 +365,7 @@ const Experience: React.FC = () => {
           
           <p className="mt-8 text-sm uppercase tracking-widest text-[#27AE60] flex items-center justify-center">
             <Waves className="w-4 h-4 mr-2" />
-            Wellness Philosophy
+            Nowal Philosophy
             <Waves className="w-4 h-4 ml-2" />
           </p>
 
@@ -393,7 +393,7 @@ const Experience: React.FC = () => {
               <div className="w-4 h-0.5 bg-[#27AE60] ml-2"></div>
             </span>
             <h2 className="text-3xl md:text-5xl font-bold mt-4 text-[#2C3E50] font-serif">
-              Pillars of <span className="text-[#27AE60]">Wellness</span>
+              Pillars of <span className="text-[#27AE60]">Nowal</span>
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-[#27AE60] to-[#A8D8B9] mx-auto my-6"></div>
             <p className="text-lg text-[#27AE60] max-w-2xl mx-auto">
@@ -416,7 +416,7 @@ const Experience: React.FC = () => {
               {
                 icon: <Clock className="w-8 h-8" />,
                 title: "Ancient Traditions",
-                description: "Time-honored healing practices combined with modern wellness techniques."
+                description: "Time-honored healing practices combined with modern Nowal techniques."
               },
               {
                 icon: <Users className="w-8 h-8" />,
@@ -426,7 +426,7 @@ const Experience: React.FC = () => {
               {
                 icon: <Award className="w-8 h-8" />,
                 title: "Expert Guidance",
-                description: "Seasoned practitioners dedicated to your wellness journey."
+                description: "Seasoned practitioners dedicated to your Nowal journey."
               },
               {
                 icon: <Mountain className="w-8 h-8" />,
@@ -460,7 +460,7 @@ const Experience: React.FC = () => {
         
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#2C3E50] font-serif">
-            Ready to Begin Your <span className="text-[#27AE60]">Wellness</span> Journey?
+            Ready to Begin Your <span className="text-[#27AE60]">Nowal</span> Journey?
           </h2>
           
           <p className="text-lg text-[#27AE60] mb-10 max-w-2xl mx-auto">
