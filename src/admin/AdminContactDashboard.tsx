@@ -95,6 +95,7 @@ import {
   ChevronRight,
   Trash2
 } from 'lucide-react';
+import AdminNavbar from './adminNavbar';
 
 interface ContactFormData {
   id: number;
@@ -199,7 +200,9 @@ const AdminContactDashboard: React.FC = () => {
   }
 
   return (
+    
     <div className="min-h-screen bg-gray-50 p-6">
+      {/* <AdminNavbar /> */}
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
           <div>
