@@ -73,25 +73,45 @@ const Ayurveda: React.FC = () => {
       </div>
 
       {/* New Content Section */}
-   <section className="py-16 px-4 md:px-8 bg-white">
+  <section className="py-20 px-6 md:px-10 bg-[#F8F9F4] text-[#435334]">
   <div className="max-w-4xl mx-auto text-center">
-    <h2 className="text-3xl md:text-4xl font-playfair text-sage-600 mb-6">
-    We provide selective Ayurvedic treatments
+    {/* Title */}
+    <h2 className="text-3xl md:text-4xl font-serif font-semibold mb-6 tracking-wide">
+      We Provide Selective Ayurvedic Treatments
     </h2>
 
-    <blockquote className="text-xl md:text-2xl font-playfair italic text-sage-500 mb-8">
+    {/* Decorative line under heading */}
+    <div className="flex justify-center items-center mb-8">
+      <div className="w-12 h-px bg-[#435334]/40"></div>
+      <svg className="mx-3 w-5 h-5 text-[#435334]" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z" />
+      </svg>
+      <div className="w-12 h-px bg-[#435334]/40"></div>
+    </div>
+
+    {/* Quote */}
+    <blockquote className="text-xl md:text-2xl font-light italic text-[#647160] mb-10 leading-relaxed">
       "Nature cures, not the physician. At Wellness, we simply facilitate the body's innate healing capacity through time-tested naturopathic principles."
     </blockquote>
 
-    <div className="space-y-6 text-lg text-gray-700">
+    {/* Content */}
+    <div className="text-lg md:text-xl leading-relaxed text-justify space-y-6 text-[#435334]/90">
       <p>
-        Ayurveda helps maintain good health and  
-Celebrated as the ‘Science of Life,’ Ayurveda views each individual as an integral part of the greater cosmic whole. Rooted in the five foundational elements—Earth, Fire, Air, Water, and Ether—this ancient system of healing goes beyond treating symptoms. The true beauty of Ayurveda lies in its holistic approach, addressing not just the physical condition but also the emotional, psychological, and spiritual dimensions of a person. At Nowal Naturecare, Ayurveda brings these energies into balance, nurturing profound healing and harmony at every level of being.
-
+        Ayurveda helps maintain good health and well-being by embracing a preventive and personalized approach to care.
+      </p>
+      <p>
+        Celebrated as the <span className="italic font-medium">“Science of Life,”</span> Ayurveda views each individual as an integral part of the greater cosmic whole. Rooted in the five foundational elements—Earth, Fire, Air, Water, and Ether—this ancient healing system extends beyond mere symptom treatment.
+      </p>
+      <p>
+        The true beauty of Ayurveda lies in its holistic approach—addressing not just the physical condition, but also the emotional, psychological, and spiritual dimensions of a person.
+      </p>
+      <p>
+        At <span className="font-semibold">Nowal Naturecare</span>, Ayurveda brings these energies into balance, nurturing profound healing and harmony at every level of being.
       </p>
     </div>
   </div>
 </section>
+
 
 
  {/* <AyurvedsTherapySection /> */}

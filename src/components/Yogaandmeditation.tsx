@@ -114,7 +114,7 @@ const therapies = [
   {
     name: 'Mantra Chanting',
     image: 'https://www.nimba.in/wp-content/uploads/2021/02/MANTRA_CHANTTING.jpg',
-    content: 'Mantra chanting is a powerful vibrational practice that calms the mind and elevates consciousness. Through rhythmic repetition of sacred sounds, we create resonance that harmonizes body, mind and spirit while activating higher states of awareness.',
+    content: 'Om Chanting Om chanting is a sacred sound meditation that calms the mind, balances energy, and connects you with universal consciousness—bringing deep peace, clarity, and spiritual alignment',
     benefits: [
       'Reduces stress and anxiety',
       'Enhances mental clarity',
@@ -126,7 +126,7 @@ const therapies = [
   {
     name: 'Therapeutic Yoga',
     image: 'https://www.nimba.in/wp-content/uploads/2020/07/therapeutic-yoga.jpg',
-    content: 'Our specialized yoga therapy adapts ancient postures and breathing techniques to address modern ailments. Each session is carefully designed to restore balance, improve mobility and promote healing from physical and emotional imbalances.',
+    content: 'Yoga Nidra Yoga Nidra is a guided deep relaxation technique that leads the body into a state of conscious rest. It calms the nervous system, reduces stress, and promotes healing—helping you access inner stillness while remaining aware, restoring both mental and physical well-being effortlessly	',
     benefits: [
       'Alleviates chronic pain',
       'Improves joint flexibility',
@@ -162,7 +162,7 @@ const therapies = [
   {
     name: 'Aquatic Yoga',
     image: 'https://www.nimba.in/wp-content/uploads/2020/07/AQUATIC_YOGA-1.jpg',
-    content: 'A unique fusion of traditional yoga postures performed in water that combines the benefits of yoga with aquatic therapy. The water environment reduces joint stress while providing gentle resistance for strength building and enhanced flexibility.',
+    content: 'Aquatic Yoga or exercise is the best easiest practices in joint pain conditions and compromised health conditions.  ',
     benefits: [
       'Reduces impact on joints',
       'Improves range of motion',

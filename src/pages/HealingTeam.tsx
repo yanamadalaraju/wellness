@@ -340,21 +340,42 @@ const HealingTeam: React.FC = () => {
 
       {/* Intro Section */}
       <section className="bg-[#F2F1E8] text-[#435334] py-24 px-6 text-center">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-wide">
-           Your Healing with naturopathy and Yoga
-          </h2>
-          <h3 className="text-2xl md:text-3xl font-medium mb-8 italic">
-          </h3>
-          <p className="text-lg md:text-xl leading-relaxed mb-6">
-         	It is the people that make the place, the environment just champions their cause. The healing team of Nimba is highly committed to guiding each patron through their journeys of accepting the powers of healing and health. The ethos of the centre comes from the authenticity of these highly qualified professionals, doctors, therapists,researchers, and support staff who share the same passion and interests. Every person here is dedicated to providing you with the most fulfilling over all healing experience	At Nowal Naturecare, it is our people who bring purpose and heart to everything we do, the environment simply amplifies their dedication.
-Our dedicated team is deeply committed to guiding each individual on a transformative journey toward health and self-restoration.
-From experienced doctors, skilled therapists and compassionate support staff, every member of our team shares a unified passion for holistic wellness.
-Their authenticity, expertise, and unwavering care form the very ethos of Nowal Naturecare.
-Together, they create a nurturing space where healing is not just delivered—it is lived, with intention, empathy, and excellence.	
-</p>
-        </div>
-      </section>
+  <div className="max-w-5xl mx-auto">
+    {/* Main Heading */}
+    <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-wide leading-tight">
+      Your Healing with Naturopathy and Yoga
+    </h2>
+
+    {/* Subheading Decorative Line */}
+    <div className="flex justify-center items-center mb-10">
+      <div className="w-16 h-px bg-[#435334]/50 mr-3"></div>
+      <svg className="w-6 h-6 text-[#435334]" fill="currentColor" viewBox="0 0 20 20">
+        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z" clipRule="evenodd" />
+      </svg>
+      <div className="w-16 h-px bg-[#435334]/50 ml-3"></div>
+    </div>
+
+    {/* Paragraphs */}
+    <div className="text-lg md:text-xl leading-relaxed space-y-6 text-justify px-4 md:px-0">
+      <p>
+        It is the people that make the place—the environment simply champions their cause. The healing team of Nimba is highly committed to guiding each patron through their journeys of embracing the power of healing and health.
+      </p>
+      <p>
+        The ethos of the centre stems from the authenticity of our highly qualified professionals, doctors, therapists, researchers, and support staff who share the same passion and purpose. Every individual here is dedicated to providing you with a deeply fulfilling overall healing experience.
+      </p>
+      <p>
+        At Nowal Naturecare, it is our people who bring heart and purpose to everything we do. The environment merely amplifies their commitment.
+      </p>
+      <p>
+        Our dedicated team is deeply committed to guiding each individual on a transformative journey toward health and self-restoration. From experienced doctors and skilled therapists to compassionate support staff, every member shares a unified passion for holistic wellness.
+      </p>
+      <p>
+        Their authenticity, expertise, and unwavering care form the very soul of Nowal Naturecare. Together, they create a nurturing space where healing isn’t just practiced—it’s lived, with intention, empathy, and excellence.
+      </p>
+    </div>
+  </div>
+</section>
+
 
       {/* Healing Team Section */}
       <section className="relative min-h-96 flex items-center justify-center bg-[#F2F1E8]">

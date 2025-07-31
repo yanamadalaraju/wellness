@@ -46,30 +46,91 @@ const OurStory: React.FC = () => {
             </div>
 
       {/* Intro Section */}
-      <section className="bg-[#F2F1E8] text-[#435334] py-24 px-6 text-center">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-wide">
-        
-	Health is wealth	
+    <section className="bg-[#F2F1E8] text-[#435334] py-20 px-6">
+  <div className="max-w-3xl mx-auto">
+    {/* Heading */}
+    <div className="text-center mb-12">
+      <h2 className="text-3xl md:text-4xl font-serif font-medium mb-4">Health is the greatest wealth</h2>
+      <div className="flex justify-center items-center space-x-4">
+        <div className="w-10 h-px bg-[#435334]/50"></div>
+        <svg className="w-5 h-5 text-[#435334]" fill="currentColor" viewBox="0 0 20 20">
+          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z" clipRule="evenodd" />
+        </svg>
+        <div className="w-10 h-px bg-[#435334]/50"></div>
+      </div>
+    </div>
 
-          </h2>
-          <h3 className="text-2xl md:text-3xl font-medium mb-8 italic">
-           
-          </h3>
-          <p className="text-lg md:text-xl leading-relaxed mb-6">
-      		Stemming from the ancient Indian scriptures, Nimba is a proverbial tree that houses unparalleled health benefits and is the symbol of wholesome and perennial health.One of the largest naturopathy centres in India, Nimba Nature Cure & Holistic Health Centre is the repository of the beneficial synergies of the mind, body and soul. Gifted with lush greenery and its serenity, the centre promotes and enhances the power of nature. We are committed to bring back in a body the crucial equilibrium of the five basic elements of life: Earth, Water, Fire, Air, and Space within you. At Nimba, you have the chance to explore the realms and depths of physical, psychological and spiritual health with gentle guidance by professionals.
-Established by The Oswal Group back in 2015, Nimba Nature Cure & Holistic Health Centre saw the organization’s visionary endeavors come to life, with a distinguished staycation dedicated to refreshing and rejuvenating everyday life. This health and wellness sanctuary stands as a testament to the group’s commitment to holistic living and marks a significant milestone in their journey towards fostering well-being.
-Our entire process of healing and enhancing your health is through a unique amalgamation of modern science, traditional practices and ancient medical wisdom of Ayurveda, Naturopathy and Yoga, To experience and share the force of attaining all the aspects of holistic health and wellbeing, trace your steps to Nimba. We are just the catalyst for life-altering healing and preventive care for you with all the magic of organic and natural wonders that come from within you.
-	Health is the greatest wealth, and naturopathy as a drugless regimen helps you protect it, naturally with the concept of alternative medicine.
-Rooted in the belief that the body can heal itself, naturopathy uses nature-based therapies, detox, nutrition, and mindful living to restore balance and prevent illness.
-Nowal Naturecare is a sanctuary built on this philosophy, where ancient wisdom meets modern science in a calm, healing environment.
-Here, we don’t just treat symptoms—we nurture the whole you.
-By awakening your body’s innate strength, we guide you toward lasting wellness, proving that investing in your health is the richest gift you can give yourself and to your family. You can also make others awake to follow the lifestyle to keep diseases away.	
+    {/* Content */}
+    <div className="space-y-6 text-lg leading-relaxed">
+      <p className="relative pl-6 before:absolute before:left-0 before:top-3 before:w-2 before:h-2 before:rounded-full before:bg-[#435334]/70">
+        Health is the greatest wealth, and naturopathy as a drugless regimen helps you protect it, naturally with the concept of alternative medicine.
+      </p>
+      <p className="relative pl-6 before:absolute before:left-0 before:top-3 before:w-2 before:h-2 before:rounded-full before:bg-[#435334]/70">
+        Rooted in the belief that the body can heal itself, naturopathy uses nature-based therapies, detox, nutrition, and mindful living to restore balance and prevent illness.
+      </p>
+      <p className="relative pl-6 before:absolute before:left-0 before:top-3 before:w-2 before:h-2 before:rounded-full before:bg-[#435334]/70">
+        Nowal Naturecare is a sanctuary built on this philosophy, where ancient wisdom meets modern science in a calm, healing environment.
+      </p>
+      <p className="relative pl-6 before:absolute before:left-0 before:top-3 before:w-2 before:h-2 before:rounded-full before:bg-[#435334]/70">
+        Here, we don’t just treat symptoms—we nurture the whole you.
+      </p>
+      <p className="relative pl-6 before:absolute before:left-0 before:top-3 before:w-2 before:h-2 before:rounded-full before:bg-[#435334]/70">
+        By awakening your body’s innate strength, we guide you toward lasting wellness, proving that investing in your health is the richest gift you can give yourself and to your family. You can also make others awake to follow the lifestyle to keep diseases away.
+      </p>
+    </div>
 
-          </p>
-      
-        </div>
-      </section>
+    {/* Decorative Footer Icon */}
+    <div className="mt-12 flex justify-center">
+      <svg className="w-12 h-12 text-[#435334]/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+      </svg>
+    </div>
+  </div>
+</section>
+
+
+<section className="bg-[#F2F1E8] text-[#435334] py-20 px-6">
+  <div className="max-w-3xl mx-auto">
+    {/* Header */}
+    <div className="text-center mb-12">
+      <h2 className="text-3xl md:text-4xl font-serif font-medium mb-4">Health is the greatest wealth</h2>
+      <div className="flex justify-center items-center space-x-4">
+        <div className="w-10 h-px bg-[#435334]/50"></div>
+        <svg className="w-5 h-5 text-[#435334]" fill="currentColor" viewBox="0 0 20 20">
+          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z" clipRule="evenodd"/>
+        </svg>
+        <div className="w-10 h-px bg-[#435334]/50"></div>
+      </div>
+    </div>
+
+    {/* Paragraphs */}
+    <div className="space-y-6 text-lg leading-relaxed">
+      <p className="relative pl-6 before:absolute before:left-0 before:top-3 before:w-2 before:h-2 before:rounded-full before:bg-[#435334]/70">
+        Health is the greatest wealth, and naturopathy as a drugless regimen helps you protect it, naturally with the concept of alternative medicine.
+      </p>
+      <p className="relative pl-6 before:absolute before:left-0 before:top-3 before:w-2 before:h-2 before:rounded-full before:bg-[#435334]/70">
+        Rooted in the belief that the body can heal itself, naturopathy uses nature-based therapies, detox, nutrition, and mindful living to restore balance and prevent illness.
+      </p>
+      <p className="relative pl-6 before:absolute before:left-0 before:top-3 before:w-2 before:h-2 before:rounded-full before:bg-[#435334]/70">
+        Nowal Naturecare is a sanctuary built on this philosophy, where ancient wisdom meets modern science in a calm, healing environment.
+      </p>
+      <p className="relative pl-6 before:absolute before:left-0 before:top-3 before:w-2 before:h-2 before:rounded-full before:bg-[#435334]/70">
+        Here, we don’t just treat symptoms—we nurture the whole you.
+      </p>
+      <p className="relative pl-6 before:absolute before:left-0 before:top-3 before:w-2 before:h-2 before:rounded-full before:bg-[#435334]/70">
+        By awakening your body’s innate strength, we guide you toward lasting wellness, proving that investing in your health is the richest gift you can give yourself and to your family. You can also make others awake to follow the lifestyle to keep diseases away.
+      </p>
+    </div>
+
+    {/* Footer Icon */}
+    <div className="mt-12 flex justify-center">
+      <svg className="w-12 h-12 text-[#435334]/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
 {/* Section 1: Wholeness of Nowals */}
 <section className="bg-[#F2F1E8] py-20 px-6">
   <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
