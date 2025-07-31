@@ -721,7 +721,7 @@ const Contact: React.FC = () => {
       </section>
 
       {/* Map Section */}
-      <section className="py-16 bg-sage-50">
+      {/* <section className="py-16 bg-sage-50">
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-4xl font-playfair font-bold text-sage-600 mb-8 text-center">
             Find Us
@@ -763,9 +763,9 @@ const Contact: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <ReachSection />
+      {/* <ReachSection /> */}
 
       {/* FAQ Section */}
             {/* FAQ Section */}
@@ -848,9 +848,9 @@ const Contact: React.FC = () => {
       {/* CTA */}
       <div className="text-center mt-10">
         <p className="text-gray-500 mb-4">Still have questions?</p>
-        <button className="bg-sage-600 hover:bg-sage-700 text-white font-medium py-3 px-8 rounded-full transition-colors shadow-md hover:shadow-lg">
+        {/* <button className="bg-sage-600 hover:bg-sage-700 text-white font-medium py-3 px-8 rounded-full transition-colors shadow-md hover:shadow-lg">
           Contact Our Team
-        </button>
+        </button> */}
       </div>
     </div>
   </div>
@@ -866,7 +866,7 @@ const Contact: React.FC = () => {
             Are you passionate about holistic healing? We're always looking for dedicated professionals to join our Nowal team.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/careers" className="bg-white text-sage-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-full transition-colors shadow-md hover:shadow-lg">
+            <Link to="/c" className="bg-white text-sage-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-full transition-colors shadow-md hover:shadow-lg">
               View Open Positions
             </Link>
             <Link to="/contact" className="border-2 border-white text-white hover:bg-white hover:text-sage-600 font-medium py-3 px-8 rounded-full transition-colors">

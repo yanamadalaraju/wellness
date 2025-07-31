@@ -1081,7 +1081,7 @@ const [isVideoPlayingWithSound, setIsVideoPlayingWithSound] = useState(true);
   ];
 
   const galleryItems = [
-    { title: 'Wellness', image: image5 },
+    { title: 'nowal', image: image5 },
     { title: 'Amenities', image: image6 },
     { title: 'Media & Events', image: image7 },
     { title: 'Living Space', image: image8 },
@@ -1125,7 +1125,7 @@ const [isVideoPlayingWithSound, setIsVideoPlayingWithSound] = useState(true);
     "Welcome to Nowal Naturecare Resort – Where luxury meets natural healing",
     "Breathe. Relax. Reconnect here at Nowal Naturecare Resort",
     "Discover tranquility in every leaf, every breeze, every sunrise",
-    "Your journey to wellness begins at Nowal – where nature nurtures",
+    "Your journey to nowal begins at Nowal – where nature nurtures",
     "Unplug from stress. Reconnect with nature. Rejuvenate your soul"
   ];
 
@@ -1136,7 +1136,7 @@ const [isVideoPlayingWithSound, setIsVideoPlayingWithSound] = useState(true);
       icon: Sprout
     },
     { 
-      title: "Holistic Wellness Programs", 
+      title: "Holistic nowal Programs", 
       description: "Personalized naturopathy, Ayurveda, yoga, and meditation with experts.",
       icon: HeartPulse
     },
@@ -1251,13 +1251,13 @@ useEffect(() => {
                 Book Now
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
-              <Link
+              {/* <Link
                 to="/resort"
                 className="bg-transparent hover:bg-white/10 text-white text-lg px-8 py-4 rounded-full border-2 border-white transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
               >
                 <Play className="w-5 h-5" />
                 <span>Explore Resort</span>
-              </Link>
+              </Link> */}
             </div>
           </motion.div>
         </div>
@@ -1291,7 +1291,7 @@ useEffect(() => {
           <span className="text-lg font-medium mx-8">✨ 20% off for 10+ day stays</span>
           <span className="text-lg font-medium mx-8">🌿 10% off for 5+ day stays</span>
           <span className="text-lg font-medium mx-8">🌸 Special rates for June & July</span>
-          <span className="text-lg font-medium mx-8">💚 Free wellness consultation</span>
+          <span className="text-lg font-medium mx-8">💚 Free nowal consultation</span>
           <span className="text-lg font-medium mx-8">🧘‍♀️ Complimentary yoga sessions</span>
         </div>
       </div>
@@ -1360,7 +1360,7 @@ useEffect(() => {
                 <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#4a7d52] to-[#3E5F44]"></div>
               </div>
               <p className="text-xl text-[#3E5F44] font-medium mt-4">
-                Gujarat's Premier NABH Accredited Wellness Destination
+                Gujarat's Premier NABH Accredited nowal Destination
               </p>
             </div>
           </div>
@@ -1530,9 +1530,9 @@ useEffect(() => {
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-800 mb-1">{therapy.title}</h3>
                   <p className="text-gray-600 text-sm mb-4">{therapy.duration}</p>
-                  <button className="w-full bg-[#3E5F44] hover:bg-[#2E4A34] text-white font-medium py-2 px-4 rounded-lg transition-all">
+                  {/* <button className="w-full bg-[#3E5F44] hover:bg-[#2E4A34] text-white font-medium py-2 px-4 rounded-lg transition-all">
                     Book Now
-                  </button>
+                  </button> */}
                 </div>
               </motion.div>
             ))}
@@ -1639,9 +1639,9 @@ useEffect(() => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <button className="bg-[#3E5F44] hover:bg-[#2E4A34] text-white px-6 py-2 rounded-full flex items-center gap-2 transition-all">
+                  {/* <button className="bg-[#3E5F44] hover:bg-[#2E4A34] text-white px-6 py-2 rounded-full flex items-center gap-2 transition-all">
                     {item.title} <FaArrowRight />
-                  </button>
+                  </button> */}
                 </div>
               </motion.div>
             ))}
@@ -1650,71 +1650,57 @@ useEffect(() => {
       </section>
 
       {/* Blog Section */}
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-4">
-              Nowal Wisdom
-            </h2>
-            <div className="flex justify-center items-center">
-              <div className="w-16 h-1 bg-[#4a7d52] mr-3"></div>
-              <BadgePlus className="text-[#3E5F44] w-6 h-6" />
-              <div className="w-16 h-1 bg-[#4a7d52] ml-3"></div>
-            </div>
-          </motion.div>
+    <section className="py-20 px-4 bg-white">
+  <div className="max-w-7xl mx-auto text-center">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="mb-16"
+    >
+      <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-4">
+        Nowal Wisdom
+      </h2>
+      <div className="flex justify-center items-center">
+        <div className="w-16 h-1 bg-[#4a7d52] mr-3"></div>
+        <BadgePlus className="text-[#3E5F44] w-6 h-6" />
+        <div className="w-16 h-1 bg-[#4a7d52] ml-3"></div>
+      </div>
+    </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all text-left"
-              >
-                <div className="h-48 overflow-hidden">
-                  <img 
-                    src={post.image} 
-                    // alt={post.title} 
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
-                  />
-                </div>
-                <div className="p-6">
-                  {/* <h3 className="text-xl font-semibold text-gray-800 mb-3 line-clamp-2">
-                    {post.title}
-                  </h3> */}
-                  {/* <p className="text-gray-600 mb-4 line-clamp-3">
-                    {post.desc}
-                  </p> */}
-                  {/* <Link 
-                    to="#" 
-                    className="text-[#3E5F44] hover:text-[#2E4A34] font-medium inline-flex items-center gap-1 transition-colors"
-                  >
-                    Read More
-                    <ArrowRight className="w-4 h-4 mt-1" />
-                  </Link> */}
-                </div>
-              </motion.div>
-            ))}
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      {blogPosts.map((post, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          viewport={{ once: true }}
+          whileHover={{ scale: 1.03 }}
+          className="rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all group"
+        >
+          <div className="aspect-w-16 aspect-h-10">
+            <img
+              src={post.image}
+              alt=""
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
           </div>
+        </motion.div>
+      ))}
+    </div>
 
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="mt-12 bg-[#3E5F44] hover:bg-[#2E4A34] text-white font-semibold px-8 py-3 rounded-full transition-all shadow-md hover:shadow-lg"
-          >
-            Explore All Articles
-          </motion.button>
-        </div>
-      </section>
+    {/* <motion.button
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="mt-12 bg-[#3E5F44] hover:bg-[#2E4A34] text-white font-semibold px-8 py-3 rounded-full transition-all shadow-md hover:shadow-lg"
+    >
+      Explore All Articles
+    </motion.button> */}
+  </div>
+</section>
+
     </div>
   )
 }

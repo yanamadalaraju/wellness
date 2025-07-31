@@ -469,15 +469,17 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
+import image from "../assets/2ps-7.png";
 const Programs: React.FC = () => {
+   const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-cream-50">
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.pexels.com/photos/3768128/pexels-photo-3768128.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            src={image}
             alt="Holistic Programs"
             className="w-full h-full object-cover"
           />
@@ -848,9 +850,12 @@ By addressing the root cause and supporting the body holistically, it stands as 
               <br />
               Begin your journey to holistic health today.
             </p>
-            <button className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-md">
-              Heal Now
-            </button>
+             <button 
+      onClick={() => navigate('/contact')}
+      className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-md"
+    >
+      Heal Now
+    </button>
           </div>
         </div>
       </section>

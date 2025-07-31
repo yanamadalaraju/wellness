@@ -351,8 +351,10 @@ import image2 from "../assets/gastro.jpg";
 import image3 from "../assets/musclularimage.jpg";
 import image4 from "../assets/nuts.jpg";
 import image5 from "../assets/lifestyle.jpg";
+import { useNavigate } from 'react-router-dom';
 
 const Programs: React.FC = () => {
+    const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-cream-50">
       {/* Hero Section */}
@@ -374,7 +376,7 @@ const Programs: React.FC = () => {
             At Wellness Nature Cure
           </p>
           <Link 
-            to="/programs" 
+            to="/contact" 
             className="inline-block px-8 py-3 bg-sage-500 hover:bg-sage-600 text-white font-medium rounded-full transition duration-300"
           >
             Explore Our Programs
@@ -777,9 +779,12 @@ const Programs: React.FC = () => {
               <br />
               Begin your journey to holistic health today.
             </p>
-            <button className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-md">
-              Heal Now
-            </button>
+            <button 
+      onClick={() => navigate('/contact')}
+      className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-md"
+    >
+      Heal Now
+    </button>
           </div>
         </div>
       </section>

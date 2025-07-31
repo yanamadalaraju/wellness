@@ -105,9 +105,9 @@ const Experience: React.FC = () => {
         Nowal Naturecare is simply your guide—a gentle catalyst on your journey toward healing, renewal, and the quiet magic of holistic living.
       </p>
       
-      <button className="mt-6 px-8 py-3 bg-[#435334] text-[#F2F1E8] rounded-full font-medium hover:bg-[#353d27] transition-colors">
+      {/* <button className="mt-6 px-8 py-3 bg-[#435334] text-[#F2F1E8] rounded-full font-medium hover:bg-[#353d27] transition-colors">
         Discover Our Retreat
-      </button>
+      </button> */}
     </div>
   </div>
 </section>
@@ -122,9 +122,9 @@ const Experience: React.FC = () => {
     <p className="mt-4 text-sm uppercase tracking-wider text-[#6B7A4C]">— Nowal Philosophy</p>
 
     {/* Heal Now Button */}
-    <button className="mt-10 px-8 py-3 bg-[#435334] text-white rounded-full text-base font-semibold hover:bg-[#6B7A4C] transition-all duration-300">
+    {/* <button className="mt-10 px-8 py-3 bg-[#435334] text-white rounded-full text-base font-semibold hover:bg-[#6B7A4C] transition-all duration-300">
       Heal Now
-    </button>
+    </button> */}
   </div>
 </section>
 

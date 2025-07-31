@@ -1748,30 +1748,30 @@ const Navbar: React.FC = () => {
         { name: 'Holistic Therapies', path: '/Holistictherapy' },
       ]
     },
-    { 
-      name: 'True Treatments', 
-      path: '/treatments',
-      submenu: [
-        { name: 'Respiratory Alignments', path: '/Respiratory' },
-        { name: 'Gastro-intestinal Disorders', path: '/gastro' },
-        { name: 'Musculoskeletal Conditions', path: '/Musculoskeletal' },
-        { name: 'Endocrine Disorders', path: '/Endocrine' },
-        { name: 'Lifestyle Preventive Nowal', path: '/lifestyle' },
-      ]
-    },
+    // { 
+    //   name: 'True Treatments', 
+    //   path: '/treatments',
+    //   submenu: [
+    //     { name: 'Respiratory Alignments', path: '/Respiratory' },
+    //     { name: 'Gastro-intestinal Disorders', path: '/gastro' },
+    //     { name: 'Musculoskeletal Conditions', path: '/Musculoskeletal' },
+    //     { name: 'Endocrine Disorders', path: '/Endocrine' },
+    //     { name: 'Lifestyle Preventive Nowal', path: '/lifestyle' },
+    //   ]
+    // },
   ];
 
   const accommodationsDropdown = [
-    { 
-      name: 'Retreat Amenities', 
-      path: '/health-offers#amenities',
-      submenu: [
-        { name: 'Healing Abode', path: '/Healingabode' },
-        { name: 'Recreation Spaces', path: '/Recreation' },
-        { name: 'Meditation Caves', path: '/meditation' },
-        { name: 'Cardio Gym', path: '/gym' },
-      ]
-    },
+    // { 
+    //   name: 'Retreat Amenities', 
+    //   path: '/health-offers#amenities',
+    //   submenu: [
+    //     { name: 'Healing Abode', path: '/Healingabode' },
+    //     { name: 'Recreation Spaces', path: '/Recreation' },
+    //     { name: 'Meditation Caves', path: '/meditation' },
+    //     { name: 'Cardio Gym', path: '/gym' },
+    //   ]
+    // },
     { name: 'Gallery', path: '/image' },
     { name: 'Events', path: '/Events' },
   ];
@@ -1781,15 +1781,15 @@ const Navbar: React.FC = () => {
     { name: 'Career Opportunities', path: '/career' },
   ];
 
-  const tariffDropdown = [
-    { 
-      name: 'Download Packages', 
-      path: '/packages/download',
-      pdf: '/downloads/wellness-packages.pdf'
-    },
-    { name: 'Tariff Details', path: '/tariff' },
-    { name: 'Rules & Regulations', path: '/Rulesandregulations' },
-  ];
+  // const tariffDropdown = [
+  //   { 
+  //     name: 'Download Packages', 
+  //     path: '/packages/download',
+  //     pdf: '/downloads/wellness-packages.pdf'
+  //   },
+  //   { name: 'Tariff Details', path: '/tariff' },
+  //   { name: 'Rules & Regulations', path: '/Rulesandregulations' },
+  // ];
 
   return (
     <nav 
@@ -1987,7 +1987,7 @@ const Navbar: React.FC = () => {
                 className={`absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50 transition-all duration-200 origin-top-right ${openDropdown === 'desktop-tariff' ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                {tariffDropdown.map((item, index) => (
+                {/* {tariffDropdown.map((item, index) => (
                   item.pdf ? (
                     <a 
                       key={index} 
@@ -2012,14 +2012,14 @@ const Navbar: React.FC = () => {
                       {item.name}
                     </NavLink>
                   )
-                ))}
+                ))} */}
               </div>
             </div>
 
             {/* Apply for Admissions Button */}
             <div className="ml-2">
               <NavLink 
-                to="/booking" 
+                to="/contact" 
                 className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
                 onClick={closeAllDropdowns}
               >
@@ -2143,7 +2143,7 @@ const Navbar: React.FC = () => {
               openDropdown === 'mobile-accommodations' ? 'max-h-96' : 'max-h-0'
             }`}>
               <div className="pl-4 space-y-1">
-                {accommodationsDropdown.map((item, index) => (
+                {/* {accommodationsDropdown.map((item, index) => (
                   <div key={index}>
                     {item.submenu ? (
                       <>
@@ -2187,7 +2187,7 @@ const Navbar: React.FC = () => {
                       </NavLink>
                     )}
                   </div>
-                ))}
+                ))} */}
               </div>
             </div>
           </div>
@@ -2237,7 +2237,7 @@ const Navbar: React.FC = () => {
             <div className={`transition-all duration-200 overflow-hidden ${
               openDropdown === 'mobile-tariff' ? 'max-h-96' : 'max-h-0'
             }`}>
-              <div className="pl-4 space-y-1">
+              {/* <div className="pl-4 space-y-1">
                 {tariffDropdown.map((item, index) => (
                   item.pdf ? (
                     <a 
@@ -2264,7 +2264,7 @@ const Navbar: React.FC = () => {
                     </NavLink>
                   )
                 ))}
-              </div>
+              </div> */}
             </div>
           </div>
 

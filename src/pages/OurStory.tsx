@@ -132,35 +132,54 @@ const OurStory: React.FC = () => {
 </section>
 
 {/* Section 1: Wholeness of Nowals */}
-<section className="bg-[#F2F1E8] py-20 px-6">
-  <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<section className="bg-[#F2F1E8] py-20 px-4 sm:px-6">
+  <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
     
     {/* Left Content Box */}
-    <div className="bg-white shadow-xl rounded-lg p-10">
-      <div className="mb-4">
-        <h2 className="text-3xl md:text-4xl font-semibold text-center text-[#435334] mb-6">
-         Comprehensiveness of Nowal Naturecare
+    <div className="bg-white shadow-2xl rounded-2xl p-8 md:p-10 transform transition-all hover:shadow-3xl hover:-translate-y-1">
+      <div className="mb-6 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#435334] mb-6 relative pb-4">
+          <span className="relative">
+            Comprehensiveness of Nowal Naturecare
+            <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-[#9EB384] rounded-full"></span>
+          </span>
         </h2>
+        <div className="flex justify-center mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#9EB384" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+          </svg>
+        </div>
       </div>
-      <p className="text-[#435334] text-base md:text-lg leading-relaxed">
-       	Nimba is a mystical tree, every part of it overflowing with nourishing, selfless qualities. Our healers are just as treasured as the Nimba tree is. The roots welcome you with Asana, where we can accommodate you with honour. It’s bark acts as our Ashray, as we support you in this wonderful experience of wellness. Just like the branches of the Nimba tree bestow us with Sharan, our aim at Nimba is to protect you from diseases and ailments. The Virya, the cooling energy of the leaves teach us to provide you with utmost relaxation and energy. You are our Humsafars, our companions, and we welcome you to an exquisite journey of health and healing.	At Nowal Naturecare, we believe true wealth lies in radiant health where the body, mind, and soul exist in perfect harmony.
-Rooted in the timeless wisdom of naturopathy and Yoga, our philosophy is simple yet powerful; the body holds an incredible ability to heal itself when nurtured by nature and followed the primeval lifestyle.
-Here, wellness is not forced, it gently unfolds through natural therapies, mindful detox, nourishing food, and deep rest with change in the lifestyle.
-Our serene, green sanctuary is designed to soothe your senses and awaken the healer within you.
-We blend modern science with ancient practices to create a holistic space where healing becomes a way of life.
-Nowal Naturecare isn’t just a center, it’s a return to self, a reminder that when you care for your health with intention and love, you unlock life’s truest abundance.
-Let us walk beside you as you reconnect with nature, embrace inner balance, and rediscover that your greatest wealth has always lived within you.	
-
-      </p>
+      <div className="space-y-6">
+        <p className="text-[#435334] text-base md:text-lg leading-relaxed font-medium">
+          Nimba is a mystical tree, every part of it overflowing with nourishing, selfless qualities. Our healers are just as treasured as the Nimba tree is.
+        </p>
+        <p className="text-[#435334] text-base md:text-lg leading-relaxed">
+          The roots welcome you with Asana, where we can accommodate you with honour. Its bark acts as our Ashray, as we support you in this wonderful experience of wellness. Just like the branches of the Nimba tree bestow us with Sharan, our aim at Nimba is to protect you from diseases and ailments.
+        </p>
+        <p className="text-[#435334] text-base md:text-lg leading-relaxed">
+          The Virya, the cooling energy of the leaves teach us to provide you with utmost relaxation and energy. You are our Humsafars, our companions, and we welcome you to an exquisite journey of health and healing.
+        </p>
+        <div className="bg-[#FAF8F1] p-4 rounded-lg border-l-4 border-[#9EB384]">
+          <p className="text-[#435334] italic font-medium">
+            "Nowal Naturecare isn't just a center, it's a return to self, a reminder that when you care for your health with intention and love, you unlock life's truest abundance."
+          </p>
+        </div>
+      </div>
     </div>
 
     {/* Right Image */}
-    <div className="flex justify-center">
-      <img
-        src="https://www.nimba.in/wp-content/uploads/2020/08/nimba-gif-1.gif"
-        alt="Nowals Tree Graphic"
-        className="max-w-full h-auto rounded-lg shadow-md"
-      />
+    <div className="flex justify-center relative">
+      <div className="relative max-w-md w-full">
+        <img
+          src="https://www.nimba.in/wp-content/uploads/2020/08/nimba-gif-1.gif"
+          alt="Nowals Tree Graphic"
+          className="w-full h-auto rounded-2xl shadow-xl transform transition-all hover:scale-105"
+        />
+        <div className="absolute -inset-4 border-2 border-[#9EB384] rounded-2xl opacity-20 pointer-events-none"></div>
+        <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-[#9EB384] rounded-full opacity-10"></div>
+        <div className="absolute -top-6 -left-6 w-20 h-20 bg-[#9EB384] rounded-full opacity-10"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -218,9 +237,9 @@ Let us walk beside you as you reconnect with nature, embrace inner balance, and 
           <p className="mt-4 text-sm uppercase tracking-wider text-[#6B7A4C]">— Our Founding Belief</p>
 
           {/* Call to Action */}
-          <button className="mt-10 px-8 py-3 bg-[#435334] text-white rounded-full text-base font-semibold hover:bg-[#6B7A4C] transition-all duration-300">
+          {/* <button className="mt-10 px-8 py-3 bg-[#435334] text-white rounded-full text-base font-semibold hover:bg-[#6B7A4C] transition-all duration-300">
             Know More
-          </button>
+          </button> */}
         </div>
       </section>
     </div>

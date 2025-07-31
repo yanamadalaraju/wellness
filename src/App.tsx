@@ -151,6 +151,7 @@ import Register from './admin/Register'
 import Login from './admin/Login'
 import AdminContactDashboard from './admin/AdminContactDashboard'
 import NowalNatureCareResort from './pages/Nowal'
+import ScrollToTop from './components/ScrollToTop'
 
 function AppRoutes() {
   const location = useLocation()
@@ -161,6 +162,7 @@ function AppRoutes() {
 
   return (
     <>
+    <ScrollToTop />
       {!hideLayout && (
         <Layout>
           <Routes>
