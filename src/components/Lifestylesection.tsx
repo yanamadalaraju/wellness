@@ -161,7 +161,7 @@ const Lifestylesection = () => {
         {/* Section header */}
         <div className="text-center mb-12">
           <span className="inline-block mb-3 text-sm uppercase tracking-widest text-sage-600 font-semibold">
-            Lifestyle Wellness
+            Lifestyle Nowal
           </span>
           <h2 className="text-3xl md:text-4xl font-bold font-playfair text-gray-900 mb-3">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-sage-600 to-sage-400">Holistic</span> Lifestyle Therapies

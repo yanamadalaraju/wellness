@@ -479,7 +479,7 @@ const Contact: React.FC = () => {
             Get in Touch
           </h1>
           <p className="text-xl md:text-2xl text-shadow">
-            We're here to guide you on your wellness journey
+            We're here to guide you on your nowal journey
           </p>
         </div>
       </section>
@@ -520,7 +520,7 @@ const Contact: React.FC = () => {
                   <div>
                     <h3 className="font-semibold text-sage-600 mb-1">Address</h3>
                     <p className="text-gray-600">
-                      123 Wellness Valley<br />
+                      123 Nowal Valley<br />
                       Serene Hills, Nature State 12345<br />
                       United States
                     </p>
@@ -543,9 +543,9 @@ const Contact: React.FC = () => {
                   <div>
                     <h3 className="font-semibold text-sage-600 mb-1">Email</h3>
                     <p className="text-gray-600">
-                      General: info@wellness-retreat.com<br />
-                      Bookings: bookings@wellness-retreat.com<br />
-                      Support: support@wellness-retreat.com
+                      General: info@nowal-retreat.com<br />
+                      Bookings: bookings@nowal-retreat.com<br />
+                      Support: support@nowal-retreat.com
                     </p>
                   </div>
                 </div>
@@ -737,14 +737,14 @@ const Contact: React.FC = () => {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Wellness Nature Cure Location"
+              title="Nowal Nature Cure Location"
             ></iframe>
             
             <div className="absolute bottom-4 left-4 bg-white p-6 rounded-lg max-w-xs shadow-md">
               <div className="flex items-start gap-3">
                 <MapPin className="w-6 h-6 text-sage-600 mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="font-playfair font-semibold text-sage-700">Wellness Nature Cure</h3>
+                  <h3 className="font-playfair font-semibold text-sage-700">Nowal Nature Cure</h3>
                   <address className="not-italic text-sm text-gray-600 mt-1">
                     Baliyasan, Nr. Mccain Foods<br />
                     Ahmedabad–Mehsana Expressway<br />
@@ -776,7 +776,7 @@ const Contact: React.FC = () => {
         Frequently Asked Questions
       </h2>
       <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-        Everything you need to know about your wellness journey at Nimba
+        Everything you need to know about your Nowal journey at Nowal
       </p>
     </div>
     
@@ -863,7 +863,7 @@ const Contact: React.FC = () => {
             Join Our Team
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Are you passionate about holistic healing? We're always looking for dedicated professionals to join our wellness team.
+            Are you passionate about holistic healing? We're always looking for dedicated professionals to join our Nowal team.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/careers" className="bg-white text-sage-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-full transition-colors shadow-md hover:shadow-lg">

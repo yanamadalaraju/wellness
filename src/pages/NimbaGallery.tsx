@@ -46,8 +46,8 @@ const NimbaGallery: React.FC = () => {
             >
               &times;
             </button>
-            <h3>Special Summer Offer!</h3>
-            <p>Get 20% off on all wellness packages this season. Book now!</p>
+            <h3>Your family’s happy place—for body, mind, and heart.</h3>
+            <p>Enjoy 20% Off on Our Inauguration month</p>
             <img 
               src= {image}
               alt="Summer Special" 

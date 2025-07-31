@@ -182,21 +182,21 @@ import newImage43 from '../assets/male dining block view5.png';
 import newImage44 from '../assets/md.png';
 import newImage45 from '../assets/male dining block view8.png';
 
-interface WellnessImage {
+interface NowalImage {
   url: string;
   title: string;
 }
 
 const ImageGridSection = () => {
   // Using imported local images
-  const images: WellnessImage[] = [
+  const images: NowalImage[] = [
     { url: yogaImage, title: "Yoga Session" },
     { url: spaImage, title: "Spa Treatment" },
     { url: meditationImage, title: "Meditation" },
     { url: massageImage, title: "Massage Therapy" },
     { url: aromaImage, title: "Aromatherapy" },
     { url: salonImage, title: "Beauty Salon" },
-    { url: retreatImage, title: "Wellness Retreat" },
+    { url: retreatImage, title: "Nowal Retreat" },
     { url: hotSpringImage, title: "Hot Spring" },
     { url: saunaImage, title: "Sauna" },
 
@@ -285,7 +285,7 @@ const ImageGridSection = () => {
   return (
     <section className="bg-[#f5f6f0] py-16 px-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-serif text-center mb-12 text-[#3a3a3a]">Wellness Sanctuary</h2>
+        <h2 className="text-4xl font-serif text-center mb-12 text-[#3a3a3a]">Nowal Sanctuary</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {images.map((image, idx) => (
             <div 

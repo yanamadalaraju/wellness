@@ -336,60 +336,63 @@ const therapies = [
   {
     name: 'Colon Hydrotherapy',
     image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&fit=crop',
-    content: 'A gentle infusion of purified water into the colon to remove accumulated waste, toxins, and gas. This advanced detoxification therapy improves digestion, enhances nutrient absorption, and promotes overall vitality.',
+    content: 'Our bodies hold more than just blood and water—they also accumulate waste and toxins that may disrupt digestive health. Colon Hydrotherapy, also known as colon cleansing, is a powerful naturopathic therapy that gently eliminates these harmful substances, restoring balance from within. At Nowal Naturecare, this holistic treatment supports the bodys natural detoxification process, offering a range of health benefits that go beyond digestion.',
     benefits: [
+      'Deeply cleanses the Large Intestine',
+      'Helps maintain optimal pH balance',
+      'Reduces fatigue and sluggishness',
       'Enhances digestive efficiency',
-      'Eliminates toxic buildup',
-      'Improves hydration at cellular level',
-      'Boosts immune system function'
+      'Aids in weight management and boosts energy levels'
     ],
     icon: <FaWater className="text-blue-400" />
   },
   {
     name: 'Manipulative Therapy',
     image: 'https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&fit=crop',
-    content: 'Expert manual techniques performed by our certified therapists to realign musculoskeletal structures, relieve tension, and restore optimal movement patterns for pain-free living.',
+    content: 'Massage therapy is an ancient healing practice, cherished for centuries for its ability to relieve tension, stimulate circulation, and promote overall well-being. At Nowal Naturecare, this therapeutic process involves the rhythmic massage and pressing of muscles and soft tissues using a variety of scientific techniques tailored to your needs.',
     benefits: [
-      'Alleviates chronic pain',
-      'Restores joint mobility',
-      'Improves posture alignment',
-      'Reduces muscle tension'
+      'Alleviates stress and muscle stiffness',
+      'Enhances metabolic function',
+      'Tones and relaxes muscles',
+      ' Improves blood flow and circulation',
+      'Promotes a youthful glow and boosts energy'
     ],
     icon: <FaHandsHelping className="text-amber-500" />
   },
   {
-    name: 'Detox Enema',
+    name: ' Enema',
     image: 'https://images.unsplash.com/photo-1581595219315-a187dd40c322?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&fit=crop',
-    content: 'A therapeutic cleansing procedure using specialized solutions to gently flush the lower colon, removing impacted waste and promoting optimal digestive function in our serene treatment environment.',
+    content: 'Healthy bowel movements are essential for the body’s overall functioning and balance. When this natural process is disrupted, Enema therapy offers an effective solution to restore digestive regularity. At Nowal Naturecare, enema treatments are tailored to your health condition and may include normal, neutral, warm, or herb-infused water. In this therapy, a gentle infusion of natural liquid into the rectum stimulates stool evacuation and relieves even chronic constipation.',
     benefits: [
-      'Cleanses intestinal walls',
-      'Stimulates peristaltic action',
-      'Enhances nutrient assimilation',
-      'Reduces bloating and discomfort'
+      'Eliminates accumulated waste from the colon',
+      'Effectively treats constipation',
+      'Enhances nutrient absorption',
+      'Cleanses the lower digestive tract'
     ],
     icon: <FaLeaf className="text-emerald-400" />
   },
   {
-    name: 'Therapeutic Mud Pack',
+    name: ' Mud Pack',
     image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&fit=crop',
-    content: 'Our signature mineral-rich mud application draws out impurities, reduces inflammation, and nourishes the skin while providing deep therapeutic benefits for joints and muscles.',
+    content: 'Mud, one of nature’s vital elements, is rich in minerals that offer powerful therapeutic benefits when applied to the body. At Nowal Naturecare, our carefully curated mud pack treatments go beyond expectations—this is the essence of naturopathy. The treatment draws out harmful toxins, deeply cleansing and revitalizing the body.',
     benefits: [
-      'Detoxifies through skin',
-      'Reduces inflammatory markers',
-      'Improves skin elasticity',
-      'Relieves arthritic discomfort'
+      'Helps regulate body temperature',
+      'Supports digestive health',
+      'Eases headaches and tension',
+      'Nourishes and refreshes the skin',
+      ' Acts as a natural cooling agent'
     ],
     icon: <FaSpa className="text-amber-800" />
   },
   {
     name: 'Vibroacoustic Massage',
     image: 'https://images.unsplash.com/photo-1545389336-cf090694435e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&fit=crop',
-    content: 'A cutting-edge therapy combining vibrational frequencies with therapeutic massage to release deep-seated tension, improve circulation, and promote cellular regeneration.',
+    content: 'Vibro Massage an advanced naturopathic treatment combines the benefits of high-tech vibratory therapy to target the entire body or specific tension points with powder of floor of grains.',
     benefits: [
-      'Breaks down fascial adhesions',
-      'Enhances lymphatic drainage',
+      'Relaxes and tones deep muscle layers',
+      'Enhances blood circulation',
       'Reduces cortisol levels',
-      'Improves range of motion'
+      'Eases stress, pain, and physical fatigue'
     ],
     icon: <FaSpa className="text-purple-400" />
   }
@@ -468,7 +471,7 @@ const TherapySection = () => {
   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent"></div>
   <div className="absolute bottom-0 left-0 p-4 md:p-6 text-white">
     <h3 className="text-xl md:text-2xl font-bold">{selected.name}</h3>
-    <p className="text-sage-100 text-sm md:text-base">Premium Wellness Treatment</p>
+    <p className="text-sage-100 text-sm md:text-base">Premium Nowal Treatment</p>
   </div>
 </div>
             </motion.div>

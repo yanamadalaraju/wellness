@@ -481,7 +481,7 @@ const CareerForm = () => {
                 <div className="flex items-start space-x-3">
                   <Mail className="w-5 h-5 text-sage-600 mt-1 flex-shrink-0" />
                   <div>
-                    <p className="text-gray-700">careers@nimba.in</p>
+                    <p className="text-gray-700">careers@nowal.in</p>
                     <p className="text-gray-500 text-sm">Email your queries</p>
                   </div>
                 </div>

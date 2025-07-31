@@ -285,7 +285,7 @@ const testimonials = [
     image:
       "https://www.nimba.in/wp-content/uploads/2020/07/Vivek-Oberoi-%E2%80%93-Actor-Bollywood-India.png",
     quote:
-      "I was truly taken by surprise & my experience at nimba has been exceptional. I believe Naturopathy is the need of the hour as people are done with allopathic treatments and their side effects.",
+      "I was truly taken by surprise & my experience at nowal has been exceptional. I believe Naturopathy is the need of the hour as people are done with allopathic treatments and their side effects.",
   },
   {
     name: "Raveena Taurani",
@@ -301,15 +301,15 @@ const testimonials = [
     image:
       "https://www.nimba.in/wp-content/uploads/2020/07/Vivek-Oberoi-%E2%80%93-Actor-Bollywood-India.png",
     quote:
-      "The nimba retreat with Naturopathy, Ayurveda, Yoga, Hydrotherapy, and Raga therapy is amazing. I've had a good detox and inch loss.",
+      "The nowal retreat with Naturopathy, Ayurveda, Yoga, Hydrotherapy, and Raga therapy is amazing. I've had a good detox and inch loss.",
   },
   {
     name: "John Doe",
-    title: "nimba Coach",
+    title: "nowal Coach",
     image:
       "https://www.nimba.in/wp-content/uploads/2020/07/Vivek-Oberoi-%E2%80%93-Actor-Bollywood-India.png",
     quote:
-      "nimba provides a holistic approach to health that combines ancient wisdom with modern techniques.",
+      "nowal provides a holistic approach to health that combines ancient wisdom with modern techniques.",
   },
   {
     name: "Jane Smith",
@@ -317,7 +317,7 @@ const testimonials = [
     image:
       "https://www.nimba.in/wp-content/uploads/2020/07/Vivek-Oberoi-%E2%80%93-Actor-Bollywood-India.png",
     quote:
-      "The environment at nimba is perfect for rejuvenation and self-discovery. Highly recommended!",
+      "The environment at nowal is perfect for rejuvenation and self-discovery. Highly recommended!",
   },
   {
     name: "Raveena Taurani",
@@ -333,15 +333,15 @@ const testimonials = [
     image:
       "https://www.nimba.in/wp-content/uploads/2020/07/Vivek-Oberoi-%E2%80%93-Actor-Bollywood-India.png",
     quote:
-      "The nimba retreat with Naturopathy, Ayurveda, Yoga, Hydrotherapy, and Raga therapy is amazing. I've had a good detox and inch loss.",
+      "The nowal retreat with Naturopathy, Ayurveda, Yoga, Hydrotherapy, and Raga therapy is amazing. I've had a good detox and inch loss.",
   },
   {
     name: "John Doe",
-    title: "nimba Coach",
+    title: "nowal Coach",
     image:
       "https://www.nimba.in/wp-content/uploads/2020/07/Vivek-Oberoi-%E2%80%93-Actor-Bollywood-India.png",
     quote:
-      "nimba provides a holistic approach to health that combines ancient wisdom with modern techniques.",
+      "nowal provides a holistic approach to health that combines ancient wisdom with modern techniques.",
   },
   {
     name: "Jane Smith",
@@ -349,7 +349,7 @@ const testimonials = [
     image:
       "https://www.nimba.in/wp-content/uploads/2020/07/Vivek-Oberoi-%E2%80%93-Actor-Bollywood-India.png",
     quote:
-      "The environment at nimba is perfect for rejuvenation and self-discovery. Highly recommended!",
+      "The environment at nowal is perfect for rejuvenation and self-discovery. Highly recommended!",
   },
 ];
 
@@ -393,7 +393,7 @@ export default function TestimonialCarousel() {
       <div className="max-w-7xl mx-auto relative">
         <h2 className="text-4xl font-bold text-center text-green-900 mb-16 leading-snug">
           What Celebrities Say <br />
-          <span className="text-green-700">About nimba</span>
+          <span className="text-green-700">About Nowal</span>
         </h2>
 
         {/* Arrows */}

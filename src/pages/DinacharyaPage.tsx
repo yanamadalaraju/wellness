@@ -332,186 +332,96 @@ const DinacharyaPage: React.FC = () => {
         </nav>
       </div>
 
-      {/* 3D Content Block with Heal Now Button */}
-      <section className="content-block py-12 px-4 md:px-8">
-        <div 
-          className="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl p-8 md:p-12 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 border border-slate-100 relative overflow-hidden"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          {/* Floating decorative elements */}
-          <div className={`absolute -top-20 -left-20 w-40 h-40 rounded-full bg-amber-100/30 blur-3xl transition-all duration-1000 ${isHovered ? 'opacity-70' : 'opacity-30'}`}></div>
-          <div className={`absolute -bottom-20 -right-20 w-60 h-60 rounded-full bg-amber-200/20 blur-3xl transition-all duration-1000 ${isHovered ? 'opacity-70' : 'opacity-30'}`}></div>
-          
-          <div className="relative z-10 text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-6 font-serif">
-              <span className="bg-gradient-to-r from-amber-600 to-amber-800 bg-clip-text text-transparent">
-                Transform Your Daily Routine
-              </span>
-            </h2>
-            <p className="text-lg md:text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Experience the power of Ayurvedic wisdom in your daily practice. Begin your journey to holistic health with our time-tested rituals that align your body with nature's rhythms.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="relative overflow-hidden group bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl">
-                <span className="relative z-10 flex items-center">
-                  Begin Your Ritual
-                  <ChevronRight className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-                </span>
-                <span className="absolute inset-0 bg-gradient-to-r from-amber-600 to-amber-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></span>
-              </button>
-              <button className="relative overflow-hidden group border-2 border-amber-500 text-amber-600 hover:text-amber-700 hover:border-amber-600 font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl">
-                <span className="relative z-10 flex items-center">
-                  Learn More
-                  <ChevronRight className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Guest Essentials Section */}
+<section className="py-20 px-4 md:px-8 bg-white">
+  <div className="max-w-6xl mx-auto">
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4 font-serif">
+        Guest <span className="text-amber-600">Essentials</span>
+      </h2>
+      <div className="w-20 h-1 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto rounded-full mb-6"></div>
+      <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+        Prepare for your holistic wellness journey at Nowal Naturecare
+      </p>
+    </div>
 
-      {/* Quote Content Block */}
-      <section className="quote-section py-20 px-4 md:px-8 bg-gradient-to-br from-amber-100/30 via-white to-amber-50/30 relative overflow-hidden">
-        {/* Decorative background elements */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-10">
-          <Leaf className="absolute top-20 left-20 w-24 h-24 text-amber-200/30" />
-          <Leaf className="absolute bottom-20 right-20 w-24 h-24 text-amber-200/30" />
+    <div className="grid md:grid-cols-2 gap-8">
+      {/* Clothing Section */}
+      <div className="bg-amber-50/50 rounded-xl p-8 border border-amber-100">
+        <div className="flex items-center mb-6">
+          <Activity className="w-8 h-8 text-amber-600 mr-4" />
+          <h3 className="text-xl font-bold text-slate-800">Clothing Essentials</h3>
         </div>
-        
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          {/* Decorative quote marks */}
-          <Quote className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-8 w-16 h-16 text-amber-200/70" />
-          
-          <blockquote className="text-2xl md:text-3xl font-serif italic text-slate-700 mb-8 leading-relaxed relative z-10">
-            "Dinacharya is the foundation of health. By aligning our daily routine with nature's rhythms, 
-            we create harmony between body, mind, and consciousness."
-          </blockquote>
-          <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto mb-6 rounded-full"></div>
-          <p className="text-lg md:text-xl font-medium text-amber-700 flex items-center justify-center">
-            <Moon className="w-5 h-5 mr-2" />
-            Ayurvedic Proverb
-            <Sun className="w-5 h-5 ml-2" />
+        <ul className="space-y-4">
+          <li className="flex items-start">
+            <ChevronRight className="w-5 h-5 text-amber-500 mt-1 mr-2 flex-shrink-0" />
+            <span>Comfortable clothing for your entire stay</span>
+          </li>
+          <li className="flex items-start">
+            <ChevronRight className="w-5 h-5 text-amber-500 mt-1 mr-2 flex-shrink-0" />
+            <span>Walking shoes and breathable tracksuits for therapies</span>
+          </li>
+          <li className="flex items-start">
+            <ChevronRight className="w-5 h-5 text-amber-500 mt-1 mr-2 flex-shrink-0" />
+            <span>Appropriate yoga wear for daily practice</span>
+          </li>
+          <li className="flex items-start">
+            <ChevronRight className="w-5 h-5 text-amber-500 mt-1 mr-2 flex-shrink-0" />
+            <span>Swimsuit for aquatic therapies</span>
+          </li>
+        </ul>
+      </div>
+
+      {/* Wellness Preparation Section */}
+      <div className="bg-amber-50/50 rounded-xl p-8 border border-amber-100">
+        <div className="flex items-center mb-6">
+          <Heart className="w-8 h-8 text-amber-600 mr-4" />
+          <h3 className="text-xl font-bold text-slate-800">Wellness Preparation</h3>
+        </div>
+        <ul className="space-y-4">
+          <li className="flex items-start">
+            <ChevronRight className="w-5 h-5 text-amber-500 mt-1 mr-2 flex-shrink-0" />
+            <span>Basic toiletries will be provided in your accommodation</span>
+          </li>
+          <li className="flex items-start">
+            <ChevronRight className="w-5 h-5 text-amber-500 mt-1 mr-2 flex-shrink-0" />
+            <span>Bring instruments/costumes if joining cultural events</span>
+          </li>
+          <li className="flex items-start">
+            <ChevronRight className="w-5 h-5 text-amber-500 mt-1 mr-2 flex-shrink-0" />
+            <span>Carry your most recent medical reports</span>
+          </li>
+          <li className="flex items-start">
+            <ChevronRight className="w-5 h-5 text-amber-500 mt-1 mr-2 flex-shrink-0" />
+            <span>Ensure medical information is complete for registration</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    {/* Note Section */}
+    <div className="mt-12 bg-amber-100/30 rounded-xl p-6 border border-amber-200">
+      <div className="flex items-start">
+        <div className="bg-amber-100 p-3 rounded-full mr-4">
+          <Clock className="w-6 h-6 text-amber-700" />
+        </div>
+        <div>
+          <h4 className="text-lg font-medium text-slate-800 mb-2">Important Note</h4>
+          <p className="text-slate-700">
+            Your comfort and safety are our priority. Please ensure you bring all necessary items to fully participate in our wellness programs. 
+            Incomplete medical information may affect your treatment plan.
           </p>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-      {/* Daily Practices Section */}
-      <section className="py-20 px-4 md:px-8 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4 font-serif">
-              The <span className="text-amber-600">Dinacharya</span> Way
-            </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto rounded-full mb-6"></div>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Daily practices to align your body with nature's cycles
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                title: "Morning Rituals",
-                description: "Wake with the sun, cleanse, and set intentions",
-                icon: <Sun className="w-8 h-8 text-amber-500" />,
-                bg: "bg-amber-100/50"
-              },
-              {
-                title: "Self Massage",
-                description: "Nourish your body with warm oil massage",
-                icon: <Droplets className="w-8 h-8 text-amber-500" />,
-                bg: "bg-amber-200/30"
-              },
-              {
-                title: "Yoga Practice",
-                description: "Align movement with your dosha type",
-                 icon: <FaPersonPraying className="w-7 h-7 text-amber-500" />,
-                bg: "bg-amber-100/40"
-              },
-              {
-                title: "Evening Wind-down",
-                description: "Prepare for restful sleep as sun sets",
-                icon: <Moon className="w-8 h-8 text-amber-500" />,
-                bg: "bg-amber-200/20"
-              }
-            ].map((item, index) => (
-              <div 
-                key={index}
-                className={`${item.bg} rounded-xl p-8 text-center border border-amber-100 hover:border-amber-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-2 relative overflow-hidden group`}
-              >
-                <div className="absolute -right-10 -top-10 w-32 h-32 rounded-full bg-amber-200/10 group-hover:bg-amber-300/10 transition-all duration-500"></div>
-                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-white flex items-center justify-center shadow-sm relative z-10">
-                  {item.icon}
-                </div>
-                <h3 className="text-xl font-bold text-slate-800 mb-3 relative z-10">{item.title}</h3>
-                <p className="text-slate-600 relative z-10">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
+    
+      
 
-      {/* Benefits Section */}
-      <section className="py-20 px-4 md:px-8 bg-gradient-to-br from-amber-50 to-amber-100/30">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4 font-serif">
-              Benefits of <span className="text-amber-600">Daily Rituals</span>
-            </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto rounded-full mb-6"></div>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              How Dinacharya transforms your health and wellbeing
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Balanced Doshas",
-                description: "Regular practice helps maintain equilibrium between Vata, Pitta, and Kapha",
-                icon: <Heart className="w-8 h-8 text-amber-600" />
-              },
-              {
-                title: "Improved Digestion",
-                description: "Timed meals and rituals enhance Agni (digestive fire)",
-                icon: <Leaf className="w-8 h-8 text-amber-600" />
-              },
-              {
-                title: "Better Sleep",
-                description: "Evening routines prepare body for deep, restorative sleep",
-                icon: <Moon className="w-8 h-8 text-amber-600" />
-              },
-              {
-                title: "Reduced Stress",
-                description: "Rhythmic daily patterns calm the nervous system",
-                icon: <Droplets className="w-8 h-8 text-amber-600" />
-              },
-              {
-                title: "Increased Energy",
-                description: "Morning practices boost vitality throughout the day",
-                icon: <Sun className="w-8 h-8 text-amber-600" />
-              },
-              {
-                title: "Mental Clarity",
-                description: "Consistent routine enhances focus and awareness",
-                icon: <Clock className="w-8 h-8 text-amber-600" />
-              }
-            ].map((item, index) => (
-              <div 
-                key={index}
-                className="bg-white rounded-xl p-8 text-center border border-amber-100 hover:border-amber-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-2"
-              >
-                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-amber-100 flex items-center justify-center">
-                  {item.icon}
-                </div>
-                <h3 className="text-xl font-bold text-slate-800 mb-3">{item.title}</h3>
-                <p className="text-slate-600">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+     
     </div>
   );
 };

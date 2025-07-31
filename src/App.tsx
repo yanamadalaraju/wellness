@@ -150,6 +150,7 @@ import RulesAndRegulations from './pages/RulesAndRegulations'
 import Register from './admin/Register'
 import Login from './admin/Login'
 import AdminContactDashboard from './admin/AdminContactDashboard'
+import NowalNatureCareResort from './pages/Nowal'
 
 function AppRoutes() {
   const location = useLocation()
@@ -194,6 +195,7 @@ function AppRoutes() {
             <Route path="/Recreation" element={<Recreation />} />
             <Route path="/meditation" element={<Meditation />} />
             <Route path="/gym" element={<Gym />} />
+             <Route path="/nowal" element={<NowalNatureCareResort />} />
             <Route path="/career" element={<Carrer />} />
             <Route path="/tariff" element={<TariffPage />} />
             <Route path="/image" element={<Image />} />

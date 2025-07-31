@@ -116,7 +116,7 @@ import "keen-slider/keen-slider.min.css"
 
 const videos = [
   {
-    title: "Vivek Oberoi goes for complete Detox and Rejuvenation at Wellness Nature Cure",
+    title: "Vivek Oberoi goes for complete Detox and Rejuvenation at Nowal Nature Cure",
     url: "https://youtu.be/BfWPhJuokX8",
   },
   {
@@ -128,27 +128,27 @@ const videos = [
     url: "https://youtu.be/BfWPhJuokX8",
   },
   {
-    title: "Reyhna Malhotra shares her Wellness experience",
+    title: "Reyhna Malhotra shares her Nowal experience",
     url: "https://youtu.be/BfWPhJuokX8",
   },
   {
-    title: "Words for Wellness from Mr Oliver – Germany",
+    title: "Words for Nowal from Mr Oliver – Germany",
     url: "https://youtu.be/BfWPhJuokX8",
   },
   {
-    title: "Our Happy Client speaks about her wonderful experience at Wellness",
+    title: "Our Happy Client speaks about her wonderful experience at Nowal",
     url: "https://youtu.be/BfWPhJuokX8",
   },
   {
-    title: "Wellness transformed my health - Priya Sharma",
+    title: "Nowal transformed my health - Priya Sharma",
     url: "https://youtu.be/BfWPhJuokX8",
   },
   {
-    title: "Best wellness retreat in India - Dr. Michael Chen",
+    title: "Best Nowal retreat in India - Dr. Michael Chen",
     url: "https://youtu.be/BfWPhJuokX8",
   },
   {
-    title: "My 2-week detox journey at Wellness - Rohan Patel",
+    title: "My 2-week detox journey at Nowal - Rohan Patel",
     url: "https://youtu.be/BfWPhJuokX8",
   },
   {

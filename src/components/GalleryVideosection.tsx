@@ -4,7 +4,7 @@ const GalleryVideoSection = () => {
   return (
     <section className="bg-[#f5f6f0] py-16 px-4">
       <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl font-semibold text-gray-800 mb-6">Experience the Wellness</h2>
+        <h2 className="text-3xl font-semibold text-gray-800 mb-6">Experience the Nowal</h2>
         <p className="text-gray-600 mb-8">
           Discover our journey towards holistic healing and natural therapies through this short video.
         </p>

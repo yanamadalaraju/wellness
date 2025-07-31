@@ -35,7 +35,7 @@ const Image: React.FC = () => {
             Join Our Team
           </h1>
           <p className="text-xl md:text-2xl text-shadow">
-            We're looking for passionate individuals to join our wellness journey
+            We're looking for passionate individuals to join our Nowal journey
           </p>
         </div>
       </section>

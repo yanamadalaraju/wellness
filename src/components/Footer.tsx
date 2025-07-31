@@ -196,7 +196,7 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* Logo + Address */}
         <div className="space-y-4">
-          <img src={logo} alt="Wellness Logo" className="w-48" />
+          <img src={logo} alt="Nowal Logo" className="w-48" />
           <div className="flex items-start gap-3">
             <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
             <address className="not-italic leading-relaxed">
@@ -231,7 +231,7 @@ const Footer: React.FC = () => {
           
           <div className="flex items-start gap-3">
             <Mail className="w-5 h-5 mt-1 flex-shrink-0" />
-            <a href="mailto:info@Wellness.in" className="hover:underline">info@Wellness.in</a>
+            <a href="mailto:info@Nowal.in" className="hover:underline">info@Nowal.in</a>
           </div>
           
           <div className="flex items-start gap-3">
@@ -258,7 +258,7 @@ const Footer: React.FC = () => {
         <div>
           <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-3">
-            <li><Link to="/about" className="hover:text-[#9EB384] transition-colors">About Wellness</Link></li>
+            <li><Link to="/about" className="hover:text-[#9EB384] transition-colors">About Nowal</Link></li>
             <li><Link to="/treatments" className="hover:text-[#9EB384] transition-colors">Our Treatments</Link></li>
             <li><Link to="/ayurveda" className="hover:text-[#9EB384] transition-colors">Ayurveda Principles</Link></li>
             <li><Link to="/gallery" className="hover:text-[#9EB384] transition-colors">Photo Gallery</Link></li>
@@ -313,7 +313,7 @@ const Footer: React.FC = () => {
       {/* Copyright */}
       <div className="border-t border-[#9EB384]/30 mt-12 pt-6 text-center text-sm">
         <p>© {new Date().getFullYear()} Wellness Nature Cure. All Rights Reserved.</p>
-        <p className="mt-1">Designed with ❤️ for holistic wellness</p>
+        <p className="mt-1">Designed with ❤️ for holistic nowal</p>
       </div>
     </footer>
   )

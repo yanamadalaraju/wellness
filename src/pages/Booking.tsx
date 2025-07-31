@@ -76,7 +76,7 @@ const Booking: React.FC = () => {
             Book Your Healing Journey
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Take the first step towards complete wellness. Fill out the form below to reserve your spot.
+            Take the first step towards complete Nowal. Fill out the form below to reserve your spot.
           </p>
         </div>
 

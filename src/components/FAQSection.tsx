@@ -34,7 +34,7 @@ const FAQSection = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-            Everything you need to know about your wellness journey at Nimba
+            Everything you need to know about your nowal journey at Nowal
           </p>
         </div>
         

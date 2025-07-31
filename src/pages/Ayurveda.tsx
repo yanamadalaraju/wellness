@@ -76,7 +76,7 @@ const Ayurveda: React.FC = () => {
    <section className="py-16 px-4 md:px-8 bg-white">
   <div className="max-w-4xl mx-auto text-center">
     <h2 className="text-3xl md:text-4xl font-playfair text-sage-600 mb-6">
-      The Healing Power of Nature's Wisdom
+    We provide selective Ayurvedic treatments
     </h2>
 
     <blockquote className="text-xl md:text-2xl font-playfair italic text-sage-500 mb-8">
@@ -85,14 +85,16 @@ const Ayurveda: React.FC = () => {
 
     <div className="space-y-6 text-lg text-gray-700">
       <p>
-        Naturopathy at Wellness is more than treatment - it's a return to harmony with nature's rhythms. Our retreats combine ancient healing wisdom with modern understanding to address root causes, not just symptoms.
+        Ayurveda helps maintain good health and  
+Celebrated as the ‘Science of Life,’ Ayurveda views each individual as an integral part of the greater cosmic whole. Rooted in the five foundational elements—Earth, Fire, Air, Water, and Ether—this ancient system of healing goes beyond treating symptoms. The true beauty of Ayurveda lies in its holistic approach, addressing not just the physical condition but also the emotional, psychological, and spiritual dimensions of a person. At Nowal Naturecare, Ayurveda brings these energies into balance, nurturing profound healing and harmony at every level of being.
+
       </p>
     </div>
   </div>
 </section>
 
 
- <AyurvedsTherapySection />
+ {/* <AyurvedsTherapySection /> */}
 
       
 

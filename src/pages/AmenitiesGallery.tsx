@@ -57,7 +57,7 @@ const Amenitieswellness: React.FC = () => {
               <span className="mx text-sage-500">{'>'}</span>
             </li>
             <li>
-              <span className="text-sage-800 font-medium">Amenities-wellness</span>
+              <span className="text-sage-800 font-medium">Amenities-Nowal</span>
             </li>
           </ol>
         </nav>

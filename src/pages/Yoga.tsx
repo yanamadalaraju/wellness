@@ -77,16 +77,18 @@ const Yoga: React.FC = () => {
    <section className="py-16 px-4 md:px-8 bg-white">
   <div className="max-w-4xl mx-auto text-center">
     <h2 className="text-3xl md:text-4xl font-playfair text-sage-600 mb-6">
-      The Healing Power of Nature's Wisdom
+      Naturopathy and Yoga are two wheels of a cart and equally important for healthy lifestyle.
     </h2>
 
+
+
     <blockquote className="text-xl md:text-2xl font-playfair italic text-sage-500 mb-8">
-      "Nature cures, not the physician. At Wellness, we simply facilitate the body's innate healing capacity through time-tested naturopathic principles."
+     Yoga balances harmony with nature in our body
     </blockquote>
 
     <div className="space-y-6 text-lg text-gray-700">
       <p>
-        Naturopathy at Wellness is more than treatment - it's a return to harmony with nature's rhythms. Our retreats combine ancient healing wisdom with modern understanding to address root causes, not just symptoms.
+     Yoga is a timeless practice that unites body, mind, and breath—promoting flexibility, strength, inner peace, and harmony through movement, meditation, and conscious awareness.In Nowal naturecare, we provide specialised Yoga therapy and personalized Yoga Sessions to give effective results.
       </p>
     </div>
   </div>

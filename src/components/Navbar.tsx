@@ -1111,7 +1111,6 @@
 
 // export default Navbar;
 
-
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
@@ -1134,10 +1133,12 @@ const Navbar: React.FC = () => {
     setOpenDropdown(openDropdown === dropdown ? null : dropdown);
   };
 
-  // Define dropdown arrays (keep your existing dropdown arrays)
+  // Define dropdown arrays
   const experienceDropdown = [
     { name: 'The Mantra', path: '/experience#mantra' },
-    { name: 'Our Story', path: '/Ourstory' },
+      // { name: 'The Mantra', path: '/nowal' },
+    // { name: 'About Us', path: '/nowal' },
+    { name: '	Nowal NatureCare	', path: '/Ourstory' },
     { name: 'Healing Team', path: '/healing-team' },
     { name: 'Dincharya (Daily Routine)', path: '/dincharya' },
   ];
@@ -1162,7 +1163,7 @@ const Navbar: React.FC = () => {
         { name: 'Gastro-intestinal Disorders', path: '/gastro' },
         { name: 'Musculoskeletal Conditions', path: '/Musculoskeletal' },
         { name: 'Endocrine Disorders', path: '/Endocrine' },
-        { name: 'Lifestyle Preventive Wellness', path: '/lifestyle' },
+        { name: 'Lifestyle Preventive Nowal', path: '/lifestyle' },
       ]
     },
     { 
@@ -1178,7 +1179,7 @@ const Navbar: React.FC = () => {
   ];
 
   const galleryDropdown = [
-    { name: 'Virtual Tours', path: '/virtual-tour' },
+    // { name: 'Virtual Tours', path: '/virtual-tour' },
     { name: 'Images', path: '/image' },
     { name: 'Events', path: '/Events' },
   ];
@@ -1210,7 +1211,7 @@ const Navbar: React.FC = () => {
               <img 
                 src={logo} 
                 alt="Company Logo" 
-                className="h-10 w-auto" // Adjust height as needed
+                className="h-10 w-auto"
               />
             </NavLink>
           </div>
@@ -1219,7 +1220,7 @@ const Navbar: React.FC = () => {
           <div className="hidden lg:flex items-center space-x-8">
             <div className="relative group">
               <button className="navbar-item flex items-center space-x-1">
-                <span>The Wellness Experience</span>
+                <span>About Us</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
               <div className="dropdown-menu">
@@ -1239,7 +1240,7 @@ const Navbar: React.FC = () => {
 
             <div className="relative group">
               <button className="navbar-item flex items-center space-x-1">
-                <span>Health Offers</span>
+                <span>Treatments</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
               <div className="dropdown-menu w-[300px]">
@@ -1279,9 +1280,9 @@ const Navbar: React.FC = () => {
               </div>
             </div>
 
-            <NavLink to="/testimonials" className={({ isActive }) => (isActive ? 'text-sage-600 font-medium' : 'text-gray-700 hover:text-sage-500')}>
+            {/* <NavLink to="/testimonials" className={({ isActive }) => (isActive ? 'text-sage-600 font-medium' : 'text-gray-700 hover:text-sage-500')}>
               The Healed Speaks
-            </NavLink>
+            </NavLink> */}
           </div>
 
           {/* Centered Logo in Desktop Navigation */}
@@ -1290,7 +1291,7 @@ const Navbar: React.FC = () => {
               <img 
                 src={logo} 
                 alt="Company Logo" 
-                className="h-14 w-auto" // Adjust height as needed
+                className="h-14 w-auto"
               />
             </NavLink>
           </div>
@@ -1299,7 +1300,7 @@ const Navbar: React.FC = () => {
           <div className="hidden lg:flex items-center space-x-8">
             <div className="relative group">
               <button className="navbar-item flex items-center space-x-1">
-                <span>Gallery</span>
+                <span>			Accommodation 	</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
               <div className="dropdown-menu">
@@ -1319,7 +1320,7 @@ const Navbar: React.FC = () => {
 
             <div className="relative group">
               <button className="navbar-item flex items-center space-x-1">
-                <span>Get in Touch</span>
+                <span>		CONTACT US	</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
               <div className="dropdown-menu">
@@ -1339,7 +1340,7 @@ const Navbar: React.FC = () => {
 
             <div className="relative group">
               <button className="navbar-item flex items-center space-x-1">
-                <span>Health Packages</span>
+                <span>TARIFF</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
               <div className="dropdown-menu">
@@ -1351,7 +1352,7 @@ const Navbar: React.FC = () => {
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="dropdown-item"
-                      download="Wellness-Packages.pdf"
+                      download="Nowal-Packages.pdf"
                     >
                       {item.name}
                     </a>
@@ -1377,7 +1378,7 @@ const Navbar: React.FC = () => {
                   `btn-primary ${isActive ? 'bg-sage-600' : ''}`
                 }
               >
-                HEAL NOW
+              APPLY FOR ADMISSION
               </NavLink>
             </div>
           </div>
@@ -1391,20 +1392,40 @@ const Navbar: React.FC = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation (keep your existing mobile navigation code) */}
+        {/* Mobile Navigation */}
         {isOpen && (
           <div className="lg:hidden bg-white border-t">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <NavLink 
-                to="/experience" 
-                className={({ isActive }) => 
-                  `block px-3 py-2 ${isActive ? 'text-sage-600 font-medium' : 'text-gray-700 hover:text-sage-500'}`
-                }
-              >
-                The Wellness Experience
-              </NavLink>
-              
-              {/* Mobile Health Offers with dropdown */}
+              {/* The Wellness Experience Dropdown */}
+              <div>
+                <button 
+                  className="flex justify-between items-center w-full px-3 py-2 text-gray-700 hover:text-sage-500"
+                  onClick={() => toggleDropdown('mobile-experience')}
+                >
+                  <span>The Nowal Experience</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform ${
+                    openDropdown === 'mobile-experience' ? 'rotate-180' : ''
+                  }`} />
+                </button>
+                {openDropdown === 'mobile-experience' && (
+                  <div className="pl-4 space-y-1">
+                    {experienceDropdown.map((item, index) => (
+                      <NavLink 
+                        key={index} 
+                        to={item.path}
+                        className={({ isActive }) => 
+                          `block px-3 py-2 ${isActive ? 'text-sage-600 font-medium' : 'text-gray-700 hover:text-sage-500'}`
+                        }
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {item.name}
+                      </NavLink>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Health Offers Dropdown */}
               <div>
                 <button 
                   className="flex justify-between items-center w-full px-3 py-2 text-gray-700 hover:text-sage-500"
@@ -1439,6 +1460,7 @@ const Navbar: React.FC = () => {
                                 className={({ isActive }) => 
                                   `block px-3 py-2 ${isActive ? 'text-sage-600 font-medium' : 'text-gray-700 hover:text-sage-500'}`
                                 }
+                                onClick={() => setIsOpen(false)}
                               >
                                 {subItem.name}
                               </NavLink>
@@ -1451,16 +1473,18 @@ const Navbar: React.FC = () => {
                 )}
               </div>
 
+              {/* The Healed Speaks */}
               <NavLink 
                 to="/testimonials" 
                 className={({ isActive }) => 
                   `block px-3 py-2 ${isActive ? 'text-sage-600 font-medium' : 'text-gray-700 hover:text-sage-500'}`
                 }
+                onClick={() => setIsOpen(false)}
               >
                 The Healed Speaks
               </NavLink>
 
-              {/* Mobile Gallery with dropdown */}
+              {/* Gallery Dropdown */}
               <div>
                 <button 
                   className="flex justify-between items-center w-full px-3 py-2 text-gray-700 hover:text-sage-500"
@@ -1480,6 +1504,7 @@ const Navbar: React.FC = () => {
                         className={({ isActive }) => 
                           `block px-3 py-2 ${isActive ? 'text-sage-600 font-medium' : 'text-gray-700 hover:text-sage-500'}`
                         }
+                        onClick={() => setIsOpen(false)}
                       >
                         {item.name}
                       </NavLink>
@@ -1488,7 +1513,7 @@ const Navbar: React.FC = () => {
                 )}
               </div>
 
-              {/* Mobile Get in Touch with dropdown */}
+              {/* Get in Touch Dropdown */}
               <div>
                 <button 
                   className="flex justify-between items-center w-full px-3 py-2 text-gray-700 hover:text-sage-500"
@@ -1508,6 +1533,7 @@ const Navbar: React.FC = () => {
                         className={({ isActive }) => 
                           `block px-3 py-2 ${isActive ? 'text-sage-600 font-medium' : 'text-gray-700 hover:text-sage-500'}`
                         }
+                        onClick={() => setIsOpen(false)}
                       >
                         {item.name}
                       </NavLink>
@@ -1516,7 +1542,7 @@ const Navbar: React.FC = () => {
                 )}
               </div>
 
-              {/* Mobile Health Packages with dropdown */}
+              {/* Health Packages Dropdown */}
               <div>
                 <button 
                   className="flex justify-between items-center w-full px-3 py-2 text-gray-700 hover:text-sage-500"
@@ -1537,7 +1563,8 @@ const Navbar: React.FC = () => {
                           target="_blank" 
                           rel="noopener noreferrer"
                           className="block px-3 py-2 text-gray-700 hover:text-sage-500"
-                          download="Wellness-Packages.pdf"
+                          download="Nowal-Packages.pdf"
+                          onClick={() => setIsOpen(false)}
                         >
                           {item.name}
                         </a>
@@ -1548,6 +1575,7 @@ const Navbar: React.FC = () => {
                           className={({ isActive }) => 
                             `block px-3 py-2 ${isActive ? 'text-sage-600 font-medium' : 'text-gray-700 hover:text-sage-500'}`
                           }
+                          onClick={() => setIsOpen(false)}
                         >
                           {item.name}
                         </NavLink>
@@ -1557,11 +1585,13 @@ const Navbar: React.FC = () => {
                 )}
               </div>
 
+              {/* HEAL NOW Button */}
               <NavLink 
                 to="/booking" 
                 className={({ isActive }) => 
-                  `block px-3 py-2 btn-primary mt-4 ${isActive ? 'bg-sage-600' : ''}`
+                  `block px-3 py-2 btn-primary mt-4 text-center ${isActive ? 'bg-sage-600' : ''}`
                 }
+                onClick={() => setIsOpen(false)}
               >
                 HEAL NOW
               </NavLink>

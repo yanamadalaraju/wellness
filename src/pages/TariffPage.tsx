@@ -310,7 +310,7 @@ const TariffPage = () => {
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <h3 className="text-xl font-bold text-gray-800 mb-3">Acupuncture</h3>
               <p className="text-gray-600">
-                Acupuncture is a Traditional Chinese Medicine (TCM) which is being practiced worldwide. World Health Organization (WHO) recommends acupuncture for over 100 medical conditions. At Nimba, our well experienced and skilled Doctors combine the acupuncture with our indigenous therapies such as Ayurveda, Yoga & Naturopathy and our inhouse Acupuncturist carefully select the points to balance the energy levels and treat various conditions.
+                Acupuncture is a Traditional Chinese Medicine (TCM) which is being practiced worldwide. World Health Organization (WHO) recommends acupuncture for over 100 medical conditions. At Nowal, our well experienced and skilled Doctors combine the acupuncture with our indigenous therapies such as Ayurveda, Yoga & Naturopathy and our inhouse Acupuncturist carefully select the points to balance the energy levels and treat various conditions.
               </p>
             </div>
 
@@ -318,7 +318,7 @@ const TariffPage = () => {
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <h3 className="text-xl font-bold text-gray-800 mb-3">Physiotherapy</h3>
               <p className="text-gray-600">
-                The holistic approach of Nimba includes Physiotherapy that involves the patients directly in their own care through electrical modalities and exercise therapy to restore movement and function after any injury, illness or disability as well as reduce the risk of injury or illness in the future.
+                The holistic approach of Nowal includes Physiotherapy that involves the patients directly in their own care through electrical modalities and exercise therapy to restore movement and function after any injury, illness or disability as well as reduce the risk of injury or illness in the future.
               </p>
             </div>
 

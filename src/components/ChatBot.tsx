@@ -4,7 +4,7 @@ import { MessageCircle, X, Send } from 'lucide-react'
 const ChatBot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [messages, setMessages] = useState([
-    { id: 1, text: "Hello! I'm here to help you with your wellness journey. What can I assist you with today?", sender: 'bot' }
+    { id: 1, text: "Hello! I'm here to help you with your nowal journey. What can I assist you with today?", sender: 'bot' }
   ])
   const [inputValue, setInputValue] = useState('')
 
@@ -47,7 +47,7 @@ const ChatBot: React.FC = () => {
     }
     
     if (lowerMessage.includes('price') || lowerMessage.includes('cost')) {
-      return "Our wellness packages start from $299 for a 3-day retreat. Would you like me to connect you with our team for detailed pricing?"
+      return "Our nowal  packages start from $299 for a 3-day retreat. Would you like me to connect you with our team for detailed pricing?"
     }
     
     if (lowerMessage.includes('book') || lowerMessage.includes('reservation')) {
@@ -58,7 +58,7 @@ const ChatBot: React.FC = () => {
       return "We offer Ayurveda treatments, Yoga & Meditation, Naturopathy, Detox programs, and more. Which area interests you most?"
     }
     
-    return "Thank you for your question! For personalized assistance, I'll connect you with our wellness experts. Click the WhatsApp button or call us at +1 (555) 123-4567."
+    return "Thank you for your question! For personalized assistance, I'll connect you with our nowal experts. Click the WhatsApp button or call us at +1 (555) 123-4567."
   }
 
   return (
@@ -68,7 +68,7 @@ const ChatBot: React.FC = () => {
         <div className="w-80 h-96 bg-white rounded-lg shadow-xl mb-4 flex flex-col overflow-hidden">
           {/* Header */}
           <div className="bg-sage-400 text-white p-4 flex justify-between items-center">
-            <h3 className="font-semibold">Wellness Assistant</h3>
+            <h3 className="font-semibold">Nowal Assistant</h3>
             <button
               onClick={() => setIsOpen(false)}
               className="text-white hover:text-gray-200"

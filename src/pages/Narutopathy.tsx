@@ -87,7 +87,7 @@ const Narutopathy: React.FC = () => {
 
     <div className="space-y-6 text-lg text-gray-700">
       <p>
-        Naturopathy at Wellness is more than treatment - it's a return to harmony with nature's rhythms. Our retreats combine ancient healing wisdom with modern understanding to address root causes, not just symptoms.
+ Nowal Naturecare is guided by a team of highly skilled and compassionate naturopathy experts who have thoughtfully designed every therapy to uncover and address the root cause of illness—ensuring your path to complete physical, mental, and spiritual well-being remains clear, balanced, and deeply transformative. The Founder himself has profound understanding and interest in Naturopathy, and his thought is to make everyone follow the natural lifestyle to be disease fee in their lives.
       </p>
     </div>
 

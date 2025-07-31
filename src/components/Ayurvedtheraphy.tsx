@@ -189,7 +189,7 @@ const AyurvedsTherapySection = () => {
             Ancient <span className="text-transparent bg-clip-text bg-gradient-to-r from-sage-600 to-sage-400">Healing Wisdom</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Time-tested therapies for holistic wellness and balance
+            Time-tested therapies for holistic nowal and balance
           </p>
         </div>
 

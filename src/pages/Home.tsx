@@ -1064,18 +1064,18 @@ const [isVideoPlayingWithSound, setIsVideoPlayingWithSound] = useState(true);
 
   const blogPosts = [
     {
-      title: 'Pulmonary Fibrosis Treatment: Taking Control of Your Journey',
-      desc: 'Facing pulmonary fibrosis can feel overwhelming, but never forget – you are not alone, and hope remains...',
+      // title: 'Pulmonary Fibrosis Treatment: Taking Control of Your Journey',
+      // desc: 'Facing pulmonary fibrosis can feel overwhelming, but never forget – you are not alone, and hope remains...',
       image: 'https://www.nimba.in/wp-content/uploads/2025/07/Pulmonary-Fibrosis-Treatment-Taking-Control-of-Your-Journey.jpg',
     },
     {
-      title: 'Ayurveda for Diabetes: A Complete Approach to Balanced Blood Sugar',
-      desc: 'In a world filled with fast food, a sedentary lifestyle, and stress, diabetes has emerged as a common...',
+      // title: 'Ayurveda for Diabetes: A Complete Approach to Balanced Blood Sugar',
+      // desc: 'In a world filled with fast food, a sedentary lifestyle, and stress, diabetes has emerged as a common...',
       image: 'https://www.nimba.in/wp-content/uploads/2025/07/Ayurveda-for-Diabetes-A-Complete-Approach-to-Balanced-Blood-Sugar.jpg',
     },
     {
-      title: 'Manage Cervical Spondylitis with Ayurvedic Treatment',
-      desc: 'Cervical spondylitis, or cervical osteoarthritis, is a degenerative disease primarily affecting...',
+      // title: 'Manage Cervical Spondylitis with Ayurvedic Treatment',
+      // desc: 'Cervical spondylitis, or cervical osteoarthritis, is a degenerative disease primarily affecting...',
       image: 'https://www.nimba.in/wp-content/uploads/2025/06/Nimba-Blogs.jpg',
     },
   ];
@@ -1110,14 +1110,15 @@ const [isVideoPlayingWithSound, setIsVideoPlayingWithSound] = useState(true);
 
   const diseases = [
     { icon: Salad, title: "Detoxification" },
-    { icon: Syringe, title: "Diabetes" },
-    { icon: Brain, title: "Neurological Disorders" },
-    { icon: HeartPulse, title: "Heart Diseases" },
-    { icon: Apple, title: "Obesity" },
-    { icon: Activity, title: "Liver Diseases" },
-    { icon: Thermometer, title: "Hormonal Disorder" },
-    { icon: ShieldCheck, title: "Rheumatoid Arthritis" },
-    { icon: AlertTriangle, title: "Stress management" },
+    { icon: Syringe, title: "Obesity" },
+    { icon: Brain, title: "Diabetes" },
+    { icon: HeartPulse, title: "Digestive Disorders" },
+    { icon: Apple, title: "Liver Diseases" },
+    { icon: Activity, title: "Hypertension" },
+    { icon: Thermometer, title: "	PCOS/PCOD	" },
+    { icon: ShieldCheck, title: "Respiratory Diseases " },
+    { icon: AlertTriangle, title: "Hormonal Imbalance	" },
+        { icon: AlertTriangle, title: " 	Pain management	" },
   ];
   
   const heroMessages = [
@@ -1376,9 +1377,10 @@ useEffect(() => {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-4">
-              Our Holistic Wellness Offerings
-            </h2>
+            <h1 className="text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-4">
+              Experience the power of nature in every healing touch
+            </h1>
+            <h5 className="text-2xl font-medium text-gray-700">Healing Program</h5>
             <div className="flex justify-center items-center">
               <div className="w-16 h-1 bg-[#4a7d52] mr-3"></div>
               <Leaf className="text-[#3E5F44] w-6 h-6" />
@@ -1387,16 +1389,16 @@ useEffect(() => {
           </motion.div>
           
           <p className="text-gray-600 max-w-2xl mx-auto text-lg mb-12">
-            Our therapeutic programs target root causes to promote deep, sustainable healing through personalized natural treatments.
+        Nowal Naturecare guides you on a journey back to balance, awakening the natural healer that already lives inside you
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
             {[
               { icon: Leaf, title: "Naturopathy", color: "text-green-600", bg: "bg-green-50" },
               { icon: FlaskConical, title: "Ayurveda", color: "text-yellow-600", bg: "bg-yellow-50" },
-              { icon: CircleDashed, title: "Yoga & Meditation", color: "text-purple-600", bg: "bg-purple-50" },
+              { icon: CircleDashed, title: "Meditation and Yoga", color: "text-purple-600", bg: "bg-purple-50" },
               { icon: Dumbbell, title: "Physiotherapy", color: "text-blue-600", bg: "bg-blue-50" },
-              { icon: Sparkles, title: "Holistic Therapies", color: "text-pink-600", bg: "bg-pink-50" },
+              { icon: Sparkles, title: "Treatments", color: "text-pink-600", bg: "bg-pink-50" },
             ].map((item, index) => (
               <motion.div 
                 key={index}
@@ -1440,7 +1442,7 @@ useEffect(() => {
               Conditions We Treat
             </h2>
             <p className="text-[#c8d5cb] max-w-3xl mx-auto text-lg">
-              At Nowal, we adopt a holistic approach to treating various ailments by detoxifying the body to promote health and well-being.
+           	At Nimba we have adopted holistic approach to treating various ailments by detoxifying body to promote health and wellbeing	Nowal Naturecare believes in healing from within—through detox and natural therapies that support your body’s full well-being	
             </p>
           </motion.div>
 
@@ -1558,7 +1560,7 @@ useEffect(() => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
-              Healing Stories
+              	Customers speak	
             </h2>
             <div className="flex justify-center items-center">
               <div className="w-16 h-1 bg-[#4a7d52] mr-3"></div>
@@ -1681,24 +1683,24 @@ useEffect(() => {
                 <div className="h-48 overflow-hidden">
                   <img 
                     src={post.image} 
-                    alt={post.title} 
+                    // alt={post.title} 
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-800 mb-3 line-clamp-2">
+                  {/* <h3 className="text-xl font-semibold text-gray-800 mb-3 line-clamp-2">
                     {post.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4 line-clamp-3">
+                  </h3> */}
+                  {/* <p className="text-gray-600 mb-4 line-clamp-3">
                     {post.desc}
-                  </p>
-                  <Link 
+                  </p> */}
+                  {/* <Link 
                     to="#" 
                     className="text-[#3E5F44] hover:text-[#2E4A34] font-medium inline-flex items-center gap-1 transition-colors"
                   >
                     Read More
                     <ArrowRight className="w-4 h-4 mt-1" />
-                  </Link>
+                  </Link> */}
                 </div>
               </motion.div>
             ))}
