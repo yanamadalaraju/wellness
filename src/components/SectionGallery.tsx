@@ -143,7 +143,7 @@ interface GalleryItem {
 const SectionGallery: React.FC = () => {
   const items: GalleryItem[] = [
     {
-      title: "Wellness",
+      title: "Nowal",
       image: wellnessImage, // Using imported image
       link: "/gallery-wellness"
     },

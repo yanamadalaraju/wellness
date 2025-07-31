@@ -403,14 +403,14 @@ Together, they create a nurturing space where healing is not just delivered—it
       </section>
 
       {/* Flip Cards Section */}
-      <section className="py-20 px-6 bg-[#F9F8F3]">
+      {/* <section className="py-20 px-6 bg-[#F9F8F3]">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center text-[#435334]">
             Our Core Values
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Card 1 */}
+         
             <div className="flip-card h-96">
               <div className="flip-card-inner relative w-full h-full transition-transform duration-700">
                 <div className="flip-card-front absolute w-full h-full backface-hidden bg-white rounded-lg shadow-lg overflow-hidden">
@@ -432,7 +432,7 @@ Together, they create a nurturing space where healing is not just delivered—it
               </div>
             </div>
 
-            {/* Card 2 */}
+           
             <div className="flip-card h-96">
               <div className="flip-card-inner relative w-full h-full transition-transform duration-700">
                 <div className="flip-card-front absolute w-full h-full backface-hidden bg-white rounded-lg shadow-lg overflow-hidden">
@@ -454,7 +454,7 @@ Together, they create a nurturing space where healing is not just delivered—it
               </div>
             </div>
 
-            {/* Card 3 */}
+          
             <div className="flip-card h-96">
               <div className="flip-card-inner relative w-full h-full transition-transform duration-700">
                 <div className="flip-card-front absolute w-full h-full backface-hidden bg-white rounded-lg shadow-lg overflow-hidden">
@@ -477,7 +477,7 @@ Together, they create a nurturing space where healing is not just delivered—it
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Quote Section with Button */}
       <section className="bg-[#E6E5D9] text-[#435334] py-16 px-6 text-center">
