@@ -1744,8 +1744,8 @@ const Navbar: React.FC = () => {
         { name: 'Naturopathy Wonders', path: '/narutopathy' },
         { name: 'Ayurveda', path: '/ayurveda' },
         { name: 'Yoga & Meditation', path: '/yoga' },
-        { name: 'Physiotherapy', path: '/physiotheraphy' },
-        { name: 'Holistic Therapies', path: '/Holistictherapy' },
+        // { name: 'Physiotherapy', path: '/physiotheraphy' },
+        // { name: 'Holistic Therapies', path: '/Holistictherapy' },
       ]
     },
     // { 
@@ -1773,12 +1773,12 @@ const Navbar: React.FC = () => {
     //   ]
     // },
     { name: 'Gallery', path: '/image' },
-    { name: 'Events', path: '/Events' },
+    // { name: 'Events', path: '/Events' },
   ];
 
   const contactUsDropdown = [
     { name: 'Contact Information', path: '/contact' },
-    { name: 'Career Opportunities', path: '/career' },
+    // { name: 'Career Opportunities', path: '/career' },
   ];
 
   // const tariffDropdown = [

@@ -114,10 +114,11 @@ const Yoga: React.FC = () => {
 
     {/* Right Button with left-to-right hover fill */}
     <div>
-      <button className="relative overflow-hidden bg-amber-600 text-white font-bold py-3 px-8 rounded-full text-lg shadow-md transition-all duration-300 group">
-        <span className="relative z-10">Heal Now</span>
-        <span className="absolute left-0 top-0 w-0 h-full bg-amber-800 transition-all duration-500 ease-in-out group-hover:w-full z-0"></span>
+       <Link to="/contact">
+      <button className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-md">
+        Heal Now
       </button>
+    </Link>
     </div>
 
   </div>

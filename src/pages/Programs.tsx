@@ -493,12 +493,12 @@ const Programs: React.FC = () => {
           <p className="text-xl md:text-2xl mb-8">
             At Nowal Nature Cure
           </p>
-          <Link 
+          {/* <Link 
             to="/programs" 
             className="inline-block px-8 py-3 bg-sage-500 hover:bg-sage-600 text-white font-medium rounded-full transition duration-300"
           >
             Explore Our Programs
-          </Link>
+          </Link> */}
         </div>
       </section>
 
@@ -678,7 +678,7 @@ By addressing the root cause and supporting the body holistically, it stands as 
           <div className="md:w-1/2 -mr-[10%] relative z-10">
             <div className="relative">
               <img
-                src="https://www.nimba.in/wp-content/uploads/2020/12/Naturopathy-wonders-min.png"
+                src="https://i.pinimg.com/1200x/ef/2e/12/ef2e12733de87684c6ed25b2df037964.jpg"
                 alt="Holistic Treatment"
                 className="rounded shadow-[-20px_20px_20px_-5px_rgba(0,0,0,0.1)] w-full"
 
