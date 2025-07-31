@@ -373,7 +373,7 @@ const therapies = [
   },
   {
     name: ' Mud Pack',
-    image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&fit=crop',
+    image: 'https://i.pinimg.com/736x/e3/73/93/e373936c4728387cf9257cdc538e08af.jpg',
     content: 'Mud, one of nature’s vital elements, is rich in minerals that offer powerful therapeutic benefits when applied to the body. At Nowal Naturecare, our carefully curated mud pack treatments go beyond expectations—this is the essence of naturopathy. The treatment draws out harmful toxins, deeply cleansing and revitalizing the body.',
     benefits: [
       'Helps regulate body temperature',
