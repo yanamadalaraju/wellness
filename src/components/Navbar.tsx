@@ -1744,8 +1744,8 @@ const Navbar: React.FC = () => {
         { name: 'Naturopathy Wonders', path: '/narutopathy' },
         { name: 'Ayurveda', path: '/ayurveda' },
         { name: 'Yoga & Meditation', path: '/yoga' },
-        // { name: 'Physiotherapy', path: '/physiotheraphy' },
-        // { name: 'Holistic Therapies', path: '/Holistictherapy' },
+        { name: 'Physiotherapy', path: '/physiotheraphy' },
+        { name: 'Acupuncture', path: '/Holistictherapy' },
       ]
     },
     // { 

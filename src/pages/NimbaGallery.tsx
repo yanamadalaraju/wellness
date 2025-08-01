@@ -58,7 +58,7 @@ const NimbaGallery: React.FC = () => {
                 borderRadius: '4px'
               }}
             />
-            <button 
+            {/* <button 
               style={{
                 backgroundColor: '#4CAF50',
                 color: 'white',
@@ -70,7 +70,7 @@ const NimbaGallery: React.FC = () => {
               }}
             >
               Book Now
-            </button>
+            </button> */}
           </div>
         </div>
       )}

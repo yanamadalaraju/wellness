@@ -348,10 +348,11 @@ const Footer: React.FC = () => {
           <div className="flex items-start gap-3">
             <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
             <address className="not-italic leading-relaxed">
-              Baliyasan, Nr. Mccain Foods,<br />
-              Ahmedabad – Mehsana Expressway,<br />
-              Mehsana – 382 732 Gujarat, India
-            </address>
+              gadri badhal panchayat<br />
+              Jaipur rajasthan,<br />
+             303602 india
+            </address>   
+
           </div>
           
           <div className="flex space-x-4">
@@ -359,7 +360,7 @@ const Footer: React.FC = () => {
             <a href="#" aria-label="Instagram"><Instagram className="w-6 h-6 hover:text-[#9EB384] transition-colors" /></a>
             <a href="#" aria-label="Twitter"><Twitter className="w-6 h-6 hover:text-[#9EB384] transition-colors" /></a>
             <a href="#" aria-label="YouTube"><Youtube className="w-6 h-6 hover:text-[#9EB384] transition-colors" /></a>
-            <a href="#" aria-label="LinkedIn"><Linkedin className="w-6 h-6 hover:text-[#9EB384] transition-colors" /></a>
+            <a href="http://www.linkedin.com/in/nowal-naturecare " aria-label="LinkedIn"><Linkedin className="w-6 h-6 hover:text-[#9EB384] transition-colors" /></a>
             <a href="mailto:info@Nowal.in" aria-label="Email"><Mail className="w-6 h-6 hover:text-[#9EB384] transition-colors" /></a>
           </div>
         </div>
@@ -398,24 +399,24 @@ const Footer: React.FC = () => {
                 <Phone className="w-5 h-5 mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-medium">WhatsApp/Call:</p>
-                  <p className="text-lg">+91 83473 13333</p>
-                  <p>+91 81550 12274</p>
+                  <p className="text-lg">+91 9251582670</p>
+                  <p>+91 9251582675</p>
                 </div>
               </div>
               
               <div className="flex items-start gap-3">
                 <Mail className="w-5 h-5 mt-1 flex-shrink-0" />
-                <a href="mailto:info@Nowal.in" className="hover:underline">info@Nowal.in</a>
+                <a href="mailto:socials@nowalnaturecare.com" className="hover:underline">socials@nowalnaturecare.com</a>
               </div>
               
               <div className="flex items-start gap-3">
                 <Calendar className="w-5 h-5 mt-1 flex-shrink-0" />
-                <p>Open 7 days, 9:00 AM - 7:00 PM</p>
+                <p>Open 7 days, 7:00 AM - 7:00 PM</p>
               </div>
             </div>
           </div>
           
-          <div>
+          {/* <div>
             <h3 className="text-xl font-semibold mb-4">Newsletter</h3>
             <div className="flex flex-col space-y-3">
               <input
@@ -427,7 +428,7 @@ const Footer: React.FC = () => {
                 Subscribe
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 

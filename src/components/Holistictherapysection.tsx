@@ -187,7 +187,7 @@ const HolisticTherapySection = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section header */}
-        <div className="text-center mb-12">
+        {/* <div className="text-center mb-12">
           <span className="inline-block mb-3 text-sm uppercase tracking-widest text-sage-600 font-semibold">
             Energy Healing
           </span>
@@ -197,7 +197,7 @@ const HolisticTherapySection = () => {
           <p className="text-gray-600 max-w-2xl mx-auto">
             Ancient healing traditions combined with modern therapeutic understanding
           </p>
-        </div>
+        </div> */}
 
         {/* Therapy Navigation */}
         <div className="flex justify-center mb-12">
