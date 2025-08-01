@@ -58,7 +58,7 @@ const ChatBot: React.FC = () => {
       return "We offer Ayurveda treatments, Yoga & Meditation, Naturopathy, Detox programs, and more. Which area interests you most?"
     }
     
-    return "Thank you for your question! For personalized assistance, I'll connect you with our nowal experts. Click the WhatsApp button or call us at +1 (555) 123-4567."
+    return "Thank you for your question! For personalized assistance, I'll connect you with our nowal experts. Click the WhatsApp button or call us at +91 9251582672."
   }
 
   return (
