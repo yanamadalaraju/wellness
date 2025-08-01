@@ -356,13 +356,26 @@ const Footer: React.FC = () => {
           </div>
           
           <div className="flex space-x-4">
-            <a href="#" aria-label="Facebook"><Facebook className="w-6 h-6 hover:text-[#9EB384] transition-colors" /></a>
-            <a href="#" aria-label="Instagram"><Instagram className="w-6 h-6 hover:text-[#9EB384] transition-colors" /></a>
-            <a href="#" aria-label="Twitter"><Twitter className="w-6 h-6 hover:text-[#9EB384] transition-colors" /></a>
-            <a href="#" aria-label="YouTube"><Youtube className="w-6 h-6 hover:text-[#9EB384] transition-colors" /></a>
-            <a href="http://www.linkedin.com/in/nowal-naturecare " aria-label="LinkedIn"><Linkedin className="w-6 h-6 hover:text-[#9EB384] transition-colors" /></a>
-            <a href="mailto:info@Nowal.in" aria-label="Email"><Mail className="w-6 h-6 hover:text-[#9EB384] transition-colors" /></a>
-          </div>
+  <a href="#" aria-label="Facebook">
+    <Facebook className="w-6 h-6 hover:text-[#9EB384] transition-colors" />
+  </a>
+  <a href="https://www.instagram.com/nowalnaturecare_official?igsh=MXdxb3dwZXF6OGpmMQ==" aria-label="Instagram">
+    <Instagram className="w-6 h-6 hover:text-[#9EB384] transition-colors" />
+  </a>
+  <a href="https://x.com/NowalNatureCare" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+    <Twitter className="w-6 h-6 hover:text-[#9EB384] transition-colors" />
+  </a>
+  <a href="http://www.youtube.com/@SocialsNNC" aria-label="YouTube">
+    <Youtube className="w-6 h-6 hover:text-[#9EB384] transition-colors" />
+  </a>
+  <a href="http://www.linkedin.com/in/nowal-naturecare" aria-label="LinkedIn">
+    <Linkedin className="w-6 h-6 hover:text-[#9EB384] transition-colors" />
+  </a>
+  <a href="mailto:socials@nowalnaturecare.com" aria-label="Email">
+    <Mail className="w-6 h-6 hover:text-[#9EB384] transition-colors" />
+  </a>
+</div>
+
         </div>
 
         {/* Quick Links */}
