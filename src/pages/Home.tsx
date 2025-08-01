@@ -1017,7 +1017,7 @@
 
 import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { Play, Star, Award, Users, Heart, Mountain, Waves } from 'lucide-react'
+import { Play, Star, Award, Users, Heart, Mountain, Waves, Droplets } from 'lucide-react'
 import { Leaf, FlaskConical, CircleDashed, Dumbbell, Sparkles } from 'lucide-react';
 import { ArrowRight } from 'lucide-react';
 import { FaQuoteLeft, FaQuoteRight, FaUser } from 'react-icons/fa';
@@ -1048,6 +1048,14 @@ import image6 from "../assets/303.jpg";
 import image7 from "../assets/3d2-1.jpg";
 import image8 from "../assets/Dormitory .jpg";
 import image9 from "../assets/blog.png"
+import naturopathy from "../assets/icon.png";
+import ayurveda from "../assets/icon2.png";
+import meditationYoga from "../assets/icon3.png";
+import physiotherapy from "../assets/icon4.png";
+import treatments from "../assets/icon5.png";
+import image10  from "../assets/Ayurveda for Diabetes.png"
+import image11 from "../assets/Cervical Spondylitis.png"
+
 
 const Home: React.FC = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
@@ -1144,12 +1152,12 @@ useEffect(() => {
     {
       // title: 'Ayurveda for Diabetes: A Complete Approach to Balanced Blood Sugar',
       // desc: 'In a world filled with fast food, a sedentary lifestyle, and stress, diabetes has emerged as a common...',
-      image: 'https://www.nimba.in/wp-content/uploads/2025/07/Ayurveda-for-Diabetes-A-Complete-Approach-to-Balanced-Blood-Sugar.jpg',
+      image: image10,
     },
     {
       // title: 'Manage Cervical Spondylitis with Ayurvedic Treatment',
       // desc: 'Cervical spondylitis, or cervical osteoarthritis, is a degenerative disease primarily affecting...',
-      image: 'https://www.nimba.in/wp-content/uploads/2025/06/Nimba-Blogs.jpg',
+      image: image11,
     },
   ];
 
@@ -1189,11 +1197,11 @@ useEffect(() => {
     { icon: Apple, title: "Liver Diseases" },
     { icon: Activity, title: "Hypertension" },
     { icon: Thermometer, title: "	PCOS/PCOD	" },
-    { icon: Thermometer, title: "Menstrual Disorder" },
+   { icon: Droplets, title: "Menstrual Disorder" },
     { icon: ShieldCheck, title: "Respiratory Diseases " },
     { icon: AlertTriangle, title: "Hormonal Imbalance	" },
     { icon: AlertTriangle, title: " 	Pain management	" },
-    { icon: AlertTriangle, title: " 	Stress management	" },
+    { icon: Brain, title: "Stress Management" },
     
   ];
   
@@ -1326,13 +1334,13 @@ useEffect(() => {
               {heroVideos[currentVideoIndex].subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Link
+              {/* <Link
                 to="/booking"
                 className="bg-[#3E5F44] hover:bg-[#2E4A34] text-white text-lg px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center"
               >
                 Book Now
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
+              </Link> */}
             </div>
           </motion.div>
         </div>
@@ -1421,13 +1429,13 @@ useEffect(() => {
             <div className="md:ml-8 mt-6 md:mt-0 text-center md:text-left">
               <div className="relative inline-block">
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-gray-800 mb-2">
-                  Welcome to Nowal Nature Care
+                  Welcome to Nowal NatureCare
                 </h2>
                 <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#4a7d52] to-[#3E5F44]"></div>
               </div>
-              <p className="text-xl text-[#3E5F44] font-medium mt-4">
+              {/* <p className="text-xl text-[#3E5F44] font-medium mt-4">
                 Gujarat's Premier NABH Accredited nowal Destination
-              </p>
+              </p> */}
             </div>
           </div>
         </motion.div>
@@ -1435,55 +1443,56 @@ useEffect(() => {
 
       {/* Treatments Section */}
       <section className="py-20 px-4 bg-gradient-to-b from-[#f0f5f1] to-white">
-        <div className="max-w-6xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="mb-16"
-          >
-            <h1 className="text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-4">
-              Experience the power of nature in every healing touch
-            </h1>
-            <h5 className="text-2xl font-medium text-gray-700">Healing Program</h5>
+  <div className="max-w-6xl mx-auto text-center">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="mb-16"
+    >
+      <h1 className="text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-4">
+        Experience the power of nature in every healing touch
+      </h1>
+      <h5 className="text-2xl font-medium text-gray-700">Healing Program</h5>
             <div className="flex justify-center items-center">
               <div className="w-16 h-1 bg-[#4a7d52] mr-3"></div>
               <Leaf className="text-[#3E5F44] w-6 h-6" />
               <div className="w-16 h-1 bg-[#4a7d52] ml-3"></div>
             </div>
-          </motion.div>
-          
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg mb-12">
-        Nowal NatureCare guides you on a journey back to balance, awakening the natural healer that already lives inside you
-          </p>
+    </motion.div>
+    
+    <p className="text-gray-600 max-w-2xl mx-auto text-lg mb-12">
+      Nowal NatureCare guides you on a journey back to balance, awakening the natural healer that already lives inside you
+    </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-            {[
-              { icon: Leaf, title: "Naturopathy", color: "text-green-600", bg: "bg-green-50" },
-              { icon: FlaskConical, title: "Ayurveda", color: "text-yellow-600", bg: "bg-yellow-50" },
-              { icon: CircleDashed, title: "Meditation and Yoga", color: "text-purple-600", bg: "bg-purple-50" },
-              { icon: Dumbbell, title: "Physiotherapy", color: "text-blue-600", bg: "bg-blue-50" },
-              { icon: Sparkles, title: "Treatments", color: "text-pink-600", bg: "bg-pink-50" },
-            ].map((item, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5, scale: 1.05 }}
-                className={`${item.bg} p-6 rounded-xl shadow-md hover:shadow-lg transition-all`}
-              >
-                <div className={`${item.color} mb-4`}>
-                  <item.icon className="w-10 h-10 mx-auto" />
-                </div>
-                <h3 className="font-semibold text-gray-800">{item.title}</h3>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+    <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+  {[
+    { image: naturopathy, title: "Naturopathy", color: "text-green-600", bg: "bg-green-50" },
+    { image: ayurveda, title: "Ayurveda", color: "text-yellow-600", bg: "bg-yellow-50" },
+    { image: meditationYoga, title: "Meditation and Yoga", color: "text-purple-600", bg: "bg-purple-50" },
+    { image: physiotherapy, title: "Physiotherapy", color: "text-blue-600", bg: "bg-blue-50" },
+    { image: treatments, title: "Treatments", color: "text-pink-600", bg: "bg-pink-50" },
+  ].map((item, index) => (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      viewport={{ once: true }}
+      whileHover={{ y: -5, scale: 1.05 }}
+      className={`${item.bg} p-6 rounded-xl shadow-md hover:shadow-lg transition-all`}
+    >
+      <div className={`${item.color} mb-4`}>
+        <img src={item.image} alt={item.title} className="w-10 h-10 mx-auto object-contain" />
+      </div>
+      <h3 className="font-semibold text-gray-800">{item.title}</h3>
+    </motion.div>
+  ))}
+</div>
+
+  </div>
+</section>
 
       {/* Diseases Treated Section */}
       <section className="relative py-20 px-4 text-white overflow-hidden">
@@ -1555,11 +1564,11 @@ useEffect(() => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { 
-                title: "Panchakarma Therapy", 
-                duration: "Minimum 7 days", 
-                image: image1, 
-              },
+              // { 
+              //   title: "Colon  HydroTherapy", 
+              //   duration: "Minimum 7 days", 
+              //   image: image1, 
+              // },
               { 
                 title: "Mud Therapy", 
                 duration: "Minimum 5 days", 
@@ -1607,66 +1616,75 @@ useEffect(() => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="relative py-20 px-4 text-white overflow-hidden">
-        <div className="absolute inset-0">
-          <img 
-            src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
-            alt="Background" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-[#3E5F44]/90 backdrop-blur-sm"></div>
-        </div>
-        
-        <div className="relative max-w-7xl mx-auto z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
-              	Customers speak	
-            </h2>
-            <div className="flex justify-center items-center">
-              <div className="w-16 h-1 bg-[#4a7d52] mr-3"></div>
-              <Star className="text-[#c8d5cb] w-5 h-5" />
-              <div className="w-16 h-1 bg-[#4a7d52] ml-3"></div>
+    <section className="relative py-20 px-4 text-white overflow-hidden">
+  <div className="absolute inset-0">
+    <img 
+      src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+      alt="Background" 
+      className="w-full h-full object-cover"
+    />
+    <div className="absolute inset-0 bg-[#3E5F44]/90 backdrop-blur-sm"></div>
+  </div>
+  
+  <div className="relative max-w-7xl mx-auto z-10">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="text-center mb-16"
+    >
+      <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
+        Customers speak
+      </h2>
+      <div className="flex justify-center items-center">
+        <div className="w-16 h-1 bg-[#4a7d52] mr-3"></div>
+        <Star className="text-[#c8d5cb] w-5 h-5" />
+        <div className="w-16 h-1 bg-[#4a7d52] ml-3"></div>
+      </div>
+    </motion.div>
+    
+    <div className="grid md:grid-cols-3 gap-10 px-4">
+      {testimonials.map((t, index) => (
+        <motion.div 
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          viewport={{ once: true }}
+          whileHover={{ scale: 1.02 }}
+          className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-8 text-center transition-all"
+        >
+          <motion.div whileHover={{ scale: 1.05 }} className="flex justify-center">
+            <div className="rounded-full w-32 h-32 flex items-center justify-center bg-[#c8d5cb] border-4 border-[#c8d5cb] shadow-md">
+              <svg 
+                className="w-20 h-20 text-[#3E5F44]" 
+                fill="currentColor" 
+                viewBox="0 0 20 20" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path 
+                  fillRule="evenodd" 
+                  d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" 
+                  clipRule="evenodd" 
+                />
+              </svg>
             </div>
           </motion.div>
-          
-          <div className="grid md:grid-cols-3 gap-10 px-4">
-            {testimonials.map((t, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
-                className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-8 text-center transition-all"
-              >
-                <motion.div whileHover={{ scale: 1.05 }}>
-                  <img
-                    src={t.image}
-                    alt={t.name}
-                    className="mx-auto rounded-full w-32 h-32 object-cover border-4 border-[#c8d5cb] shadow-md"
-                  />
-                </motion.div>
-                <div className="mt-6 relative">
-                  <FaQuoteLeft className="inline mr-2 text-[#c8d5cb] text-xl" />
-                  <p className="inline leading-relaxed text-[#e8f0ea]">{t.quote}</p>
-                  <FaQuoteRight className="inline ml-2 text-[#c8d5cb] text-xl" />
-                </div>
-                <div className="mt-6 flex flex-col items-center">
-                  <span className="font-semibold text-lg">{t.name}</span>
-                  <span className="text-[#c8d5cb] text-sm">{t.role}</span>
-                </div>
-              </motion.div>
-            ))}
+          <div className="mt-6 relative">
+            <FaQuoteLeft className="inline mr-2 text-[#c8d5cb] text-xl" />
+            <p className="inline leading-relaxed text-[#e8f0ea]">{t.quote}</p>
+            <FaQuoteRight className="inline ml-2 text-[#c8d5cb] text-xl" />
           </div>
-        </div>
-      </section>
+          <div className="mt-6 flex flex-col items-center">
+            <span className="font-semibold text-lg">{t.name}</span>
+            <span className="text-[#c8d5cb] text-sm">{t.role}</span>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Gallery Section */}
       <section className="py-20 px-4 bg-gradient-to-b from-[#f0f5f1] to-white">
@@ -1679,7 +1697,7 @@ useEffect(() => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-4">
-              Our Sanctuary
+              Our Gallery
             </h2>
             <div className="flex justify-center items-center">
               <div className="w-16 h-1 bg-[#4a7d52] mr-3"></div>

@@ -113,7 +113,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const therapies = [
   {
     name: 'Acupuncture',
-    image: 'https://www.nimba.in/wp-content/uploads/2021/02/ACUPUNCTURE.jpg',
+    image: 'https://i.pinimg.com/736x/f6/5a/6b/f65a6b0b3704ed8716bb67e680b780ec.jpg',
     content: 'Ancient Chinese healing art that stimulates specific points to restore energy flow and promote natural healing. Ultra-fine needles activate meridian pathways to relieve pain, reduce stress, and harmonize body functions.',
     benefits: [
       'Alleviates chronic pain',
@@ -125,7 +125,7 @@ const therapies = [
   },
   {
     name: 'Raga Therapy',
-    image: 'https://www.nimba.in/wp-content/uploads/2020/10/RAGA_THERAPY.jpg',
+    image: 'https://i.pinimg.com/1200x/4c/3a/59/4c3a596d34f38f3c89524116805f21ff.jpg',
     content: 'Healing through specific musical scales that resonate with body rhythms and chakras. Each raga is scientifically designed to balance emotions, elevate consciousness, and promote physiological harmony.',
     benefits: [
       'Balances emotions',
@@ -271,12 +271,12 @@ const HolisticTherapySection = () => {
                   <p className="text-gray-700 leading-relaxed mb-6">
                     {selected.content}
                   </p>
-                  <button className="px-5 py-2.5 bg-gradient-to-r from-sage-500 to-sage-600 text-white font-medium rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 text-sm">
+                  {/* <button className="px-5 py-2.5 bg-gradient-to-r from-sage-500 to-sage-600 text-white font-medium rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 text-sm">
                     Experience This Therapy
                     <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                     </svg>
-                  </button>
+                  </button> */}
                 </div>
 
                 {/* Benefits */}
