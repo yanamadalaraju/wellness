@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Video360Viewer from './Video360Viewer'
-
+import image from "../assets/nim.gif";
 const OurStory: React.FC = () => {
   return (
     <div className="min-h-screen bg-cream-50">
@@ -141,7 +141,7 @@ const OurStory: React.FC = () => {
     <div className="flex justify-center relative">
       <div className="relative max-w-md w-full">
         <img
-          src="https://www.nimba.in/wp-content/uploads/2020/08/nimba-gif-1.gif"
+          src={image}
           alt="Nowals Tree Graphic"
           className="w-full h-auto rounded-2xl shadow-xl transform transition-all hover:scale-105"
         />

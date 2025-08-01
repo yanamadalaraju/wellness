@@ -157,7 +157,7 @@ function AppRoutes() {
   const location = useLocation()
 
   // Define routes where layout should be hidden
-  const hideLayoutPaths = ['/login', '/register', '/customers']
+  const hideLayoutPaths = ['/login', '/register', '/customers' , '/dashboard']
   const hideLayout = hideLayoutPaths.includes(location.pathname)
 
   return (
@@ -215,6 +215,7 @@ function AppRoutes() {
         <Routes>
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+           <Route path="/dashboard" element={<Login />} />
           <Route path="/customers" element={<AdminContactDashboard />} />
         </Routes>
       )}

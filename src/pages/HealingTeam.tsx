@@ -534,9 +534,11 @@ Together, they create a nurturing space where healing is not just delivered—it
           <p className="mt-4 text-sm uppercase tracking-wider text-[#6B7A4C]">— Our Founding Belief</p>
 
           {/* Call to Action */}
+          <a href="/contact">
           <button className="mt-10 px-8 py-3 bg-[#435334] text-white rounded-full text-base font-semibold hover:bg-[#6B7A4C] transition-all duration-300">
             Know More
           </button>
+          </a>
         </div>
       </section>
 

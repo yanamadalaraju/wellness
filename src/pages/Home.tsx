@@ -1021,6 +1021,7 @@ import { Play, Star, Award, Users, Heart, Mountain, Waves } from 'lucide-react'
 import { Leaf, FlaskConical, CircleDashed, Dumbbell, Sparkles } from 'lucide-react';
 import { ArrowRight } from 'lucide-react';
 import { FaQuoteLeft, FaQuoteRight, FaUser } from 'react-icons/fa';
+import { FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 import {
   Activity,
   Brain,
@@ -1046,27 +1047,99 @@ import image5 from "../assets/wellness.jpg";
 import image6 from "../assets/303.jpg";
 import image7 from "../assets/3d2-1.jpg";
 import image8 from "../assets/Dormitory .jpg";
+import image9 from "../assets/blog.png"
 
 const Home: React.FC = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
-  
   const videoRef = useRef<HTMLVideoElement>(null);
-  // In your state declarations
-const [isVideoPlayingWithSound, setIsVideoPlayingWithSound] = useState(true);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const autoSlideInterval = useRef<NodeJS.Timeout>();
 
-  const handlePlayWithSound = () => {
-    setIsVideoPlayingWithSound(true);
+  // Auto-rotate videos
+  // Update your useEffect for scroll-aware playback
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        // Section is in view - play video with sound
+        if (videoRef.current) {
+          videoRef.current.muted = false;
+          videoRef.current.currentTime = 0; // Reset to start
+          videoRef.current.play().catch(error => {
+            console.log("Autoplay prevented:", error);
+            // Fallback to muted autoplay
+            if (videoRef.current) {
+              videoRef.current.muted = true;
+              videoRef.current.play();
+            }
+          });
+        }
+      } else {
+        // Section is out of view - completely stop video
+        if (videoRef.current) {
+          videoRef.current.pause();
+          videoRef.current.currentTime = 0; // Reset to start
+          videoRef.current.muted = true; // Ensure no audio plays
+        }
+      }
+    },
+    { 
+      threshold: 0.5,
+      rootMargin: "0px 0px -100px 0px" // Adds a small buffer zone
+    }
+  );
+
+  if (sectionRef.current) {
+    observer.observe(sectionRef.current);
+  }
+
+  return () => {
+    if (sectionRef.current) {
+      observer.unobserve(sectionRef.current);
+    }
+    // Clean up video when component unmounts
     if (videoRef.current) {
-      videoRef.current.muted = false;
-      videoRef.current.play();
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+      videoRef.current.muted = true;
+    }
+  };
+}, []);
+
+// Add this to handle browser tab visibility changes
+useEffect(() => {
+  const handleVisibilityChange = () => {
+    if (document.hidden && videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.muted = true;
     }
   };
 
+  document.addEventListener('visibilitychange', handleVisibilityChange);
+  return () => {
+    document.removeEventListener('visibilitychange', handleVisibilityChange);
+  };
+}, []);
+
+  // Pause auto-slide when user manually changes slide
+  const handleManualSlideChange = (index: number) => {
+    setCurrentVideoIndex(index);
+    if (autoSlideInterval.current) {
+      clearInterval(autoSlideInterval.current);
+      autoSlideInterval.current = setInterval(() => {
+        setCurrentVideoIndex((prev) => 
+          prev === heroVideos.length - 1 ? 0 : prev + 1
+        );
+      }, 5000);
+    }
+  };
+
+ 
   const blogPosts = [
     {
       // title: 'Pulmonary Fibrosis Treatment: Taking Control of Your Journey',
       // desc: 'Facing pulmonary fibrosis can feel overwhelming, but never forget – you are not alone, and hope remains...',
-      image: 'https://www.nimba.in/wp-content/uploads/2025/07/Pulmonary-Fibrosis-Treatment-Taking-Control-of-Your-Journey.jpg',
+      image: image9,
     },
     {
       // title: 'Ayurveda for Diabetes: A Complete Approach to Balanced Blood Sugar',
@@ -1181,47 +1254,53 @@ const [isVideoPlayingWithSound, setIsVideoPlayingWithSound] = useState(true);
   ];
 
 // In your useEffect for video rotation
-useEffect(() => {
-  const interval = setInterval(() => {
-    setCurrentVideoIndex((prevIndex) => 
-      prevIndex === heroVideos.length - 1 ? 0 : prevIndex + 1
-    )
-  }, 5000)
+// useEffect(() => {
+//   const interval = setInterval(() => {
+//     setCurrentVideoIndex((prevIndex) => 
+//       prevIndex === heroVideos.length - 1 ? 0 : prevIndex + 1
+//     )
+//   }, 5000)
   
-  // Automatically play with sound when component mounts
-  if (videoRef.current) {
-    videoRef.current.muted = false;
-    videoRef.current.play().catch(error => {
-      console.log("Auto-play was prevented:", error);
-      // Fallback: show play button
-      setIsVideoPlayingWithSound(false);
-    });
-  }
+//   // Automatically play with sound when component mounts
+//   if (videoRef.current) {
+//     videoRef.current.muted = false;
+//     videoRef.current.play().catch(error => {
+//       console.log("Auto-play was prevented:", error);
+//       // Fallback: show play button
+//       setIsVideoPlayingWithSound(false);
+//     });
+//   }
   
-  return () => clearInterval(interval)
-}, [])
+//   return () => clearInterval(interval)
+// }, [])
+  // Auto-rotate videos
+
 
   return (
-    <div className="min-h-screen font-sans bg-white">
+     <div className="min-h-screen font-sans bg-white">
       <AlertPopup />
       
       {/* Hero Section with Video Carousel */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section ref={sectionRef} className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <AnimatePresence mode='wait'>
-            
-<motion.video
+           <motion.video
   key={currentVideoIndex}
   ref={videoRef}
   autoPlay
-  muted={!isVideoPlayingWithSound}
+  muted={false}
   loop
-  playsInline // Important for mobile browsers
+  playsInline
+  preload="auto"
   className="w-full h-full object-cover"
   initial={{ opacity: 0 }}
   animate={{ opacity: 1 }}
   exit={{ opacity: 0 }}
   transition={{ duration: 1 }}
+  onEnded={() => {
+    // Smooth transition to next video when current ends
+    setCurrentVideoIndex(prev => (prev + 1) % heroVideos.length);
+  }}
 >
   <source src={heroVideos[currentVideoIndex].video} type="video/mp4" />
 </motion.video>
@@ -1251,13 +1330,6 @@ useEffect(() => {
                 Book Now
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
-              {/* <Link
-                to="/resort"
-                className="bg-transparent hover:bg-white/10 text-white text-lg px-8 py-4 rounded-full border-2 border-white transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
-              >
-                <Play className="w-5 h-5" />
-                <span>Explore Resort</span>
-              </Link> */}
             </div>
           </motion.div>
         </div>
@@ -1267,24 +1339,15 @@ useEffect(() => {
           {heroVideos.map((_, index) => (
             <button
               key={index}
-              onClick={() => setCurrentVideoIndex(index)}
+              onClick={() => handleManualSlideChange(index)}
               className={`w-3 h-3 rounded-full transition-all ${currentVideoIndex === index ? 'bg-white w-6' : 'bg-white/50'}`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
         </div>
-
-        {/* Play with Sound Button */}
-        {!isVideoPlayingWithSound && (
-          <button
-            onClick={handlePlayWithSound}
-            className="absolute bottom-24 left-1/2 transform -translate-x-1/2 bg-white/90 text-black px-5 py-2 rounded-full text-sm font-semibold z-20 shadow-lg hover:bg-white transition-all"
-          >
-            🔊 Play with Sound
-          </button>
-        )}
       </section>
 
+      {/* Rest of your sections remain exactly the same */}
       {/* Promo Banner */}
       <div className="bg-gradient-to-r from-[#3E5F44] to-[#2E4A34] py-3 overflow-hidden text-white">
         <div className="animate-marquee whitespace-nowrap">
