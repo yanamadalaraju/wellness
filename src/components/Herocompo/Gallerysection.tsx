@@ -4,6 +4,8 @@ import image5 from "../../assets/wellness.jpg";
 import image6 from "../../assets/303.jpg";
 import image7 from "../../assets/3d2-1.jpg";
 import image8 from "../../assets/Dormitory .jpg";
+import { motion } from 'framer-motion';
+import { Sprout } from 'lucide-react';
 
 const GallerySection = () => {
   const navigate = useNavigate();
