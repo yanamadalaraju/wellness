@@ -1733,7 +1733,7 @@ const Navbar: React.FC = () => {
     { name: 'The Mantra', path: '/experience#mantra' },
     { name: 'Nowal NatureCare', path: '/Ourstory' },
     { name: 'Healing Team', path: '/healing-team' },
-    { name: 'Dincharya (Daily Routine)', path: '/dincharya' },
+    { name: 'Daily Routine', path: '/dincharya' },
   ];
 
   const treatmentsDropdown = [

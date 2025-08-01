@@ -394,11 +394,11 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-xl font-semibold mb-4">Resources</h3>
             <ul className="space-y-3">
-              <li><Link to="/testimonials" className="hover:text-[#9EB384] transition-colors">Testimonials</Link></li>
-              <li><Link to="/blog" className="hover:text-[#9EB384] transition-colors">Blog</Link></li>
-              <li><Link to="/faq" className="hover:text-[#9EB384] transition-colors">FAQs</Link></li>
-              <li><Link to="/privacy" className="hover:text-[#9EB384] transition-colors">Privacy Policy</Link></li>
-              <li><Link to="/terms" className="hover:text-[#9EB384] transition-colors">Terms</Link></li>
+              <li><Link to="# " className="hover:text-[#9EB384] transition-colors">Testimonials</Link></li>
+              <li><Link to="# " className="hover:text-[#9EB384] transition-colors">Blog</Link></li>
+              <li><Link to="# " className="hover:text-[#9EB384] transition-colors">FAQs</Link></li>
+              <li><Link to="# " className="hover:text-[#9EB384] transition-colors">Privacy Policy</Link></li>
+              <li><Link to=" #" className="hover:text-[#9EB384] transition-colors">Terms</Link></li>
             </ul>
           </div>
         </div>
