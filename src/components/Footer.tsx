@@ -356,7 +356,7 @@ const Footer: React.FC = () => {
           </div>
           
           <div className="flex space-x-4">
-  <a href="#" aria-label="Facebook">
+  <a href="https://www.facebook.com/share/1FeVVbnqZW/" aria-label="Facebook">
     <Facebook className="w-6 h-6 hover:text-[#9EB384] transition-colors" />
   </a>
   <a href="https://www.instagram.com/nowalnaturecare_official?igsh=MXdxb3dwZXF6OGpmMQ==" aria-label="Instagram">
