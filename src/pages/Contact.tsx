@@ -769,7 +769,7 @@ const Contact: React.FC = () => {
 
       {/* FAQ Section */}
             {/* FAQ Section */}
-      <section className="section-padding bg-white">
+      {/* <section className="section-padding bg-white">
   <div className="container-max">
     <div className="text-center mb-16">
       <h2 className="text-4xl font-playfair font-bold text-sage-600 mb-3">
@@ -781,7 +781,7 @@ const Contact: React.FC = () => {
     </div>
     
     <div className="max-w-4xl mx-auto space-y-4">
-      {/* FAQ Item 1 */}
+ 
       <div className="group overflow-hidden rounded-xl border border-sage-100 bg-sage-50 transition-all duration-300 hover:border-sage-200 hover:shadow-md">
         <div className="flex items-center justify-between p-6 cursor-pointer">
           <h3 className="text-xl font-semibold text-sage-700">
@@ -797,7 +797,6 @@ const Contact: React.FC = () => {
         </div>
       </div>
 
-      {/* FAQ Item 2 */}
       <div className="group overflow-hidden rounded-xl border border-sage-100 bg-sage-50 transition-all duration-300 hover:border-sage-200 hover:shadow-md">
         <div className="flex items-center justify-between p-6 cursor-pointer">
           <h3 className="text-xl font-semibold text-sage-700">
@@ -813,7 +812,7 @@ const Contact: React.FC = () => {
         </div>
       </div>
 
-      {/* FAQ Item 3 */}
+     
       <div className="group overflow-hidden rounded-xl border border-sage-100 bg-sage-50 transition-all duration-300 hover:border-sage-200 hover:shadow-md">
         <div className="flex items-center justify-between p-6 cursor-pointer">
           <h3 className="text-xl font-semibold text-sage-700">
@@ -829,7 +828,7 @@ const Contact: React.FC = () => {
         </div>
       </div>
 
-      {/* FAQ Item 4 */}
+    
       <div className="group overflow-hidden rounded-xl border border-sage-100 bg-sage-50 transition-all duration-300 hover:border-sage-200 hover:shadow-md">
         <div className="flex items-center justify-between p-6 cursor-pointer">
           <h3 className="text-xl font-semibold text-sage-700">
@@ -845,19 +844,19 @@ const Contact: React.FC = () => {
         </div>
       </div>
 
-      {/* CTA */}
+      
       <div className="text-center mt-10">
         <p className="text-gray-500 mb-4">Still have questions?</p>
-        {/* <button className="bg-sage-600 hover:bg-sage-700 text-white font-medium py-3 px-8 rounded-full transition-colors shadow-md hover:shadow-lg">
+        <button className="bg-sage-600 hover:bg-sage-700 text-white font-medium py-3 px-8 rounded-full transition-colors shadow-md hover:shadow-lg">
           Contact Our Team
-        </button> */}
+        </button>
       </div>
     </div>
   </div>
-</section>
+</section> */}
 
       {/* Careers Section */}
-      <section className="py-16 bg-sage-600 text-white">
+      {/* <section className="py-16 bg-sage-600 text-white">
         <div className="container mx-auto px-4 text-center max-w-6xl">
           <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-6">
             Join Our Team
@@ -874,7 +873,7 @@ const Contact: React.FC = () => {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

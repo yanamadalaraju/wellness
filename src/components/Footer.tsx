@@ -173,6 +173,156 @@
 // export default Footer
 
 
+// import React from 'react'
+// import { Link } from 'react-router-dom'
+// import {
+//   Facebook,
+//   Instagram,
+//   Twitter,
+//   Youtube,
+//   Mail,
+//   Linkedin,
+//   MapPin,
+//   Phone,
+//   Calendar
+// } from 'lucide-react';
+// import logo from "../assets/logo.png";
+// import { FaPinterest, FaTripadvisor } from 'react-icons/fa';
+// import { SiTrustpilot } from 'react-icons/si';
+
+// const Footer: React.FC = () => {
+//   return (
+//     <footer className="bg-[#F2F1E8] text-[#435334] text-base pt-20 pb-12">
+//       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+//         {/* Logo + Address */}
+//         <div className="space-y-4">
+//           <img src={logo} alt="Nowal Logo" className="w-48" />
+//           <div className="flex items-start gap-3">
+//             <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
+//             <address className="not-italic leading-relaxed">
+//               Baliyasan, Nr. Mccain Foods,<br />
+//               Ahmedabad – Mehsana Expressway,<br />
+//               Mehsana – 382 732 Gujarat, India
+//             </address>
+//           </div>
+          
+//           <div className="flex space-x-4 mt-6">
+//             <Facebook className="w-6 h-6 cursor-pointer hover:text-[#9EB384] transition-colors" />
+//             <Instagram className="w-6 h-6 cursor-pointer hover:text-[#9EB384] transition-colors" />
+//             <Twitter className="w-6 h-6 cursor-pointer hover:text-[#9EB384] transition-colors" />
+//             <Youtube className="w-6 h-6 cursor-pointer hover:text-[#9EB384] transition-colors" />
+//             <Linkedin className="w-6 h-6 cursor-pointer hover:text-[#9EB384] transition-colors" />
+//             <Mail className="w-6 h-6 cursor-pointer hover:text-[#9EB384] transition-colors" />
+//           </div>
+//         </div>
+
+//         {/* Contact */}
+//         <div className="space-y-4">
+//           <h3 className="text-xl font-semibold">Contact Us</h3>
+          
+//           <div className="flex items-start gap-3">
+//             <Phone className="w-5 h-5 mt-1 flex-shrink-0" />
+//             <div>
+//               <p className="font-medium">WhatsApp/Call Now:</p>
+//               <p className="text-lg">+91 83473 13333</p>
+//               <p className="mt-2">+91 81550 12274</p>
+//             </div>
+//           </div>
+          
+//           <div className="flex items-start gap-3">
+//             <Mail className="w-5 h-5 mt-1 flex-shrink-0" />
+//             <a href="mailto:info@Nowal.in" className="hover:underline">info@Nowal.in</a>
+//           </div>
+          
+//           <div className="flex items-start gap-3">
+//             <Calendar className="w-5 h-5 mt-1 flex-shrink-0" />
+//             <p>Open 7 days, 9:00 AM - 7:00 PM</p>
+//           </div>
+          
+//           <div className="mt-6">
+//             <h4 className="font-semibold mb-3">Subscribe to Newsletter</h4>
+//             <div className="flex">
+//               <input
+//                 type="email"
+//                 className="border-b border-[#435334] bg-transparent outline-none w-full py-2 px-1"
+//                 placeholder="Your email address"
+//               />
+//               <button className="ml-4 bg-[#435334] text-white px-6 py-2 rounded hover:bg-[#9EB384] transition-colors">
+//                 Send
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Quick Links */}
+//         <div>
+//           <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
+//           <ul className="space-y-3">
+//             <li><Link to="/about" className="hover:text-[#9EB384] transition-colors">About Nowal</Link></li>
+//             <li><Link to="/treatments" className="hover:text-[#9EB384] transition-colors">Our Treatments</Link></li>
+//             <li><Link to="/ayurveda" className="hover:text-[#9EB384] transition-colors">Ayurveda Principles</Link></li>
+//             <li><Link to="/gallery" className="hover:text-[#9EB384] transition-colors">Photo Gallery</Link></li>
+//             <li><Link to="/testimonials" className="hover:text-[#9EB384] transition-colors">Patient Stories</Link></li>
+//           </ul>
+//         </div>
+
+//         {/* Awards & Recognition */}
+//         {/* Awards & Recognition */}
+// <div className="space-y-6">
+//   <h3 className="text-xl font-semibold">Awards & Recognition</h3>
+  
+//   <div className="grid grid-cols-2 gap-4">
+//     {/* Each award image wrapped in a container with fixed dimensions */}
+//     <div className="h-24 bg-white flex items-center justify-center p-2 rounded">
+//       <img 
+//         src="https://media.istockphoto.com/id/2206391716/photo/standing-golden-trophy-cup-on-light-green-background.jpg?s=612x612&w=0&k=20&c=odm6azR5ySVwy1hvfIpcGnMB9jzD2Pp3rF2Rrn9MvmQ=" 
+//         alt="NABH Accredited" 
+//         className="h-full w-full object-contain" 
+//       />
+//     </div>
+//     <div className="h-24 bg-white flex items-center justify-center p-2 rounded">
+//       <img 
+//         src="https://media.istockphoto.com/id/2163592890/photo/close-up-of-trophies.jpg?s=612x612&w=0&k=20&c=r9EOlJywiZ0qU214lh62dtD6oo07qdp2Z9PRd1xyfJg=" 
+//         alt="TripAdvisor Award" 
+//         className="h-full w-full object-contain" 
+//       />
+//     </div>
+//     <div className="h-24 bg-white flex items-center justify-center p-2 rounded">
+//       <img 
+//         src="https://media.istockphoto.com/id/1212486807/vector/aura-meditation-sitting-in-the-lotus-position-group-of-people-healthy-lifestyle-relaxation.jpg?s=612x612&w=0&k=20&c=nS96ZimVE7HK9oClxEO-Ct55dGIn4LpcvYSzzG8BOXc=" 
+//         alt="Times Health Icon" 
+//         className="h-full w-full object-contain" 
+//       />
+//     </div>
+//     <div className="h-24 bg-white flex items-center justify-center p-2 rounded">
+//       <SiTrustpilot className="text-4xl text-[#00B67A]" />
+//     </div>
+//   </div>
+  
+//   <div className="pt-4">
+//     <h4 className="font-semibold mb-3">Legal</h4>
+//     <ul className="space-y-2 text-sm">
+//       <li><Link to="/privacy" className="hover:text-[#9EB384] transition-colors">Privacy Policy</Link></li>
+//       <li><Link to="/terms" className="hover:text-[#9EB384] transition-colors">Terms of Service</Link></li>
+//       <li><Link to="/cancellation" className="hover:text-[#9EB384] transition-colors">Cancellation Policy</Link></li>
+//     </ul>
+//   </div>
+// </div>
+//       </div>
+
+//       {/* Copyright */}
+//       <div className="border-t border-[#9EB384]/30 mt-12 pt-6 text-center text-sm">
+//         <p>© {new Date().getFullYear()} Wellness Nature Cure. All Rights Reserved.</p>
+//         <p className="mt-1">Designed with ❤️ for holistic nowal</p>
+//       </div>
+//     </footer>
+//   )
+// }
+
+// export default Footer
+
+
+
 import React from 'react'
 import { Link } from 'react-router-dom'
 import {
@@ -187,15 +337,13 @@ import {
   Calendar
 } from 'lucide-react';
 import logo from "../assets/logo.png";
-import { FaPinterest, FaTripadvisor } from 'react-icons/fa';
-import { SiTrustpilot } from 'react-icons/si';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#F2F1E8] text-[#435334] text-base pt-20 pb-12">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <footer className="bg-[#F2F1E8] text-[#435334] pt-20 pb-12">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
         {/* Logo + Address */}
-        <div className="space-y-4">
+        <div className="space-y-6">
           <img src={logo} alt="Nowal Logo" className="w-48" />
           <div className="flex items-start gap-3">
             <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
@@ -206,114 +354,87 @@ const Footer: React.FC = () => {
             </address>
           </div>
           
-          <div className="flex space-x-4 mt-6">
-            <Facebook className="w-6 h-6 cursor-pointer hover:text-[#9EB384] transition-colors" />
-            <Instagram className="w-6 h-6 cursor-pointer hover:text-[#9EB384] transition-colors" />
-            <Twitter className="w-6 h-6 cursor-pointer hover:text-[#9EB384] transition-colors" />
-            <Youtube className="w-6 h-6 cursor-pointer hover:text-[#9EB384] transition-colors" />
-            <Linkedin className="w-6 h-6 cursor-pointer hover:text-[#9EB384] transition-colors" />
-            <Mail className="w-6 h-6 cursor-pointer hover:text-[#9EB384] transition-colors" />
-          </div>
-        </div>
-
-        {/* Contact */}
-        <div className="space-y-4">
-          <h3 className="text-xl font-semibold">Contact Us</h3>
-          
-          <div className="flex items-start gap-3">
-            <Phone className="w-5 h-5 mt-1 flex-shrink-0" />
-            <div>
-              <p className="font-medium">WhatsApp/Call Now:</p>
-              <p className="text-lg">+91 83473 13333</p>
-              <p className="mt-2">+91 81550 12274</p>
-            </div>
-          </div>
-          
-          <div className="flex items-start gap-3">
-            <Mail className="w-5 h-5 mt-1 flex-shrink-0" />
-            <a href="mailto:info@Nowal.in" className="hover:underline">info@Nowal.in</a>
-          </div>
-          
-          <div className="flex items-start gap-3">
-            <Calendar className="w-5 h-5 mt-1 flex-shrink-0" />
-            <p>Open 7 days, 9:00 AM - 7:00 PM</p>
-          </div>
-          
-          <div className="mt-6">
-            <h4 className="font-semibold mb-3">Subscribe to Newsletter</h4>
-            <div className="flex">
-              <input
-                type="email"
-                className="border-b border-[#435334] bg-transparent outline-none w-full py-2 px-1"
-                placeholder="Your email address"
-              />
-              <button className="ml-4 bg-[#435334] text-white px-6 py-2 rounded hover:bg-[#9EB384] transition-colors">
-                Send
-              </button>
-            </div>
+          <div className="flex space-x-4">
+            <a href="#" aria-label="Facebook"><Facebook className="w-6 h-6 hover:text-[#9EB384] transition-colors" /></a>
+            <a href="#" aria-label="Instagram"><Instagram className="w-6 h-6 hover:text-[#9EB384] transition-colors" /></a>
+            <a href="#" aria-label="Twitter"><Twitter className="w-6 h-6 hover:text-[#9EB384] transition-colors" /></a>
+            <a href="#" aria-label="YouTube"><Youtube className="w-6 h-6 hover:text-[#9EB384] transition-colors" /></a>
+            <a href="#" aria-label="LinkedIn"><Linkedin className="w-6 h-6 hover:text-[#9EB384] transition-colors" /></a>
+            <a href="mailto:info@Nowal.in" aria-label="Email"><Mail className="w-6 h-6 hover:text-[#9EB384] transition-colors" /></a>
           </div>
         </div>
 
         {/* Quick Links */}
-        <div>
-          <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
-          <ul className="space-y-3">
-            <li><Link to="/about" className="hover:text-[#9EB384] transition-colors">About Nowal</Link></li>
-            <li><Link to="/treatments" className="hover:text-[#9EB384] transition-colors">Our Treatments</Link></li>
-            <li><Link to="/ayurveda" className="hover:text-[#9EB384] transition-colors">Ayurveda Principles</Link></li>
-            <li><Link to="/gallery" className="hover:text-[#9EB384] transition-colors">Photo Gallery</Link></li>
-            <li><Link to="/testimonials" className="hover:text-[#9EB384] transition-colors">Patient Stories</Link></li>
-          </ul>
+        <div className="grid grid-cols-2 gap-8">
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Explore</h3>
+            <ul className="space-y-3">
+              <li><Link to="/about" className="hover:text-[#9EB384] transition-colors">About Nowal</Link></li>
+              <li><Link to="/narutopathy" className="hover:text-[#9EB384] transition-colors">Our Treatments</Link></li>
+              <li><Link to="/ayurveda" className="hover:text-[#9EB384] transition-colors">Ayurveda</Link></li>
+              <li><Link to="/yoga" className="hover:text-[#9EB384] transition-colors">Yoga</Link></li>
+              <li><Link to="/gallery" className="hover:text-[#9EB384] transition-colors">Gallery</Link></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Resources</h3>
+            <ul className="space-y-3">
+              <li><Link to="/testimonials" className="hover:text-[#9EB384] transition-colors">Testimonials</Link></li>
+              <li><Link to="/blog" className="hover:text-[#9EB384] transition-colors">Blog</Link></li>
+              <li><Link to="/faq" className="hover:text-[#9EB384] transition-colors">FAQs</Link></li>
+              <li><Link to="/privacy" className="hover:text-[#9EB384] transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/terms" className="hover:text-[#9EB384] transition-colors">Terms</Link></li>
+            </ul>
+          </div>
         </div>
 
-        {/* Awards & Recognition */}
-        {/* Awards & Recognition */}
-<div className="space-y-6">
-  <h3 className="text-xl font-semibold">Awards & Recognition</h3>
-  
-  <div className="grid grid-cols-2 gap-4">
-    {/* Each award image wrapped in a container with fixed dimensions */}
-    <div className="h-24 bg-white flex items-center justify-center p-2 rounded">
-      <img 
-        src="https://media.istockphoto.com/id/2206391716/photo/standing-golden-trophy-cup-on-light-green-background.jpg?s=612x612&w=0&k=20&c=odm6azR5ySVwy1hvfIpcGnMB9jzD2Pp3rF2Rrn9MvmQ=" 
-        alt="NABH Accredited" 
-        className="h-full w-full object-contain" 
-      />
-    </div>
-    <div className="h-24 bg-white flex items-center justify-center p-2 rounded">
-      <img 
-        src="https://media.istockphoto.com/id/2163592890/photo/close-up-of-trophies.jpg?s=612x612&w=0&k=20&c=r9EOlJywiZ0qU214lh62dtD6oo07qdp2Z9PRd1xyfJg=" 
-        alt="TripAdvisor Award" 
-        className="h-full w-full object-contain" 
-      />
-    </div>
-    <div className="h-24 bg-white flex items-center justify-center p-2 rounded">
-      <img 
-        src="https://media.istockphoto.com/id/1212486807/vector/aura-meditation-sitting-in-the-lotus-position-group-of-people-healthy-lifestyle-relaxation.jpg?s=612x612&w=0&k=20&c=nS96ZimVE7HK9oClxEO-Ct55dGIn4LpcvYSzzG8BOXc=" 
-        alt="Times Health Icon" 
-        className="h-full w-full object-contain" 
-      />
-    </div>
-    <div className="h-24 bg-white flex items-center justify-center p-2 rounded">
-      <SiTrustpilot className="text-4xl text-[#00B67A]" />
-    </div>
-  </div>
-  
-  <div className="pt-4">
-    <h4 className="font-semibold mb-3">Legal</h4>
-    <ul className="space-y-2 text-sm">
-      <li><Link to="/privacy" className="hover:text-[#9EB384] transition-colors">Privacy Policy</Link></li>
-      <li><Link to="/terms" className="hover:text-[#9EB384] transition-colors">Terms of Service</Link></li>
-      <li><Link to="/cancellation" className="hover:text-[#9EB384] transition-colors">Cancellation Policy</Link></li>
-    </ul>
-  </div>
-</div>
+        {/* Contact & Newsletter */}
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <Phone className="w-5 h-5 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="font-medium">WhatsApp/Call:</p>
+                  <p className="text-lg">+91 83473 13333</p>
+                  <p>+91 81550 12274</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-3">
+                <Mail className="w-5 h-5 mt-1 flex-shrink-0" />
+                <a href="mailto:info@Nowal.in" className="hover:underline">info@Nowal.in</a>
+              </div>
+              
+              <div className="flex items-start gap-3">
+                <Calendar className="w-5 h-5 mt-1 flex-shrink-0" />
+                <p>Open 7 days, 9:00 AM - 7:00 PM</p>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Newsletter</h3>
+            <div className="flex flex-col space-y-3">
+              <input
+                type="email"
+                className="border-b border-[#435334] bg-transparent outline-none w-full py-2 px-1 placeholder-[#435334]/70"
+                placeholder="Your email address"
+              />
+              <button className="bg-[#435334] text-white px-6 py-2 rounded hover:bg-[#9EB384] transition-colors self-start">
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Copyright */}
-      <div className="border-t border-[#9EB384]/30 mt-12 pt-6 text-center text-sm">
-        <p>© {new Date().getFullYear()} Wellness Nature Cure. All Rights Reserved.</p>
-        <p className="mt-1">Designed with ❤️ for holistic nowal</p>
+      <div className="border-t border-[#9EB384]/30 mt-12 pt-6 text-center">
+        <p className="text-sm">© {new Date().getFullYear()} Nowal Naturecare. All Rights Reserved.</p>
+        <p className="mt-1 text-xs text-[#435334]/80">Designed with care for holistic wellness</p>
       </div>
     </footer>
   )

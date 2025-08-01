@@ -77,7 +77,7 @@ const Experience: React.FC = () => {
   <div className="relative w-full h-full">
     <img
       src={image}
-      alt="Nowal Nowal Retreat"
+      alt="Nowal Retreat"
       className="w-full h-full object-cover"
     />
     <div className="absolute inset-0 bg-[#435334] opacity-20"></div>
@@ -87,22 +87,19 @@ const Experience: React.FC = () => {
   <div className="absolute left-1/2 bottom-[-150px] transform -translate-x-1/2 w-full max-w-4xl bg-[#F2F1E8] text-center px-8 py-12 shadow-lg rounded-lg border border-[#435334]/10">
     <div className="max-w-3xl mx-auto">
       <h3 className="text-2xl md:text-3xl font-medium mb-6 leading-snug font-serif italic">
-        A perfect harmony of greenery, serenity and positivity, every corner at Nimba will speak to your inner peace. Every corner of Nowal Naturecare radiates peace—where lush greenery, gentle serenity, and uplifting energy come together to soothe your soul.
+       Every corner of Nowal Naturecare radiates peace—where lush greenery, gentle serenity, and uplifting energy come together to soothe your soul
       </h3>
       
       <div className="h-px w-32 bg-[#435334]/30 mx-auto my-6"></div>
       
       <p className="text-base md:text-lg leading-relaxed mb-4 font-sans">
-        Here, at Nimba, we take your hand and walk you through the truth of life i.e. that health is under our control, always.
-        In our holistic haven, healing and health are interlinked.
-        Our entire process of healing and elevating your health is by an impeccable amalgamation of modern science, traditional practices and ancient wisdom.
-        So, to experience the holistic force of wellness, trace your steps to Nimba. We are just the catalyst for life altering healing of the soul and healthification of body, all the magic of organic and natural wonders come from within.
         At Nowal Naturecare, we gently guide you to a deeper truth—your health has always been in your hands.
-        Within our serene, holistic sanctuary, healing isn't separate from health—it's woven together through intention, care, and balance.
-        We combine the wisdom of ancient traditions, the precision of modern science, and the nurturing touch of natural therapies to help your body and mind return to harmony.
-        Here, wellness isn't treated—it's awakened.
-        You'll find no shortcuts, only honest, organic pathways to restore what's already within you.
-        Nowal Naturecare is simply your guide—a gentle catalyst on your journey toward healing, renewal, and the quiet magic of holistic living.
+Within our serene, holistic sanctuary, healing isn’t separate from health—it’s woven together through intention, care, and balance.
+We combine the wisdom of ancient traditions, the precision of modern science, and the nurturing touch of natural therapies to help your body and mind return to harmony.
+Here, wellness isn’t treated—it’s awakened.
+You’ll find no shortcuts, only honest, organic pathways to restore what’s already within you.
+Nowal Naturecare is simply your guide—a gentle catalyst on your journey toward healing, renewal, and the quiet magic of holistic living.
+
       </p>
       
       {/* <button className="mt-6 px-8 py-3 bg-[#435334] text-[#F2F1E8] rounded-full font-medium hover:bg-[#353d27] transition-colors">

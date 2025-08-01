@@ -17,7 +17,7 @@ const OurStory: React.FC = () => {
 
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
           <h1 className="text-5xl md:text-6xl font-playfair font-bold mb-6 text-shadow">
-            Our Story
+            Nowal Nature Cure
           </h1>
           <p className="text-xl md:text-2xl text-shadow">
             Rooted in nature, driven by purpose — the journey to healing began here.
@@ -39,7 +39,7 @@ const OurStory: React.FC = () => {
                     <span className="mx text-sage-500">{'>'}</span>
                   </li>
                   <li>
-                    <span className="text-sage-800 font-medium">Our Story</span>
+                    <span className="text-sage-800 font-medium">Nowal Nature Cure</span>
                   </li>
                 </ol>
               </nav>
@@ -112,17 +112,26 @@ const OurStory: React.FC = () => {
       </div>
       <div className="space-y-6">
         <p className="text-[#435334] text-base md:text-lg leading-relaxed font-medium">
-          Nimba is a mystical tree, every part of it overflowing with nourishing, selfless qualities. Our healers are just as treasured as the Nimba tree is.
+          At Nowal Naturecare, we believe true wealth lies in radiant health where the body, mind, and soul exist in perfect harmony.
         </p>
         <p className="text-[#435334] text-base md:text-lg leading-relaxed">
-          The roots welcome you with Asana, where we can accommodate you with honour. Its bark acts as our Ashray, as we support you in this wonderful experience of wellness. Just like the branches of the Nimba tree bestow us with Sharan, our aim at Nimba is to protect you from diseases and ailments.
+          Rooted in the timeless wisdom of naturopathy and Yoga, our philosophy is simple yet powerful; the body holds an incredible ability to heal itself when nurtured by nature and followed the primeval lifestyle.
         </p>
         <p className="text-[#435334] text-base md:text-lg leading-relaxed">
-          The Virya, the cooling energy of the leaves teach us to provide you with utmost relaxation and energy. You are our Humsafars, our companions, and we welcome you to an exquisite journey of health and healing.
+          Here, wellness is not forced, it gently unfolds through natural therapies, mindful detox, nourishing food, and deep rest with change in the lifestyle.
+        </p>
+        <p className="text-[#435334] text-base md:text-lg leading-relaxed">
+          Our serene, green sanctuary is designed to soothe your senses and awaken the healer within you.
+        </p>
+        <p className="text-[#435334] text-base md:text-lg leading-relaxed">
+          We blend modern science with ancient practices to create a holistic space where healing becomes a way of life.
+        </p>
+        <p className="text-[#435334] text-base md:text-lg leading-relaxed">
+          Nowal Naturecare isn’t just a center, it’s a return to self, a reminder that when you care for your health with intention and love, you unlock life’s truest abundance.
         </p>
         <div className="bg-[#FAF8F1] p-4 rounded-lg border-l-4 border-[#9EB384]">
           <p className="text-[#435334] italic font-medium">
-            "Nowal Naturecare isn't just a center, it's a return to self, a reminder that when you care for your health with intention and love, you unlock life's truest abundance."
+            "Let us walk beside you as you reconnect with nature, embrace inner balance, and rediscover that your greatest wealth has always lived within you."
           </p>
         </div>
       </div>
@@ -143,6 +152,7 @@ const OurStory: React.FC = () => {
     </div>
   </div>
 </section>
+
 
 {/* Section 2: Image + Quote (Adjusted Margin for Overlap) */}
 <section className="relative h-[600px] bg-[#F2F1E8] text-[#435334] overflow-visible mt-[300px]">

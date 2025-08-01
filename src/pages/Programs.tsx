@@ -523,22 +523,43 @@ const Programs: React.FC = () => {
             </div>
 
       {/* New Content Section */}
-     <section className="bg-[#F2F1E8] text-[#435334] py-24 px-6 text-center">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-wide">
-        
-Let Nature Lead the Way to Naturopathic Healing and Harmony
+    <section className="bg-[#F2F1E8] text-[#435334] py-24 px-6 text-center">
+  <div className="max-w-5xl mx-auto">
+    {/* Main Heading */}
+    <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-wide">
+      Let Nature Lead the Way to Naturopathic Healing and Harmony
+    </h2>
 
-          </h2>
-          <h3 className="text-2xl md:text-3xl font-medium mb-8 italic">
-           
-          </h3>
-          <p className="text-lg md:text-xl leading-relaxed mb-6">
-      	As modern medicine sets the pace, the quiet strength of traditional wellness practices is sometimes left behind
-          </p>
-      
-        </div>
-      </section>
+    {/* Optional Subheading */}
+    <h3 className="text-2xl md:text-3xl font-medium mb-8 italic">
+      {/* You can optionally add a subheading here */}
+    </h3>
+
+    {/* Intro Paragraph */}
+    <p className="text-lg md:text-xl leading-relaxed mb-6">
+      As modern medicine sets the pace, the quiet strength of traditional Nowal practices is sometimes left behind.
+    </p>
+
+    {/* Additional Content */}
+    <div className="text-lg md:text-xl leading-relaxed space-y-6 text-justify px-4 md:px-0">
+      <p>
+        Naturopathy blends time-honored therapies, natural remedies, and mindful lifestyle practices to awaken the body’s innate ability to heal itself. There is no medicine more powerful than the healing force of nature.
+      </p>
+      <p>
+        Its foundational pillars of preventive, educative, and curative methodology lead to overall well-being and a comprehensive approach to health that goes beyond symptom management.
+      </p>
+      <p>
+        By addressing the root cause and supporting the body holistically, it stands as one of the most effective and sustainable paths toward achieving total health and balance.
+      </p>
+      <p>
+        Nowal Naturecare is guided by a team of highly skilled and compassionate naturopathy experts who have thoughtfully designed every therapy to uncover and address the root cause of illness—ensuring your path to complete physical, mental, and spiritual well-being remains clear, balanced, and deeply transformative.
+      </p>
+      <p className="italic bg-[#FAF8F1] border-l-4 border-[#9EB384] rounded-md py-3 px-4 font-medium">
+        The Founder himself has a profound understanding and interest in Naturopathy, and his vision is to inspire everyone to follow a natural lifestyle—to live disease-free and in harmony with nature.
+      </p>
+    </div>
+  </div>
+</section>
 
       {/* First Image-Text Section (Image right, text left) */}
       {/* <section className="bg-[#f5f6f1] py-16 px-4 relative overflow-hidden">

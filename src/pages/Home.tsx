@@ -1439,10 +1439,10 @@ useEffect(() => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
-              Conditions We Treat
+              Diseases Treated
             </h2>
             <p className="text-[#c8d5cb] max-w-3xl mx-auto text-lg">
-           	At Nimba we have adopted holistic approach to treating various ailments by detoxifying body to promote health and wellbeing	Nowal Naturecare believes in healing from within—through detox and natural therapies that support your body’s full well-being	
+           	Nowal Naturecare believes in healing from within—through detox and natural therapies that support your body’s full well-being
             </p>
           </motion.div>
 

@@ -339,12 +339,17 @@ const HealingTeam: React.FC = () => {
       </div>
 
       {/* Intro Section */}
-      <section className="bg-[#F2F1E8] text-[#435334] py-24 px-6 text-center">
+     <section className="bg-[#F2F1E8] text-[#435334] py-24 px-6 text-center">
   <div className="max-w-5xl mx-auto">
     {/* Main Heading */}
     <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-wide leading-tight">
       Your Healing with Naturopathy and Yoga
     </h2>
+
+    {/* Subheading */}
+    <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-[#5A6650]">
+      Nowal Team Work
+    </h3>
 
     {/* Subheading Decorative Line */}
     <div className="flex justify-center items-center mb-10">
@@ -358,19 +363,59 @@ const HealingTeam: React.FC = () => {
     {/* Paragraphs */}
     <div className="text-lg md:text-xl leading-relaxed space-y-6 text-justify px-4 md:px-0">
       <p>
-        It is the people that make the place—the environment simply champions their cause. The healing team of Nimba is highly committed to guiding each patron through their journeys of embracing the power of healing and health.
+        At Nowal Naturecare, it is our people who bring purpose and heart to everything we do, the environment simply amplifies their dedication.
       </p>
       <p>
-        The ethos of the centre stems from the authenticity of our highly qualified professionals, doctors, therapists, researchers, and support staff who share the same passion and purpose. Every individual here is dedicated to providing you with a deeply fulfilling overall healing experience.
+        Our dedicated team is deeply committed to guiding each individual on a transformative journey toward health and self-restoration.
       </p>
       <p>
-        At Nowal Naturecare, it is our people who bring heart and purpose to everything we do. The environment merely amplifies their commitment.
+        From experienced doctors, skilled therapists and compassionate support staff, every member of our team shares a unified passion for holistic wellness.
       </p>
       <p>
-        Our dedicated team is deeply committed to guiding each individual on a transformative journey toward health and self-restoration. From experienced doctors and skilled therapists to compassionate support staff, every member shares a unified passion for holistic wellness.
+        Their authenticity, expertise, and unwavering care form the very ethos of Nowal Naturecare.
       </p>
       <p>
-        Their authenticity, expertise, and unwavering care form the very soul of Nowal Naturecare. Together, they create a nurturing space where healing isn’t just practiced—it’s lived, with intention, empathy, and excellence.
+        Together, they create a nurturing space where healing is not just delivered—it is lived, with intention, empathy, and excellence.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<section className="bg-gradient-to-br from-[#f2f1e8] via-[#fafaf5] to-[#e7e6dc] py-24 px-6">
+  <div className="max-w-5xl mx-auto text-center">
+    {/* Decorative Heading */}
+    <h2 className="text-3xl md:text-4xl font-extrabold text-[#435334] mb-2 relative inline-block">
+      Thought of CMD - <span className="text-[#7E8A59]">Shri Ram Nivash Nowal</span>
+      <span className="block h-1 w-20 bg-[#9EB384] mt-2 mx-auto rounded-full"></span>
+    </h2>
+
+    {/* Quote-style Divider */}
+    <div className="flex justify-center my-6">
+      <svg className="w-10 h-10 text-[#9EB384]" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M7.17 6A4.992 4.992 0 003 11v7a1 1 0 001 1h5a1 1 0 001-1v-7a1 1 0 00-1-1H5.1a3 3 0 012.07-3.6zM18.17 6A4.992 4.992 0 0014 11v7a1 1 0 001 1h5a1 1 0 001-1v-7a1 1 0 00-1-1h-3.1a3 3 0 012.07-3.6z" />
+      </svg>
+    </div>
+
+    {/* Content */}
+    <div className="text-[#435334] text-lg md:text-xl leading-relaxed space-y-6 text-justify mt-8 px-4 md:px-0">
+      <p>
+        At the heart of Nowal Naturecare lies my deep-rooted belief: naturopathy holds the power to prevent most lifestyle-related diseases—naturally, affordably, and without side effects.
+      </p>
+      <p>
+        This conviction led me on a journey across India, where I explored some of the finest nature cure centres to understand and experience the true essence of holistic healing.
+      </p>
+      <p>
+        These experiences, combined with years of research into naturopathy and natural wellness systems, inspired me to create a center that reflects not just traditional wisdom, but also my personal vision for sustainable, preventive health care.
+      </p>
+      <p>
+        This dream took shape in Gujarat—with the founding of Nowal Naturecare, a haven where the healing force of nature meets scientific sensibility and mindful living.
+      </p>
+      <p>
+        Today, I am proud to see Nowal Naturecare recognized among India’s respected naturopathy destinations. We’ve touched countless lives by encouraging meaningful lifestyle shifts and empowering people to take charge of their own wellness.
+      </p>
+      <p className="border-l-4 border-[#9EB384] pl-4 italic font-medium bg-[#FAF8F1] rounded-md py-2">
+        This success is not mine alone—it belongs to our dedicated team and to every guest who trusted us. To each of you, I offer my heartfelt gratitude and continued commitment to your journey toward lasting health and harmony.
       </p>
     </div>
   </div>
@@ -378,7 +423,7 @@ const HealingTeam: React.FC = () => {
 
 
       {/* Healing Team Section */}
-      <section className="relative min-h-96 flex items-center justify-center bg-[#F2F1E8]">
+      {/* <section className="relative min-h-96 flex items-center justify-center bg-[#F2F1E8]">
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
@@ -392,15 +437,16 @@ const HealingTeam: React.FC = () => {
           </h2>
           <h1>Thought of CMD - Shri Ram Nivash Nowal</h1>
           <p className="text-lg md:text-xl leading-relaxed mb-6">
-      At Nowal Naturecare, it is our people who bring purpose and heart to everything we do, the environment simply amplifies their dedication.
+     At Nowal Naturecare, it is our people who bring purpose and heart to everything we do, the environment simply amplifies their dedication.
 Our dedicated team is deeply committed to guiding each individual on a transformative journey toward health and self-restoration.
 From experienced doctors, skilled therapists and compassionate support staff, every member of our team shares a unified passion for holistic wellness.
 Their authenticity, expertise, and unwavering care form the very ethos of Nowal Naturecare.
 Together, they create a nurturing space where healing is not just delivered—it is lived, with intention, empathy, and excellence.
+
           </p>
     
         </div>
-      </section>
+      </section> */}
 
       {/* Flip Cards Section */}
       {/* <section className="py-20 px-6 bg-[#F9F8F3]">
@@ -488,9 +534,9 @@ Together, they create a nurturing space where healing is not just delivered—it
           <p className="mt-4 text-sm uppercase tracking-wider text-[#6B7A4C]">— Our Founding Belief</p>
 
           {/* Call to Action */}
-          {/* <button className="mt-10 px-8 py-3 bg-[#435334] text-white rounded-full text-base font-semibold hover:bg-[#6B7A4C] transition-all duration-300">
+          <button className="mt-10 px-8 py-3 bg-[#435334] text-white rounded-full text-base font-semibold hover:bg-[#6B7A4C] transition-all duration-300">
             Know More
-          </button> */}
+          </button>
         </div>
       </section>
 
