@@ -64,7 +64,7 @@ const Amenitieswellness: React.FC = () => {
       </div>
 
       
-<GalleryVideoSection />
+{/* <GalleryVideoSection /> */}
 <ImageGridSection />
      
       
