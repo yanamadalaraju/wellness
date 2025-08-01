@@ -363,7 +363,7 @@ const HealingTeam: React.FC = () => {
     {/* Paragraphs */}
     <div className="text-lg md:text-xl leading-relaxed space-y-6 text-justify px-4 md:px-0">
       <p>
-        At Nowal Naturecare, it is our people who bring purpose and heart to everything we do, the environment simply amplifies their dedication.
+        At Nowal NatureCare, it is our people who bring purpose and heart to everything we do, the environment simply amplifies their dedication.
       </p>
       <p>
         Our dedicated team is deeply committed to guiding each individual on a transformative journey toward health and self-restoration.
@@ -372,7 +372,7 @@ const HealingTeam: React.FC = () => {
         From experienced doctors, skilled therapists and compassionate support staff, every member of our team shares a unified passion for holistic wellness.
       </p>
       <p>
-        Their authenticity, expertise, and unwavering care form the very ethos of Nowal Naturecare.
+        Their authenticity, expertise, and unwavering care form the very ethos of Nowal NatureCare.
       </p>
       <p>
         Together, they create a nurturing space where healing is not just delivered—it is lived, with intention, empathy, and excellence.
@@ -400,7 +400,7 @@ const HealingTeam: React.FC = () => {
     {/* Content */}
     <div className="text-[#435334] text-lg md:text-xl leading-relaxed space-y-6 text-justify mt-8 px-4 md:px-0">
       <p>
-        At the heart of Nowal Naturecare lies my deep-rooted belief: naturopathy holds the power to prevent most lifestyle-related diseases—naturally, affordably, and without side effects.
+        At the heart of Nowal NatureCare lies my deep-rooted belief: naturopathy holds the power to prevent most lifestyle-related diseases—naturally, affordably, and without side effects.
       </p>
       <p>
         This conviction led me on a journey across India, where I explored some of the finest nature cure centres to understand and experience the true essence of holistic healing.
@@ -409,10 +409,10 @@ const HealingTeam: React.FC = () => {
         These experiences, combined with years of research into naturopathy and natural wellness systems, inspired me to create a center that reflects not just traditional wisdom, but also my personal vision for sustainable, preventive health care.
       </p>
       <p>
-        This dream took shape in Gujarat—with the founding of Nowal Naturecare, a haven where the healing force of nature meets scientific sensibility and mindful living.
+        This dream took shape in Gujarat—with the founding of Nowal NatureCare, a haven where the healing force of nature meets scientific sensibility and mindful living.
       </p>
       <p>
-        Today, I am proud to see Nowal Naturecare recognized among India’s respected naturopathy destinations. We’ve touched countless lives by encouraging meaningful lifestyle shifts and empowering people to take charge of their own wellness.
+        Today, I am proud to see Nowal NatureCare recognized among India’s respected naturopathy destinations. We’ve touched countless lives by encouraging meaningful lifestyle shifts and empowering people to take charge of their own wellness.
       </p>
       <p className="border-l-4 border-[#9EB384] pl-4 italic font-medium bg-[#FAF8F1] rounded-md py-2">
         This success is not mine alone—it belongs to our dedicated team and to every guest who trusted us. To each of you, I offer my heartfelt gratitude and continued commitment to your journey toward lasting health and harmony.
@@ -437,10 +437,10 @@ const HealingTeam: React.FC = () => {
           </h2>
           <h1>Thought of CMD - Shri Ram Nivash Nowal</h1>
           <p className="text-lg md:text-xl leading-relaxed mb-6">
-     At Nowal Naturecare, it is our people who bring purpose and heart to everything we do, the environment simply amplifies their dedication.
+     At Nowal NatureCare, it is our people who bring purpose and heart to everything we do, the environment simply amplifies their dedication.
 Our dedicated team is deeply committed to guiding each individual on a transformative journey toward health and self-restoration.
 From experienced doctors, skilled therapists and compassionate support staff, every member of our team shares a unified passion for holistic wellness.
-Their authenticity, expertise, and unwavering care form the very ethos of Nowal Naturecare.
+Their authenticity, expertise, and unwavering care form the very ethos of Nowal NatureCare.
 Together, they create a nurturing space where healing is not just delivered—it is lived, with intention, empathy, and excellence.
 
           </p>

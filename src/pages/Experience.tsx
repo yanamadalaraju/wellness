@@ -87,18 +87,18 @@ const Experience: React.FC = () => {
   <div className="absolute left-1/2 bottom-[-150px] transform -translate-x-1/2 w-full max-w-4xl bg-[#F2F1E8] text-center px-8 py-12 shadow-lg rounded-lg border border-[#435334]/10">
     <div className="max-w-3xl mx-auto">
       <h3 className="text-2xl md:text-3xl font-medium mb-6 leading-snug font-serif italic">
-       Every corner of Nowal Naturecare radiates peace—where lush greenery, gentle serenity, and uplifting energy come together to soothe your soul
+       Every corner of Nowal NatureCare radiates peace—where lush greenery, gentle serenity, and uplifting energy come together to soothe your soul
       </h3>
       
       <div className="h-px w-32 bg-[#435334]/30 mx-auto my-6"></div>
       
       <p className="text-base md:text-lg leading-relaxed mb-4 font-sans">
-        At Nowal Naturecare, we gently guide you to a deeper truth—your health has always been in your hands.
+        At Nowal NatureCare, we gently guide you to a deeper truth—your health has always been in your hands.
 Within our serene, holistic sanctuary, healing isn’t separate from health—it’s woven together through intention, care, and balance.
 We combine the wisdom of ancient traditions, the precision of modern science, and the nurturing touch of natural therapies to help your body and mind return to harmony.
 Here, wellness isn’t treated—it’s awakened.
 You’ll find no shortcuts, only honest, organic pathways to restore what’s already within you.
-Nowal Naturecare is simply your guide—a gentle catalyst on your journey toward healing, renewal, and the quiet magic of holistic living.
+Nowal NatureCare is simply your guide—a gentle catalyst on your journey toward healing, renewal, and the quiet magic of holistic living.
 
       </p>
       

@@ -336,7 +336,7 @@ const therapies = [
   {
     name: 'Colon Hydrotherapy',
     image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&fit=crop',
-    content: 'Our bodies hold more than just blood and water—they also accumulate waste and toxins that may disrupt digestive health. Colon Hydrotherapy, also known as colon cleansing, is a powerful naturopathic therapy that gently eliminates these harmful substances, restoring balance from within. At Nowal Naturecare, this holistic treatment supports the bodys natural detoxification process, offering a range of health benefits that go beyond digestion.',
+    content: 'Our bodies hold more than just blood and water—they also accumulate waste and toxins that may disrupt digestive health. Colon Hydrotherapy, also known as colon cleansing, is a powerful naturopathic therapy that gently eliminates these harmful substances, restoring balance from within. At Nowal NatureCare, this holistic treatment supports the bodys natural detoxification process, offering a range of health benefits that go beyond digestion.',
     benefits: [
       'Deeply cleanses the Large Intestine',
       'Helps maintain optimal pH balance',
@@ -349,7 +349,7 @@ const therapies = [
   {
     name: 'Manipulative Therapy',
     image: 'https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&fit=crop',
-    content: 'Massage therapy is an ancient healing practice, cherished for centuries for its ability to relieve tension, stimulate circulation, and promote overall well-being. At Nowal Naturecare, this therapeutic process involves the rhythmic massage and pressing of muscles and soft tissues using a variety of scientific techniques tailored to your needs.',
+    content: 'Massage therapy is an ancient healing practice, cherished for centuries for its ability to relieve tension, stimulate circulation, and promote overall well-being. At Nowal NatureCare, this therapeutic process involves the rhythmic massage and pressing of muscles and soft tissues using a variety of scientific techniques tailored to your needs.',
     benefits: [
       'Alleviates stress and muscle stiffness',
       'Enhances metabolic function',
@@ -362,7 +362,7 @@ const therapies = [
   {
     name: ' Enema',
     image: 'https://images.unsplash.com/photo-1581595219315-a187dd40c322?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&fit=crop',
-    content: 'Healthy bowel movements are essential for the body’s overall functioning and balance. When this natural process is disrupted, Enema therapy offers an effective solution to restore digestive regularity. At Nowal Naturecare, enema treatments are tailored to your health condition and may include normal, neutral, warm, or herb-infused water. In this therapy, a gentle infusion of natural liquid into the rectum stimulates stool evacuation and relieves even chronic constipation.',
+    content: 'Healthy bowel movements are essential for the body’s overall functioning and balance. When this natural process is disrupted, Enema therapy offers an effective solution to restore digestive regularity. At Nowal NatureCare, enema treatments are tailored to your health condition and may include normal, neutral, warm, or herb-infused water. In this therapy, a gentle infusion of natural liquid into the rectum stimulates stool evacuation and relieves even chronic constipation.',
     benefits: [
       'Eliminates accumulated waste from the colon',
       'Effectively treats constipation',
@@ -374,7 +374,7 @@ const therapies = [
   {
     name: ' Mud Pack',
     image: 'https://i.pinimg.com/736x/e3/73/93/e373936c4728387cf9257cdc538e08af.jpg',
-    content: 'Mud, one of nature’s vital elements, is rich in minerals that offer powerful therapeutic benefits when applied to the body. At Nowal Naturecare, our carefully curated mud pack treatments go beyond expectations—this is the essence of naturopathy. The treatment draws out harmful toxins, deeply cleansing and revitalizing the body.',
+    content: 'Mud, one of nature’s vital elements, is rich in minerals that offer powerful therapeutic benefits when applied to the body. At Nowal NatureCare, our carefully curated mud pack treatments go beyond expectations—this is the essence of naturopathy. The treatment draws out harmful toxins, deeply cleansing and revitalizing the body.',
     benefits: [
       'Helps regulate body temperature',
       'Supports digestive health',

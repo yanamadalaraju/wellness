@@ -552,7 +552,7 @@ const Programs: React.FC = () => {
         By addressing the root cause and supporting the body holistically, it stands as one of the most effective and sustainable paths toward achieving total health and balance.
       </p>
       <p>
-        Nowal Naturecare is guided by a team of highly skilled and compassionate naturopathy experts who have thoughtfully designed every therapy to uncover and address the root cause of illness—ensuring your path to complete physical, mental, and spiritual well-being remains clear, balanced, and deeply transformative.
+        Nowal NatureCare is guided by a team of highly skilled and compassionate naturopathy experts who have thoughtfully designed every therapy to uncover and address the root cause of illness—ensuring your path to complete physical, mental, and spiritual well-being remains clear, balanced, and deeply transformative.
       </p>
       <p className="italic bg-[#FAF8F1] border-l-4 border-[#9EB384] rounded-md py-3 px-4 font-medium">
         The Founder himself has a profound understanding and interest in Naturopathy, and his vision is to inspire everyone to follow a natural lifestyle—to live disease-free and in harmony with nature.

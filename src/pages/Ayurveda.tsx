@@ -106,7 +106,7 @@ const Ayurveda: React.FC = () => {
         The true beauty of Ayurveda lies in its holistic approach—addressing not just the physical condition, but also the emotional, psychological, and spiritual dimensions of a person.
       </p>
       <p>
-        At <span className="font-semibold">Nowal Naturecare</span>, Ayurveda brings these energies into balance, nurturing profound healing and harmony at every level of being.
+        At <span className="font-semibold">Nowal NatureCare</span>, Ayurveda brings these energies into balance, nurturing profound healing and harmony at every level of being.
       </p>
     </div>
   </div>

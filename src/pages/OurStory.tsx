@@ -69,7 +69,7 @@ const OurStory: React.FC = () => {
         Rooted in the belief that the body can heal itself, naturopathy uses nature-based therapies, detox, nutrition, and mindful living to restore balance and prevent illness.
       </p>
       <p className="relative pl-6 before:absolute before:left-0 before:top-3 before:w-2 before:h-2 before:rounded-full before:bg-[#435334]/70">
-        Nowal Naturecare is a sanctuary built on this philosophy, where ancient wisdom meets modern science in a calm, healing environment.
+        Nowal NatureCare is a sanctuary built on this philosophy, where ancient wisdom meets modern science in a calm, healing environment.
       </p>
       <p className="relative pl-6 before:absolute before:left-0 before:top-3 before:w-2 before:h-2 before:rounded-full before:bg-[#435334]/70">
         Here, we don’t just treat symptoms—we nurture the whole you.
@@ -100,7 +100,7 @@ const OurStory: React.FC = () => {
       <div className="mb-6 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-[#435334] mb-6 relative pb-4">
           <span className="relative">
-            Comprehensiveness of Nowal Naturecare
+            Comprehensiveness of Nowal NatureCare
             <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-[#9EB384] rounded-full"></span>
           </span>
         </h2>
@@ -112,7 +112,7 @@ const OurStory: React.FC = () => {
       </div>
       <div className="space-y-6">
         <p className="text-[#435334] text-base md:text-lg leading-relaxed font-medium">
-          At Nowal Naturecare, we believe true wealth lies in radiant health where the body, mind, and soul exist in perfect harmony.
+          At Nowal NatureCare, we believe true wealth lies in radiant health where the body, mind, and soul exist in perfect harmony.
         </p>
         <p className="text-[#435334] text-base md:text-lg leading-relaxed">
           Rooted in the timeless wisdom of naturopathy and Yoga, our philosophy is simple yet powerful; the body holds an incredible ability to heal itself when nurtured by nature and followed the primeval lifestyle.
@@ -127,7 +127,7 @@ const OurStory: React.FC = () => {
           We blend modern science with ancient practices to create a holistic space where healing becomes a way of life.
         </p>
         <p className="text-[#435334] text-base md:text-lg leading-relaxed">
-          Nowal Naturecare isn’t just a center, it’s a return to self, a reminder that when you care for your health with intention and love, you unlock life’s truest abundance.
+          Nowal NatureCare isn’t just a center, it’s a return to self, a reminder that when you care for your health with intention and love, you unlock life’s truest abundance.
         </p>
         <div className="bg-[#FAF8F1] p-4 rounded-lg border-l-4 border-[#9EB384]">
           <p className="text-[#435334] italic font-medium">

@@ -433,7 +433,7 @@ const Footer: React.FC = () => {
 
       {/* Copyright */}
       <div className="border-t border-[#9EB384]/30 mt-12 pt-6 text-center">
-        <p className="text-sm">© {new Date().getFullYear()} Nowal Naturecare. All Rights Reserved.</p>
+        <p className="text-sm">© {new Date().getFullYear()} Nowal NatureCare. All Rights Reserved.</p>
         <p className="mt-1 text-xs text-[#435334]/80">Designed with care for holistic wellness</p>
       </div>
     </footer>

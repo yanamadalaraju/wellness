@@ -1189,14 +1189,17 @@ useEffect(() => {
     { icon: Apple, title: "Liver Diseases" },
     { icon: Activity, title: "Hypertension" },
     { icon: Thermometer, title: "	PCOS/PCOD	" },
+    { icon: Thermometer, title: "Menstrual Disorder" },
     { icon: ShieldCheck, title: "Respiratory Diseases " },
     { icon: AlertTriangle, title: "Hormonal Imbalance	" },
-        { icon: AlertTriangle, title: " 	Pain management	" },
+    { icon: AlertTriangle, title: " 	Pain management	" },
+    { icon: AlertTriangle, title: " 	Stress management	" },
+    
   ];
   
   const heroMessages = [
-    "Welcome to Nowal Naturecare Resort – Where luxury meets natural healing",
-    "Breathe. Relax. Reconnect here at Nowal Naturecare Resort",
+    "Welcome to Nowal NatureCare – Where luxury meets natural healing",
+    "Breathe. Relax. Reconnect here at Nowal NatureCare Resort",
     "Discover tranquility in every leaf, every breeze, every sunrise",
     "Your journey to nowal begins at Nowal – where nature nurtures",
     "Unplug from stress. Reconnect with nature. Rejuvenate your soul"
@@ -1370,7 +1373,7 @@ useEffect(() => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-4">
-              Experience Nowal Naturecare
+              Experience Nowal NatureCare
             </h2>
             <div className="flex justify-center items-center">
               <div className="w-16 h-1 bg-[#4a7d52] mr-3"></div>
@@ -1452,7 +1455,7 @@ useEffect(() => {
           </motion.div>
           
           <p className="text-gray-600 max-w-2xl mx-auto text-lg mb-12">
-        Nowal Naturecare guides you on a journey back to balance, awakening the natural healer that already lives inside you
+        Nowal NatureCare guides you on a journey back to balance, awakening the natural healer that already lives inside you
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
@@ -1505,7 +1508,7 @@ useEffect(() => {
               Diseases Treated
             </h2>
             <p className="text-[#c8d5cb] max-w-3xl mx-auto text-lg">
-           	Nowal Naturecare believes in healing from within—through detox and natural therapies that support your body’s full well-being
+           	Nowal NatureCare believes in healing from within—through detox and natural therapies that support your body’s full well-being
             </p>
           </motion.div>
 

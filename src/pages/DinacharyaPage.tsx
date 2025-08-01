@@ -341,7 +341,7 @@ const DinacharyaPage: React.FC = () => {
       </h2>
       <div className="w-20 h-1 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto rounded-full mb-6"></div>
       <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-        Prepare for your holistic wellness journey at Nowal Naturecare
+        Prepare for your holistic wellness journey at Nowal NatureCare
       </p>
     </div>
 

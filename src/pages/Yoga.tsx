@@ -88,7 +88,7 @@ const Yoga: React.FC = () => {
 
     <div className="space-y-6 text-lg text-gray-700">
       <p>
-     Yoga is a timeless practice that unites body, mind, and breath—promoting flexibility, strength, inner peace, and harmony through movement, meditation, and conscious awareness.In Nowal naturecare, we provide specialised Yoga therapy and personalized Yoga Sessions to give effective results.
+     Yoga is a timeless practice that unites body, mind, and breath—promoting flexibility, strength, inner peace, and harmony through movement, meditation, and conscious awareness.In Nowal NatureCare, we provide specialised Yoga therapy and personalized Yoga Sessions to give effective results.
       </p>
     </div>
   </div>
