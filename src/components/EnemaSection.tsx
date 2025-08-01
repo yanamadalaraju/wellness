@@ -335,7 +335,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const therapies = [
   {
     name: 'Colon Hydrotherapy',
-    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&fit=crop',
+    image: 'https://i.pinimg.com/736x/24/a4/75/24a4753f54a0702bf4570be51d958ad6.jpg',
     content: 'Our bodies hold more than just blood and water—they also accumulate waste and toxins that may disrupt digestive health. Colon Hydrotherapy, also known as colon cleansing, is a powerful naturopathic therapy that gently eliminates these harmful substances, restoring balance from within. At Nowal NatureCare, this holistic treatment supports the bodys natural detoxification process, offering a range of health benefits that go beyond digestion.',
     benefits: [
       'Deeply cleanses the Large Intestine',
@@ -348,7 +348,7 @@ const therapies = [
   },
   {
     name: 'Manipulative Therapy',
-    image: 'https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&fit=crop',
+    image: 'https://i.pinimg.com/736x/12/4d/f0/124df0d9a012439791d99eaa09010c41.jpg',
     content: 'Massage therapy is an ancient healing practice, cherished for centuries for its ability to relieve tension, stimulate circulation, and promote overall well-being. At Nowal NatureCare, this therapeutic process involves the rhythmic massage and pressing of muscles and soft tissues using a variety of scientific techniques tailored to your needs.',
     benefits: [
       'Alleviates stress and muscle stiffness',
@@ -361,7 +361,7 @@ const therapies = [
   },
   {
     name: ' Enema',
-    image: 'https://images.unsplash.com/photo-1581595219315-a187dd40c322?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&fit=crop',
+    image: 'https://i.pinimg.com/1200x/28/02/6b/28026b06104b898372a2735e2960db45.jpg',
     content: 'Healthy bowel movements are essential for the body’s overall functioning and balance. When this natural process is disrupted, Enema therapy offers an effective solution to restore digestive regularity. At Nowal NatureCare, enema treatments are tailored to your health condition and may include normal, neutral, warm, or herb-infused water. In this therapy, a gentle infusion of natural liquid into the rectum stimulates stool evacuation and relieves even chronic constipation.',
     benefits: [
       'Eliminates accumulated waste from the colon',
@@ -373,7 +373,7 @@ const therapies = [
   },
   {
     name: ' Mud Pack',
-    image: 'https://i.pinimg.com/736x/e3/73/93/e373936c4728387cf9257cdc538e08af.jpg',
+    image: 'https://i.pinimg.com/1200x/a3/93/54/a393546a3d88230ab923371dffa8ac85.jpg',
     content: 'Mud, one of nature’s vital elements, is rich in minerals that offer powerful therapeutic benefits when applied to the body. At Nowal NatureCare, our carefully curated mud pack treatments go beyond expectations—this is the essence of naturopathy. The treatment draws out harmful toxins, deeply cleansing and revitalizing the body.',
     benefits: [
       'Helps regulate body temperature',
@@ -386,7 +386,7 @@ const therapies = [
   },
   {
     name: 'Vibroacoustic Massage',
-    image: 'https://images.unsplash.com/photo-1545389336-cf090694435e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&fit=crop',
+    image: 'https://i.pinimg.com/736x/97/04/cf/9704cfbb81bba3bd1f9570059245e093.jpg',
     content: 'Vibro Massage an advanced naturopathic treatment combines the benefits of high-tech vibratory therapy to target the entire body or specific tension points with powder of floor of grains.',
     benefits: [
       'Relaxes and tones deep muscle layers',
@@ -496,12 +496,12 @@ const TherapySection = () => {
                   <p className="text-gray-700 leading-relaxed mb-6">
                     {selected.content}
                   </p>
-                  <button className="px-5 py-2.5 bg-gradient-to-r from-sage-500 to-sage-600 text-white font-medium rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 text-sm">
+                  {/* <button className="px-5 py-2.5 bg-gradient-to-r from-sage-500 to-sage-600 text-white font-medium rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 text-sm">
                     Book This Treatment
                     <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                     </svg>
-                  </button>
+                  </button> */}
                 </div>
 
                 {/* Benefits */}
