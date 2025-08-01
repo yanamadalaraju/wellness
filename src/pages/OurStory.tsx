@@ -17,7 +17,7 @@ const OurStory: React.FC = () => {
 
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
           <h1 className="text-5xl md:text-6xl font-playfair font-bold mb-6 text-shadow">
-            Nowal Nature Cure
+            Nowal NatureCare
           </h1>
           <p className="text-xl md:text-2xl text-shadow">
             Rooted in nature, driven by purpose — the journey to healing began here.
@@ -181,7 +181,7 @@ const OurStory: React.FC = () => {
       <div className="mb-6">
         <h4 className="text-xl font-semibold mb-2">Our Vision</h4>
         <p className="text-lg leading-relaxed">
-          To become a leading center for holistic healing and sustainable wellness, blending the ancient science of naturopathy with modern hospitality to promote natural living, preventative care, and complete rejuvenation of mind, body, and spirit.
+          To become a leading center for holistic healing and sustainable wellness, blending the ancient science of naturopathy with modern hospitality to promote natural living,  preventive care, and complete rejuvenation of mind, body, and spirit.
         </p>
       </div>
       

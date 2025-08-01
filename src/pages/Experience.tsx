@@ -2,6 +2,7 @@ import React from 'react'
 import { Heart, Users, Award, Clock, Leaf, Mountain } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import image from '../assets/natureimg.jpg'
+import AboutFounder from '../components/founder'
 
 const Experience: React.FC = () => {
   return (
@@ -69,7 +70,7 @@ const Experience: React.FC = () => {
   </div>
 </section>
 
- 
+ <AboutFounder />
 
 
       {/* Our Story Section */}

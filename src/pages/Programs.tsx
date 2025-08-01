@@ -661,7 +661,7 @@ By addressing the root cause and supporting the body holistically, it stands as 
           <div className="md:w-1/2 -ml-[10%] relative z-10">
             <div className="relative">
               <img
-                src="https://www.nimba.in/wp-content/uploads/2020/12/Naturopathy-wonders-min.png"
+                src="https://i.pinimg.com/736x/5d/8c/77/5d8c7781e73a6f48cf4a8a5d7ff8c780.jpg"
                 alt="Naturopathy Treatment"
                 className="rounded shadow-[20px_20px_20px_-5px_rgba(0,0,0,0.1)] w-full"
               />
@@ -699,7 +699,7 @@ By addressing the root cause and supporting the body holistically, it stands as 
           <div className="md:w-1/2 -mr-[10%] relative z-10">
             <div className="relative">
               <img
-                src="https://i.pinimg.com/1200x/ef/2e/12/ef2e12733de87684c6ed25b2df037964.jpg"
+                src="https://i.pinimg.com/736x/3c/88/4b/3c884bad856abe34a54e7bc9a54b67b6.jpg"
                 alt="Holistic Treatment"
                 className="rounded shadow-[-20px_20px_20px_-5px_rgba(0,0,0,0.1)] w-full"
 
@@ -738,7 +738,7 @@ By addressing the root cause and supporting the body holistically, it stands as 
     <div className="md:w-1/2 -ml-[10%] relative z-10">
       <div className="relative">
         <img
-          src="https://www.nimba.in/wp-content/uploads/2020/12/Authentic-Ayurveda-min.png"
+          src="https://i.pinimg.com/736x/49/d7/3e/49d73ee7c8ee18235e7fec037c8b22b6.jpg"
           alt="Ayurvedic Treatment"
           className="rounded shadow-[20px_20px_20px_-5px_rgba(0,0,0,0.1)] w-full"
         />
@@ -775,7 +775,7 @@ By addressing the root cause and supporting the body holistically, it stands as 
     <div className="md:w-1/2 -mr-[10%] relative z-10">
       <div className="relative">
         <img
-          src="https://www.nimba.in/wp-content/uploads/2020/12/yoga-meditation-min.png"
+          src="https://i.pinimg.com/1200x/f0/a2/65/f0a2651080dcfc4cb53219faee9a4377.jpg"
           alt="Yoga Meditation"
           className="rounded shadow-[-20px_20px_20px_-5px_rgba(0,0,0,0.1)] w-full"
         />
@@ -812,7 +812,7 @@ By addressing the root cause and supporting the body holistically, it stands as 
     <div className="md:w-1/2 -ml-[10%] relative z-10">
       <div className="relative">
         <img
-          src="https://www.nimba.in/wp-content/uploads/2020/12/Powerful-Physiotherapy-min.png"
+          src="https://i.pinimg.com/736x/0a/10/ac/0a10acfbeb5bdb1df92e2c5c23fa852f.jpg"
           alt="Physiotherapy Session"
           className="rounded shadow-[20px_20px_20px_-5px_rgba(0,0,0,0.1)] w-full"
         />
@@ -849,7 +849,7 @@ By addressing the root cause and supporting the body holistically, it stands as 
     <div className="md:w-1/2 -mr-[10%] relative z-10">
       <div className="relative">
         <img
-          src="https://www.nimba.in/wp-content/uploads/2020/12/Holistic-Therapies-min.png"
+          src="https://i.pinimg.com/1200x/9d/e9/d0/9de9d05ee3709fd0edbe6b0d444e1982.jpg"
           alt="Holistic Therapy Session"
           className="rounded shadow-[-20px_20px_20px_-5px_rgba(0,0,0,0.1)] w-full"
         />
@@ -860,7 +860,7 @@ By addressing the root cause and supporting the body holistically, it stands as 
   </div>
 </section>
 
-<section className="content-block py-12 px-4 md:px-8">
+{/* <section className="content-block py-12 px-4 md:px-8">
         <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl p-8 transform transition-all hover:scale-[1.01] hover:shadow-3xl">
           <div className="text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
@@ -879,7 +879,7 @@ By addressing the root cause and supporting the body holistically, it stands as 
     </button>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

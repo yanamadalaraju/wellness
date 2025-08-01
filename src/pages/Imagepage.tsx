@@ -161,7 +161,7 @@ const Image: React.FC = () => {
 
       <SectionGallery />
       
-      <section className="bg-white py-12 px-4 md:px-8">
+      {/* <section className="bg-white py-12 px-4 md:px-8">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between bg-white rounded-xl shadow-xl p-6 md:p-10">
           <div className="text-center md:text-left mb-6 md:mb-0">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
@@ -176,7 +176,7 @@ const Image: React.FC = () => {
     </Link>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };
