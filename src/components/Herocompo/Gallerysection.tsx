@@ -1,3 +1,4 @@
+import React from 'react'; // Add this import
 import { useNavigate } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa';
 import image5 from "../../assets/wellness.jpg";

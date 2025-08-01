@@ -2229,10 +2229,10 @@ const Navbar: React.FC = () => {
               className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-gray-50 transition-colors duration-200 font-medium"
               onClick={() => toggleDropdown('mobile-tariff')}
             >
-              <span>Tariff</span>
-              <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+              {/* <span>Tariff</span> */}
+              {/* <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
                 openDropdown === 'mobile-tariff' ? 'rotate-180' : ''
-              }`} />
+              }`} /> */}
             </button>
             <div className={`transition-all duration-200 overflow-hidden ${
               openDropdown === 'mobile-tariff' ? 'max-h-96' : 'max-h-0'
