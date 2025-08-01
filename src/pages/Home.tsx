@@ -1055,6 +1055,7 @@ import physiotherapy from "../assets/icon4.png";
 import treatments from "../assets/icon5.png";
 import image10  from "../assets/Ayurveda for Diabetes.png"
 import image11 from "../assets/Cervical Spondylitis.png"
+import GallerySection from '../components/Herocompo/Gallerysection';
 
 
 const Home: React.FC = () => {
@@ -1162,7 +1163,7 @@ useEffect(() => {
   ];
 
   const galleryItems = [
-    { title: 'nowal', image: image5 },
+    { title: 'Nowal', image: image5 },
     { title: 'Amenities', image: image6 },
     { title: 'Media & Events', image: image7 },
     { title: 'Living Space', image: image8 },
@@ -1414,32 +1415,31 @@ useEffect(() => {
 
       {/* Accreditation Banner */}
       <section className="py-12 px-4 bg-gradient-to-b from-white to-[#f0f5f1]">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="max-w-6xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden"
-        >
-          <div className="flex flex-col md:flex-row items-center p-8">
-            <div className="w-40 h-40 bg-[#f0f5f1] rounded-full flex items-center justify-center border-4 border-[#d1e0d4] shadow-inner shrink-0">
-              <Award className="w-16 h-16 text-[#3E5F44]" />
-            </div>
-            
-            <div className="md:ml-8 mt-6 md:mt-0 text-center md:text-left">
-              <div className="relative inline-block">
-                <h2 className="text-2xl md:text-3xl font-serif font-bold text-gray-800 mb-2">
-                  Welcome to Nowal NatureCare
-                </h2>
-                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#4a7d52] to-[#3E5F44]"></div>
-              </div>
-              {/* <p className="text-xl text-[#3E5F44] font-medium mt-4">
-                Gujarat's Premier NABH Accredited nowal Destination
-              </p> */}
-            </div>
+  <div className="flex justify-center">
+    <motion.div 
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="max-w-6xl w-full bg-white rounded-xl shadow-lg overflow-hidden"
+    >
+      <div className="flex flex-col md:flex-row items-center justify-center p-8">
+        <div className="w-40 h-40 bg-[#f0f5f1] rounded-full flex items-center justify-center border-4 border-[#d1e0d4] shadow-inner shrink-0">
+          <Award className="w-16 h-16 text-[#3E5F44]" />
+        </div>
+        
+        <div className="md:ml-8 mt-6 md:mt-0 text-center">
+          <div className="relative inline-block">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-gray-800 mb-2">
+              Welcome to Nowal NatureCare
+            </h2>
+            <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#4a7d52] to-[#3E5F44]"></div>
           </div>
-        </motion.div>
-      </section>
+        </div>
+      </div>
+    </motion.div>
+  </div>
+</section>
 
       {/* Treatments Section */}
       <section className="py-20 px-4 bg-gradient-to-b from-[#f0f5f1] to-white">
@@ -1543,78 +1543,69 @@ useEffect(() => {
       </section>
 
       {/* Therapies Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-white to-[#f0f5f1]">
-        <div className="max-w-7xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-2">
-              Popular Therapies
-            </h2>
-            <div className="flex justify-center items-center">
-              <div className="w-16 h-1 bg-[#4a7d52] mr-3"></div>
-              <HeartPulse className="text-[#3E5F44] w-6 h-6" />
-              <div className="w-16 h-1 bg-[#4a7d52] ml-3"></div>
-            </div>
-          </motion.div>
+    <section className="py-20 px-4 bg-gradient-to-b from-white to-[#f0f5f1]">
+  <div className="max-w-7xl mx-auto text-center">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="mb-16"
+    >
+      <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-2">
+        Popular Therapies
+      </h2>
+      <div className="flex justify-center items-center">
+        <div className="w-16 h-1 bg-[#4a7d52] mr-3"></div>
+        <HeartPulse className="text-[#3E5F44] w-6 h-6" />
+        <div className="w-16 h-1 bg-[#4a7d52] ml-3"></div>
+      </div>
+    </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              // { 
-              //   title: "Colon  HydroTherapy", 
-              //   duration: "Minimum 7 days", 
-              //   image: image1, 
-              // },
-              { 
-                title: "Mud Therapy", 
-                duration: "Minimum 5 days", 
-                image: image2 
-              },
-              { 
-                title: "Hydro Therapy", 
-                duration: "Minimum 3-7 days", 
-                image: image3
-              },
-              { 
-                title: "Massage Therapy", 
-                duration: "Minimum 5 days", 
-                image: image4 
-              },
-            ].map((therapy, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10 }}
-                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all group"
-              >
-                <div className="h-48 overflow-hidden relative">
-                  <img 
-                    src={therapy.image} 
-                    alt={therapy.title} 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-800 mb-1">{therapy.title}</h3>
-                  <p className="text-gray-600 text-sm mb-4">{therapy.duration}</p>
-                  {/* <button className="w-full bg-[#3E5F44] hover:bg-[#2E4A34] text-white font-medium py-2 px-4 rounded-lg transition-all">
-                    Book Now
-                  </button> */}
-                </div>
-              </motion.div>
-            ))}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {[
+        { 
+          title: "Mud Therapy", 
+          duration: "Minimum 5 days", 
+          image: image2 
+        },
+        { 
+          title: "Hydro Therapy", 
+          duration: "Minimum 3-7 days", 
+          image: image3
+        },
+        { 
+          title: "Massage Therapy", 
+          duration: "Minimum 5 days", 
+          image: image4 
+        },
+      ].map((therapy, index) => (
+        <motion.div 
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          viewport={{ once: true }}
+          whileHover={{ y: -10 }}
+          className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all group"
+        >
+          <div className="h-48 overflow-hidden relative">
+            <img 
+              src={therapy.image} 
+              alt={therapy.title} 
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
           </div>
-        </div>
-      </section>
-
+          <div className="p-6">
+            <h3 className="text-xl font-semibold text-gray-800 mb-1">{therapy.title}</h3>
+            <p className="text-gray-600 text-sm mb-4">{therapy.duration}</p>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
       {/* Testimonials Section */}
     <section className="relative py-20 px-4 text-white overflow-hidden">
   <div className="absolute inset-0">
@@ -1687,7 +1678,7 @@ useEffect(() => {
 </section>
 
       {/* Gallery Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-[#f0f5f1] to-white">
+      {/* <section className="py-20 px-4 bg-gradient-to-b from-[#f0f5f1] to-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -1723,15 +1714,17 @@ useEffect(() => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  {/* <button className="bg-[#3E5F44] hover:bg-[#2E4A34] text-white px-6 py-2 rounded-full flex items-center gap-2 transition-all">
+                  <button className="bg-[#3E5F44] hover:bg-[#2E4A34] text-white px-6 py-2 rounded-full flex items-center gap-2 transition-all">
                     {item.title} <FaArrowRight />
-                  </button> */}
+                  </button>
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+
+      <GallerySection />
 
       {/* Blog Section */}
     <section className="py-20 px-4 bg-white">

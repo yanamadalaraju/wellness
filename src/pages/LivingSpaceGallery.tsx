@@ -65,23 +65,23 @@ const LivingSpaceWellness: React.FC = () => {
       </div>
 
       
-<GalleryVideoSection />
+{/* <GalleryVideoSection /> */}
 <ImagegridLiving />
      
       
 
       {/* Careers CTA Section */}
-      <section className="bg-white py-12 px-4 md:px-8">
+      {/* <section className="bg-white py-12 px-4 md:px-8">
   <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between bg-white rounded-xl shadow-xl p-6 md:p-10">
     
-    {/* Left Text */}
+  
     <div className="text-center md:text-left mb-6 md:mb-0">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
         Transform Your Daily Routine
       </h2>
     </div>
 
-    {/* Right Button with left-to-right hover fill */}
+  
     <div>
       <button className="relative overflow-hidden bg-amber-600 text-white font-bold py-3 px-8 rounded-full text-lg shadow-md transition-all duration-300 group">
         <span className="relative z-10">Heal Now</span>
@@ -90,7 +90,7 @@ const LivingSpaceWellness: React.FC = () => {
     </div>
 
   </div>
-</section>
+</section> */}
     </div>
   );
 };

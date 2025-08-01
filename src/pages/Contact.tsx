@@ -997,9 +997,9 @@ const Contact: React.FC = () => {
                   <div>
                     <h3 className="font-semibold text-sage-600 mb-1">Address</h3>
                     <p className="text-gray-600">
-                      123 Nowal Valley<br />
-                      Serene Hills, Nature State 12345<br />
-                      United States
+                      gadri badhal panchayat<br />
+                      Jaipur rajasthan,303602 india<br />
+                      
                     </p>
                   </div>
                 </div>
@@ -1009,8 +1009,8 @@ const Contact: React.FC = () => {
                   <div>
                     <h3 className="font-semibold text-sage-600 mb-1">Phone</h3>
                     <p className="text-gray-600">
-                      Main: +1 (555) 123-4567<br />
-                      Emergency: +1 (555) 123-4568
+                      Main: +91 9251582670<br />
+                      Emergency: +91 9251582675
                     </p>
                   </div>
                 </div>
@@ -1020,9 +1020,9 @@ const Contact: React.FC = () => {
                   <div>
                     <h3 className="font-semibold text-sage-600 mb-1">Email</h3>
                     <p className="text-gray-600">
-                      General: info@nowal-retreat.com<br />
-                      Bookings: bookings@nowal-retreat.com<br />
-                      Support: support@nowal-retreat.com
+                      {/* General: socials@nowalnaturecare.com<br />
+                      Bookings: socials@nowalnaturecare.com<br /> */}
+                      Support: socials@nowalnaturecare.com
                     </p>
                   </div>
                 </div>
@@ -1032,9 +1032,9 @@ const Contact: React.FC = () => {
                   <div>
                     <h3 className="font-semibold text-sage-600 mb-1">Hours</h3>
                     <p className="text-gray-600">
-                      Monday - Friday: 8:00 AM - 6:00 PM<br />
-                      Saturday: 9:00 AM - 4:00 PM<br />
-                      Sunday: 10:00 AM - 3:00 PM
+                      Monday - Sunday: 7:00 AM - 7:00 PM<br />
+                      {/* Saturday: 9:00 AM - 4:00 PM<br />
+                      Sunday: 10:00 AM - 3:00 PM */}
                     </p>
                   </div>
                 </div>
@@ -1044,7 +1044,7 @@ const Contact: React.FC = () => {
                   <div>
                     <h3 className="font-semibold text-sage-600 mb-1">WhatsApp</h3>
                     <p className="text-gray-600">
-                      +1 (555) 123-4567<br />
+                      +91 9251582672<br />
                       Available 24/7 for urgent inquiries
                     </p>
                   </div>
@@ -1055,7 +1055,7 @@ const Contact: React.FC = () => {
                 <h3 className="font-semibold text-yellow-800 mb-2">Emergency Contact</h3>
                 <p className="text-yellow-700 text-sm">
                   For medical emergencies during your stay, please contact our 24/7 emergency line: 
-                  <span className="font-semibold"> +1 (555) 123-4568</span>
+                  <span className="font-semibold"> +91 9251582675</span>
                 </p>
               </div>
             </div>
