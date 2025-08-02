@@ -471,6 +471,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import image from "../assets/2ps-7.png";
+import image1 from "../assets/physiotherapy.jpg";
+
 const Programs: React.FC = () => {
    const navigate = useNavigate();
   return (
@@ -775,7 +777,7 @@ By addressing the root cause and supporting the body holistically, it stands as 
     <div className="md:w-1/2 -mr-[10%] relative z-10">
       <div className="relative">
         <img
-          src="https://i.pinimg.com/1200x/f0/a2/65/f0a2651080dcfc4cb53219faee9a4377.jpg"
+          src="https://i.pinimg.com/1200x/4e/4b/73/4e4b73d324878bcbbf26ca9062b8d588.jpg"
           alt="Yoga Meditation"
           className="rounded shadow-[-20px_20px_20px_-5px_rgba(0,0,0,0.1)] w-full"
         />
@@ -812,7 +814,7 @@ By addressing the root cause and supporting the body holistically, it stands as 
     <div className="md:w-1/2 -ml-[10%] relative z-10">
       <div className="relative">
         <img
-          src="https://i.pinimg.com/736x/0a/10/ac/0a10acfbeb5bdb1df92e2c5c23fa852f.jpg"
+          src={image1}
           alt="Physiotherapy Session"
           className="rounded shadow-[20px_20px_20px_-5px_rgba(0,0,0,0.1)] w-full"
         />
