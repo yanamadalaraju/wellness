@@ -885,6 +885,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { MapPin, Phone, Mail, Clock, MessageCircle, Send } from 'lucide-react';
 import ReachSection from '../components/Reachsection';
+import { BASE_URL } from '../config';
 import { Link } from 'react-router-dom';
 
 interface ContactFormData {
@@ -914,7 +915,7 @@ const Contact: React.FC = () => {
   setSubmitSuccess(false);
   
   try {
-    const response = await fetch('http://localhost:5000/api/contacts', {  // Keep this as /api/contacts
+    const response = await fetch(`${BASE_URL}/api/contacts`, {  // Keep this as /api/contacts
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -1203,8 +1204,11 @@ const Contact: React.FC = () => {
               </form>
             </div>
           </div>
+
         </div>
       </section>
+
+       
     </div>
   );
 };

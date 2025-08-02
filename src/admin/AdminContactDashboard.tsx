@@ -466,7 +466,8 @@ import {
   ClipboardList,
   MapPin
 } from 'lucide-react';
-import AdminNavbar from './adminNavbar';
+import { BASE_URL } from '../config';
+import AdminNavbar from '../admin/AdminNavbar';
 
 interface ContactFormData {
   id: number;
@@ -491,7 +492,7 @@ const AdminContactDashboard: React.FC = () => {
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        const response = await axios.get<ContactFormData[]>('http://localhost:5000/api/contacts');
+        const response = await axios.get<ContactFormData[]>(`${BASE_URL}/api/contacts`);
         setContacts(response.data);
       } catch (err) {
         setError('Failed to fetch contact data. Please try again later.');
@@ -525,7 +526,7 @@ const AdminContactDashboard: React.FC = () => {
   const handleDelete = async (id: number) => {
     if (window.confirm('Are you sure you want to delete this contact submission?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/contacts/${id}`);
+        await axios.delete(`${BASE_URL}/api/contacts/${id}`);
         setContacts(contacts.filter(contact => contact.id !== id));
       } catch (err) {
         setError('Failed to delete contact. Please try again.');
