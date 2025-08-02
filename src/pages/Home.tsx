@@ -1047,15 +1047,17 @@ import image5 from "../assets/wellness.jpg";
 import image6 from "../assets/303.jpg";
 import image7 from "../assets/3d2-1.jpg";
 import image8 from "../assets/Dormitory .jpg";
-import image9 from "../assets/blog.png"
+import image9 from "../assets/blog.png";
 import naturopathy from "../assets/icon.png";
 import ayurveda from "../assets/icon2.png";
 import meditationYoga from "../assets/icon3.png";
 import physiotherapy from "../assets/icon4.png";
 import treatments from "../assets/icon5.png";
-import image10  from "../assets/Ayurveda for Diabetes.png"
-import image11 from "../assets/Cervical Spondylitis.png"
+import image10  from "../assets/Ayurveda for Diabetes.png";
+import image11 from "../assets/Cervical Spondylitis.png";
+import image55 from "../assets/physiotherapy.jpg";
 import GallerySection from '../components/Herocompo/Gallerysection';
+
 
 
 const Home: React.FC = () => {
@@ -1578,6 +1580,11 @@ useEffect(() => {
           title: "Massage Therapy", 
           duration: "Minimum 5 days", 
           image: image4 
+        },
+        { 
+          title: "Physiotherapy", 
+          duration: "Minimum 5 days", 
+          image: image55 
         },
       ].map((therapy, index) => (
         <motion.div 
