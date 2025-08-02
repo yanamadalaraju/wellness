@@ -335,7 +335,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const therapies = [
   {
     name: 'Colon Hydrotherapy',
-    image: 'https://i.pinimg.com/736x/24/a4/75/24a4753f54a0702bf4570be51d958ad6.jpg',
+    image: 'https://i.pinimg.com/1200x/8d/a7/09/8da7090e9a07de2a8280f189fc9935a3.jpg',
     content: 'Our bodies hold more than just blood and water—they also accumulate waste and toxins that may disrupt digestive health. Colon Hydrotherapy, also known as colon cleansing, is a powerful naturopathic therapy that gently eliminates these harmful substances, restoring balance from within. At Nowal NatureCare, this holistic treatment supports the bodys natural detoxification process, offering a range of health benefits that go beyond digestion.',
     benefits: [
       'Deeply cleanses the Large Intestine',
@@ -348,7 +348,7 @@ const therapies = [
   },
   {
     name: 'Manipulative Therapy',
-    image: 'https://i.pinimg.com/736x/12/4d/f0/124df0d9a012439791d99eaa09010c41.jpg',
+    image: 'https://i.pinimg.com/736x/3f/17/bb/3f17bba0d96bc5e7660c6c2b8c6662ed.jpg',
     content: 'Massage therapy is an ancient healing practice, cherished for centuries for its ability to relieve tension, stimulate circulation, and promote overall well-being. At Nowal NatureCare, this therapeutic process involves the rhythmic massage and pressing of muscles and soft tissues using a variety of scientific techniques tailored to your needs.',
     benefits: [
       'Alleviates stress and muscle stiffness',
@@ -361,7 +361,7 @@ const therapies = [
   },
   {
     name: ' Enema',
-    image: 'https://i.pinimg.com/1200x/28/02/6b/28026b06104b898372a2735e2960db45.jpg',
+    image: 'https://i.pinimg.com/1200x/e1/9b/52/e19b521a7fd7d788f2a86e542b57002f.jpg',
     content: 'Healthy bowel movements are essential for the body’s overall functioning and balance. When this natural process is disrupted, Enema therapy offers an effective solution to restore digestive regularity. At Nowal NatureCare, enema treatments are tailored to your health condition and may include normal, neutral, warm, or herb-infused water. In this therapy, a gentle infusion of natural liquid into the rectum stimulates stool evacuation and relieves even chronic constipation.',
     benefits: [
       'Eliminates accumulated waste from the colon',
