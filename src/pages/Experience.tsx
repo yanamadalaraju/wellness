@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
 import { Heart, Users, Award, Clock, Leaf, Mountain } from 'lucide-react'
-import { Link } from 'react-router-dom'
-import image from '../assets/natureimg.jpg'
-import AboutFounder from '../components/founder'
+import { Link } from 'react-router-dom';
+import image from '../assets/natureimg.jpg';
+import img from '../assets/3d1-1.jpg';
+import AboutFounder from '../components/founder';
 
 const Experience: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ const Experience: React.FC = () => {
       <section className="relative min-h-96 flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://media.istockphoto.com/id/1496615469/photo/serene-latin-woman-enjoy-sunset-with-gratitude.jpg?s=612x612&w=0&k=20&c=LXeGeLgKznGamU25tLajijCVuV5lxWIZH0RW5qN3k5g="
+            src={img}
             alt="Nowal Experience"
             className="w-full h-full object-cover"
           />

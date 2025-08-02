@@ -1730,8 +1730,9 @@ const Navbar: React.FC = () => {
 
   // Define dropdown arrays
   const aboutUsDropdown = [
-    { name: 'The Mantra', path: '/experience#mantra' },
+   
     { name: 'Nowal NatureCare', path: '/Ourstory' },
+     { name: 'Aout Founder', path: '/experience#mantra' },
     { name: 'Healing Team', path: '/healing-team' },
     { name: 'Daily Routine', path: '/dincharya' },
   ];
