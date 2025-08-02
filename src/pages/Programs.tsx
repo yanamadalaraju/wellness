@@ -330,7 +330,7 @@
 //             Holistic Nowal Programs
 //           </h1>
 //           <p className="text-xl md:text-2xl mb-8">
-//             At Nowal Nature Cure
+//             At Nowal NatureCare
 //           </p>
 //           <Link 
 //             to="/programs" 
@@ -493,7 +493,7 @@ const Programs: React.FC = () => {
             Holistic Nowal Programs
           </h1>
           <p className="text-xl md:text-2xl mb-8">
-            At Nowal Nature Cure
+            At Nowal NatureCare
           </p>
           {/* <Link 
             to="/programs" 
@@ -925,7 +925,7 @@ export default Programs;
 //             </span>
 //           </h1>
 //           <p className="text-xl md:text-2xl mb-8 font-light tracking-wide">
-//             At Nowal Nature Cure
+//             At Nowal NatureCare
 //           </p>
 //           <Link 
 //             to="/programs" 

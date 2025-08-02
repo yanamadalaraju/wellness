@@ -259,7 +259,7 @@
 //         allowFullScreen
 //         loading="lazy"
 //         referrerPolicy="no-referrer-when-downgrade"
-//         title="Wellness Nature Cure Location"
+//         title="Nowal NatureCare Location"
 //       ></iframe>
       
 //       {/* Floating location card */}
@@ -267,7 +267,7 @@
 //         <div className="flex items-start gap-3">
 //           <MapPin className="w-6 h-6 text-sage-600 mt-1 flex-shrink-0" />
 //           <div>
-//             <h3 className="font-playfair font-semibold text-sage-700">Wellness Nature Cure</h3>
+//             <h3 className="font-playfair font-semibold text-sage-700">Nowal NatureCare</h3>
 //             <address className="not-italic text-sm text-gray-600 mt-1">
 //               Baliyasan, Nr. Mccain Foods<br />
 //               Ahmedabad–Mehsana Expressway<br />
@@ -737,14 +737,14 @@
 //               allowFullScreen
 //               loading="lazy"
 //               referrerPolicy="no-referrer-when-downgrade"
-//               title="Nowal Nature Cure Location"
+//               title="Nowal NatureCare Location"
 //             ></iframe>
             
 //             <div className="absolute bottom-4 left-4 bg-white p-6 rounded-lg max-w-xs shadow-md">
 //               <div className="flex items-start gap-3">
 //                 <MapPin className="w-6 h-6 text-sage-600 mt-1 flex-shrink-0" />
 //                 <div>
-//                   <h3 className="font-playfair font-semibold text-sage-700">Nowal Nature Cure</h3>
+//                   <h3 className="font-playfair font-semibold text-sage-700">Nowal NatureCare</h3>
 //                   <address className="not-italic text-sm text-gray-600 mt-1">
 //                     Baliyasan, Nr. Mccain Foods<br />
 //                     Ahmedabad–Mehsana Expressway<br />
@@ -1021,9 +1021,9 @@ const Contact: React.FC = () => {
                   <div>
                     <h3 className="font-semibold text-sage-600 mb-1">Email</h3>
                     <p className="text-gray-600">
-                      {/* General: socials@nowalnaturecare.com<br />
-                      Bookings: socials@nowalnaturecare.com<br /> */}
-                      Support: socials@nowalnaturecare.com
+                      {/* General: socials@nowalNatureCare.com<br />
+                      Bookings: socials@nowalNatureCare.com<br /> */}
+                      Support: socials@nowalNatureCare.com
                     </p>
                   </div>
                 </div>

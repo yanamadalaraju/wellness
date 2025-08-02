@@ -312,7 +312,7 @@
 
 //       {/* Copyright */}
 //       <div className="border-t border-[#9EB384]/30 mt-12 pt-6 text-center text-sm">
-//         <p>© {new Date().getFullYear()} Wellness Nature Cure. All Rights Reserved.</p>
+//         <p>© {new Date().getFullYear()} Nowal NatureCare. All Rights Reserved.</p>
 //         <p className="mt-1">Designed with ❤️ for holistic nowal</p>
 //       </div>
 //     </footer>
@@ -359,7 +359,7 @@ const Footer: React.FC = () => {
   <a href="https://www.facebook.com/share/1FeVVbnqZW/" aria-label="Facebook">
     <Facebook className="w-6 h-6 hover:text-[#9EB384] transition-colors" />
   </a>
-  <a href="https://www.instagram.com/nowalnaturecare_official?igsh=MXdxb3dwZXF6OGpmMQ==" aria-label="Instagram">
+  <a href="https://www.instagram.com/nowalNatureCare_official?igsh=MXdxb3dwZXF6OGpmMQ==" aria-label="Instagram">
     <Instagram className="w-6 h-6 hover:text-[#9EB384] transition-colors" />
   </a>
   <a href="https://x.com/NowalNatureCare" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
@@ -368,10 +368,10 @@ const Footer: React.FC = () => {
   <a href="http://www.youtube.com/@SocialsNNC" aria-label="YouTube">
     <Youtube className="w-6 h-6 hover:text-[#9EB384] transition-colors" />
   </a>
-  <a href="http://www.linkedin.com/in/nowal-naturecare" aria-label="LinkedIn">
+  <a href="http://www.linkedin.com/in/nowal-NatureCare" aria-label="LinkedIn">
     <Linkedin className="w-6 h-6 hover:text-[#9EB384] transition-colors" />
   </a>
-  <a href="mailto:socials@nowalnaturecare.com" aria-label="Email">
+  <a href="mailto:socials@nowalNatureCare.com" aria-label="Email">
     <Mail className="w-6 h-6 hover:text-[#9EB384] transition-colors" />
   </a>
 </div>
@@ -419,7 +419,7 @@ const Footer: React.FC = () => {
               
               <div className="flex items-start gap-3">
                 <Mail className="w-5 h-5 mt-1 flex-shrink-0" />
-                <a href="mailto:socials@nowalnaturecare.com" className="hover:underline">socials@nowalnaturecare.com</a>
+                <a href="mailto:socials@nowalNatureCare.com" className="hover:underline">socials@nowalNatureCare.com</a>
               </div>
               
               <div className="flex items-start gap-3">

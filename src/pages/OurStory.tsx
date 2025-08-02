@@ -39,7 +39,7 @@ const OurStory: React.FC = () => {
                     <span className="mx text-sage-500">{'>'}</span>
                   </li>
                   <li>
-                    <span className="text-sage-800 font-medium">Nowal Nature Cure</span>
+                    <span className="text-sage-800 font-medium">Nowal NatureCare</span>
                   </li>
                 </ol>
               </nav>

@@ -31,7 +31,7 @@ const Ayurveda: React.FC = () => {
             Ayurvedic Lifestyle Guidance
           </h1>
           <p className="text-xl md:text-2xl mb-8">
-            At Wellness Nature Cure
+            At Nowal NatureCare
           </p>
           <Link 
             to="/programs" 
@@ -91,7 +91,7 @@ const Ayurveda: React.FC = () => {
 
     {/* Quote */}
     <blockquote className="text-xl md:text-2xl font-light italic text-[#647160] mb-10 leading-relaxed">
-      "Nature cures, not the physician. At Wellness, we simply facilitate the body's innate healing capacity through time-tested naturopathic principles."
+      "Nature cures, not the physician. At nowal, we simply facilitate the body's innate healing capacity through time-tested naturopathic principles."
     </blockquote>
 
     {/* Content */}
