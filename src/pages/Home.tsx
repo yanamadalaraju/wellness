@@ -1041,7 +1041,7 @@ import { FaArrowRight } from 'react-icons/fa6';
 import AlertPopup from './NimbaGallery';
 import image1 from "../assets/panchakarma.jpg";
 import image2 from "../assets/mudtherapy.jpg";
-import image3 from "../assets/hydrotherapy.jpg";
+import image3 from "../assets/hydrotherap.jpg";
 import image4 from "../assets/massage.jpg";
 import image5 from "../assets/wellness.jpg";
 import image6 from "../assets/303.jpg";
