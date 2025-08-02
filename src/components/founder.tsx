@@ -1,5 +1,5 @@
 import React from 'react';
-import founderImage from '../assets/RNNF LOGO.png'; // Replace with actual image path
+import founderImage from '../assets/founder.jpg'; // Replace with actual image path
 
 const AboutFounder = () => {
   return (
