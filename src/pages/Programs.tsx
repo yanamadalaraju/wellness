@@ -661,7 +661,7 @@ By addressing the root cause and supporting the body holistically, it stands as 
           <div className="md:w-1/2 -ml-[10%] relative z-10">
             <div className="relative">
               <img
-                src="https://i.pinimg.com/736x/5d/8c/77/5d8c7781e73a6f48cf4a8a5d7ff8c780.jpg"
+                src="https://i.pinimg.com/1200x/0a/6b/e2/0a6be2cd1a39996eb6164f8c647b0c64.jpg"
                 alt="Naturopathy Treatment"
                 className="rounded shadow-[20px_20px_20px_-5px_rgba(0,0,0,0.1)] w-full"
               />
@@ -699,7 +699,7 @@ By addressing the root cause and supporting the body holistically, it stands as 
           <div className="md:w-1/2 -mr-[10%] relative z-10">
             <div className="relative">
               <img
-                src="https://i.pinimg.com/736x/3c/88/4b/3c884bad856abe34a54e7bc9a54b67b6.jpg"
+                src="https://i.pinimg.com/1200x/a0/0f/40/a00f40f8f78d3805e5dbd414f5a3d242.jpg"
                 alt="Holistic Treatment"
                 className="rounded shadow-[-20px_20px_20px_-5px_rgba(0,0,0,0.1)] w-full"
 
@@ -738,7 +738,7 @@ By addressing the root cause and supporting the body holistically, it stands as 
     <div className="md:w-1/2 -ml-[10%] relative z-10">
       <div className="relative">
         <img
-          src="https://i.pinimg.com/736x/49/d7/3e/49d73ee7c8ee18235e7fec037c8b22b6.jpg"
+          src="https://i.pinimg.com/736x/16/61/bd/1661bdb6523c07b659d8d83df283fb26.jpg"
           alt="Ayurvedic Treatment"
           className="rounded shadow-[20px_20px_20px_-5px_rgba(0,0,0,0.1)] w-full"
         />
