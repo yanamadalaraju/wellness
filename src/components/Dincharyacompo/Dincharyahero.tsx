@@ -981,7 +981,7 @@ const DinHeroSection: React.FC = () => {
   }, [isPaused]);
 
   const timeSlots = [
-    { time: "04:50 AM - 05:15 AM", activity: "Morning Walk" },
+    { time: "05:00 AM - 06:00 AM", activity: "Morning Walk" },
     { time: "06:00 AM - 06:15 AM", activity: "Meditation" },
     { time: "07:15 AM - 07:30 AM", activity: "Breakfast" },
     { time: "08:00 AM - 12:30 PM", activity: "Work Session" },

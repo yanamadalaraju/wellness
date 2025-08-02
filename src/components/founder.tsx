@@ -27,7 +27,7 @@ const AboutFounder = () => {
           {/* Founder Bio */}
           <div className="md:w-2/3">
             <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-              Shri Ram Niwas Nowal
+              Shri Ram Nivas Nowal
             </h3>
             <p className="text-gray-600 mb-4 leading-relaxed">
               A distinguished industrialist and philanthropist, Shri Nowal's deep-rooted belief in nature's healing power led to the creation of Nowal NatureCare Resort. His successful entrepreneurial journey is matched only by his commitment to community welfare and social upliftment.
@@ -40,9 +40,9 @@ const AboutFounder = () => {
                 "Through regular free naturopathy camps for surrounding villages, Shri Nowal makes holistic healthcare accessible to all, blending his philanthropic spirit with industrial success to create this healing haven near Khatushyam Temple."
               </p>
             </div>
-            <button className="mt-4 px-6 py-2 bg-green-700 hover:bg-green-800 text-white rounded-md transition duration-300">
+            {/* <button className="mt-4 px-6 py-2 bg-green-700 hover:bg-green-800 text-white rounded-md transition duration-300">
               Read Full Biography
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

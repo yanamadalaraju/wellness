@@ -1202,7 +1202,7 @@ useEffect(() => {
     { icon: Thermometer, title: "	PCOS/PCOD	" },
    { icon: Droplets, title: "Menstrual Disorder" },
     { icon: ShieldCheck, title: "Respiratory Diseases " },
-    { icon: AlertTriangle, title: "Hormonal Imbalance	" },
+    { icon: FlaskConical, title: "Hormonal Imbalance" }, 
     { icon: AlertTriangle, title: " 	Pain management	" },
     { icon: Brain, title: "Stress Management" },
     
