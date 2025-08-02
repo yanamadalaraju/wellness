@@ -1054,7 +1054,7 @@ import meditationYoga from "../assets/icon3.png";
 import physiotherapy from "../assets/icon4.png";
 import treatments from "../assets/icon5.png";
 import image10  from "../assets/Ayurveda for Diabetes.png";
-import image11 from "../assets/Cervical Spondylitis.png";
+import image11 from "../assets/Cervical Spondylitis1.png";
 import image55 from "../assets/physiotherapy.jpg";
 import GallerySection from '../components/Herocompo/Gallerysection';
 
