@@ -32,11 +32,7 @@ const Physiotheraphy: React.FC = () => {
             Rehabilitation Exercise Program
           </h1>
           <p className="text-xl md:text-2xl mb-8">
-<<<<<<< HEAD
             At Nowal NatureCare
-=======
-            At nowal NatureCare
->>>>>>> 622d4cba33426d32e7aab56822e0440daad2ad9f
           </p>
           <Link 
             to="/programs" 
