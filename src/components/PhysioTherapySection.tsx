@@ -113,7 +113,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const therapies = [
   {
     name: 'Wax Therapy',
-    image: 'https://i.pinimg.com/1200x/67/6e/4a/676e4ad3c8ea4be3155b146548ad5774.jpg',
+    image: 'https://info.globalfashion.pro/blog/f5K1LVaKA4tWQvKDwcRoNQAshxJMHzP84gj1Z1Oo.jpg',
     content: 'Paraffin wax therapy provides deep heat treatment to relieve joint stiffness and muscle pain. The therapeutic warmth penetrates tissues to improve circulation, reduce inflammation, and enhance flexibility for better range of motion.',
     benefits: [
       'Reduces joint stiffness',
@@ -125,7 +125,7 @@ const therapies = [
   },
   {
     name: 'Compression Therapy',
-    image: 'https://i.pinimg.com/736x/ed/9e/1c/ed9e1c84b5087f2153b5bece209826ac.jpg',
+    image: 'https://plus.unsplash.com/premium_photo-1683141104249-69c85073a352?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     content: 'Specialized compression techniques using advanced equipment to stimulate lymphatic drainage and improve venous return. This therapy effectively reduces swelling, accelerates recovery, and prevents blood pooling in extremities.',
     benefits: [
       'Reduces edema and swelling',
@@ -137,7 +137,7 @@ const therapies = [
   },
   {
     name: 'Short Wave Diathermy',
-    image: 'https://i.pinimg.com/1200x/91/9a/fc/919afcf0663bf853bf584e8672166dd0.jpg',
+    image: 'https://i.pinimg.com/1200x/f0/ee/48/f0ee48abe85299ffb57d194864ac4fc7.jpg',
     content: 'High-frequency electromagnetic energy delivers deep heat to tissues, promoting healing at the cellular level. This advanced modality relieves chronic pain, reduces muscle spasms, and accelerates tissue repair processes.',
     benefits: [
       'Relieves deep tissue pain',

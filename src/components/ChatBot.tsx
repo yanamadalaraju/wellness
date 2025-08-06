@@ -4,7 +4,7 @@ import { MessageCircle, X, Send } from 'lucide-react'
 const ChatBot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [messages, setMessages] = useState([
-    { id: 1, text: "Hello! I'm here to help you with your nowal journey. What can I assist you with today?", sender: 'bot' }
+    { id: 1, text: "Hello! Welcome to Nowal NatureCare. How can I assist you?", sender: 'bot' }
   ])
   const [inputValue, setInputValue] = useState('')
 

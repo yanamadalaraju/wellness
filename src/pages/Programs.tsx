@@ -493,7 +493,7 @@ const Programs: React.FC = () => {
             Holistic Nowal Programs
           </h1>
           <p className="text-xl md:text-2xl mb-8">
-            At Nowal Nature Cure
+            At Nowal NatureCare
           </p>
           {/* <Link 
             to="/programs" 
@@ -857,6 +857,46 @@ By addressing the root cause and supporting the body holistically, it stands as 
         />
         {/* L-shape Bottom-Left */}
          <div className="absolute bottom-0 left-0 w-20 h-20 border-b-[8px] border-l-[8px] border-green-800"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section className="bg-[#f5f6f1] py-16 px-4 relative overflow-hidden">
+  <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 lg:gap-12 relative z-10">
+    {/* Text Card - Adjusted size and padding */}
+    <div className="bg-white shadow-xl p-6 md:p-8 lg:p-10 md:w-[55%] rounded relative z-20">
+      <div className="flex flex-col items-start space-y-4 md:space-y-6">
+        <div className="text-4xl text-gray-500">🪔</div>
+        <h2 className="text-2xl md:text-3xl font-serif text-gray-700">
+          Acupuncture
+        </h2>
+        <div className="text-gray-600 leading-relaxed space-y-4">
+          <p>
+            At Nowal NatureCare, we honor the time-tested art of acupuncture, a 3,000-year-old healing system that perfectly aligns with our naturopathic philosophy. Our skilled acupuncturists harness this ancient wisdom to stimulate your body's natural healing mechanisms, restore energetic balance, and promote optimal wellness without relying on pharmaceutical interventions.
+          </p>
+         
+          
+        </div>
+        <Link
+          to="/ayurveda"
+          className="mt-2 text-gray-400 hover:text-gray-600 transition-colors duration-200"
+        >
+          Discover More →
+        </Link>
+      </div>
+    </div>
+
+    {/* Image with L-shape top-right - Adjusted width and margins */}
+    <div className="md:w-[45%] lg:-ml-[5%] relative z-10">
+      <div className="relative">
+        <img
+          src="https://i.pinimg.com/1200x/83/82/96/838296e7201d08dfe1ec8d637dbce567.jpg"
+          alt="Acupuncture Treatment"
+          className="rounded shadow-[20px_20px_20px_-5px_rgba(0,0,0,0.1)] w-full"
+        />
+        {/* L-shape Top-Right */}
+        <div className="absolute top-0 right-0 w-16 h-16 lg:w-20 lg:h-20 border-t-[6px] lg:border-t-[8px] border-r-[6px] lg:border-r-[8px] border-green-800"></div>
       </div>
     </div>
   </div>

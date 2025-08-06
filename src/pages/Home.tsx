@@ -1052,11 +1052,12 @@ import naturopathy from "../assets/icon.png";
 import ayurveda from "../assets/icon2.png";
 import meditationYoga from "../assets/icon3.png";
 import physiotherapy from "../assets/icon4.png";
-import treatments from "../assets/icon5.png";
+import treatments from "../assets/acupunture.png";
 import image10  from "../assets/Ayurveda for Diabetes.png";
 import image11 from "../assets/Cervical Spondylitis1.png";
 import image55 from "../assets/physiotherapy.jpg";
 import GallerySection from '../components/Herocompo/Gallerysection';
+
 
 
 
@@ -1173,19 +1174,19 @@ useEffect(() => {
 
   const testimonials = [
     {
-      name: 'Vivek Oberoi',
+      name: 'anonymous ',
       role: 'Actor, Bollywood, India',
       quote: `I was truly taken by surprise & my experience at Nowal has been exceptional. I believe Naturopathy is the need of the hour as people are done with allopathic treatments and their side effects.`,
       image: 'https://www.nimba.in/wp-content/uploads/2020/07/Vivek-Oberoi-%E2%80%93-Actor-Bollywood-India.png',
     },
     {
-      name: 'Raveena Taurani',
+      name: 'anonymous ',
       role: 'Nutritionist',
       quote: `I appreciate their food plan which is not fasting focussed instead focuses on the right mix.`,
       image: 'https://www.nimba.in/wp-content/uploads/2020/07/Raveena-Taurani-min.png',
     },
     {
-      name: 'Reyhna Malhotra',
+      name: 'anonymous ',
       role: 'Model & Actress',
       quote: `I have had a good detox & inch loss which is always welcoming. Nice Nowal retreat with holistic approach and goodness of Naturopathy, Ayurveda, Yoga, Hydrotherapy, Raga therapy and many international therapies.`,
       image: 'https://www.nimba.in/wp-content/uploads/2020/07/Reyhna-Malhotra-min.png',
@@ -1223,7 +1224,7 @@ useEffect(() => {
       icon: Sprout
     },
     { 
-      title: "Holistic nowal Programs", 
+      title: "Holistic Nowal Programs", 
       description: "Personalized naturopathy, Ayurveda, yoga, and meditation with experts.",
       icon: HeartPulse
     },
@@ -1243,7 +1244,7 @@ useEffect(() => {
       icon: Salad
     },
     { 
-      title: "Healing Spa & Therapies", 
+      title: "Healing Therapies ", 
       description: "Rejuvenating treatments using natural oils, herbs, and traditional methods.",
       icon: FlaskConical
     }
@@ -1367,9 +1368,9 @@ useEffect(() => {
         <div className="animate-marquee whitespace-nowrap">
           <span className="text-lg font-medium mx-8">✨ 20% off for 10+ day stays</span>
           <span className="text-lg font-medium mx-8">🌿 10% off for 5+ day stays</span>
-          <span className="text-lg font-medium mx-8">🌸 Special rates for June & July</span>
+          {/* <span className="text-lg font-medium mx-8">🌸 Special rates for June & July</span> */}
           <span className="text-lg font-medium mx-8">💚 Free nowal consultation</span>
-          <span className="text-lg font-medium mx-8">🧘‍♀️ Complimentary yoga sessions</span>
+          <span className="text-lg font-medium mx-8">🧘‍♀️ Complimentary General Yoga session</span>
         </div>
       </div>
 
@@ -1472,9 +1473,13 @@ useEffect(() => {
   {[
     { image: naturopathy, title: "Naturopathy", color: "text-green-600", bg: "bg-green-50" },
     { image: ayurveda, title: "Ayurveda", color: "text-yellow-600", bg: "bg-yellow-50" },
-    { image: meditationYoga, title: "Meditation and Yoga", color: "text-purple-600", bg: "bg-purple-50" },
+    { image: meditationYoga, title: "Yoga and Meditation  ", color: "text-purple-600", bg: "bg-purple-50" },
     { image: physiotherapy, title: "Physiotherapy", color: "text-blue-600", bg: "bg-blue-50" },
-    { image: treatments, title: "Treatments", color: "text-pink-600", bg: "bg-pink-50" },
+    { image: treatments, title: "Acupuncture", color: "text-pink-600", bg: "bg-pink-50" },
+    
+
+
+
   ].map((item, index) => (
     <motion.div
       key={index}
@@ -1676,7 +1681,7 @@ useEffect(() => {
           </div>
           <div className="mt-6 flex flex-col items-center">
             <span className="font-semibold text-lg">{t.name}</span>
-            <span className="text-[#c8d5cb] text-sm">{t.role}</span>
+            {/* <span className="text-[#c8d5cb] text-sm">{t.role}</span> */}
           </div>
         </motion.div>
       ))}

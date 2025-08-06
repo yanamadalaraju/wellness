@@ -152,6 +152,7 @@ import Login from './admin/Login'
 import AdminContactDashboard from './admin/AdminContactDashboard'
 import NowalNatureCareResort from './pages/Nowal'
 import ScrollToTop from './components/ScrollToTop'
+import EconomyAccommodation from './pages/Accomadations'
 
 function AppRoutes() {
   const location = useLocation()
@@ -205,6 +206,7 @@ function AppRoutes() {
             <Route path="/EventsGallerySet" element={<EventsGallerySet />} />
             <Route path="/Rulesandregulations" element={<RulesAndRegulations />} />
             <Route path="/virtual-tour" element={<VirtualTourPage />} />
+           <Route path="/accomadation" element={<EconomyAccommodation/>} />
           </Routes>
           <WhatsAppButton />
           <ChatBot />

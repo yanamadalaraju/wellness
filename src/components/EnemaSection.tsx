@@ -335,7 +335,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const therapies = [
   {
     name: 'Colon Hydrotherapy',
-    image: 'https://i.pinimg.com/1200x/8d/a7/09/8da7090e9a07de2a8280f189fc9935a3.jpg',
+    image: 'https://i.pinimg.com/736x/c8/5c/b5/c85cb5a6d50437bf81e55a85ee25418c.jpg',
     content: 'Our bodies hold more than just blood and water—they also accumulate waste and toxins that may disrupt digestive health. Colon Hydrotherapy, also known as colon cleansing, is a powerful naturopathic therapy that gently eliminates these harmful substances, restoring balance from within. At Nowal NatureCare, this holistic treatment supports the bodys natural detoxification process, offering a range of health benefits that go beyond digestion.',
     benefits: [
       'Deeply cleanses the Large Intestine',
@@ -386,7 +386,7 @@ const therapies = [
   },
   {
     name: 'Vibroacoustic Massage',
-    image: 'https://i.pinimg.com/736x/97/04/cf/9704cfbb81bba3bd1f9570059245e093.jpg',
+    image: 'https://all4massage.com/storage/media/1721133207029791800_InShot_20240716_143132008.jpg',
     content: 'Vibro Massage an advanced naturopathic treatment combines the benefits of high-tech vibratory therapy to target the entire body or specific tension points with powder of floor of grains.',
     benefits: [
       'Relaxes and tones deep muscle layers',

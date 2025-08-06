@@ -144,7 +144,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Sun, Moon, Droplets, Leaf, ChevronRight, Quote, Clock, Heart, Activity } from 'lucide-react';
+import { Sun, Moon, Droplets, Leaf, ChevronRight, Quote, Clock, Heart, Activity, AlertCircle } from 'lucide-react';
 
 import { FaPersonPraying } from 'react-icons/fa6';
 import DinHeroSection from '../components/Dincharyacompo/Dincharyahero';
@@ -400,20 +400,21 @@ const DinacharyaPage: React.FC = () => {
     </div>
 
     {/* Note Section */}
-    <div className="mt-12 bg-amber-100/30 rounded-xl p-6 border border-amber-200">
-      <div className="flex items-start">
-        <div className="bg-amber-100 p-3 rounded-full mr-4">
-          <Clock className="w-6 h-6 text-amber-700" />
-        </div>
-        <div>
-          <h4 className="text-lg font-medium text-slate-800 mb-2">Important Note</h4>
-          <p className="text-slate-700">
-            Your comfort and safety are our priority. Please ensure you bring all necessary items to fully participate in our wellness programs. 
-            Incomplete medical information may affect your treatment plan.
-          </p>
-        </div>
-      </div>
+  <div className="mt-12 bg-amber-100/30 rounded-xl p-6 border border-amber-200">
+  <div className="flex items-start">
+    <div className="bg-amber-100 p-3 rounded-full mr-4">
+      <AlertCircle className="w-6 h-6 text-amber-700" />
     </div>
+    <div>
+      <h4 className="text-lg font-medium text-slate-800 mb-2">Important Note</h4>
+      <p className="text-slate-700">
+        Your comfort and safety are our priority. Please ensure you bring all necessary items to fully participate in our wellness programs. 
+        Incomplete medical information may affect your treatment plan.
+      </p>
+    </div>
+  </div>
+</div>
+
   </div>
 </section>
 

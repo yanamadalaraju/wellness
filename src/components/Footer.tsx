@@ -348,9 +348,9 @@ const Footer: React.FC = () => {
           <div className="flex items-start gap-3">
             <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
             <address className="not-italic leading-relaxed">
-              gadri badhal panchayat<br />
-              Jaipur rajasthan,<br />
-             303602 india
+              Gadri, Badhal Panchayat,<br />
+              Jaipur, Rajasthan,<br />
+             303602 India.
             </address>   
 
           </div>

@@ -113,7 +113,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const therapies = [
   {
     name: 'Mantra Chanting',
-    image: 'https://www.nimba.in/wp-content/uploads/2021/02/MANTRA_CHANTTING.jpg',
+    image: 'https://i.pinimg.com/736x/ff/49/d1/ff49d1340c81903735ecf104514453bd.jpg',
     content: 'Om Chanting Om chanting is a sacred sound meditation that calms the mind, balances energy, and connects you with universal consciousness—bringing deep peace, clarity, and spiritual alignment',
     benefits: [
       'Reduces stress and anxiety',
@@ -136,8 +136,8 @@ const therapies = [
     icon: <FaHandsHelping className="text-amber-500" />
   },
   {
-    name: 'Shatkarma',
-    image: 'https://www.nimba.in/wp-content/uploads/2020/07/SHATKARMA.jpg',
+    name: 'Jal Nidi',
+    image: 'https://mettavoyage.com/wp-content/uploads/2020/10/aqua-yoga.jpg',
     content: 'The six purification techniques of classical yoga that deeply cleanse the physical and energetic bodies. These powerful detox methods prepare the system for higher yogic practices while removing accumulated toxins and blockages.',
     benefits: [
       'Cleanses internal organs',
@@ -161,7 +161,7 @@ const therapies = [
   },
   {
     name: 'Aquatic Yoga',
-    image: 'https://www.nimba.in/wp-content/uploads/2020/07/AQUATIC_YOGA-1.jpg',
+    image: 'https://i.pinimg.com/1200x/10/3a/63/103a63283e341496a70dcd1ff91c62af.jpg',
     content: 'Aquatic Yoga or exercise is the best easiest practices in joint pain conditions and compromised health conditions.  ',
     benefits: [
       'Reduces impact on joints',

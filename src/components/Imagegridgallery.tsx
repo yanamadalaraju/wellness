@@ -4,11 +4,11 @@ const ImagegridGallery = () => {
   // Curated wellness images with direct Unsplash links
   const images = [
     { url: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8eW9nYXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60", title: "Yoga Session" },
-    { url: "https://images.unsplash.com/photo-1545389336-cf090694435e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c3BhfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60", title: "Spa Treatment" },
+    { url: "https://i.pinimg.com/1200x/0f/fd/7a/0ffd7a0f026f7e81ac0b61af0c682f60.jpg", title: "Spa Treatment" },
     { url: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG1lZGl0YXRpb258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60", title: "Meditation" },
-    { url: "https://images.unsplash.com/photo-1591348122449-02525d70379b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFzc2FnZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60", title: "Massage Therapy" },
-    { url: "https://images.unsplash.com/photo-1591348278863-a8fb3887e2aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGFyb21hdGhlcmFweXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60", title: "Aromatherapy" },
-    { url: "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2Fsb258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60", title: "Beauty Salon" },
+    { url: "https://i.pinimg.com/736x/c9/6a/6e/c96a6e0220936e479b8e966b0e4d631e.jpg", title: "Massage Therapy" },
+    { url: "https://i.pinimg.com/1200x/4c/84/28/4c84280008f094c7996766df45ae74a3.jpg", title: "Aromatherapy" },
+    { url: "https://i.pinimg.com/736x/7a/09/fc/7a09fcac897aacaa9b37402d80784e0c.jpg", title: "Beauty Salon" },
     { url: "https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmV0cmVhdHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60", title: "Nowal Retreat" },
     { url: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG90JTIwc3ByaW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60", title: "Hot Spring" },
     { url: "https://images.unsplash.com/photo-1593810450967-f9c42742e326?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2F1bmF8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60", title: "Sauna" }

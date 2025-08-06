@@ -21,7 +21,7 @@ const Holistictheraphy: React.FC = () => {
       <section className="relative min-h-[70vh] flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://media.istockphoto.com/id/670210386/photo/young-woman-at-crystal-healing-session.jpg?s=612x612&w=0&k=20&c=3X-EB028m1-W0mz1jFaoeerCPT1PH0bD46ofgvHQyuM="
+            src="https://i.pinimg.com/1200x/a6/1b/02/a61b029dd0a87e01ae72c7f62d65552a.jpg"
             alt="Holistic Programs"
             className="w-full h-full object-cover"
           />
@@ -33,7 +33,7 @@ const Holistictheraphy: React.FC = () => {
             Holistic Healing Approach
           </h1>
           <p className="text-xl md:text-2xl mb-8">
-            At Wellness Nature Cure
+            At Nowal NatureCare
           </p>
           <Link 
             to="/programs" 

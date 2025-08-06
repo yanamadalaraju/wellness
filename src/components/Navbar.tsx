@@ -1743,10 +1743,12 @@ const Navbar: React.FC = () => {
       path: '/programs',
       submenu: [
         { name: 'Naturopathy Wonders', path: '/narutopathy' },
+         { name: 'Yoga & Meditation', path: '/yoga' },
+          { name: 'Diet', path: '/diet' },
         { name: 'Ayurveda', path: '/ayurveda' },
-        { name: 'Yoga & Meditation', path: '/yoga' },
+         { name: 'Acupuncture', path: '/Holistictherapy' },
         { name: 'Physiotherapy', path: '/physiotheraphy' },
-        { name: 'Acupuncture', path: '/Holistictherapy' },
+      
       ]
     },
     // { 

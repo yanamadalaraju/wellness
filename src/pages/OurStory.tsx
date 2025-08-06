@@ -9,7 +9,7 @@ const OurStory: React.FC = () => {
       <section className="relative min-h-96 flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://media.istockphoto.com/id/477473902/photo/tea-plantations.jpg?s=612x612&w=0&k=20&c=6V4oFEe4iqofERaro5Ivw4O-8tZVtxIUOOpZiIhUBlk="
+            src="https://i.pinimg.com/1200x/2e/fb/d2/2efbd2a0e10d860ac30d7069a7f7b862.jpg"
             alt="Our Story"
             className="w-full h-full object-cover"
           />
@@ -39,7 +39,7 @@ const OurStory: React.FC = () => {
                     <span className="mx text-sage-500">{'>'}</span>
                   </li>
                   <li>
-                    <span className="text-sage-800 font-medium">Nowal Nature Cure</span>
+                    <span className="text-sage-800 font-medium">Nowal NatureCare</span>
                   </li>
                 </ol>
               </nav>
@@ -75,7 +75,7 @@ const OurStory: React.FC = () => {
         Here, we don’t just treat symptoms—we nurture the whole you.
       </p>
       <p className="relative pl-6 before:absolute before:left-0 before:top-3 before:w-2 before:h-2 before:rounded-full before:bg-[#435334]/70">
-        By awakening your body’s innate strength, we guide you toward lasting wellness, proving that investing in your health is the richest gift you can give yourself and to your family. You can also make others awake to follow the lifestyle to keep diseases away.
+        By awakening your body’s innate strength, we guide you toward lasting Nowal, proving that investing in your health is the richest gift you can give yourself and to your family. You can also make others awake to follow the lifestyle to keep diseases away.
       </p>
     </div>
 
@@ -118,7 +118,7 @@ const OurStory: React.FC = () => {
           Rooted in the timeless wisdom of naturopathy and Yoga, our philosophy is simple yet powerful; the body holds an incredible ability to heal itself when nurtured by nature and followed the primeval lifestyle.
         </p>
         <p className="text-[#435334] text-base md:text-lg leading-relaxed">
-          Here, wellness is not forced, it gently unfolds through natural therapies, mindful detox, nourishing food, and deep rest with change in the lifestyle.
+          Here, Nowal is not forced, it gently unfolds through natural therapies, mindful detox, nourishing food, and deep rest with change in the lifestyle.
         </p>
         <p className="text-[#435334] text-base md:text-lg leading-relaxed">
           Our serene, green sanctuary is designed to soothe your senses and awaken the healer within you.
@@ -157,7 +157,7 @@ const OurStory: React.FC = () => {
 {/* Section 2: Image + Quote (Adjusted Margin for Overlap) */}
 <section className="relative h-[600px] bg-[#F2F1E8] text-[#435334] overflow-visible mt-[300px]">
   <img
-    src="https://media.istockphoto.com/id/508136324/photo/woman-on-tea-plantation-in-india.jpg?s=612x612&w=0&k=20&c=BW02dl3us_J0zKeummJXvtXBYtHBQU9PlcpVem1_AKw="
+    src="https://i.pinimg.com/1200x/0b/05/07/0b050725fcdaf5a2e83ef7404a5a33d4.jpg"
     alt="Nowals Story Background"
     className="w-full h-full object-cover"
   />
@@ -166,7 +166,7 @@ const OurStory: React.FC = () => {
     {/* Left Image Block */}
     <div className="w-1/2 relative">
       <img
-        src="https://media.istockphoto.com/id/2211947210/photo/businesswoman-practicing-mindfulness-meditation-outdoors-in-urban-environment.jpg?s=612x612&w=0&k=20&c=DERZhBUdxb774M8dPcOEpeWD-9WW2wqXfWeJYY5luVo="
+        src="https://i.pinimg.com/736x/78/31/4f/78314fa4c430ff071a266f139cc1d87a.jpg"
         alt="Decorative Element"
         className="w-full h-full object-cover"
       />
@@ -181,14 +181,14 @@ const OurStory: React.FC = () => {
       <div className="mb-6">
         <h4 className="text-xl font-semibold mb-2">Our Vision</h4>
         <p className="text-lg leading-relaxed">
-          To become a leading center for holistic healing and sustainable wellness, blending the ancient science of naturopathy with modern hospitality to promote natural living,  preventive care, and complete rejuvenation of mind, body, and spirit.
+          To become a leading center for holistic healing and sustainable Nowal, blending the ancient science of naturopathy with modern hospitality to promote natural living,  preventive care, and complete rejuvenation of mind, body, and spirit.
         </p>
       </div>
       
       <div>
         <h4 className="text-xl font-semibold mb-2">Our Mission</h4>
         <p className="text-lg leading-relaxed">
-          To provide world-class naturopathic and wellness services in a serene and eco-friendly environment, offering personalized therapies, integrative treatments, and mindful experiences that foster long-term well-being and sustainable health.
+          To provide world-class naturopathic and Nowal services in a serene and eco-friendly environment, offering personalized therapies, integrative treatments, and mindful experiences that foster long-term well-being and sustainable health.
         </p>
       </div>
     </div>

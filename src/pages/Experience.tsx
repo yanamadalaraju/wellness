@@ -43,7 +43,7 @@ const Experience: React.FC = () => {
                     <span className="mx text-sage-500">{'>'}</span>
                   </li>
                   <li>
-                    <span className="text-sage-800 font-medium">The Mantra</span>
+                    <span className="text-sage-800 font-medium">About Founder</span>
                   </li>
                 </ol>
               </nav>
@@ -56,14 +56,14 @@ const Experience: React.FC = () => {
       Nowal NatureCare
     </h2>
     <h3 className="text-2xl md:text-3xl font-medium mb-8 italic">
-      A Sanctuary for Natural Healing & Holistic 
+      A Sanctuary for Holistic Natural Healing.
     </h3>
     <p className="text-lg md:text-xl leading-relaxed mb-6">
       In the rush of modern life, it's the mindful pause — the moment of embracing natural healing — 
       that brings us closer to true balance and vitality.
     </p>
     <p className="text-base md:text-lg leading-relaxed">
-      At Nowal, our philosophy is simple yet profound: <span className="font-semibold">health and healing always come first.</span> 
+      At Nowal, our philosophy is simple yet profound: <span className="font-semibold">health and healing always come first. </span> 
       We believe that every individual deserves the time and space to rejuvenate, rediscover their 
       inner strength, and heal holistically — not just from today’s stressors, but from the deeper, 
       unseen imbalances of our times. Step into a journey where Nowal is a way of life.

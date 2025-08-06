@@ -110,10 +110,11 @@ import React, { useState } from 'react';
 import { FaCheckCircle, FaMusic, FaFireAlt, FaHandHoldingHeart, FaLeaf } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 
+
 const therapies = [
   {
     name: 'Acupuncture',
-    image: 'https://i.pinimg.com/736x/f6/5a/6b/f65a6b0b3704ed8716bb67e680b780ec.jpg',
+    image: 'https://i.pinimg.com/1200x/a6/1b/02/a61b029dd0a87e01ae72c7f62d65552a.jpg',
     content: 'Ancient Chinese healing art that stimulates specific points to restore energy flow and promote natural healing. Ultra-fine needles activate meridian pathways to relieve pain, reduce stress, and harmonize body functions.',
     benefits: [
       'Alleviates chronic pain',
@@ -124,8 +125,8 @@ const therapies = [
     icon: <FaLeaf className="text-emerald-500" />
   },
   {
-    name: 'Raga Therapy',
-    image: 'https://i.pinimg.com/1200x/4c/3a/59/4c3a596d34f38f3c89524116805f21ff.jpg',
+    name: 'Salt therapy ',
+    image: 'https://i.pinimg.com/1200x/bc/d1/75/bcd17523e20a5ddad59619c0fe01485e.jpg',
     content: 'Healing through specific musical scales that resonate with body rhythms and chakras. Each raga is scientifically designed to balance emotions, elevate consciousness, and promote physiological harmony.',
     benefits: [
       'Balances emotions',
@@ -135,30 +136,30 @@ const therapies = [
     ],
     icon: <FaMusic className="text-purple-400" />
   },
-  {
-    name: 'Reiki',
-    image: 'https://www.nimba.in/wp-content/uploads/2020/07/REIKI.jpg',
-    content: 'Japanese energy healing technique that channels universal life force to restore balance. Through gentle hand placements, this therapy clears energy blockages and activates the body\'s natural healing abilities.',
-    benefits: [
-      'Reduces stress and tension',
-      'Accelerates healing',
-      'Clears energy blockages',
-      'Promotes emotional release'
-    ],
-    icon: <FaHandHoldingHeart className="text-pink-400" />
-  },
-  {
-    name: 'Hot Stone Massage',
-    image: 'https://www.nimba.in/wp-content/uploads/2020/07/HOT_STONE_MASSAGE.jpg',
-    content: 'Therapeutic basalt stones retain heat to melt away tension and improve circulation. This deeply relaxing treatment combines thermotherapy with massage to release muscle knots and induce profound relaxation.',
-    benefits: [
-      'Relieves muscle tension',
-      'Improves blood circulation',
-      'Reduces chronic pain',
-      'Promotes deep relaxation'
-    ],
-    icon: <FaFireAlt className="text-amber-600" />
-  },
+  // {
+  //   name: 'Reiki',
+  //   image: 'https://www.nimba.in/wp-content/uploads/2020/07/REIKI.jpg',
+  //   content: 'Japanese energy healing technique that channels universal life force to restore balance. Through gentle hand placements, this therapy clears energy blockages and activates the body\'s natural healing abilities.',
+  //   benefits: [
+  //     'Reduces stress and tension',
+  //     'Accelerates healing',
+  //     'Clears energy blockages',
+  //     'Promotes emotional release'
+  //   ],
+  //   icon: <FaHandHoldingHeart className="text-pink-400" />
+  // },
+  // {
+  //   name: 'Hot Stone Massage',
+  //   image: 'https://www.nimba.in/wp-content/uploads/2020/07/HOT_STONE_MASSAGE.jpg',
+  //   content: 'Therapeutic basalt stones retain heat to melt away tension and improve circulation. This deeply relaxing treatment combines thermotherapy with massage to release muscle knots and induce profound relaxation.',
+  //   benefits: [
+  //     'Relieves muscle tension',
+  //     'Improves blood circulation',
+  //     'Reduces chronic pain',
+  //     'Promotes deep relaxation'
+  //   ],
+  //   icon: <FaFireAlt className="text-amber-600" />
+  // },
   {
     name: 'Cupping Therapy',
     image: 'https://www.nimba.in/wp-content/uploads/2020/07/CUPPING_THERAPY.jpg',
