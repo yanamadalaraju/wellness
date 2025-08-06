@@ -1689,6 +1689,609 @@
 
 // export default Navbar;
 
+//-------------------------------------------------------------------------------------------------------
+
+// import React, { useState, useEffect, useRef } from 'react';
+// import { NavLink } from 'react-router-dom';
+// import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
+// import logo from '../assets/logo.png';
+
+// const Navbar: React.FC = () => {
+//   const [isOpen, setIsOpen] = useState(false);
+//   const [scrolled, setScrolled] = useState(false);
+//   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+//   const navRef = useRef<HTMLDivElement>(null);
+
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       setScrolled(window.scrollY > 10);
+//     };
+//     window.addEventListener('scroll', handleScroll);
+//     return () => window.removeEventListener('scroll', handleScroll);
+//   }, []);
+
+//   useEffect(() => {
+//     const handleClickOutside = (event: MouseEvent) => {
+//       if (navRef.current && !navRef.current.contains(event.target as Node)) {
+//         setIsOpen(false);
+//         setOpenDropdown(null);
+//       }
+//     };
+//     document.addEventListener('mousedown', handleClickOutside);
+//     return () => document.removeEventListener('mousedown', handleClickOutside);
+//   }, []);
+
+//   const toggleDropdown = (dropdown: string) => {
+//     setOpenDropdown(openDropdown === dropdown ? null : dropdown);
+//   };
+
+//   const closeAllDropdowns = () => {
+//     setIsOpen(false);
+//     setOpenDropdown(null);
+//   };
+
+//   // Define dropdown arrays
+//   const aboutUsDropdown = [
+   
+//     { name: 'Nowal NatureCare', path: '/Ourstory' },
+//      { name: 'Aout Founder', path: '/experience#mantra' },
+//     { name: 'Healing Team', path: '/healing-team' },
+//     { name: 'Daily Routine', path: '/dincharya' },
+//   ];
+
+//   const treatmentsDropdown = [
+//     { 
+//       name: 'Holistic Programs', 
+//       path: '/programs',
+//       submenu: [
+//         { name: 'Naturopathy Wonders', path: '/narutopathy' },
+//         { name: 'Ayurveda', path: '/ayurveda' },
+//         { name: 'Yoga & Meditation', path: '/yoga' },
+//         { name: 'Physiotherapy', path: '/physiotheraphy' },
+//         { name: 'Acupuncture', path: '/Holistictherapy' },
+//       ]
+//     },
+//     // { 
+//     //   name: 'True Treatments', 
+//     //   path: '/treatments',
+//     //   submenu: [
+//     //     { name: 'Respiratory Alignments', path: '/Respiratory' },
+//     //     { name: 'Gastro-intestinal Disorders', path: '/gastro' },
+//     //     { name: 'Musculoskeletal Conditions', path: '/Musculoskeletal' },
+//     //     { name: 'Endocrine Disorders', path: '/Endocrine' },
+//     //     { name: 'Lifestyle Preventive Nowal', path: '/lifestyle' },
+//     //   ]
+//     // },
+//   ];
+
+//   const accommodationsDropdown = [
+//     // { 
+//     //   name: 'Retreat Amenities', 
+//     //   path: '/health-offers#amenities',
+//     //   submenu: [
+//     //     { name: 'Healing Abode', path: '/Healingabode' },
+//     //     { name: 'Recreation Spaces', path: '/Recreation' },
+//     //     { name: 'Meditation Caves', path: '/meditation' },
+//     //     { name: 'Cardio Gym', path: '/gym' },
+//     //   ]
+//     // },
+//     { name: 'Gallery', path: '/image' },
+//     // { name: 'Events', path: '/Events' },
+//   ];
+
+//   const contactUsDropdown = [
+//     { name: 'Contact Information', path: '/contact' },
+//     // { name: 'Career Opportunities', path: '/career' },
+//   ];
+
+//   // const tariffDropdown = [
+//   //   { 
+//   //     name: 'Download Packages', 
+//   //     path: '/packages/download',
+//   //     pdf: '/downloads/wellness-packages.pdf'
+//   //   },
+//   //   { name: 'Tariff Details', path: '/tariff' },
+//   //   { name: 'Rules & Regulations', path: '/Rulesandregulations' },
+//   // ];
+
+//   return (
+//     <nav 
+//       ref={navRef}
+//       className={`fixed w-full z-50 transition-all duration-300 ${
+//         scrolled ? 'bg-white shadow-md py-0' : 'bg-white/90 backdrop-blur-sm py-2'
+//       }`}
+//     >
+//       <div className="max-w-7xl mx-auto px-4">
+//         <div className="flex justify-between items-center h-16">
+//           {/* Logo on left side */}
+//           <div className="flex items-center">
+//             <NavLink to="/" className="flex items-center" onClick={closeAllDropdowns}>
+//               <img 
+//                 src={logo} 
+//                 alt="Company Logo" 
+//                 className="h-12 w-auto transition-transform duration-300 hover:scale-105"
+//               />
+//             </NavLink>
+//           </div>
+
+//           {/* Mobile Menu Button */}
+//           <div className="lg:hidden flex items-center">
+//             <button
+//               className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-green-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500 transition-colors duration-200"
+//               onClick={() => setIsOpen(!isOpen)}
+//             >
+//               <span className="sr-only">Open main menu</span>
+//               {isOpen ? (
+//                 <X className="block h-6 w-6" aria-hidden="true" />
+//               ) : (
+//                 <Menu className="block h-6 w-6" aria-hidden="true" />
+//               )}
+//             </button>
+//           </div>
+
+//           {/* Desktop Navigation */}
+//           <div className="hidden lg:flex items-center space-x-2">
+//             {/* About Us */}
+//             <div className="relative">
+//               <button 
+//                 className="flex items-center space-x-1 text-gray-800 hover:text-green-700 transition-colors duration-200 font-medium px-2 py-2"
+//                 onClick={() => toggleDropdown('desktop-about')}
+//                 onMouseEnter={() => setOpenDropdown('desktop-about')}
+//               >
+//                 <span>About Us</span>
+//                 <ChevronDown className={`w-4 h-4 transition-transform ${openDropdown === 'desktop-about' ? 'rotate-180' : ''}`} />
+//               </button>
+//               <div 
+//                 className={`absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50 transition-all duration-200 origin-top-left ${openDropdown === 'desktop-about' ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}
+//                 onMouseLeave={() => setOpenDropdown(null)}
+//               >
+//                 {aboutUsDropdown.map((item, index) => (
+//                   <NavLink 
+//                     key={index} 
+//                     to={item.path} 
+//                     className={({ isActive }) => 
+//                       `block px-4 py-2 text-sm ${isActive ? 'bg-green-50 text-green-700' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`
+//                     }
+//                     onClick={closeAllDropdowns}
+//                   >
+//                     {item.name}
+//                   </NavLink>
+//                 ))}
+//               </div>
+//             </div>
+
+//             {/* Treatments */}
+//             {/* Treatments Dropdown - Desktop */}
+// <div className="relative group">
+//   <button className="flex items-center space-x-1 text-gray-800 hover:text-green-700 transition-colors duration-200 font-medium px-2 py-2">
+//     <span>Treatments</span>
+//     <ChevronDown className="w-4 h-4" />
+//   </button>
+//   <div className="absolute left-0 mt-2 w-[300px] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+//     {treatmentsDropdown.map((item, index) => (
+//       <div key={index} className="relative group/sub">
+//         <NavLink 
+//           to={item.path} 
+//           className={({ isActive }) => 
+//             `flex justify-between items-center px-4 py-2 text-sm ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`
+//           }
+//           onMouseEnter={() => item.submenu && setOpenDropdown(`health-${index}`)}
+//         >
+//           <span>{item.name}</span>
+//           {item.submenu && <ChevronRight className="w-4 h-4" />}
+//         </NavLink>
+//         {item.submenu && (
+//           <div 
+//             className={`absolute left-full top-0 ml-1 w-[250px] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50 ${
+//               openDropdown === `health-${index}` ? 'block' : 'hidden'
+//             } group-hover/sub:block`}
+//           >
+//             {item.submenu.map((subItem, subIndex) => (
+//               <NavLink 
+//                 key={subIndex} 
+//                 to={subItem.path} 
+//                 className={({ isActive }) => 
+//                   `block px-4 py-2 text-sm ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`
+//                 }
+//               >
+//                 {subItem.name}
+//               </NavLink>
+//             ))}
+//           </div>
+//         )}
+//       </div>
+//     ))}
+//   </div>
+// </div>
+
+// {/* Accommodations Dropdown - Desktop */}
+// <div className="relative group">
+//   <button className="flex items-center space-x-1 text-gray-800 hover:text-green-700 transition-colors duration-200 font-medium px-2 py-2">
+//     <span>Accommodations</span>
+//     <ChevronDown className="w-4 h-4" />
+//   </button>
+//   <div className="absolute left-0 mt-2 w-[300px] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+//     {accommodationsDropdown.map((item, index) => (
+//       <div key={index} className="relative group/sub">
+//         <NavLink 
+//           to={item.path} 
+//           className={({ isActive }) => 
+//             `flex justify-between items-center px-4 py-2 text-sm ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`
+//           }
+//           onMouseEnter={() => item.submenu && setOpenDropdown(`accommodations-${index}`)}
+//         >
+//           <span>{item.name}</span>
+//           {item.submenu && <ChevronRight className="w-4 h-4" />}
+//         </NavLink>
+//         {item.submenu && (
+//           <div 
+//             className={`absolute left-full top-0 ml-1 w-[250px] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50 ${
+//               openDropdown === `accommodations-${index}` ? 'block' : 'hidden'
+//             } group-hover/sub:block`}
+//           >
+//             {item.submenu.map((subItem, subIndex) => (
+//               <NavLink 
+//                 key={subIndex} 
+//                 to={subItem.path} 
+//                 className={({ isActive }) => 
+//                   `block px-4 py-2 text-sm ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`
+//                 }
+//               >
+//                 {subItem.name}
+//               </NavLink>
+//             ))}
+//           </div>
+//         )}
+//       </div>
+//     ))}
+//   </div>
+// </div>
+
+//             {/* Contact Us */}
+//             <div className="relative">
+//               <button 
+//                 className="flex items-center space-x-1 text-gray-800 hover:text-green-700 transition-colors duration-200 font-medium px-2 py-2"
+//                 onClick={() => toggleDropdown('desktop-contact')}
+//                 onMouseEnter={() => setOpenDropdown('desktop-contact')}
+//               >
+//                 <span>Contact Us</span>
+//                 <ChevronDown className={`w-4 h-4 transition-transform ${openDropdown === 'desktop-contact' ? 'rotate-180' : ''}`} />
+//               </button>
+//               <div 
+//                 className={`absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50 transition-all duration-200 origin-top-right ${openDropdown === 'desktop-contact' ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}
+//                 onMouseLeave={() => setOpenDropdown(null)}
+//               >
+//                 {contactUsDropdown.map((item, index) => (
+//                   <NavLink 
+//                     key={index} 
+//                     to={item.path} 
+//                     className={({ isActive }) => 
+//                       `block px-4 py-2 text-sm ${isActive ? 'bg-green-50 text-green-700' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`
+//                     }
+//                     onClick={closeAllDropdowns}
+//                   >
+//                     {item.name}
+//                   </NavLink>
+//                 ))}
+//               </div>
+//             </div>
+
+//             {/* Tariff */}
+//             <div className="relative">
+//               {/* <button 
+//                 className="flex items-center space-x-1 text-gray-800 hover:text-green-700 transition-colors duration-200 font-medium px-2 py-2"
+//                 onClick={() => toggleDropdown('desktop-tariff')}
+//                 onMouseEnter={() => setOpenDropdown('desktop-tariff')}
+//               >
+//                 <span>Tariff</span>
+//                 <ChevronDown className={`w-4 h-4 transition-transform ${openDropdown === 'desktop-tariff' ? 'rotate-180' : ''}`} />
+//               </button> */}
+//               <div 
+//                 className={`absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50 transition-all duration-200 origin-top-right ${openDropdown === 'desktop-tariff' ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}
+//                 onMouseLeave={() => setOpenDropdown(null)}
+//               >
+//                 {/* {tariffDropdown.map((item, index) => (
+//                   item.pdf ? (
+//                     <a 
+//                       key={index} 
+//                       href={item.pdf} 
+//                       target="_blank" 
+//                       rel="noopener noreferrer"
+//                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+//                       download="Nowal-Packages.pdf"
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       {item.name}
+//                     </a>
+//                   ) : (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path} 
+//                       className={({ isActive }) => 
+//                         `block px-4 py-2 text-sm ${isActive ? 'bg-green-50 text-green-700' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       {item.name}
+//                     </NavLink>
+//                   )
+//                 ))} */}
+//               </div>
+//             </div>
+
+//             {/* Apply for Admissions Button */}
+//             {/* <div className="ml-2">
+//               <NavLink 
+//                 to="/contact" 
+//                 className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+//                 onClick={closeAllDropdowns}
+//               >
+//                 APPLY FOR ADMISSION
+//               </NavLink>
+//             </div> */}
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Mobile Navigation */}
+//       <div className={`lg:hidden transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? 'max-h-screen' : 'max-h-0'}`}>
+//         <div className="px-2 pt-2 pb-4 space-y-1 bg-white border-t border-gray-200 shadow-inner">
+//           {/* About Us */}
+//           <div>
+//             <button 
+//               className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-gray-50 transition-colors duration-200 font-medium"
+//               onClick={() => toggleDropdown('mobile-about')}
+//             >
+//               <span>About Us</span>
+//               <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                 openDropdown === 'mobile-about' ? 'rotate-180' : ''
+//               }`} />
+//             </button>
+//             <div className={`transition-all duration-200 overflow-hidden ${
+//               openDropdown === 'mobile-about' ? 'max-h-96' : 'max-h-0'
+//             }`}>
+//               <div className="pl-4 space-y-1">
+//                 {aboutUsDropdown.map((item, index) => (
+//                   <NavLink 
+//                     key={index} 
+//                     to={item.path}
+//                     className={({ isActive }) => 
+//                       `block px-3 py-2 rounded-md ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`
+//                     }
+//                     onClick={closeAllDropdowns}
+//                   >
+//                     {item.name}
+//                   </NavLink>
+//                 ))}
+//               </div>
+//             </div>
+//           </div>
+
+//           {/* Treatments */}
+//           <div>
+//             <button 
+//               className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-gray-50 transition-colors duration-200 font-medium"
+//               onClick={() => toggleDropdown('mobile-treatments')}
+//             >
+//               <span>Treatments</span>
+//               <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                 openDropdown === 'mobile-treatments' ? 'rotate-180' : ''
+//               }`} />
+//             </button>
+//             <div className={`transition-all duration-200 overflow-hidden ${
+//               openDropdown === 'mobile-treatments' ? 'max-h-96' : 'max-h-0'
+//             }`}>
+//               <div className="pl-4 space-y-1">
+//                 {treatmentsDropdown.map((item, index) => (
+//                   <div key={index}>
+//                     {item.submenu ? (
+//                       <>
+//                         <button 
+//                           className="flex justify-between items-center w-full px-3 py-2 text-gray-700 hover:text-green-600 rounded-md hover:bg-gray-50 transition-colors duration-200"
+//                           onClick={() => toggleDropdown(`mobile-treatments-${index}`)}
+//                         >
+//                           <span>{item.name}</span>
+//                           <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                             openDropdown === `mobile-treatments-${index}` ? 'rotate-180' : ''
+//                           }`} />
+//                         </button>
+//                         <div className={`transition-all duration-200 overflow-hidden ${
+//                           openDropdown === `mobile-treatments-${index}` ? 'max-h-96' : 'max-h-0'
+//                         }`}>
+//                           <div className="pl-4 space-y-1">
+//                             {item.submenu.map((subItem, subIndex) => (
+//                               <NavLink 
+//                                 key={subIndex} 
+//                                 to={subItem.path}
+//                                 className={({ isActive }) => 
+//                                   `block px-3 py-2 rounded-md ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`
+//                                 }
+//                                 onClick={closeAllDropdowns}
+//                               >
+//                                 {subItem.name}
+//                               </NavLink>
+//                             ))}
+//                           </div>
+//                         </div>
+//                       </>
+//                     ) : (
+//                       <NavLink 
+//                         to={item.path}
+//                         className={({ isActive }) => 
+//                           `block px-3 py-2 rounded-md ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`
+//                         }
+//                         onClick={closeAllDropdowns}
+//                       >
+//                         {item.name}
+//                       </NavLink>
+//                     )}
+//                   </div>
+//                 ))}
+//               </div>
+//             </div>
+//           </div>
+
+//           {/* Accommodations */}
+//           <div>
+//             <button 
+//               className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-gray-50 transition-colors duration-200 font-medium"
+//               onClick={() => toggleDropdown('mobile-accommodations')}
+//             >
+//               <span>Accommodations</span>
+//               <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                 openDropdown === 'mobile-accommodations' ? 'rotate-180' : ''
+//               }`} />
+//             </button>
+//             <div className={`transition-all duration-200 overflow-hidden ${
+//               openDropdown === 'mobile-accommodations' ? 'max-h-96' : 'max-h-0'
+//             }`}>
+//               <div className="pl-4 space-y-1">
+//                 {/* {accommodationsDropdown.map((item, index) => (
+//                   <div key={index}>
+//                     {item.submenu ? (
+//                       <>
+//                         <button 
+//                           className="flex justify-between items-center w-full px-3 py-2 text-gray-700 hover:text-green-600 rounded-md hover:bg-gray-50 transition-colors duration-200"
+//                           onClick={() => toggleDropdown(`mobile-accommodations-${index}`)}
+//                         >
+//                           <span>{item.name}</span>
+//                           <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                             openDropdown === `mobile-accommodations-${index}` ? 'rotate-180' : ''
+//                           }`} />
+//                         </button>
+//                         <div className={`transition-all duration-200 overflow-hidden ${
+//                           openDropdown === `mobile-accommodations-${index}` ? 'max-h-96' : 'max-h-0'
+//                         }`}>
+//                           <div className="pl-4 space-y-1">
+//                             {item.submenu.map((subItem, subIndex) => (
+//                               <NavLink 
+//                                 key={subIndex} 
+//                                 to={subItem.path}
+//                                 className={({ isActive }) => 
+//                                   `block px-3 py-2 rounded-md ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`
+//                                 }
+//                                 onClick={closeAllDropdowns}
+//                               >
+//                                 {subItem.name}
+//                               </NavLink>
+//                             ))}
+//                           </div>
+//                         </div>
+//                       </>
+//                     ) : (
+//                       <NavLink 
+//                         to={item.path}
+//                         className={({ isActive }) => 
+//                           `block px-3 py-2 rounded-md ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`
+//                         }
+//                         onClick={closeAllDropdowns}
+//                       >
+//                         {item.name}
+//                       </NavLink>
+//                     )}
+//                   </div>
+//                 ))} */}
+//               </div>
+//             </div>
+//           </div>
+
+//           {/* Contact Us */}
+//           <div>
+//             <button 
+//               className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-gray-50 transition-colors duration-200 font-medium"
+//               onClick={() => toggleDropdown('mobile-contact')}
+//             >
+//               <span>Contact Us</span>
+//               <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                 openDropdown === 'mobile-contact' ? 'rotate-180' : ''
+//               }`} />
+//             </button>
+//             <div className={`transition-all duration-200 overflow-hidden ${
+//               openDropdown === 'mobile-contact' ? 'max-h-96' : 'max-h-0'
+//             }`}>
+//               <div className="pl-4 space-y-1">
+//                 {contactUsDropdown.map((item, index) => (
+//                   <NavLink 
+//                     key={index} 
+//                     to={item.path}
+//                     className={({ isActive }) => 
+//                       `block px-3 py-2 rounded-md ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`
+//                     }
+//                     onClick={closeAllDropdowns}
+//                   >
+//                     {item.name}
+//                   </NavLink>
+//                 ))}
+//               </div>
+//             </div>
+//           </div>
+
+//           {/* Tariff */}
+//           <div>
+//             <button 
+//               className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-gray-50 transition-colors duration-200 font-medium"
+//               onClick={() => toggleDropdown('mobile-tariff')}
+//             >
+//               {/* <span>Tariff</span> */}
+//               {/* <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                 openDropdown === 'mobile-tariff' ? 'rotate-180' : ''
+//               }`} /> */}
+//             </button>
+//             <div className={`transition-all duration-200 overflow-hidden ${
+//               openDropdown === 'mobile-tariff' ? 'max-h-96' : 'max-h-0'
+//             }`}>
+//               {/* <div className="pl-4 space-y-1">
+//                 {tariffDropdown.map((item, index) => (
+//                   item.pdf ? (
+//                     <a 
+//                       key={index} 
+//                       href={item.pdf} 
+//                       target="_blank" 
+//                       rel="noopener noreferrer"
+//                       className="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+//                       download="Nowal-Packages.pdf"
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       {item.name}
+//                     </a>
+//                   ) : (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path}
+//                       className={({ isActive }) => 
+//                         `block px-3 py-2 rounded-md ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       {item.name}
+//                     </NavLink>
+//                   )
+//                 ))}
+//               </div> */}
+//             </div>
+//           </div>
+
+//           {/* APPLY FOR ADMISSION Button */}
+//           {/* <div className="pt-2">
+//             <NavLink 
+//               to="/booking" 
+//               className="w-full flex items-center justify-center px-4 py-3 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 transition-colors duration-200"
+//               onClick={closeAllDropdowns}
+//             >
+//               APPLY FOR ADMISSION
+//             </NavLink>
+//           </div> */}
+//         </div>
+//       </div>
+//     </nav>
+//   );
+// };
+
+// export default Navbar;
+
+
+//------------------------------------------------------------------------------------------------
+
 import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
@@ -1699,6 +2302,9 @@ const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const navRef = useRef<HTMLDivElement>(null);
+
+  // Track which dropdowns are open
+  const [openSubDropdowns, setOpenSubDropdowns] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     const handleScroll = () => {
@@ -1713,6 +2319,7 @@ const Navbar: React.FC = () => {
       if (navRef.current && !navRef.current.contains(event.target as Node)) {
         setIsOpen(false);
         setOpenDropdown(null);
+        setOpenSubDropdowns({});
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -1723,16 +2330,23 @@ const Navbar: React.FC = () => {
     setOpenDropdown(openDropdown === dropdown ? null : dropdown);
   };
 
+  const toggleSubDropdown = (parentId: string, subId: string) => {
+    setOpenSubDropdowns(prev => ({
+      ...prev,
+      [`${parentId}-${subId}`]: !prev[`${parentId}-${subId}`]
+    }));
+  };
+
   const closeAllDropdowns = () => {
     setIsOpen(false);
     setOpenDropdown(null);
+    setOpenSubDropdowns({});
   };
 
   // Define dropdown arrays
   const aboutUsDropdown = [
-   
     { name: 'Nowal NatureCare', path: '/Ourstory' },
-     { name: 'Aout Founder', path: '/experience#mantra' },
+    { name: 'About Founder', path: '/experience#mantra' },
     { name: 'Healing Team', path: '/healing-team' },
     { name: 'Daily Routine', path: '/dincharya' },
   ];
@@ -1751,48 +2365,15 @@ const Navbar: React.FC = () => {
       
       ]
     },
-    // { 
-    //   name: 'True Treatments', 
-    //   path: '/treatments',
-    //   submenu: [
-    //     { name: 'Respiratory Alignments', path: '/Respiratory' },
-    //     { name: 'Gastro-intestinal Disorders', path: '/gastro' },
-    //     { name: 'Musculoskeletal Conditions', path: '/Musculoskeletal' },
-    //     { name: 'Endocrine Disorders', path: '/Endocrine' },
-    //     { name: 'Lifestyle Preventive Nowal', path: '/lifestyle' },
-    //   ]
-    // },
   ];
 
   const accommodationsDropdown = [
-    // { 
-    //   name: 'Retreat Amenities', 
-    //   path: '/health-offers#amenities',
-    //   submenu: [
-    //     { name: 'Healing Abode', path: '/Healingabode' },
-    //     { name: 'Recreation Spaces', path: '/Recreation' },
-    //     { name: 'Meditation Caves', path: '/meditation' },
-    //     { name: 'Cardio Gym', path: '/gym' },
-    //   ]
-    // },
     { name: 'Gallery', path: '/image' },
-    // { name: 'Events', path: '/Events' },
   ];
 
   const contactUsDropdown = [
     { name: 'Contact Information', path: '/contact' },
-    // { name: 'Career Opportunities', path: '/career' },
   ];
-
-  // const tariffDropdown = [
-  //   { 
-  //     name: 'Download Packages', 
-  //     path: '/packages/download',
-  //     pdf: '/downloads/wellness-packages.pdf'
-  //   },
-  //   { name: 'Tariff Details', path: '/tariff' },
-  //   { name: 'Rules & Regulations', path: '/Rulesandregulations' },
-  // ];
 
   return (
     <nav 
@@ -1803,7 +2384,7 @@ const Navbar: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          {/* Logo on left side */}
+          {/* Logo */}
           <div className="flex items-center">
             <NavLink to="/" className="flex items-center" onClick={closeAllDropdowns}>
               <img 
@@ -1832,17 +2413,16 @@ const Navbar: React.FC = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-2">
             {/* About Us */}
-            <div className="relative">
+            <div className="relative group">
               <button 
                 className="flex items-center space-x-1 text-gray-800 hover:text-green-700 transition-colors duration-200 font-medium px-2 py-2"
-                onClick={() => toggleDropdown('desktop-about')}
                 onMouseEnter={() => setOpenDropdown('desktop-about')}
               >
                 <span>About Us</span>
-                <ChevronDown className={`w-4 h-4 transition-transform ${openDropdown === 'desktop-about' ? 'rotate-180' : ''}`} />
+                <ChevronDown className="w-4 h-4" />
               </button>
               <div 
-                className={`absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50 transition-all duration-200 origin-top-left ${openDropdown === 'desktop-about' ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}
+                className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 {aboutUsDropdown.map((item, index) => (
@@ -1861,104 +2441,79 @@ const Navbar: React.FC = () => {
             </div>
 
             {/* Treatments */}
-            {/* Treatments Dropdown - Desktop */}
-<div className="relative group">
-  <button className="flex items-center space-x-1 text-gray-800 hover:text-green-700 transition-colors duration-200 font-medium px-2 py-2">
-    <span>Treatments</span>
-    <ChevronDown className="w-4 h-4" />
-  </button>
-  <div className="absolute left-0 mt-2 w-[300px] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-    {treatmentsDropdown.map((item, index) => (
-      <div key={index} className="relative group/sub">
-        <NavLink 
-          to={item.path} 
-          className={({ isActive }) => 
-            `flex justify-between items-center px-4 py-2 text-sm ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`
-          }
-          onMouseEnter={() => item.submenu && setOpenDropdown(`health-${index}`)}
-        >
-          <span>{item.name}</span>
-          {item.submenu && <ChevronRight className="w-4 h-4" />}
-        </NavLink>
-        {item.submenu && (
-          <div 
-            className={`absolute left-full top-0 ml-1 w-[250px] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50 ${
-              openDropdown === `health-${index}` ? 'block' : 'hidden'
-            } group-hover/sub:block`}
-          >
-            {item.submenu.map((subItem, subIndex) => (
-              <NavLink 
-                key={subIndex} 
-                to={subItem.path} 
-                className={({ isActive }) => 
-                  `block px-4 py-2 text-sm ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`
-                }
-              >
-                {subItem.name}
-              </NavLink>
-            ))}
-          </div>
-        )}
-      </div>
-    ))}
-  </div>
-</div>
+            <div className="relative group">
+              <button className="flex items-center space-x-1 text-gray-800 hover:text-green-700 transition-colors duration-200 font-medium px-2 py-2">
+                <span>Treatments</span>
+                <ChevronDown className="w-4 h-4" />
+              </button>
+              <div className="absolute left-0 mt-2 w-[300px] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                {treatmentsDropdown.map((item, index) => (
+                  <div key={index} className="relative group/sub">
+                    <NavLink 
+                      to={item.path} 
+                      className={({ isActive }) => 
+                        `flex justify-between items-center px-4 py-2 text-sm ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`
+                      }
+                      onMouseEnter={() => item.submenu && setOpenDropdown(`health-${index}`)}
+                    >
+                      <span>{item.name}</span>
+                      {item.submenu && <ChevronRight className="w-4 h-4" />}
+                    </NavLink>
+                    {item.submenu && (
+                      <div 
+                        className="absolute left-full top-0 ml-1 w-[250px] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50 hidden group-hover/sub:block"
+                      >
+                        {item.submenu.map((subItem, subIndex) => (
+                          <NavLink 
+                            key={subIndex} 
+                            to={subItem.path} 
+                            className={({ isActive }) => 
+                              `block px-4 py-2 text-sm ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`
+                            }
+                          >
+                            {subItem.name}
+                          </NavLink>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
 
-{/* Accommodations Dropdown - Desktop */}
-<div className="relative group">
-  <button className="flex items-center space-x-1 text-gray-800 hover:text-green-700 transition-colors duration-200 font-medium px-2 py-2">
-    <span>Accommodations</span>
-    <ChevronDown className="w-4 h-4" />
-  </button>
-  <div className="absolute left-0 mt-2 w-[300px] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-    {accommodationsDropdown.map((item, index) => (
-      <div key={index} className="relative group/sub">
-        <NavLink 
-          to={item.path} 
-          className={({ isActive }) => 
-            `flex justify-between items-center px-4 py-2 text-sm ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`
-          }
-          onMouseEnter={() => item.submenu && setOpenDropdown(`accommodations-${index}`)}
-        >
-          <span>{item.name}</span>
-          {item.submenu && <ChevronRight className="w-4 h-4" />}
-        </NavLink>
-        {item.submenu && (
-          <div 
-            className={`absolute left-full top-0 ml-1 w-[250px] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50 ${
-              openDropdown === `accommodations-${index}` ? 'block' : 'hidden'
-            } group-hover/sub:block`}
-          >
-            {item.submenu.map((subItem, subIndex) => (
-              <NavLink 
-                key={subIndex} 
-                to={subItem.path} 
-                className={({ isActive }) => 
-                  `block px-4 py-2 text-sm ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`
-                }
-              >
-                {subItem.name}
-              </NavLink>
-            ))}
-          </div>
-        )}
-      </div>
-    ))}
-  </div>
-</div>
+            {/* Accommodations */}
+            <div className="relative group">
+              <button className="flex items-center space-x-1 text-gray-800 hover:text-green-700 transition-colors duration-200 font-medium px-2 py-2">
+                <span>Accommodations</span>
+                <ChevronDown className="w-4 h-4" />
+              </button>
+              <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                {accommodationsDropdown.map((item, index) => (
+                  <NavLink 
+                    key={index} 
+                    to={item.path} 
+                    className={({ isActive }) => 
+                      `block px-4 py-2 text-sm ${isActive ? 'bg-green-50 text-green-700' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`
+                    }
+                    onClick={closeAllDropdowns}
+                  >
+                    {item.name}
+                  </NavLink>
+                ))}
+              </div>
+            </div>
 
             {/* Contact Us */}
-            <div className="relative">
+            <div className="relative group">
               <button 
                 className="flex items-center space-x-1 text-gray-800 hover:text-green-700 transition-colors duration-200 font-medium px-2 py-2"
-                onClick={() => toggleDropdown('desktop-contact')}
                 onMouseEnter={() => setOpenDropdown('desktop-contact')}
               >
                 <span>Contact Us</span>
-                <ChevronDown className={`w-4 h-4 transition-transform ${openDropdown === 'desktop-contact' ? 'rotate-180' : ''}`} />
+                <ChevronDown className="w-4 h-4" />
               </button>
               <div 
-                className={`absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50 transition-all duration-200 origin-top-right ${openDropdown === 'desktop-contact' ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}
+                className="absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 {contactUsDropdown.map((item, index) => (
@@ -1975,68 +2530,14 @@ const Navbar: React.FC = () => {
                 ))}
               </div>
             </div>
-
-            {/* Tariff */}
-            <div className="relative">
-              {/* <button 
-                className="flex items-center space-x-1 text-gray-800 hover:text-green-700 transition-colors duration-200 font-medium px-2 py-2"
-                onClick={() => toggleDropdown('desktop-tariff')}
-                onMouseEnter={() => setOpenDropdown('desktop-tariff')}
-              >
-                <span>Tariff</span>
-                <ChevronDown className={`w-4 h-4 transition-transform ${openDropdown === 'desktop-tariff' ? 'rotate-180' : ''}`} />
-              </button> */}
-              <div 
-                className={`absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50 transition-all duration-200 origin-top-right ${openDropdown === 'desktop-tariff' ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}
-                onMouseLeave={() => setOpenDropdown(null)}
-              >
-                {/* {tariffDropdown.map((item, index) => (
-                  item.pdf ? (
-                    <a 
-                      key={index} 
-                      href={item.pdf} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900"
-                      download="Nowal-Packages.pdf"
-                      onClick={closeAllDropdowns}
-                    >
-                      {item.name}
-                    </a>
-                  ) : (
-                    <NavLink 
-                      key={index} 
-                      to={item.path} 
-                      className={({ isActive }) => 
-                        `block px-4 py-2 text-sm ${isActive ? 'bg-green-50 text-green-700' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`
-                      }
-                      onClick={closeAllDropdowns}
-                    >
-                      {item.name}
-                    </NavLink>
-                  )
-                ))} */}
-              </div>
-            </div>
-
-            {/* Apply for Admissions Button */}
-            {/* <div className="ml-2">
-              <NavLink 
-                to="/contact" 
-                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-                onClick={closeAllDropdowns}
-              >
-                APPLY FOR ADMISSION
-              </NavLink>
-            </div> */}
           </div>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation - Fixed Version */}
       <div className={`lg:hidden transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? 'max-h-screen' : 'max-h-0'}`}>
         <div className="px-2 pt-2 pb-4 space-y-1 bg-white border-t border-gray-200 shadow-inner">
-          {/* About Us */}
+          {/* About Us - Mobile */}
           <div>
             <button 
               className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-gray-50 transition-colors duration-200 font-medium"
@@ -2067,7 +2568,7 @@ const Navbar: React.FC = () => {
             </div>
           </div>
 
-          {/* Treatments */}
+          {/* Treatments - Mobile - Fixed */}
           <div>
             <button 
               className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-gray-50 transition-colors duration-200 font-medium"
@@ -2079,7 +2580,7 @@ const Navbar: React.FC = () => {
               }`} />
             </button>
             <div className={`transition-all duration-200 overflow-hidden ${
-              openDropdown === 'mobile-treatments' ? 'max-h-96' : 'max-h-0'
+              openDropdown === 'mobile-treatments' ? 'max-h-[500px]' : 'max-h-0'
             }`}>
               <div className="pl-4 space-y-1">
                 {treatmentsDropdown.map((item, index) => (
@@ -2088,17 +2589,17 @@ const Navbar: React.FC = () => {
                       <>
                         <button 
                           className="flex justify-between items-center w-full px-3 py-2 text-gray-700 hover:text-green-600 rounded-md hover:bg-gray-50 transition-colors duration-200"
-                          onClick={() => toggleDropdown(`mobile-treatments-${index}`)}
+                          onClick={() => toggleSubDropdown('mobile-treatments', `sub-${index}`)}
                         >
                           <span>{item.name}</span>
                           <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
-                            openDropdown === `mobile-treatments-${index}` ? 'rotate-180' : ''
+                            openSubDropdowns[`mobile-treatments-sub-${index}`] ? 'rotate-180' : ''
                           }`} />
                         </button>
                         <div className={`transition-all duration-200 overflow-hidden ${
-                          openDropdown === `mobile-treatments-${index}` ? 'max-h-96' : 'max-h-0'
+                          openSubDropdowns[`mobile-treatments-sub-${index}`] ? 'max-h-96' : 'max-h-0'
                         }`}>
-                          <div className="pl-4 space-y-1">
+                          <div className="pl-6 space-y-1">
                             {item.submenu.map((subItem, subIndex) => (
                               <NavLink 
                                 key={subIndex} 
@@ -2131,7 +2632,7 @@ const Navbar: React.FC = () => {
             </div>
           </div>
 
-          {/* Accommodations */}
+          {/* Accommodations - Mobile */}
           <div>
             <button 
               className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-gray-50 transition-colors duration-200 font-medium"
@@ -2146,56 +2647,23 @@ const Navbar: React.FC = () => {
               openDropdown === 'mobile-accommodations' ? 'max-h-96' : 'max-h-0'
             }`}>
               <div className="pl-4 space-y-1">
-                {/* {accommodationsDropdown.map((item, index) => (
-                  <div key={index}>
-                    {item.submenu ? (
-                      <>
-                        <button 
-                          className="flex justify-between items-center w-full px-3 py-2 text-gray-700 hover:text-green-600 rounded-md hover:bg-gray-50 transition-colors duration-200"
-                          onClick={() => toggleDropdown(`mobile-accommodations-${index}`)}
-                        >
-                          <span>{item.name}</span>
-                          <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
-                            openDropdown === `mobile-accommodations-${index}` ? 'rotate-180' : ''
-                          }`} />
-                        </button>
-                        <div className={`transition-all duration-200 overflow-hidden ${
-                          openDropdown === `mobile-accommodations-${index}` ? 'max-h-96' : 'max-h-0'
-                        }`}>
-                          <div className="pl-4 space-y-1">
-                            {item.submenu.map((subItem, subIndex) => (
-                              <NavLink 
-                                key={subIndex} 
-                                to={subItem.path}
-                                className={({ isActive }) => 
-                                  `block px-3 py-2 rounded-md ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`
-                                }
-                                onClick={closeAllDropdowns}
-                              >
-                                {subItem.name}
-                              </NavLink>
-                            ))}
-                          </div>
-                        </div>
-                      </>
-                    ) : (
-                      <NavLink 
-                        to={item.path}
-                        className={({ isActive }) => 
-                          `block px-3 py-2 rounded-md ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`
-                        }
-                        onClick={closeAllDropdowns}
-                      >
-                        {item.name}
-                      </NavLink>
-                    )}
-                  </div>
-                ))} */}
+                {accommodationsDropdown.map((item, index) => (
+                  <NavLink 
+                    key={index} 
+                    to={item.path}
+                    className={({ isActive }) => 
+                      `block px-3 py-2 rounded-md ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`
+                    }
+                    onClick={closeAllDropdowns}
+                  >
+                    {item.name}
+                  </NavLink>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Contact Us */}
+          {/* Contact Us - Mobile */}
           <div>
             <button 
               className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-gray-50 transition-colors duration-200 font-medium"
@@ -2225,62 +2693,6 @@ const Navbar: React.FC = () => {
               </div>
             </div>
           </div>
-
-          {/* Tariff */}
-          <div>
-            <button 
-              className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-gray-50 transition-colors duration-200 font-medium"
-              onClick={() => toggleDropdown('mobile-tariff')}
-            >
-              {/* <span>Tariff</span> */}
-              {/* <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
-                openDropdown === 'mobile-tariff' ? 'rotate-180' : ''
-              }`} /> */}
-            </button>
-            <div className={`transition-all duration-200 overflow-hidden ${
-              openDropdown === 'mobile-tariff' ? 'max-h-96' : 'max-h-0'
-            }`}>
-              {/* <div className="pl-4 space-y-1">
-                {tariffDropdown.map((item, index) => (
-                  item.pdf ? (
-                    <a 
-                      key={index} 
-                      href={item.pdf} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-gray-900"
-                      download="Nowal-Packages.pdf"
-                      onClick={closeAllDropdowns}
-                    >
-                      {item.name}
-                    </a>
-                  ) : (
-                    <NavLink 
-                      key={index} 
-                      to={item.path}
-                      className={({ isActive }) => 
-                        `block px-3 py-2 rounded-md ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`
-                      }
-                      onClick={closeAllDropdowns}
-                    >
-                      {item.name}
-                    </NavLink>
-                  )
-                ))}
-              </div> */}
-            </div>
-          </div>
-
-          {/* APPLY FOR ADMISSION Button */}
-          {/* <div className="pt-2">
-            <NavLink 
-              to="/booking" 
-              className="w-full flex items-center justify-center px-4 py-3 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 transition-colors duration-200"
-              onClick={closeAllDropdowns}
-            >
-              APPLY FOR ADMISSION
-            </NavLink>
-          </div> */}
         </div>
       </div>
     </nav>

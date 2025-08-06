@@ -33,7 +33,11 @@ const Holistictheraphy: React.FC = () => {
             Holistic Healing Approach
           </h1>
           <p className="text-xl md:text-2xl mb-8">
+<<<<<<< HEAD
             At Nowal NatureCare
+=======
+            At nowal NatureCare
+>>>>>>> 622d4cba33426d32e7aab56822e0440daad2ad9f
           </p>
           <Link 
             to="/programs" 
@@ -82,12 +86,12 @@ const Holistictheraphy: React.FC = () => {
     </h2>
 
     <blockquote className="text-xl md:text-2xl font-playfair italic text-sage-500 mb-8">
-      "Nature cures, not the physician. At Wellness, we simply facilitate the body's innate healing capacity through time-tested naturopathic principles."
+      "Nature cures, not the physician. At nowal, we simply facilitate the body's innate healing capacity through time-tested naturopathic principles."
     </blockquote>
 
     <div className="space-y-6 text-lg text-gray-700">
       <p>
-        Naturopathy at Wellness is more than treatment - it's a return to harmony with nature's rhythms. Our retreats combine ancient healing wisdom with modern understanding to address root causes, not just symptoms.
+        Naturopathy at nowal is more than treatment - it's a return to harmony with nature's rhythms. Our retreats combine ancient healing wisdom with modern understanding to address root causes, not just symptoms.
       </p>
     </div>
   </div>

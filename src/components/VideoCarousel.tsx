@@ -5,7 +5,7 @@
 
 // const videos = [
 //   {
-//     title: "Vivek Oberoi goes for complete Detox and Rejuvenation at Wellness Nature Cure",
+//     title: "Vivek Oberoi goes for complete Detox and Rejuvenation at Nowal NatureCare",
 //     url: "https://youtu.be/BfWPhJuokX8",
 //   },
 //   {
@@ -116,7 +116,7 @@ import "keen-slider/keen-slider.min.css"
 
 const videos = [
   {
-    title: "Vivek Oberoi goes for complete Detox and Rejuvenation at Nowal Nature Cure",
+    title: "Vivek Oberoi goes for complete Detox and Rejuvenation at Nowal NatureCare",
     url: "https://youtu.be/BfWPhJuokX8",
   },
   {

@@ -35,7 +35,7 @@ const Musculoskeletal: React.FC = () => {
             Muscle Strength Therapy
           </h1>
           <p className="text-xl md:text-2xl mb-8">
-            At Wellness Nature Cure
+            At Nowal NatureCare
           </p>
           <Link 
             to="/programs" 

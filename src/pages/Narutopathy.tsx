@@ -82,7 +82,7 @@ const Narutopathy: React.FC = () => {
     </h2>
 
     <blockquote className="text-xl md:text-2xl font-playfair italic text-sage-500 mb-8">
-      "Nature cures, not the physician. At Wellness, we simply facilitate the body's innate healing capacity through time-tested naturopathic principles."
+      "Nature cures, not the physician. At nowal, we simply facilitate the body's innate healing capacity through time-tested naturopathic principles."
     </blockquote>
 
     <div className="space-y-6 text-lg text-gray-700">

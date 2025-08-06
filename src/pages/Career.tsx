@@ -79,7 +79,7 @@ const Carrer: React.FC = () => {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Wellness Nature Cure Location"
+              title="Nowal NatureCare Location"
             ></iframe>
             
             {/* Floating location card */}
@@ -87,7 +87,7 @@ const Carrer: React.FC = () => {
               <div className="flex items-start gap-3">
                 <MapPin className="w-6 h-6 text-sage-600 mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="font-playfair font-semibold text-sage-700">Wellness Nature Cure</h3>
+                  <h3 className="font-playfair font-semibold text-sage-700">Nowal NatureCare</h3>
                   <address className="not-italic text-sm text-gray-600 mt-1">
                     Baliyasan, Nr. Mccain Foods<br />
                     Ahmedabad–Mehsana Expressway<br />

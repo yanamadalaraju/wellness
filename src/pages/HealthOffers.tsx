@@ -270,7 +270,7 @@ const Programs: React.FC = () => {
          Wellness Coaching Package
           </h1>
           <p className="text-xl md:text-2xl mb-8">
-            At Wellness Nature Cure
+            At Nowal NatureCare
           </p>
           <Link 
             to="/programs" 
@@ -513,7 +513,7 @@ const Programs: React.FC = () => {
         <Flower className="w-10 h-10 text-green-800" />
         <h2 className="text-3xl font-serif text-gray-700">Meditation Caves</h2>
         <p className="text-gray-600 leading-relaxed">
-          “Release the entanglements in your mind and free the chaos within you.” Wellness Nature Cure and Holistic
+          “Release the entanglements in your mind and free the chaos within you.” Nowal NatureCare and Holistic
           Healthcare Centre is in close connection with spirituality and the potential…
         </p>
         <Link

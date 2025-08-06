@@ -349,7 +349,7 @@ const Programs: React.FC = () => {
           Customer Experience Sharing
           </h1>
           <p className="text-xl md:text-2xl mb-8">
-            At Nowal Nature Cure
+            At Nowal NatureCare
           </p>
           <Link 
             to="/programs" 
