@@ -204,7 +204,7 @@ const Applications = () => {
   useEffect(() => {
     const fetchApplications = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/careers');
+        const response = await fetch(`${BASE_URL}/api/careers`);
         
         if (!response.ok) {
           throw new Error('Failed to fetch applications');

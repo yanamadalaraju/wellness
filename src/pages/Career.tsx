@@ -64,49 +64,47 @@ const Carrer: React.FC = () => {
 
       {/* Map Section */}
       <section className="section-padding bg-sage-50">
-        <div className="container-max">
-          <h2 className="text-4xl font-playfair font-bold text-sage-600 mb-8 text-center">
-            Find Us
-          </h2>
-          
-          <div className="rounded-xl overflow-hidden aspect-video relative shadow-lg">
-            <iframe
-              className="w-full h-full"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3662.778119072864!2d72.3667497!3d23.587959999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c5a1b00000000%3A0x0!2zMjPCsDM1JzE2LjciTiA3MsKwMjInMDAuNyJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
-              width="800"
-              height="400"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Nowal NatureCare Location"
-            ></iframe>
-            
-            {/* Floating location card */}
-            <div className="absolute bottom-4 left-4 bg-white p-6 rounded-lg max-w-xs shadow-md">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-6 h-6 text-sage-600 mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="font-playfair font-semibold text-sage-700">Nowal NatureCare</h3>
-                  <address className="not-italic text-sm text-gray-600 mt-1">
-                    Baliyasan, Nr. Mccain Foods<br />
-                    Ahmedabad–Mehsana Expressway<br />
-                    Mehsana – 382732, Gujarat
-                  </address>
-                </div>
-              </div>
-              <a
-                href="https://goo.gl/maps/example"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-block w-full bg-sage-600 hover:bg-sage-700 text-white text-center py-2 rounded transition-colors"
-              >
-                Get Directions
-              </a>
-            </div>
+  <div className="container-max">
+    <h2 className="text-4xl font-playfair font-bold text-sage-600 mb-8 text-center">
+      Find Us
+    </h2>
+    
+    <div className="rounded-xl overflow-hidden aspect-video relative shadow-lg">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3546.625357611623!2d75.40674847545166!3d27.26227687644048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sin!4v1754558662832!5m2!1sen!2sin"
+        className="w-full h-full"
+        style={{ border: 0 }}
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        title="Looniyawas Location"
+      ></iframe>
+      
+      {/* Floating location card */}
+      <div className="absolute bottom-4 left-4 bg-white p-6 rounded-lg max-w-xs shadow-md">
+        <div className="flex items-start gap-3">
+          <MapPin className="w-6 h-6 text-sage-600 mt-1 flex-shrink-0" />
+          <div>
+            <h3 className="font-playfair font-semibold text-sage-700">Our Location</h3>
+            <address className="not-italic text-sm text-gray-600 mt-1">
+              Looniyawas<br />
+              Rajasthan 303602<br />
+              India
+            </address>
           </div>
         </div>
-      </section>
+        <a
+          href="https://maps.app.goo.gl/ASG19fXbguNBmBtG7"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 inline-block w-full bg-sage-600 hover:bg-sage-700 text-white text-center py-2 rounded transition-colors"
+        >
+          Get Directions
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
       <ReachSection />
 

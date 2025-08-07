@@ -880,11 +880,9 @@
 
 // export default Contact;
 
-
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { MapPin, Phone, Mail, Clock, MessageCircle, Send } from 'lucide-react';
-import ReachSection from '../components/Reachsection';
 import { BASE_URL } from '../config';
 import { Link } from 'react-router-dom';
 
@@ -909,35 +907,35 @@ const Contact: React.FC = () => {
   const [submitError, setSubmitError] = useState('');
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
- const onSubmit = async (data: ContactFormData) => {
-  setIsSubmitting(true);
-  setSubmitError('');
-  setSubmitSuccess(false);
-  
-  try {
-    const response = await fetch(`${BASE_URL}/api/contacts`, {  // Keep this as /api/contacts
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSubmitting(true);
+    setSubmitError('');
+    setSubmitSuccess(false);
+    
+    try {
+      const response = await fetch(`${BASE_URL}/api/contacts/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
 
-    if (!response.ok) {
-      throw new Error('Failed to submit form');
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
+      const result = await response.json();
+      console.log('Form submission successful:', result);
+      setSubmitSuccess(true);
+      reset();
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitError('There was an error submitting your form. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
-
-    const result = await response.json();
-    console.log('Form submission successful:', result);
-    setSubmitSuccess(true);
-    reset();
-  } catch (error) {
-    console.error('Error submitting form:', error);
-    setSubmitError('There was an error submitting your form. Please try again.');
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+  };
 
   return (
     <div className="min-h-screen bg-cream-50">
@@ -957,7 +955,7 @@ const Contact: React.FC = () => {
             Get in Touch
           </h1>
           <p className="text-xl md:text-2xl text-shadow">
-            We're here to guide you on your nowal journey
+            We're here to guide you on your wellness journey
           </p>
         </div>
       </section>
@@ -1011,7 +1009,7 @@ const Contact: React.FC = () => {
                     <h3 className="font-semibold text-sage-600 mb-1">Phone</h3>
                     <p className="text-gray-600">
                       Main: +91 9251582670<br />
-                      Emergency: +91 9251582675
+                      Emergency:  +91 9251582675
                     </p>
                   </div>
                 </div>
@@ -1021,8 +1019,7 @@ const Contact: React.FC = () => {
                   <div>
                     <h3 className="font-semibold text-sage-600 mb-1">Email</h3>
                     <p className="text-gray-600">
-                      {/* General: socials@nowalNatureCare.com<br />
-                      Bookings: socials@nowalNatureCare.com<br /> */}
+                      {/* General: socials@nowalNatureCare.com<br /> */}
                       Support: socials@nowalNatureCare.com
                     </p>
                   </div>
@@ -1033,9 +1030,9 @@ const Contact: React.FC = () => {
                   <div>
                     <h3 className="font-semibold text-sage-600 mb-1">Hours</h3>
                     <p className="text-gray-600">
-                      Monday - Sunday: 7:00 AM - 7:00 PM<br />
-                      {/* Saturday: 9:00 AM - 4:00 PM<br />
-                      Sunday: 10:00 AM - 3:00 PM */}
+                     Monday - Sunday: 7:00 AM - 7:00 PM
+                      {/* Saturday: 8:00 AM - 4:00 PM<br />
+                      Sunday: 9:00 AM - 3:00 PM */}
                     </p>
                   </div>
                 </div>
@@ -1045,7 +1042,7 @@ const Contact: React.FC = () => {
                   <div>
                     <h3 className="font-semibold text-sage-600 mb-1">WhatsApp</h3>
                     <p className="text-gray-600">
-                      +91 9251582672<br />
+                     +91 9251582672<br />
                       Available 24/7 for urgent inquiries
                     </p>
                   </div>
@@ -1056,7 +1053,7 @@ const Contact: React.FC = () => {
                 <h3 className="font-semibold text-yellow-800 mb-2">Emergency Contact</h3>
                 <p className="text-yellow-700 text-sm">
                   For medical emergencies during your stay, please contact our 24/7 emergency line: 
-                  <span className="font-semibold"> +91 9251582675</span>
+                  <span className="font-semibold"> +91 9876543210</span>
                 </p>
               </div>
             </div>
@@ -1204,11 +1201,8 @@ const Contact: React.FC = () => {
               </form>
             </div>
           </div>
-
         </div>
       </section>
-
-       
     </div>
   );
 };

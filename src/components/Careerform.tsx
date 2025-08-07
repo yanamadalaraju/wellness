@@ -816,6 +816,7 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { MapPin, Mail, Phone, ChevronRight, ChevronLeft } from 'lucide-react';
+import { BASE_URL } from '../config';
 
 type ContactFormData = {
   name: string;
@@ -869,7 +870,7 @@ const CareerForm = () => {
         throw new Error('Resume is required');
       }
 
-      const response = await fetch('http://localhost:5000/api/careers', {
+      const response = await fetch(`${BASE_URL}/api/careers`, {
         method: 'POST',
         body: formData,
       });
@@ -1025,6 +1026,7 @@ const CareerForm = () => {
                   <p className="text-red-500 text-sm mt-1">{errors.designation.message}</p>
                 )}
               </div>
+              
             </div>
 
             {/* Message Field */}

@@ -341,7 +341,7 @@ const DinacharyaPage: React.FC = () => {
       </h2>
       <div className="w-20 h-1 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto rounded-full mb-6"></div>
       <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-        Prepare for your holistic wellness journey at Nowal NatureCare
+        Prepare for your holistic nowal journey at Nowal NatureCare
       </p>
     </div>
 
@@ -376,7 +376,7 @@ const DinacharyaPage: React.FC = () => {
       <div className="bg-amber-50/50 rounded-xl p-8 border border-amber-100">
         <div className="flex items-center mb-6">
           <Heart className="w-8 h-8 text-amber-600 mr-4" />
-          <h3 className="text-xl font-bold text-slate-800">Wellness Preparation</h3>
+          <h3 className="text-xl font-bold text-slate-800">nowal Preparation</h3>
         </div>
         <ul className="space-y-4">
           <li className="flex items-start">
@@ -408,7 +408,7 @@ const DinacharyaPage: React.FC = () => {
     <div>
       <h4 className="text-lg font-medium text-slate-800 mb-2">Important Note</h4>
       <p className="text-slate-700">
-        Your comfort and safety are our priority. Please ensure you bring all necessary items to fully participate in our wellness programs. 
+        Your comfort and safety are our priority. Please ensure you bring all necessary items to fully participate in our nowal programs. 
         Incomplete medical information may affect your treatment plan.
       </p>
     </div>
