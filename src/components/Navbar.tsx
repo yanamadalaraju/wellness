@@ -2779,12 +2779,13 @@ const Navbar: React.FC = () => {
   ];
 
   const accommodationsDropdown = [
-    { name: 'Accommodation Details', path: '/accommodation-details' },
-    { name: 'Accommodation Guidelines', path: '/accommodation-guidelines' },
+    { name: 'Accommodation Details', path: '/accomadation' },
+    { name: 'Accommodation Guidelines', path: '/guidliness' },
   ];
 
   const contactUsDropdown = [
     { name: 'Contact Information', path: '/contact' },
+     { name: 'Career', path: '/career' },
   ];
 
   return (

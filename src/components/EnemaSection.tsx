@@ -332,6 +332,7 @@ import React, { useState } from 'react';
 import { FaCheckCircle, FaLeaf, FaSpa, FaWater, FaHandsHelping } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 
+
 const therapies = [
   {
     name: 'Colon Hydrotherapy',

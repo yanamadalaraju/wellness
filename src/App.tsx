@@ -153,6 +153,8 @@ import AdminContactDashboard from './admin/AdminContactDashboard'
 import NowalNatureCareResort from './pages/Nowal'
 import ScrollToTop from './components/ScrollToTop'
 import EconomyAccommodation from './pages/Accomadations'
+import DietPage from './pages/Diet'
+import AdmissionGuidelines from './pages/AccomadationGuidliness'
 
 function AppRoutes() {
   const location = useLocation()
@@ -207,6 +209,8 @@ function AppRoutes() {
             <Route path="/Rulesandregulations" element={<RulesAndRegulations />} />
             <Route path="/virtual-tour" element={<VirtualTourPage />} />
            <Route path="/accomadation" element={<EconomyAccommodation/>} />
+           <Route path="/guidliness" element={<AdmissionGuidelines/>} />
+              <Route path="/diet" element={<DietPage/>} />
           </Routes>
           <WhatsAppButton />
           <ChatBot />
