@@ -109,6 +109,9 @@
 import React, { useState } from 'react';
 import { FaCheckCircle, FaOm, FaWater, FaHandsHelping, FaEye } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
+import jalneti from '../assets/jalneti.jpg';
+import tratak from '../assets/traktra.jpg';
+import aquaticyoga from '../assets/auqaticyoga.jpg';
 
 const therapies = [
   {
@@ -136,8 +139,8 @@ const therapies = [
     icon: <FaHandsHelping className="text-amber-500" />
   },
   {
-    name: 'Jal Nidi',
-    image: 'https://mettavoyage.com/wp-content/uploads/2020/10/aqua-yoga.jpg',
+    name: 'Jal Neti',
+    image: jalneti,
     content: 'The six purification techniques of classical yoga that deeply cleanse the physical and energetic bodies. These powerful detox methods prepare the system for higher yogic practices while removing accumulated toxins and blockages.',
     benefits: [
       'Cleanses internal organs',
@@ -149,7 +152,7 @@ const therapies = [
   },
   {
     name: 'Tratak',
-    image: 'https://www.nimba.in/wp-content/uploads/2020/07/TRATAK.jpg',
+    image: tratak,
     content: 'The ancient yogic practice of focused gazing that develops concentration and inner vision. Through disciplined eye exercises and candle gazing, we cultivate mental focus while activating the third eye center for heightened intuition.',
     benefits: [
       'Improves eyesight',
@@ -161,7 +164,7 @@ const therapies = [
   },
   {
     name: 'Aquatic Yoga',
-    image: 'https://i.pinimg.com/1200x/10/3a/63/103a63283e341496a70dcd1ff91c62af.jpg',
+    image: aquaticyoga,
     content: 'Aquatic Yoga or exercise is the best easiest practices in joint pain conditions and compromised health conditions.  ',
     benefits: [
       'Reduces impact on joints',

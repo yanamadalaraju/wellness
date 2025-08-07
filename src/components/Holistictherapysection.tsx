@@ -109,6 +109,7 @@
 import React, { useState } from 'react';
 import { FaCheckCircle, FaMusic, FaFireAlt, FaHandHoldingHeart, FaLeaf } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
+import cuppingtherapy from '../assets/cuppingtherapy.jpg';
 
 
 const therapies = [
@@ -162,7 +163,7 @@ const therapies = [
   // },
   {
     name: 'Cupping Therapy',
-    image: 'https://www.nimba.in/wp-content/uploads/2020/07/CUPPING_THERAPY.jpg',
+    image: cuppingtherapy,
     content: 'Ancient technique using suction cups to release fascial restrictions and improve circulation. This therapy draws fresh blood to areas of stagnation, promoting healing and relieving muscle tension.',
     benefits: [
       'Relieves muscle stiffness',

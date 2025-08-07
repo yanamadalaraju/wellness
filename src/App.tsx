@@ -155,12 +155,13 @@ import ScrollToTop from './components/ScrollToTop'
 import EconomyAccommodation from './pages/Accomadations'
 import DietPage from './pages/Diet'
 import AdmissionGuidelines from './pages/AccomadationGuidliness'
-
+import  Applications from './admin/Applications';
 function AppRoutes() {
   const location = useLocation()
 
   // Define routes where layout should be hidden
-  const hideLayoutPaths = ['/login', '/register', '/customers' , '/dashboard']
+
+  const hideLayoutPaths = ['/login', '/register', '/customers' , '/dashboard' , '/applications']
   const hideLayout = hideLayoutPaths.includes(location.pathname)
 
   return (
@@ -211,6 +212,7 @@ function AppRoutes() {
            <Route path="/accomadation" element={<EconomyAccommodation/>} />
            <Route path="/guidliness" element={<AdmissionGuidelines/>} />
               <Route path="/diet" element={<DietPage/>} />
+
           </Routes>
           <WhatsAppButton />
           <ChatBot />
@@ -223,6 +225,7 @@ function AppRoutes() {
           <Route path="/login" element={<Login />} />
            <Route path="/dashboard" element={<Login />} />
           <Route path="/customers" element={<AdminContactDashboard />} />
+          <Route path="/applications" element={< Applications />} />
         </Routes>
       )}
     </>

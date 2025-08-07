@@ -331,12 +331,19 @@
 import React, { useState } from 'react';
 import { FaCheckCircle, FaLeaf, FaSpa, FaWater, FaHandsHelping } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
+import hydrocolon from '../assets/hydrocolon.jpg';
+import manipulativeTherapy from '../assets/maniplativetherapy.jpg';
+import enema from '../assets/enema.jpg';
+import mudPack from '../assets/mudpack.jpg';
+import vibroacoustic from '../assets/vibrotictherapy.jpg';
+
+
 
 
 const therapies = [
   {
     name: 'Colon Hydrotherapy',
-    image: 'https://i.pinimg.com/736x/c8/5c/b5/c85cb5a6d50437bf81e55a85ee25418c.jpg',
+    image: hydrocolon,
     content: 'Our bodies hold more than just blood and water—they also accumulate waste and toxins that may disrupt digestive health. Colon Hydrotherapy, also known as colon cleansing, is a powerful naturopathic therapy that gently eliminates these harmful substances, restoring balance from within. At Nowal NatureCare, this holistic treatment supports the bodys natural detoxification process, offering a range of health benefits that go beyond digestion.',
     benefits: [
       'Deeply cleanses the Large Intestine',
@@ -349,7 +356,7 @@ const therapies = [
   },
   {
     name: 'Manipulative Therapy',
-    image: 'https://i.pinimg.com/736x/3f/17/bb/3f17bba0d96bc5e7660c6c2b8c6662ed.jpg',
+    image: manipulativeTherapy,
     content: 'Massage therapy is an ancient healing practice, cherished for centuries for its ability to relieve tension, stimulate circulation, and promote overall well-being. At Nowal NatureCare, this therapeutic process involves the rhythmic massage and pressing of muscles and soft tissues using a variety of scientific techniques tailored to your needs.',
     benefits: [
       'Alleviates stress and muscle stiffness',
@@ -362,8 +369,8 @@ const therapies = [
   },
   {
     name: ' Enema',
-    image: 'https://i.pinimg.com/1200x/e1/9b/52/e19b521a7fd7d788f2a86e542b57002f.jpg',
-    content: 'Healthy bowel movements are essential for the body’s overall functioning and balance. When this natural process is disrupted, Enema therapy offers an effective solution to restore digestive regularity. At Nowal NatureCare, enema treatments are tailored to your health condition and may include normal, neutral, warm, or herb-infused water. In this therapy, a gentle infusion of natural liquid into the rectum stimulates stool evacuation and relieves even chronic constipation.',
+    image: enema,
+    content: 'Healthy bowel movements are essential for the bodys overall functioning and balance. When this natural process is disrupted, Enema therapy offers an effective solution to restore digestive regularity. At Nowal NatureCare, enema treatments are tailored to your health condition and may include normal, neutral, warm, or herb-infused water. In this therapy, a gentle infusion of natural liquid into the rectum stimulates stool evacuation and relieves even chronic constipation.',
     benefits: [
       'Eliminates accumulated waste from the colon',
       'Effectively treats constipation',
@@ -374,8 +381,8 @@ const therapies = [
   },
   {
     name: ' Mud Pack',
-    image: 'https://i.pinimg.com/1200x/a3/93/54/a393546a3d88230ab923371dffa8ac85.jpg',
-    content: 'Mud, one of nature’s vital elements, is rich in minerals that offer powerful therapeutic benefits when applied to the body. At Nowal NatureCare, our carefully curated mud pack treatments go beyond expectations—this is the essence of naturopathy. The treatment draws out harmful toxins, deeply cleansing and revitalizing the body.',
+    image: mudPack,
+    content: 'Mud, one of natures vital elements, is rich in minerals that offer powerful therapeutic benefits when applied to the body. At Nowal NatureCare, our carefully curated mud pack treatments go beyond expectations—this is the essence of naturopathy. The treatment draws out harmful toxins, deeply cleansing and revitalizing the body.',
     benefits: [
       'Helps regulate body temperature',
       'Supports digestive health',
@@ -387,7 +394,7 @@ const therapies = [
   },
   {
     name: 'Vibroacoustic Massage',
-    image: 'https://all4massage.com/storage/media/1721133207029791800_InShot_20240716_143132008.jpg',
+    image: vibroacoustic,
     content: 'Vibro Massage an advanced naturopathic treatment combines the benefits of high-tech vibratory therapy to target the entire body or specific tension points with powder of floor of grains.',
     benefits: [
       'Relaxes and tones deep muscle layers',
