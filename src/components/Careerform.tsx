@@ -887,7 +887,7 @@ const CareerForm = () => {
 
       const result = await response.json();
       console.log('Success:', result);
-      navigate('/thank-you');
+      navigate('/');
     } catch (error) {
       console.error('Error:', error);
       setSubmitError(error.message || 'Failed to submit application. Please try again.');

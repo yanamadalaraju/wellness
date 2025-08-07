@@ -156,6 +156,7 @@ import EconomyAccommodation from './pages/Accomadations'
 import DietPage from './pages/Diet'
 import AdmissionGuidelines from './pages/AccomadationGuidliness'
 import  Applications from './admin/Applications';
+import ThankYouPage from './pages/Thankyoupage'
 function AppRoutes() {
   const location = useLocation()
 
@@ -212,6 +213,7 @@ function AppRoutes() {
            <Route path="/accomadation" element={<EconomyAccommodation/>} />
            <Route path="/guidliness" element={<AdmissionGuidelines/>} />
               <Route path="/diet" element={<DietPage/>} />
+                <Route path="/thank-you" element={<ThankYouPage />} />
 
           </Routes>
           <WhatsAppButton />

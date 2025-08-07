@@ -955,7 +955,7 @@ const Contact: React.FC = () => {
             Get in Touch
           </h1>
           <p className="text-xl md:text-2xl text-shadow">
-            We're here to guide you on your wellness journey
+            We're here to guide you on your nowal journey
           </p>
         </div>
       </section>
@@ -1053,7 +1053,7 @@ const Contact: React.FC = () => {
                 <h3 className="font-semibold text-yellow-800 mb-2">Emergency Contact</h3>
                 <p className="text-yellow-700 text-sm">
                   For medical emergencies during your stay, please contact our 24/7 emergency line: 
-                  <span className="font-semibold"> +91 9876543210</span>
+                  <span className="font-semibold"> +91 9251582675</span>
                 </p>
               </div>
             </div>
