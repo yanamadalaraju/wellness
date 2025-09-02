@@ -244,6 +244,18 @@
 
 // export default NowalNatureCareResort;
 
+
+
+
+
+
+
+
+
+
+
+
+
 import React from 'react';
 
 const NowalNatureCareResort: React.FC = () => {

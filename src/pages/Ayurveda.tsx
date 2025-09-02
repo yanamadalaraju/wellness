@@ -33,11 +33,11 @@ const Ayurveda: React.FC = () => {
           <p className="text-xl md:text-2xl mb-8">
             At Nowal NatureCare
           </p>
-          <Link 
-            to="/programs" 
+         <Link 
+            to="/contact" 
             className="inline-block px-8 py-3 bg-sage-500 hover:bg-sage-600 text-white font-medium rounded-full transition duration-300"
           >
-            Explore Our Programs
+            Book Now
           </Link>
         </div>
       </section>

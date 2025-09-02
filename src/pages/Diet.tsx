@@ -194,7 +194,12 @@
 // export default DietPage;
 
 
+
+
+
+
 import React from 'react';
+import image from "../assets/bascketimage-removebg-preview.png";
 
 const DietPage = () => {
   return (
@@ -448,7 +453,7 @@ const DietPage = () => {
             <div className="flex flex-col md:flex-row gap-6 items-center my-6">
               <div className="md:w-1/3">
                 <img 
-                  src="https://i.pinimg.com/1200x/3c/40/bb/3c40bb6fd71bd9218f55980c27fda62c.jpg" 
+                  src={image}
                   alt="Organic farm"
                   className="rounded-lg shadow-md w-full h-auto"
                 />

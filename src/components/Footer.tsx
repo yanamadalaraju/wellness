@@ -322,7 +322,6 @@
 // export default Footer
 
 
-
 import React from 'react'
 import { Link } from 'react-router-dom'
 import {
@@ -348,7 +347,7 @@ const Footer: React.FC = () => {
           <div className="flex items-start gap-3">
             <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
             <address className="not-italic leading-relaxed">
-              Gadri, Badhal Panchayat,<br />
+              Gadri, Badhal <br />
               Jaipur, Rajasthan,<br />
              303602 India.
             </address>   
@@ -419,7 +418,7 @@ const Footer: React.FC = () => {
               
               <div className="flex items-start gap-3">
                 <Mail className="w-5 h-5 mt-1 flex-shrink-0" />
-                <a href="mailto:socials@nowalNatureCare.com" className="hover:underline">socials@nowalNatureCare.com</a>
+                <a href="mailto:socials@nowalNatureCare.com" className="hover:underline">info@nowalnaturecare.com</a>
               </div>
               
               <div className="flex items-start gap-3">
@@ -448,7 +447,7 @@ const Footer: React.FC = () => {
       {/* Copyright */}
       <div className="border-t border-[#9EB384]/30 mt-12 pt-6 text-center">
         <p className="text-sm">© {new Date().getFullYear()} Nowal NatureCare. All Rights Reserved.</p>
-        <p className="mt-1 text-xs text-[#435334]/80">Designed with care for holistic wellness</p>
+        <p className="mt-1 text-xs text-[#435334]/80">Designed with care for holistic nowal</p>
       </div>
     </footer>
   )
