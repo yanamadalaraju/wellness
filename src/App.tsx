@@ -225,7 +225,7 @@ function AppRoutes() {
         <Routes>
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-           <Route path="/dashboard" element={<Login />} />
+          
           <Route path="/customers" element={<AdminContactDashboard />} />
           <Route path="/applications" element={< Applications />} />
         </Routes>
