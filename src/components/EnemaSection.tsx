@@ -328,6 +328,10 @@
 // export default TherapySection;
 
 
+
+
+
+
 import React, { useState } from 'react';
 import { FaCheckCircle, FaLeaf, FaSpa, FaWater, FaHandsHelping } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -393,7 +397,7 @@ const therapies = [
     icon: <FaSpa className="text-amber-800" />
   },
   {
-    name: 'Vibroacoustic Massage',
+    name: 'Vibro Massage',
     image: vibroacoustic,
     content: 'Vibro Massage an advanced naturopathic treatment combines the benefits of high-tech vibratory therapy to target the entire body or specific tension points with powder of floor of grains.',
     benefits: [

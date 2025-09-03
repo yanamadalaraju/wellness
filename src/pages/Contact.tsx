@@ -880,6 +880,12 @@
 
 // export default Contact;
 
+
+
+
+
+
+
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { MapPin, Phone, Mail, Clock, MessageCircle, Send } from 'lucide-react';
@@ -996,8 +1002,8 @@ const Contact: React.FC = () => {
                   <div>
                     <h3 className="font-semibold text-sage-600 mb-1">Address</h3>
                     <p className="text-gray-600">
-                      gadri badhal panchayat<br />
-                      Jaipur rajasthan,303602 india<br />
+                      Gadri Badhal <br />
+                      Jaipur Rajasthan,303602 india<br />
                       
                     </p>
                   </div>
@@ -1020,7 +1026,7 @@ const Contact: React.FC = () => {
                     <h3 className="font-semibold text-sage-600 mb-1">Email</h3>
                     <p className="text-gray-600">
                       {/* General: socials@nowalNatureCare.com<br /> */}
-                      Support: socials@nowalNatureCare.com
+                      Support:  info@nowalnaturecare.com
                     </p>
                   </div>
                 </div>

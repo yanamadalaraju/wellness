@@ -155,7 +155,7 @@ const AdmissionGuidelines = () => {
       </div>
 
       {/* What to Bring */}
-      <div className="mb-8 p-4 bg-amber-50 rounded">
+      {/* <div className="mb-8 p-4 bg-amber-50 rounded">
         <h2 className="text-xl font-semibold text-amber-800 mb-3">Kindly Bring the Following</h2>
         <div className="grid md:grid-cols-2 gap-4">
           <ul className="list-disc pl-5 space-y-1">
@@ -170,7 +170,7 @@ const AdmissionGuidelines = () => {
           </ul>
         </div>
         <p className="mt-3 text-sm"><strong>Note:</strong> Admission in one room is allowed for valid relations only in case of male – female coming together.</p>
-      </div>
+      </div> */}
 
       {/* Commitment */}
       <div className="p-6 bg-gradient-to-r from-green-50 to-teal-50 rounded-lg text-center">

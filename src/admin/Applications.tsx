@@ -183,6 +183,7 @@ import { Link } from 'react-router-dom';
 import { Download, Trash2, ChevronLeft } from 'lucide-react';
 import AdminNavbar from './AdminNavbar';
 import { BASE_URL } from '../config';
+import DataTable from './Datatable';
 
 interface Application {
   id: number;
@@ -273,6 +274,61 @@ const Applications = () => {
     return new Date(dateString).toLocaleDateString('en-US', options);
   };
 
+  // Define columns for DataTable
+  const columns = [
+    {
+      header: 'Name',
+      accessor: 'name',
+    },
+    {
+      header: 'Position',
+      accessor: 'designation',
+    },
+    {
+      header: 'Contact',
+      accessor: 'email',
+      render: (value: string, row: Application) => (
+        <div>
+          <div className="text-gray-900">{value}</div>
+          <div className="text-gray-500">{row.phone}</div>
+        </div>
+      )
+    },
+    {
+      header: 'Date',
+      accessor: 'created_at',
+      render: (value: string) => formatDate(value)
+    },
+    {
+      header: 'Actions',
+      accessor: 'id',
+      render: (value: number, row: Application) => (
+        <div className="flex space-x-2">
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              handleDownload(value, row.resume_path);
+            }}
+            className="text-sage-600 hover:text-sage-800 flex items-center"
+            title="Download Resume"
+          >
+            <Download className="w-4 h-4 mr-1" />
+          </button>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              handleDelete(value);
+            }}
+            className="text-red-600 hover:text-red-800 flex items-center"
+            title="Delete Application"
+          >
+            <Trash2 className="w-4 h-4 mr-1" />
+          </button>
+        </div>
+      )
+    }
+  ];
+
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen">
@@ -307,60 +363,7 @@ const Applications = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="min-w-full divide-y divide-gray-200">
-                <thead className="bg-sage-50">
-                  <tr>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-sage-800 uppercase tracking-wider">Name</th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-sage-800 uppercase tracking-wider">Position</th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-sage-800 uppercase tracking-wider">Contact</th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-sage-800 uppercase tracking-wider">Date</th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-sage-800 uppercase tracking-wider">Actions</th>
-                  </tr>
-                </thead>
-                <tbody className="bg-white divide-y divide-gray-200">
-                  {applications.map((application) => (
-                    <tr key={application.id} className="hover:bg-gray-50">
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="font-medium text-gray-900">{application.name}</div>
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="text-gray-900">{application.designation}</div>
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="text-gray-500">{application.email}</div>
-                        <div className="text-gray-500">{application.phone}</div>
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {formatDate(application.created_at)}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                        <div className="flex space-x-2">
-                          <button
-                            onClick={() => handleDownload(application.id, application.resume_path)}
-                            className="text-sage-600 hover:text-sage-800 flex items-center"
-                            title="Download Resume"
-                          >
-                            <Download className="w-4 h-4 mr-1" />
-                          </button>
-                          <button
-                            onClick={() => handleDelete(application.id)}
-                            className="text-red-600 hover:text-red-800 flex items-center"
-                            title="Delete Application"
-                          >
-                            <Trash2 className="w-4 h-4 mr-1" />
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          {applications.length === 0 && (
+          {applications.length === 0 ? (
             <div className="text-center py-12">
               <p className="text-gray-500">No applications found</p>
               <Link to="/dashboard" className="mt-4 inline-flex items-center text-sage-600 hover:text-sage-800">
@@ -368,6 +371,13 @@ const Applications = () => {
                 Back to Dashboard
               </Link>
             </div>
+          ) : (
+            <DataTable
+              columns={columns}
+              data={applications}
+              pageSize={10}
+              searchable={true}
+            />
           )}
         </div>
       </div>

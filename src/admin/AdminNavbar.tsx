@@ -397,7 +397,7 @@
 
 
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.png'; // Adjust path to your logo
 
 const AdminNavbar: React.FC = () => {
@@ -414,34 +414,44 @@ const AdminNavbar: React.FC = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const linkClasses = ({ isActive }: { isActive: boolean }) =>
+    `px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+      isActive
+        ? 'text-indigo-600 bg-gray-100 font-semibold'
+        : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50'
+    }`;
+
   return (
-    <nav className="fixed w-full bg-white border-b border-gray-200 shadow-sm z-50">
+    <nav
+  className="fixed w-full border-b border-gray-200 shadow-sm z-50"
+  style={{ backgroundColor: "#DDF4E7" }}
+>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo/Brand */}
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <Link to="/dashboard" className="flex items-center">
-                <img 
-                  src={logo} 
-                  alt="Company Logo" 
+              <NavLink to="/" className="flex items-center">
+                <img
+                  src={logo}
+                  alt="Company Logo"
                   className="h-12 w-auto"
                 />
-              </Link>
+              </NavLink>
             </div>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-4 flex items-center md:ml-6 space-x-4">
-              {/* Applications Link */}
-              <Link
-                to="/applications"
-                className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50 transition-colors duration-200"
-              >
+              <NavLink to="/customers" className={linkClasses}>
+                Contact Submissions
+              </NavLink>
+              <NavLink to="/applications" className={linkClasses}>
                 Applications
-              </Link>
-              
+              </NavLink>
+
               {/* Logout Button */}
               <button
                 onClick={handleLogout}
@@ -460,8 +470,6 @@ const AdminNavbar: React.FC = () => {
                   />
                 </svg>
                 Logout
-                <span className="absolute -bottom-1 left-1/2 w-0 h-0.5 bg-white group-hover:w-1/2 group-hover:left-25 transition-all duration-300"></span>
-                <span className="absolute -bottom-1 right-1/2 w-0 h-0.5 bg-white group-hover:w-1/2 group-hover:right-25 transition-all duration-300"></span>
               </button>
             </div>
           </div>
@@ -520,15 +528,20 @@ const AdminNavbar: React.FC = () => {
         id="mobile-menu"
       >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
-          {/* Applications Link */}
-          <Link
+          <NavLink
             to="/applications"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50 transition-colors duration-200"
+            className={({ isActive }) =>
+              `block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                isActive
+                  ? 'text-indigo-600 bg-gray-100 font-semibold'
+                  : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50'
+              }`
+            }
           >
             Applications
-          </Link>
-          
+          </NavLink>
+
           {/* Logout Button */}
           <div className="pt-2">
             <button

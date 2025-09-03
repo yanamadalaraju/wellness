@@ -157,6 +157,8 @@ import DietPage from './pages/Diet'
 import AdmissionGuidelines from './pages/AccomadationGuidliness'
 import  Applications from './admin/Applications';
 import ThankYouPage from './pages/Thankyoupage'
+import FAQPage from './pages/Faq'
+import AccommodationCharges from './pages/Charges'
 function AppRoutes() {
   const location = useLocation()
 
@@ -212,8 +214,10 @@ function AppRoutes() {
             <Route path="/virtual-tour" element={<VirtualTourPage />} />
            <Route path="/accomadation" element={<EconomyAccommodation/>} />
            <Route path="/guidliness" element={<AdmissionGuidelines/>} />
-              <Route path="/diet" element={<DietPage/>} />
-                <Route path="/thank-you" element={<ThankYouPage />} />
+            <Route path="/diet" element={<DietPage/>} />
+             <Route path="/faq" element={<FAQPage />} />
+             <Route path="/charges" element={<AccommodationCharges />} />
+            <Route path="/thank-you" element={<ThankYouPage />} />
 
           </Routes>
           <WhatsAppButton />
@@ -225,7 +229,7 @@ function AppRoutes() {
         <Routes>
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-           <Route path="/dashboard" element={<Login />} />
+          
           <Route path="/customers" element={<AdminContactDashboard />} />
           <Route path="/applications" element={< Applications />} />
         </Routes>
