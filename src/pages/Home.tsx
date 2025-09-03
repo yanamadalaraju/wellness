@@ -4488,13 +4488,13 @@ const Home: React.FC = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-[#2D4A3E] mb-1">{therapy.title}</h3>
-                  <Link 
+                  {/* <Link 
                     to="/therapies" 
                     className="inline-flex items-center text-[#68A089] hover:text-[#5A8D7A] font-medium mt-2 transition-colors"
                   >
                     Learn more
                     <ArrowRight className="ml-1 w-4 h-4" />
-                  </Link>
+                  </Link> */}
                 </div>
               </motion.div>
             ))}
@@ -4613,7 +4613,7 @@ const Home: React.FC = () => {
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
-                <div className="p-6">
+                {/* <div className="p-6">
                   <h3 className="text-xl font-semibold text-[#2D4A3E] mb-3">Wellness Insights</h3>
                   <p className="text-gray-600 mb-4">
                     Discover the latest in natural healing and wellness practices from our experts.
@@ -4625,7 +4625,7 @@ const Home: React.FC = () => {
                     Read more
                     <ArrowRight className="ml-1 w-4 h-4" />
                   </Link>
-                </div>
+                </div> */}
               </motion.div>
             ))}
           </div>
