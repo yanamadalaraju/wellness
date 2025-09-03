@@ -255,6 +255,7 @@ import suite2BedLounge from '../assets/villa5.jpg';
 import premiumRooms from '../assets/villa6.jpg';
 import dormitory from '../assets/villaimage.jpg';
 import heroBackground from '../assets/villaimage.jpg';
+import AccommodationTable from '../components/AccommodationTariff';
 
 const EconomyAccommodation: React.FC = () => {
   const navigate = useNavigate();
@@ -426,7 +427,9 @@ const EconomyAccommodation: React.FC = () => {
         </div>
       </section>
 
-      <AccommodationTariff />
+      {/* <AccommodationTariff /> */}
+
+      <AccommodationTable />
 
       {/* Booking Modal */}
       {showBookingModal && (
