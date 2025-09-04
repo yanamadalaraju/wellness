@@ -2131,7 +2131,7 @@ const Home: React.FC = () => {
       </div>
 
       {/* Key Highlights Section */}
-      <section className="py-20 px-4 bg-white">
+     <section className="py-20 px-4 bg-green-50">
         <div className="max-w-7xl mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -2302,7 +2302,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Therapies Section */}
-    <section className="py-20 px-4 bg-gradient-to-b from-white to-[#f0f5f1]">
+    <section className="py-20 px-4 bg-gradient-to-b from-white to-[#DDF4E7]">
   <div className="max-w-7xl mx-auto text-center">
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -2439,7 +2439,7 @@ const Home: React.FC = () => {
       <GallerySection />
 
       {/* Blog Section */}
-    <section className="py-20 px-4 bg-white">
+    <section className="py-20 px-4 bg-green-50">
   <div className="max-w-7xl mx-auto text-center">
     <motion.div
       initial={{ opacity: 0, y: 30 }}

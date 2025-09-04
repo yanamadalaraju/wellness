@@ -891,6 +891,8 @@ import { useForm } from 'react-hook-form';
 import { MapPin, Phone, Mail, Clock, MessageCircle, Send } from 'lucide-react';
 import { BASE_URL } from '../config';
 import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 interface ContactFormData {
   name: string;
@@ -912,6 +914,19 @@ const Contact: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
   const [submitSuccess, setSubmitSuccess] = useState(false);
+    const location = useLocation();
+
+   useEffect(() => {
+    // Check if URL has a hash targeting the form
+    if (location.hash === '#contact-form') {
+      const element = document.getElementById('contact-form');
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [location]);
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
@@ -1065,13 +1080,13 @@ const Contact: React.FC = () => {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-white p-8 rounded-xl shadow-md">
-              <h2 className="text-3xl font-playfair font-bold text-sage-600 mb-6">
+            <div className="bg-white p-8 rounded-xl shadow-md" >
+              <h2 className="text-3xl font-playfair font-bold text-sage-600 mb-6" id="contact-form">
                 Send us a Message
               </h2>
               
               {submitSuccess && (
-                <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded">
+                <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded" >
                   Thank you for your message! We will get back to you within 24 hours.
                 </div>
               )}
@@ -1082,7 +1097,7 @@ const Contact: React.FC = () => {
                 </div>
               )}
               
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6" >
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Full Name *
