@@ -1002,7 +1002,7 @@ const Contact: React.FC = () => {
       </div>
 
       {/* Contact Information */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white" id="contact-form" >
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Details */}
@@ -1078,6 +1078,8 @@ const Contact: React.FC = () => {
                 </p>
               </div>
             </div>
+
+            
 
             {/* Contact Form */}
             <div className="bg-white p-8 rounded-xl shadow-md" >
