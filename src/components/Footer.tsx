@@ -456,6 +456,143 @@
 // export default Footer
 
 
+// import React from 'react'
+// import { Link } from 'react-router-dom'
+// import {
+//   Facebook,
+//   Instagram,
+//   Twitter,
+//   Youtube,
+//   Mail,
+//   Linkedin,
+//   MapPin,
+//   Phone,
+//   Calendar
+// } from 'lucide-react';
+// import logo from "../assets/logo.png";
+
+// const Footer: React.FC = () => {
+//   return (
+//     <footer className="bg-[#004030] text-[#435334] pt-20 pb-12">
+//       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+//         {/* Logo + Address */}
+//         <div className="space-y-6">
+//           <img src={logo} alt="Nowal Logo" className="w-48" />
+//           <div className="flex items-start gap-3">
+//             <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
+//             <address className="not-italic leading-relaxed">
+//               Gadri, Badhal <br />
+//               Jaipur, Rajasthan,<br />
+//              303602 India.
+//             </address>   
+
+//           </div>
+          
+//           <div className="flex space-x-4">
+//   <a href="https://www.facebook.com/share/1FeVVbnqZW/" aria-label="Facebook">
+//     <Facebook className="w-6 h-6 hover:text-[#9EB384] transition-colors" />
+//   </a>
+//   <a href="https://www.instagram.com/nowalNatureCare_official?igsh=MXdxb3dwZXF6OGpmMQ==" aria-label="Instagram">
+//     <Instagram className="w-6 h-6 hover:text-[#9EB384] transition-colors" />
+//   </a>
+//   <a href="https://x.com/NowalNatureCare" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+//     <Twitter className="w-6 h-6 hover:text-[#9EB384] transition-colors" />
+//   </a>
+//   <a href="http://www.youtube.com/@SocialsNNC" aria-label="YouTube">
+//     <Youtube className="w-6 h-6 hover:text-[#9EB384] transition-colors" />
+//   </a>
+//   <a href="http://www.linkedin.com/in/nowal-NatureCare" aria-label="LinkedIn">
+//     <Linkedin className="w-6 h-6 hover:text-[#9EB384] transition-colors" />
+//   </a>
+//   <a href="mailto:socials@nowalNatureCare.com" aria-label="Email">
+//     <Mail className="w-6 h-6 hover:text-[#9EB384] transition-colors" />
+//   </a>
+// </div>
+
+//         </div>
+
+//         {/* Quick Links */}
+//         <div className="grid grid-cols-2 gap-8">
+//           <div>
+//             <h3 className="text-xl font-semibold mb-4">Explore</h3>
+//             <ul className="space-y-3">
+//               <li><Link to="/about" className="hover:text-[#9EB384] transition-colors">About Nowal</Link></li>
+//               <li><Link to="/narutopathy" className="hover:text-[#9EB384] transition-colors">Our Treatments</Link></li>
+//               <li><Link to="/ayurveda" className="hover:text-[#9EB384] transition-colors">Ayurveda</Link></li>
+//               <li><Link to="/yoga" className="hover:text-[#9EB384] transition-colors">Yoga</Link></li>
+//               <li><Link to="/gallery" className="hover:text-[#9EB384] transition-colors">Gallery</Link></li>
+//             </ul>
+//           </div>
+          
+//           <div>
+//             <h3 className="text-xl font-semibold mb-4">Resources</h3>
+//             <ul className="space-y-3">
+//               <li><Link to="# " className="hover:text-[#9EB384] transition-colors">Testimonials</Link></li>
+//               <li><Link to="# " className="hover:text-[#9EB384] transition-colors">Blog</Link></li>
+//               <li><Link to="/faq " className="hover:text-[#9EB384] transition-colors">FAQs</Link></li>
+//               <li><Link to="# " className="hover:text-[#9EB384] transition-colors">Privacy Policy</Link></li>
+//               <li><Link to=" #" className="hover:text-[#9EB384] transition-colors">Terms</Link></li>
+//             </ul>
+//           </div>
+//         </div>
+
+//         {/* Contact & Newsletter */}
+//         <div className="space-y-6">
+//           <div>
+//             <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
+//             <div className="space-y-4">
+//               <div className="flex items-start gap-3">
+//                 <Phone className="w-5 h-5 mt-1 flex-shrink-0" />
+//                 <div>
+//                   <p className="font-medium">WhatsApp/Call:</p>
+//                   <div className="text-lg space-y-1">
+//                     <p>+91 9251582670</p>
+//                     <p>+91 9251582675</p>
+//                   </div>
+//                 </div>
+//               </div>
+              
+//               <div className="flex items-start gap-3">
+//                 <Mail className="w-5 h-5 mt-1 flex-shrink-0" />
+//                 <a href="mailto:socials@nowalNatureCare.com" className="hover:underline">info@nowalnaturecare.com</a>
+//               </div>
+              
+//               <div className="flex items-start gap-3">
+//                 <Calendar className="w-5 h-5 mt-1 flex-shrink-0" />
+//                 <p>Open 7 days, 7:00 AM - 7:00 PM</p>
+//               </div>
+//             </div>
+//           </div>
+          
+//           {/* <div>
+//             <h3 className="text-xl font-semibold mb-4">Newsletter</h3>
+//             <div className="flex flex-col space-y-3">
+//               <input
+//                 type="email"
+//                 className="border-b border-[#435334] bg-transparent outline-none w-full py-2 px-1 placeholder-[#435334]/70"
+//                 placeholder="Your email address"
+//               />
+//               <button className="bg-[#435334] text-white px-6 py-2 rounded hover:bg-[#9EB384] transition-colors self-start">
+//                 Subscribe
+//               </button>
+//             </div>
+//           </div> */}
+//         </div>
+//       </div>
+
+//       {/* Copyright */}
+//       <div className="border-t border-[#9EB384]/30 mt-12 pt-6 text-center">
+//         <p className="text-sm">© {new Date().getFullYear()} Nowal NatureCare. All Rights Reserved.</p>
+//         <p className="mt-1 text-xs text-[#435334]/80">Designed with care for holistic nowal</p>
+//       </div>
+//     </footer>
+//   )
+// }
+
+// export default Footer
+
+
+
 import React from 'react'
 import { Link } from 'react-router-dom'
 import {
@@ -473,65 +610,63 @@ import logo from "../assets/logo.png";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#F2F1E8] text-[#435334] pt-20 pb-12">
+    <footer className="bg-[#004030] text-[#f0f5f1] pt-20 pb-12">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
         {/* Logo + Address */}
         <div className="space-y-6">
           <img src={logo} alt="Nowal Logo" className="w-48" />
           <div className="flex items-start gap-3">
-            <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
+            <MapPin className="w-5 h-5 mt-1 flex-shrink-0 text-[#9EB384]" />
             <address className="not-italic leading-relaxed">
               Gadri, Badhal <br />
               Jaipur, Rajasthan,<br />
-             303602 India.
+              303602 India.
             </address>   
-
           </div>
           
           <div className="flex space-x-4">
-  <a href="https://www.facebook.com/share/1FeVVbnqZW/" aria-label="Facebook">
-    <Facebook className="w-6 h-6 hover:text-[#9EB384] transition-colors" />
-  </a>
-  <a href="https://www.instagram.com/nowalNatureCare_official?igsh=MXdxb3dwZXF6OGpmMQ==" aria-label="Instagram">
-    <Instagram className="w-6 h-6 hover:text-[#9EB384] transition-colors" />
-  </a>
-  <a href="https://x.com/NowalNatureCare" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
-    <Twitter className="w-6 h-6 hover:text-[#9EB384] transition-colors" />
-  </a>
-  <a href="http://www.youtube.com/@SocialsNNC" aria-label="YouTube">
-    <Youtube className="w-6 h-6 hover:text-[#9EB384] transition-colors" />
-  </a>
-  <a href="http://www.linkedin.com/in/nowal-NatureCare" aria-label="LinkedIn">
-    <Linkedin className="w-6 h-6 hover:text-[#9EB384] transition-colors" />
-  </a>
-  <a href="mailto:socials@nowalNatureCare.com" aria-label="Email">
-    <Mail className="w-6 h-6 hover:text-[#9EB384] transition-colors" />
-  </a>
-</div>
-
+            <a href="https://www.facebook.com/share/1FeVVbnqZW/" aria-label="Facebook" className="hover:scale-110 transition-transform">
+              <Facebook className="w-6 h-6 text-[#c8d5cb] hover:text-[#9EB384] transition-colors" />
+            </a>
+            <a href="https://www.instagram.com/nowalNatureCare_official?igsh=MXdxb3dwZXF6OGpmMQ==" aria-label="Instagram" className="hover:scale-110 transition-transform">
+              <Instagram className="w-6 h-6 text-[#c8d5cb] hover:text-[#9EB384] transition-colors" />
+            </a>
+            <a href="https://x.com/NowalNatureCare" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="hover:scale-110 transition-transform">
+              <Twitter className="w-6 h-6 text-[#c8d5cb] hover:text-[#9EB384] transition-colors" />
+            </a>
+            <a href="http://www.youtube.com/@SocialsNNC" aria-label="YouTube" className="hover:scale-110 transition-transform">
+              <Youtube className="w-6 h-6 text-[#c8d5cb] hover:text-[#9EB384] transition-colors" />
+            </a>
+            <a href="http://www.linkedin.com/in/nowal-NatureCare" aria-label="LinkedIn" className="hover:scale-110 transition-transform">
+              <Linkedin className="w-6 h-6 text-[#c8d5cb] hover:text-[#9EB384] transition-colors" />
+            </a>
+            <a href="mailto:socials@nowalNatureCare.com" aria-label="Email" className="hover:scale-110 transition-transform">
+              <Mail className="w-6 h-6 text-[#c8d5cb] hover:text-[#9EB384] transition-colors" />
+            </a>
+          </div>
         </div>
 
         {/* Quick Links */}
         <div className="grid grid-cols-2 gap-8">
           <div>
-            <h3 className="text-xl font-semibold mb-4">Explore</h3>
+            <h3 className="text-xl font-semibold mb-4 text-[#e8f0ea]">Explore</h3>
             <ul className="space-y-3">
-              <li><Link to="/about" className="hover:text-[#9EB384] transition-colors">About Nowal</Link></li>
-              <li><Link to="/narutopathy" className="hover:text-[#9EB384] transition-colors">Our Treatments</Link></li>
-              <li><Link to="/ayurveda" className="hover:text-[#9EB384] transition-colors">Ayurveda</Link></li>
-              <li><Link to="/yoga" className="hover:text-[#9EB384] transition-colors">Yoga</Link></li>
-              <li><Link to="/gallery" className="hover:text-[#9EB384] transition-colors">Gallery</Link></li>
+              <li><Link to="/about" className="text-[#c8d5cb] hover:text-[#9EB384] transition-colors hover:pl-2 block">About Nowal</Link></li>
+              <li><Link to="/narutopathy" className="text-[#c8d5cb] hover:text-[#9EB384] transition-colors hover:pl-2 block">Our Treatments</Link></li>
+              <li><Link to="/ayurveda" className="text-[#c8d5cb] hover:text-[#9EB384] transition-colors hover:pl-2 block">Ayurveda</Link></li>
+              <li><Link to="/yoga" className="text-[#c8d5cb] hover:text-[#9EB384] transition-colors hover:pl-2 block">Yoga</Link></li>
+              <li><Link to="/gallery" className="text-[#c8d5cb] hover:text-[#9EB384] transition-colors hover:pl-2 block">Gallery</Link></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-xl font-semibold mb-4">Resources</h3>
+            <h3 className="text-xl font-semibold mb-4 text-[#e8f0ea]">Resources</h3>
             <ul className="space-y-3">
-              <li><Link to="# " className="hover:text-[#9EB384] transition-colors">Testimonials</Link></li>
-              <li><Link to="# " className="hover:text-[#9EB384] transition-colors">Blog</Link></li>
-              <li><Link to="/faq " className="hover:text-[#9EB384] transition-colors">FAQs</Link></li>
-              <li><Link to="# " className="hover:text-[#9EB384] transition-colors">Privacy Policy</Link></li>
-              <li><Link to=" #" className="hover:text-[#9EB384] transition-colors">Terms</Link></li>
+              <li><Link to="#" className="text-[#c8d5cb] hover:text-[#9EB384] transition-colors hover:pl-2 block">Testimonials</Link></li>
+              <li><Link to="#" className="text-[#c8d5cb] hover:text-[#9EB384] transition-colors hover:pl-2 block">Blog</Link></li>
+              <li><Link to="/faq" className="text-[#c8d5cb] hover:text-[#9EB384] transition-colors hover:pl-2 block">FAQs</Link></li>
+              <li><Link to="#" className="text-[#c8d5cb] hover:text-[#9EB384] transition-colors hover:pl-2 block">Privacy Policy</Link></li>
+              <li><Link to="#" className="text-[#c8d5cb] hover:text-[#9EB384] transition-colors hover:pl-2 block">Terms</Link></li>
             </ul>
           </div>
         </div>
@@ -539,13 +674,13 @@ const Footer: React.FC = () => {
         {/* Contact & Newsletter */}
         <div className="space-y-6">
           <div>
-            <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
+            <h3 className="text-xl font-semibold mb-4 text-[#e8f0ea]">Contact Us</h3>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <Phone className="w-5 h-5 mt-1 flex-shrink-0" />
+                <Phone className="w-5 h-5 mt-1 flex-shrink-0 text-[#9EB384]" />
                 <div>
-                  <p className="font-medium">WhatsApp/Call:</p>
-                  <div className="text-lg space-y-1">
+                  <p className="font-medium text-[#e8f0ea]">WhatsApp/Call:</p>
+                  <div className="text-lg space-y-1 text-[#c8d5cb]">
                     <p>+91 9251582670</p>
                     <p>+91 9251582675</p>
                   </div>
@@ -553,37 +688,23 @@ const Footer: React.FC = () => {
               </div>
               
               <div className="flex items-start gap-3">
-                <Mail className="w-5 h-5 mt-1 flex-shrink-0" />
-                <a href="mailto:socials@nowalNatureCare.com" className="hover:underline">info@nowalnaturecare.com</a>
+                <Mail className="w-5 h-5 mt-1 flex-shrink-0 text-[#9EB384]" />
+                <a href="mailto:socials@nowalNatureCare.com" className="text-[#c8d5cb] hover:text-[#9EB384] transition-colors hover:underline">info@nowalnaturecare.com</a>
               </div>
               
               <div className="flex items-start gap-3">
-                <Calendar className="w-5 h-5 mt-1 flex-shrink-0" />
-                <p>Open 7 days, 7:00 AM - 7:00 PM</p>
+                <Calendar className="w-5 h-5 mt-1 flex-shrink-0 text-[#9EB384]" />
+                <p className="text-[#c8d5cb]">Open 7 days, 7:00 AM - 7:00 PM</p>
               </div>
             </div>
           </div>
-          
-          {/* <div>
-            <h3 className="text-xl font-semibold mb-4">Newsletter</h3>
-            <div className="flex flex-col space-y-3">
-              <input
-                type="email"
-                className="border-b border-[#435334] bg-transparent outline-none w-full py-2 px-1 placeholder-[#435334]/70"
-                placeholder="Your email address"
-              />
-              <button className="bg-[#435334] text-white px-6 py-2 rounded hover:bg-[#9EB384] transition-colors self-start">
-                Subscribe
-              </button>
-            </div>
-          </div> */}
         </div>
       </div>
 
       {/* Copyright */}
       <div className="border-t border-[#9EB384]/30 mt-12 pt-6 text-center">
-        <p className="text-sm">© {new Date().getFullYear()} Nowal NatureCare. All Rights Reserved.</p>
-        <p className="mt-1 text-xs text-[#435334]/80">Designed with care for holistic nowal</p>
+        <p className="text-sm text-[#e8f0ea]">© {new Date().getFullYear()} Nowal NatureCare. All Rights Reserved.</p>
+        <p className="mt-1 text-xs text-[#c8d5cb]/80">Designed with care for holistic nowal</p>
       </div>
     </footer>
   )
