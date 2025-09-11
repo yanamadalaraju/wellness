@@ -2745,7 +2745,7 @@ const Home: React.FC = () => {
       <AlertPopup />
       
       {/* Hero Section with Video Carousel */}
-      <section ref={sectionRef} className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* <section ref={sectionRef} className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <AnimatePresence mode='wait'>
            <motion.video
@@ -2762,14 +2762,14 @@ const Home: React.FC = () => {
   exit={{ opacity: 0 }}
   transition={{ duration: 1 }}
   onEnded={() => {
-    // Smooth transition to next video when current ends
+    
     setCurrentVideoIndex(prev => (prev + 1) % heroVideos.length);
   }}
 >
   <source src={heroVideos[currentVideoIndex].video} type="video/mp4" />
 </motion.video>
           </AnimatePresence>
-          {/* <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div> */}
+     
         </div>
 
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
@@ -2787,18 +2787,12 @@ const Home: React.FC = () => {
               {heroVideos[currentVideoIndex].subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              {/* <Link
-                to="/booking"
-                className="bg-[#3E5F44] hover:bg-[#2E4A34] text-white text-lg px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center"
-              >
-                Book Now
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link> */}
+             
             </div>
           </motion.div>
         </div>
 
-        {/* Video Navigation Dots */}
+     
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
           {heroVideos.map((_, index) => (
             <button
@@ -2809,7 +2803,74 @@ const Home: React.FC = () => {
             />
           ))}
         </div>
-      </section>
+      </section> */}
+
+      <section ref={sectionRef} className="relative h-[88vh] flex items-center justify-center overflow-hidden">
+  <div className="absolute inset-0 z-0">
+    <AnimatePresence mode='wait'>
+      <motion.video
+        key={currentVideoIndex}
+        ref={videoRef}
+        autoPlay
+        muted={false}
+        loop
+        playsInline
+        preload="auto"
+        className="w-full h-full object-cover"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1 }}
+        onEnded={() => {
+          // Smooth transition to next video when current ends
+          setCurrentVideoIndex(prev => (prev + 1) % heroVideos.length);
+        }}
+      >
+        <source src={heroVideos[currentVideoIndex].video} type="video/mp4" />
+      </motion.video>
+    </AnimatePresence>
+    {/* Add a subtle overlay for better text readability */}
+    <div className="absolute inset-0 bg-black/30"></div>
+  </div>
+
+  <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+    <motion.div
+      key={`hero-content-${currentVideoIndex}`}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="space-y-4"
+    >
+      <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight">
+        {heroVideos[currentVideoIndex].title}
+      </h1>
+      <p className="text-lg md:text-xl font-light">
+        {heroVideos[currentVideoIndex].subtitle}
+      </p>
+      <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+        {/* <Link
+          to="/booking"
+          className="bg-[#3E5F44] hover:bg-[#2E4A34] text-white text-lg px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center"
+        >
+          Book Now
+          <ArrowRight className="ml-2 w-5 h-5" />
+        </Link> */}
+      </div>
+    </motion.div>
+  </div>
+
+  {/* Video Navigation Dots */}
+  <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+    {heroVideos.map((_, index) => (
+      <button
+        key={index}
+        onClick={() => handleManualSlideChange(index)}
+        className={`w-2 h-2 rounded-full transition-all ${currentVideoIndex === index ? 'bg-white w-5' : 'bg-white/50'}`}
+        aria-label={`Go to slide ${index + 1}`}
+      />
+    ))}
+  </div>
+</section>
 
       {/* Rest of your sections remain exactly the same */}
       {/* Promo Banner */}
@@ -2947,52 +3008,7 @@ const Home: React.FC = () => {
 </section>
 
       {/* Diseases Treated Section */}
-      {/* <section className="relative py-20 px-4 text-white overflow-hidden">
-        <div className="absolute inset-0">
-          <img 
-            src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
-            alt="Background" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-[#3E5F44]/90 backdrop-blur-sm"></div>
-        </div>
-        
-        <div className="relative max-w-7xl mx-auto z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
-              Diseases Treated
-            </h2>
-            <p className="text-[#c8d5cb] max-w-3xl mx-auto text-lg">
-           	Nowal NatureCare believes in healing from within—through detox and natural therapies that support your body's full well-being
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {diseases.map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.03 }}
-                className="flex items-center gap-4 bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-5 rounded-xl shadow-md transition-all"
-              >
-                <div className="bg-white p-2 rounded-lg shadow-sm">
-                  <item.icon className="w-6 h-6 text-[#3E5F44]" />
-                </div>
-                <h3 className="font-semibold text-lg">{item.title}</h3>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section> */}
+   
 
       <section className="relative py-20 px-4 overflow-hidden">
   <div className="absolute inset-0">

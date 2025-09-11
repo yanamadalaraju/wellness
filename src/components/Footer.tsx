@@ -606,7 +606,7 @@ import {
   Phone,
   Calendar
 } from 'lucide-react';
-import logo from "../assets/logo.png";
+import logo from "../assets/logowhite.png";
 
 const Footer: React.FC = () => {
   return (

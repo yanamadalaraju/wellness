@@ -358,7 +358,7 @@ const JobOpeningsSection = () => {
   };
 
   return (
-    <section className="bg-[#f3f4ee] py-20 px-6 md:px-16 text-center">
+    <section className="bg-[#DDF4E7] py-20 px-6 md:px-16 text-center">
       <div className="max-w-5xl mx-auto text-left">
         <h2 className="text-4xl font-serif text-gray-800 text-center mb-10">
           Current Job Openings

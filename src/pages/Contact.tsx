@@ -1002,7 +1002,7 @@ const Contact: React.FC = () => {
       </div>
 
       {/* Contact Information */}
-      <section className="py-16 bg-white" id="contact-form" >
+      <section className="py-16 bg-[#DDF4E7]" id="contact-form" >
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Details */}

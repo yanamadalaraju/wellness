@@ -46,7 +46,7 @@ const OurStory: React.FC = () => {
             </div>
 
       {/* Intro Section */}
-    <section className="bg-[#F2F1E8] text-[#435334] py-20 px-6">
+    <section className="bg-[#DDF4E7] text-[#435334] py-20 px-6">
   <div className="max-w-3xl mx-auto">
     {/* Heading */}
     <div className="text-center mb-12">
@@ -92,7 +92,7 @@ const OurStory: React.FC = () => {
 
 
 {/* Section 1: Wholeness of Nowals */}
-<section className="bg-[#F2F1E8] py-20 px-4 sm:px-6">
+<section className="bg-[#DDF4E7] py-20 px-4 sm:px-6">
   <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
     
     {/* Left Content Box */}
@@ -155,7 +155,7 @@ const OurStory: React.FC = () => {
 
 
 {/* Section 2: Image + Quote (Adjusted Margin for Overlap) */}
-<section className="relative h-[600px] bg-[#F2F1E8] text-[#435334] overflow-visible mt-[300px]">
+<section className="relative h-[600px] bg-[#DDF4E7] text-[#435334] overflow-visible mt-[300px]">
   <img
     src="https://i.pinimg.com/1200x/0b/05/07/0b050725fcdaf5a2e83ef7404a5a33d4.jpg"
     alt="Nowals Story Background"
@@ -199,7 +199,7 @@ const OurStory: React.FC = () => {
 
 
       {/* Quote Section with Button */}
-      <section className="bg-[#E6E5D9] text-[#435334] py-16 px-6 text-center">
+      <section className="bg-[#DDF4E7] text-[#435334] py-16 px-6 text-center">
         <div className="max-w-3xl mx-auto">
           <blockquote className="text-2xl md:text-3xl italic font-medium leading-relaxed">
             “Healing begins when you return to yourself — in rhythm with nature and nurtured by care.”

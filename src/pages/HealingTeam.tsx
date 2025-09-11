@@ -294,6 +294,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Video360Viewer from './Video360Viewer'
+import "../../src/pages/HealingTeam.css";
 
 const HealingTeam: React.FC = () => {
   return (
@@ -339,7 +340,7 @@ const HealingTeam: React.FC = () => {
       </div>
 
       {/* Intro Section */}
-     <section className="bg-[#F2F1E8] text-[#435334] py-24 px-6 text-center">
+     <section className="bg-[#DDF4E7] text-[#435334] py-24 px-6 text-center">
   <div className="max-w-5xl mx-auto">
     {/* Main Heading */}
     <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-wide leading-tight">
@@ -382,11 +383,11 @@ const HealingTeam: React.FC = () => {
 </section>
 
 
-<section className="bg-gradient-to-br from-[#f2f1e8] via-[#fafaf5] to-[#e7e6dc] py-24 px-6">
+<section className="bg-gradient-to-br from-[#DDF4E7] via-[#DDF4E7] to-[#DDF4E7] py-24 px-6">
   <div className="max-w-5xl mx-auto text-center">
     {/* Decorative Heading */}
     <h2 className="text-3xl md:text-4xl font-extrabold text-[#435334] mb-2 relative inline-block">
-     Thought of Founder  - <span className="text-[#7E8A59]">Shri Ram Nivas Nowal</span>
+     Thought of Founder  - <span className="text-[ #7E8A59]">Shri Ram Nivas Nowal</span>
       <span className="block h-1 w-20 bg-[#9EB384] mt-2 mx-auto rounded-full"></span>
     </h2>
 
@@ -526,7 +527,7 @@ Together, they create a nurturing space where healing is not just delivered—it
       </section> */}
 
       {/* Quote Section with Button */}
-      <section className="bg-[#E6E5D9] text-[#435334] py-16 px-6 text-center">
+      <section className="bg-[#DDF4E7] text-[#435334] py-16 px-6 text-center">
         <div className="max-w-3xl mx-auto">
           <blockquote className="text-2xl md:text-3xl italic font-medium leading-relaxed">
             "Healing begins when you return to yourself — in rhythm with nature and nurtured by care."
@@ -543,34 +544,175 @@ Together, they create a nurturing space where healing is not just delivered—it
       </section>
 
       {/* Add the following CSS for flip cards */}
-      <style jsx>{`
-        .flip-card {
-          perspective: 1000px;
-        }
-        .flip-card-inner {
-          position: relative;
-          width: 100%;
-          height: 100%;
-          text-align: center;
-          transition: transform 0.7s;
-          transform-style: preserve-3d;
-        }
-        .flip-card:hover .flip-card-inner {
-          transform: rotateY(180deg);
-        }
-        .flip-card-front, .flip-card-back {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-        }
-        .flip-card-back {
-          transform: rotateY(180deg);
-        }
-      `}</style>
+     
     </div>
   )
 }
 
 export default HealingTeam;
+
+
+
+// import React from 'react'
+// import { Link } from 'react-router-dom'
+// import Video360Viewer from './Video360Viewer'
+
+// const HealingTeam: React.FC = () => {
+//   return (
+//     <div className="min-h-screen bg-[#f8faf8]">
+//       {/* Hero Section */}
+//       <section className="relative h-[60vh] flex items-center justify-center">
+//         <div className="absolute inset-0 z-0">
+//           <img
+//             src="https://media.istockphoto.com/id/477473902/photo/tea-plantations.jpg?s=612x612&w=0&k=20&c=6V4oFEe4iqofERaro5Ivw4O-8tZVtxIUOOpZiIhUBlk="
+//             alt="Our Healing Team"
+//             className="w-full h-full object-cover"
+//           />
+//           <div className="absolute inset-0 bg-[#386641]/70"></div>
+//         </div>
+
+//         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+//           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6">
+//             Our Healing Team
+//           </h1>
+//           <p className="text-lg md:text-xl text-[#e8f0ea]">
+//             Rooted in nature, driven by purpose — the journey to healing began here.
+//           </p>
+//         </div>
+//       </section>
+
+//       {/* Breadcrumbs */}
+//       <div className="bg-[#f0f5f1] py-3">
+//         <div className="container mx-auto px-4 flex justify-center">
+//           <nav className="flex" aria-label="Breadcrumb">
+//             <ol className="inline-flex items-center space-x-2">
+//               <li className="inline-flex items-center">
+//                 <Link to="/" className="text-[#5A6650] hover:text-[#386641] transition-colors">
+//                   Home
+//                 </Link>
+//               </li>
+//               <li className="flex items-center">
+//                 <span className="mx-2 text-[#7E8A59]">/</span>
+//               </li>
+//               <li>
+//                 <span className="text-[#386641] font-medium">Healing Team</span>
+//               </li>
+//             </ol>
+//           </nav>
+//         </div>
+//       </div>
+
+//       {/* Intro Section */}
+//       <section className="bg-gradient-to-b from-[#f8faf8] to-[#e8f4ec] py-20 px-6 text-center">
+//         <div className="max-w-5xl mx-auto">
+//           {/* Main Heading */}
+//           <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-[#2A4E38]">
+//             Your Healing with Naturopathy and Yoga
+//           </h2>
+
+//           {/* Subheading */}
+//           <h3 className="text-xl md:text-2xl font-semibold mb-8 text-[#5A6650]">
+//             Nowal Team Work
+//           </h3>
+
+//           {/* Decorative Divider */}
+//           <div className="flex justify-center items-center mb-12">
+//             <div className="w-16 h-1 bg-[#9EB384]/60 mr-4"></div>
+//             <div className="w-3 h-3 bg-[#9EB384] rounded-full"></div>
+//             <div className="w-16 h-1 bg-[#9EB384]/60 ml-4"></div>
+//           </div>
+
+//           {/* Paragraphs */}
+//           <div className="text-lg leading-relaxed space-y-6 text-[#435334] text-left max-w-4xl mx-auto">
+//             <p className="bg-white/80 p-6 rounded-lg shadow-sm border-l-4 border-[#9EB384]">
+//               At Nowal NatureCare, it is our people who bring purpose and heart to everything we do, the environment simply amplifies their dedication.
+//             </p>
+//             <p className="bg-white/80 p-6 rounded-lg shadow-sm border-l-4 border-[#9EB384]">
+//               Our dedicated team is deeply committed to guiding each individual on a transformative journey toward health and self-restoration.
+//             </p>
+//             <p className="bg-white/80 p-6 rounded-lg shadow-sm border-l-4 border-[#9EB384]">
+//               From experienced doctors, skilled therapists and compassionate support staff, every member of our team shares a unified passion for holistic wellness.
+//             </p>
+//             <p className="bg-white/80 p-6 rounded-lg shadow-sm border-l-4 border-[#9EB384]">
+//               Their authenticity, expertise, and unwavering care form the very ethos of Nowal NatureCare.
+//             </p>
+//             <p className="bg-white/80 p-6 rounded-lg shadow-sm border-l-4 border-[#9EB384]">
+//               Together, they create a nurturing space where healing is not just delivered—it is lived, with intention, empathy, and excellence.
+//             </p>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Founder's Thought Section */}
+//       <section className="bg-gradient-to-br from-[#e8f4ec] to-[#d4e8dc] py-20 px-6">
+//         <div className="max-w-5xl mx-auto">
+//           {/* Decorative Heading */}
+//           <div className="text-center mb-12">
+//             <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#2A4E38] mb-2">
+//               Thought of Founder
+//             </h2>
+//             <p className="text-xl text-[#7E8A59] font-semibold">Shri Ram Nivas Nowal</p>
+//             <div className="w-20 h-1 bg-[#9EB384] mt-4 mx-auto rounded-full"></div>
+//           </div>
+
+//           {/* Quote Icon */}
+//           <div className="flex justify-center mb-8">
+//             <div className="w-12 h-12 bg-[#9EB384] rounded-full flex items-center justify-center">
+//               <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+//                 <path d="M7.17 6A4.992 4.992 0 003 11v7a1 1 0 001 1h5a1 1 0 001-1v-7a1 1 0 00-1-1H5.1a3 3 0 012.07-3.6zM18.17 6A4.992 4.992 0 0014 11v7a1 1 0 001 1h5a1 1 0 001-1v-7a1 1 0 00-1-1h-3.1a3 3 0 012.07-3.6z" />
+//               </svg>
+//             </div>
+//           </div>
+
+//           {/* Content */}
+//           <div className="text-[#435334] text-lg leading-relaxed space-y-6">
+//             <p className="bg-white/80 p-6 rounded-lg shadow-sm">
+//               At the heart of Nowal NatureCare lies my deep-rooted belief: naturopathy holds the power to prevent most lifestyle-related diseases—naturally, affordably, and without side effects.
+//             </p>
+//             <p className="bg-white/80 p-6 rounded-lg shadow-sm">
+//               This conviction led me on a journey across India, where I explored some of the finest nature cure centres to understand and experience the true essence of holistic healing.
+//             </p>
+//             <p className="bg-white/80 p-6 rounded-lg shadow-sm">
+//               These experiences, combined with years of research into naturopathy and natural wellness systems, inspired me to create a center that reflects not just traditional wisdom, but also my personal vision for sustainable, preventive health care.
+//             </p>
+//             <p className="bg-white/80 p-6 rounded-lg shadow-sm">
+//               This dream took shape in Gujarat—with the founding of Nowal NatureCare, a haven where the healing force of nature meets scientific sensibility and mindful living.
+//             </p>
+//             <p className="bg-white/80 p-6 rounded-lg shadow-sm">
+//               Today, I am proud to see Nowal NatureCare recognized among India's respected naturopathy destinations. We've touched countless lives by encouraging meaningful lifestyle shifts and empowering people to take charge of their own wellness.
+//             </p>
+//             <div className="bg-[#9EB384]/20 p-6 rounded-lg border-l-4 border-[#9EB384] italic">
+//               <p className="text-[#2A4E38] font-medium">
+//                 This success is not mine alone—it belongs to our dedicated team and to every guest who trusted us. To each of you, I offer my heartfelt gratitude and continued commitment to your journey toward lasting health and harmony.
+//               </p>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Quote Section with Button */}
+//       <section className="bg-gradient-to-b from-[#e8f4ec] to-[#d4e8dc] py-20 px-6 text-center">
+//         <div className="max-w-3xl mx-auto">
+//           <div className="bg-white/90 p-8 rounded-xl shadow-lg border border-[#9EB384]/30">
+//             <blockquote className="text-xl md:text-2xl italic font-medium leading-relaxed text-[#2A4E38] mb-4">
+//               "Healing begins when you return to yourself — in rhythm with nature and nurtured by care."
+//             </blockquote>
+//             <p className="text-sm uppercase tracking-wider text-[#7E8A59]">— Our Founding Belief</p>
+
+//             {/* Call to Action */}
+//             <div className="mt-8">
+//               <Link 
+//                 to="/contact" 
+//                 className="inline-block px-8 py-3 bg-[#386641] text-white rounded-full text-base font-semibold hover:bg-[#2A4E38] transition-all duration-300 shadow-md hover:shadow-lg"
+//               >
+//                 Know More
+//               </Link>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+//     </div>
+//   )
+// }
+
+// export default HealingTeam

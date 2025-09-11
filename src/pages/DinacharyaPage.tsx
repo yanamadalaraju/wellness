@@ -333,7 +333,7 @@ const DinacharyaPage: React.FC = () => {
       </div>
 
       {/* Guest Essentials Section */}
-<section className="py-20 px-4 md:px-8 bg-white">
+<section className="py-20 px-4 md:px-8 bg-[#DDF4E7]">
   <div className="max-w-6xl mx-auto">
     <div className="text-center mb-16">
       <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4 font-serif">
@@ -400,7 +400,7 @@ const DinacharyaPage: React.FC = () => {
     </div>
 
     {/* Note Section */}
-  <div className="mt-12 bg-amber-100/30 rounded-xl p-6 border border-amber-200">
+  <div className="mt-12 bg-amber-100/50 rounded-xl p-6 border border-amber-200">
   <div className="flex items-start">
     <div className="bg-amber-100 p-3 rounded-full mr-4">
       <AlertCircle className="w-6 h-6 text-amber-700" />

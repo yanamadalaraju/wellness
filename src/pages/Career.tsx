@@ -63,7 +63,7 @@ const Carrer: React.FC = () => {
       <CareerForm />
 
       {/* Map Section */}
-      <section className="section-padding bg-sage-50">
+      <section className="section-padding bg-[#DDF4E7]">
   <div className="container-max">
     <h2 className="text-4xl font-playfair font-bold text-sage-600 mb-8 text-center">
       Find Us
@@ -112,7 +112,7 @@ const Carrer: React.FC = () => {
       
 
       {/* Careers CTA Section */}
-      <section className="bg-white py-12 px-4 md:px-8">
+      <section className="bg-[#DDF4E7] py-12 px-4 md:px-8">
   <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between bg-white rounded-xl shadow-xl p-6 md:p-10">
     
     {/* Left Text */}

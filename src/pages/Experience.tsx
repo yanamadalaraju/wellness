@@ -50,7 +50,7 @@ const Experience: React.FC = () => {
             </div>
 
       {/* The Mantra Section */}
-      <section className="bg-[#F2F1E8] text-[#435334] py-24 px-6 text-center">
+      <section className="bg-[#DDF4E7] text-[#435334] py-24 px-6 text-center">
   <div className="max-w-5xl mx-auto">
     <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-wide">
       Nowal NatureCare
@@ -75,7 +75,7 @@ const Experience: React.FC = () => {
 
 
       {/* Our Story Section */}
-     <section className="relative h-[700px] bg-[#F2F1E8] text-[#435334] overflow-visible">
+     <section className="relative h-[700px] bg-[#DDF4E7] text-[#435334] overflow-visible">
   {/* Background Image with Overlay */}
   <div className="relative w-full h-full">
     <img
@@ -114,7 +114,7 @@ Nowal NatureCare is simply your guide—a gentle catalyst on your journey toward
 
 
 
-  <section className="bg-[#E6E5D9] text-[#435334] py-16 px-6 text-center mt-56">
+  <section className="bg-[#DDF4E7] text-[#435334] py-16 px-6 text-center mt-56">
   <div className="max-w-3xl mx-auto">
     <blockquote className="text-2xl md:text-3xl italic font-medium leading-relaxed">
       “Your healing journey begins with a single breath, grounded in nature and nurtured by intention.”
