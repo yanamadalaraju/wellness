@@ -655,7 +655,7 @@ const Footer: React.FC = () => {
               <li><Link to="/narutopathy" className="text-[#c8d5cb] hover:text-[#9EB384] transition-colors hover:pl-2 block">Our Treatments</Link></li>
               <li><Link to="/ayurveda" className="text-[#c8d5cb] hover:text-[#9EB384] transition-colors hover:pl-2 block">Ayurveda</Link></li>
               <li><Link to="/yoga" className="text-[#c8d5cb] hover:text-[#9EB384] transition-colors hover:pl-2 block">Yoga</Link></li>
-              <li><Link to="/gallery" className="text-[#c8d5cb] hover:text-[#9EB384] transition-colors hover:pl-2 block">Gallery</Link></li>
+              <li><Link to="/image" className="text-[#c8d5cb] hover:text-[#9EB384] transition-colors hover:pl-2 block">Gallery</Link></li>
             </ul>
           </div>
           

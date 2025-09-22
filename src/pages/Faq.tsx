@@ -60,7 +60,7 @@ const FAQPage: React.FC = () => {
         </div>
 
         {/* FAQ Items */}
-        <div className="space-y-4">
+        {/* <div className="space-y-4">
           {faqData.map((faq, index) => (
             <div
               key={faq.id}
@@ -106,10 +106,10 @@ const FAQPage: React.FC = () => {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Contact CTA */}
-        <div className="mt-12 text-center">
+        {/* <div className="mt-12 text-center">
           <div className="bg-blue-50 rounded-lg p-8 border border-blue-200">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               Still have questions?
@@ -121,7 +121,7 @@ const FAQPage: React.FC = () => {
               Contact Support
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
