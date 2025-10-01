@@ -159,12 +159,14 @@ import  Applications from './admin/Applications';
 import ThankYouPage from './pages/Thankyoupage'
 import FAQPage from './pages/Faq'
 import AccommodationCharges from './pages/Charges'
+import Dashboard from './admin/Dashboard'
+import AlertImageAdmin from './admin/AlertImageAdmin'
 function AppRoutes() {
   const location = useLocation()
 
   // Define routes where layout should be hidden
 
-  const hideLayoutPaths = ['/login', '/register', '/customers' , '/dashboard' , '/applications']
+  const hideLayoutPaths = ['/login', '/register', '/customers' , '/dashboard' , '/applications', '/changes']
   const hideLayout = hideLayoutPaths.includes(location.pathname)
 
   return (
@@ -225,11 +227,12 @@ function AppRoutes() {
         </Layout>
       )}
 
-      {hideLayout && (
+      {hideLayout && (   
         <Routes>
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          
+           <Route path="/dashboard" element={<Dashboard />} />
+           <Route path="/changes" element={<AlertImageAdmin />} />
           <Route path="/customers" element={<AdminContactDashboard />} />
           <Route path="/applications" element={< Applications />} />
         </Routes>
