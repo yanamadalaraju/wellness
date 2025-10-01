@@ -459,7 +459,7 @@ const AccommodationCharges: React.FC = () => {
     <div className="p-8 bg-gray-50 min-h-screen">
       <div className="max-w-6xl mx-auto bg-white shadow-md rounded-2xl">
         {/* Tabs */}
-        <div className="flex">
+        {/* <div className="flex">
           <button
             className={`w-1/2 text-center py-4 text-lg font-medium border-b-2 transition ${
               activeTab === "accommodation"
@@ -480,11 +480,11 @@ const AccommodationCharges: React.FC = () => {
           >
             Treatment Charges
           </button>
-        </div>
+        </div> */}
 
         {/* Tab Content */}
-        <div className="p-6">
-          {/* Accommodation Tab */}
+        {/* <div className="p-6">
+          
           {activeTab === "accommodation" && (
             <>
               <h2 className="text-xl font-semibold mb-6 text-center">
@@ -541,7 +541,6 @@ const AccommodationCharges: React.FC = () => {
             </>
           )}
 
-          {/* Treatment Tab */}
           {activeTab === "treatment" && (
             <div>
               <h2 className="text-xl font-semibold mb-6 text-center">
@@ -579,7 +578,7 @@ const AccommodationCharges: React.FC = () => {
               </p>
             </div>
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );

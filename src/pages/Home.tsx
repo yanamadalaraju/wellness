@@ -2532,7 +2532,7 @@ import GallerySection from '../components/Herocompo/Gallerysection';
 
 // Import local video assets
 import video1 from "../assets/waterfallls.mp4"
-import video2 from "../assets/WhatsAppbird.mp4";
+import video2 from "../assets/birdvideo.mp4";
 import video3 from "../assets/Untitled video - Made.mp4";
 import video4 from "../assets/meditationvideo.mp4";
 
