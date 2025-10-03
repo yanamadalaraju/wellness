@@ -425,11 +425,117 @@
 
 // export default Login;
 
+// import React, { useState } from 'react';
+// import { useNavigate } from 'react-router-dom';
+
+// import logo from '../assets/logo.png';
+// import backgroundImage from '../assets/3d11.jpg';
+
+// const Login: React.FC = () => {
+//   const [form, setForm] = useState({ email: '', password: '' });
+//   const navigate = useNavigate();
+
+//   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+//     setForm({ ...form, [e.target.name]: e.target.value });
+//   };
+
+//   const handleSubmit = (e: React.FormEvent) => {
+//     e.preventDefault();
+//     const { email, password } = form;
+
+//     if (email === 'admin@gmail.com' && password === 'admin@123') {
+//       localStorage.setItem('isAuthenticated', 'true');
+//       navigate('/customers');
+//     } else {
+//       alert('Invalid email or password');
+//     }
+//   };
+
+//   return (
+//     <div 
+//       className="min-h-screen flex items-center justify-center p-4"
+//       style={{
+//         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url(${backgroundImage})`,
+//         backgroundSize: 'cover',
+//         backgroundPosition: 'center',
+//       }}
+//     >
+//       <div className="relative z-10 bg-white bg-opacity-10 backdrop-blur-xl rounded-2xl shadow-2xl p-8 max-w-md w-full border border-white border-opacity-20">
+//         {/* Logo Section */}
+//         <div className="flex justify-center mb-8">
+//           <div className="bg-white bg-opacity-20 p-4 rounded-full shadow-lg">
+//             <img 
+//               src={logo} 
+//               alt="Company Logo" 
+//               className="h-16 w-auto"
+//             />
+//           </div>
+//         </div>
+
+//         <h2 className="text-3xl font-bold text-white text-center mb-8">Sign In</h2>
+        
+//         <form onSubmit={handleSubmit} className="space-y-6">
+//           <div>
+//             <label className="block text-sm font-medium text-indigo-100 mb-2">Email Address</label>
+//             <div className="relative">
+//               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+//                 <svg className="h-5 w-5 text-indigo-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+//                   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+//                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+//                 </svg>
+//               </div>
+//               <input
+//                 name="email"
+//                 type="email"
+//                 placeholder="you@example.com"
+//                 value={form.email}
+//                 onChange={handleChange}
+//                 className="w-full pl-10 pr-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg text-white placeholder-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all"
+//                 required
+//               />
+//             </div>
+//           </div>
+          
+//           <div>
+//             <label className="block text-sm font-medium text-indigo-100 mb-2">Password</label>
+//             <div className="relative">
+//               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+//                 <svg className="h-5 w-5 text-indigo-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+//                   <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+//                 </svg>
+//               </div>
+//               <input
+//                 name="password"
+//                 type="password"
+//                 placeholder="••••••••"
+//                 value={form.password}
+//                 onChange={handleChange}
+//                 className="w-full pl-10 pr-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg text-white placeholder-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all"
+//                 required
+//               />
+//             </div>
+//           </div>
+          
+//           <button
+//             type="submit"
+//             className="w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-3 px-4 rounded-lg font-semibold shadow-lg hover:from-indigo-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-300 transform hover:-translate-y-0.5"
+//           >
+//             Sign In
+//           </button>
+//         </form>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Login;
+
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import logo from '../assets/logo.png';
-import backgroundImage from '../assets/3d11.jpg'; // Import your background image
+import backgroundImage from '../assets/3d11.jpg';
 
 const Login: React.FC = () => {
   const [form, setForm] = useState({ email: '', password: '' });
@@ -455,94 +561,126 @@ const Login: React.FC = () => {
     <div 
       className="min-h-screen flex items-center justify-center p-4"
       style={{
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url(${backgroundImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
       }}
     >
-      {/* Overlay for better readability */}
-      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-      
-      <div className="relative z-10 bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full transform transition-all hover:scale-[1.01] duration-300 backdrop-blur-sm bg-opacity-90">
-        {/* Logo Section */}
-        <div className="flex justify-center mb-6">
-          <div className="flex flex-col items-center">
-            <img 
-              src={logo} 
-              alt="Company Logo" 
-              className="h-16 w-auto mb-2"
-            />
-          </div>
+      {/* Spotlight Animation Container */}
+      <div className="relative max-w-md w-full">
+        {/* Moving Spotlight Border */}
+        <div className="absolute inset-0 rounded-2xl overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 animate-spotlight"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 animate-spotlight-reverse"></div>
         </div>
-
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-2">Welcome Back</h2>
-        <p className="text-center text-gray-600 mb-6">Sign in to access your account</p>
         
-        <form onSubmit={handleSubmit} className="space-y-5">
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-            <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <svg
-                  className="h-5 w-5 text-gray-400"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                </svg>
-              </div>
-              <input
-                name="email"
-                type="email"
-                placeholder="Enter your email"
-                value={form.email}
-                onChange={handleChange}
-                className="w-full pl-10 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                required
+        {/* Card with Spotlight Effect */}
+        <div className="relative z-10 bg-white bg-opacity-10 backdrop-blur-xl rounded-2xl shadow-2xl p-8 border border-white border-opacity-20">
+          {/* Logo Section with White Background */}
+          <div className="flex justify-center mb-8">
+            <div className="bg-white p-4 rounded-full shadow-lg">
+              <img 
+                src={logo} 
+                alt="Company Logo" 
+                className="h-16 w-auto"
               />
             </div>
           </div>
+
+          <h2 className="text-3xl font-bold text-white text-center mb-8">Welcome Back</h2>
+         
           
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
-            <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <svg
-                  className="h-5 w-5 text-gray-400"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+          
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label className="block text-sm font-medium text-indigo-100 mb-2">Email Address</label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <svg className="h-5 w-5 text-indigo-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                  </svg>
+                </div>
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="you@example.com"
+                  value={form.email}
+                  onChange={handleChange}
+                  className="w-full pl-10 pr-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg text-white placeholder-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all"
+                  required
+                />
               </div>
-              <input
-                name="password"
-                type="password"
-                placeholder="Enter your password"
-                value={form.password}
-                onChange={handleChange}
-                className="w-full pl-10 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                required
-              />
             </div>
-          </div>
-          
-          <button
-            type="submit"
-            className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 rounded-lg font-semibold hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
-          >
-            Sign In
-          </button>
-        </form>
+            
+            <div>
+              <label className="block text-sm font-medium text-indigo-100 mb-2">Password</label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <svg className="h-5 w-5 text-indigo-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <input
+                  name="password"
+                  type="password"
+                  placeholder="••••••••"
+                  value={form.password}
+                  onChange={handleChange}
+                  className="w-full pl-10 pr-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg text-white placeholder-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all"
+                  required
+                />
+              </div>
+            </div>
+            
+            <button
+              type="submit"
+              className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-3 px-4 rounded-lg font-semibold shadow-lg hover:from-indigo-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-300 transform hover:-translate-y-0.5"
+            >
+              Login
+            </button>
+          </form>
+        </div>
       </div>
+
+      {/* Spotlight Animation Styles */}
+      <style jsx>{`
+       @keyframes spotlight {
+  0% { 
+    transform: translateX(-100%) translateY(-100%) rotate(45deg); 
+    background: linear-gradient(45deg, transparent, #90EE90, transparent);
+  }
+  100% { 
+    transform: translateX(100%) translateY(100%) rotate(45deg); 
+    background: linear-gradient(45deg, transparent, #90EE90, transparent);
+  }
+}
+
+@keyframes spotlight-reverse {
+  0% { 
+    transform: translateX(100%) translateY(100%) rotate(45deg); 
+    background: linear-gradient(45deg, transparent, #90EE90, transparent);
+  }
+  100% { 
+    transform: translateX(-100%) translateY(-100%) rotate(45deg); 
+    background: linear-gradient(45deg, transparent, #90EE90, transparent);
+  }
+}
+
+.animate-spotlight {
+  animation: spotlight 8s linear infinite;
+  opacity: 0.7;
+  filter: blur(20px);
+  background: linear-gradient(45deg, transparent, #90EE90, transparent);
+}
+
+.animate-spotlight-reverse {
+  animation: spotlight-reverse 8s linear infinite;
+  opacity: 0.7;
+  filter: blur(20px);
+  background: linear-gradient(45deg, transparent, #90EE90, transparent);
+}
+      `}</style>
     </div>
   );
 };
