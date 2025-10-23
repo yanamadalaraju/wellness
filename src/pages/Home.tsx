@@ -3291,6 +3291,7 @@ import video1 from "../assets/medi_large.mp4";
 import video2 from "../assets/birdvideo.mp4";
 import video3 from "../assets/Untitled video - Made.mp4";
 import video4 from "../assets/meditationvideo.mp4";
+import HeroSection from '../components/Herocompo/HeroSection';
 
 const Home: React.FC = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
@@ -3499,9 +3500,9 @@ const Home: React.FC = () => {
   return (
      <div className="min-h-screen font-sans bg-white">
       <AlertPopup />
-      
+      <HeroSection />
       {/* Hero Section with Video Carousel */}
-      <section ref={sectionRef} className="relative h-[88vh] flex items-center justify-center overflow-hidden">
+      {/* <section ref={sectionRef} className="relative h-[88vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <AnimatePresence mode='wait'>
             <motion.video
@@ -3518,14 +3519,14 @@ const Home: React.FC = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 1 }}
               onEnded={() => {
-                // Smooth transition to next video when current ends
+             
                 setCurrentVideoIndex(prev => (prev + 1) % heroVideos.length);
               }}
             >
               <source src={heroVideos[currentVideoIndex].video} type="video/mp4" />
             </motion.video>
           </AnimatePresence>
-          {/* Add a subtle overlay for better text readability */}
+         
           <div className="absolute inset-0 bg-black/30"></div>
         </div>
 
@@ -3544,18 +3545,18 @@ const Home: React.FC = () => {
               {heroVideos[currentVideoIndex].subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              {/* <Link
+              <Link
                 to="/booking"
                 className="bg-[#3E5F44] hover:bg-[#2E4A34] text-white text-lg px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center"
               >
                 Book Now
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </Link> */}
+              </Link>
             </div>
           </motion.div>
         </div>
 
-        {/* Video Navigation Dots */}
+    
         <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
           {heroVideos.map((_, index) => (
             <button
@@ -3566,7 +3567,7 @@ const Home: React.FC = () => {
             />
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Rest of your sections remain exactly the same */}
       {/* Promo Banner */}

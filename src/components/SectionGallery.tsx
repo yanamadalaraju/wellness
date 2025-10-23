@@ -145,7 +145,8 @@ const SectionGallery: React.FC = () => {
     {
       title: "Nowal",
       image: wellnessImage, // Using imported image
-      link: "/gallery-wellness"
+      // link: "/gallery-wellness"
+      link: "/amenities-wellness"
     },
     {
       title: "Amenities",

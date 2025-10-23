@@ -886,6 +886,353 @@
 
 
 
+// import React, { useState } from 'react';
+// import { useForm } from 'react-hook-form';
+// import { MapPin, Phone, Mail, Clock, MessageCircle, Send } from 'lucide-react';
+// import { BASE_URL } from '../config';
+// import { Link } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
+// import { useEffect } from 'react';
+
+// interface ContactFormData {
+//   name: string;
+//   email: string;
+//   phone: string;
+//   medicalConditions: string;
+//   applyingFrom: string;
+//   message: string;
+// }
+
+// const Contact: React.FC = () => {
+//   const { 
+//     register, 
+//     handleSubmit, 
+//     formState: { errors }, 
+//     reset 
+//   } = useForm<ContactFormData>();
+  
+//   const [isSubmitting, setIsSubmitting] = useState(false);
+//   const [submitError, setSubmitError] = useState('');
+//   const [submitSuccess, setSubmitSuccess] = useState(false);
+//     const location = useLocation();
+
+//    useEffect(() => {
+//     // Check if URL has a hash targeting the form
+//     if (location.hash === '#contact-form') {
+//       const element = document.getElementById('contact-form');
+//       if (element) {
+//         setTimeout(() => {
+//           element.scrollIntoView({ behavior: 'smooth' });
+//         }, 100);
+//       }
+//     }
+//   }, [location]);
+
+//   const onSubmit = async (data: ContactFormData) => {
+//     setIsSubmitting(true);
+//     setSubmitError('');
+//     setSubmitSuccess(false);
+    
+//     try {
+//       const response = await fetch(`${BASE_URL}/api/contacts/`, {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(data),
+//       });
+
+//       if (!response.ok) {
+//         throw new Error('Failed to submit form');
+//       }
+
+//       const result = await response.json();
+//       console.log('Form submission successful:', result);
+//       setSubmitSuccess(true);
+//       reset();
+//     } catch (error) {
+//       console.error('Error submitting form:', error);
+//       setSubmitError('There was an error submitting your form. Please try again.');
+//     } finally {
+//       setIsSubmitting(false);
+//     }
+//   };
+
+//   return (
+//     <div className="min-h-screen bg-cream-50">
+//       {/* Hero Section */}
+//       <section className="relative min-h-96 flex items-center justify-center">
+//         <div className="absolute inset-0 z-0">
+//           <img
+//             src="https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg?auto=compress&cs=tinysrgb&w=1920"
+//             alt="Get in Touch"
+//             className="w-full h-full object-cover"
+//           />
+//           <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+//         </div>
+        
+//         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+//           <h1 className="text-5xl md:text-6xl font-playfair font-bold mb-6 text-shadow">
+//             Get in Touch
+//           </h1>
+//           <p className="text-xl md:text-2xl text-shadow">
+//             We're here to guide you on your nowal journey
+//           </p>
+//         </div>
+//       </section>
+
+//       {/* Breadcrumbs */}
+//       <div className="container mx-auto px-4 py-4 flex justify-center">
+//         <nav className="flex" aria-label="Breadcrumb">
+//           <ol className="inline-flex items-center space-x-2 md:space-x-2">
+//             <li className="inline-flex items-center">
+//               <Link to="/" className="text-sage-600 hover:text-sage-800">
+//                 Home
+//               </Link>
+//             </li>
+//             <li className="flex items-center">
+//               <span className="mx text-sage-500">{'>'}</span>
+//               <span className="mx text-sage-500">{'>'}</span>
+//             </li>
+//             <li>
+//               <span className="text-sage-800 font-medium">Contact Us</span>
+//             </li>
+//           </ol>
+//         </nav>
+//       </div>
+
+//       {/* Contact Information */}
+//       <section className="py-16 bg-[#DDF4E7]" id="contact-form" >
+//         <div className="container mx-auto px-4 max-w-6xl">
+//           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+//             {/* Contact Details */}
+//             <div>
+//               <h2 className="text-4xl font-playfair font-bold text-sage-600 mb-8">
+//                 Contact Information
+//               </h2>
+              
+//               <div className="space-y-6">
+//                 <div className="flex items-start space-x-4">
+//                   <MapPin className="w-6 h-6 text-sage-400 mt-1" />
+//                   <div>
+//                     <h3 className="font-semibold text-sage-600 mb-1">Address</h3>
+//                     <p className="text-gray-600">
+//                       Gadri Badhal <br />
+//                       Jaipur Rajasthan,303602 india<br />
+                      
+//                     </p>
+//                   </div>
+//                 </div>
+                
+//                 <div className="flex items-start space-x-4">
+//                   <Phone className="w-6 h-6 text-sage-400 mt-1" />
+//                   <div>
+//                     <h3 className="font-semibold text-sage-600 mb-1">Phone</h3>
+//                     <p className="text-gray-600">
+//                       Main: +91 9251582670<br />
+//                       Emergency:  +91 9251582675
+//                     </p>
+//                   </div>
+//                 </div>
+                
+//                 <div className="flex items-start space-x-4">
+//                   <Mail className="w-6 h-6 text-sage-400 mt-1" />
+//                   <div>
+//                     <h3 className="font-semibold text-sage-600 mb-1">Email</h3>
+//                     <p className="text-gray-600">
+//                       {/* General: socials@nowalNatureCare.com<br /> */}
+//                       Support:  info@nowalnaturecare.com
+//                     </p>
+//                   </div>
+//                 </div>
+                
+//                 <div className="flex items-start space-x-4">
+//                   <Clock className="w-6 h-6 text-sage-400 mt-1" />
+//                   <div>
+//                     <h3 className="font-semibold text-sage-600 mb-1">Hours</h3>
+//                     <p className="text-gray-600">
+//                      Monday - Sunday: 7:00 AM - 7:00 PM
+//                       {/* Saturday: 8:00 AM - 4:00 PM<br />
+//                       Sunday: 9:00 AM - 3:00 PM */}
+//                     </p>
+//                   </div>
+//                 </div>
+                
+//                 <div className="flex items-start space-x-4">
+//                   <MessageCircle className="w-6 h-6 text-sage-400 mt-1" />
+//                   <div>
+//                     <h3 className="font-semibold text-sage-600 mb-1">WhatsApp</h3>
+//                     <p className="text-gray-600">
+//                      +91 9251582672<br />
+//                       Available 24/7 for urgent inquiries
+//                     </p>
+//                   </div>
+//                 </div>
+//               </div>
+              
+//               <div className="mt-8 p-6 bg-yellow-50 border border-yellow-200 rounded-lg">
+//                 <h3 className="font-semibold text-yellow-800 mb-2">Emergency Contact</h3>
+//                 <p className="text-yellow-700 text-sm">
+//                   For medical emergencies during your stay, please contact our 24/7 emergency line: 
+//                   <span className="font-semibold"> +91 9251582675</span>
+//                 </p>
+//               </div>
+//             </div>
+
+            
+
+//             {/* Contact Form */}
+//             <div className="bg-white p-8 rounded-xl shadow-md" >
+//               <h2 className="text-3xl font-playfair font-bold text-sage-600 mb-6" id="contact-form">
+//                 Send us a Message
+//               </h2>
+              
+//               {submitSuccess && (
+//                 <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded" >
+//                   Thank you for your message! We will get back to you within 24 hours.
+//                 </div>
+//               )}
+              
+//               {submitError && (
+//                 <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+//                   {submitError}
+//                 </div>
+//               )}
+              
+//               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6" >
+//                 <div>
+//                   <label className="block text-sm font-medium text-gray-700 mb-2">
+//                     Full Name *
+//                   </label>
+//                   <input
+//                     type="text"
+//                     {...register('name', { required: 'Name is required' })}
+//                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage-400"
+//                     placeholder="Your full name"
+//                   />
+//                   {errors.name && (
+//                     <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
+//                   )}
+//                 </div>
+                
+//                 <div>
+//                   <label className="block text-sm font-medium text-gray-700 mb-2">
+//                     Email Address *
+//                   </label>
+//                   <input
+//                     type="email"
+//                     {...register('email', { 
+//                       required: 'Email is required',
+//                       pattern: {
+//                         value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+//                         message: "Invalid email address"
+//                       }
+//                     })}
+//                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage-400"
+//                     placeholder="your@email.com"
+//                   />
+//                   {errors.email && (
+//                     <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+//                   )}
+//                 </div>
+                
+//                 <div>
+//                   <label className="block text-sm font-medium text-gray-700 mb-2">
+//                     Phone Number
+//                   </label>
+//                   <input
+//                     type="tel"
+//                     {...register('phone')}
+//                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage-400"
+//                     placeholder="Your phone number"
+//                   />
+//                 </div>
+                
+//                 <div>
+//                   <label className="block text-sm font-medium text-gray-700 mb-2">
+//                     Pre-existing Medical Conditions *
+//                   </label>
+//                   <input
+//                     type="text"
+//                     {...register('medicalConditions', { required: 'Medical conditions information is required' })}
+//                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage-400"
+//                     placeholder="Please list any pre-existing medical conditions"
+//                   />
+//                   {errors.medicalConditions && (
+//                     <p className="text-red-500 text-sm mt-1">{errors.medicalConditions.message}</p>
+//                   )}
+//                 </div>
+                
+//                 <div>
+//                   <label className="block text-sm font-medium text-gray-700 mb-2">
+//                     Applying From <span className="text-gray-500">(location)</span> *
+//                   </label>
+//                   <input
+//                     type="text"
+//                     {...register('applyingFrom', { required: 'Location is required' })}
+//                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage-400"
+//                     placeholder="Your current location/country"
+//                   />
+//                   {errors.applyingFrom && (
+//                     <p className="text-red-500 text-sm mt-1">{errors.applyingFrom.message}</p>
+//                   )}
+//                 </div>
+                
+//                 <div>
+//                   <label className="block text-sm font-medium text-gray-700 mb-2">
+//                     Message *
+//                   </label>
+//                   <textarea
+//                     {...register('message', { 
+//                       required: 'Message is required',
+//                       minLength: {
+//                         value: 20,
+//                         message: "Message must be at least 20 characters"
+//                       }
+//                     })}
+//                     rows={6}
+//                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage-400"
+//                     placeholder="Please share your questions or comments..."
+//                   />
+//                   {errors.message && (
+//                     <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
+//                   )}
+//                 </div>
+                
+//                 <button
+//                   type="submit"
+//                   disabled={isSubmitting}
+//                   className={`w-full bg-sage-600 hover:bg-sage-700 text-white font-medium py-3 px-6 rounded-lg transition-colors flex items-center justify-center space-x-2 ${
+//                     isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
+//                   }`}
+//                 >
+//                   {isSubmitting ? (
+//                     <>
+//                       <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+//                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+//                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+//                       </svg>
+//                       <span>Sending...</span>
+//                     </>
+//                   ) : (
+//                     <>
+//                       <Send className="w-5 h-5" />
+//                       <span>Send Message</span>
+//                     </>
+//                   )}
+//                 </button>
+//               </form>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+//     </div>
+//   );
+// };
+
+// export default Contact;
+
+
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { MapPin, Phone, Mail, Clock, MessageCircle, Send } from 'lucide-react';
@@ -898,9 +1245,6 @@ interface ContactFormData {
   name: string;
   email: string;
   phone: string;
-  medicalConditions: string;
-  applyingFrom: string;
-  message: string;
 }
 
 const Contact: React.FC = () => {
@@ -914,10 +1258,10 @@ const Contact: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
   const [submitSuccess, setSubmitSuccess] = useState(false);
-    const location = useLocation();
+  const [serverStatus, setServerStatus] = useState<'checking' | 'online' | 'offline'>('checking');
+  const location = useLocation();
 
-   useEffect(() => {
-    // Check if URL has a hash targeting the form
+  useEffect(() => {
     if (location.hash === '#contact-form') {
       const element = document.getElementById('contact-form');
       if (element) {
@@ -928,13 +1272,36 @@ const Contact: React.FC = () => {
     }
   }, [location]);
 
+  // Test server connection on component mount
+  useEffect(() => {
+    const testServerConnection = async () => {
+      try {
+        console.log('🔍 Testing server connection to:', `${BASE_URL}/api/health`);
+        const response = await fetch(`${BASE_URL}/api/health`);
+        const data = await response.json();
+        console.log('🏥 Server status:', data);
+        setServerStatus('online');
+      } catch (error) {
+        console.error('🔍 Server connection failed:', error);
+        setServerStatus('offline');
+        setSubmitError('Server is currently offline. Please try again later.');
+      }
+    };
+    
+    testServerConnection();
+  }, []);
+
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
     setSubmitError('');
     setSubmitSuccess(false);
     
     try {
-      const response = await fetch(`${BASE_URL}/api/contacts/`, {
+      console.log('🔄 Starting form submission...');
+      console.log('📝 Form data:', data);
+      console.log('🌐 BASE_URL:', BASE_URL);
+
+      const response = await fetch(`${BASE_URL}/api/contacts`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -942,17 +1309,38 @@ const Contact: React.FC = () => {
         body: JSON.stringify(data),
       });
 
-      if (!response.ok) {
-        throw new Error('Failed to submit form');
+      console.log('📨 Response status:', response.status);
+      
+      const responseText = await response.text();
+      console.log('📄 Response text:', responseText);
+
+      let result;
+      try {
+        result = JSON.parse(responseText);
+      } catch (parseError) {
+        console.error('❌ Failed to parse response as JSON:', parseError);
+        throw new Error('Invalid response from server');
       }
 
-      const result = await response.json();
-      console.log('Form submission successful:', result);
+      if (!response.ok) {
+        console.error('❌ Server returned error:', result);
+        throw new Error(result.error || `Server error: ${response.status}`);
+      }
+
+      console.log('🎉 Form submission successful:', result);
       setSubmitSuccess(true);
       reset();
+      
     } catch (error) {
-      console.error('Error submitting form:', error);
-      setSubmitError('There was an error submitting your form. Please try again.');
+      console.error('💥 Error submitting form:', error);
+      
+      if (error instanceof TypeError && error.message.includes('Failed to fetch')) {
+        setSubmitError('Cannot connect to server. Please check your internet connection and ensure the backend is running.');
+      } else if (error instanceof Error) {
+        setSubmitError(error.message);
+      } else {
+        setSubmitError('There was an unexpected error submitting your form. Please try again.');
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -991,8 +1379,7 @@ const Contact: React.FC = () => {
               </Link>
             </li>
             <li className="flex items-center">
-              <span className="mx text-sage-500">{'>'}</span>
-              <span className="mx text-sage-500">{'>'}</span>
+              <span className="mx-2 text-sage-500">{'>'}</span>
             </li>
             <li>
               <span className="text-sage-800 font-medium">Contact Us</span>
@@ -1002,8 +1389,15 @@ const Contact: React.FC = () => {
       </div>
 
       {/* Contact Information */}
-      <section className="py-16 bg-[#DDF4E7]" id="contact-form" >
+      <section className="py-16 bg-[#DDF4E7]" id="contact-form">
         <div className="container mx-auto px-4 max-w-6xl">
+          {/* Server Status Indicator */}
+          {serverStatus === 'offline' && (
+            <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg text-center">
+              ⚠️ Server is currently offline. Form submissions will not work until the server is back online.
+            </div>
+          )}
+          
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Details */}
             <div>
@@ -1018,8 +1412,7 @@ const Contact: React.FC = () => {
                     <h3 className="font-semibold text-sage-600 mb-1">Address</h3>
                     <p className="text-gray-600">
                       Gadri Badhal <br />
-                      Jaipur Rajasthan,303602 india<br />
-                      
+                      Jaipur Rajasthan,303602 India<br />
                     </p>
                   </div>
                 </div>
@@ -1030,7 +1423,7 @@ const Contact: React.FC = () => {
                     <h3 className="font-semibold text-sage-600 mb-1">Phone</h3>
                     <p className="text-gray-600">
                       Main: +91 9251582670<br />
-                      Emergency:  +91 9251582675
+                      Emergency: +91 9251582675
                     </p>
                   </div>
                 </div>
@@ -1040,8 +1433,7 @@ const Contact: React.FC = () => {
                   <div>
                     <h3 className="font-semibold text-sage-600 mb-1">Email</h3>
                     <p className="text-gray-600">
-                      {/* General: socials@nowalNatureCare.com<br /> */}
-                      Support:  info@nowalnaturecare.com
+                      Support: info@nowalnaturecare.com
                     </p>
                   </div>
                 </div>
@@ -1051,9 +1443,7 @@ const Contact: React.FC = () => {
                   <div>
                     <h3 className="font-semibold text-sage-600 mb-1">Hours</h3>
                     <p className="text-gray-600">
-                     Monday - Sunday: 7:00 AM - 7:00 PM
-                      {/* Saturday: 8:00 AM - 4:00 PM<br />
-                      Sunday: 9:00 AM - 3:00 PM */}
+                      Monday - Sunday: 7:00 AM - 7:00 PM
                     </p>
                   </div>
                 </div>
@@ -1063,7 +1453,7 @@ const Contact: React.FC = () => {
                   <div>
                     <h3 className="font-semibold text-sage-600 mb-1">WhatsApp</h3>
                     <p className="text-gray-600">
-                     +91 9251582672<br />
+                      +91 9251582672<br />
                       Available 24/7 for urgent inquiries
                     </p>
                   </div>
@@ -1079,34 +1469,38 @@ const Contact: React.FC = () => {
               </div>
             </div>
 
-            
-
             {/* Contact Form */}
-            <div className="bg-white p-8 rounded-xl shadow-md" >
-              <h2 className="text-3xl font-playfair font-bold text-sage-600 mb-6" id="contact-form">
+            <div className="bg-white p-8 rounded-xl shadow-md">
+              <h2 className="text-3xl font-playfair font-bold text-sage-600 mb-6">
                 Send us a Message
               </h2>
               
               {submitSuccess && (
-                <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded" >
-                  Thank you for your message! We will get back to you within 24 hours.
+                <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded">
+                  ✅ Thank you for your message! We will get back to you within 24 hours.
                 </div>
               )}
               
               {submitError && (
                 <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
-                  {submitError}
+                  ❌ {submitError}
                 </div>
               )}
               
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6" >
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Full Name *
                   </label>
                   <input
                     type="text"
-                    {...register('name', { required: 'Name is required' })}
+                    {...register('name', { 
+                      required: 'Name is required',
+                      minLength: {
+                        value: 2,
+                        message: 'Name must be at least 2 characters'
+                      }
+                    })}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage-400"
                     placeholder="Your full name"
                   />
@@ -1138,72 +1532,30 @@ const Contact: React.FC = () => {
                 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number
+                    Phone Number *
                   </label>
                   <input
                     type="tel"
-                    {...register('phone')}
+                    {...register('phone', { 
+                      required: 'Phone number is required',
+                      pattern: {
+                        value: /^[+]?[\d\s\-()]{10,}$/,
+                        message: 'Please enter a valid phone number'
+                      }
+                    })}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage-400"
                     placeholder="Your phone number"
                   />
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Pre-existing Medical Conditions *
-                  </label>
-                  <input
-                    type="text"
-                    {...register('medicalConditions', { required: 'Medical conditions information is required' })}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage-400"
-                    placeholder="Please list any pre-existing medical conditions"
-                  />
-                  {errors.medicalConditions && (
-                    <p className="text-red-500 text-sm mt-1">{errors.medicalConditions.message}</p>
-                  )}
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Applying From <span className="text-gray-500">(location)</span> *
-                  </label>
-                  <input
-                    type="text"
-                    {...register('applyingFrom', { required: 'Location is required' })}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage-400"
-                    placeholder="Your current location/country"
-                  />
-                  {errors.applyingFrom && (
-                    <p className="text-red-500 text-sm mt-1">{errors.applyingFrom.message}</p>
-                  )}
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Message *
-                  </label>
-                  <textarea
-                    {...register('message', { 
-                      required: 'Message is required',
-                      minLength: {
-                        value: 20,
-                        message: "Message must be at least 20 characters"
-                      }
-                    })}
-                    rows={6}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage-400"
-                    placeholder="Please share your questions or comments..."
-                  />
-                  {errors.message && (
-                    <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
+                  {errors.phone && (
+                    <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
                   )}
                 </div>
                 
                 <button
                   type="submit"
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || serverStatus === 'offline'}
                   className={`w-full bg-sage-600 hover:bg-sage-700 text-white font-medium py-3 px-6 rounded-lg transition-colors flex items-center justify-center space-x-2 ${
-                    isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
+                    (isSubmitting || serverStatus === 'offline') ? 'opacity-50 cursor-not-allowed' : ''
                   }`}
                 >
                   {isSubmitting ? (
@@ -1217,7 +1569,7 @@ const Contact: React.FC = () => {
                   ) : (
                     <>
                       <Send className="w-5 h-5" />
-                      <span>Send Message</span>
+                      <span>{serverStatus === 'offline' ? 'Server Offline' : 'Send Message'}</span>
                     </>
                   )}
                 </button>

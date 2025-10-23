@@ -158,13 +158,13 @@ import newImage23 from '../assets/Dormitory -3 (1).jpg';
 import newImage24 from '../assets/Dormitory .jpg';
 import newImage25 from '../assets/FINAL-02.jpg';
 
-import newImage26 from '../assets/IMAGE-04.jpeg';
+// import newImage26 from '../assets/IMAGE-04.jpeg';
 import newImage27 from '../assets/Md cabin.png';
 import newImage28 from '../assets/Night View 1.jpg';
 import newImage29 from '../assets/Night View.jpg';
 import newImage30 from '../assets/Photo from Suneel Sharma (1).jpg';
 
-import newImage31 from '../assets/Pool view 2 .jpeg';
+// import newImage31 from '../assets/Pool view 2 .jpeg';
 import newImage32 from '../assets/Restaurant 1st floor .jpg';
 import newImage33 from '../assets/Shirodhara room2 .jpg';
 import newImage34 from '../assets/Shirodhara therapy.jpg';
@@ -190,70 +190,70 @@ interface NowalImage {
 const ImageGridSection = () => {
   // Using imported local images
   const images: NowalImage[] = [
-    { url: yogaImage, title: "Yoga Session" },
-    { url: spaImage, title: "Spa Treatment" },
-    { url: meditationImage, title: "Meditation" },
-    { url: massageImage, title: "Massage Therapy" },
-    { url: aromaImage, title: "Aromatherapy" },
-    { url: salonImage, title: "Beauty Salon" },
-    { url: retreatImage, title: "Nowal Retreat" },
-    { url: hotSpringImage, title: "Hot Spring" },
-    { url: saunaImage, title: "Sauna" },
+    { url: yogaImage, title: "" },
+    { url: spaImage, title: "" },
+    { url: meditationImage, title: "" },
+    { url: massageImage, title: "" },
+    { url: aromaImage, title: "" },
+    { url: salonImage, title: "" },
+    { url: retreatImage, title: "" },
+    { url: hotSpringImage, title: "" },
+    { url: saunaImage, title: "" },
 
      // New images added here
-    { url: newImage1, title: "New Treatment 1" },
-    { url: newImage2, title: "New Treatment 2" },
-    { url: newImage3, title: "New Treatment 3" },
-    { url: newImage4, title: "New Treatment 4" },
-    { url: newImage5, title: "New Treatment 5" },
+    { url: newImage1, title: " " },
+    { url: newImage2, title: " " },
+    { url: newImage3, title: " " },
+    { url: newImage4, title: " " },
+    { url: newImage5, title: " " },
 
-    { url: newImage6, title: "New Treatment 1" },
-    { url: newImage7, title: "New Treatment 2" },
-    { url: newImage8, title: "New Treatment 3" },
-    { url: newImage9, title: "New Treatment 4" },
-    { url: newImage10, title: "New Treatment 5" },
+    { url: newImage6, title: " " },
+    { url: newImage7, title: " " },
+    { url: newImage8, title: " " },
+    { url: newImage9, title: " " },
+    { url: newImage10, title: " " },
 
-    { url: newImage11, title: "New Treatment 1" },
-    { url: newImage12, title: "New Treatment 2" },
-    { url: newImage13, title: "New Treatment 3" },
-    { url: newImage14, title: "New Treatment 4" },
-    { url: newImage15, title: "New Treatment 5" },
+    { url: newImage11, title: " " },
+    { url: newImage12, title: " " },
+    { url: newImage13, title: " " },
+    { url: newImage14, title: " " },
+    { url: newImage15, title: " " },
 
-     { url: newImage16, title: "New Treatment 1" },
-    { url: newImage17, title: "New Treatment 2" },
-    { url: newImage18, title: "New Treatment 3" },
-    { url: newImage19, title: "New Treatment 4" },
-    { url: newImage20, title: "New Treatment 5" },
+     { url: newImage16, title: " " },
+    { url: newImage17, title: " " },
+    { url: newImage18, title: " " },
+    { url: newImage19, title: " " },
+    { url: newImage20, title: " " },
 
-    { url: newImage21, title: "New Treatment 1" },
-    { url: newImage22, title: "New Treatment 2" },
-    { url: newImage23, title: "New Treatment 3" },
-    { url: newImage24, title: "New Treatment 4" },
-    { url: newImage25, title: "New Treatment 5" },
+    { url: newImage21, title: " " },
+    { url: newImage22, title: " " },
+    { url: newImage23, title: " " },
+    { url: newImage24, title: " " },
+    { url: newImage25, title: " " },
 
-     { url: newImage26, title: "New Treatment 1" },
-    { url: newImage27, title: "New Treatment 2" },
-    { url: newImage28, title: "New Treatment 3" },
-    { url: newImage29, title: "New Treatment 4" },
-    { url: newImage30, title: "New Treatment 5" },
+    //  { url: newImage26, title: " " },
+    { url: newImage27, title: " " },
+    { url: newImage28, title: " " },
+    { url: newImage29, title: " " },
+    { url: newImage30, title: " " },
 
-     { url: newImage31, title: "New Treatment 1" },
-    { url: newImage32, title: "New Treatment 2" },
-    { url: newImage33, title: "New Treatment 3" },
-    { url: newImage34, title: "New Treatment 4" },
-    { url: newImage35, title: "New Treatment 5" },
+    //  { url: newImage31, title: " " },
+    { url: newImage32, title: " " },
+    { url: newImage33, title: " " },
+    { url: newImage34, title: " " },
+    { url: newImage35, title: "" },
 
-     { url: newImage36, title: "New Treatment 1" },
-    { url: newImage37, title: "New Treatment 2" },
-    { url: newImage38, title: "New Treatment 3" },
-    { url: newImage39, title: "New Treatment 4" },
-    { url: newImage40, title: "New Treatment 5" },
+     { url: newImage36, title: "" },
+    { url: newImage37, title: "" },
+    { url: newImage38, title: "" },
+    { url: newImage39, title: "" },
+    { url: newImage40, title: "" },
 
-     { url: newImage41, title: "New Treatment 1" },
-    { url: newImage42, title: "New Treatment 2" },
-    { url: newImage43, title: "New Treatment 3" },
-    { url: newImage44, title: "New Treatment 4" },
-    { url: newImage45, title: "New Treatment 5" },
+     { url: newImage41, title: "" },
+    { url: newImage42, title: "" },
+    { url: newImage43, title: "" },
+    { url: newImage44, title: "" },
+    { url: newImage45, title: "" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
