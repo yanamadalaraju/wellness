@@ -9846,6 +9846,5484 @@
 // export default Navbar;
 
 
+
+
+
+
+// import React, { useState, useEffect, useRef } from 'react';
+// import { NavLink } from 'react-router-dom';
+// import { 
+//   Menu, 
+//   X, 
+//   ChevronDown, 
+//   ChevronRight, 
+//   Home, 
+//   Info, 
+//   Heart, 
+//   Hotel, 
+//   Images, 
+//   Phone, 
+//   ShoppingBag, 
+//   Calendar,
+//   Users,
+//   User,
+//   Clock,
+//   Leaf,
+//   Activity,
+//   Utensils,
+//   Gem,
+//   MapPin,
+//   Briefcase,
+//   BookOpen,
+//   Shield
+// } from 'lucide-react';
+// import logo from '../assets/logo.png';
+// import { scrollToSection } from '../components/utils/scrollToSection';
+// import Sidebar from './Sidebar';
+// import { useNavigate } from 'react-router-dom';
+
+// const Navbar: React.FC = () => {
+//   const [isOpen, setIsOpen] = useState(false);
+//   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+//   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+//   const [isScrolled, setIsScrolled] = useState(false);
+//   const navRef = useRef<HTMLDivElement>(null);
+//   const navigate = useNavigate();
+//   const [openSubDropdowns, setOpenSubDropdowns] = useState<Record<string, boolean>>({});
+
+//   // Handle scroll effect
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       const scrollTop = window.scrollY;
+//       setIsScrolled(scrollTop > 20);
+//     };
+
+//     window.addEventListener('scroll', handleScroll);
+//     return () => window.removeEventListener('scroll', handleScroll);
+//   }, []);
+
+//   const handleBookNow = () => {
+//     if (window.location.pathname === '/contact') {
+//       scrollToSection('contact-form');
+//     } else {
+//       navigate('/contact');
+//       setTimeout(() => scrollToSection('contact-form'), 100);
+//     }
+//   };
+
+//   useEffect(() => {
+//     const handleClickOutside = (event: MouseEvent) => {
+//       if (navRef.current && !navRef.current.contains(event.target as Node)) {
+//         setIsOpen(false);
+//         setOpenDropdown(null);
+//         setOpenSubDropdowns({});
+//       }
+//     };
+//     document.addEventListener('mousedown', handleClickOutside);
+//     return () => document.removeEventListener('mousedown', handleClickOutside);
+//   }, []);
+
+//   const toggleDropdown = (dropdown: string) => {
+//     setOpenDropdown(openDropdown === dropdown ? null : dropdown);
+//   };
+
+//   const toggleSubDropdown = (parentId: string, subId: string) => {
+//     setOpenSubDropdowns(prev => ({
+//       ...prev,
+//       [`${parentId}-${subId}`]: !prev[`${parentId}-${subId}`]
+//     }));
+//   };
+
+//   const closeAllDropdowns = () => {
+//     setIsOpen(false);
+//     setOpenDropdown(null);
+//     setOpenSubDropdowns({});
+//   };
+
+//   // Define dropdown arrays with icons
+//   const aboutUsDropdown = [
+//     { name: 'Nowal NatureCare', path: '/Ourstory', icon: <Leaf className="w-4 h-4" />, description: 'Our holistic healing philosophy' },
+//     { name: 'About Founder', path: '/experience#mantra', icon: <User className="w-4 h-4" />, description: 'Meet our visionary leader' },
+//     { name: 'Healing Team', path: '/healing-team', icon: <Users className="w-4 h-4" />, description: 'Our expert practitioners' },
+//     { name: 'Daily Routine', path: '/dincharya', icon: <Clock className="w-4 h-4" />, description: 'Structured wellness schedule' },
+//   ];
+
+//   const treatmentsDropdown = [
+//     { 
+//       name: 'Holistic Programs', 
+//       path: '/programs',
+//       icon: <Activity className="w-4 h-4" />,
+//       description: 'Comprehensive wellness packages',
+//       submenu: [
+//         { name: 'Naturopathy Wonders', path: '/narutopathy', icon: <Leaf className="w-4 h-4" /> },
+//         { name: 'Yoga & Meditation', path: '/yoga', icon: <Activity className="w-4 h-4" /> },
+//         { name: 'Diet & Nutrition', path: '/diet', icon: <Utensils className="w-4 h-4" /> },
+//         { name: 'Ayurveda', path: '/ayurveda', icon: <Gem className="w-4 h-4" /> },
+//         { name: 'Acupuncture', path: '/Holistictherapy', icon: <Shield className="w-4 h-4" /> },
+//         { name: 'Physiotherapy', path: '/physiotheraphy', icon: <Activity className="w-4 h-4" /> },
+//       ]
+//     }
+//   ];
+
+//   const accommodationsDropdown = [
+//     { name: 'Accommodation Details', path: '/accomadation', icon: <Hotel className="w-4 h-4" />, description: 'Room options & amenities' },
+//     { name: 'Accommodation Guidelines', path: '/guidliness', icon: <BookOpen className="w-4 h-4" />, description: 'Stay information & policies' },
+//   ];
+
+//   const contactUsDropdown = [
+//     { name: 'Contact Information', path: '/contact', icon: <MapPin className="w-4 h-4" />, description: 'Get in touch with us' },
+//     { name: 'Career Opportunities', path: '/career', icon: <Briefcase className="w-4 h-4" />, description: 'Join our healing team' },
+//   ];
+
+//   return (
+//     <>
+//       <nav 
+//         ref={navRef}
+//         className={`fixed w-full z-50 transition-all duration-300 ${
+//           isScrolled
+//             ? 'bg-white/95 backdrop-blur-md shadow-lg py-1'
+//             : 'bg-gradient-to-r from-green-50 to-emerald-100 py-2 shadow-md'
+//         }`}
+//       >
+//         <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6">
+//           <div className="flex justify-between items-center h-16">
+//             {/* Left side - Logo and Sidebar Toggle */}
+//             <div className="flex items-center">
+//               {/* Sidebar Toggle Button - Show on all devices except mobile */}
+//               <div className="hidden lg:flex items-center">
+//                 <button
+//                   className={`inline-flex items-center justify-center p-2 rounded-lg transition-all duration-300 mr-3 ${
+//                     isScrolled 
+//                       ? 'text-gray-700 hover:text-green-600 hover:bg-green-50' 
+//                       : 'text-gray-700 hover:text-green-600 hover:bg-green-50'
+//                   } focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500`}
+//                   onClick={() => setIsSidebarOpen(true)}
+//                 >
+//                   <span className="sr-only">Open sidebar menu</span>
+//                   <Menu className="block h-5 w-5" aria-hidden="true" />
+//                 </button>
+//               </div>
+
+//               {/* Logo */}
+//               <div className="flex items-center flex-shrink-0">
+//                 <NavLink to="/" className="flex items-center" onClick={closeAllDropdowns}>
+//                   <img 
+//                     src={logo} 
+//                     alt="Company Logo" 
+//                     className="h-10 sm:h-12 w-auto hover:scale-105 transition-transform duration-300"
+//                   />
+//                 </NavLink>
+//               </div>
+//             </div>
+
+//             {/* Desktop Navigation - Show on lg and above */}
+//             <div className="hidden lg:flex items-center space-x-1 flex-1 justify-center">
+//               {/* Home Button */}
+//               <NavLink
+//                 to="/"
+//                 className={({ isActive }) =>
+//                   `flex items-center px-3 py-2 rounded-lg transition-all duration-200 font-medium text-sm ${
+//                     isActive 
+//                       ? 'bg-green-100 text-green-700 shadow-inner' 
+//                       : 'text-gray-700 hover:bg-green-50 hover:text-green-600'
+//                   }`
+//                 }
+//                 onClick={closeAllDropdowns}
+//               >
+//                 <Home className="w-4 h-4 mr-1" />
+//                 <span>Home</span>
+//               </NavLink>
+
+//               {/* About Us */}
+//               <div className="relative group">
+//                 <button 
+//                   className="flex items-center space-x-1 px-3 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm group"
+//                   onMouseEnter={() => setOpenDropdown('desktop-about')}
+//                 >
+//                   <Info className="w-4 h-4 mr-1" />
+//                   <span>About Us</span>
+//                   <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
+//                 </button>
+//                 <div 
+//                   className="absolute left-0 mt-2 w-80 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 grid grid-cols-2 gap-2"
+//                   onMouseLeave={() => setOpenDropdown(null)}
+//                 >
+//                   {aboutUsDropdown.map((item, index) => (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path} 
+//                       className={({ isActive }) => 
+//                         `flex flex-col p-3 rounded-lg ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       <div className="flex items-center mb-1">
+//                         <div className="p-1.5 bg-green-100 rounded-md mr-2 group-hover/item:bg-green-200 transition-colors">
+//                           {item.icon}
+//                         </div>
+//                         <span className="font-medium text-sm">{item.name}</span>
+//                       </div>
+//                       <p className="text-xs text-gray-500 pl-8 group-hover/item:text-gray-700">{item.description}</p>
+//                     </NavLink>
+//                   ))}
+//                 </div>
+//               </div>
+
+//               {/* Treatments */}
+//               <div className="relative group">
+//                 <button 
+//                   className="flex items-center space-x-1 px-3 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm group"
+//                   onMouseEnter={() => setOpenDropdown('desktop-treatments')}
+//                 >
+//                   <Heart className="w-4 h-4 mr-1" />
+//                   <span>Treatments</span>
+//                   <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
+//                 </button>
+//                 <div 
+//                   className="absolute left-0 mt-2 w-96 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+//                   onMouseLeave={() => setOpenDropdown(null)}
+//                 >
+//                   <div className="px-4">
+//                     {treatmentsDropdown.map((item, index) => (
+//                       <div key={index} className="relative group/sub">
+//                         {item.submenu ? (
+//                           <>
+//                             <div 
+//                               className="flex justify-between items-start p-3 rounded-lg text-gray-700 hover:bg-gray-50 cursor-pointer transition-colors duration-150 group/item"
+//                               onMouseEnter={() => setOpenDropdown(`desktop-treatments-sub-${index}`)}
+//                             >
+//                               <div className="flex items-start">
+//                                 <div className="p-1.5 bg-blue-100 rounded-md mr-3 group-hover/item:bg-blue-200 transition-colors mt-0.5">
+//                                   {item.icon}
+//                                 </div>
+//                                 <div>
+//                                   <div className="font-medium text-sm">{item.name}</div>
+//                                   <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700">{item.description}</p>
+//                                 </div>
+//                               </div>
+//                               <ChevronRight className="w-4 h-4 text-gray-400 mt-1.5" />
+//                             </div>
+                            
+//                             <div 
+//                               className={`absolute left-full top-0 ml-1 w-64 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-3 z-50 ${
+//                                 openDropdown === `desktop-treatments-sub-${index}` ? 'block' : 'hidden'
+//                               } group-hover/sub:block`}
+//                               onMouseLeave={() => setOpenDropdown('desktop-treatments')}
+//                             >
+//                               <h4 className="px-4 py-2 font-medium text-sm text-gray-700 border-b border-gray-100 mb-1">{item.name}</h4>
+//                               {item.submenu.map((subItem, subIndex) => (
+//                                 <NavLink 
+//                                   key={subIndex} 
+//                                   to={subItem.path} 
+//                                   className={({ isActive }) => 
+//                                     `flex items-center px-4 py-2.5 text-sm ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150`
+//                                   }
+//                                   onClick={closeAllDropdowns}
+//                                 >
+//                                   <span className="mr-3 opacity-70">{subItem.icon}</span>
+//                                   {subItem.name}
+//                                 </NavLink>
+//                               ))}
+//                             </div>
+//                           </>
+//                         ) : (
+//                           <NavLink 
+//                             to={item.path}
+//                             className={({ isActive }) => 
+//                               `flex items-start p-3 rounded-lg ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                             }
+//                             onClick={closeAllDropdowns}
+//                           >
+//                             <div className="p-1.5 bg-blue-100 rounded-md mr-3 group-hover/item:bg-blue-200 transition-colors mt-0.5">
+//                               {item.icon}
+//                             </div>
+//                             <div>
+//                               <div className="font-medium text-sm">{item.name}</div>
+//                               <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700">{item.description}</p>
+//                             </div>
+//                           </NavLink>
+//                         )}
+//                       </div>
+//                     ))}
+//                   </div>
+//                 </div>
+//               </div>
+
+//               {/* Accommodations */}
+//               <div className="relative group">
+//                 <button 
+//                   className="flex items-center space-x-1 px-3 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm group"
+//                   onMouseEnter={() => setOpenDropdown('desktop-accommodations')}
+//                 >
+//                   <Hotel className="w-4 h-4 mr-1" />
+//                   <span>Accommodations</span>
+//                   <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
+//                 </button>
+//                 <div 
+//                   className="absolute left-0 mt-2 w-96 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+//                   onMouseLeave={() => setOpenDropdown(null)}
+//                 >
+//                   <div className="px-2">
+//                     <h3 className="font-semibold text-gray-800 text-sm uppercase tracking-wide mb-3 pl-3">Stay With Us</h3>
+//                     <div className="grid grid-cols-1 gap-2">
+//                       {accommodationsDropdown.map((item, index) => (
+//                         <NavLink 
+//                           key={index} 
+//                           to={item.path} 
+//                           className={({ isActive }) => 
+//                             `flex items-start p-3 rounded-lg ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                           }
+//                           onClick={closeAllDropdowns}
+//                         >
+//                           <div className="p-1.5 bg-amber-100 rounded-md mr-3 group-hover/item:bg-amber-200 transition-colors mt-0.5">
+//                             {item.icon}
+//                           </div>
+//                           <div>
+//                             <div className="font-medium text-sm">{item.name}</div>
+//                             <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700">{item.description}</p>
+//                           </div>
+//                         </NavLink>
+//                       ))}
+//                     </div>
+//                   </div>
+//                 </div>
+//               </div>
+
+//               {/* Gallery */}
+//               <NavLink
+//                 to="/image"
+//                 className={({ isActive }) =>
+//                   `flex items-center px-3 py-2 rounded-lg transition-all duration-200 font-medium text-sm ${
+//                     isActive 
+//                       ? 'bg-green-100 text-green-700 shadow-inner' 
+//                       : 'text-gray-700 hover:bg-green-50 hover:text-green-600'
+//                   }`
+//                 }
+//                 onClick={closeAllDropdowns}
+//               >
+//                 <Images className="w-4 h-4 mr-1" />
+//                 <span>Gallery</span>
+//               </NavLink>
+
+//               {/* Contact Us */}
+//               <div className="relative group">
+//                 <button 
+//                   className="flex items-center space-x-1 px-3 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm group"
+//                   onMouseEnter={() => setOpenDropdown('desktop-contact')}
+//                 >
+//                   <Phone className="w-4 h-4 mr-1" />
+//                   <span>Contact Us</span>
+//                   <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
+//                 </button>
+//                 <div 
+//                   className="absolute right-0 mt-2 w-80 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+//                   onMouseLeave={() => setOpenDropdown(null)}
+//                 >
+//                   <div className="px-2">
+//                     <h3 className="font-semibold text-gray-800 text-sm uppercase tracking-wide mb-3 pl-3">Get In Touch</h3>
+//                     <div className="grid grid-cols-1 gap-2">
+//                       {contactUsDropdown.map((item, index) => (
+//                         <NavLink 
+//                           key={index} 
+//                           to={item.path} 
+//                           className={({ isActive }) => 
+//                             `flex items-start p-3 rounded-lg ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                           }
+//                           onClick={closeAllDropdowns}
+//                         >
+//                           <div className="p-1.5 bg-purple-100 rounded-md mr-3 group-hover/item:bg-purple-200 transition-colors mt-0.5">
+//                             {item.icon}
+//                           </div>
+//                           <div>
+//                             <div className="font-medium text-sm">{item.name}</div>
+//                             <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700">{item.description}</p>
+//                           </div>
+//                         </NavLink>
+//                       ))}
+//                     </div>
+                    
+//                     <div className="mt-4 pt-4 border-t border-gray-100">
+//                       <div className="bg-gray-50 rounded-lg p-3">
+//                         <div className="flex items-center text-sm font-medium text-gray-700 mb-1">
+//                           <Phone className="w-4 h-4 mr-2 text-green-600" />
+//                           <span>+91 9251582670</span>
+//                         </div>
+//                         <div className="text-xs text-gray-500">Mon-Sun, 7:00 AM - 7:00 PM</div>
+//                       </div>
+//                     </div>
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Action Buttons - Desktop */}
+//             <div className="hidden lg:flex items-center space-x-2 ml-4">
+//               <NavLink
+//                 to=" "
+//                 className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all duration-200 font-medium text-sm shadow-md hover:shadow-lg group/btn"
+//                 onClick={closeAllDropdowns}
+//               >
+//                 <ShoppingBag className="w-4 h-4 mr-1.5 transition-transform group-hover/btn:scale-110" />
+//                 <span>Our Products</span>
+//               </NavLink>
+
+//               <button
+//                 onClick={handleBookNow}
+//                 className="flex items-center px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-200 font-medium text-sm shadow-md hover:shadow-lg group/btn"
+//               >
+//                 <Calendar className="w-4 h-4 mr-1.5 transition-transform group-hover/btn:scale-110" />
+//                 <span>Book Now</span>
+//               </button>
+//             </div>
+
+//             {/* Mobile Menu Button - Show on mobile only */}
+//             <div className="lg:hidden flex items-center">
+//               <button
+//                 className={`inline-flex items-center justify-center p-2 rounded-md transition-all duration-200 ${
+//                   isScrolled
+//                     ? 'text-gray-700 hover:text-green-600 hover:bg-green-50'
+//                     : 'text-gray-700 hover:text-green-600 hover:bg-green-50'
+//                 } focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500`}
+//                 onClick={() => setIsOpen(!isOpen)}
+//               >
+//                 <span className="sr-only">Open main menu</span>
+//                 {isOpen ? (
+//                   <X className="block h-6 w-6" aria-hidden="true" />
+//                 ) : (
+//                   <Menu className="block h-6 w-6" aria-hidden="true" />
+//                 )}
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Mobile Navigation */}
+//         <div className={`lg:hidden transition-all duration-300 ease-in-out overflow-hidden ${
+//           isOpen ? 'max-h-screen' : 'max-h-0'
+//         }`}>
+//           <div className="px-3 pt-2 pb-4 space-y-1 bg-white border-t border-gray-200 shadow-inner">
+//             {/* Home Button - Mobile */}
+//             <NavLink
+//               to="/"
+//               className={({ isActive }) =>
+//                 `flex items-center px-3 py-3 rounded-md transition-all duration-200 font-medium text-base ${
+//                   isActive 
+//                     ? 'bg-green-100 text-green-700' 
+//                     : 'text-gray-700 hover:bg-green-50 hover:text-green-600'
+//                 }`
+//               }
+//               onClick={closeAllDropdowns}
+//             >
+//               <Home className="w-5 h-5 mr-3" />
+//               <span>Home</span>
+//             </NavLink>
+
+//             {/* About Us - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base"
+//                 onClick={() => toggleDropdown('mobile-about')}
+//               >
+//                 <div className="flex items-center">
+//                   <Info className="w-5 h-5 mr-3" />
+//                   <span>About Us</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-about' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-about' ? 'max-h-96' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {aboutUsDropdown.map((item, index) => (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path}
+//                       className={({ isActive }) => 
+//                         `flex items-center px-3 py-2.5 rounded-md text-sm ${
+//                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                         } transition-colors duration-150`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       <span className="mr-3">{item.icon}</span>
+//                       {item.name}
+//                     </NavLink>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Treatments - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base"
+//                 onClick={() => toggleDropdown('mobile-treatments')}
+//               >
+//                 <div className="flex items-center">
+//                   <Heart className="w-5 h-5 mr-3" />
+//                   <span>Treatments</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-treatments' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-treatments' ? 'max-h-[500px]' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {treatmentsDropdown.map((item, index) => (
+//                     <div key={index}>
+//                       {item.submenu ? (
+//                         <>
+//                           <button 
+//                             className="flex justify-between items-center w-full px-3 py-2.5 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 text-sm"
+//                             onClick={() => toggleSubDropdown('mobile-treatments', `sub-${index}`)}
+//                           >
+//                             <div className="flex items-center">
+//                               <span className="mr-3">{item.icon}</span>
+//                               <span>{item.name}</span>
+//                             </div>
+//                             <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+//                               openSubDropdowns[`mobile-treatments-sub-${index}`] ? 'rotate-180' : ''
+//                             }`} />
+//                           </button>
+//                           <div className={`transition-all duration-200 overflow-hidden ${
+//                             openSubDropdowns[`mobile-treatments-sub-${index}`] ? 'max-h-96' : 'max-h-0'
+//                           }`}>
+//                             <div className="pl-6 space-y-1">
+//                               {item.submenu.map((subItem, subIndex) => (
+//                                 <NavLink 
+//                                   key={subIndex} 
+//                                   to={subItem.path}
+//                                   className={({ isActive }) => 
+//                                     `flex items-center px-3 py-2 rounded-md text-sm ${
+//                                       isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                                     } transition-colors duration-150`
+//                                   }
+//                                   onClick={closeAllDropdowns}
+//                                 >
+//                                   <span className="mr-3">{subItem.icon}</span>
+//                                   {subItem.name}
+//                                 </NavLink>
+//                               ))}
+//                             </div>
+//                           </div>
+//                         </>
+//                       ) : (
+//                         <NavLink 
+//                           to={item.path}
+//                           className={({ isActive }) => 
+//                             `flex items-center px-3 py-2.5 rounded-md text-sm ${
+//                               isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                             } transition-colors duration-150`
+//                           }
+//                           onClick={closeAllDropdowns}
+//                         >
+//                           <span className="mr-3">{item.icon}</span>
+//                           {item.name}
+//                         </NavLink>
+//                       )}
+//                     </div>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Accommodations - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base"
+//                 onClick={() => toggleDropdown('mobile-accommodations')}
+//               >
+//                 <div className="flex items-center">
+//                   <Hotel className="w-5 h-5 mr-3" />
+//                   <span>Accommodations</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-accommodations' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-accommodations' ? 'max-h-96' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {accommodationsDropdown.map((item, index) => (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path}
+//                       className={({ isActive }) => 
+//                         `flex items-center px-3 py-2.5 rounded-md text-sm ${
+//                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                         } transition-colors duration-150`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       <span className="mr-3">{item.icon}</span>
+//                       {item.name}
+//                     </NavLink>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Gallery - Mobile */}
+//             <NavLink
+//               to="/image"
+//               className={({ isActive }) =>
+//                 `flex items-center px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base ${
+//                   isActive ? 'bg-green-50 text-green-700 font-semibold' : ''
+//                 }`
+//               }
+//               onClick={closeAllDropdowns}
+//             >
+//               <Images className="w-5 h-5 mr-3" />
+//               <span>Gallery</span>
+//             </NavLink>
+
+//             {/* Contact Us - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base"
+//                 onClick={() => toggleDropdown('mobile-contact')}
+//               >
+//                 <div className="flex items-center">
+//                   <Phone className="w-5 h-5 mr-3" />
+//                   <span>Contact Us</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-contact' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-contact' ? 'max-h-96' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {contactUsDropdown.map((item, index) => (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path}
+//                       className={({ isActive }) => 
+//                         `flex items-center px-3 py-2.5 rounded-md text-sm ${
+//                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                         } transition-colors duration-150`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       <span className="mr-3">{item.icon}</span>
+//                       {item.name}
+//                     </NavLink>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Action Buttons - Mobile */}
+//             <div className="pt-4 space-y-2 border-t border-gray-200">
+//               <NavLink
+//                 to=" "
+//                 className="flex items-center justify-center px-4 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all duration-200 font-medium text-center shadow-md"
+//                 onClick={closeAllDropdowns}
+//               >
+//                 <ShoppingBag className="w-5 h-5 mr-2" />
+//                 <span>Our Products</span>
+//               </NavLink>
+
+//               <button
+//                 onClick={handleBookNow}
+//                 className="flex items-center justify-center w-full px-4 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-200 font-medium text-center shadow-md"
+//               >
+//                 <Calendar className="w-5 h-5 mr-2" />
+//                 <span>Book Now</span>
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+//       </nav>
+
+//       {/* Sidebar Component */}
+//       <Sidebar 
+//         isOpen={isSidebarOpen} 
+//         onClose={() => setIsSidebarOpen(false)} 
+//       />
+
+//       {/* REMOVED the spacer div - This is the key fix */}
+//     </>
+//   );
+// };
+
+// export default Navbar;
+
+
+
+
+
+// import React, { useState, useEffect, useRef } from 'react';
+// import { NavLink } from 'react-router-dom';
+// import { 
+//   Menu, 
+//   X, 
+//   ChevronDown, 
+//   ChevronRight, 
+//   Home, 
+//   Info, 
+//   Heart, 
+//   Hotel, 
+//   Images, 
+//   Phone, 
+//   ShoppingBag, 
+//   Calendar,
+//   Users,
+//   User,
+//   Clock,
+//   Leaf,
+//   Activity,
+//   Utensils,
+//   Gem,
+//   MapPin,
+//   Briefcase,
+//   BookOpen,
+//   Shield,
+//   PartyPopper // Added for Celebrations icon
+// } from 'lucide-react';
+// import logo from '../assets/logo.png';
+// import { scrollToSection } from '../components/utils/scrollToSection';
+// import Sidebar from './Sidebar';
+// import { useNavigate } from 'react-router-dom';
+
+// const Navbar: React.FC = () => {
+//   const [isOpen, setIsOpen] = useState(false);
+//   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+//   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+//   const [isScrolled, setIsScrolled] = useState(false);
+//   const navRef = useRef<HTMLDivElement>(null);
+//   const navigate = useNavigate();
+//   const [openSubDropdowns, setOpenSubDropdowns] = useState<Record<string, boolean>>({});
+
+//   // Handle scroll effect
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       const scrollTop = window.scrollY;
+//       setIsScrolled(scrollTop > 20);
+//     };
+
+//     window.addEventListener('scroll', handleScroll);
+//     return () => window.removeEventListener('scroll', handleScroll);
+//   }, []);
+
+//   const handleBookNow = () => {
+//     if (window.location.pathname === '/contact') {
+//       scrollToSection('contact-form');
+//     } else {
+//       navigate('/contact');
+//       setTimeout(() => scrollToSection('contact-form'), 100);
+//     }
+//   };
+
+//   useEffect(() => {
+//     const handleClickOutside = (event: MouseEvent) => {
+//       if (navRef.current && !navRef.current.contains(event.target as Node)) {
+//         setIsOpen(false);
+//         setOpenDropdown(null);
+//         setOpenSubDropdowns({});
+//       }
+//     };
+//     document.addEventListener('mousedown', handleClickOutside);
+//     return () => document.removeEventListener('mousedown', handleClickOutside);
+//   }, []);
+
+//   const toggleDropdown = (dropdown: string) => {
+//     setOpenDropdown(openDropdown === dropdown ? null : dropdown);
+//   };
+
+//   const toggleSubDropdown = (parentId: string, subId: string) => {
+//     setOpenSubDropdowns(prev => ({
+//       ...prev,
+//       [`${parentId}-${subId}`]: !prev[`${parentId}-${subId}`]
+//     }));
+//   };
+
+//   const closeAllDropdowns = () => {
+//     setIsOpen(false);
+//     setOpenDropdown(null);
+//     setOpenSubDropdowns({});
+//   };
+
+//   // Define dropdown arrays with icons
+//   const aboutUsDropdown = [
+//     { name: 'Nowal NatureCare', path: '/Ourstory', icon: <Leaf className="w-4 h-4" />, description: 'Our holistic healing philosophy' },
+//     { name: 'About Founder', path: '/experience#mantra', icon: <User className="w-4 h-4" />, description: 'Meet our visionary leader' },
+//     { name: 'Healing Team', path: '/healing-team', icon: <Users className="w-4 h-4" />, description: 'Our expert practitioners' },
+//     { name: 'Daily Routine', path: '/dincharya', icon: <Clock className="w-4 h-4" />, description: 'Structured wellness schedule' },
+//   ];
+
+//   const treatmentsDropdown = [
+//     { 
+//       name: 'Holistic Programs', 
+//       path: '/programs',
+//       icon: <Activity className="w-4 h-4" />,
+//       description: 'Comprehensive wellness packages',
+//       submenu: [
+//         { name: 'Naturopathy Wonders', path: '/narutopathy', icon: <Leaf className="w-4 h-4" /> },
+//         { name: 'Yoga & Meditation', path: '/yoga', icon: <Activity className="w-4 h-4" /> },
+//         { name: 'Diet & Nutrition', path: '/diet', icon: <Utensils className="w-4 h-4" /> },
+//         { name: 'Ayurveda', path: '/ayurveda', icon: <Gem className="w-4 h-4" /> },
+//         { name: 'Acupuncture', path: '/Holistictherapy', icon: <Shield className="w-4 h-4" /> },
+//         { name: 'Physiotherapy', path: '/physiotheraphy', icon: <Activity className="w-4 h-4" /> },
+//       ]
+//     }
+//   ];
+
+//   const accommodationsDropdown = [
+//     { name: 'Accommodation Details', path: '/accomadation', icon: <Hotel className="w-4 h-4" />, description: 'Room options & amenities' },
+//     { name: 'Accommodation Guidelines', path: '/guidliness', icon: <BookOpen className="w-4 h-4" />, description: 'Stay information & policies' },
+//   ];
+
+//   // NEW: Celebrations dropdown
+//   const celebrationsDropdown = [
+//     { name: 'Wedding', path: '/wedding', icon: <PartyPopper className="w-4 h-4" />, description: 'Beautiful wedding celebrations' },
+//     { name: 'Events', path: '/events', icon: <Calendar className="w-4 h-4" />, description: 'Special events and occasions' },
+//     { name: 'Banquet Lawn', path: '/banquet-lawn', icon: <Hotel className="w-4 h-4" />, description: 'Spacious banquet facilities' },
+//   ];
+
+//   const contactUsDropdown = [
+//     { name: 'Contact Information', path: '/contact', icon: <MapPin className="w-4 h-4" />, description: 'Get in touch with us' },
+//     { name: 'Career Opportunities', path: '/career', icon: <Briefcase className="w-4 h-4" />, description: 'Join our healing team' },
+//   ];
+
+//   return (
+//     <>
+//       <nav 
+//         ref={navRef}
+//         className={`fixed w-full z-50 transition-all duration-300 ${
+//           isScrolled
+//             ? 'bg-white/95 backdrop-blur-md shadow-lg py-1'
+//             : 'bg-gradient-to-r from-green-50 to-emerald-100 py-2 shadow-md'
+//         }`}
+//       >
+//         <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6">
+//           <div className="flex justify-between items-center h-16">
+//             {/* Left side - Logo and Sidebar Toggle */}
+//             <div className="flex items-center">
+//               {/* Sidebar Toggle Button - Show on all devices except mobile */}
+//               <div className="hidden lg:flex items-center">
+//                 <button
+//                   className={`inline-flex items-center justify-center p-2 rounded-lg transition-all duration-300 mr-3 ${
+//                     isScrolled 
+//                       ? 'text-gray-700 hover:text-green-600 hover:bg-green-50' 
+//                       : 'text-gray-700 hover:text-green-600 hover:bg-green-50'
+//                   } focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500`}
+//                   onClick={() => setIsSidebarOpen(true)}
+//                 >
+//                   <span className="sr-only">Open sidebar menu</span>
+//                   <Menu className="block h-5 w-5" aria-hidden="true" />
+//                 </button>
+//               </div>
+
+//               {/* Logo */}
+//               <div className="flex items-center flex-shrink-0">
+//                 <NavLink to="/" className="flex items-center" onClick={closeAllDropdowns}>
+//                   <img 
+//                     src={logo} 
+//                     alt="Company Logo" 
+//                     className="h-10 sm:h-12 w-auto hover:scale-105 transition-transform duration-300"
+//                   />
+//                 </NavLink>
+//               </div>
+//             </div>
+
+//             {/* Desktop Navigation - Show on lg and above */}
+//             <div className="hidden lg:flex items-center space-x-1 flex-1 justify-center">
+//               {/* Home Button */}
+//               <NavLink
+//                 to="/"
+//                 className={({ isActive }) =>
+//                   `flex items-center px-3 py-2 rounded-lg transition-all duration-200 font-medium text-sm ${
+//                     isActive 
+//                       ? 'bg-green-100 text-green-700 shadow-inner' 
+//                       : 'text-gray-700 hover:bg-green-50 hover:text-green-600'
+//                   }`
+//                 }
+//                 onClick={closeAllDropdowns}
+//               >
+//                 <Home className="w-4 h-4 mr-1" />
+//                 <span>Home</span>
+//               </NavLink>
+
+//               {/* About Us */}
+//               <div className="relative group">
+//                 <button 
+//                   className="flex items-center space-x-1 px-3 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm group"
+//                   onMouseEnter={() => setOpenDropdown('desktop-about')}
+//                 >
+//                   <Info className="w-4 h-4 mr-1" />
+//                   <span>About Us</span>
+//                   <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
+//                 </button>
+//                 <div 
+//                   className="absolute left-0 mt-2 w-80 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 grid grid-cols-2 gap-2"
+//                   onMouseLeave={() => setOpenDropdown(null)}
+//                 >
+//                   {aboutUsDropdown.map((item, index) => (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path} 
+//                       className={({ isActive }) => 
+//                         `flex flex-col p-3 rounded-lg ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       <div className="flex items-center mb-1">
+//                         <div className="p-1.5 bg-green-100 rounded-md mr-2 group-hover/item:bg-green-200 transition-colors">
+//                           {item.icon}
+//                         </div>
+//                         <span className="font-medium text-sm">{item.name}</span>
+//                       </div>
+//                       <p className="text-xs text-gray-500 pl-8 group-hover/item:text-gray-700">{item.description}</p>
+//                     </NavLink>
+//                   ))}
+//                 </div>
+//               </div>
+
+//               {/* Treatments */}
+//               <div className="relative group">
+//                 <button 
+//                   className="flex items-center space-x-1 px-3 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm group"
+//                   onMouseEnter={() => setOpenDropdown('desktop-treatments')}
+//                 >
+//                   <Heart className="w-4 h-4 mr-1" />
+//                   <span>Treatments</span>
+//                   <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
+//                 </button>
+//                 <div 
+//                   className="absolute left-0 mt-2 w-96 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+//                   onMouseLeave={() => setOpenDropdown(null)}
+//                 >
+//                   <div className="px-4">
+//                     {treatmentsDropdown.map((item, index) => (
+//                       <div key={index} className="relative group/sub">
+//                         {item.submenu ? (
+//                           <>
+//                             <div 
+//                               className="flex justify-between items-start p-3 rounded-lg text-gray-700 hover:bg-gray-50 cursor-pointer transition-colors duration-150 group/item"
+//                               onMouseEnter={() => setOpenDropdown(`desktop-treatments-sub-${index}`)}
+//                             >
+//                               <div className="flex items-start">
+//                                 <div className="p-1.5 bg-blue-100 rounded-md mr-3 group-hover/item:bg-blue-200 transition-colors mt-0.5">
+//                                   {item.icon}
+//                                 </div>
+//                                 <div>
+//                                   <div className="font-medium text-sm">{item.name}</div>
+//                                   <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700">{item.description}</p>
+//                                 </div>
+//                               </div>
+//                               <ChevronRight className="w-4 h-4 text-gray-400 mt-1.5" />
+//                             </div>
+                            
+//                             <div 
+//                               className={`absolute left-full top-0 ml-1 w-64 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-3 z-50 ${
+//                                 openDropdown === `desktop-treatments-sub-${index}` ? 'block' : 'hidden'
+//                               } group-hover/sub:block`}
+//                               onMouseLeave={() => setOpenDropdown('desktop-treatments')}
+//                             >
+//                               <h4 className="px-4 py-2 font-medium text-sm text-gray-700 border-b border-gray-100 mb-1">{item.name}</h4>
+//                               {item.submenu.map((subItem, subIndex) => (
+//                                 <NavLink 
+//                                   key={subIndex} 
+//                                   to={subItem.path} 
+//                                   className={({ isActive }) => 
+//                                     `flex items-center px-4 py-2.5 text-sm ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150`
+//                                   }
+//                                   onClick={closeAllDropdowns}
+//                                 >
+//                                   <span className="mr-3 opacity-70">{subItem.icon}</span>
+//                                   {subItem.name}
+//                                 </NavLink>
+//                               ))}
+//                             </div>
+//                           </>
+//                         ) : (
+//                           <NavLink 
+//                             to={item.path}
+//                             className={({ isActive }) => 
+//                               `flex items-start p-3 rounded-lg ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                             }
+//                             onClick={closeAllDropdowns}
+//                           >
+//                             <div className="p-1.5 bg-blue-100 rounded-md mr-3 group-hover/item:bg-blue-200 transition-colors mt-0.5">
+//                               {item.icon}
+//                             </div>
+//                             <div>
+//                               <div className="font-medium text-sm">{item.name}</div>
+//                               <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700">{item.description}</p>
+//                             </div>
+//                           </NavLink>
+//                         )}
+//                       </div>
+//                     ))}
+//                   </div>
+//                 </div>
+//               </div>
+
+//               {/* Accommodations */}
+//               <div className="relative group">
+//                 <button 
+//                   className="flex items-center space-x-1 px-3 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm group"
+//                   onMouseEnter={() => setOpenDropdown('desktop-accommodations')}
+//                 >
+//                   <Hotel className="w-4 h-4 mr-1" />
+//                   <span>Accommodations</span>
+//                   <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
+//                 </button>
+//                 <div 
+//                   className="absolute left-0 mt-2 w-96 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+//                   onMouseLeave={() => setOpenDropdown(null)}
+//                 >
+//                   <div className="px-2">
+//                     <h3 className="font-semibold text-gray-800 text-sm uppercase tracking-wide mb-3 pl-3">Stay With Us</h3>
+//                     <div className="grid grid-cols-1 gap-2">
+//                       {accommodationsDropdown.map((item, index) => (
+//                         <NavLink 
+//                           key={index} 
+//                           to={item.path} 
+//                           className={({ isActive }) => 
+//                             `flex items-start p-3 rounded-lg ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                           }
+//                           onClick={closeAllDropdowns}
+//                         >
+//                           <div className="p-1.5 bg-amber-100 rounded-md mr-3 group-hover/item:bg-amber-200 transition-colors mt-0.5">
+//                             {item.icon}
+//                           </div>
+//                           <div>
+//                             <div className="font-medium text-sm">{item.name}</div>
+//                             <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700">{item.description}</p>
+//                           </div>
+//                         </NavLink>
+//                       ))}
+//                     </div>
+//                   </div>
+//                 </div>
+//               </div>
+
+//               {/* Gallery */}
+//               <NavLink
+//                 to="/image"
+//                 className={({ isActive }) =>
+//                   `flex items-center px-3 py-2 rounded-lg transition-all duration-200 font-medium text-sm ${
+//                     isActive 
+//                       ? 'bg-green-100 text-green-700 shadow-inner' 
+//                       : 'text-gray-700 hover:bg-green-50 hover:text-green-600'
+//                   }`
+//                 }
+//                 onClick={closeAllDropdowns}
+//               >
+//                 <Images className="w-4 h-4 mr-1" />
+//                 <span>Gallery</span>
+//               </NavLink>
+
+//               {/* NEW: Celebrations */}
+//               <div className="relative group">
+//                 <button 
+//                   className="flex items-center space-x-1 px-3 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm group"
+//                   onMouseEnter={() => setOpenDropdown('desktop-celebrations')}
+//                 >
+//                   <PartyPopper className="w-4 h-4 mr-1" />
+//                   <span>Celebrations</span>
+//                   <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
+//                 </button>
+//                 <div 
+//                   className="absolute left-0 mt-2 w-80 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+//                   onMouseLeave={() => setOpenDropdown(null)}
+//                 >
+//                   <div className="px-2">
+//                     <h3 className="font-semibold text-gray-800 text-sm uppercase tracking-wide mb-3 pl-3">Special Events</h3>
+//                     <div className="grid grid-cols-1 gap-2">
+//                       {celebrationsDropdown.map((item, index) => (
+//                         <NavLink 
+//                           key={index} 
+//                           to={item.path} 
+//                           className={({ isActive }) => 
+//                             `flex items-start p-3 rounded-lg ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                           }
+//                           onClick={closeAllDropdowns}
+//                         >
+//                           <div className="p-1.5 bg-pink-100 rounded-md mr-3 group-hover/item:bg-pink-200 transition-colors mt-0.5">
+//                             {item.icon}
+//                           </div>
+//                           <div>
+//                             <div className="font-medium text-sm">{item.name}</div>
+//                             <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700">{item.description}</p>
+//                           </div>
+//                         </NavLink>
+//                       ))}
+//                     </div>
+//                   </div>
+//                 </div>
+//               </div>
+
+//               {/* Contact Us */}
+//               <div className="relative group">
+//                 <button 
+//                   className="flex items-center space-x-1 px-3 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm group"
+//                   onMouseEnter={() => setOpenDropdown('desktop-contact')}
+//                 >
+//                   <Phone className="w-4 h-4 mr-1" />
+//                   <span>Contact Us</span>
+//                   <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
+//                 </button>
+//                 <div 
+//                   className="absolute right-0 mt-2 w-80 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+//                   onMouseLeave={() => setOpenDropdown(null)}
+//                 >
+//                   <div className="px-2">
+//                     <h3 className="font-semibold text-gray-800 text-sm uppercase tracking-wide mb-3 pl-3">Get In Touch</h3>
+//                     <div className="grid grid-cols-1 gap-2">
+//                       {contactUsDropdown.map((item, index) => (
+//                         <NavLink 
+//                           key={index} 
+//                           to={item.path} 
+//                           className={({ isActive }) => 
+//                             `flex items-start p-3 rounded-lg ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                           }
+//                           onClick={closeAllDropdowns}
+//                         >
+//                           <div className="p-1.5 bg-purple-100 rounded-md mr-3 group-hover/item:bg-purple-200 transition-colors mt-0.5">
+//                             {item.icon}
+//                           </div>
+//                           <div>
+//                             <div className="font-medium text-sm">{item.name}</div>
+//                             <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700">{item.description}</p>
+//                           </div>
+//                         </NavLink>
+//                       ))}
+//                     </div>
+                    
+//                     <div className="mt-4 pt-4 border-t border-gray-100">
+//                       <div className="bg-gray-50 rounded-lg p-3">
+//                         <div className="flex items-center text-sm font-medium text-gray-700 mb-1">
+//                           <Phone className="w-4 h-4 mr-2 text-green-600" />
+//                           <span>+91 9251582670</span>
+//                         </div>
+//                         <div className="text-xs text-gray-500">Mon-Sun, 7:00 AM - 7:00 PM</div>
+//                       </div>
+//                     </div>
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Action Buttons - Desktop */}
+//             <div className="hidden lg:flex items-center space-x-2 ml-4">
+//               <NavLink
+//                 to=" "
+//                 className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all duration-200 font-medium text-sm shadow-md hover:shadow-lg group/btn"
+//                 onClick={closeAllDropdowns}
+//               >
+//                 <ShoppingBag className="w-4 h-4 mr-1.5 transition-transform group-hover/btn:scale-110" />
+//                 <span>Our Products</span>
+//               </NavLink>
+
+//               <button
+//                 onClick={handleBookNow}
+//                 className="flex items-center px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-200 font-medium text-sm shadow-md hover:shadow-lg group/btn"
+//               >
+//                 <Calendar className="w-4 h-4 mr-1.5 transition-transform group-hover/btn:scale-110" />
+//                 <span>Book Now</span>
+//               </button>
+//             </div>
+
+//             {/* Mobile Menu Button - Show on mobile only */}
+//             <div className="lg:hidden flex items-center">
+//               <button
+//                 className={`inline-flex items-center justify-center p-2 rounded-md transition-all duration-200 ${
+//                   isScrolled
+//                     ? 'text-gray-700 hover:text-green-600 hover:bg-green-50'
+//                     : 'text-gray-700 hover:text-green-600 hover:bg-green-50'
+//                 } focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500`}
+//                 onClick={() => setIsOpen(!isOpen)}
+//               >
+//                 <span className="sr-only">Open main menu</span>
+//                 {isOpen ? (
+//                   <X className="block h-6 w-6" aria-hidden="true" />
+//                 ) : (
+//                   <Menu className="block h-6 w-6" aria-hidden="true" />
+//                 )}
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Mobile Navigation */}
+//         <div className={`lg:hidden transition-all duration-300 ease-in-out overflow-hidden ${
+//           isOpen ? 'max-h-screen' : 'max-h-0'
+//         }`}>
+//           <div className="px-3 pt-2 pb-4 space-y-1 bg-white border-t border-gray-200 shadow-inner">
+//             {/* Home Button - Mobile */}
+//             <NavLink
+//               to="/"
+//               className={({ isActive }) =>
+//                 `flex items-center px-3 py-3 rounded-md transition-all duration-200 font-medium text-base ${
+//                   isActive 
+//                     ? 'bg-green-100 text-green-700' 
+//                     : 'text-gray-700 hover:bg-green-50 hover:text-green-600'
+//                 }`
+//               }
+//               onClick={closeAllDropdowns}
+//             >
+//               <Home className="w-5 h-5 mr-3" />
+//               <span>Home</span>
+//             </NavLink>
+
+//             {/* About Us - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base"
+//                 onClick={() => toggleDropdown('mobile-about')}
+//               >
+//                 <div className="flex items-center">
+//                   <Info className="w-5 h-5 mr-3" />
+//                   <span>About Us</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-about' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-about' ? 'max-h-96' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {aboutUsDropdown.map((item, index) => (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path}
+//                       className={({ isActive }) => 
+//                         `flex items-center px-3 py-2.5 rounded-md text-sm ${
+//                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                         } transition-colors duration-150`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       <span className="mr-3">{item.icon}</span>
+//                       {item.name}
+//                     </NavLink>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Treatments - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base"
+//                 onClick={() => toggleDropdown('mobile-treatments')}
+//               >
+//                 <div className="flex items-center">
+//                   <Heart className="w-5 h-5 mr-3" />
+//                   <span>Treatments</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-treatments' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-treatments' ? 'max-h-[500px]' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {treatmentsDropdown.map((item, index) => (
+//                     <div key={index}>
+//                       {item.submenu ? (
+//                         <>
+//                           <button 
+//                             className="flex justify-between items-center w-full px-3 py-2.5 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 text-sm"
+//                             onClick={() => toggleSubDropdown('mobile-treatments', `sub-${index}`)}
+//                           >
+//                             <div className="flex items-center">
+//                               <span className="mr-3">{item.icon}</span>
+//                               <span>{item.name}</span>
+//                             </div>
+//                             <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+//                               openSubDropdowns[`mobile-treatments-sub-${index}`] ? 'rotate-180' : ''
+//                             }`} />
+//                           </button>
+//                           <div className={`transition-all duration-200 overflow-hidden ${
+//                             openSubDropdowns[`mobile-treatments-sub-${index}`] ? 'max-h-96' : 'max-h-0'
+//                           }`}>
+//                             <div className="pl-6 space-y-1">
+//                               {item.submenu.map((subItem, subIndex) => (
+//                                 <NavLink 
+//                                   key={subIndex} 
+//                                   to={subItem.path}
+//                                   className={({ isActive }) => 
+//                                     `flex items-center px-3 py-2 rounded-md text-sm ${
+//                                       isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                                     } transition-colors duration-150`
+//                                   }
+//                                   onClick={closeAllDropdowns}
+//                                 >
+//                                   <span className="mr-3">{subItem.icon}</span>
+//                                   {subItem.name}
+//                                 </NavLink>
+//                               ))}
+//                             </div>
+//                           </div>
+//                         </>
+//                       ) : (
+//                         <NavLink 
+//                           to={item.path}
+//                           className={({ isActive }) => 
+//                             `flex items-center px-3 py-2.5 rounded-md text-sm ${
+//                               isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                             } transition-colors duration-150`
+//                           }
+//                           onClick={closeAllDropdowns}
+//                         >
+//                           <span className="mr-3">{item.icon}</span>
+//                           {item.name}
+//                         </NavLink>
+//                       )}
+//                     </div>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Accommodations - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base"
+//                 onClick={() => toggleDropdown('mobile-accommodations')}
+//               >
+//                 <div className="flex items-center">
+//                   <Hotel className="w-5 h-5 mr-3" />
+//                   <span>Accommodations</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-accommodations' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-accommodations' ? 'max-h-96' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {accommodationsDropdown.map((item, index) => (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path}
+//                       className={({ isActive }) => 
+//                         `flex items-center px-3 py-2.5 rounded-md text-sm ${
+//                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                         } transition-colors duration-150`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       <span className="mr-3">{item.icon}</span>
+//                       {item.name}
+//                     </NavLink>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Gallery - Mobile */}
+//             <NavLink
+//               to="/image"
+//               className={({ isActive }) =>
+//                 `flex items-center px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base ${
+//                   isActive ? 'bg-green-50 text-green-700 font-semibold' : ''
+//                 }`
+//               }
+//               onClick={closeAllDropdowns}
+//             >
+//               <Images className="w-5 h-5 mr-3" />
+//               <span>Gallery</span>
+//             </NavLink>
+
+//             {/* NEW: Celebrations - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base"
+//                 onClick={() => toggleDropdown('mobile-celebrations')}
+//               >
+//                 <div className="flex items-center">
+//                   <PartyPopper className="w-5 h-5 mr-3" />
+//                   <span>Celebrations</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-celebrations' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-celebrations' ? 'max-h-96' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {celebrationsDropdown.map((item, index) => (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path}
+//                       className={({ isActive }) => 
+//                         `flex items-center px-3 py-2.5 rounded-md text-sm ${
+//                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                         } transition-colors duration-150`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       <span className="mr-3">{item.icon}</span>
+//                       {item.name}
+//                     </NavLink>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Contact Us - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base"
+//                 onClick={() => toggleDropdown('mobile-contact')}
+//               >
+//                 <div className="flex items-center">
+//                   <Phone className="w-5 h-5 mr-3" />
+//                   <span>Contact Us</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-contact' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-contact' ? 'max-h-96' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {contactUsDropdown.map((item, index) => (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path}
+//                       className={({ isActive }) => 
+//                         `flex items-center px-3 py-2.5 rounded-md text-sm ${
+//                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                         } transition-colors duration-150`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       <span className="mr-3">{item.icon}</span>
+//                       {item.name}
+//                     </NavLink>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Action Buttons - Mobile */}
+//             <div className="pt-4 space-y-2 border-t border-gray-200">
+//               <NavLink
+//                 to=" "
+//                 className="flex items-center justify-center px-4 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all duration-200 font-medium text-center shadow-md"
+//                 onClick={closeAllDropdowns}
+//               >
+//                 <ShoppingBag className="w-5 h-5 mr-2" />
+//                 <span>Our Products</span>
+//               </NavLink>
+
+//               <button
+//                 onClick={handleBookNow}
+//                 className="flex items-center justify-center w-full px-4 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-200 font-medium text-center shadow-md"
+//               >
+//                 <Calendar className="w-5 h-5 mr-2" />
+//                 <span>Book Now</span>
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+//       </nav>
+
+//       {/* Sidebar Component */}
+//       <Sidebar 
+//         isOpen={isSidebarOpen} 
+//         onClose={() => setIsSidebarOpen(false)} 
+//       />
+//     </>
+//   );
+// };
+
+// export default Navbar;
+
+
+
+
+
+
+// import React, { useState, useEffect, useRef } from 'react';
+// import { NavLink } from 'react-router-dom';
+// import { 
+//   Menu, 
+//   X, 
+//   ChevronDown, 
+//   ChevronRight, 
+//   Home, 
+//   Info, 
+//   Heart, 
+//   Hotel, 
+//   Images, 
+//   Phone, 
+//   ShoppingBag, 
+//   Calendar,
+//   Users,
+//   User,
+//   Clock,
+//   Leaf,
+//   Activity,
+//   Utensils,
+//   Gem,
+//   MapPin,
+//   Briefcase,
+//   BookOpen,
+//   Shield,
+//   PartyPopper
+// } from 'lucide-react';
+// import logo from '../assets/logo.png';
+// import { scrollToSection } from '../components/utils/scrollToSection';
+// import Sidebar from './Sidebar';
+// import { useNavigate } from 'react-router-dom';
+
+// const Navbar: React.FC = () => {
+//   const [isOpen, setIsOpen] = useState(false);
+//   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+//   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+//   const [isScrolled, setIsScrolled] = useState(false);
+//   const navRef = useRef<HTMLDivElement>(null);
+//   const navigate = useNavigate();
+//   const [openSubDropdowns, setOpenSubDropdowns] = useState<Record<string, boolean>>({});
+
+//   // Handle scroll effect
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       const scrollTop = window.scrollY;
+//       setIsScrolled(scrollTop > 20);
+//     };
+
+//     window.addEventListener('scroll', handleScroll);
+//     return () => window.removeEventListener('scroll', handleScroll);
+//   }, []);
+
+//   const handleBookNow = () => {
+//     if (window.location.pathname === '/contact') {
+//       scrollToSection('contact-form');
+//     } else {
+//       navigate('/contact');
+//       setTimeout(() => scrollToSection('contact-form'), 100);
+//     }
+//   };
+
+//   useEffect(() => {
+//     const handleClickOutside = (event: MouseEvent) => {
+//       if (navRef.current && !navRef.current.contains(event.target as Node)) {
+//         setIsOpen(false);
+//         setOpenDropdown(null);
+//         setOpenSubDropdowns({});
+//       }
+//     };
+//     document.addEventListener('mousedown', handleClickOutside);
+//     return () => document.removeEventListener('mousedown', handleClickOutside);
+//   }, []);
+
+//   const toggleDropdown = (dropdown: string) => {
+//     setOpenDropdown(openDropdown === dropdown ? null : dropdown);
+//   };
+
+//   const toggleSubDropdown = (parentId: string, subId: string) => {
+//     setOpenSubDropdowns(prev => ({
+//       ...prev,
+//       [`${parentId}-${subId}`]: !prev[`${parentId}-${subId}`]
+//     }));
+//   };
+
+//   const closeAllDropdowns = () => {
+//     setIsOpen(false);
+//     setOpenDropdown(null);
+//     setOpenSubDropdowns({});
+//   };
+
+//   // Define dropdown arrays with icons
+//   const aboutUsDropdown = [
+//     { name: 'Nowal NatureCare', path: '/Ourstory', icon: <Leaf className="w-4 h-4" />, description: 'Our holistic healing philosophy' },
+//     { name: 'About Founder', path: '/experience#mantra', icon: <User className="w-4 h-4" />, description: 'Meet our visionary leader' },
+//     { name: 'Healing Team', path: '/healing-team', icon: <Users className="w-4 h-4" />, description: 'Our expert practitioners' },
+//     { name: 'Daily Routine', path: '/dincharya', icon: <Clock className="w-4 h-4" />, description: 'Structured wellness schedule' },
+//   ];
+
+//   const treatmentsDropdown = [
+//     { 
+//       name: 'Holistic Programs', 
+//       path: '/programs',
+//       icon: <Activity className="w-4 h-4" />,
+//       description: 'Comprehensive wellness packages',
+//       submenu: [
+//         { name: 'Naturopathy Wonders', path: '/narutopathy', icon: <Leaf className="w-4 h-4" /> },
+//         { name: 'Yoga & Meditation', path: '/yoga', icon: <Activity className="w-4 h-4" /> },
+//         { name: 'Diet & Nutrition', path: '/diet', icon: <Utensils className="w-4 h-4" /> },
+//         { name: 'Ayurveda', path: '/ayurveda', icon: <Gem className="w-4 h-4" /> },
+//         { name: 'Acupuncture', path: '/Holistictherapy', icon: <Shield className="w-4 h-4" /> },
+//         { name: 'Physiotherapy', path: '/physiotheraphy', icon: <Activity className="w-4 h-4" /> },
+//       ]
+//     }
+//   ];
+
+//   const accommodationsDropdown = [
+//     { name: 'Accommodation Details', path: '/accomadation', icon: <Hotel className="w-4 h-4" />, description: 'Room options & amenities' },
+//     { name: 'Accommodation Guidelines', path: '/guidliness', icon: <BookOpen className="w-4 h-4" />, description: 'Stay information & policies' },
+//   ];
+
+//   const celebrationsDropdown = [
+//     { name: 'Wedding', path: '/wedding', icon: <PartyPopper className="w-4 h-4" />, description: 'Beautiful wedding celebrations' },
+//     { name: 'Events', path: '/events', icon: <Calendar className="w-4 h-4" />, description: 'Special events and occasions' },
+//     { name: 'Banquet Lawn', path: '/banquet-lawn', icon: <Hotel className="w-4 h-4" />, description: 'Spacious banquet facilities' },
+//   ];
+
+//   const contactUsDropdown = [
+//     { name: 'Contact Information', path: '/contact', icon: <MapPin className="w-4 h-4" />, description: 'Get in touch with us' },
+//     { name: 'Career Opportunities', path: '/career', icon: <Briefcase className="w-4 h-4" />, description: 'Join our healing team' },
+//   ];
+
+//   return (
+//     <>
+//       <nav 
+//         ref={navRef}
+//         className={`fixed w-full z-50 transition-all duration-300 ${
+//           isScrolled
+//             ? 'bg-white/95 backdrop-blur-md shadow-lg py-1'
+//             : 'bg-gradient-to-r from-green-50 to-emerald-100 py-2 shadow-md'
+//         }`}
+//       >
+//         <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6">
+//           <div className="flex justify-between items-center h-16">
+//             {/* Left side - Logo and Sidebar Toggle */}
+//             <div className="flex items-center">
+//               {/* Sidebar Toggle Button - Show on all devices except mobile */}
+//               <div className="hidden lg:flex items-center">
+//                 <button
+//                   className={`inline-flex items-center justify-center p-2 rounded-lg transition-all duration-300 mr-3 ${
+//                     isScrolled 
+//                       ? 'text-gray-700 hover:text-green-600 hover:bg-green-50' 
+//                       : 'text-gray-700 hover:text-green-600 hover:bg-green-50'
+//                   } focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500`}
+//                   onClick={() => setIsSidebarOpen(true)}
+//                 >
+//                   <span className="sr-only">Open sidebar menu</span>
+//                   <Menu className="block h-5 w-5" aria-hidden="true" />
+//                 </button>
+//               </div>
+
+//               {/* Logo */}
+//               <div className="flex items-center flex-shrink-0">
+//                 <NavLink to="/" className="flex items-center" onClick={closeAllDropdowns}>
+//                   <img 
+//                     src={logo} 
+//                     alt="Company Logo" 
+//                     className="h-10 sm:h-12 w-auto hover:scale-105 transition-transform duration-300"
+//                   />
+//                 </NavLink>
+//               </div>
+//             </div>
+
+//             {/* Desktop Navigation - Show on lg and above */}
+//             <div className="hidden lg:flex items-center justify-center flex-1">
+//               <div className="flex items-center space-x-1">
+//                 {/* Home Button */}
+//                 <NavLink
+//                   to="/"
+//                   className={({ isActive }) =>
+//                     `flex items-center px-4 py-2 rounded-lg transition-all duration-200 font-medium text-sm font-sans ${
+//                       isActive 
+//                         ? 'bg-green-100 text-green-700 shadow-inner' 
+//                         : 'text-gray-700 hover:bg-green-50 hover:text-green-600'
+//                     }`
+//                   }
+//                   onClick={closeAllDropdowns}
+//                 >
+//                   <Home className="w-4 h-4 mr-2" />
+//                   <span className="whitespace-nowrap">Home</span>
+//                 </NavLink>
+
+//                 {/* About Us */}
+//                 <div className="relative group">
+//                   <button 
+//                     className="flex items-center space-x-1 px-4 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+//                     onMouseEnter={() => setOpenDropdown('desktop-about')}
+//                   >
+//                     <Info className="w-4 h-4 mr-2" />
+//                     <span>About Us</span>
+//                     <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
+//                   </button>
+//                   <div 
+//                     className="absolute left-0 mt-2 w-80 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 grid grid-cols-2 gap-2"
+//                     onMouseLeave={() => setOpenDropdown(null)}
+//                   >
+//                     {aboutUsDropdown.map((item, index) => (
+//                       <NavLink 
+//                         key={index} 
+//                         to={item.path} 
+//                         className={({ isActive }) => 
+//                           `flex flex-col p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                         }
+//                         onClick={closeAllDropdowns}
+//                       >
+//                         <div className="flex items-center mb-1">
+//                           <div className="p-1.5 bg-green-100 rounded-md mr-2 group-hover/item:bg-green-200 transition-colors">
+//                             {item.icon}
+//                           </div>
+//                           <span className="font-medium text-sm">{item.name}</span>
+//                         </div>
+//                         <p className="text-xs text-gray-500 pl-8 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                       </NavLink>
+//                     ))}
+//                   </div>
+//                 </div>
+
+//                 {/* Treatments */}
+//                 <div className="relative group">
+//                   <button 
+//                     className="flex items-center space-x-1 px-4 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+//                     onMouseEnter={() => setOpenDropdown('desktop-treatments')}
+//                   >
+//                     <Heart className="w-4 h-4 mr-2" />
+//                     <span>Treatments</span>
+//                     <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
+//                   </button>
+//                   <div 
+//                     className="absolute left-0 mt-2 w-96 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+//                     onMouseLeave={() => setOpenDropdown(null)}
+//                   >
+//                     <div className="px-4">
+//                       {treatmentsDropdown.map((item, index) => (
+//                         <div key={index} className="relative group/sub">
+//                           {item.submenu ? (
+//                             <>
+//                               <div 
+//                                 className="flex justify-between items-start p-3 rounded-lg text-gray-700 hover:bg-gray-50 cursor-pointer transition-colors duration-150 group/item font-sans"
+//                                 onMouseEnter={() => setOpenDropdown(`desktop-treatments-sub-${index}`)}
+//                               >
+//                                 <div className="flex items-start">
+//                                   <div className="p-1.5 bg-blue-100 rounded-md mr-3 group-hover/item:bg-blue-200 transition-colors mt-0.5">
+//                                     {item.icon}
+//                                   </div>
+//                                   <div>
+//                                     <div className="font-medium text-sm">{item.name}</div>
+//                                     <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                                   </div>
+//                                 </div>
+//                                 <ChevronRight className="w-4 h-4 text-gray-400 mt-1.5" />
+//                               </div>
+                              
+//                               <div 
+//                                 className={`absolute left-full top-0 ml-1 w-64 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-3 z-50 ${
+//                                   openDropdown === `desktop-treatments-sub-${index}` ? 'block' : 'hidden'
+//                                 } group-hover/sub:block`}
+//                                 onMouseLeave={() => setOpenDropdown('desktop-treatments')}
+//                               >
+//                                 <h4 className="px-4 py-2 font-medium text-sm text-gray-700 border-b border-gray-100 mb-1 font-sans">{item.name}</h4>
+//                                 {item.submenu.map((subItem, subIndex) => (
+//                                   <NavLink 
+//                                     key={subIndex} 
+//                                     to={subItem.path} 
+//                                     className={({ isActive }) => 
+//                                       `flex items-center px-4 py-2.5 text-sm font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150`
+//                                     }
+//                                     onClick={closeAllDropdowns}
+//                                   >
+//                                     <span className="mr-3 opacity-70">{subItem.icon}</span>
+//                                     {subItem.name}
+//                                   </NavLink>
+//                                 ))}
+//                               </div>
+//                             </>
+//                           ) : (
+//                             <NavLink 
+//                               to={item.path}
+//                               className={({ isActive }) => 
+//                                 `flex items-start p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                               }
+//                               onClick={closeAllDropdowns}
+//                             >
+//                               <div className="p-1.5 bg-blue-100 rounded-md mr-3 group-hover/item:bg-blue-200 transition-colors mt-0.5">
+//                                 {item.icon}
+//                               </div>
+//                               <div>
+//                                 <div className="font-medium text-sm">{item.name}</div>
+//                                 <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                               </div>
+//                             </NavLink>
+//                           )}
+//                         </div>
+//                       ))}
+//                     </div>
+//                   </div>
+//                 </div>
+
+//                 {/* Accommodations */}
+//                 <div className="relative group">
+//                   <button 
+//                     className="flex items-center space-x-1 px-4 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+//                     onMouseEnter={() => setOpenDropdown('desktop-accommodations')}
+//                   >
+//                     <Hotel className="w-4 h-4 mr-2" />
+//                     <span>Accommodations</span>
+//                     <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
+//                   </button>
+//                   <div 
+//                     className="absolute left-0 mt-2 w-96 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+//                     onMouseLeave={() => setOpenDropdown(null)}
+//                   >
+//                     <div className="px-2">
+//                       <h3 className="font-semibold text-gray-800 text-sm uppercase tracking-wide mb-3 pl-3 font-sans">Stay With Us</h3>
+//                       <div className="grid grid-cols-1 gap-2">
+//                         {accommodationsDropdown.map((item, index) => (
+//                           <NavLink 
+//                             key={index} 
+//                             to={item.path} 
+//                             className={({ isActive }) => 
+//                               `flex items-start p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                             }
+//                             onClick={closeAllDropdowns}
+//                           >
+//                             <div className="p-1.5 bg-amber-100 rounded-md mr-3 group-hover/item:bg-amber-200 transition-colors mt-0.5">
+//                               {item.icon}
+//                             </div>
+//                             <div>
+//                               <div className="font-medium text-sm">{item.name}</div>
+//                               <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                             </div>
+//                           </NavLink>
+//                         ))}
+//                       </div>
+//                     </div>
+//                   </div>
+//                 </div>
+
+//                 {/* Gallery */}
+//                 <NavLink
+//                   to="/image"
+//                   className={({ isActive }) =>
+//                     `flex items-center px-4 py-2 rounded-lg transition-all duration-200 font-medium text-sm font-sans whitespace-nowrap ${
+//                       isActive 
+//                         ? 'bg-green-100 text-green-700 shadow-inner' 
+//                         : 'text-gray-700 hover:bg-green-50 hover:text-green-600'
+//                     }`
+//                   }
+//                   onClick={closeAllDropdowns}
+//                 >
+//                   <Images className="w-4 h-4 mr-2" />
+//                   <span>Gallery</span>
+//                 </NavLink>
+
+//                 {/* Celebrations */}
+//                 <div className="relative group">
+//                   <button 
+//                     className="flex items-center space-x-1 px-4 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+//                     onMouseEnter={() => setOpenDropdown('desktop-celebrations')}
+//                   >
+//                     <PartyPopper className="w-4 h-4 mr-2" />
+//                     <span>Celebrations</span>
+//                     <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
+//                   </button>
+//                   <div 
+//                     className="absolute left-0 mt-2 w-80 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+//                     onMouseLeave={() => setOpenDropdown(null)}
+//                   >
+//                     <div className="px-2">
+//                       <h3 className="font-semibold text-gray-800 text-sm uppercase tracking-wide mb-3 pl-3 font-sans">Special Events</h3>
+//                       <div className="grid grid-cols-1 gap-2">
+//                         {celebrationsDropdown.map((item, index) => (
+//                           <NavLink 
+//                             key={index} 
+//                             to={item.path} 
+//                             className={({ isActive }) => 
+//                               `flex items-start p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                             }
+//                             onClick={closeAllDropdowns}
+//                           >
+//                             <div className="p-1.5 bg-pink-100 rounded-md mr-3 group-hover/item:bg-pink-200 transition-colors mt-0.5">
+//                               {item.icon}
+//                             </div>
+//                             <div>
+//                               <div className="font-medium text-sm">{item.name}</div>
+//                               <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                             </div>
+//                           </NavLink>
+//                         ))}
+//                       </div>
+//                     </div>
+//                   </div>
+//                 </div>
+
+//                 {/* Contact Us */}
+//                 <div className="relative group">
+//                   <button 
+//                     className="flex items-center space-x-1 px-4 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+//                     onMouseEnter={() => setOpenDropdown('desktop-contact')}
+//                   >
+//                     <Phone className="w-4 h-4 mr-2" />
+//                     <span>Contact Us</span>
+//                     <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
+//                   </button>
+//                   <div 
+//                     className="absolute right-0 mt-2 w-80 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+//                     onMouseLeave={() => setOpenDropdown(null)}
+//                   >
+//                     <div className="px-2">
+//                       <h3 className="font-semibold text-gray-800 text-sm uppercase tracking-wide mb-3 pl-3 font-sans">Get In Touch</h3>
+//                       <div className="grid grid-cols-1 gap-2">
+//                         {contactUsDropdown.map((item, index) => (
+//                           <NavLink 
+//                             key={index} 
+//                             to={item.path} 
+//                             className={({ isActive }) => 
+//                               `flex items-start p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                             }
+//                             onClick={closeAllDropdowns}
+//                           >
+//                             <div className="p-1.5 bg-purple-100 rounded-md mr-3 group-hover/item:bg-purple-200 transition-colors mt-0.5">
+//                               {item.icon}
+//                             </div>
+//                             <div>
+//                               <div className="font-medium text-sm">{item.name}</div>
+//                               <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                             </div>
+//                           </NavLink>
+//                         ))}
+//                       </div>
+                      
+//                       <div className="mt-4 pt-4 border-t border-gray-100">
+//                         <div className="bg-gray-50 rounded-lg p-3">
+//                           <div className="flex items-center text-sm font-medium text-gray-700 mb-1 font-sans">
+//                             <Phone className="w-4 h-4 mr-2 text-green-600" />
+//                             <span>+91 9251582670</span>
+//                           </div>
+//                           <div className="text-xs text-gray-500 font-sans">Mon-Sun, 7:00 AM - 7:00 PM</div>
+//                         </div>
+//                       </div>
+//                     </div>
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Action Buttons - Desktop */}
+//             <div className="hidden lg:flex items-center space-x-2 ml-4">
+//               <NavLink
+//                 to=" "
+//                 className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all duration-200 font-medium text-sm font-sans shadow-md hover:shadow-lg group/btn whitespace-nowrap"
+//                 onClick={closeAllDropdowns}
+//               >
+//                 <ShoppingBag className="w-4 h-4 mr-1.5 transition-transform group-hover/btn:scale-110" />
+//                 <span>Our Products</span>
+//               </NavLink>
+
+//               <button
+//                 onClick={handleBookNow}
+//                 className="flex items-center px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-200 font-medium text-sm font-sans shadow-md hover:shadow-lg group/btn whitespace-nowrap"
+//               >
+//                 <Calendar className="w-4 h-4 mr-1.5 transition-transform group-hover/btn:scale-110" />
+//                 <span>Book Now</span>
+//               </button>
+//             </div>
+
+//             {/* Mobile Menu Button - Show on mobile only */}
+//             <div className="lg:hidden flex items-center">
+//               <button
+//                 className={`inline-flex items-center justify-center p-2 rounded-md transition-all duration-200 ${
+//                   isScrolled
+//                     ? 'text-gray-700 hover:text-green-600 hover:bg-green-50'
+//                     : 'text-gray-700 hover:text-green-600 hover:bg-green-50'
+//                 } focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500`}
+//                 onClick={() => setIsOpen(!isOpen)}
+//               >
+//                 <span className="sr-only">Open main menu</span>
+//                 {isOpen ? (
+//                   <X className="block h-6 w-6" aria-hidden="true" />
+//                 ) : (
+//                   <Menu className="block h-6 w-6" aria-hidden="true" />
+//                 )}
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Mobile Navigation */}
+//         <div className={`lg:hidden transition-all duration-300 ease-in-out overflow-hidden ${
+//           isOpen ? 'max-h-screen' : 'max-h-0'
+//         }`}>
+//           <div className="px-3 pt-2 pb-4 space-y-1 bg-white border-t border-gray-200 shadow-inner">
+//             {/* Home Button - Mobile */}
+//             <NavLink
+//               to="/"
+//               className={({ isActive }) =>
+//                 `flex items-center px-3 py-3 rounded-md transition-all duration-200 font-medium text-base font-sans ${
+//                   isActive 
+//                     ? 'bg-green-100 text-green-700' 
+//                     : 'text-gray-700 hover:bg-green-50 hover:text-green-600'
+//                 }`
+//               }
+//               onClick={closeAllDropdowns}
+//             >
+//               <Home className="w-5 h-5 mr-3" />
+//               <span>Home</span>
+//             </NavLink>
+
+//             {/* About Us - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
+//                 onClick={() => toggleDropdown('mobile-about')}
+//               >
+//                 <div className="flex items-center">
+//                   <Info className="w-5 h-5 mr-3" />
+//                   <span>About Us</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-about' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-about' ? 'max-h-96' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {aboutUsDropdown.map((item, index) => (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path}
+//                       className={({ isActive }) => 
+//                         `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
+//                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                         } transition-colors duration-150`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       <span className="mr-3">{item.icon}</span>
+//                       {item.name}
+//                     </NavLink>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Treatments - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
+//                 onClick={() => toggleDropdown('mobile-treatments')}
+//               >
+//                 <div className="flex items-center">
+//                   <Heart className="w-5 h-5 mr-3" />
+//                   <span>Treatments</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-treatments' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-treatments' ? 'max-h-[500px]' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {treatmentsDropdown.map((item, index) => (
+//                     <div key={index}>
+//                       {item.submenu ? (
+//                         <>
+//                           <button 
+//                             className="flex justify-between items-center w-full px-3 py-2.5 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 text-sm font-sans"
+//                             onClick={() => toggleSubDropdown('mobile-treatments', `sub-${index}`)}
+//                           >
+//                             <div className="flex items-center">
+//                               <span className="mr-3">{item.icon}</span>
+//                               <span>{item.name}</span>
+//                             </div>
+//                             <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+//                               openSubDropdowns[`mobile-treatments-sub-${index}`] ? 'rotate-180' : ''
+//                             }`} />
+//                           </button>
+//                           <div className={`transition-all duration-200 overflow-hidden ${
+//                             openSubDropdowns[`mobile-treatments-sub-${index}`] ? 'max-h-96' : 'max-h-0'
+//                           }`}>
+//                             <div className="pl-6 space-y-1">
+//                               {item.submenu.map((subItem, subIndex) => (
+//                                 <NavLink 
+//                                   key={subIndex} 
+//                                   to={subItem.path}
+//                                   className={({ isActive }) => 
+//                                     `flex items-center px-3 py-2 rounded-md text-sm font-sans ${
+//                                       isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                                     } transition-colors duration-150`
+//                                   }
+//                                   onClick={closeAllDropdowns}
+//                                 >
+//                                   <span className="mr-3">{subItem.icon}</span>
+//                                   {subItem.name}
+//                                 </NavLink>
+//                               ))}
+//                             </div>
+//                           </div>
+//                         </>
+//                       ) : (
+//                         <NavLink 
+//                           to={item.path}
+//                           className={({ isActive }) => 
+//                             `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
+//                               isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                             } transition-colors duration-150`
+//                           }
+//                           onClick={closeAllDropdowns}
+//                         >
+//                           <span className="mr-3">{item.icon}</span>
+//                           {item.name}
+//                         </NavLink>
+//                       )}
+//                     </div>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Accommodations - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
+//                 onClick={() => toggleDropdown('mobile-accommodations')}
+//               >
+//                 <div className="flex items-center">
+//                   <Hotel className="w-5 h-5 mr-3" />
+//                   <span>Accommodations</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-accommodations' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-accommodations' ? 'max-h-96' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {accommodationsDropdown.map((item, index) => (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path}
+//                       className={({ isActive }) => 
+//                         `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
+//                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                         } transition-colors duration-150`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       <span className="mr-3">{item.icon}</span>
+//                       {item.name}
+//                     </NavLink>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Gallery - Mobile */}
+//             <NavLink
+//               to="/image"
+//               className={({ isActive }) =>
+//                 `flex items-center px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans ${
+//                   isActive ? 'bg-green-50 text-green-700 font-semibold' : ''
+//                 }`
+//               }
+//               onClick={closeAllDropdowns}
+//             >
+//               <Images className="w-5 h-5 mr-3" />
+//               <span>Gallery</span>
+//             </NavLink>
+
+//             {/* Celebrations - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
+//                 onClick={() => toggleDropdown('mobile-celebrations')}
+//               >
+//                 <div className="flex items-center">
+//                   <PartyPopper className="w-5 h-5 mr-3" />
+//                   <span>Celebrations</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-celebrations' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-celebrations' ? 'max-h-96' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {celebrationsDropdown.map((item, index) => (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path}
+//                       className={({ isActive }) => 
+//                         `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
+//                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                         } transition-colors duration-150`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       <span className="mr-3">{item.icon}</span>
+//                       {item.name}
+//                     </NavLink>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Contact Us - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
+//                 onClick={() => toggleDropdown('mobile-contact')}
+//               >
+//                 <div className="flex items-center">
+//                   <Phone className="w-5 h-5 mr-3" />
+//                   <span>Contact Us</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-contact' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-contact' ? 'max-h-96' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {contactUsDropdown.map((item, index) => (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path}
+//                       className={({ isActive }) => 
+//                         `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
+//                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                         } transition-colors duration-150`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       <span className="mr-3">{item.icon}</span>
+//                       {item.name}
+//                     </NavLink>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Action Buttons - Mobile */}
+//             <div className="pt-4 space-y-2 border-t border-gray-200">
+//               <NavLink
+//                 to=" "
+//                 className="flex items-center justify-center px-4 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all duration-200 font-medium text-center shadow-md font-sans"
+//                 onClick={closeAllDropdowns}
+//               >
+//                 <ShoppingBag className="w-5 h-5 mr-2" />
+//                 <span>Our Products</span>
+//               </NavLink>
+
+//               <button
+//                 onClick={handleBookNow}
+//                 className="flex items-center justify-center w-full px-4 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-200 font-medium text-center shadow-md font-sans"
+//               >
+//                 <Calendar className="w-5 h-5 mr-2" />
+//                 <span>Book Now</span>
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+//       </nav>
+
+//       {/* Sidebar Component */}
+//       <Sidebar 
+//         isOpen={isSidebarOpen} 
+//         onClose={() => setIsSidebarOpen(false)} 
+//       />
+//     </>
+//   );
+// };
+
+// export default Navbar;
+
+
+
+
+
+// import React, { useState, useEffect, useRef } from 'react';
+// import { NavLink } from 'react-router-dom';
+// import { 
+//   Menu, 
+//   X, 
+//   ChevronDown, 
+//   ChevronRight, 
+//   Home, 
+//   Info, 
+//   Heart, 
+//   Hotel, 
+//   Images, 
+//   Phone, 
+//   ShoppingBag, 
+//   Calendar,
+//   Users,
+//   User,
+//   Clock,
+//   Leaf,
+//   Activity,
+//   Utensils,
+//   Gem,
+//   MapPin,
+//   Briefcase,
+//   BookOpen,
+//   Shield,
+//   PartyPopper
+// } from 'lucide-react';
+// import logo from '../assets/logo.png';
+// import { scrollToSection } from '../components/utils/scrollToSection';
+// import Sidebar from './Sidebar';
+// import { useNavigate } from 'react-router-dom';
+
+// const Navbar: React.FC = () => {
+//   const [isOpen, setIsOpen] = useState(false);
+//   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+//   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+//   const [isScrolled, setIsScrolled] = useState(false);
+//   const navRef = useRef<HTMLDivElement>(null);
+//   const navigate = useNavigate();
+//   const [openSubDropdowns, setOpenSubDropdowns] = useState<Record<string, boolean>>({});
+
+//   // Handle scroll effect
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       const scrollTop = window.scrollY;
+//       setIsScrolled(scrollTop > 20);
+//     };
+
+//     window.addEventListener('scroll', handleScroll);
+//     return () => window.removeEventListener('scroll', handleScroll);
+//   }, []);
+
+//   const handleBookNow = () => {
+//     if (window.location.pathname === '/contact') {
+//       scrollToSection('contact-form');
+//     } else {
+//       navigate('/contact');
+//       setTimeout(() => scrollToSection('contact-form'), 100);
+//     }
+//   };
+
+//   useEffect(() => {
+//     const handleClickOutside = (event: MouseEvent) => {
+//       if (navRef.current && !navRef.current.contains(event.target as Node)) {
+//         setIsOpen(false);
+//         setOpenDropdown(null);
+//         setOpenSubDropdowns({});
+//       }
+//     };
+//     document.addEventListener('mousedown', handleClickOutside);
+//     return () => document.removeEventListener('mousedown', handleClickOutside);
+//   }, []);
+
+//   const toggleDropdown = (dropdown: string) => {
+//     setOpenDropdown(openDropdown === dropdown ? null : dropdown);
+//   };
+
+//   const toggleSubDropdown = (parentId: string, subId: string) => {
+//     setOpenSubDropdowns(prev => ({
+//       ...prev,
+//       [`${parentId}-${subId}`]: !prev[`${parentId}-${subId}`]
+//     }));
+//   };
+
+//   const closeAllDropdowns = () => {
+//     setIsOpen(false);
+//     setOpenDropdown(null);
+//     setOpenSubDropdowns({});
+//   };
+
+//   // Define dropdown arrays with icons
+//   const aboutUsDropdown = [
+//     { name: 'Nowal NatureCare', path: '/Ourstory', icon: <Leaf className="w-4 h-4" />, description: 'Our holistic healing philosophy' },
+//     { name: 'About Founder', path: '/experience#mantra', icon: <User className="w-4 h-4" />, description: 'Meet our visionary leader' },
+//     { name: 'Healing Team', path: '/healing-team', icon: <Users className="w-4 h-4" />, description: 'Our expert practitioners' },
+//     { name: 'Daily Routine', path: '/dincharya', icon: <Clock className="w-4 h-4" />, description: 'Structured wellness schedule' },
+//   ];
+
+//   const treatmentsDropdown = [
+//     { 
+//       name: 'Holistic Programs', 
+//       path: '/programs',
+//       icon: <Activity className="w-4 h-4" />,
+//       description: 'Comprehensive wellness packages',
+//       submenu: [
+//         { name: 'Naturopathy Wonders', path: '/narutopathy', icon: <Leaf className="w-4 h-4" /> },
+//         { name: 'Yoga & Meditation', path: '/yoga', icon: <Activity className="w-4 h-4" /> },
+//         { name: 'Diet & Nutrition', path: '/diet', icon: <Utensils className="w-4 h-4" /> },
+//         { name: 'Ayurveda', path: '/ayurveda', icon: <Gem className="w-4 h-4" /> },
+//         { name: 'Acupuncture', path: '/Holistictherapy', icon: <Shield className="w-4 h-4" /> },
+//         { name: 'Physiotherapy', path: '/physiotheraphy', icon: <Activity className="w-4 h-4" /> },
+//       ]
+//     }
+//   ];
+
+//   const accommodationsDropdown = [
+//     { name: 'Accommodation Details', path: '/accomadation', icon: <Hotel className="w-4 h-4" />, description: 'Room options & amenities' },
+//     { name: 'Accommodation Guidelines', path: '/guidliness', icon: <BookOpen className="w-4 h-4" />, description: 'Stay information & policies' },
+//   ];
+
+//   const celebrationsDropdown = [
+//     { name: 'Wedding', path: '/wedding', icon: <PartyPopper className="w-4 h-4" />, description: 'Beautiful wedding celebrations' },
+//     { name: 'Events', path: '/events', icon: <Calendar className="w-4 h-4" />, description: 'Special events and occasions' },
+//     { name: 'Banquet Lawn', path: '/banquet-lawn', icon: <Hotel className="w-4 h-4" />, description: 'Spacious banquet facilities' },
+//   ];
+
+//   const contactUsDropdown = [
+//     { name: 'Contact Information', path: '/contact', icon: <MapPin className="w-4 h-4" />, description: 'Get in touch with us' },
+//     { name: 'Career Opportunities', path: '/career', icon: <Briefcase className="w-4 h-4" />, description: 'Join our healing team' },
+//   ];
+
+//   return (
+//     <>
+//       <nav 
+//         ref={navRef}
+//         className={`fixed w-full z-50 transition-all duration-300 ${
+//           isScrolled
+//             ? 'bg-white/95 backdrop-blur-md shadow-lg py-1'
+//             : 'bg-gradient-to-r from-green-50 to-emerald-100 py-2 shadow-md'
+//         }`}
+//       >
+//         <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6">
+//           <div className="flex justify-between items-center h-16">
+//             {/* Left side - Logo and Sidebar Toggle */}
+//             <div className="flex items-center">
+//               {/* Sidebar Toggle Button - Show on all devices except mobile */}
+//               <div className="hidden lg:flex items-center">
+//                 <button
+//                   className={`inline-flex items-center justify-center p-2 rounded-lg transition-all duration-300 mr-3 ${
+//                     isScrolled 
+//                       ? 'text-gray-700 hover:text-green-600 hover:bg-green-50' 
+//                       : 'text-gray-700 hover:text-green-600 hover:bg-green-50'
+//                   } focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500`}
+//                   onClick={() => setIsSidebarOpen(true)}
+//                 >
+//                   <span className="sr-only">Open sidebar menu</span>
+//                   <Menu className="block h-5 w-5" aria-hidden="true" />
+//                 </button>
+//               </div>
+
+//               {/* Logo */}
+//               <div className="flex items-center flex-shrink-0">
+//                 <NavLink to="/" className="flex items-center" onClick={closeAllDropdowns}>
+//                   <img 
+//                     src={logo} 
+//                     alt="Company Logo" 
+//                     className="h-10 sm:h-12 w-auto hover:scale-105 transition-transform duration-300"
+//                   />
+//                 </NavLink>
+//               </div>
+//             </div>
+
+//             {/* Desktop Navigation - Show on lg and above */}
+//             <div className="hidden lg:flex items-center justify-center flex-1">
+//               <div className="flex items-center space-x-2 ml-8"> {/* Added ml-8 for left margin */}
+//                 {/* Home Button */}
+//                 <NavLink
+//                   to="/"
+//                   className={({ isActive }) =>
+//                     `flex items-center px-4 py-2 rounded-lg transition-all duration-200 font-medium text-sm font-sans ${
+//                       isActive 
+//                         ? 'bg-green-100 text-green-700 shadow-inner' 
+//                         : 'text-gray-700 hover:bg-green-50 hover:text-green-600'
+//                     }`
+//                   }
+//                   onClick={closeAllDropdowns}
+//                 >
+//                   <Home className="w-4 h-4 mr-2" />
+//                   <span className="whitespace-nowrap">Home</span>
+//                 </NavLink>
+
+//                 {/* About Us */}
+//                 <div className="relative group">
+//                   <button 
+//                     className="flex items-center space-x-1 px-4 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+//                     onMouseEnter={() => setOpenDropdown('desktop-about')}
+//                   >
+//                     <Info className="w-4 h-4 mr-2" />
+//                     <span>About Us</span>
+//                     <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
+//                   </button>
+//                   <div 
+//                     className="absolute left-0 mt-2 w-80 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 grid grid-cols-2 gap-2"
+//                     onMouseLeave={() => setOpenDropdown(null)}
+//                   >
+//                     {aboutUsDropdown.map((item, index) => (
+//                       <NavLink 
+//                         key={index} 
+//                         to={item.path} 
+//                         className={({ isActive }) => 
+//                           `flex flex-col p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                         }
+//                         onClick={closeAllDropdowns}
+//                       >
+//                         <div className="flex items-center mb-1">
+//                           <div className="p-1.5 bg-green-100 rounded-md mr-2 group-hover/item:bg-green-200 transition-colors">
+//                             {item.icon}
+//                           </div>
+//                           <span className="font-medium text-sm">{item.name}</span>
+//                         </div>
+//                         <p className="text-xs text-gray-500 pl-8 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                       </NavLink>
+//                     ))}
+//                   </div>
+//                 </div>
+
+//                 {/* Treatments */}
+//                 <div className="relative group">
+//                   <button 
+//                     className="flex items-center space-x-1 px-4 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+//                     onMouseEnter={() => setOpenDropdown('desktop-treatments')}
+//                   >
+//                     <Heart className="w-4 h-4 mr-2" />
+//                     <span>Treatments</span>
+//                     <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
+//                   </button>
+//                   <div 
+//                     className="absolute left-0 mt-2 w-96 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+//                     onMouseLeave={() => setOpenDropdown(null)}
+//                   >
+//                     <div className="px-4">
+//                       {treatmentsDropdown.map((item, index) => (
+//                         <div key={index} className="relative group/sub">
+//                           {item.submenu ? (
+//                             <>
+//                               <div 
+//                                 className="flex justify-between items-start p-3 rounded-lg text-gray-700 hover:bg-gray-50 cursor-pointer transition-colors duration-150 group/item font-sans"
+//                                 onMouseEnter={() => setOpenDropdown(`desktop-treatments-sub-${index}`)}
+//                               >
+//                                 <div className="flex items-start">
+//                                   <div className="p-1.5 bg-blue-100 rounded-md mr-3 group-hover/item:bg-blue-200 transition-colors mt-0.5">
+//                                     {item.icon}
+//                                   </div>
+//                                   <div>
+//                                     <div className="font-medium text-sm">{item.name}</div>
+//                                     <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                                   </div>
+//                                 </div>
+//                                 <ChevronRight className="w-4 h-4 text-gray-400 mt-1.5" />
+//                               </div>
+                              
+//                               <div 
+//                                 className={`absolute left-full top-0 ml-1 w-64 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-3 z-50 ${
+//                                   openDropdown === `desktop-treatments-sub-${index}` ? 'block' : 'hidden'
+//                                 } group-hover/sub:block`}
+//                                 onMouseLeave={() => setOpenDropdown('desktop-treatments')}
+//                               >
+//                                 <h4 className="px-4 py-2 font-medium text-sm text-gray-700 border-b border-gray-100 mb-1 font-sans">{item.name}</h4>
+//                                 {item.submenu.map((subItem, subIndex) => (
+//                                   <NavLink 
+//                                     key={subIndex} 
+//                                     to={subItem.path} 
+//                                     className={({ isActive }) => 
+//                                       `flex items-center px-4 py-2.5 text-sm font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150`
+//                                     }
+//                                     onClick={closeAllDropdowns}
+//                                   >
+//                                     <span className="mr-3 opacity-70">{subItem.icon}</span>
+//                                     {subItem.name}
+//                                   </NavLink>
+//                                 ))}
+//                               </div>
+//                             </>
+//                           ) : (
+//                             <NavLink 
+//                               to={item.path}
+//                               className={({ isActive }) => 
+//                                 `flex items-start p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                               }
+//                               onClick={closeAllDropdowns}
+//                             >
+//                               <div className="p-1.5 bg-blue-100 rounded-md mr-3 group-hover/item:bg-blue-200 transition-colors mt-0.5">
+//                                 {item.icon}
+//                               </div>
+//                               <div>
+//                                 <div className="font-medium text-sm">{item.name}</div>
+//                                 <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                               </div>
+//                             </NavLink>
+//                           )}
+//                         </div>
+//                       ))}
+//                     </div>
+//                   </div>
+//                 </div>
+
+//                 {/* Accommodations */}
+//                 <div className="relative group">
+//                   <button 
+//                     className="flex items-center space-x-1 px-4 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+//                     onMouseEnter={() => setOpenDropdown('desktop-accommodations')}
+//                   >
+//                     <Hotel className="w-4 h-4 mr-2" />
+//                     <span>Accommodations</span>
+//                     <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
+//                   </button>
+//                   <div 
+//                     className="absolute left-0 mt-2 w-96 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+//                     onMouseLeave={() => setOpenDropdown(null)}
+//                   >
+//                     <div className="px-2">
+//                       <h3 className="font-semibold text-gray-800 text-sm uppercase tracking-wide mb-3 pl-3 font-sans">Stay With Us</h3>
+//                       <div className="grid grid-cols-1 gap-2">
+//                         {accommodationsDropdown.map((item, index) => (
+//                           <NavLink 
+//                             key={index} 
+//                             to={item.path} 
+//                             className={({ isActive }) => 
+//                               `flex items-start p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                             }
+//                             onClick={closeAllDropdowns}
+//                           >
+//                             <div className="p-1.5 bg-amber-100 rounded-md mr-3 group-hover/item:bg-amber-200 transition-colors mt-0.5">
+//                               {item.icon}
+//                             </div>
+//                             <div>
+//                               <div className="font-medium text-sm">{item.name}</div>
+//                               <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                             </div>
+//                           </NavLink>
+//                         ))}
+//                       </div>
+//                     </div>
+//                   </div>
+//                 </div>
+
+//                 {/* Gallery */}
+//                 <NavLink
+//                   to="/image"
+//                   className={({ isActive }) =>
+//                     `flex items-center px-4 py-2 rounded-lg transition-all duration-200 font-medium text-sm font-sans whitespace-nowrap ${
+//                       isActive 
+//                         ? 'bg-green-100 text-green-700 shadow-inner' 
+//                         : 'text-gray-700 hover:bg-green-50 hover:text-green-600'
+//                     }`
+//                   }
+//                   onClick={closeAllDropdowns}
+//                 >
+//                   <Images className="w-4 h-4 mr-2" />
+//                   <span>Gallery</span>
+//                 </NavLink>
+
+//                 {/* Celebrations */}
+//                 <div className="relative group">
+//                   <button 
+//                     className="flex items-center space-x-1 px-4 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+//                     onMouseEnter={() => setOpenDropdown('desktop-celebrations')}
+//                   >
+//                     <PartyPopper className="w-4 h-4 mr-2" />
+//                     <span>Celebrations</span>
+//                     <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
+//                   </button>
+//                   <div 
+//                     className="absolute left-0 mt-2 w-80 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+//                     onMouseLeave={() => setOpenDropdown(null)}
+//                   >
+//                     <div className="px-2">
+//                       <h3 className="font-semibold text-gray-800 text-sm uppercase tracking-wide mb-3 pl-3 font-sans">Special Events</h3>
+//                       <div className="grid grid-cols-1 gap-2">
+//                         {celebrationsDropdown.map((item, index) => (
+//                           <NavLink 
+//                             key={index} 
+//                             to={item.path} 
+//                             className={({ isActive }) => 
+//                               `flex items-start p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                             }
+//                             onClick={closeAllDropdowns}
+//                           >
+//                             <div className="p-1.5 bg-pink-100 rounded-md mr-3 group-hover/item:bg-pink-200 transition-colors mt-0.5">
+//                               {item.icon}
+//                             </div>
+//                             <div>
+//                               <div className="font-medium text-sm">{item.name}</div>
+//                               <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                             </div>
+//                           </NavLink>
+//                         ))}
+//                       </div>
+//                     </div>
+//                   </div>
+//                 </div>
+
+//                 {/* Contact Us */}
+//                 <div className="relative group">
+//                   <button 
+//                     className="flex items-center space-x-1 px-4 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+//                     onMouseEnter={() => setOpenDropdown('desktop-contact')}
+//                   >
+//                     <Phone className="w-4 h-4 mr-2" />
+//                     <span>Contact Us</span>
+//                     <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
+//                   </button>
+//                   <div 
+//                     className="absolute right-0 mt-2 w-80 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+//                     onMouseLeave={() => setOpenDropdown(null)}
+//                   >
+//                     <div className="px-2">
+//                       <h3 className="font-semibold text-gray-800 text-sm uppercase tracking-wide mb-3 pl-3 font-sans">Get In Touch</h3>
+//                       <div className="grid grid-cols-1 gap-2">
+//                         {contactUsDropdown.map((item, index) => (
+//                           <NavLink 
+//                             key={index} 
+//                             to={item.path} 
+//                             className={({ isActive }) => 
+//                               `flex items-start p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                             }
+//                             onClick={closeAllDropdowns}
+//                           >
+//                             <div className="p-1.5 bg-purple-100 rounded-md mr-3 group-hover/item:bg-purple-200 transition-colors mt-0.5">
+//                               {item.icon}
+//                             </div>
+//                             <div>
+//                               <div className="font-medium text-sm">{item.name}</div>
+//                               <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                             </div>
+//                           </NavLink>
+//                         ))}
+//                       </div>
+                      
+//                       <div className="mt-4 pt-4 border-t border-gray-100">
+//                         <div className="bg-gray-50 rounded-lg p-3">
+//                           <div className="flex items-center text-sm font-medium text-gray-700 mb-1 font-sans">
+//                             <Phone className="w-4 h-4 mr-2 text-green-600" />
+//                             <span>+91 9251582670</span>
+//                           </div>
+//                           <div className="text-xs text-gray-500 font-sans">Mon-Sun, 7:00 AM - 7:00 PM</div>
+//                         </div>
+//                       </div>
+//                     </div>
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Action Buttons - Desktop */}
+//             <div className="hidden lg:flex items-center space-x-2 ml-4">
+//               <NavLink
+//                 to=" "
+//                 className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all duration-200 font-medium text-sm font-sans shadow-md hover:shadow-lg group/btn whitespace-nowrap"
+//                 onClick={closeAllDropdowns}
+//               >
+//                 <ShoppingBag className="w-4 h-4 mr-1.5 transition-transform group-hover/btn:scale-110" />
+//                 <span>Our Products</span>
+//               </NavLink>
+
+//               <button
+//                 onClick={handleBookNow}
+//                 className="flex items-center px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-200 font-medium text-sm font-sans shadow-md hover:shadow-lg group/btn whitespace-nowrap"
+//               >
+//                 <Calendar className="w-4 h-4 mr-1.5 transition-transform group-hover/btn:scale-110" />
+//                 <span>Book Now</span>
+//               </button>
+//             </div>
+
+//             {/* Mobile Menu Button - Show on mobile only */}
+//             <div className="lg:hidden flex items-center">
+//               <button
+//                 className={`inline-flex items-center justify-center p-2 rounded-md transition-all duration-200 ${
+//                   isScrolled
+//                     ? 'text-gray-700 hover:text-green-600 hover:bg-green-50'
+//                     : 'text-gray-700 hover:text-green-600 hover:bg-green-50'
+//                 } focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500`}
+//                 onClick={() => setIsOpen(!isOpen)}
+//               >
+//                 <span className="sr-only">Open main menu</span>
+//                 {isOpen ? (
+//                   <X className="block h-6 w-6" aria-hidden="true" />
+//                 ) : (
+//                   <Menu className="block h-6 w-6" aria-hidden="true" />
+//                 )}
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Mobile Navigation */}
+//         <div className={`lg:hidden transition-all duration-300 ease-in-out overflow-hidden ${
+//           isOpen ? 'max-h-screen' : 'max-h-0'
+//         }`}>
+//           <div className="px-3 pt-2 pb-4 space-y-1 bg-white border-t border-gray-200 shadow-inner">
+//             {/* Home Button - Mobile */}
+//             <NavLink
+//               to="/"
+//               className={({ isActive }) =>
+//                 `flex items-center px-3 py-3 rounded-md transition-all duration-200 font-medium text-base font-sans ${
+//                   isActive 
+//                     ? 'bg-green-100 text-green-700' 
+//                     : 'text-gray-700 hover:bg-green-50 hover:text-green-600'
+//                 }`
+//               }
+//               onClick={closeAllDropdowns}
+//             >
+//               <Home className="w-5 h-5 mr-3" />
+//               <span>Home</span>
+//             </NavLink>
+
+//             {/* About Us - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
+//                 onClick={() => toggleDropdown('mobile-about')}
+//               >
+//                 <div className="flex items-center">
+//                   <Info className="w-5 h-5 mr-3" />
+//                   <span>About Us</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-about' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-about' ? 'max-h-96' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {aboutUsDropdown.map((item, index) => (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path}
+//                       className={({ isActive }) => 
+//                         `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
+//                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                         } transition-colors duration-150`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       <span className="mr-3">{item.icon}</span>
+//                       {item.name}
+//                     </NavLink>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Treatments - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
+//                 onClick={() => toggleDropdown('mobile-treatments')}
+//               >
+//                 <div className="flex items-center">
+//                   <Heart className="w-5 h-5 mr-3" />
+//                   <span>Treatments</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-treatments' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-treatments' ? 'max-h-[500px]' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {treatmentsDropdown.map((item, index) => (
+//                     <div key={index}>
+//                       {item.submenu ? (
+//                         <>
+//                           <button 
+//                             className="flex justify-between items-center w-full px-3 py-2.5 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 text-sm font-sans"
+//                             onClick={() => toggleSubDropdown('mobile-treatments', `sub-${index}`)}
+//                           >
+//                             <div className="flex items-center">
+//                               <span className="mr-3">{item.icon}</span>
+//                               <span>{item.name}</span>
+//                             </div>
+//                             <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+//                               openSubDropdowns[`mobile-treatments-sub-${index}`] ? 'rotate-180' : ''
+//                             }`} />
+//                           </button>
+//                           <div className={`transition-all duration-200 overflow-hidden ${
+//                             openSubDropdowns[`mobile-treatments-sub-${index}`] ? 'max-h-96' : 'max-h-0'
+//                           }`}>
+//                             <div className="pl-6 space-y-1">
+//                               {item.submenu.map((subItem, subIndex) => (
+//                                 <NavLink 
+//                                   key={subIndex} 
+//                                   to={subItem.path}
+//                                   className={({ isActive }) => 
+//                                     `flex items-center px-3 py-2 rounded-md text-sm font-sans ${
+//                                       isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                                     } transition-colors duration-150`
+//                                   }
+//                                   onClick={closeAllDropdowns}
+//                                 >
+//                                   <span className="mr-3">{subItem.icon}</span>
+//                                   {subItem.name}
+//                                 </NavLink>
+//                               ))}
+//                             </div>
+//                           </div>
+//                         </>
+//                       ) : (
+//                         <NavLink 
+//                           to={item.path}
+//                           className={({ isActive }) => 
+//                             `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
+//                               isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                             } transition-colors duration-150`
+//                           }
+//                           onClick={closeAllDropdowns}
+//                         >
+//                           <span className="mr-3">{item.icon}</span>
+//                           {item.name}
+//                         </NavLink>
+//                       )}
+//                     </div>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Accommodations - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
+//                 onClick={() => toggleDropdown('mobile-accommodations')}
+//               >
+//                 <div className="flex items-center">
+//                   <Hotel className="w-5 h-5 mr-3" />
+//                   <span>Accommodations</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-accommodations' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-accommodations' ? 'max-h-96' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {accommodationsDropdown.map((item, index) => (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path}
+//                       className={({ isActive }) => 
+//                         `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
+//                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                         } transition-colors duration-150`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       <span className="mr-3">{item.icon}</span>
+//                       {item.name}
+//                     </NavLink>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Gallery - Mobile */}
+//             <NavLink
+//               to="/image"
+//               className={({ isActive }) =>
+//                 `flex items-center px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans ${
+//                   isActive ? 'bg-green-50 text-green-700 font-semibold' : ''
+//                 }`
+//               }
+//               onClick={closeAllDropdowns}
+//             >
+//               <Images className="w-5 h-5 mr-3" />
+//               <span>Gallery</span>
+//             </NavLink>
+
+//             {/* Celebrations - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
+//                 onClick={() => toggleDropdown('mobile-celebrations')}
+//               >
+//                 <div className="flex items-center">
+//                   <PartyPopper className="w-5 h-5 mr-3" />
+//                   <span>Celebrations</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-celebrations' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-celebrations' ? 'max-h-96' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {celebrationsDropdown.map((item, index) => (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path}
+//                       className={({ isActive }) => 
+//                         `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
+//                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                         } transition-colors duration-150`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       <span className="mr-3">{item.icon}</span>
+//                       {item.name}
+//                     </NavLink>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Contact Us - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
+//                 onClick={() => toggleDropdown('mobile-contact')}
+//               >
+//                 <div className="flex items-center">
+//                   <Phone className="w-5 h-5 mr-3" />
+//                   <span>Contact Us</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-contact' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-contact' ? 'max-h-96' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {contactUsDropdown.map((item, index) => (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path}
+//                       className={({ isActive }) => 
+//                         `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
+//                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                         } transition-colors duration-150`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       <span className="mr-3">{item.icon}</span>
+//                       {item.name}
+//                     </NavLink>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Action Buttons - Mobile */}
+//             <div className="pt-4 space-y-2 border-t border-gray-200">
+//               <NavLink
+//                 to=" "
+//                 className="flex items-center justify-center px-4 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all duration-200 font-medium text-center shadow-md font-sans"
+//                 onClick={closeAllDropdowns}
+//               >
+//                 <ShoppingBag className="w-5 h-5 mr-2" />
+//                 <span>Our Products</span>
+//               </NavLink>
+
+//               <button
+//                 onClick={handleBookNow}
+//                 className="flex items-center justify-center w-full px-4 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-200 font-medium text-center shadow-md font-sans"
+//               >
+//                 <Calendar className="w-5 h-5 mr-2" />
+//                 <span>Book Now</span>
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+//       </nav>
+
+//       {/* Sidebar Component */}
+//       <Sidebar 
+//         isOpen={isSidebarOpen} 
+//         onClose={() => setIsSidebarOpen(false)} 
+//       />
+//     </>
+//   );
+// };
+
+// export default Navbar;
+
+
+
+
+// import React, { useState, useEffect, useRef } from 'react';
+// import { NavLink } from 'react-router-dom';
+// import { 
+//   Menu, 
+//   X, 
+//   ChevronDown, 
+//   ChevronRight, 
+//   Home, 
+//   Info, 
+//   Heart, 
+//   Hotel, 
+//   Images, 
+//   Phone, 
+//   ShoppingBag, 
+//   Calendar,
+//   Users,
+//   User,
+//   Clock,
+//   Leaf,
+//   Activity,
+//   Utensils,
+//   Gem,
+//   MapPin,
+//   Briefcase,
+//   BookOpen,
+//   Shield,
+//   PartyPopper
+// } from 'lucide-react';
+// import logo from '../assets/logo.png';
+// import { scrollToSection } from '../components/utils/scrollToSection';
+// import Sidebar from './Sidebar';
+// import { useNavigate } from 'react-router-dom';
+
+// const Navbar: React.FC = () => {
+//   const [isOpen, setIsOpen] = useState(false);
+//   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+//   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+//   const [isScrolled, setIsScrolled] = useState(false);
+//   const navRef = useRef<HTMLDivElement>(null);
+//   const navigate = useNavigate();
+//   const [openSubDropdowns, setOpenSubDropdowns] = useState<Record<string, boolean>>({});
+
+//   // Handle scroll effect
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       const scrollTop = window.scrollY;
+//       setIsScrolled(scrollTop > 20);
+//     };
+
+//     window.addEventListener('scroll', handleScroll);
+//     return () => window.removeEventListener('scroll', handleScroll);
+//   }, []);
+
+//   const handleBookNow = () => {
+//     if (window.location.pathname === '/contact') {
+//       scrollToSection('contact-form');
+//     } else {
+//       navigate('/contact');
+//       setTimeout(() => scrollToSection('contact-form'), 100);
+//     }
+//   };
+
+//   useEffect(() => {
+//     const handleClickOutside = (event: MouseEvent) => {
+//       if (navRef.current && !navRef.current.contains(event.target as Node)) {
+//         setIsOpen(false);
+//         setOpenDropdown(null);
+//         setOpenSubDropdowns({});
+//       }
+//     };
+//     document.addEventListener('mousedown', handleClickOutside);
+//     return () => document.removeEventListener('mousedown', handleClickOutside);
+//   }, []);
+
+//   const toggleDropdown = (dropdown: string) => {
+//     setOpenDropdown(openDropdown === dropdown ? null : dropdown);
+//   };
+
+//   const toggleSubDropdown = (parentId: string, subId: string) => {
+//     setOpenSubDropdowns(prev => ({
+//       ...prev,
+//       [`${parentId}-${subId}`]: !prev[`${parentId}-${subId}`]
+//     }));
+//   };
+
+//   const closeAllDropdowns = () => {
+//     setIsOpen(false);
+//     setOpenDropdown(null);
+//     setOpenSubDropdowns({});
+//   };
+
+//   // Define dropdown arrays with icons
+//   const aboutUsDropdown = [
+//     { name: 'Nowal NatureCare', path: '/Ourstory', icon: <Leaf className="w-4 h-4" />, description: 'Our holistic healing philosophy' },
+//     { name: 'About Founder', path: '/experience#mantra', icon: <User className="w-4 h-4" />, description: 'Meet our visionary leader' },
+//     { name: 'Healing Team', path: '/healing-team', icon: <Users className="w-4 h-4" />, description: 'Our expert practitioners' },
+//     { name: 'Daily Routine', path: '/dincharya', icon: <Clock className="w-4 h-4" />, description: 'Structured wellness schedule' },
+//   ];
+
+//   const treatmentsDropdown = [
+//     { 
+//       name: 'Holistic Programs', 
+//       path: '/programs',
+//       icon: <Activity className="w-4 h-4" />,
+//       description: 'Comprehensive wellness packages',
+//       submenu: [
+//         { name: 'Naturopathy Wonders', path: '/narutopathy', icon: <Leaf className="w-4 h-4" /> },
+//         { name: 'Yoga & Meditation', path: '/yoga', icon: <Activity className="w-4 h-4" /> },
+//         { name: 'Diet & Nutrition', path: '/diet', icon: <Utensils className="w-4 h-4" /> },
+//         { name: 'Ayurveda', path: '/ayurveda', icon: <Gem className="w-4 h-4" /> },
+//         { name: 'Acupuncture', path: '/Holistictherapy', icon: <Shield className="w-4 h-4" /> },
+//         { name: 'Physiotherapy', path: '/physiotheraphy', icon: <Activity className="w-4 h-4" /> },
+//       ]
+//     }
+//   ];
+
+//   const accommodationsDropdown = [
+//     { name: 'Accommodation Details', path: '/accomadation', icon: <Hotel className="w-4 h-4" />, description: 'Room options & amenities' },
+//     { name: 'Accommodation Guidelines', path: '/guidliness', icon: <BookOpen className="w-4 h-4" />, description: 'Stay information & policies' },
+//   ];
+
+//   const celebrationsDropdown = [
+//     { name: 'Wedding', path: '/wedding', icon: <PartyPopper className="w-4 h-4" />, description: 'Beautiful wedding celebrations' },
+//     { name: 'Events', path: '/events', icon: <Calendar className="w-4 h-4" />, description: 'Special events and occasions' },
+//     { name: 'Banquet Lawn', path: '/banquet-lawn', icon: <Hotel className="w-4 h-4" />, description: 'Spacious banquet facilities' },
+//   ];
+
+//   const contactUsDropdown = [
+//     { name: 'Contact Information', path: '/contact', icon: <MapPin className="w-4 h-4" />, description: 'Get in touch with us' },
+//     { name: 'Career Opportunities', path: '/career', icon: <Briefcase className="w-4 h-4" />, description: 'Join our healing team' },
+//   ];
+
+//   return (
+//     <>
+//       <nav 
+//         ref={navRef}
+//         className={`fixed w-full z-50 transition-all duration-300 ${
+//           isScrolled
+//             ? 'bg-white/95 backdrop-blur-md shadow-lg py-1'
+//             : 'bg-gradient-to-r from-green-50 to-emerald-100 py-2 shadow-md'
+//         }`}
+//       >
+//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//           <div className="flex justify-between items-center h-16">
+//             {/* Left side - Logo and Sidebar Toggle */}
+//             <div className="flex items-center flex-shrink-0">
+//               {/* Sidebar Toggle Button - Show on all devices except mobile */}
+//               <div className="hidden lg:flex items-center mr-4">
+//                 <button
+//                   className={`inline-flex items-center justify-center p-2 rounded-lg transition-all duration-300 ${
+//                     isScrolled 
+//                       ? 'text-gray-700 hover:text-green-600 hover:bg-green-50' 
+//                       : 'text-gray-700 hover:text-green-600 hover:bg-green-50'
+//                   } focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500`}
+//                   onClick={() => setIsSidebarOpen(true)}
+//                 >
+//                   <span className="sr-only">Open sidebar menu</span>
+//                   <Menu className="block h-5 w-5" aria-hidden="true" />
+//                 </button>
+//               </div>
+
+//               {/* Logo */}
+//               <div className="flex items-center">
+//                 <NavLink to="/" className="flex items-center" onClick={closeAllDropdowns}>
+//                   <img 
+//                     src={logo} 
+//                     alt="Company Logo" 
+//                     className="h-10 sm:h-12 w-auto hover:scale-105 transition-transform duration-300"
+//                   />
+//                 </NavLink>
+//               </div>
+//             </div>
+
+//             {/* Desktop Navigation - Show on lg and above */}
+//             <div className="hidden lg:flex items-center justify-center flex-1">
+//               <div className="flex items-center space-x-1 ml-12"> {/* Increased left margin */}
+//                 {/* Home Button */}
+//                 <NavLink
+//                   to="/"
+//                   className={({ isActive }) =>
+//                     `flex items-center px-4 py-2 rounded-lg transition-all duration-200 font-medium text-sm font-sans ${
+//                       isActive 
+//                         ? 'bg-green-100 text-green-700 shadow-inner' 
+//                         : 'text-gray-700 hover:bg-green-50 hover:text-green-600'
+//                     }`
+//                   }
+//                   onClick={closeAllDropdowns}
+//                 >
+//                   <Home className="w-4 h-4 mr-2" />
+//                   <span className="whitespace-nowrap">Home</span>
+//                 </NavLink>
+
+//                 {/* About Us */}
+//                 <div className="relative group">
+//                   <button 
+//                     className="flex items-center space-x-1 px-4 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+//                     onMouseEnter={() => setOpenDropdown('desktop-about')}
+//                   >
+//                     <Info className="w-4 h-4 mr-2" />
+//                     <span>About Us</span>
+//                     <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
+//                   </button>
+//                   <div 
+//                     className="absolute left-0 mt-2 w-80 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 grid grid-cols-2 gap-2"
+//                     onMouseLeave={() => setOpenDropdown(null)}
+//                   >
+//                     {aboutUsDropdown.map((item, index) => (
+//                       <NavLink 
+//                         key={index} 
+//                         to={item.path} 
+//                         className={({ isActive }) => 
+//                           `flex flex-col p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                         }
+//                         onClick={closeAllDropdowns}
+//                       >
+//                         <div className="flex items-center mb-1">
+//                           <div className="p-1.5 bg-green-100 rounded-md mr-2 group-hover/item:bg-green-200 transition-colors">
+//                             {item.icon}
+//                           </div>
+//                           <span className="font-medium text-sm">{item.name}</span>
+//                         </div>
+//                         <p className="text-xs text-gray-500 pl-8 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                       </NavLink>
+//                     ))}
+//                   </div>
+//                 </div>
+
+//                 {/* Treatments */}
+//                 <div className="relative group">
+//                   <button 
+//                     className="flex items-center space-x-1 px-4 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+//                     onMouseEnter={() => setOpenDropdown('desktop-treatments')}
+//                   >
+//                     <Heart className="w-4 h-4 mr-2" />
+//                     <span>Treatments</span>
+//                     <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
+//                   </button>
+//                   <div 
+//                     className="absolute left-0 mt-2 w-96 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+//                     onMouseLeave={() => setOpenDropdown(null)}
+//                   >
+//                     <div className="px-4">
+//                       {treatmentsDropdown.map((item, index) => (
+//                         <div key={index} className="relative group/sub">
+//                           {item.submenu ? (
+//                             <>
+//                               <div 
+//                                 className="flex justify-between items-start p-3 rounded-lg text-gray-700 hover:bg-gray-50 cursor-pointer transition-colors duration-150 group/item font-sans"
+//                                 onMouseEnter={() => setOpenDropdown(`desktop-treatments-sub-${index}`)}
+//                               >
+//                                 <div className="flex items-start">
+//                                   <div className="p-1.5 bg-blue-100 rounded-md mr-3 group-hover/item:bg-blue-200 transition-colors mt-0.5">
+//                                     {item.icon}
+//                                   </div>
+//                                   <div>
+//                                     <div className="font-medium text-sm">{item.name}</div>
+//                                     <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                                   </div>
+//                                 </div>
+//                                 <ChevronRight className="w-4 h-4 text-gray-400 mt-1.5" />
+//                               </div>
+                              
+//                               <div 
+//                                 className={`absolute left-full top-0 ml-1 w-64 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-3 z-50 ${
+//                                   openDropdown === `desktop-treatments-sub-${index}` ? 'block' : 'hidden'
+//                                 } group-hover/sub:block`}
+//                                 onMouseLeave={() => setOpenDropdown('desktop-treatments')}
+//                               >
+//                                 <h4 className="px-4 py-2 font-medium text-sm text-gray-700 border-b border-gray-100 mb-1 font-sans">{item.name}</h4>
+//                                 {item.submenu.map((subItem, subIndex) => (
+//                                   <NavLink 
+//                                     key={subIndex} 
+//                                     to={subItem.path} 
+//                                     className={({ isActive }) => 
+//                                       `flex items-center px-4 py-2.5 text-sm font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150`
+//                                     }
+//                                     onClick={closeAllDropdowns}
+//                                   >
+//                                     <span className="mr-3 opacity-70">{subItem.icon}</span>
+//                                     {subItem.name}
+//                                   </NavLink>
+//                                 ))}
+//                               </div>
+//                             </>
+//                           ) : (
+//                             <NavLink 
+//                               to={item.path}
+//                               className={({ isActive }) => 
+//                                 `flex items-start p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                               }
+//                               onClick={closeAllDropdowns}
+//                             >
+//                               <div className="p-1.5 bg-blue-100 rounded-md mr-3 group-hover/item:bg-blue-200 transition-colors mt-0.5">
+//                                 {item.icon}
+//                               </div>
+//                               <div>
+//                                 <div className="font-medium text-sm">{item.name}</div>
+//                                 <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                               </div>
+//                             </NavLink>
+//                           )}
+//                         </div>
+//                       ))}
+//                     </div>
+//                   </div>
+//                 </div>
+
+//                 {/* Accommodations */}
+//                 <div className="relative group">
+//                   <button 
+//                     className="flex items-center space-x-1 px-4 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+//                     onMouseEnter={() => setOpenDropdown('desktop-accommodations')}
+//                   >
+//                     <Hotel className="w-4 h-4 mr-2" />
+//                     <span>Accommodations</span>
+//                     <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
+//                   </button>
+//                   <div 
+//                     className="absolute left-0 mt-2 w-96 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+//                     onMouseLeave={() => setOpenDropdown(null)}
+//                   >
+//                     <div className="px-2">
+//                       <h3 className="font-semibold text-gray-800 text-sm uppercase tracking-wide mb-3 pl-3 font-sans">Stay With Us</h3>
+//                       <div className="grid grid-cols-1 gap-2">
+//                         {accommodationsDropdown.map((item, index) => (
+//                           <NavLink 
+//                             key={index} 
+//                             to={item.path} 
+//                             className={({ isActive }) => 
+//                               `flex items-start p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                             }
+//                             onClick={closeAllDropdowns}
+//                           >
+//                             <div className="p-1.5 bg-amber-100 rounded-md mr-3 group-hover/item:bg-amber-200 transition-colors mt-0.5">
+//                               {item.icon}
+//                             </div>
+//                             <div>
+//                               <div className="font-medium text-sm">{item.name}</div>
+//                               <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                             </div>
+//                           </NavLink>
+//                         ))}
+//                       </div>
+//                     </div>
+//                   </div>
+//                 </div>
+
+//                 {/* Gallery */}
+//                 <NavLink
+//                   to="/image"
+//                   className={({ isActive }) =>
+//                     `flex items-center px-4 py-2 rounded-lg transition-all duration-200 font-medium text-sm font-sans whitespace-nowrap ${
+//                       isActive 
+//                         ? 'bg-green-100 text-green-700 shadow-inner' 
+//                         : 'text-gray-700 hover:bg-green-50 hover:text-green-600'
+//                     }`
+//                   }
+//                   onClick={closeAllDropdowns}
+//                 >
+//                   <Images className="w-4 h-4 mr-2" />
+//                   <span>Gallery</span>
+//                 </NavLink>
+
+//                 {/* Celebrations */}
+//                 <div className="relative group">
+//                   <button 
+//                     className="flex items-center space-x-1 px-4 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+//                     onMouseEnter={() => setOpenDropdown('desktop-celebrations')}
+//                   >
+//                     <PartyPopper className="w-4 h-4 mr-2" />
+//                     <span>Celebrations</span>
+//                     <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
+//                   </button>
+//                   <div 
+//                     className="absolute left-0 mt-2 w-80 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+//                     onMouseLeave={() => setOpenDropdown(null)}
+//                   >
+//                     <div className="px-2">
+//                       <h3 className="font-semibold text-gray-800 text-sm uppercase tracking-wide mb-3 pl-3 font-sans">Special Events</h3>
+//                       <div className="grid grid-cols-1 gap-2">
+//                         {celebrationsDropdown.map((item, index) => (
+//                           <NavLink 
+//                             key={index} 
+//                             to={item.path} 
+//                             className={({ isActive }) => 
+//                               `flex items-start p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                             }
+//                             onClick={closeAllDropdowns}
+//                           >
+//                             <div className="p-1.5 bg-pink-100 rounded-md mr-3 group-hover/item:bg-pink-200 transition-colors mt-0.5">
+//                               {item.icon}
+//                             </div>
+//                             <div>
+//                               <div className="font-medium text-sm">{item.name}</div>
+//                               <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                             </div>
+//                           </NavLink>
+//                         ))}
+//                       </div>
+//                     </div>
+//                   </div>
+//                 </div>
+
+//                 {/* Contact Us */}
+//                 <div className="relative group">
+//                   <button 
+//                     className="flex items-center space-x-1 px-4 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+//                     onMouseEnter={() => setOpenDropdown('desktop-contact')}
+//                   >
+//                     <Phone className="w-4 h-4 mr-2" />
+//                     <span>Contact Us</span>
+//                     <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
+//                   </button>
+//                   <div 
+//                     className="absolute right-0 mt-2 w-80 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+//                     onMouseLeave={() => setOpenDropdown(null)}
+//                   >
+//                     <div className="px-2">
+//                       <h3 className="font-semibold text-gray-800 text-sm uppercase tracking-wide mb-3 pl-3 font-sans">Get In Touch</h3>
+//                       <div className="grid grid-cols-1 gap-2">
+//                         {contactUsDropdown.map((item, index) => (
+//                           <NavLink 
+//                             key={index} 
+//                             to={item.path} 
+//                             className={({ isActive }) => 
+//                               `flex items-start p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                             }
+//                             onClick={closeAllDropdowns}
+//                           >
+//                             <div className="p-1.5 bg-purple-100 rounded-md mr-3 group-hover/item:bg-purple-200 transition-colors mt-0.5">
+//                               {item.icon}
+//                             </div>
+//                             <div>
+//                               <div className="font-medium text-sm">{item.name}</div>
+//                               <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                             </div>
+//                           </NavLink>
+//                         ))}
+//                       </div>
+                      
+//                       <div className="mt-4 pt-4 border-t border-gray-100">
+//                         <div className="bg-gray-50 rounded-lg p-3">
+//                           <div className="flex items-center text-sm font-medium text-gray-700 mb-1 font-sans">
+//                             <Phone className="w-4 h-4 mr-2 text-green-600" />
+//                             <span>+91 9251582670</span>
+//                           </div>
+//                           <div className="text-xs text-gray-500 font-sans">Mon-Sun, 7:00 AM - 7:00 PM</div>
+//                         </div>
+//                       </div>
+//                     </div>
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Action Buttons - Desktop */}
+//             <div className="hidden lg:flex items-center space-x-3">
+//               <NavLink
+//                 to=" "
+//                 className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all duration-200 font-medium text-sm font-sans shadow-md hover:shadow-lg group/btn whitespace-nowrap"
+//                 onClick={closeAllDropdowns}
+//               >
+//                 <ShoppingBag className="w-4 h-4 mr-1.5 transition-transform group-hover/btn:scale-110" />
+//                 <span>Our Products</span>
+//               </NavLink>
+
+//               <button
+//                 onClick={handleBookNow}
+//                 className="flex items-center px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-200 font-medium text-sm font-sans shadow-md hover:shadow-lg group/btn whitespace-nowrap"
+//               >
+//                 <Calendar className="w-4 h-4 mr-1.5 transition-transform group-hover/btn:scale-110" />
+//                 <span>Book Now</span>
+//               </button>
+//             </div>
+
+//             {/* Mobile Menu Button - Show on mobile only */}
+//             <div className="lg:hidden flex items-center">
+//               <button
+//                 className={`inline-flex items-center justify-center p-2 rounded-md transition-all duration-200 ${
+//                   isScrolled
+//                     ? 'text-gray-700 hover:text-green-600 hover:bg-green-50'
+//                     : 'text-gray-700 hover:text-green-600 hover:bg-green-50'
+//                 } focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500`}
+//                 onClick={() => setIsOpen(!isOpen)}
+//               >
+//                 <span className="sr-only">Open main menu</span>
+//                 {isOpen ? (
+//                   <X className="block h-6 w-6" aria-hidden="true" />
+//                 ) : (
+//                   <Menu className="block h-6 w-6" aria-hidden="true" />
+//                 )}
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Mobile Navigation */}
+//         <div className={`lg:hidden transition-all duration-300 ease-in-out overflow-hidden ${
+//           isOpen ? 'max-h-screen' : 'max-h-0'
+//         }`}>
+//           <div className="px-3 pt-2 pb-4 space-y-1 bg-white border-t border-gray-200 shadow-inner">
+//             {/* Home Button - Mobile */}
+//             <NavLink
+//               to="/"
+//               className={({ isActive }) =>
+//                 `flex items-center px-3 py-3 rounded-md transition-all duration-200 font-medium text-base font-sans ${
+//                   isActive 
+//                     ? 'bg-green-100 text-green-700' 
+//                     : 'text-gray-700 hover:bg-green-50 hover:text-green-600'
+//                 }`
+//               }
+//               onClick={closeAllDropdowns}
+//             >
+//               <Home className="w-5 h-5 mr-3" />
+//               <span>Home</span>
+//             </NavLink>
+
+//             {/* About Us - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
+//                 onClick={() => toggleDropdown('mobile-about')}
+//               >
+//                 <div className="flex items-center">
+//                   <Info className="w-5 h-5 mr-3" />
+//                   <span>About Us</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-about' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-about' ? 'max-h-96' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {aboutUsDropdown.map((item, index) => (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path}
+//                       className={({ isActive }) => 
+//                         `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
+//                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                         } transition-colors duration-150`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       <span className="mr-3">{item.icon}</span>
+//                       {item.name}
+//                     </NavLink>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Treatments - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
+//                 onClick={() => toggleDropdown('mobile-treatments')}
+//               >
+//                 <div className="flex items-center">
+//                   <Heart className="w-5 h-5 mr-3" />
+//                   <span>Treatments</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-treatments' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-treatments' ? 'max-h-[500px]' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {treatmentsDropdown.map((item, index) => (
+//                     <div key={index}>
+//                       {item.submenu ? (
+//                         <>
+//                           <button 
+//                             className="flex justify-between items-center w-full px-3 py-2.5 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 text-sm font-sans"
+//                             onClick={() => toggleSubDropdown('mobile-treatments', `sub-${index}`)}
+//                           >
+//                             <div className="flex items-center">
+//                               <span className="mr-3">{item.icon}</span>
+//                               <span>{item.name}</span>
+//                             </div>
+//                             <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+//                               openSubDropdowns[`mobile-treatments-sub-${index}`] ? 'rotate-180' : ''
+//                             }`} />
+//                           </button>
+//                           <div className={`transition-all duration-200 overflow-hidden ${
+//                             openSubDropdowns[`mobile-treatments-sub-${index}`] ? 'max-h-96' : 'max-h-0'
+//                           }`}>
+//                             <div className="pl-6 space-y-1">
+//                               {item.submenu.map((subItem, subIndex) => (
+//                                 <NavLink 
+//                                   key={subIndex} 
+//                                   to={subItem.path}
+//                                   className={({ isActive }) => 
+//                                     `flex items-center px-3 py-2 rounded-md text-sm font-sans ${
+//                                       isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                                     } transition-colors duration-150`
+//                                   }
+//                                   onClick={closeAllDropdowns}
+//                                 >
+//                                   <span className="mr-3">{subItem.icon}</span>
+//                                   {subItem.name}
+//                                 </NavLink>
+//                               ))}
+//                             </div>
+//                           </div>
+//                         </>
+//                       ) : (
+//                         <NavLink 
+//                           to={item.path}
+//                           className={({ isActive }) => 
+//                             `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
+//                               isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                             } transition-colors duration-150`
+//                           }
+//                           onClick={closeAllDropdowns}
+//                         >
+//                           <span className="mr-3">{item.icon}</span>
+//                           {item.name}
+//                         </NavLink>
+//                       )}
+//                     </div>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Accommodations - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
+//                 onClick={() => toggleDropdown('mobile-accommodations')}
+//               >
+//                 <div className="flex items-center">
+//                   <Hotel className="w-5 h-5 mr-3" />
+//                   <span>Accommodations</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-accommodations' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-accommodations' ? 'max-h-96' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {accommodationsDropdown.map((item, index) => (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path}
+//                       className={({ isActive }) => 
+//                         `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
+//                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                         } transition-colors duration-150`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       <span className="mr-3">{item.icon}</span>
+//                       {item.name}
+//                     </NavLink>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Gallery - Mobile */}
+//             <NavLink
+//               to="/image"
+//               className={({ isActive }) =>
+//                 `flex items-center px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans ${
+//                   isActive ? 'bg-green-50 text-green-700 font-semibold' : ''
+//                 }`
+//               }
+//               onClick={closeAllDropdowns}
+//             >
+//               <Images className="w-5 h-5 mr-3" />
+//               <span>Gallery</span>
+//             </NavLink>
+
+//             {/* Celebrations - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
+//                 onClick={() => toggleDropdown('mobile-celebrations')}
+//               >
+//                 <div className="flex items-center">
+//                   <PartyPopper className="w-5 h-5 mr-3" />
+//                   <span>Celebrations</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-celebrations' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-celebrations' ? 'max-h-96' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {celebrationsDropdown.map((item, index) => (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path}
+//                       className={({ isActive }) => 
+//                         `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
+//                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                         } transition-colors duration-150`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       <span className="mr-3">{item.icon}</span>
+//                       {item.name}
+//                     </NavLink>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Contact Us - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
+//                 onClick={() => toggleDropdown('mobile-contact')}
+//               >
+//                 <div className="flex items-center">
+//                   <Phone className="w-5 h-5 mr-3" />
+//                   <span>Contact Us</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-contact' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-contact' ? 'max-h-96' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {contactUsDropdown.map((item, index) => (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path}
+//                       className={({ isActive }) => 
+//                         `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
+//                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                         } transition-colors duration-150`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       <span className="mr-3">{item.icon}</span>
+//                       {item.name}
+//                     </NavLink>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Action Buttons - Mobile */}
+//             <div className="pt-4 space-y-2 border-t border-gray-200">
+//               <NavLink
+//                 to=" "
+//                 className="flex items-center justify-center px-4 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all duration-200 font-medium text-center shadow-md font-sans"
+//                 onClick={closeAllDropdowns}
+//               >
+//                 <ShoppingBag className="w-5 h-5 mr-2" />
+//                 <span>Our Products</span>
+//               </NavLink>
+
+//               <button
+//                 onClick={handleBookNow}
+//                 className="flex items-center justify-center w-full px-4 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-200 font-medium text-center shadow-md font-sans"
+//               >
+//                 <Calendar className="w-5 h-5 mr-2" />
+//                 <span>Book Now</span>
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+//       </nav>
+
+//       {/* Sidebar Component */}
+//       <Sidebar 
+//         isOpen={isSidebarOpen} 
+//         onClose={() => setIsSidebarOpen(false)} 
+//       />
+//     </>
+//   );
+// };
+
+// export default Navbar;
+
+
+
+
+
+
+
+
+// import React, { useState, useEffect, useRef } from 'react';
+// import { NavLink } from 'react-router-dom';
+// import { 
+//   Menu, 
+//   X, 
+//   ChevronDown, 
+//   ChevronRight, 
+//   Home, 
+//   Info, 
+//   Heart, 
+//   Hotel, 
+//   Images, 
+//   Phone, 
+//   ShoppingBag, 
+//   Calendar,
+//   Users,
+//   User,
+//   Clock,
+//   Leaf,
+//   Activity,
+//   Utensils,
+//   Gem,
+//   MapPin,
+//   Briefcase,
+//   BookOpen,
+//   Shield,
+//   PartyPopper
+// } from 'lucide-react';
+// import logo from '../assets/logo.png';
+// import { scrollToSection } from '../components/utils/scrollToSection';
+// import Sidebar from './Sidebar';
+// import { useNavigate } from 'react-router-dom';
+
+// const Navbar: React.FC = () => {
+//   const [isOpen, setIsOpen] = useState(false);
+//   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+//   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+//   const [isScrolled, setIsScrolled] = useState(false);
+//   const navRef = useRef<HTMLDivElement>(null);
+//   const navigate = useNavigate();
+//   const [openSubDropdowns, setOpenSubDropdowns] = useState<Record<string, boolean>>({});
+
+//   // Handle scroll effect
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       const scrollTop = window.scrollY;
+//       setIsScrolled(scrollTop > 20);
+//     };
+
+//     window.addEventListener('scroll', handleScroll);
+//     return () => window.removeEventListener('scroll', handleScroll);
+//   }, []);
+
+//   const handleBookNow = () => {
+//     if (window.location.pathname === '/contact') {
+//       scrollToSection('contact-form');
+//     } else {
+//       navigate('/contact');
+//       setTimeout(() => scrollToSection('contact-form'), 100);
+//     }
+//   };
+
+//   useEffect(() => {
+//     const handleClickOutside = (event: MouseEvent) => {
+//       if (navRef.current && !navRef.current.contains(event.target as Node)) {
+//         setIsOpen(false);
+//         setOpenDropdown(null);
+//         setOpenSubDropdowns({});
+//       }
+//     };
+//     document.addEventListener('mousedown', handleClickOutside);
+//     return () => document.removeEventListener('mousedown', handleClickOutside);
+//   }, []);
+
+//   const toggleDropdown = (dropdown: string) => {
+//     setOpenDropdown(openDropdown === dropdown ? null : dropdown);
+//   };
+
+//   const toggleSubDropdown = (parentId: string, subId: string) => {
+//     setOpenSubDropdowns(prev => ({
+//       ...prev,
+//       [`${parentId}-${subId}`]: !prev[`${parentId}-${subId}`]
+//     }));
+//   };
+
+//   const closeAllDropdowns = () => {
+//     setIsOpen(false);
+//     setOpenDropdown(null);
+//     setOpenSubDropdowns({});
+//   };
+
+//   // Define dropdown arrays with icons
+//   const aboutUsDropdown = [
+//     { name: 'Nowal NatureCare', path: '/Ourstory', icon: <Leaf className="w-4 h-4" />, description: 'Our holistic healing philosophy' },
+//     { name: 'About Founder', path: '/experience#mantra', icon: <User className="w-4 h-4" />, description: 'Meet our visionary leader' },
+//     { name: 'Healing Team', path: '/healing-team', icon: <Users className="w-4 h-4" />, description: 'Our expert practitioners' },
+//     { name: 'Daily Routine', path: '/dincharya', icon: <Clock className="w-4 h-4" />, description: 'Structured wellness schedule' },
+//   ];
+
+//   const treatmentsDropdown = [
+//     { 
+//       name: 'Holistic Programs', 
+//       path: '/programs',
+//       icon: <Activity className="w-4 h-4" />,
+//       description: 'Comprehensive wellness packages',
+//       submenu: [
+//         { name: 'Naturopathy Wonders', path: '/narutopathy', icon: <Leaf className="w-4 h-4" /> },
+//         { name: 'Yoga & Meditation', path: '/yoga', icon: <Activity className="w-4 h-4" /> },
+//         { name: 'Diet & Nutrition', path: '/diet', icon: <Utensils className="w-4 h-4" /> },
+//         { name: 'Ayurveda', path: '/ayurveda', icon: <Gem className="w-4 h-4" /> },
+//         { name: 'Acupuncture', path: '/Holistictherapy', icon: <Shield className="w-4 h-4" /> },
+//         { name: 'Physiotherapy', path: '/physiotheraphy', icon: <Activity className="w-4 h-4" /> },
+//       ]
+//     }
+//   ];
+
+//   const accommodationsDropdown = [
+//     { name: 'Accommodation Details', path: '/accomadation', icon: <Hotel className="w-4 h-4" />, description: 'Room options & amenities' },
+//     { name: 'Accommodation Guidelines', path: '/guidliness', icon: <BookOpen className="w-4 h-4" />, description: 'Stay information & policies' },
+//   ];
+
+//   const celebrationsDropdown = [
+//     { name: 'Wedding', path: '/wedding', icon: <PartyPopper className="w-4 h-4" />, description: 'Beautiful wedding celebrations' },
+//     { name: 'Events', path: '/events', icon: <Calendar className="w-4 h-4" />, description: 'Special events and occasions' },
+//     { name: 'Banquet Lawn', path: '/banquet-lawn', icon: <Hotel className="w-4 h-4" />, description: 'Spacious banquet facilities' },
+//   ];
+
+//   const contactUsDropdown = [
+//     { name: 'Contact Information', path: '/contact', icon: <MapPin className="w-4 h-4" />, description: 'Get in touch with us' },
+//     { name: 'Career Opportunities', path: '/career', icon: <Briefcase className="w-4 h-4" />, description: 'Join our healing team' },
+//   ];
+
+//   return (
+//     <>
+//       <nav 
+//         ref={navRef}
+//         className={`fixed w-full z-50 transition-all duration-300 ${
+//           isScrolled
+//             ? 'bg-white/95 backdrop-blur-md shadow-lg py-1'
+//             : 'bg-gradient-to-r from-green-50 to-emerald-100 py-2 shadow-md'
+//         }`}
+//       >
+//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//           <div className="flex justify-between items-center h-16">
+//             {/* Left side - Logo and Sidebar Toggle */}
+//             <div className="flex items-center flex-shrink-0">
+//               {/* Sidebar Toggle Button - Show on all devices except mobile */}
+//               <div className="hidden lg:flex items-center mr-4">
+//                 <button
+//                   className={`inline-flex items-center justify-center p-2 rounded-lg transition-all duration-300 ${
+//                     isScrolled 
+//                       ? 'text-gray-700 hover:text-green-600 hover:bg-green-50' 
+//                       : 'text-gray-700 hover:text-green-600 hover:bg-green-50'
+//                   } focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500`}
+//                   onClick={() => setIsSidebarOpen(true)}
+//                 >
+//                   <span className="sr-only">Open sidebar menu</span>
+//                   <Menu className="block h-5 w-5" aria-hidden="true" />
+//                 </button>
+//               </div>
+
+//               {/* Logo */}
+//               <div className="flex items-center">
+//                 <NavLink to="/" className="flex items-center" onClick={closeAllDropdowns}>
+//                   <img 
+//                     src={logo} 
+//                     alt="Company Logo" 
+//                     className="h-10 sm:h-12 w-auto hover:scale-105 transition-transform duration-300"
+//                   />
+//                 </NavLink>
+//               </div>
+//             </div>
+
+//             {/* Desktop Navigation - Show on lg and above */}
+//             <div className="hidden lg:flex items-center justify-center flex-1">
+//               <div className="flex items-center space-x-1 ml-4"> {/* Changed from mx-8 to ml-4 to move left */}
+//                 {/* Home Button */}
+//                 <NavLink
+//                   to="/"
+//                   className={({ isActive }) =>
+//                     `flex items-center px-4 py-2 rounded-lg transition-all duration-200 font-medium text-sm font-sans ${
+//                       isActive 
+//                         ? 'bg-green-100 text-green-700 shadow-inner' 
+//                         : 'text-gray-700 hover:bg-green-50 hover:text-green-600'
+//                     }`
+//                   }
+//                   onClick={closeAllDropdowns}
+//                 >
+//                   <Home className="w-4 h-4 mr-2" />
+//                   <span className="whitespace-nowrap">Home</span>
+//                 </NavLink>
+
+//                 {/* About Us */}
+//                 <div className="relative group">
+//                   <button 
+//                     className="flex items-center px-4 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+//                     onMouseEnter={() => setOpenDropdown('desktop-about')}
+//                   >
+//                     <Info className="w-4 h-4 mr-2" />
+//                     <span>About Us</span>
+//                     <ChevronDown className="w-3 h-3 ml-1 transition-transform duration-200 group-hover:rotate-180" />
+//                   </button>
+//                   <div 
+//                     className="absolute left-0 mt-2 w-80 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 grid grid-cols-2 gap-2"
+//                     onMouseLeave={() => setOpenDropdown(null)}
+//                   >
+//                     {aboutUsDropdown.map((item, index) => (
+//                       <NavLink 
+//                         key={index} 
+//                         to={item.path} 
+//                         className={({ isActive }) => 
+//                           `flex flex-col p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                         }
+//                         onClick={closeAllDropdowns}
+//                       >
+//                         <div className="flex items-center mb-1">
+//                           <div className="p-1.5 bg-green-100 rounded-md mr-2 group-hover/item:bg-green-200 transition-colors">
+//                             {item.icon}
+//                           </div>
+//                           <span className="font-medium text-sm">{item.name}</span>
+//                         </div>
+//                         <p className="text-xs text-gray-500 pl-8 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                       </NavLink>
+//                     ))}
+//                   </div>
+//                 </div>
+
+//                 {/* Treatments */}
+//                 <div className="relative group">
+//                   <button 
+//                     className="flex items-center px-4 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+//                     onMouseEnter={() => setOpenDropdown('desktop-treatments')}
+//                   >
+//                     <Heart className="w-4 h-4 mr-2" />
+//                     <span>Treatments</span>
+//                     <ChevronDown className="w-3 h-3 ml-1 transition-transform duration-200 group-hover:rotate-180" />
+//                   </button>
+//                   <div 
+//                     className="absolute left-0 mt-2 w-96 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+//                     onMouseLeave={() => setOpenDropdown(null)}
+//                   >
+//                     <div className="px-4">
+//                       {treatmentsDropdown.map((item, index) => (
+//                         <div key={index} className="relative group/sub">
+//                           {item.submenu ? (
+//                             <>
+//                               <div 
+//                                 className="flex justify-between items-start p-3 rounded-lg text-gray-700 hover:bg-gray-50 cursor-pointer transition-colors duration-150 group/item font-sans"
+//                                 onMouseEnter={() => setOpenDropdown(`desktop-treatments-sub-${index}`)}
+//                               >
+//                                 <div className="flex items-start">
+//                                   <div className="p-1.5 bg-blue-100 rounded-md mr-3 group-hover/item:bg-blue-200 transition-colors mt-0.5">
+//                                     {item.icon}
+//                                   </div>
+//                                   <div>
+//                                     <div className="font-medium text-sm">{item.name}</div>
+//                                     <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                                   </div>
+//                                 </div>
+//                                 <ChevronRight className="w-4 h-4 text-gray-400 mt-1.5" />
+//                               </div>
+                              
+//                               <div 
+//                                 className={`absolute left-full top-0 ml-1 w-64 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-3 z-50 ${
+//                                   openDropdown === `desktop-treatments-sub-${index}` ? 'block' : 'hidden'
+//                                 } group-hover/sub:block`}
+//                                 onMouseLeave={() => setOpenDropdown('desktop-treatments')}
+//                               >
+//                                 <h4 className="px-4 py-2 font-medium text-sm text-gray-700 border-b border-gray-100 mb-1 font-sans">{item.name}</h4>
+//                                 {item.submenu.map((subItem, subIndex) => (
+//                                   <NavLink 
+//                                     key={subIndex} 
+//                                     to={subItem.path} 
+//                                     className={({ isActive }) => 
+//                                       `flex items-center px-4 py-2.5 text-sm font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150`
+//                                     }
+//                                     onClick={closeAllDropdowns}
+//                                   >
+//                                     <span className="mr-3 opacity-70">{subItem.icon}</span>
+//                                     {subItem.name}
+//                                   </NavLink>
+//                                 ))}
+//                               </div>
+//                             </>
+//                           ) : (
+//                             <NavLink 
+//                               to={item.path}
+//                               className={({ isActive }) => 
+//                                 `flex items-start p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                               }
+//                               onClick={closeAllDropdowns}
+//                             >
+//                               <div className="p-1.5 bg-blue-100 rounded-md mr-3 group-hover/item:bg-blue-200 transition-colors mt-0.5">
+//                                 {item.icon}
+//                               </div>
+//                               <div>
+//                                 <div className="font-medium text-sm">{item.name}</div>
+//                                 <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                               </div>
+//                             </NavLink>
+//                           )}
+//                         </div>
+//                       ))}
+//                     </div>
+//                   </div>
+//                 </div>
+
+//                 {/* Accommodations */}
+//                 <div className="relative group">
+//                   <button 
+//                     className="flex items-center px-4 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+//                     onMouseEnter={() => setOpenDropdown('desktop-accommodations')}
+//                   >
+//                     <Hotel className="w-4 h-4 mr-2" />
+//                     <span>Accommodations</span>
+//                     <ChevronDown className="w-3 h-3 ml-1 transition-transform duration-200 group-hover:rotate-180" />
+//                   </button>
+//                   <div 
+//                     className="absolute left-0 mt-2 w-96 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+//                     onMouseLeave={() => setOpenDropdown(null)}
+//                   >
+//                     <div className="px-2">
+//                       <h3 className="font-semibold text-gray-800 text-sm uppercase tracking-wide mb-3 pl-3 font-sans">Stay With Us</h3>
+//                       <div className="grid grid-cols-1 gap-2">
+//                         {accommodationsDropdown.map((item, index) => (
+//                           <NavLink 
+//                             key={index} 
+//                             to={item.path} 
+//                             className={({ isActive }) => 
+//                               `flex items-start p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                             }
+//                             onClick={closeAllDropdowns}
+//                           >
+//                             <div className="p-1.5 bg-amber-100 rounded-md mr-3 group-hover/item:bg-amber-200 transition-colors mt-0.5">
+//                               {item.icon}
+//                             </div>
+//                             <div>
+//                               <div className="font-medium text-sm">{item.name}</div>
+//                               <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                             </div>
+//                           </NavLink>
+//                         ))}
+//                       </div>
+//                     </div>
+//                   </div>
+//                 </div>
+
+//                 {/* Gallery */}
+//                 <NavLink
+//                   to="/image"
+//                   className={({ isActive }) =>
+//                     `flex items-center px-4 py-2 rounded-lg transition-all duration-200 font-medium text-sm font-sans whitespace-nowrap ${
+//                       isActive 
+//                         ? 'bg-green-100 text-green-700 shadow-inner' 
+//                         : 'text-gray-700 hover:bg-green-50 hover:text-green-600'
+//                     }`
+//                   }
+//                   onClick={closeAllDropdowns}
+//                 >
+//                   <Images className="w-4 h-4 mr-2" />
+//                   <span>Gallery</span>
+//                 </NavLink>
+
+//                 {/* Celebrations */}
+//                 <div className="relative group">
+//                   <button 
+//                     className="flex items-center px-4 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+//                     onMouseEnter={() => setOpenDropdown('desktop-celebrations')}
+//                   >
+//                     <PartyPopper className="w-4 h-4 mr-2" />
+//                     <span>Celebrations</span>
+//                     <ChevronDown className="w-3 h-3 ml-1 transition-transform duration-200 group-hover:rotate-180" />
+//                   </button>
+//                   <div 
+//                     className="absolute left-0 mt-2 w-80 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+//                     onMouseLeave={() => setOpenDropdown(null)}
+//                   >
+//                     <div className="px-2">
+//                       <h3 className="font-semibold text-gray-800 text-sm uppercase tracking-wide mb-3 pl-3 font-sans">Special Events</h3>
+//                       <div className="grid grid-cols-1 gap-2">
+//                         {celebrationsDropdown.map((item, index) => (
+//                           <NavLink 
+//                             key={index} 
+//                             to={item.path} 
+//                             className={({ isActive }) => 
+//                               `flex items-start p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                             }
+//                             onClick={closeAllDropdowns}
+//                           >
+//                             <div className="p-1.5 bg-pink-100 rounded-md mr-3 group-hover/item:bg-pink-200 transition-colors mt-0.5">
+//                               {item.icon}
+//                             </div>
+//                             <div>
+//                               <div className="font-medium text-sm">{item.name}</div>
+//                               <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                             </div>
+//                           </NavLink>
+//                         ))}
+//                       </div>
+//                     </div>
+//                   </div>
+//                 </div>
+
+//                 {/* Contact Us */}
+//                 <div className="relative group">
+//                   <button 
+//                     className="flex items-center px-4 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+//                     onMouseEnter={() => setOpenDropdown('desktop-contact')}
+//                   >
+//                     <Phone className="w-4 h-4 mr-2" />
+//                     <span>Contact Us</span>
+//                     <ChevronDown className="w-3 h-3 ml-1 transition-transform duration-200 group-hover:rotate-180" />
+//                   </button>
+//                   <div 
+//                     className="absolute right-0 mt-2 w-80 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+//                     onMouseLeave={() => setOpenDropdown(null)}
+//                   >
+//                     <div className="px-2">
+//                       <h3 className="font-semibold text-gray-800 text-sm uppercase tracking-wide mb-3 pl-3 font-sans">Get In Touch</h3>
+//                       <div className="grid grid-cols-1 gap-2">
+//                         {contactUsDropdown.map((item, index) => (
+//                           <NavLink 
+//                             key={index} 
+//                             to={item.path} 
+//                             className={({ isActive }) => 
+//                               `flex items-start p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                             }
+//                             onClick={closeAllDropdowns}
+//                           >
+//                             <div className="p-1.5 bg-purple-100 rounded-md mr-3 group-hover/item:bg-purple-200 transition-colors mt-0.5">
+//                               {item.icon}
+//                             </div>
+//                             <div>
+//                               <div className="font-medium text-sm">{item.name}</div>
+//                               <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                             </div>
+//                           </NavLink>
+//                         ))}
+//                       </div>
+                      
+//                       <div className="mt-4 pt-4 border-t border-gray-100">
+//                         <div className="bg-gray-50 rounded-lg p-3">
+//                           <div className="flex items-center text-sm font-medium text-gray-700 mb-1 font-sans">
+//                             <Phone className="w-4 h-4 mr-2 text-green-600" />
+//                             <span>+91 9251582670</span>
+//                           </div>
+//                           <div className="text-xs text-gray-500 font-sans">Mon-Sun, 7:00 AM - 7:00 PM</div>
+//                         </div>
+//                       </div>
+//                     </div>
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Action Buttons - Desktop */}
+//             <div className="hidden lg:flex items-center space-x-3">
+//               <NavLink
+//                 to=" "
+//                 className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all duration-200 font-medium text-sm font-sans shadow-md hover:shadow-lg group/btn whitespace-nowrap"
+//                 onClick={closeAllDropdowns}
+//               >
+//                 <ShoppingBag className="w-4 h-4 mr-1.5 transition-transform group-hover/btn:scale-110" />
+//                 <span>Our Products</span>
+//               </NavLink>
+
+//               <button
+//                 onClick={handleBookNow}
+//                 className="flex items-center px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-200 font-medium text-sm font-sans shadow-md hover:shadow-lg group/btn whitespace-nowrap"
+//               >
+//                 <Calendar className="w-4 h-4 mr-1.5 transition-transform group-hover/btn:scale-110" />
+//                 <span>Book Now</span>
+//               </button>
+//             </div>
+
+//             {/* Mobile Menu Button - Show on mobile only */}
+//             <div className="lg:hidden flex items-center">
+//               <button
+//                 className={`inline-flex items-center justify-center p-2 rounded-md transition-all duration-200 ${
+//                   isScrolled
+//                     ? 'text-gray-700 hover:text-green-600 hover:bg-green-50'
+//                     : 'text-gray-700 hover:text-green-600 hover:bg-green-50'
+//                 } focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500`}
+//                 onClick={() => setIsOpen(!isOpen)}
+//               >
+//                 <span className="sr-only">Open main menu</span>
+//                 {isOpen ? (
+//                   <X className="block h-6 w-6" aria-hidden="true" />
+//                 ) : (
+//                   <Menu className="block h-6 w-6" aria-hidden="true" />
+//                 )}
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Mobile Navigation */}
+//         <div className={`lg:hidden transition-all duration-300 ease-in-out overflow-hidden ${
+//           isOpen ? 'max-h-screen' : 'max-h-0'
+//         }`}>
+//           <div className="px-3 pt-2 pb-4 space-y-1 bg-white border-t border-gray-200 shadow-inner">
+//             {/* Home Button - Mobile */}
+//             <NavLink
+//               to="/"
+//               className={({ isActive }) =>
+//                 `flex items-center px-3 py-3 rounded-md transition-all duration-200 font-medium text-base font-sans ${
+//                   isActive 
+//                     ? 'bg-green-100 text-green-700' 
+//                     : 'text-gray-700 hover:bg-green-50 hover:text-green-600'
+//                 }`
+//               }
+//               onClick={closeAllDropdowns}
+//             >
+//               <Home className="w-5 h-5 mr-3" />
+//               <span>Home</span>
+//             </NavLink>
+
+//             {/* About Us - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
+//                 onClick={() => toggleDropdown('mobile-about')}
+//               >
+//                 <div className="flex items-center">
+//                   <Info className="w-5 h-5 mr-3" />
+//                   <span>About Us</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-about' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-about' ? 'max-h-96' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {aboutUsDropdown.map((item, index) => (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path}
+//                       className={({ isActive }) => 
+//                         `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
+//                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                         } transition-colors duration-150`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       <span className="mr-3">{item.icon}</span>
+//                       {item.name}
+//                     </NavLink>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Treatments - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
+//                 onClick={() => toggleDropdown('mobile-treatments')}
+//               >
+//                 <div className="flex items-center">
+//                   <Heart className="w-5 h-5 mr-3" />
+//                   <span>Treatments</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-treatments' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-treatments' ? 'max-h-[500px]' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {treatmentsDropdown.map((item, index) => (
+//                     <div key={index}>
+//                       {item.submenu ? (
+//                         <>
+//                           <button 
+//                             className="flex justify-between items-center w-full px-3 py-2.5 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 text-sm font-sans"
+//                             onClick={() => toggleSubDropdown('mobile-treatments', `sub-${index}`)}
+//                           >
+//                             <div className="flex items-center">
+//                               <span className="mr-3">{item.icon}</span>
+//                               <span>{item.name}</span>
+//                             </div>
+//                             <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+//                               openSubDropdowns[`mobile-treatments-sub-${index}`] ? 'rotate-180' : ''
+//                             }`} />
+//                           </button>
+//                           <div className={`transition-all duration-200 overflow-hidden ${
+//                             openSubDropdowns[`mobile-treatments-sub-${index}`] ? 'max-h-96' : 'max-h-0'
+//                           }`}>
+//                             <div className="pl-6 space-y-1">
+//                               {item.submenu.map((subItem, subIndex) => (
+//                                 <NavLink 
+//                                   key={subIndex} 
+//                                   to={subItem.path}
+//                                   className={({ isActive }) => 
+//                                     `flex items-center px-3 py-2 rounded-md text-sm font-sans ${
+//                                       isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                                     } transition-colors duration-150`
+//                                   }
+//                                   onClick={closeAllDropdowns}
+//                                 >
+//                                   <span className="mr-3">{subItem.icon}</span>
+//                                   {subItem.name}
+//                                 </NavLink>
+//                               ))}
+//                             </div>
+//                           </div>
+//                         </>
+//                       ) : (
+//                         <NavLink 
+//                           to={item.path}
+//                           className={({ isActive }) => 
+//                             `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
+//                               isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                             } transition-colors duration-150`
+//                           }
+//                           onClick={closeAllDropdowns}
+//                         >
+//                           <span className="mr-3">{item.icon}</span>
+//                           {item.name}
+//                         </NavLink>
+//                       )}
+//                     </div>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Accommodations - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
+//                 onClick={() => toggleDropdown('mobile-accommodations')}
+//               >
+//                 <div className="flex items-center">
+//                   <Hotel className="w-5 h-5 mr-3" />
+//                   <span>Accommodations</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-accommodations' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-accommodations' ? 'max-h-96' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {accommodationsDropdown.map((item, index) => (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path}
+//                       className={({ isActive }) => 
+//                         `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
+//                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                         } transition-colors duration-150`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       <span className="mr-3">{item.icon}</span>
+//                       {item.name}
+//                     </NavLink>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Gallery - Mobile */}
+//             <NavLink
+//               to="/image"
+//               className={({ isActive }) =>
+//                 `flex items-center px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans ${
+//                   isActive ? 'bg-green-50 text-green-700 font-semibold' : ''
+//                 }`
+//               }
+//               onClick={closeAllDropdowns}
+//             >
+//               <Images className="w-5 h-5 mr-3" />
+//               <span>Gallery</span>
+//             </NavLink>
+
+//             {/* Celebrations - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
+//                 onClick={() => toggleDropdown('mobile-celebrations')}
+//               >
+//                 <div className="flex items-center">
+//                   <PartyPopper className="w-5 h-5 mr-3" />
+//                   <span>Celebrations</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-celebrations' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-celebrations' ? 'max-h-96' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {celebrationsDropdown.map((item, index) => (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path}
+//                       className={({ isActive }) => 
+//                         `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
+//                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                         } transition-colors duration-150`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       <span className="mr-3">{item.icon}</span>
+//                       {item.name}
+//                     </NavLink>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Contact Us - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
+//                 onClick={() => toggleDropdown('mobile-contact')}
+//               >
+//                 <div className="flex items-center">
+//                   <Phone className="w-5 h-5 mr-3" />
+//                   <span>Contact Us</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-contact' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-contact' ? 'max-h-96' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {contactUsDropdown.map((item, index) => (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path}
+//                       className={({ isActive }) => 
+//                         `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
+//                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                         } transition-colors duration-150`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       <span className="mr-3">{item.icon}</span>
+//                       {item.name}
+//                     </NavLink>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Action Buttons - Mobile */}
+//             <div className="pt-4 space-y-2 border-t border-gray-200">
+//               <NavLink
+//                 to=" "
+//                 className="flex items-center justify-center px-4 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all duration-200 font-medium text-center shadow-md font-sans"
+//                 onClick={closeAllDropdowns}
+//               >
+//                 <ShoppingBag className="w-5 h-5 mr-2" />
+//                 <span>Our Products</span>
+//               </NavLink>
+
+//               <button
+//                 onClick={handleBookNow}
+//                 className="flex items-center justify-center w-full px-4 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-200 font-medium text-center shadow-md font-sans"
+//               >
+//                 <Calendar className="w-5 h-5 mr-2" />
+//                 <span>Book Now</span>
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+//       </nav>
+
+//       {/* Sidebar Component */}
+//       <Sidebar 
+//         isOpen={isSidebarOpen} 
+//         onClose={() => setIsSidebarOpen(false)} 
+//       />
+//     </>
+//   );
+// };
+
+// export default Navbar;
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState, useEffect, useRef } from 'react';
+// import { NavLink } from 'react-router-dom';
+// import { 
+//   Menu, 
+//   X, 
+//   ChevronDown, 
+//   ChevronRight, 
+//   Home, 
+//   Info, 
+//   Heart, 
+//   Hotel, 
+//   Images, 
+//   Phone, 
+//   ShoppingBag, 
+//   Calendar,
+//   Users,
+//   User,
+//   Clock,
+//   Leaf,
+//   Activity,
+//   Utensils,
+//   Gem,
+//   MapPin,
+//   Briefcase,
+//   BookOpen,
+//   Shield,
+//   PartyPopper
+// } from 'lucide-react';
+// import logo from '../assets/logo.png';
+// import { scrollToSection } from '../components/utils/scrollToSection';
+// import Sidebar from './Sidebar';
+// import { useNavigate } from 'react-router-dom';
+
+// const Navbar: React.FC = () => {
+//   const [isOpen, setIsOpen] = useState(false);
+//   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+//   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+//   const [isScrolled, setIsScrolled] = useState(false);
+//   const navRef = useRef<HTMLDivElement>(null);
+//   const navigate = useNavigate();
+//   const [openSubDropdowns, setOpenSubDropdowns] = useState<Record<string, boolean>>({});
+
+//   // Handle scroll effect
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       const scrollTop = window.scrollY;
+//       setIsScrolled(scrollTop > 20);
+//     };
+
+//     window.addEventListener('scroll', handleScroll);
+//     return () => window.removeEventListener('scroll', handleScroll);
+//   }, []);
+
+//   const handleBookNow = () => {
+//     if (window.location.pathname === '/contact') {
+//       scrollToSection('contact-form');
+//     } else {
+//       navigate('/contact');
+//       setTimeout(() => scrollToSection('contact-form'), 100);
+//     }
+//   };
+
+//   useEffect(() => {
+//     const handleClickOutside = (event: MouseEvent) => {
+//       if (navRef.current && !navRef.current.contains(event.target as Node)) {
+//         setIsOpen(false);
+//         setOpenDropdown(null);
+//         setOpenSubDropdowns({});
+//       }
+//     };
+//     document.addEventListener('mousedown', handleClickOutside);
+//     return () => document.removeEventListener('mousedown', handleClickOutside);
+//   }, []);
+
+//   const toggleDropdown = (dropdown: string) => {
+//     setOpenDropdown(openDropdown === dropdown ? null : dropdown);
+//   };
+
+//   const toggleSubDropdown = (parentId: string, subId: string) => {
+//     setOpenSubDropdowns(prev => ({
+//       ...prev,
+//       [`${parentId}-${subId}`]: !prev[`${parentId}-${subId}`]
+//     }));
+//   };
+
+//   const closeAllDropdowns = () => {
+//     setIsOpen(false);
+//     setOpenDropdown(null);
+//     setOpenSubDropdowns({});
+//   };
+
+//   // Define dropdown arrays with icons
+//   const aboutUsDropdown = [
+//     { name: 'Nowal NatureCare', path: '/Ourstory', icon: <Leaf className="w-4 h-4" />, description: 'Our holistic healing philosophy' },
+//     { name: 'About Founder', path: '/experience#mantra', icon: <User className="w-4 h-4" />, description: 'Meet our visionary leader' },
+//     { name: 'Healing Team', path: '/healing-team', icon: <Users className="w-4 h-4" />, description: 'Our expert practitioners' },
+//     { name: 'Daily Routine', path: '/dincharya', icon: <Clock className="w-4 h-4" />, description: 'Structured wellness schedule' },
+//   ];
+
+//   const treatmentsDropdown = [
+//     { 
+//       name: 'Holistic Programs', 
+//       path: '/programs',
+//       icon: <Activity className="w-4 h-4" />,
+//       description: 'Comprehensive wellness packages',
+//       submenu: [
+//         { name: 'Naturopathy Wonders', path: '/narutopathy', icon: <Leaf className="w-4 h-4" /> },
+//         { name: 'Yoga & Meditation', path: '/yoga', icon: <Activity className="w-4 h-4" /> },
+//         { name: 'Diet & Nutrition', path: '/diet', icon: <Utensils className="w-4 h-4" /> },
+//         { name: 'Ayurveda', path: '/ayurveda', icon: <Gem className="w-4 h-4" /> },
+//         { name: 'Acupuncture', path: '/Holistictherapy', icon: <Shield className="w-4 h-4" /> },
+//         { name: 'Physiotherapy', path: '/physiotheraphy', icon: <Activity className="w-4 h-4" /> },
+//       ]
+//     }
+//   ];
+
+//   const accommodationsDropdown = [
+//     { name: 'Accommodation Details', path: '/accomadation', icon: <Hotel className="w-4 h-4" />, description: 'Room options & amenities' },
+//     { name: 'Accommodation Guidelines', path: '/guidliness', icon: <BookOpen className="w-4 h-4" />, description: 'Stay information & policies' },
+//   ];
+
+//   const celebrationsDropdown = [
+//     { name: 'Wedding', path: '/wedding', icon: <PartyPopper className="w-4 h-4" />, description: 'Beautiful wedding celebrations' },
+//     { name: 'Events', path: '/events', icon: <Calendar className="w-4 h-4" />, description: 'Special events and occasions' },
+//     { name: 'Banquet Lawn', path: '/banquet-lawn', icon: <Hotel className="w-4 h-4" />, description: 'Spacious banquet facilities' },
+//   ];
+
+//   const contactUsDropdown = [
+//     { name: 'Contact Information', path: '/contact', icon: <MapPin className="w-4 h-4" />, description: 'Get in touch with us' },
+//     { name: 'Career Opportunities', path: '/career', icon: <Briefcase className="w-4 h-4" />, description: 'Join our healing team' },
+//   ];
+
+//   return (
+//     <>
+//       <nav 
+//         ref={navRef}
+//         className={`fixed w-full z-50 transition-all duration-300 ${
+//           isScrolled
+//             ? 'bg-white/95 backdrop-blur-md shadow-lg py-1'
+//             : 'bg-gradient-to-r from-green-50 to-emerald-100 py-2 shadow-md'
+//         }`}
+//       >
+//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//           <div className="flex justify-between items-center h-16">
+//             {/* Left side - Logo and Sidebar Toggle */}
+//             <div className="flex items-center flex-shrink-0">
+//               {/* Sidebar Toggle Button - Show on all devices except mobile */}
+//               <div className="hidden lg:flex items-center mr-4">
+//                 <button
+//                   className={`inline-flex items-center justify-center p-2 rounded-lg transition-all duration-300 ${
+//                     isScrolled 
+//                       ? 'text-gray-700 hover:text-green-600 hover:bg-green-50' 
+//                       : 'text-gray-700 hover:text-green-600 hover:bg-green-50'
+//                   } focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500`}
+//                   onClick={() => setIsSidebarOpen(true)}
+//                 >
+//                   <span className="sr-only">Open sidebar menu</span>
+//                   <Menu className="block h-5 w-5" aria-hidden="true" />
+//                 </button>
+//               </div>
+
+//               {/* Logo */}
+//               <div className="flex items-center">
+//                 <NavLink to="/" className="flex items-center" onClick={closeAllDropdowns}>
+//                   <img 
+//                     src={logo} 
+//                     alt="Company Logo" 
+//                     className="h-10 sm:h-12 w-auto hover:scale-105 transition-transform duration-300"
+//                   />
+//                 </NavLink>
+//               </div>
+//             </div>
+
+//             {/* Desktop Navigation - Centered and moved left */}
+//             <div className="hidden lg:flex items-center justify-start flex-1 ml-8"> {/* Changed from justify-center to justify-start and added ml-8 */}
+//               <div className="flex items-center space-x-1">
+//                 {/* Home Button */}
+//                 <NavLink
+//                   to="/"
+//                   className={({ isActive }) =>
+//                     `flex items-center px-3 py-2 rounded-lg transition-all duration-200 font-medium text-sm font-sans ${
+//                       isActive 
+//                         ? 'bg-green-100 text-green-700 shadow-inner' 
+//                         : 'text-gray-700 hover:bg-green-50 hover:text-green-600'
+//                     }`
+//                   }
+//                   onClick={closeAllDropdowns}
+//                 >
+//                   <Home className="w-4 h-4 mr-2" />
+//                   <span className="whitespace-nowrap">Home</span>
+//                 </NavLink>
+
+//                 {/* About Us */}
+//                 <div className="relative group">
+//                   <button 
+//                     className="flex items-center px-3 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+//                     onMouseEnter={() => setOpenDropdown('desktop-about')}
+//                   >
+//                     <Info className="w-4 h-4 mr-2" />
+//                     <span>About Us</span>
+//                     <ChevronDown className="w-3 h-3 ml-1 transition-transform duration-200 group-hover:rotate-180" />
+//                   </button>
+//                   <div 
+//                     className="absolute left-0 mt-2 w-80 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 grid grid-cols-2 gap-2"
+//                     onMouseLeave={() => setOpenDropdown(null)}
+//                   >
+//                     {aboutUsDropdown.map((item, index) => (
+//                       <NavLink 
+//                         key={index} 
+//                         to={item.path} 
+//                         className={({ isActive }) => 
+//                           `flex flex-col p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                         }
+//                         onClick={closeAllDropdowns}
+//                       >
+//                         <div className="flex items-center mb-1">
+//                           <div className="p-1.5 bg-green-100 rounded-md mr-2 group-hover/item:bg-green-200 transition-colors">
+//                             {item.icon}
+//                           </div>
+//                           <span className="font-medium text-sm">{item.name}</span>
+//                         </div>
+//                         <p className="text-xs text-gray-500 pl-8 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                       </NavLink>
+//                     ))}
+//                   </div>
+//                 </div>
+
+//                 {/* Treatments */}
+//                 <div className="relative group">
+//                   <button 
+//                     className="flex items-center px-3 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+//                     onMouseEnter={() => setOpenDropdown('desktop-treatments')}
+//                   >
+//                     <Heart className="w-4 h-4 mr-2" />
+//                     <span>Treatments</span>
+//                     <ChevronDown className="w-3 h-3 ml-1 transition-transform duration-200 group-hover:rotate-180" />
+//                   </button>
+//                   <div 
+//                     className="absolute left-0 mt-2 w-96 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+//                     onMouseLeave={() => setOpenDropdown(null)}
+//                   >
+//                     <div className="px-4">
+//                       {treatmentsDropdown.map((item, index) => (
+//                         <div key={index} className="relative group/sub">
+//                           {item.submenu ? (
+//                             <>
+//                               <div 
+//                                 className="flex justify-between items-start p-3 rounded-lg text-gray-700 hover:bg-gray-50 cursor-pointer transition-colors duration-150 group/item font-sans"
+//                                 onMouseEnter={() => setOpenDropdown(`desktop-treatments-sub-${index}`)}
+//                               >
+//                                 <div className="flex items-start">
+//                                   <div className="p-1.5 bg-blue-100 rounded-md mr-3 group-hover/item:bg-blue-200 transition-colors mt-0.5">
+//                                     {item.icon}
+//                                   </div>
+//                                   <div>
+//                                     <div className="font-medium text-sm">{item.name}</div>
+//                                     <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                                   </div>
+//                                 </div>
+//                                 <ChevronRight className="w-4 h-4 text-gray-400 mt-1.5" />
+//                               </div>
+                              
+//                               <div 
+//                                 className={`absolute left-full top-0 ml-1 w-64 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-3 z-50 ${
+//                                   openDropdown === `desktop-treatments-sub-${index}` ? 'block' : 'hidden'
+//                                 } group-hover/sub:block`}
+//                                 onMouseLeave={() => setOpenDropdown('desktop-treatments')}
+//                               >
+//                                 <h4 className="px-4 py-2 font-medium text-sm text-gray-700 border-b border-gray-100 mb-1 font-sans">{item.name}</h4>
+//                                 {item.submenu.map((subItem, subIndex) => (
+//                                   <NavLink 
+//                                     key={subIndex} 
+//                                     to={subItem.path} 
+//                                     className={({ isActive }) => 
+//                                       `flex items-center px-4 py-2.5 text-sm font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150`
+//                                     }
+//                                     onClick={closeAllDropdowns}
+//                                   >
+//                                     <span className="mr-3 opacity-70">{subItem.icon}</span>
+//                                     {subItem.name}
+//                                   </NavLink>
+//                                 ))}
+//                               </div>
+//                             </>
+//                           ) : (
+//                             <NavLink 
+//                               to={item.path}
+//                               className={({ isActive }) => 
+//                                 `flex items-start p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                               }
+//                               onClick={closeAllDropdowns}
+//                             >
+//                               <div className="p-1.5 bg-blue-100 rounded-md mr-3 group-hover/item:bg-blue-200 transition-colors mt-0.5">
+//                                 {item.icon}
+//                               </div>
+//                               <div>
+//                                 <div className="font-medium text-sm">{item.name}</div>
+//                                 <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                               </div>
+//                             </NavLink>
+//                           )}
+//                         </div>
+//                       ))}
+//                     </div>
+//                   </div>
+//                 </div>
+
+//                 {/* Accommodations */}
+//                 <div className="relative group">
+//                   <button 
+//                     className="flex items-center px-3 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+//                     onMouseEnter={() => setOpenDropdown('desktop-accommodations')}
+//                   >
+//                     <Hotel className="w-4 h-4 mr-2" />
+//                     <span>Accommodations</span>
+//                     <ChevronDown className="w-3 h-3 ml-1 transition-transform duration-200 group-hover:rotate-180" />
+//                   </button>
+//                   <div 
+//                     className="absolute left-0 mt-2 w-96 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+//                     onMouseLeave={() => setOpenDropdown(null)}
+//                   >
+//                     <div className="px-2">
+//                       <h3 className="font-semibold text-gray-800 text-sm uppercase tracking-wide mb-3 pl-3 font-sans">Stay With Us</h3>
+//                       <div className="grid grid-cols-1 gap-2">
+//                         {accommodationsDropdown.map((item, index) => (
+//                           <NavLink 
+//                             key={index} 
+//                             to={item.path} 
+//                             className={({ isActive }) => 
+//                               `flex items-start p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                             }
+//                             onClick={closeAllDropdowns}
+//                           >
+//                             <div className="p-1.5 bg-amber-100 rounded-md mr-3 group-hover/item:bg-amber-200 transition-colors mt-0.5">
+//                               {item.icon}
+//                             </div>
+//                             <div>
+//                               <div className="font-medium text-sm">{item.name}</div>
+//                               <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                             </div>
+//                           </NavLink>
+//                         ))}
+//                       </div>
+//                     </div>
+//                   </div>
+//                 </div>
+
+//                 {/* Gallery */}
+//                 <NavLink
+//                   to="/image"
+//                   className={({ isActive }) =>
+//                     `flex items-center px-3 py-2 rounded-lg transition-all duration-200 font-medium text-sm font-sans whitespace-nowrap ${
+//                       isActive 
+//                         ? 'bg-green-100 text-green-700 shadow-inner' 
+//                         : 'text-gray-700 hover:bg-green-50 hover:text-green-600'
+//                     }`
+//                   }
+//                   onClick={closeAllDropdowns}
+//                 >
+//                   <Images className="w-4 h-4 mr-2" />
+//                   <span>Gallery</span>
+//                 </NavLink>
+
+//                 {/* Celebrations */}
+//                 <div className="relative group">
+//                   <button 
+//                     className="flex items-center px-3 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+//                     onMouseEnter={() => setOpenDropdown('desktop-celebrations')}
+//                   >
+//                     <PartyPopper className="w-4 h-4 mr-2" />
+//                     <span>Celebrations</span>
+//                     <ChevronDown className="w-3 h-3 ml-1 transition-transform duration-200 group-hover:rotate-180" />
+//                   </button>
+//                   <div 
+//                     className="absolute left-0 mt-2 w-80 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+//                     onMouseLeave={() => setOpenDropdown(null)}
+//                   >
+//                     <div className="px-2">
+//                       <h3 className="font-semibold text-gray-800 text-sm uppercase tracking-wide mb-3 pl-3 font-sans">Special Events</h3>
+//                       <div className="grid grid-cols-1 gap-2">
+//                         {celebrationsDropdown.map((item, index) => (
+//                           <NavLink 
+//                             key={index} 
+//                             to={item.path} 
+//                             className={({ isActive }) => 
+//                               `flex items-start p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                             }
+//                             onClick={closeAllDropdowns}
+//                           >
+//                             <div className="p-1.5 bg-pink-100 rounded-md mr-3 group-hover/item:bg-pink-200 transition-colors mt-0.5">
+//                               {item.icon}
+//                             </div>
+//                             <div>
+//                               <div className="font-medium text-sm">{item.name}</div>
+//                               <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                             </div>
+//                           </NavLink>
+//                         ))}
+//                       </div>
+//                     </div>
+//                   </div>
+//                 </div>
+
+//                 {/* Contact Us */}
+//                 <div className="relative group">
+//                   <button 
+//                     className="flex items-center px-3 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+//                     onMouseEnter={() => setOpenDropdown('desktop-contact')}
+//                   >
+//                     <Phone className="w-4 h-4 mr-2" />
+//                     <span>Contact Us</span>
+//                     <ChevronDown className="w-3 h-3 ml-1 transition-transform duration-200 group-hover:rotate-180" />
+//                   </button>
+//                   <div 
+//                     className="absolute right-0 mt-2 w-80 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+//                     onMouseLeave={() => setOpenDropdown(null)}
+//                   >
+//                     <div className="px-2">
+//                       <h3 className="font-semibold text-gray-800 text-sm uppercase tracking-wide mb-3 pl-3 font-sans">Get In Touch</h3>
+//                       <div className="grid grid-cols-1 gap-2">
+//                         {contactUsDropdown.map((item, index) => (
+//                           <NavLink 
+//                             key={index} 
+//                             to={item.path} 
+//                             className={({ isActive }) => 
+//                               `flex items-start p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+//                             }
+//                             onClick={closeAllDropdowns}
+//                           >
+//                             <div className="p-1.5 bg-purple-100 rounded-md mr-3 group-hover/item:bg-purple-200 transition-colors mt-0.5">
+//                               {item.icon}
+//                             </div>
+//                             <div>
+//                               <div className="font-medium text-sm">{item.name}</div>
+//                               <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+//                             </div>
+//                           </NavLink>
+//                         ))}
+//                       </div>
+                      
+//                       <div className="mt-4 pt-4 border-t border-gray-100">
+//                         <div className="bg-gray-50 rounded-lg p-3">
+//                           <div className="flex items-center text-sm font-medium text-gray-700 mb-1 font-sans">
+//                             <Phone className="w-4 h-4 mr-2 text-green-600" />
+//                             <span>+91 9251582670</span>
+//                           </div>
+//                           <div className="text-xs text-gray-500 font-sans">Mon-Sun, 7:00 AM - 7:00 PM</div>
+//                         </div>
+//                       </div>
+//                     </div>
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Action Buttons - Desktop - Properly aligned */}
+//             <div className="hidden lg:flex items-center space-x-2 ml-4"> {/* Added ml-4 for spacing */}
+//               <NavLink
+//                 to=" "
+//                 className="flex items-center px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all duration-200 font-medium text-sm font-sans shadow-md hover:shadow-lg group/btn whitespace-nowrap"
+//                 onClick={closeAllDropdowns}
+//               >
+//                 <ShoppingBag className="w-4 h-4 mr-1.5 transition-transform group-hover/btn:scale-110" />
+//                 <span>Our Products</span>
+//               </NavLink>
+
+//               <button
+//                 onClick={handleBookNow}
+//                 className="flex items-center px-3 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-200 font-medium text-sm font-sans shadow-md hover:shadow-lg group/btn whitespace-nowrap"
+//               >
+//                 <Calendar className="w-4 h-4 mr-1.5 transition-transform group-hover/btn:scale-110" />
+//                 <span>Book Now</span>
+//               </button>
+//             </div>
+
+//             {/* Mobile Menu Button - Show on mobile only */}
+//             <div className="lg:hidden flex items-center">
+//               <button
+//                 className={`inline-flex items-center justify-center p-2 rounded-md transition-all duration-200 ${
+//                   isScrolled
+//                     ? 'text-gray-700 hover:text-green-600 hover:bg-green-50'
+//                     : 'text-gray-700 hover:text-green-600 hover:bg-green-50'
+//                 } focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500`}
+//                 onClick={() => setIsOpen(!isOpen)}
+//               >
+//                 <span className="sr-only">Open main menu</span>
+//                 {isOpen ? (
+//                   <X className="block h-6 w-6" aria-hidden="true" />
+//                 ) : (
+//                   <Menu className="block h-6 w-6" aria-hidden="true" />
+//                 )}
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Mobile Navigation */}
+//         <div className={`lg:hidden transition-all duration-300 ease-in-out overflow-hidden ${
+//           isOpen ? 'max-h-screen' : 'max-h-0'
+//         }`}>
+//           <div className="px-3 pt-2 pb-4 space-y-1 bg-white border-t border-gray-200 shadow-inner">
+//             {/* Home Button - Mobile */}
+//             <NavLink
+//               to="/"
+//               className={({ isActive }) =>
+//                 `flex items-center px-3 py-3 rounded-md transition-all duration-200 font-medium text-base font-sans ${
+//                   isActive 
+//                     ? 'bg-green-100 text-green-700' 
+//                     : 'text-gray-700 hover:bg-green-50 hover:text-green-600'
+//                 }`
+//               }
+//               onClick={closeAllDropdowns}
+//             >
+//               <Home className="w-5 h-5 mr-3" />
+//               <span>Home</span>
+//             </NavLink>
+
+//             {/* About Us - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
+//                 onClick={() => toggleDropdown('mobile-about')}
+//               >
+//                 <div className="flex items-center">
+//                   <Info className="w-5 h-5 mr-3" />
+//                   <span>About Us</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-about' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-about' ? 'max-h-96' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {aboutUsDropdown.map((item, index) => (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path}
+//                       className={({ isActive }) => 
+//                         `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
+//                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                         } transition-colors duration-150`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       <span className="mr-3">{item.icon}</span>
+//                       {item.name}
+//                     </NavLink>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Treatments - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
+//                 onClick={() => toggleDropdown('mobile-treatments')}
+//               >
+//                 <div className="flex items-center">
+//                   <Heart className="w-5 h-5 mr-3" />
+//                   <span>Treatments</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-treatments' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-treatments' ? 'max-h-[500px]' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {treatmentsDropdown.map((item, index) => (
+//                     <div key={index}>
+//                       {item.submenu ? (
+//                         <>
+//                           <button 
+//                             className="flex justify-between items-center w-full px-3 py-2.5 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 text-sm font-sans"
+//                             onClick={() => toggleSubDropdown('mobile-treatments', `sub-${index}`)}
+//                           >
+//                             <div className="flex items-center">
+//                               <span className="mr-3">{item.icon}</span>
+//                               <span>{item.name}</span>
+//                             </div>
+//                             <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+//                               openSubDropdowns[`mobile-treatments-sub-${index}`] ? 'rotate-180' : ''
+//                             }`} />
+//                           </button>
+//                           <div className={`transition-all duration-200 overflow-hidden ${
+//                             openSubDropdowns[`mobile-treatments-sub-${index}`] ? 'max-h-96' : 'max-h-0'
+//                           }`}>
+//                             <div className="pl-6 space-y-1">
+//                               {item.submenu.map((subItem, subIndex) => (
+//                                 <NavLink 
+//                                   key={subIndex} 
+//                                   to={subItem.path}
+//                                   className={({ isActive }) => 
+//                                     `flex items-center px-3 py-2 rounded-md text-sm font-sans ${
+//                                       isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                                     } transition-colors duration-150`
+//                                   }
+//                                   onClick={closeAllDropdowns}
+//                                 >
+//                                   <span className="mr-3">{subItem.icon}</span>
+//                                   {subItem.name}
+//                                 </NavLink>
+//                               ))}
+//                             </div>
+//                           </div>
+//                         </>
+//                       ) : (
+//                         <NavLink 
+//                           to={item.path}
+//                           className={({ isActive }) => 
+//                             `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
+//                               isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                             } transition-colors duration-150`
+//                           }
+//                           onClick={closeAllDropdowns}
+//                         >
+//                           <span className="mr-3">{item.icon}</span>
+//                           {item.name}
+//                         </NavLink>
+//                       )}
+//                     </div>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Accommodations - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
+//                 onClick={() => toggleDropdown('mobile-accommodations')}
+//               >
+//                 <div className="flex items-center">
+//                   <Hotel className="w-5 h-5 mr-3" />
+//                   <span>Accommodations</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-accommodations' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-accommodations' ? 'max-h-96' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {accommodationsDropdown.map((item, index) => (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path}
+//                       className={({ isActive }) => 
+//                         `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
+//                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                         } transition-colors duration-150`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       <span className="mr-3">{item.icon}</span>
+//                       {item.name}
+//                     </NavLink>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Gallery - Mobile */}
+//             <NavLink
+//               to="/image"
+//               className={({ isActive }) =>
+//                 `flex items-center px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans ${
+//                   isActive ? 'bg-green-50 text-green-700 font-semibold' : ''
+//                 }`
+//               }
+//               onClick={closeAllDropdowns}
+//             >
+//               <Images className="w-5 h-5 mr-3" />
+//               <span>Gallery</span>
+//             </NavLink>
+
+//             {/* Celebrations - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
+//                 onClick={() => toggleDropdown('mobile-celebrations')}
+//               >
+//                 <div className="flex items-center">
+//                   <PartyPopper className="w-5 h-5 mr-3" />
+//                   <span>Celebrations</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-celebrations' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-celebrations' ? 'max-h-96' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {celebrationsDropdown.map((item, index) => (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path}
+//                       className={({ isActive }) => 
+//                         `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
+//                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                         } transition-colors duration-150`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       <span className="mr-3">{item.icon}</span>
+//                       {item.name}
+//                     </NavLink>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Contact Us - Mobile */}
+//             <div>
+//               <button 
+//                 className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
+//                 onClick={() => toggleDropdown('mobile-contact')}
+//               >
+//                 <div className="flex items-center">
+//                   <Phone className="w-5 h-5 mr-3" />
+//                   <span>Contact Us</span>
+//                 </div>
+//                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+//                   openDropdown === 'mobile-contact' ? 'rotate-180' : ''
+//                 }`} />
+//               </button>
+//               <div className={`transition-all duration-200 overflow-hidden ${
+//                 openDropdown === 'mobile-contact' ? 'max-h-96' : 'max-h-0'
+//               }`}>
+//                 <div className="pl-8 space-y-1">
+//                   {contactUsDropdown.map((item, index) => (
+//                     <NavLink 
+//                       key={index} 
+//                       to={item.path}
+//                       className={({ isActive }) => 
+//                         `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
+//                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+//                         } transition-colors duration-150`
+//                       }
+//                       onClick={closeAllDropdowns}
+//                     >
+//                       <span className="mr-3">{item.icon}</span>
+//                       {item.name}
+//                     </NavLink>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Action Buttons - Mobile */}
+//             <div className="pt-4 space-y-2 border-t border-gray-200">
+//               <NavLink
+//                 to=" "
+//                 className="flex items-center justify-center px-4 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all duration-200 font-medium text-center shadow-md font-sans"
+//                 onClick={closeAllDropdowns}
+//               >
+//                 <ShoppingBag className="w-5 h-5 mr-2" />
+//                 <span>Our Products</span>
+//               </NavLink>
+
+//               <button
+//                 onClick={handleBookNow}
+//                 className="flex items-center justify-center w-full px-4 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-200 font-medium text-center shadow-md font-sans"
+//               >
+//                 <Calendar className="w-5 h-5 mr-2" />
+//                 <span>Book Now</span>
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+//       </nav>
+
+//       {/* Sidebar Component */}
+//       <Sidebar 
+//         isOpen={isSidebarOpen} 
+//         onClose={() => setIsSidebarOpen(false)} 
+//       />
+//     </>
+//   );
+// };
+
+// export default Navbar;
+
+
+
+
 import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { 
@@ -9871,7 +15349,8 @@ import {
   MapPin,
   Briefcase,
   BookOpen,
-  Shield
+  Shield,
+  PartyPopper
 } from 'lucide-react';
 import logo from '../assets/logo.png';
 import { scrollToSection } from '../components/utils/scrollToSection';
@@ -9883,19 +15362,32 @@ const Navbar: React.FC = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
   const [openSubDropdowns, setOpenSubDropdowns] = useState<Record<string, boolean>>({});
 
-  // Handle scroll effect
+  // Handle responsive breakpoints and scroll effect
   useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024); // lg breakpoint
+    };
+
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       setIsScrolled(scrollTop > 20);
     };
 
+    // Initial check
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const handleBookNow = () => {
@@ -9966,6 +15458,12 @@ const Navbar: React.FC = () => {
     { name: 'Accommodation Guidelines', path: '/guidliness', icon: <BookOpen className="w-4 h-4" />, description: 'Stay information & policies' },
   ];
 
+  const celebrationsDropdown = [
+    { name: 'Wedding', path: '/wedding', icon: <PartyPopper className="w-4 h-4" />, description: 'Beautiful wedding celebrations' },
+    { name: 'Events', path: '/events', icon: <Calendar className="w-4 h-4" />, description: 'Special events and occasions' },
+    { name: 'Banquet Lawn', path: '/banquet-lawn', icon: <Hotel className="w-4 h-4" />, description: 'Spacious banquet facilities' },
+  ];
+
   const contactUsDropdown = [
     { name: 'Contact Information', path: '/contact', icon: <MapPin className="w-4 h-4" />, description: 'Get in touch with us' },
     { name: 'Career Opportunities', path: '/career', icon: <Briefcase className="w-4 h-4" />, description: 'Join our healing team' },
@@ -9981,14 +15479,14 @@ const Navbar: React.FC = () => {
             : 'bg-gradient-to-r from-green-50 to-emerald-100 py-2 shadow-md'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6">
-          <div className="flex justify-between items-center h-16">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
+          <div className="flex justify-between items-center h-14 sm:h-16">
             {/* Left side - Logo and Sidebar Toggle */}
-            <div className="flex items-center">
+            <div className="flex items-center flex-shrink-0">
               {/* Sidebar Toggle Button - Show on all devices except mobile */}
-              <div className="hidden lg:flex items-center">
+              <div className="hidden lg:flex items-center mr-3 xl:mr-4">
                 <button
-                  className={`inline-flex items-center justify-center p-2 rounded-lg transition-all duration-300 mr-3 ${
+                  className={`inline-flex items-center justify-center p-2 rounded-lg transition-all duration-300 ${
                     isScrolled 
                       ? 'text-gray-700 hover:text-green-600 hover:bg-green-50' 
                       : 'text-gray-700 hover:text-green-600 hover:bg-green-50'
@@ -10001,250 +15499,320 @@ const Navbar: React.FC = () => {
               </div>
 
               {/* Logo */}
-              <div className="flex items-center flex-shrink-0">
+              <div className="flex items-center">
                 <NavLink to="/" className="flex items-center" onClick={closeAllDropdowns}>
                   <img 
                     src={logo} 
                     alt="Company Logo" 
-                    className="h-10 sm:h-12 w-auto hover:scale-105 transition-transform duration-300"
+                    className="h-8 sm:h-10 lg:h-12 w-auto hover:scale-105 transition-transform duration-300"
                   />
                 </NavLink>
               </div>
             </div>
 
-            {/* Desktop Navigation - Show on lg and above */}
-            <div className="hidden lg:flex items-center space-x-1 flex-1 justify-center">
-              {/* Home Button */}
-              <NavLink
-                to="/"
-                className={({ isActive }) =>
-                  `flex items-center px-3 py-2 rounded-lg transition-all duration-200 font-medium text-sm ${
-                    isActive 
-                      ? 'bg-green-100 text-green-700 shadow-inner' 
-                      : 'text-gray-700 hover:bg-green-50 hover:text-green-600'
-                  }`
-                }
-                onClick={closeAllDropdowns}
-              >
-                <Home className="w-4 h-4 mr-1" />
-                <span>Home</span>
-              </NavLink>
+            {/* Desktop Navigation - Centered and moved left */}
+            <div className="hidden lg:flex items-center justify-start flex-1 ml-6 xl:ml-8">
+              <div className="flex items-center space-x-1 xl:space-x-2">
+                {/* Home Button */}
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    `flex items-center px-2 xl:px-3 py-2 rounded-lg transition-all duration-200 font-medium text-sm font-sans ${
+                      isActive 
+                        ? 'bg-green-100 text-green-700 shadow-inner' 
+                        : 'text-gray-700 hover:bg-green-50 hover:text-green-600'
+                    }`
+                  }
+                  onClick={closeAllDropdowns}
+                >
+                  <Home className="w-4 h-4 mr-1 xl:mr-2" />
+                  <span className="whitespace-nowrap">Home</span>
+                </NavLink>
 
-              {/* About Us */}
-              <div className="relative group">
-                <button 
-                  className="flex items-center space-x-1 px-3 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm group"
-                  onMouseEnter={() => setOpenDropdown('desktop-about')}
-                >
-                  <Info className="w-4 h-4 mr-1" />
-                  <span>About Us</span>
-                  <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
-                </button>
-                <div 
-                  className="absolute left-0 mt-2 w-80 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 grid grid-cols-2 gap-2"
-                  onMouseLeave={() => setOpenDropdown(null)}
-                >
-                  {aboutUsDropdown.map((item, index) => (
-                    <NavLink 
-                      key={index} 
-                      to={item.path} 
-                      className={({ isActive }) => 
-                        `flex flex-col p-3 rounded-lg ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
-                      }
-                      onClick={closeAllDropdowns}
-                    >
-                      <div className="flex items-center mb-1">
-                        <div className="p-1.5 bg-green-100 rounded-md mr-2 group-hover/item:bg-green-200 transition-colors">
-                          {item.icon}
+                {/* About Us */}
+                <div className="relative group">
+                  <button 
+                    className="flex items-center px-2 xl:px-3 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+                    onMouseEnter={() => !isMobile && setOpenDropdown('desktop-about')}
+                    onClick={() => isMobile && toggleDropdown('desktop-about')}
+                  >
+                    <Info className="w-4 h-4 mr-1 xl:mr-2" />
+                    <span>About Us</span>
+                    <ChevronDown className="w-3 h-3 ml-1 transition-transform duration-200 group-hover:rotate-180" />
+                  </button>
+                  <div 
+                    className={`absolute left-0 mt-2 w-72 xl:w-80 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 ${
+                      isMobile 
+                        ? (openDropdown === 'desktop-about' ? 'block' : 'hidden')
+                        : 'opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200'
+                    } grid grid-cols-2 gap-2`}
+                    onMouseLeave={() => !isMobile && setOpenDropdown(null)}
+                  >
+                    {aboutUsDropdown.map((item, index) => (
+                      <NavLink 
+                        key={index} 
+                        to={item.path} 
+                        className={({ isActive }) => 
+                          `flex flex-col p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+                        }
+                        onClick={closeAllDropdowns}
+                      >
+                        <div className="flex items-center mb-1">
+                          <div className="p-1.5 bg-green-100 rounded-md mr-2 group-hover/item:bg-green-200 transition-colors">
+                            {item.icon}
+                          </div>
+                          <span className="font-medium text-sm">{item.name}</span>
                         </div>
-                        <span className="font-medium text-sm">{item.name}</span>
-                      </div>
-                      <p className="text-xs text-gray-500 pl-8 group-hover/item:text-gray-700">{item.description}</p>
-                    </NavLink>
-                  ))}
+                        <p className="text-xs text-gray-500 pl-8 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+                      </NavLink>
+                    ))}
+                  </div>
                 </div>
-              </div>
 
-              {/* Treatments */}
-              <div className="relative group">
-                <button 
-                  className="flex items-center space-x-1 px-3 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm group"
-                  onMouseEnter={() => setOpenDropdown('desktop-treatments')}
-                >
-                  <Heart className="w-4 h-4 mr-1" />
-                  <span>Treatments</span>
-                  <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
-                </button>
-                <div 
-                  className="absolute left-0 mt-2 w-96 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
-                  onMouseLeave={() => setOpenDropdown(null)}
-                >
-                  <div className="px-4">
-                    {treatmentsDropdown.map((item, index) => (
-                      <div key={index} className="relative group/sub">
-                        {item.submenu ? (
-                          <>
-                            <div 
-                              className="flex justify-between items-start p-3 rounded-lg text-gray-700 hover:bg-gray-50 cursor-pointer transition-colors duration-150 group/item"
-                              onMouseEnter={() => setOpenDropdown(`desktop-treatments-sub-${index}`)}
-                            >
-                              <div className="flex items-start">
-                                <div className="p-1.5 bg-blue-100 rounded-md mr-3 group-hover/item:bg-blue-200 transition-colors mt-0.5">
-                                  {item.icon}
+                {/* Treatments */}
+                <div className="relative group">
+                  <button 
+                    className="flex items-center px-2 xl:px-3 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+                    onMouseEnter={() => !isMobile && setOpenDropdown('desktop-treatments')}
+                    onClick={() => isMobile && toggleDropdown('desktop-treatments')}
+                  >
+                    <Heart className="w-4 h-4 mr-1 xl:mr-2" />
+                    <span>Treatments</span>
+                    <ChevronDown className="w-3 h-3 ml-1 transition-transform duration-200 group-hover:rotate-180" />
+                  </button>
+                  <div 
+                    className={`absolute left-0 mt-2 w-80 xl:w-96 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 ${
+                      isMobile 
+                        ? (openDropdown === 'desktop-treatments' ? 'block' : 'hidden')
+                        : 'opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200'
+                    }`}
+                    onMouseLeave={() => !isMobile && setOpenDropdown(null)}
+                  >
+                    <div className="px-3 xl:px-4">
+                      {treatmentsDropdown.map((item, index) => (
+                        <div key={index} className="relative group/sub">
+                          {item.submenu ? (
+                            <>
+                              <div 
+                                className="flex justify-between items-start p-3 rounded-lg text-gray-700 hover:bg-gray-50 cursor-pointer transition-colors duration-150 group/item font-sans"
+                                onMouseEnter={() => !isMobile && setOpenDropdown(`desktop-treatments-sub-${index}`)}
+                                onClick={() => isMobile && toggleSubDropdown('desktop-treatments', `sub-${index}`)}
+                              >
+                                <div className="flex items-start">
+                                  <div className="p-1.5 bg-blue-100 rounded-md mr-3 group-hover/item:bg-blue-200 transition-colors mt-0.5">
+                                    {item.icon}
+                                  </div>
+                                  <div>
+                                    <div className="font-medium text-sm">{item.name}</div>
+                                    <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+                                  </div>
                                 </div>
-                                <div>
-                                  <div className="font-medium text-sm">{item.name}</div>
-                                  <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700">{item.description}</p>
-                                </div>
+                                <ChevronRight className="w-4 h-4 text-gray-400 mt-1.5" />
                               </div>
-                              <ChevronRight className="w-4 h-4 text-gray-400 mt-1.5" />
-                            </div>
-                            
-                            <div 
-                              className={`absolute left-full top-0 ml-1 w-64 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-3 z-50 ${
-                                openDropdown === `desktop-treatments-sub-${index}` ? 'block' : 'hidden'
-                              } group-hover/sub:block`}
-                              onMouseLeave={() => setOpenDropdown('desktop-treatments')}
+                              
+                              <div 
+                                className={`${
+                                  isMobile 
+                                    ? (openSubDropdowns[`desktop-treatments-sub-${index}`] ? 'block' : 'hidden')
+                                    : 'absolute left-full top-0 ml-1 w-64 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-3 z-50 hidden group-hover/sub:block'
+                                } ${openDropdown === `desktop-treatments-sub-${index}` ? 'block' : ''}`}
+                                onMouseLeave={() => !isMobile && setOpenDropdown('desktop-treatments')}
+                              >
+                                <h4 className="px-4 py-2 font-medium text-sm text-gray-700 border-b border-gray-100 mb-1 font-sans">{item.name}</h4>
+                                {item.submenu.map((subItem, subIndex) => (
+                                  <NavLink 
+                                    key={subIndex} 
+                                    to={subItem.path} 
+                                    className={({ isActive }) => 
+                                      `flex items-center px-4 py-2.5 text-sm font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150`
+                                    }
+                                    onClick={closeAllDropdowns}
+                                  >
+                                    <span className="mr-3 opacity-70">{subItem.icon}</span>
+                                    {subItem.name}
+                                  </NavLink>
+                                ))}
+                              </div>
+                            </>
+                          ) : (
+                            <NavLink 
+                              to={item.path}
+                              className={({ isActive }) => 
+                                `flex items-start p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+                              }
+                              onClick={closeAllDropdowns}
                             >
-                              <h4 className="px-4 py-2 font-medium text-sm text-gray-700 border-b border-gray-100 mb-1">{item.name}</h4>
-                              {item.submenu.map((subItem, subIndex) => (
-                                <NavLink 
-                                  key={subIndex} 
-                                  to={subItem.path} 
-                                  className={({ isActive }) => 
-                                    `flex items-center px-4 py-2.5 text-sm ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150`
-                                  }
-                                  onClick={closeAllDropdowns}
-                                >
-                                  <span className="mr-3 opacity-70">{subItem.icon}</span>
-                                  {subItem.name}
-                                </NavLink>
-                              ))}
-                            </div>
-                          </>
-                        ) : (
+                              <div className="p-1.5 bg-blue-100 rounded-md mr-3 group-hover/item:bg-blue-200 transition-colors mt-0.5">
+                                {item.icon}
+                              </div>
+                              <div>
+                                <div className="font-medium text-sm">{item.name}</div>
+                                <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+                              </div>
+                            </NavLink>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Accommodations */}
+                <div className="relative group">
+                  <button 
+                    className="flex items-center px-2 xl:px-3 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+                    onMouseEnter={() => !isMobile && setOpenDropdown('desktop-accommodations')}
+                    onClick={() => isMobile && toggleDropdown('desktop-accommodations')}
+                  >
+                    <Hotel className="w-4 h-4 mr-1 xl:mr-2" />
+                    <span>Accommodations</span>
+                    <ChevronDown className="w-3 h-3 ml-1 transition-transform duration-200 group-hover:rotate-180" />
+                  </button>
+                  <div 
+                    className={`absolute left-0 mt-2 w-80 xl:w-96 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 ${
+                      isMobile 
+                        ? (openDropdown === 'desktop-accommodations' ? 'block' : 'hidden')
+                        : 'opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200'
+                    }`}
+                    onMouseLeave={() => !isMobile && setOpenDropdown(null)}
+                  >
+                    <div className="px-2">
+                      <h3 className="font-semibold text-gray-800 text-sm uppercase tracking-wide mb-3 pl-3 font-sans">Stay With Us</h3>
+                      <div className="grid grid-cols-1 gap-2">
+                        {accommodationsDropdown.map((item, index) => (
                           <NavLink 
-                            to={item.path}
+                            key={index} 
+                            to={item.path} 
                             className={({ isActive }) => 
-                              `flex items-start p-3 rounded-lg ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+                              `flex items-start p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
                             }
                             onClick={closeAllDropdowns}
                           >
-                            <div className="p-1.5 bg-blue-100 rounded-md mr-3 group-hover/item:bg-blue-200 transition-colors mt-0.5">
+                            <div className="p-1.5 bg-amber-100 rounded-md mr-3 group-hover/item:bg-amber-200 transition-colors mt-0.5">
                               {item.icon}
                             </div>
                             <div>
                               <div className="font-medium text-sm">{item.name}</div>
-                              <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700">{item.description}</p>
+                              <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
                             </div>
                           </NavLink>
-                        )}
+                        ))}
                       </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Accommodations */}
-              <div className="relative group">
-                <button 
-                  className="flex items-center space-x-1 px-3 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm group"
-                  onMouseEnter={() => setOpenDropdown('desktop-accommodations')}
-                >
-                  <Hotel className="w-4 h-4 mr-1" />
-                  <span>Accommodations</span>
-                  <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
-                </button>
-                <div 
-                  className="absolute left-0 mt-2 w-96 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
-                  onMouseLeave={() => setOpenDropdown(null)}
-                >
-                  <div className="px-2">
-                    <h3 className="font-semibold text-gray-800 text-sm uppercase tracking-wide mb-3 pl-3">Stay With Us</h3>
-                    <div className="grid grid-cols-1 gap-2">
-                      {accommodationsDropdown.map((item, index) => (
-                        <NavLink 
-                          key={index} 
-                          to={item.path} 
-                          className={({ isActive }) => 
-                            `flex items-start p-3 rounded-lg ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
-                          }
-                          onClick={closeAllDropdowns}
-                        >
-                          <div className="p-1.5 bg-amber-100 rounded-md mr-3 group-hover/item:bg-amber-200 transition-colors mt-0.5">
-                            {item.icon}
-                          </div>
-                          <div>
-                            <div className="font-medium text-sm">{item.name}</div>
-                            <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700">{item.description}</p>
-                          </div>
-                        </NavLink>
-                      ))}
                     </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Gallery */}
-              <NavLink
-                to="/image"
-                className={({ isActive }) =>
-                  `flex items-center px-3 py-2 rounded-lg transition-all duration-200 font-medium text-sm ${
-                    isActive 
-                      ? 'bg-green-100 text-green-700 shadow-inner' 
-                      : 'text-gray-700 hover:bg-green-50 hover:text-green-600'
-                  }`
-                }
-                onClick={closeAllDropdowns}
-              >
-                <Images className="w-4 h-4 mr-1" />
-                <span>Gallery</span>
-              </NavLink>
+                {/* Gallery */}
+                <NavLink
+                  to="/image"
+                  className={({ isActive }) =>
+                    `flex items-center px-2 xl:px-3 py-2 rounded-lg transition-all duration-200 font-medium text-sm font-sans whitespace-nowrap ${
+                      isActive 
+                        ? 'bg-green-100 text-green-700 shadow-inner' 
+                        : 'text-gray-700 hover:bg-green-50 hover:text-green-600'
+                    }`
+                  }
+                  onClick={closeAllDropdowns}
+                >
+                  <Images className="w-4 h-4 mr-1 xl:mr-2" />
+                  <span>Gallery</span>
+                </NavLink>
 
-              {/* Contact Us */}
-              <div className="relative group">
-                <button 
-                  className="flex items-center space-x-1 px-3 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm group"
-                  onMouseEnter={() => setOpenDropdown('desktop-contact')}
-                >
-                  <Phone className="w-4 h-4 mr-1" />
-                  <span>Contact Us</span>
-                  <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
-                </button>
-                <div 
-                  className="absolute right-0 mt-2 w-80 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
-                  onMouseLeave={() => setOpenDropdown(null)}
-                >
-                  <div className="px-2">
-                    <h3 className="font-semibold text-gray-800 text-sm uppercase tracking-wide mb-3 pl-3">Get In Touch</h3>
-                    <div className="grid grid-cols-1 gap-2">
-                      {contactUsDropdown.map((item, index) => (
-                        <NavLink 
-                          key={index} 
-                          to={item.path} 
-                          className={({ isActive }) => 
-                            `flex items-start p-3 rounded-lg ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
-                          }
-                          onClick={closeAllDropdowns}
-                        >
-                          <div className="p-1.5 bg-purple-100 rounded-md mr-3 group-hover/item:bg-purple-200 transition-colors mt-0.5">
-                            {item.icon}
-                          </div>
-                          <div>
-                            <div className="font-medium text-sm">{item.name}</div>
-                            <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700">{item.description}</p>
-                          </div>
-                        </NavLink>
-                      ))}
+                {/* Celebrations */}
+                <div className="relative group">
+                  <button 
+                    className="flex items-center px-2 xl:px-3 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+                    onMouseEnter={() => !isMobile && setOpenDropdown('desktop-celebrations')}
+                    onClick={() => isMobile && toggleDropdown('desktop-celebrations')}
+                  >
+                    <PartyPopper className="w-4 h-4 mr-1 xl:mr-2" />
+                    <span>Celebrations</span>
+                    <ChevronDown className="w-3 h-3 ml-1 transition-transform duration-200 group-hover:rotate-180" />
+                  </button>
+                  <div 
+                    className={`absolute left-0 mt-2 w-72 xl:w-80 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 ${
+                      isMobile 
+                        ? (openDropdown === 'desktop-celebrations' ? 'block' : 'hidden')
+                        : 'opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200'
+                    }`}
+                    onMouseLeave={() => !isMobile && setOpenDropdown(null)}
+                  >
+                    <div className="px-2">
+                      <h3 className="font-semibold text-gray-800 text-sm uppercase tracking-wide mb-3 pl-3 font-sans">Special Events</h3>
+                      <div className="grid grid-cols-1 gap-2">
+                        {celebrationsDropdown.map((item, index) => (
+                          <NavLink 
+                            key={index} 
+                            to={item.path} 
+                            className={({ isActive }) => 
+                              `flex items-start p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+                            }
+                            onClick={closeAllDropdowns}
+                          >
+                            <div className="p-1.5 bg-pink-100 rounded-md mr-3 group-hover/item:bg-pink-200 transition-colors mt-0.5">
+                              {item.icon}
+                            </div>
+                            <div>
+                              <div className="font-medium text-sm">{item.name}</div>
+                              <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+                            </div>
+                          </NavLink>
+                        ))}
+                      </div>
                     </div>
-                    
-                    <div className="mt-4 pt-4 border-t border-gray-100">
-                      <div className="bg-gray-50 rounded-lg p-3">
-                        <div className="flex items-center text-sm font-medium text-gray-700 mb-1">
-                          <Phone className="w-4 h-4 mr-2 text-green-600" />
-                          <span>+91 9251582670</span>
+                  </div>
+                </div>
+
+                {/* Contact Us */}
+                <div className="relative group">
+                  <button 
+                    className="flex items-center px-2 xl:px-3 py-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200 font-medium text-sm font-sans group whitespace-nowrap"
+                    onMouseEnter={() => !isMobile && setOpenDropdown('desktop-contact')}
+                    onClick={() => isMobile && toggleDropdown('desktop-contact')}
+                  >
+                    <Phone className="w-4 h-4 mr-1 xl:mr-2" />
+                    <span>Contact Us</span>
+                    <ChevronDown className="w-3 h-3 ml-1 transition-transform duration-200 group-hover:rotate-180" />
+                  </button>
+                  <div 
+                    className={`absolute right-0 mt-2 w-72 xl:w-80 rounded-xl shadow-xl bg-white ring-1 ring-black ring-opacity-5 py-4 z-50 ${
+                      isMobile 
+                        ? (openDropdown === 'desktop-contact' ? 'block' : 'hidden')
+                        : 'opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200'
+                    }`}
+                    onMouseLeave={() => !isMobile && setOpenDropdown(null)}
+                  >
+                    <div className="px-2">
+                      <h3 className="font-semibold text-gray-800 text-sm uppercase tracking-wide mb-3 pl-3 font-sans">Get In Touch</h3>
+                      <div className="grid grid-cols-1 gap-2">
+                        {contactUsDropdown.map((item, index) => (
+                          <NavLink 
+                            key={index} 
+                            to={item.path} 
+                            className={({ isActive }) => 
+                              `flex items-start p-3 rounded-lg font-sans ${isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-gray-50'} transition-colors duration-150 group/item`
+                            }
+                            onClick={closeAllDropdowns}
+                          >
+                            <div className="p-1.5 bg-purple-100 rounded-md mr-3 group-hover/item:bg-purple-200 transition-colors mt-0.5">
+                              {item.icon}
+                            </div>
+                            <div>
+                              <div className="font-medium text-sm">{item.name}</div>
+                              <p className="text-xs text-gray-500 mt-1 group-hover/item:text-gray-700 font-sans">{item.description}</p>
+                            </div>
+                          </NavLink>
+                        ))}
+                      </div>
+                      
+                      <div className="mt-4 pt-4 border-t border-gray-100">
+                        <div className="bg-gray-50 rounded-lg p-3">
+                          <div className="flex items-center text-sm font-medium text-gray-700 mb-1 font-sans">
+                            <Phone className="w-4 h-4 mr-2 text-green-600" />
+                            <span>+91 9251582670</span>
+                          </div>
+                          <div className="text-xs text-gray-500 font-sans">Mon-Sun, 7:00 AM - 7:00 PM</div>
                         </div>
-                        <div className="text-xs text-gray-500">Mon-Sun, 7:00 AM - 7:00 PM</div>
                       </div>
                     </div>
                   </div>
@@ -10252,22 +15820,23 @@ const Navbar: React.FC = () => {
               </div>
             </div>
 
-            {/* Action Buttons - Desktop */}
+            {/* Action Buttons - Desktop - Properly aligned */}
             <div className="hidden lg:flex items-center space-x-2 ml-4">
               <NavLink
                 to=" "
-                className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all duration-200 font-medium text-sm shadow-md hover:shadow-lg group/btn"
+                className="flex items-center px-2 xl:px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all duration-200 font-medium text-sm font-sans shadow-md hover:shadow-lg group/btn whitespace-nowrap"
                 onClick={closeAllDropdowns}
               >
-                <ShoppingBag className="w-4 h-4 mr-1.5 transition-transform group-hover/btn:scale-110" />
-                <span>Our Products</span>
+                <ShoppingBag className="w-4 h-4 mr-1 xl:mr-1.5 transition-transform group-hover/btn:scale-110" />
+                <span className="hidden xl:inline">Our Products</span>
+                <span className="xl:hidden">Products</span>
               </NavLink>
 
               <button
                 onClick={handleBookNow}
-                className="flex items-center px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-200 font-medium text-sm shadow-md hover:shadow-lg group/btn"
+                className="flex items-center px-2 xl:px-3 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-200 font-medium text-sm font-sans shadow-md hover:shadow-lg group/btn whitespace-nowrap"
               >
-                <Calendar className="w-4 h-4 mr-1.5 transition-transform group-hover/btn:scale-110" />
+                <Calendar className="w-4 h-4 mr-1 xl:mr-1.5 transition-transform group-hover/btn:scale-110" />
                 <span>Book Now</span>
               </button>
             </div>
@@ -10302,7 +15871,7 @@ const Navbar: React.FC = () => {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `flex items-center px-3 py-3 rounded-md transition-all duration-200 font-medium text-base ${
+                `flex items-center px-3 py-3 rounded-md transition-all duration-200 font-medium text-base font-sans ${
                   isActive 
                     ? 'bg-green-100 text-green-700' 
                     : 'text-gray-700 hover:bg-green-50 hover:text-green-600'
@@ -10317,7 +15886,7 @@ const Navbar: React.FC = () => {
             {/* About Us - Mobile */}
             <div>
               <button 
-                className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base"
+                className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
                 onClick={() => toggleDropdown('mobile-about')}
               >
                 <div className="flex items-center">
@@ -10337,7 +15906,7 @@ const Navbar: React.FC = () => {
                       key={index} 
                       to={item.path}
                       className={({ isActive }) => 
-                        `flex items-center px-3 py-2.5 rounded-md text-sm ${
+                        `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
                         } transition-colors duration-150`
                       }
@@ -10354,7 +15923,7 @@ const Navbar: React.FC = () => {
             {/* Treatments - Mobile */}
             <div>
               <button 
-                className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base"
+                className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
                 onClick={() => toggleDropdown('mobile-treatments')}
               >
                 <div className="flex items-center">
@@ -10374,7 +15943,7 @@ const Navbar: React.FC = () => {
                       {item.submenu ? (
                         <>
                           <button 
-                            className="flex justify-between items-center w-full px-3 py-2.5 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 text-sm"
+                            className="flex justify-between items-center w-full px-3 py-2.5 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 text-sm font-sans"
                             onClick={() => toggleSubDropdown('mobile-treatments', `sub-${index}`)}
                           >
                             <div className="flex items-center">
@@ -10394,7 +15963,7 @@ const Navbar: React.FC = () => {
                                   key={subIndex} 
                                   to={subItem.path}
                                   className={({ isActive }) => 
-                                    `flex items-center px-3 py-2 rounded-md text-sm ${
+                                    `flex items-center px-3 py-2 rounded-md text-sm font-sans ${
                                       isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
                                     } transition-colors duration-150`
                                   }
@@ -10411,7 +15980,7 @@ const Navbar: React.FC = () => {
                         <NavLink 
                           to={item.path}
                           className={({ isActive }) => 
-                            `flex items-center px-3 py-2.5 rounded-md text-sm ${
+                            `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
                               isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
                             } transition-colors duration-150`
                           }
@@ -10430,7 +15999,7 @@ const Navbar: React.FC = () => {
             {/* Accommodations - Mobile */}
             <div>
               <button 
-                className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base"
+                className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
                 onClick={() => toggleDropdown('mobile-accommodations')}
               >
                 <div className="flex items-center">
@@ -10450,7 +16019,7 @@ const Navbar: React.FC = () => {
                       key={index} 
                       to={item.path}
                       className={({ isActive }) => 
-                        `flex items-center px-3 py-2.5 rounded-md text-sm ${
+                        `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
                         } transition-colors duration-150`
                       }
@@ -10468,7 +16037,7 @@ const Navbar: React.FC = () => {
             <NavLink
               to="/image"
               className={({ isActive }) =>
-                `flex items-center px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base ${
+                `flex items-center px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans ${
                   isActive ? 'bg-green-50 text-green-700 font-semibold' : ''
                 }`
               }
@@ -10478,10 +16047,47 @@ const Navbar: React.FC = () => {
               <span>Gallery</span>
             </NavLink>
 
+            {/* Celebrations - Mobile */}
+            <div>
+              <button 
+                className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
+                onClick={() => toggleDropdown('mobile-celebrations')}
+              >
+                <div className="flex items-center">
+                  <PartyPopper className="w-5 h-5 mr-3" />
+                  <span>Celebrations</span>
+                </div>
+                <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+                  openDropdown === 'mobile-celebrations' ? 'rotate-180' : ''
+                }`} />
+              </button>
+              <div className={`transition-all duration-200 overflow-hidden ${
+                openDropdown === 'mobile-celebrations' ? 'max-h-96' : 'max-h-0'
+              }`}>
+                <div className="pl-8 space-y-1">
+                  {celebrationsDropdown.map((item, index) => (
+                    <NavLink 
+                      key={index} 
+                      to={item.path}
+                      className={({ isActive }) => 
+                        `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
+                          isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
+                        } transition-colors duration-150`
+                      }
+                      onClick={closeAllDropdowns}
+                    >
+                      <span className="mr-3">{item.icon}</span>
+                      {item.name}
+                    </NavLink>
+                  ))}
+                </div>
+              </div>
+            </div>
+
             {/* Contact Us - Mobile */}
             <div>
               <button 
-                className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base"
+                className="flex justify-between items-center w-full px-3 py-3 text-gray-700 hover:text-green-600 rounded-md hover:bg-green-50 transition-all duration-200 font-medium text-base font-sans"
                 onClick={() => toggleDropdown('mobile-contact')}
               >
                 <div className="flex items-center">
@@ -10501,7 +16107,7 @@ const Navbar: React.FC = () => {
                       key={index} 
                       to={item.path}
                       className={({ isActive }) => 
-                        `flex items-center px-3 py-2.5 rounded-md text-sm ${
+                        `flex items-center px-3 py-2.5 rounded-md text-sm font-sans ${
                           isActive ? 'bg-green-50 text-green-700 font-medium' : 'text-gray-700 hover:bg-green-50 hover:text-gray-900'
                         } transition-colors duration-150`
                       }
@@ -10519,7 +16125,7 @@ const Navbar: React.FC = () => {
             <div className="pt-4 space-y-2 border-t border-gray-200">
               <NavLink
                 to=" "
-                className="flex items-center justify-center px-4 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all duration-200 font-medium text-center shadow-md"
+                className="flex items-center justify-center px-4 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all duration-200 font-medium text-center shadow-md font-sans"
                 onClick={closeAllDropdowns}
               >
                 <ShoppingBag className="w-5 h-5 mr-2" />
@@ -10528,7 +16134,7 @@ const Navbar: React.FC = () => {
 
               <button
                 onClick={handleBookNow}
-                className="flex items-center justify-center w-full px-4 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-200 font-medium text-center shadow-md"
+                className="flex items-center justify-center w-full px-4 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-200 font-medium text-center shadow-md font-sans"
               >
                 <Calendar className="w-5 h-5 mr-2" />
                 <span>Book Now</span>
@@ -10543,8 +16149,6 @@ const Navbar: React.FC = () => {
         isOpen={isSidebarOpen} 
         onClose={() => setIsSidebarOpen(false)} 
       />
-
-      {/* REMOVED the spacer div - This is the key fix */}
     </>
   );
 };
