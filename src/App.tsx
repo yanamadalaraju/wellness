@@ -162,12 +162,13 @@ import AccommodationCharges from './pages/Charges'
 import Dashboard from './admin/Dashboard'
 import AlertImageAdmin from './admin/AlertImageAdmin'
 import AdminHeroManager from './admin/AdminHeroManager'
+import AdminGalleryManager from './admin/AdminGalleryManager'
 function AppRoutes() {
   const location = useLocation()
 
   // Define routes where layout should be hidden
 
-  const hideLayoutPaths = ['/login', '/register', '/customers' , '/dashboard' , '/applications', '/changes','/admin-hero']
+  const hideLayoutPaths = ['/login', '/register', '/customers' , '/dashboard' , '/applications', '/changes','/admin-hero','/admin-gallery']
   const hideLayout = hideLayoutPaths.includes(location.pathname)
 
   return (
@@ -237,6 +238,7 @@ function AppRoutes() {
           <Route path="/customers" element={<AdminContactDashboard />} />
           <Route path="/applications" element={< Applications />} />
           <Route path="/admin-hero" element={< AdminHeroManager />} />
+          <Route path="/admin-gallery" element={<AdminGalleryManager />} />
         </Routes>
       )}
     </>

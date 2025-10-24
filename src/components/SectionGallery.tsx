@@ -156,12 +156,12 @@ const SectionGallery: React.FC = () => {
     {
       title: "Media & Events",
       image: mediaEventsImage,
-      link: "/Media-wellness"
+      link: "/amenities-wellness"
     },
     {
       title: "Living Space",
       image: livingSpaceImage,
-      link: "/Living-wellness"
+      link: "/amenities-wellness"
     }
   ];
 
