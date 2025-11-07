@@ -15,7 +15,7 @@ const GallerySection = () => {
     { 
       title: 'Nowal', 
       image: image5,
-      path: '/gallery-wellness'
+      path: '/Amenities-wellness'
     },
     { 
       title: 'Amenities', 
@@ -30,7 +30,7 @@ const GallerySection = () => {
     { 
       title: 'Living Space', 
       image: image8,
-      path: '/Living-wellness'
+      path: '/Amenities-wellness'
     },
   ];
 

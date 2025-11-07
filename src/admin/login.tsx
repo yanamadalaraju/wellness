@@ -535,7 +535,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import logo from '../assets/logo.png';
-import backgroundImage from '../assets/3d11.jpg';
+import backgroundImage from '../assets/3d1-1.jpg';
 
 const Login: React.FC = () => {
   const [form, setForm] = useState({ email: '', password: '' });

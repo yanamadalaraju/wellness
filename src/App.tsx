@@ -163,6 +163,10 @@ import Dashboard from './admin/Dashboard'
 import AlertImageAdmin from './admin/AlertImageAdmin'
 import AdminHeroManager from './admin/AdminHeroManager'
 import AdminGalleryManager from './admin/AdminGalleryManager'
+import WeddingShowcase from './pages/WeddingShowcase'
+import BanquetLawnShowcase from './pages/BanquetLawnShowcase'
+import NewOffers from './pages/NewOffers'
+import EventsPage from './pages/EventsPage'
 function AppRoutes() {
   const location = useLocation()
 
@@ -186,9 +190,9 @@ function AppRoutes() {
             <Route path="/healing-team" element={<HealingTeam />} />
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/gallery" element={<Gallery />} />
-            <Route path="/gallery-wellness" element={<Gallerywellness />} />
-            <Route path="/Media-wellness" element={<MediaEventswellness />} />
-            <Route path="/Living-wellness" element={<LivingSpaceWellness />} />
+            {/* <Route path="/gallery-wellness" element={<Gallerywellness />} /> */}
+            {/* <Route path="/Media-wellness" element={<MediaEventswellness />} /> */}
+            {/* <Route path="/Living-wellness" element={<LivingSpaceWellness />} /> */}
             <Route path="/Amenities-wellness" element={<Amenitieswellness />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/health-packages" element={<HealthPackages />} />
@@ -212,7 +216,11 @@ function AppRoutes() {
             <Route path="/career" element={<Carrer />} />
             <Route path="/tariff" element={<TariffPage />} />
             <Route path="/image" element={<Image />} />
-            <Route path="/Events" element={<Events />} />
+            {/* <Route path="/Events" element={<Events />} /> */}
+             <Route path="/wedding" element={<WeddingShowcase />} />
+            <Route path="/banquet-lawn" element={<BanquetLawnShowcase />} />
+            <Route path="/news-offers" element={<NewOffers />} />
+               <Route path="/events" element={<EventsPage />} />
             <Route path="/EventsGallerySet" element={<EventsGallerySet />} />
             <Route path="/Rulesandregulations" element={<RulesAndRegulations />} />
             <Route path="/virtual-tour" element={<VirtualTourPage />} />

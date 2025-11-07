@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import SectionGallery from '../components/SectionGallery';
 import GalleryVideoSection from '../components/GalleryVideosection';
 import ImageGridSection from '../components/ImageGridSection';
-import image from '../assets/3d2-6.jpg'
+import image from '../assets/3d2-1.jpg'
 
 const Amenitieswellness: React.FC = () => {
   const location = useLocation();
