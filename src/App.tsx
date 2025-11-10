@@ -167,6 +167,9 @@ import WeddingShowcase from './pages/WeddingShowcase'
 import BanquetLawnShowcase from './pages/BanquetLawnShowcase'
 import NewOffers from './pages/NewOffers'
 import EventsPage from './pages/EventsPage'
+import WeddingPage from './pages/WeddingShowcase'
+import NewsOffersPage from './pages/NewOffers'
+import WeddingGallery from './components/celebrations/WeddingGallery'
 function AppRoutes() {
   const location = useLocation()
 
@@ -190,6 +193,7 @@ function AppRoutes() {
             <Route path="/healing-team" element={<HealingTeam />} />
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/wedding-gallery" element={<WeddingGallery />} />
             {/* <Route path="/gallery-wellness" element={<Gallerywellness />} /> */}
             {/* <Route path="/Media-wellness" element={<MediaEventswellness />} /> */}
             {/* <Route path="/Living-wellness" element={<LivingSpaceWellness />} /> */}
@@ -217,9 +221,9 @@ function AppRoutes() {
             <Route path="/tariff" element={<TariffPage />} />
             <Route path="/image" element={<Image />} />
             {/* <Route path="/Events" element={<Events />} /> */}
-             <Route path="/wedding" element={<WeddingShowcase />} />
+             <Route path="/wedding" element={<WeddingPage />} />
             <Route path="/banquet-lawn" element={<BanquetLawnShowcase />} />
-            <Route path="/news-offers" element={<NewOffers />} />
+            <Route path="/news-offers" element={<NewsOffersPage />} />
                <Route path="/events" element={<EventsPage />} />
             <Route path="/EventsGallerySet" element={<EventsGallerySet />} />
             <Route path="/Rulesandregulations" element={<RulesAndRegulations />} />
