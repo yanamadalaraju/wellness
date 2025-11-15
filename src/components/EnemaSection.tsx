@@ -359,7 +359,7 @@ const therapies = [
     icon: <FaWater className="text-blue-400" />
   },
   {
-    name: 'Manipulative Therapy',
+    name: 'Hands-on Therapy',
     image: manipulativeTherapy,
     content: 'Massage therapy is an ancient healing practice, cherished for centuries for its ability to relieve tension, stimulate circulation, and promote overall well-being. At Nowal NatureCare, this therapeutic process involves the rhythmic massage and pressing of muscles and soft tissues using a variety of scientific techniques tailored to your needs.',
     benefits: [

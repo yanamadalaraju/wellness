@@ -27,13 +27,17 @@ const Narutopathy: React.FC = () => {
         
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
           <h1 className="text-5xl md:text-6xl font-playfair font-bold mb-6">
+  Heal with Nature at Nowal NatureCare
+</h1>
+
+          {/* <h1 className="text-5xl md:text-6xl font-playfair font-bold mb-6">
            Naturopathic Consultation Service
 
 
           </h1>
           <p className="text-xl md:text-2xl mb-8">
             At Nowal NatureCare
-          </p>
+          </p> */}
           <Link 
             to="/contact" 
             className="inline-block px-8 py-3 bg-sage-500 hover:bg-sage-600 text-white font-medium rounded-full transition duration-300"
