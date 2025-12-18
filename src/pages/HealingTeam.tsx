@@ -295,6 +295,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Video360Viewer from './Video360Viewer'
 import "../../src/pages/HealingTeam.css";
+import img from "../assets/3d4-1.jpg";
 
 const HealingTeam: React.FC = () => {
   return (
@@ -303,7 +304,7 @@ const HealingTeam: React.FC = () => {
       <section className="relative min-h-96 flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://media.istockphoto.com/id/477473902/photo/tea-plantations.jpg?s=612x612&w=0&k=20&c=6V4oFEe4iqofERaro5Ivw4O-8tZVtxIUOOpZiIhUBlk="
+            src={img}
             alt="Our Story"
             className="w-full h-full object-cover"
           />

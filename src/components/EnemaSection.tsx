@@ -338,7 +338,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import hydrocolon from '../assets/hydrocolon.jpg';
 import manipulativeTherapy from '../assets/maniplativetherapy.jpg';
 import enema from '../assets/enema.jpg';
-import mudPack from '../assets/mudpack.jpg';
+// import mudPack from '../assets/mudpack.jpg';
 import vibroacoustic from '../assets/vibrotictherapy.jpg';
 
 
@@ -385,7 +385,7 @@ const therapies = [
   },
   {
     name: ' Mud Pack',
-    image: mudPack,
+    image: "https://i.pinimg.com/736x/92/0e/04/920e04a658b79a2f734039e34729df90.jpg",
     content: 'Mud, one of natures vital elements, is rich in minerals that offer powerful therapeutic benefits when applied to the body. At Nowal NatureCare, our carefully curated mud pack treatments go beyond expectations—this is the essence of naturopathy. The treatment draws out harmful toxins, deeply cleansing and revitalizing the body.',
     benefits: [
       'Helps regulate body temperature',

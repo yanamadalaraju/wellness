@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Video360Viewer from './Video360Viewer'
 import image from "../assets/wellgif.jpg";
+import img from "../assets/303.jpg";
 const OurStory: React.FC = () => {
   return (
     <div className="min-h-screen bg-cream-50">
@@ -9,7 +10,8 @@ const OurStory: React.FC = () => {
       <section className="relative min-h-96 flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://i.pinimg.com/1200x/2e/fb/d2/2efbd2a0e10d860ac30d7069a7f7b862.jpg"
+            // src="https://i.pinimg.com/1200x/2e/fb/d2/2efbd2a0e10d860ac30d7069a7f7b862.jpg"
+             src={img}
             alt="Our Story"
             className="w-full h-full object-cover"
           />
