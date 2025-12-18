@@ -295,7 +295,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Video360Viewer from './Video360Viewer'
 import "../../src/pages/HealingTeam.css";
-import img from "../assets/3d4-1.jpg";
+import img from "../assets/303.jpg";
 
 const HealingTeam: React.FC = () => {
   return (
