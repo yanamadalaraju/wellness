@@ -1,0 +1,37 @@
+.room-tariff-section {
+  padding: 40px 20px;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #9b7400;
+  margin-bottom: 20px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.tariff-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tariff-table th {
+  background-color: #7b5a00;
+  color: #fff;
+  padding: 12px;
+  text-align: center;
+}
+
+.tariff-table td {
+  padding: 10px;
+  text-align: center;
+  background-color: #e9ecef;
+  border-bottom: 2px solid #ffffff;
+}
+
+.tariff-table tbody tr:nth-child(even) td {
+  background-color: #dfe3e7;
+}
