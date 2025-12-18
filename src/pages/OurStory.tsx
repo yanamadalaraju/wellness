@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Video360Viewer from './Video360Viewer'
 import image from "../assets/wellgif.jpg";
-import img from "../assets/303.jpg";
+import img from "../assets/about.jpeg";
 const OurStory: React.FC = () => {
   return (
     <div className="min-h-screen bg-cream-50">
