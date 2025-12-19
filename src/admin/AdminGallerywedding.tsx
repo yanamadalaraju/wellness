@@ -1811,6 +1811,1063 @@
 
 
 
+// import React, { useState, useEffect } from "react";
+// import { 
+//   Upload, 
+//   Image as ImageIcon, 
+//   Trash2, 
+//   Eye, 
+//   Check, 
+//   X, 
+//   Plus, 
+//   Search,
+//   Tag,
+//   Loader2,
+//   AlertCircle,
+//   Grid,
+//   List,
+//   Filter,
+//   Calendar,
+//   Edit
+// } from "lucide-react";
+// import { motion, AnimatePresence } from "framer-motion";
+
+// interface GalleryImage {
+//   id: number;
+//   src: string;
+//   category: string;
+//   title: string;
+//   description?: string;
+//   uploadedAt?: string;
+// }
+
+// interface Category {
+//   id: number;
+//   name: string;
+//   color: string;
+//   imageCount: number;
+// }
+
+// const GalleryAdmin: React.FC = () => {
+//   // State management
+//   const [images, setImages] = useState<GalleryImage[]>([]);
+//   const [categories, setCategories] = useState<Category[]>([]);
+//   const [loading, setLoading] = useState(true);
+//   const [uploading, setUploading] = useState(false);
+//   const [error, setError] = useState<string | null>(null);
+//   const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  
+//   // Form state
+//   const [newImage, setNewImage] = useState({
+//     title: "",
+//     description: "",
+//     category: "",
+//     image: null as File | null
+//   });
+  
+//   const [newCategory, setNewCategory] = useState({
+//     name: "",
+//     color: "bg-emerald-500"
+//   });
+  
+//   // UI state
+//   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+//   const [selectedImages, setSelectedImages] = useState<number[]>([]);
+//   const [searchTerm, setSearchTerm] = useState("");
+//   const [filterCategory, setFilterCategory] = useState("All");
+//   const [previewImage, setPreviewImage] = useState<string | null>(null);
+//   const [showUploadModal, setShowUploadModal] = useState(false);
+//   const [showCategoryModal, setShowCategoryModal] = useState(false);
+//   const [editImageId, setEditImageId] = useState<number | null>(null);
+  
+//   // Color options for categories
+//   const colorOptions = [
+//     { value: "bg-pink-500", label: "Pink", colorClass: "bg-pink-500" },
+//     { value: "bg-blue-500", label: "Blue", colorClass: "bg-blue-500" },
+//     { value: "bg-emerald-500", label: "Emerald", colorClass: "bg-emerald-500" },
+//     { value: "bg-purple-500", label: "Purple", colorClass: "bg-purple-500" },
+//     { value: "bg-amber-500", label: "Amber", colorClass: "bg-amber-500" },
+//     { value: "bg-red-500", label: "Red", colorClass: "bg-red-500" },
+//     { value: "bg-indigo-500", label: "Indigo", colorClass: "bg-indigo-500" },
+//     { value: "bg-cyan-500", label: "Cyan", colorClass: "bg-cyan-500" }
+//   ];
+
+//   // Fetch gallery data
+//   const fetchGalleryData = async () => {
+//     try {
+//       setLoading(true);
+//       setError(null);
+      
+//       // Fetch categories
+//       const categoriesResponse = await fetch('http://localhost:5000/api/gallery-categories');
+//       const categoriesData = await categoriesResponse.json();
+      
+//       if (categoriesData.success) {
+//         setCategories(categoriesData.data);
+//       }
+      
+//       // Fetch images
+//       const imagesResponse = await fetch('http://localhost:5000/api/gallery-images');
+//       const imagesData = await imagesResponse.json();
+      
+//       if (imagesData.success) {
+//         setImages(imagesData.data);
+//       } else {
+//         throw new Error(imagesData.message || 'Failed to fetch images');
+//       }
+//     } catch (err) {
+//       setError(err instanceof Error ? err.message : 'Failed to load gallery data');
+//       console.error('Error fetching gallery data:', err);
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   useEffect(() => {
+//     fetchGalleryData();
+//   }, []);
+
+//   // Handle image upload
+//   const handleImageUpload = async (e: React.FormEvent) => {
+//     e.preventDefault();
+    
+//     if (!newImage.image) {
+//       setError("Please select an image to upload");
+//       return;
+//     }
+    
+//     if (!newImage.title.trim()) {
+//       setError("Please enter a title for the image");
+//       return;
+//     }
+    
+//     if (!newImage.category) {
+//       setError("Please select a category");
+//       return;
+//     }
+    
+//     setUploading(true);
+//     setError(null);
+    
+//     const formData = new FormData();
+//     formData.append('image', newImage.image);
+//     formData.append('title', newImage.title);
+//     formData.append('description', newImage.description);
+//     formData.append('category', newImage.category);
+    
+//     try {
+//       const response = await fetch('http://localhost:5000/api/gallery-images', {
+//         method: 'POST',
+//         body: formData
+//       });
+      
+//       const data = await response.json();
+      
+//       if (data.success) {
+//         setSuccessMessage('Image uploaded successfully!');
+//         setNewImage({
+//           title: "",
+//           description: "",
+//           category: "",
+//           image: null
+//         });
+//         setShowUploadModal(false);
+//         fetchGalleryData(); // Refresh the list
+        
+//         // Clear success message after 3 seconds
+//         setTimeout(() => setSuccessMessage(null), 3000);
+//       } else {
+//         setError(data.message || 'Failed to upload image');
+//       }
+//     } catch (err) {
+//       setError('Error uploading image. Please try again.');
+//       console.error('Upload error:', err);
+//     } finally {
+//       setUploading(false);
+//     }
+//   };
+
+//   // Handle bulk delete
+//   const handleBulkDelete = async () => {
+//     if (selectedImages.length === 0) {
+//       setError("No images selected for deletion");
+//       return;
+//     }
+    
+//     if (!window.confirm(`Are you sure you want to delete ${selectedImages.length} image(s)? This action cannot be undone.`)) {
+//       return;
+//     }
+    
+//     try {
+//       const response = await fetch('http://localhost:5000/api/gallery-images/bulk', {
+//         method: 'DELETE',
+//         headers: {
+//           'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({ imageIds: selectedImages })
+//       });
+      
+//       const data = await response.json();
+      
+//       if (data.success) {
+//         setSuccessMessage(data.message || `${selectedImages.length} image(s) deleted successfully`);
+//         setSelectedImages([]);
+//         fetchGalleryData();
+        
+//         setTimeout(() => setSuccessMessage(null), 3000);
+//       } else {
+//         setError(data.message || 'Failed to delete images');
+//       }
+//     } catch (err) {
+//       setError('Error deleting images. Please try again.');
+//       console.error('Delete error:', err);
+//     }
+//   };
+
+//   // Handle category creation
+//   const handleCreateCategory = async (e: React.FormEvent) => {
+//     e.preventDefault();
+    
+//     if (!newCategory.name.trim()) {
+//       setError("Please enter a category name");
+//       return;
+//     }
+    
+//     try {
+//       const response = await fetch('http://localhost:5000/api/gallery-categories', {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(newCategory)
+//       });
+      
+//       const data = await response.json();
+      
+//       if (data.success) {
+//         setSuccessMessage('Category created successfully!');
+//         setNewCategory({ name: "", color: "bg-emerald-500" });
+//         setShowCategoryModal(false);
+//         fetchGalleryData();
+        
+//         setTimeout(() => setSuccessMessage(null), 3000);
+//       } else {
+//         setError(data.message || 'Failed to create category');
+//       }
+//     } catch (err) {
+//       setError('Error creating category. Please try again.');
+//       console.error('Category creation error:', err);
+//     }
+//   };
+
+//   // Handle category deletion
+//   const handleDeleteCategory = async (categoryId: number) => {
+//     if (!window.confirm("Are you sure you want to delete this category? This action cannot be undone.")) {
+//       return;
+//     }
+    
+//     try {
+//       const response = await fetch(`http://localhost:5000/api/gallery-categories/${categoryId}`, {
+//         method: 'DELETE'
+//       });
+      
+//       const data = await response.json();
+      
+//       if (data.success) {
+//         setSuccessMessage('Category deleted successfully!');
+//         fetchGalleryData();
+        
+//         setTimeout(() => setSuccessMessage(null), 3000);
+//       } else {
+//         setError(data.message || 'Failed to delete category');
+//       }
+//     } catch (err) {
+//       setError('Error deleting category. Please try again.');
+//       console.error('Category deletion error:', err);
+//     }
+//   };
+
+//   // Filter images based on search and category
+//   const filteredImages = images.filter(image => {
+//     const matchesCategory = filterCategory === "All" || image.category === filterCategory;
+//     const matchesSearch = image.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+//                          image.description?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+//                          image.category.toLowerCase().includes(searchTerm.toLowerCase());
+//     return matchesCategory && matchesSearch;
+//   });
+
+//   // Handle image selection
+//   const toggleImageSelection = (id: number) => {
+//     setSelectedImages(prev =>
+//       prev.includes(id)
+//         ? prev.filter(imgId => imgId !== id)
+//         : [...prev, id]
+//     );
+//   };
+
+//   // Handle select all
+//   const toggleSelectAll = () => {
+//     if (selectedImages.length === filteredImages.length) {
+//       setSelectedImages([]);
+//     } else {
+//       setSelectedImages(filteredImages.map(img => img.id));
+//     }
+//   };
+
+//   // Format date
+//   const formatDate = (dateString?: string) => {
+//     if (!dateString) return "N/A";
+//     return new Date(dateString).toLocaleDateString('en-US', {
+//       year: 'numeric',
+//       month: 'short',
+//       day: 'numeric'
+//     });
+//   };
+
+//   // Get category color
+//   const getCategoryColor = (category: string) => {
+//     const cat = categories.find(c => c.name === category);
+//     return cat?.color || "bg-emerald-500";
+//   };
+
+//   // Clear messages
+//   const clearMessages = () => {
+//     setError(null);
+//     setSuccessMessage(null);
+//   };
+
+//   if (loading) {
+//     return (
+//       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-emerald-50/30 flex items-center justify-center">
+//         <div className="text-center">
+//           <Loader2 className="w-12 h-12 text-emerald-500 animate-spin mx-auto mb-4" />
+//           <p className="text-gray-600">Loading gallery data...</p>
+//         </div>
+//       </div>
+//     );
+//   }
+
+//   return (
+//     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-emerald-50/30 p-4 md:p-6">
+//       {/* Header */}
+//       <div className="max-w-7xl mx-auto mb-8">
+//         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+//           <div>
+//             <h1 className="text-3xl font-bold text-gray-900">Gallery Management</h1>
+//             <p className="text-gray-600 mt-2">Upload, organize, and manage your gallery images</p>
+//           </div>
+          
+//           <div className="flex flex-wrap gap-3">
+//             <button
+//               onClick={() => setShowUploadModal(true)}
+//               className="flex items-center gap-2 px-4 py-3 bg-emerald-500 text-white rounded-xl hover:bg-emerald-600 transition-colors duration-300 font-medium"
+//             >
+//               <Upload className="w-4 h-4" />
+//               Upload Image
+//             </button>
+            
+//             <button
+//               onClick={() => setShowCategoryModal(true)}
+//               className="flex items-center gap-2 px-4 py-3 bg-gray-800 text-white rounded-xl hover:bg-gray-900 transition-colors duration-300 font-medium"
+//             >
+//               <Tag className="w-4 h-4" />
+//               Add Category
+//             </button>
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Messages */}
+//       <AnimatePresence>
+//         {error && (
+//           <motion.div
+//             initial={{ opacity: 0, y: -20 }}
+//             animate={{ opacity: 1, y: 0 }}
+//             exit={{ opacity: 0, y: -20 }}
+//             className="max-w-7xl mx-auto mb-4"
+//           >
+//             <div className="bg-red-50 border border-red-200 rounded-xl p-4 flex items-center justify-between">
+//               <div className="flex items-center gap-3">
+//                 <AlertCircle className="w-5 h-5 text-red-500" />
+//                 <p className="text-red-700">{error}</p>
+//               </div>
+//               <button
+//                 onClick={clearMessages}
+//                 className="text-red-500 hover:text-red-700"
+//               >
+//                 <X className="w-4 h-4" />
+//               </button>
+//             </div>
+//           </motion.div>
+//         )}
+        
+//         {successMessage && (
+//           <motion.div
+//             initial={{ opacity: 0, y: -20 }}
+//             animate={{ opacity: 1, y: 0 }}
+//             exit={{ opacity: 0, y: -20 }}
+//             className="max-w-7xl mx-auto mb-4"
+//           >
+//             <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 flex items-center justify-between">
+//               <div className="flex items-center gap-3">
+//                 <Check className="w-5 h-5 text-emerald-500" />
+//                 <p className="text-emerald-700">{successMessage}</p>
+//               </div>
+//               <button
+//                 onClick={clearMessages}
+//                 className="text-emerald-500 hover:text-emerald-700"
+//               >
+//                 <X className="w-4 h-4" />
+//               </button>
+//             </div>
+//           </motion.div>
+//         )}
+//       </AnimatePresence>
+
+//       {/* Stats Cards */}
+//       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+//         <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
+//           <div className="flex items-center justify-between">
+//             <div>
+//               <p className="text-sm text-gray-500">Total Images</p>
+//               <p className="text-2xl font-bold text-gray-900">{images.length}</p>
+//             </div>
+//             <div className="p-3 bg-emerald-50 rounded-lg">
+//               <ImageIcon className="w-6 h-6 text-emerald-500" />
+//             </div>
+//           </div>
+//         </div>
+        
+//         <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
+//           <div className="flex items-center justify-between">
+//             <div>
+//               <p className="text-sm text-gray-500">Categories</p>
+//               <p className="text-2xl font-bold text-gray-900">{categories.length}</p>
+//             </div>
+//             <div className="p-3 bg-blue-50 rounded-lg">
+//               <Tag className="w-6 h-6 text-blue-500" />
+//             </div>
+//           </div>
+//         </div>
+        
+//         <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
+//           <div className="flex items-center justify-between">
+//             <div>
+//               <p className="text-sm text-gray-500">Selected</p>
+//               <p className="text-2xl font-bold text-gray-900">{selectedImages.length}</p>
+//             </div>
+//             <div className="p-3 bg-amber-50 rounded-lg">
+//               <Check className="w-6 h-6 text-amber-500" />
+//             </div>
+//           </div>
+//         </div>
+        
+//         <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
+//           <div className="flex items-center justify-between">
+//             <div>
+//               <p className="text-sm text-gray-500">Filtered</p>
+//               <p className="text-2xl font-bold text-gray-900">{filteredImages.length}</p>
+//             </div>
+//             <div className="p-3 bg-purple-50 rounded-lg">
+//               <Filter className="w-6 h-6 text-purple-500" />
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Categories Section */}
+//       <div className="max-w-7xl mx-auto mb-8">
+//         <div className="flex items-center justify-between mb-4">
+//           <h2 className="text-xl font-semibold text-gray-900">Categories</h2>
+//           <button
+//             onClick={() => setShowCategoryModal(true)}
+//             className="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium"
+//           >
+//             <Plus className="w-4 h-4" />
+//             Add New
+//           </button>
+//         </div>
+        
+//         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
+//           {categories.map(category => (
+//             <div
+//               key={category.id}
+//               className="bg-white rounded-xl shadow-sm border border-gray-200 p-4"
+//             >
+//               <div className="flex items-center justify-between mb-2">
+//                 <span className={`px-2 py-1 rounded-full text-xs font-semibold text-white ${category.color}`}>
+//                   {category.name}
+//                 </span>
+//                 <button
+//                   onClick={() => handleDeleteCategory(category.id)}
+//                   className="text-gray-400 hover:text-red-500 transition-colors"
+//                   title="Delete category"
+//                 >
+//                   <Trash2 className="w-3 h-3" />
+//                 </button>
+//               </div>
+//               <p className="text-xs text-gray-500">
+//                 {category.imageCount} image{category.imageCount !== 1 ? 's' : ''}
+//               </p>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+
+//       {/* Gallery Controls */}
+//       <div className="max-w-7xl mx-auto bg-white rounded-xl shadow-sm border border-gray-200 p-4 mb-6">
+//         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+//           {/* Search */}
+//           <div className="relative w-full md:w-64">
+//             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+//             <input
+//               type="text"
+//               placeholder="Search images..."
+//               value={searchTerm}
+//               onChange={(e) => setSearchTerm(e.target.value)}
+//               className="w-full pl-9 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+//             />
+//           </div>
+          
+//           {/* Filter and View Controls */}
+//           <div className="flex items-center gap-4">
+//             {/* Category Filter */}
+//             <select
+//               value={filterCategory}
+//               onChange={(e) => setFilterCategory(e.target.value)}
+//               className="px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+//             >
+//               <option value="All">All Categories</option>
+//               {categories.map(category => (
+//                 <option key={category.id} value={category.name}>
+//                   {category.name} ({category.imageCount})
+//                 </option>
+//               ))}
+//             </select>
+            
+//             {/* View Mode */}
+//             <div className="flex items-center gap-2 bg-gray-50 p-1 rounded-lg">
+//               <button
+//                 onClick={() => setViewMode("grid")}
+//                 className={`p-2 rounded ${viewMode === "grid" ? "bg-white shadow-sm" : "hover:bg-gray-100"}`}
+//                 title="Grid View"
+//               >
+//                 <Grid className={`w-4 h-4 ${viewMode === "grid" ? "text-emerald-500" : "text-gray-400"}`} />
+//               </button>
+//               <button
+//                 onClick={() => setViewMode("list")}
+//                 className={`p-2 rounded ${viewMode === "list" ? "bg-white shadow-sm" : "hover:bg-gray-100"}`}
+//                 title="List View"
+//               >
+//                 <List className={`w-4 h-4 ${viewMode === "list" ? "text-emerald-500" : "text-gray-400"}`} />
+//               </button>
+//             </div>
+            
+//             {/* Bulk Actions */}
+//             {selectedImages.length > 0 && (
+//               <button
+//                 onClick={handleBulkDelete}
+//                 className="flex items-center gap-2 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors font-medium"
+//               >
+//                 <Trash2 className="w-4 h-4" />
+//                 Delete Selected ({selectedImages.length})
+//               </button>
+//             )}
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Gallery Content */}
+//       <div className="max-w-7xl mx-auto">
+//         {/* Select All */}
+//         {filteredImages.length > 0 && (
+//           <div className="mb-4 flex items-center gap-3">
+//             <input
+//               type="checkbox"
+//               id="selectAll"
+//               checked={selectedImages.length === filteredImages.length && filteredImages.length > 0}
+//               onChange={toggleSelectAll}
+//               className="w-4 h-4 text-emerald-500 rounded focus:ring-emerald-500 border-gray-300"
+//             />
+//             <label htmlFor="selectAll" className="text-sm text-gray-600">
+//               Select all {filteredImages.length} images
+//             </label>
+//           </div>
+//         )}
+
+//         {/* Images Grid/List */}
+//         {filteredImages.length === 0 ? (
+//           <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-12 text-center">
+//             <ImageIcon className="w-12 h-12 text-gray-300 mx-auto mb-4" />
+//             <p className="text-gray-500 text-lg">No images found</p>
+//             <p className="text-gray-400 text-sm mt-2">Try adjusting your search or upload new images</p>
+//             <button
+//               onClick={() => setShowUploadModal(true)}
+//               className="mt-6 px-6 py-3 bg-emerald-500 text-white rounded-xl hover:bg-emerald-600 transition-colors font-medium"
+//             >
+//               Upload Your First Image
+//             </button>
+//           </div>
+//         ) : viewMode === "grid" ? (
+//           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+//             {filteredImages.map(image => (
+//               <div
+//                 key={image.id}
+//                 className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-300"
+//               >
+//                 {/* Image */}
+//                 <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
+//                   <img
+//                     src={image.src}
+//                     alt={image.title}
+//                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+//                   />
+                  
+//                   {/* Selection Overlay */}
+//                   <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
+//                     selectedImages.includes(image.id) 
+//                       ? 'bg-emerald-500/20' 
+//                       : 'bg-black/0 hover:bg-black/10'
+//                   }`}>
+//                     <input
+//                       type="checkbox"
+//                       checked={selectedImages.includes(image.id)}
+//                       onChange={() => toggleImageSelection(image.id)}
+//                       className="w-5 h-5 text-emerald-500 rounded border-gray-300 shadow-sm"
+//                     />
+//                   </div>
+                  
+//                   {/* Preview Button */}
+//                   <button
+//                     onClick={() => setPreviewImage(image.src)}
+//                     className="absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 shadow-lg"
+//                     title="Preview"
+//                   >
+//                     <Eye className="w-4 h-4 text-gray-700" />
+//                   </button>
+//                 </div>
+                
+//                 {/* Info */}
+//                 <div className="p-4">
+//                   <div className="flex items-center justify-between mb-2">
+//                     <h3 className="font-semibold text-gray-900 truncate">{image.title}</h3>
+//                     <span className={`px-2 py-1 rounded-full text-xs font-semibold text-white ${getCategoryColor(image.category)}`}>
+//                       {image.category}
+//                     </span>
+//                   </div>
+                  
+//                   {image.description && (
+//                     <p className="text-sm text-gray-600 mb-3 line-clamp-2">{image.description}</p>
+//                   )}
+                  
+//                   <div className="flex items-center justify-between text-xs text-gray-500">
+//                     <div className="flex items-center gap-1">
+//                       <Calendar className="w-3 h-3" />
+//                       {formatDate(image.uploadedAt)}
+//                     </div>
+//                     <div className="flex items-center gap-2">
+//                       <button
+//                         onClick={() => {
+//                           // Set edit mode
+//                           setEditImageId(image.id);
+//                           setNewImage({
+//                             title: image.title,
+//                             description: image.description || "",
+//                             category: image.category,
+//                             image: null
+//                           });
+//                           setShowUploadModal(true);
+//                         }}
+//                         className="text-gray-400 hover:text-emerald-500 transition-colors"
+//                         title="Edit"
+//                       >
+//                         <Edit className="w-3 h-3" />
+//                       </button>
+//                       <button
+//                         onClick={() => toggleImageSelection(image.id)}
+//                         className="text-gray-400 hover:text-red-500 transition-colors"
+//                         title="Delete"
+//                       >
+//                         <Trash2 className="w-3 h-3" />
+//                       </button>
+//                     </div>
+//                   </div>
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+//         ) : (
+//           /* List View */
+//           <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+//             <table className="w-full">
+//               <thead>
+//                 <tr className="bg-gray-50 border-b border-gray-200">
+//                   <th className="py-3 px-4 text-left">
+//                     <input
+//                       type="checkbox"
+//                       checked={selectedImages.length === filteredImages.length && filteredImages.length > 0}
+//                       onChange={toggleSelectAll}
+//                       className="w-4 h-4 text-emerald-500 rounded focus:ring-emerald-500 border-gray-300"
+//                     />
+//                   </th>
+//                   <th className="py-3 px-4 text-left text-sm font-semibold text-gray-900">Image</th>
+//                   <th className="py-3 px-4 text-left text-sm font-semibold text-gray-900">Title</th>
+//                   <th className="py-3 px-4 text-left text-sm font-semibold text-gray-900">Category</th>
+//                   <th className="py-3 px-4 text-left text-sm font-semibold text-gray-900">Uploaded</th>
+//                   <th className="py-3 px-4 text-left text-sm font-semibold text-gray-900">Actions</th>
+//                 </tr>
+//               </thead>
+//               <tbody>
+//                 {filteredImages.map(image => (
+//                   <tr key={image.id} className="border-b border-gray-100 hover:bg-gray-50/50">
+//                     <td className="py-3 px-4">
+//                       <input
+//                         type="checkbox"
+//                         checked={selectedImages.includes(image.id)}
+//                         onChange={() => toggleImageSelection(image.id)}
+//                         className="w-4 h-4 text-emerald-500 rounded focus:ring-emerald-500 border-gray-300"
+//                       />
+//                     </td>
+//                     <td className="py-3 px-4">
+//                       <div className="w-16 h-16 rounded-lg overflow-hidden bg-gray-100">
+//                         <img
+//                           src={image.src}
+//                           alt={image.title}
+//                           className="w-full h-full object-cover"
+//                         />
+//                       </div>
+//                     </td>
+//                     <td className="py-3 px-4">
+//                       <div>
+//                         <p className="font-medium text-gray-900">{image.title}</p>
+//                         {image.description && (
+//                           <p className="text-sm text-gray-600 truncate max-w-xs">{image.description}</p>
+//                         )}
+//                       </div>
+//                     </td>
+//                     <td className="py-3 px-4">
+//                       <span className={`px-3 py-1 rounded-full text-xs font-semibold text-white ${getCategoryColor(image.category)}`}>
+//                         {image.category}
+//                       </span>
+//                     </td>
+//                     <td className="py-3 px-4 text-sm text-gray-600">
+//                       {formatDate(image.uploadedAt)}
+//                     </td>
+//                     <td className="py-3 px-4">
+//                       <div className="flex items-center gap-2">
+//                         <button
+//                           onClick={() => setPreviewImage(image.src)}
+//                           className="p-2 text-gray-400 hover:text-emerald-500 transition-colors rounded-lg hover:bg-emerald-50"
+//                           title="Preview"
+//                         >
+//                           <Eye className="w-4 h-4" />
+//                         </button>
+//                         <button
+//                           onClick={() => {
+//                             setEditImageId(image.id);
+//                             setNewImage({
+//                               title: image.title,
+//                               description: image.description || "",
+//                               category: image.category,
+//                               image: null
+//                             });
+//                             setShowUploadModal(true);
+//                           }}
+//                           className="p-2 text-gray-400 hover:text-blue-500 transition-colors rounded-lg hover:bg-blue-50"
+//                           title="Edit"
+//                         >
+//                           <Edit className="w-4 h-4" />
+//                         </button>
+//                         <button
+//                           onClick={() => toggleImageSelection(image.id)}
+//                           className="p-2 text-gray-400 hover:text-red-500 transition-colors rounded-lg hover:bg-red-50"
+//                           title="Delete"
+//                         >
+//                           <Trash2 className="w-4 h-4" />
+//                         </button>
+//                       </div>
+//                     </td>
+//                   </tr>
+//                 ))}
+//               </tbody>
+//             </table>
+//           </div>
+//         )}
+//       </div>
+
+//       {/* Upload Modal */}
+//       <AnimatePresence>
+//         {showUploadModal && (
+//           <motion.div
+//             initial={{ opacity: 0 }}
+//             animate={{ opacity: 1 }}
+//             exit={{ opacity: 0 }}
+//             className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4"
+//             onClick={() => setShowUploadModal(false)}
+//           >
+//             <motion.div
+//               initial={{ scale: 0.95, opacity: 0 }}
+//               animate={{ scale: 1, opacity: 1 }}
+//               exit={{ scale: 0.95, opacity: 0 }}
+//               className="bg-white rounded-2xl shadow-2xl w-full max-w-md"
+//               onClick={(e) => e.stopPropagation()}
+//             >
+//               <div className="p-6">
+//                 <div className="flex items-center justify-between mb-6">
+//                   <h3 className="text-xl font-bold text-gray-900">
+//                     {editImageId ? 'Edit Image' : 'Upload New Image'}
+//                   </h3>
+//                   <button
+//                     onClick={() => setShowUploadModal(false)}
+//                     className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+//                   >
+//                     <X className="w-5 h-5 text-gray-500" />
+//                   </button>
+//                 </div>
+
+//                 <form onSubmit={handleImageUpload}>
+//                   {/* Image Upload */}
+//                   <div className="mb-6">
+//                     <label className="block text-sm font-medium text-gray-700 mb-2">
+//                       Image File
+//                     </label>
+//                     <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:border-emerald-500 transition-colors">
+//                       {newImage.image ? (
+//                         <div className="space-y-4">
+//                           <div className="relative w-32 h-32 mx-auto rounded-lg overflow-hidden bg-gray-100">
+//                             <img
+//                               src={URL.createObjectURL(newImage.image)}
+//                               alt="Preview"
+//                               className="w-full h-full object-cover"
+//                             />
+//                           </div>
+//                           <p className="text-sm text-gray-600">{newImage.image.name}</p>
+//                           <button
+//                             type="button"
+//                             onClick={() => setNewImage({...newImage, image: null})}
+//                             className="text-sm text-red-500 hover:text-red-700"
+//                           >
+//                             Remove
+//                           </button>
+//                         </div>
+//                       ) : (
+//                         <div>
+//                           <Upload className="w-12 h-12 text-gray-400 mx-auto mb-4" />
+//                           <p className="text-sm text-gray-600 mb-2">Drag & drop or click to upload</p>
+//                           <p className="text-xs text-gray-500">JPG, PNG, GIF, WEBP (max 10MB)</p>
+//                           <input
+//                             type="file"
+//                             accept="image/*"
+//                             onChange={(e) => {
+//                               const file = e.target.files?.[0];
+//                               if (file) {
+//                                 setNewImage({...newImage, image: file});
+//                               }
+//                             }}
+//                             className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+//                           />
+//                         </div>
+//                       )}
+//                     </div>
+//                   </div>
+
+//                   {/* Title */}
+//                   <div className="mb-4">
+//                     <label className="block text-sm font-medium text-gray-700 mb-2">
+//                       Title *
+//                     </label>
+//                     <input
+//                       type="text"
+//                       value={newImage.title}
+//                       onChange={(e) => setNewImage({...newImage, title: e.target.value})}
+//                       className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+//                       placeholder="Enter image title"
+//                       required
+//                     />
+//                   </div>
+
+//                   {/* Description */}
+//                   <div className="mb-4">
+//                     <label className="block text-sm font-medium text-gray-700 mb-2">
+//                       Description
+//                     </label>
+//                     <textarea
+//                       value={newImage.description}
+//                       onChange={(e) => setNewImage({...newImage, description: e.target.value})}
+//                       className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+//                       placeholder="Enter image description"
+//                       rows={3}
+//                     />
+//                   </div>
+
+//                   {/* Category */}
+//                   <div className="mb-6">
+//                     <label className="block text-sm font-medium text-gray-700 mb-2">
+//                       Category *
+//                     </label>
+//                     <select
+//                       value={newImage.category}
+//                       onChange={(e) => setNewImage({...newImage, category: e.target.value})}
+//                       className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+//                       required
+//                     >
+//                       <option value="">Select a category</option>
+//                       {categories.map(category => (
+//                         <option key={category.id} value={category.name}>
+//                           {category.name}
+//                         </option>
+//                       ))}
+//                     </select>
+//                   </div>
+
+//                   {/* Submit Button */}
+//                   <button
+//                     type="submit"
+//                     disabled={uploading || !newImage.image}
+//                     className={`w-full py-3 rounded-xl font-medium transition-all duration-300 ${
+//                       uploading || !newImage.image
+//                         ? 'bg-gray-300 cursor-not-allowed'
+//                         : 'bg-emerald-500 hover:bg-emerald-600 text-white'
+//                     }`}
+//                   >
+//                     {uploading ? (
+//                       <span className="flex items-center justify-center gap-2">
+//                         <Loader2 className="w-4 h-4 animate-spin" />
+//                         {editImageId ? 'Updating...' : 'Uploading...'}
+//                       </span>
+//                     ) : editImageId ? (
+//                       'Update Image'
+//                     ) : (
+//                       'Upload Image'
+//                     )}
+//                   </button>
+//                 </form>
+//               </div>
+//             </motion.div>
+//           </motion.div>
+//         )}
+//       </AnimatePresence>
+
+//       {/* Category Modal */}
+//       <AnimatePresence>
+//         {showCategoryModal && (
+//           <motion.div
+//             initial={{ opacity: 0 }}
+//             animate={{ opacity: 1 }}
+//             exit={{ opacity: 0 }}
+//             className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4"
+//             onClick={() => setShowCategoryModal(false)}
+//           >
+//             <motion.div
+//               initial={{ scale: 0.95, opacity: 0 }}
+//               animate={{ scale: 1, opacity: 1 }}
+//               exit={{ scale: 0.95, opacity: 0 }}
+//               className="bg-white rounded-2xl shadow-2xl w-full max-w-md"
+//               onClick={(e) => e.stopPropagation()}
+//             >
+//               <div className="p-6">
+//                 <div className="flex items-center justify-between mb-6">
+//                   <h3 className="text-xl font-bold text-gray-900">Add New Category</h3>
+//                   <button
+//                     onClick={() => setShowCategoryModal(false)}
+//                     className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+//                   >
+//                     <X className="w-5 h-5 text-gray-500" />
+//                   </button>
+//                 </div>
+
+//                 <form onSubmit={handleCreateCategory}>
+//                   {/* Category Name */}
+//                   <div className="mb-4">
+//                     <label className="block text-sm font-medium text-gray-700 mb-2">
+//                       Category Name *
+//                     </label>
+//                     <input
+//                       type="text"
+//                       value={newCategory.name}
+//                       onChange={(e) => setNewCategory({...newCategory, name: e.target.value})}
+//                       className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+//                       placeholder="e.g., Weddings, Events"
+//                       required
+//                     />
+//                   </div>
+
+//                   {/* Color Selection */}
+//                   <div className="mb-6">
+//                     <label className="block text-sm font-medium text-gray-700 mb-2">
+//                       Color
+//                     </label>
+//                     <div className="grid grid-cols-4 gap-2">
+//                       {colorOptions.map(color => (
+//                         <button
+//                           key={color.value}
+//                           type="button"
+//                           onClick={() => setNewCategory({...newCategory, color: color.value})}
+//                           className={`p-3 rounded-lg border-2 transition-all ${
+//                             newCategory.color === color.value
+//                               ? 'border-emerald-500 ring-2 ring-emerald-500/20'
+//                               : 'border-gray-200 hover:border-gray-300'
+//                           }`}
+//                         >
+//                           <div className={`w-8 h-8 rounded-full ${color.colorClass} mx-auto`} />
+//                           <p className="text-xs mt-2 text-gray-600">{color.label}</p>
+//                         </button>
+//                       ))}
+//                     </div>
+//                   </div>
+
+//                   {/* Submit Button */}
+//                   <button
+//                     type="submit"
+//                     className="w-full py-3 bg-gray-800 text-white rounded-xl hover:bg-gray-900 transition-colors font-medium"
+//                   >
+//                     Create Category
+//                   </button>
+//                 </form>
+//               </div>
+//             </motion.div>
+//           </motion.div>
+//         )}
+//       </AnimatePresence>
+
+//       {/* Preview Modal */}
+//       <AnimatePresence>
+//         {previewImage && (
+//           <motion.div
+//             initial={{ opacity: 0 }}
+//             animate={{ opacity: 1 }}
+//             exit={{ opacity: 0 }}
+//             className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-sm"
+//             onClick={() => setPreviewImage(null)}
+//           >
+//             <button
+//               onClick={() => setPreviewImage(null)}
+//               className="absolute top-6 right-6 w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/20 transition-all"
+//             >
+//               <X className="w-5 h-5 text-white" />
+//             </button>
+            
+//             <div className="max-w-4xl max-h-[85vh]">
+//               <img
+//                 src={previewImage}
+//                 alt="Preview"
+//                 className="max-w-full max-h-[85vh] object-contain rounded-lg"
+//               />
+//             </div>
+//           </motion.div>
+//         )}
+//       </AnimatePresence>
+//     </div>
+//   );
+// };
+
+// export default GalleryAdmin;
+
+
+
+
+
+
 import React, { useState, useEffect } from "react";
 import { 
   Upload, 
@@ -1831,6 +2888,7 @@ import {
   Edit
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { BASE_URL } from "../config"; // Import the BASE_URL
 
 interface GalleryImage {
   id: number;
@@ -1899,7 +2957,7 @@ const GalleryAdmin: React.FC = () => {
       setError(null);
       
       // Fetch categories
-      const categoriesResponse = await fetch('http://localhost:5000/api/gallery-categories');
+      const categoriesResponse = await fetch(`${BASE_URL}/api/gallery-categories`);
       const categoriesData = await categoriesResponse.json();
       
       if (categoriesData.success) {
@@ -1907,7 +2965,7 @@ const GalleryAdmin: React.FC = () => {
       }
       
       // Fetch images
-      const imagesResponse = await fetch('http://localhost:5000/api/gallery-images');
+      const imagesResponse = await fetch(`${BASE_URL}/api/gallery-images`);
       const imagesData = await imagesResponse.json();
       
       if (imagesData.success) {
@@ -1956,7 +3014,7 @@ const GalleryAdmin: React.FC = () => {
     formData.append('category', newImage.category);
     
     try {
-      const response = await fetch('http://localhost:5000/api/gallery-images', {
+      const response = await fetch(`${BASE_URL}/api/gallery-images`, {
         method: 'POST',
         body: formData
       });
@@ -1999,7 +3057,7 @@ const GalleryAdmin: React.FC = () => {
     }
     
     try {
-      const response = await fetch('http://localhost:5000/api/gallery-images/bulk', {
+      const response = await fetch(`${BASE_URL}/api/gallery-images/bulk`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json'
@@ -2034,7 +3092,7 @@ const GalleryAdmin: React.FC = () => {
     }
     
     try {
-      const response = await fetch('http://localhost:5000/api/gallery-categories', {
+      const response = await fetch(`${BASE_URL}/api/gallery-categories`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -2067,7 +3125,7 @@ const GalleryAdmin: React.FC = () => {
     }
     
     try {
-      const response = await fetch(`http://localhost:5000/api/gallery-categories/${categoryId}`, {
+      const response = await fetch(`${BASE_URL}/api/gallery-categories/${categoryId}`, {
         method: 'DELETE'
       });
       
