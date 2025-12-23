@@ -681,7 +681,7 @@ const Footer: React.FC = () => {
                 <div>
                   <p className="font-medium text-[#e8f0ea]">WhatsApp/Call:</p>
                   <div className="text-lg space-y-1 text-[#c8d5cb]">
-                    <p>+91 9251582670</p>
+                    <p>+91 9251582672</p>
                     <p>+91 9251582675</p>
                   </div>
                 </div>

@@ -1083,7 +1083,7 @@ const AdminWedding: React.FC = () => {
     <>
       <AdminNavbar />
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-4 md:p-8 pt-24">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto mt-20">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}

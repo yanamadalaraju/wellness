@@ -2889,6 +2889,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { BASE_URL } from "../config"; // Import the BASE_URL
+import AdminNavbar from "./AdminNavbar";
 
 interface GalleryImage {
   id: number;
@@ -3206,9 +3207,11 @@ const GalleryAdmin: React.FC = () => {
   }
 
   return (
+    <>
+    <AdminNavbar />
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-emerald-50/30 p-4 md:p-6">
       {/* Header */}
-      <div className="max-w-7xl mx-auto mb-8">
+      <div className="max-w-7xl mx-auto mb-8 mt-20">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div>
             <h1 className="text-3xl font-bold text-gray-900">Gallery Management</h1>
@@ -3916,6 +3919,7 @@ const GalleryAdmin: React.FC = () => {
         )}
       </AnimatePresence>
     </div>
+    </>
   );
 };
 
