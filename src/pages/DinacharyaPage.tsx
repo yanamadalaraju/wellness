@@ -142,6 +142,13 @@
 // export default DinacharyaPage;
 
 
+
+
+
+
+
+
+
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Sun, Moon, Droplets, Leaf, ChevronRight, Quote, Clock, Heart, Activity, AlertCircle } from 'lucide-react';
