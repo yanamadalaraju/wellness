@@ -411,7 +411,7 @@
 //                 <Phone className="w-5 h-5 mt-1 flex-shrink-0" />
 //                 <div>
 //                   <p className="font-medium">WhatsApp/Call:</p>
-//                   <p className="text-lg">+91 9251582670</p>
+//                   <p className="text-lg">+9251582672</p>
 //                   <p>+91 9251582675</p>
 //                 </div>
 //               </div>
@@ -546,7 +546,7 @@
 //                 <div>
 //                   <p className="font-medium">WhatsApp/Call:</p>
 //                   <div className="text-lg space-y-1">
-//                     <p>+91 9251582670</p>
+//                     <p>+9251582672</p>
 //                     <p>+91 9251582675</p>
 //                   </div>
 //                 </div>
@@ -681,7 +681,7 @@ const Footer: React.FC = () => {
                 <div>
                   <p className="font-medium text-[#e8f0ea]">WhatsApp/Call:</p>
                   <div className="text-lg space-y-1 text-[#c8d5cb]">
-                    <p>+91 9251582670</p>
+                    <p>+9251582672</p>
                     <p>+91 9251582675</p>
                   </div>
                 </div>

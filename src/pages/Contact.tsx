@@ -1029,7 +1029,7 @@
 //                   <div>
 //                     <h3 className="font-semibold text-sage-600 mb-1">Phone</h3>
 //                     <p className="text-gray-600">
-//                       Main: +91 9251582670<br />
+//                       Main: +9251582672<br />
 //                       Emergency:  +91 9251582675
 //                     </p>
 //                   </div>
@@ -1422,7 +1422,7 @@ const Contact: React.FC = () => {
                   <div>
                     <h3 className="font-semibold text-sage-600 mb-1">Phone</h3>
                     <p className="text-gray-600">
-                      Main: +91 9251582670<br />
+                      Main: +9251582672<br />
                       Emergency: +91 9251582675
                     </p>
                   </div>

@@ -934,7 +934,7 @@
 //               <div className="space-y-2">
 //                 <div className="flex items-center text-sm text-gray-700">
 //                   <Phone className="w-4 h-4 mr-2 text-green-600" />
-//                   <span>+91 9251582670</span>
+//                   <span>+9251582672</span>
 //                 </div>
 //                 <div className="text-xs text-gray-500">Mon-Sun, 7:00 AM - 7:00 PM</div>
 //                 <div className="text-xs text-gray-500 mt-2">

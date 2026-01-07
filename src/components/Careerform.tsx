@@ -1617,7 +1617,7 @@ const CareerForm = () => {
                 </div>
                 <div className="flex items-center text-sage-200 mt-2">
                   <Phone className="w-4 h-4 mr-2" />
-                  <span className="text-sm">+91 9251582670</span>
+                  <span className="text-sm">+9251582672</span>
                  
                 </div>
               </div>

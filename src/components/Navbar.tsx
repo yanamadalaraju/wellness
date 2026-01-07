@@ -4813,7 +4813,7 @@
 //                     <div className="bg-gray-50 rounded-lg p-3">
 //                       <div className="flex items-center text-sm font-medium text-gray-700 mb-1">
 //                         <Phone className="w-4 h-4 mr-2 text-green-600" />
-//                         <span>+91 9251582670</span>
+//                         <span>+9251582672</span>
 //                       </div>
 //                       <div className="text-xs text-gray-500">Mon-Sun, 7:00 AM - 7:00 PM</div>
 //                     </div>
@@ -5482,7 +5482,7 @@
 //                       <div className="bg-gray-50 rounded-lg p-3">
 //                         <div className="flex items-center text-sm font-medium text-gray-700 mb-1">
 //                           <Phone className="w-4 h-4 mr-2 text-green-600" />
-//                           <span>+91 9251582670</span>
+//                           <span>+9251582672</span>
 //                         </div>
 //                         <div className="text-xs text-gray-500">Mon-Sun, 7:00 AM - 7:00 PM</div>
 //                       </div>
@@ -6165,7 +6165,7 @@
 //                       <div className="bg-gray-50 rounded-lg p-3">
 //                         <div className="flex items-center text-sm font-medium text-gray-700 mb-1">
 //                           <Phone className="w-4 h-4 mr-2 text-green-600" />
-//                           <span>+91 9251582670</span>
+//                           <span>+9251582672</span>
 //                         </div>
 //                         <div className="text-xs text-gray-500">Mon-Sun, 7:00 AM - 7:00 PM</div>
 //                       </div>
@@ -6840,7 +6840,7 @@
 //                       <div className="bg-gray-50 rounded-lg p-3">
 //                         <div className="flex items-center text-sm font-medium text-gray-700 mb-1">
 //                           <Phone className="w-4 h-4 mr-2 text-green-600" />
-//                           <span>+91 9251582670</span>
+//                           <span>+9251582672</span>
 //                         </div>
 //                         <div className="text-xs text-gray-500">Mon-Sun, 7:00 AM - 7:00 PM</div>
 //                       </div>
@@ -7500,7 +7500,7 @@
 //                       <div className="bg-gray-50 rounded-lg p-4 2xl:p-5">
 //                         <div className="flex items-center text-base font-medium text-gray-700 mb-2 2xl:text-lg">
 //                           <Phone className="w-5 h-5 mr-2 text-green-600 2xl:w-6 2xl:h-6" />
-//                           <span>+91 9251582670</span>
+//                           <span>+9251582672</span>
 //                         </div>
 //                         <div className="text-sm text-gray-500 2xl:text-base">Mon-Sun, 7:00 AM - 7:00 PM</div>
 //                       </div>
@@ -8162,7 +8162,7 @@
 //                         <div className="bg-gray-50 rounded-lg p-4 2xl:p-5">
 //                           <div className="flex items-center text-base font-medium text-gray-700 mb-2 2xl:text-lg">
 //                             <Phone className="w-5 h-5 mr-2 text-green-600 2xl:w-6 2xl:h-6" />
-//                             <span>+91 9251582670</span>
+//                             <span>+9251582672</span>
 //                           </div>
 //                           <div className="text-sm text-gray-500 2xl:text-base">Mon-Sun, 7:00 AM - 7:00 PM</div>
 //                         </div>
@@ -8839,7 +8839,7 @@
 //                       <div className="bg-gray-50 rounded-lg p-3">
 //                         <div className="flex items-center text-sm font-medium text-gray-700 mb-1">
 //                           <Phone className="w-4 h-4 mr-2 text-green-600" />
-//                           <span>+91 9251582670</span>
+//                           <span>+9251582672</span>
 //                         </div>
 //                         <div className="text-xs text-gray-500">Mon-Sun, 7:00 AM - 7:00 PM</div>
 //                       </div>
@@ -9533,7 +9533,7 @@
 //                       <div className="bg-gray-50 rounded-lg p-3">
 //                         <div className="flex items-center text-sm font-medium text-gray-700 mb-1">
 //                           <Phone className="w-4 h-4 mr-2 text-green-600" />
-//                           <span>+91 9251582670</span>
+//                           <span>+9251582672</span>
 //                         </div>
 //                         <div className="text-xs text-gray-500">Mon-Sun, 7:00 AM - 7:00 PM</div>
 //                       </div>
@@ -10246,7 +10246,7 @@
 //                       <div className="bg-gray-50 rounded-lg p-3">
 //                         <div className="flex items-center text-sm font-medium text-gray-700 mb-1">
 //                           <Phone className="w-4 h-4 mr-2 text-green-600" />
-//                           <span>+91 9251582670</span>
+//                           <span>+9251582672</span>
 //                         </div>
 //                         <div className="text-xs text-gray-500">Mon-Sun, 7:00 AM - 7:00 PM</div>
 //                       </div>
@@ -11003,7 +11003,7 @@
 //                       <div className="bg-gray-50 rounded-lg p-3">
 //                         <div className="flex items-center text-sm font-medium text-gray-700 mb-1">
 //                           <Phone className="w-4 h-4 mr-2 text-green-600" />
-//                           <span>+91 9251582670</span>
+//                           <span>+9251582672</span>
 //                         </div>
 //                         <div className="text-xs text-gray-500">Mon-Sun, 7:00 AM - 7:00 PM</div>
 //                       </div>
@@ -11796,7 +11796,7 @@
 //                         <div className="bg-gray-50 rounded-lg p-3">
 //                           <div className="flex items-center text-sm font-medium text-gray-700 mb-1 font-sans">
 //                             <Phone className="w-4 h-4 mr-2 text-green-600" />
-//                             <span>+91 9251582670</span>
+//                             <span>+9251582672</span>
 //                           </div>
 //                           <div className="text-xs text-gray-500 font-sans">Mon-Sun, 7:00 AM - 7:00 PM</div>
 //                         </div>
@@ -12589,7 +12589,7 @@
 //                         <div className="bg-gray-50 rounded-lg p-3">
 //                           <div className="flex items-center text-sm font-medium text-gray-700 mb-1 font-sans">
 //                             <Phone className="w-4 h-4 mr-2 text-green-600" />
-//                             <span>+91 9251582670</span>
+//                             <span>+9251582672</span>
 //                           </div>
 //                           <div className="text-xs text-gray-500 font-sans">Mon-Sun, 7:00 AM - 7:00 PM</div>
 //                         </div>
@@ -13381,7 +13381,7 @@
 //                         <div className="bg-gray-50 rounded-lg p-3">
 //                           <div className="flex items-center text-sm font-medium text-gray-700 mb-1 font-sans">
 //                             <Phone className="w-4 h-4 mr-2 text-green-600" />
-//                             <span>+91 9251582670</span>
+//                             <span>+9251582672</span>
 //                           </div>
 //                           <div className="text-xs text-gray-500 font-sans">Mon-Sun, 7:00 AM - 7:00 PM</div>
 //                         </div>
@@ -14177,7 +14177,7 @@
 //                         <div className="bg-gray-50 rounded-lg p-3">
 //                           <div className="flex items-center text-sm font-medium text-gray-700 mb-1 font-sans">
 //                             <Phone className="w-4 h-4 mr-2 text-green-600" />
-//                             <span>+91 9251582670</span>
+//                             <span>+9251582672</span>
 //                           </div>
 //                           <div className="text-xs text-gray-500 font-sans">Mon-Sun, 7:00 AM - 7:00 PM</div>
 //                         </div>
@@ -14976,7 +14976,7 @@
 //                         <div className="bg-gray-50 rounded-lg p-3">
 //                           <div className="flex items-center text-sm font-medium text-gray-700 mb-1 font-sans">
 //                             <Phone className="w-4 h-4 mr-2 text-green-600" />
-//                             <span>+91 9251582670</span>
+//                             <span>+9251582672</span>
 //                           </div>
 //                           <div className="text-xs text-gray-500 font-sans">Mon-Sun, 7:00 AM - 7:00 PM</div>
 //                         </div>
@@ -15809,7 +15809,7 @@
 //                         <div className="bg-gray-50 rounded-lg p-3">
 //                           <div className="flex items-center text-sm font-medium text-gray-700 mb-1 font-sans">
 //                             <Phone className="w-4 h-4 mr-2 text-green-600" />
-//                             <span>+91 9251582670</span>
+//                             <span>+9251582672</span>
 //                           </div>
 //                           <div className="text-xs text-gray-500 font-sans">Mon-Sun, 7:00 AM - 7:00 PM</div>
 //                         </div>
@@ -16657,7 +16657,7 @@
 //                         <div className="bg-gray-50 rounded-lg p-2">
 //                           <div className="flex items-center text-xs font-medium text-gray-700 mb-0.5 font-sans">
 //                             <Phone className="w-3 h-3 mr-1.5 text-green-600" />
-//                             <span>+91 9251582670</span>
+//                             <span>+9251582672</span>
 //                           </div>
 //                           <div className="text-xs text-gray-500 font-sans">Mon-Sun, 7:00 AM - 7:00 PM</div>
 //                         </div>
@@ -17507,7 +17507,7 @@
 //                         <div className="bg-gray-50 rounded-lg p-2">
 //                           <div className="flex items-center text-xs font-medium text-gray-700 mb-0.5 font-sans">
 //                             <Phone className="w-3 h-3 mr-1.5 text-green-600" />
-//                             <span>+91 9251582670</span>
+//                             <span>+9251582672</span>
 //                           </div>
 //                           <div className="text-xs text-gray-500 font-sans">Mon-Sun, 7:00 AM - 7:00 PM</div>
 //                         </div>
@@ -18342,7 +18342,7 @@
 //                         <div className="bg-gray-50 rounded-lg p-2">
 //                           <div className="flex items-center text-xs font-medium text-gray-700 mb-0.5 font-sans">
 //                             <Phone className="w-3 h-3 mr-1.5 text-green-600" />
-//                             <span>+91 9251582670</span>
+//                             <span>+9251582672</span>
 //                           </div>
 //                           <div className="text-xs text-gray-500 font-sans">Mon-Sun, 7:00 AM - 7:00 PM</div>
 //                         </div>
@@ -19176,7 +19176,7 @@
 //                         <div className="bg-gray-50 rounded-lg p-2">
 //                           <div className="flex items-center text-xs font-medium text-gray-700 mb-0.5 font-sans">
 //                             <Phone className="w-3 h-3 mr-1.5 text-green-600" />
-//                             <span>+91 9251582670</span>
+//                             <span>+9251582672</span>
 //                           </div>
 //                           <div className="text-xs text-gray-500 font-sans">Mon-Sun, 7:00 AM - 7:00 PM</div>
 //                         </div>
@@ -19994,7 +19994,7 @@
 //                         <div className="bg-gray-50 rounded-lg p-2">
 //                           <div className="flex items-center text-xs font-medium text-gray-700 mb-0.5 font-sans">
 //                             <Phone className="w-3 h-3 mr-1.5 text-green-600" />
-//                             <span>+91 9251582670</span>
+//                             <span>+9251582672</span>
 //                           </div>
 //                           <div className="text-xs text-gray-500 font-sans">Mon-Sun, 7:00 AM - 7:00 PM</div>
 //                         </div>
@@ -20847,7 +20847,7 @@
 //                         <div className="bg-gray-50 rounded-lg p-2">
 //                           <div className="flex items-center text-xs font-medium text-gray-700 mb-0.5 font-sans">
 //                             <Phone className="w-3 h-3 mr-1.5 text-green-600" />
-//                             <span>+91 9251582670</span>
+//                             <span>+9251582672</span>
 //                           </div>
 //                           <div className="text-xs text-gray-500 font-sans">Mon-Sun, 7:00 AM - 7:00 PM</div>
 //                         </div>
@@ -21688,7 +21688,7 @@
 //                         <div className="bg-gray-50 rounded-lg p-2">
 //                           <div className="flex items-center text-xs font-medium text-gray-700 mb-0.5 font-sans">
 //                             <Phone className="w-3 h-3 mr-1.5 text-green-600" />
-//                             <span>+91 9251582670</span>
+//                             <span>+9251582672</span>
 //                           </div>
 //                           <div className="text-xs text-gray-500 font-sans">Mon-Sun, 7:00 AM - 7:00 PM</div>
 //                         </div>
@@ -22531,7 +22531,7 @@
 //                         <div className="bg-gray-50 rounded-lg p-2">
 //                           <div className="flex items-center text-xs font-medium text-gray-700 mb-0.5 font-serif">
 //                             <Phone className="w-3 h-3 mr-1.5 text-green-600" />
-//                             <span>+91 9251582670</span>
+//                             <span>+9251582672</span>
 //                           </div>
 //                           <div className="text-xs text-gray-500 font-sans">Mon-Sun, 7:00 AM - 7:00 PM</div>
 //                         </div>
@@ -23374,7 +23374,7 @@
 //                         <div className="bg-gray-50 rounded-lg p-2">
 //                           <div className="flex items-center text-xs font-medium text-gray-700 mb-0.5 font-serif">
 //                             <Phone className="w-3 h-3 mr-1.5 text-green-600" />
-//                             <span>+91 9251582670</span>
+//                             <span>+9251582672</span>
 //                           </div>
 //                           <div className="text-xs text-gray-500 font-sans">Mon-Sun, 7:00 AM - 7:00 PM</div>
 //                         </div>
@@ -24214,7 +24214,7 @@
 //                         <div className="bg-gray-50 rounded-lg p-2">
 //                           <div className="flex items-center text-xs font-medium text-gray-700 mb-0.5 font-serif">
 //                             <Phone className="w-3 h-3 mr-1.5 text-green-600" />
-//                             <span>+91 9251582670</span>
+//                             <span>+9251582672</span>
 //                           </div>
 //                           <div className="text-xs text-gray-500 font-sans">Mon-Sun, 7:00 AM - 7:00 PM</div>
 //                         </div>
@@ -25053,7 +25053,7 @@ const Navbar: React.FC = () => {
                         <div className="bg-gray-50 rounded-lg p-2">
                           <div className="flex items-center text-xs font-medium text-gray-700 mb-0.5 font-serif">
                             <Phone className="w-3 h-3 mr-1.5 text-green-600" />
-                            <span>+91 9251582670</span>
+                            <span>+9251582672</span>
                           </div>
                           <div className="text-xs text-gray-500 font-sans">Mon-Sun, 7:00 AM - 7:00 PM</div>
                         </div>
