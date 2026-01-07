@@ -173,12 +173,13 @@ import WeddingGallery from './components/celebrations/WeddingGallery'
 import AdminWedding from './admin/AdminWedding'
 import RoomTariffSection from './pages/Charges'
 import AdminGallery from './admin/AdminGallerywedding'
+import RoomManager from './admin/RoomManager'
 function AppRoutes() {
   const location = useLocation()
 
   // Define routes where layout should be hidden
 
-  const hideLayoutPaths = ['/login', '/register', '/customers' , '/dashboard' , '/applications', '/changes','/admin-hero','/admin-gallery','/admin-wedding','/admin-wedding-gallery',]
+  const hideLayoutPaths = ['/login', '/register', '/customers' , '/dashboard' , '/applications', '/changes','/admin-hero','/admin-gallery','/admin-wedding','/admin-wedding-gallery','/Room-manager',]
   const hideLayout = hideLayoutPaths.includes(location.pathname)
 
   return (
@@ -256,6 +257,7 @@ function AppRoutes() {
           <Route path="/admin-gallery" element={<AdminGalleryManager />} />
           <Route path="/admin-wedding" element={<AdminWedding />} />
           <Route path="/admin-wedding-gallery" element={<AdminGallery />} />
+          <Route path="/Room-manager" element={<RoomManager />} />
         </Routes>
       )}
     </>

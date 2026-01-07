@@ -5978,7 +5978,7 @@ const WeddingPage: React.FC = () => {
               <div className="flex items-center space-x-4">
                 <Phone className="w-5 h-5 text-white" />
                 <span className="text-white font-semibold text-lg">
-                  For Wedding & Events Contact: 925158271, 925158273
+                  For Wedding & Events Contact: 9251582671, 9251582673
                 </span>
               </div>
               <div className="w-2 h-2 bg-white rounded-full"></div>
@@ -6275,7 +6275,7 @@ const WeddingPage: React.FC = () => {
                       }}
                     />
                     <User className="w-4 h-4 text-emerald-300" />
-                    <span className="text-lg font-semibold text-white group-hover/number:text-emerald-200 transition-colors duration-200">925158271</span>
+                    <span className="text-lg font-semibold text-white group-hover/number:text-emerald-200 transition-colors duration-200">9251582671</span>
                     <motion.div
                       className="opacity-0 group-hover/number:opacity-100 transition-opacity duration-200"
                       animate={{
@@ -6312,7 +6312,7 @@ const WeddingPage: React.FC = () => {
                       }}
                     />
                     <User className="w-4 h-4 text-green-300" />
-                    <span className="text-lg font-semibold text-white group-hover/number:text-green-200 transition-colors duration-200">925158273</span>
+                    <span className="text-lg font-semibold text-white group-hover/number:text-green-200 transition-colors duration-200">9251582673</span>
                     <motion.div
                       className="opacity-0 group-hover/number:opacity-100 transition-opacity duration-200"
                       animate={{
