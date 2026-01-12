@@ -376,7 +376,7 @@ const therapies = [
     icon: <FaWater className="text-blue-400" />
   },
   {
-    name: 'Tratak',
+    name: 'Trataka',
     image: tratak,
     content:
       'The ancient yogic practice of focused gazing that develops concentration and inner vision through disciplined eye exercises.',

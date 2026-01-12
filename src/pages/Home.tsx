@@ -4682,7 +4682,7 @@ const Home: React.FC = () => {
       viewport={{ once: true }}
     >
       <button className="inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-full text-white bg-[#4a7d52] hover:bg-[#3E5F44] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
-        Free consultancy
+        Free consultant
       </button>
     </motion.div>
   </div>
