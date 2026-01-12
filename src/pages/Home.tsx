@@ -3978,6 +3978,8 @@ import image11 from "../assets/Cervical Spondylitis1.png";
 import image55 from "../assets/physiotherapy.jpg";
 import GallerySection from '../components/Herocompo/Gallerysection';
 import HeroSection from '../components/Herocompo/HeroSection';
+import { Link } from 'react-router-dom';
+
 
 const Home: React.FC = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
@@ -4367,7 +4369,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Therapies Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-white to-[#DDF4E7]">
+      {/* <section className="py-20 px-4 bg-gradient-to-b from-white to-[#DDF4E7]">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -4429,7 +4431,91 @@ const Home: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+
+ 
+   <section className="py-20 px-4 bg-gradient-to-b from-white to-[#DDF4E7]">
+  <div className="max-w-7xl mx-auto text-center">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="mb-16"
+    >
+      <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-2">
+        Popular Therapies
+      </h2>
+      <div className="flex justify-center items-center">
+        <div className="w-16 h-1 bg-[#4a7d52] mr-3"></div>
+        <HeartPulse className="text-[#3E5F44] w-6 h-6" />
+        <div className="w-16 h-1 bg-[#4a7d52] ml-3"></div>
+      </div>
+    </motion.div>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {[
+        { 
+          title: "Mud Therapy", 
+          image: image2,
+          link: "/narutopathy?therapy=mud-pack" // Added query parameter
+        },
+        { 
+          title: "Hydro Therapy", 
+          image: image3,
+          link: "/narutopathy?therapy=colon-hydrotherapy" // Added query parameter
+        },
+        { 
+          title: "Massage Therapy", 
+          image: image4,
+          link: "/narutopathy?therapy=hands-on-therapy" // Added query parameter
+        },
+        { 
+          title: "Physiotherapy", 
+          image: image55,
+          link: "/narutopathy" // No specific therapy for this one
+        },
+      ].map((therapy, index) => (
+        <Link 
+          to={therapy.link} 
+          key={index}
+          className="block no-underline"
+        >
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -10 }}
+            className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all group flex flex-col h-full cursor-pointer"
+          >
+            <div className="h-48 overflow-hidden relative">
+              <img 
+                src={therapy.image} 
+                alt={therapy.title} 
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+            </div>
+            <div className="p-6 flex flex-col flex-grow">
+              <h3 className="text-xl font-semibold text-gray-800 mb-1">{therapy.title}</h3>
+     
+              <div className="mt-2 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="text-sm text-[#4a7d52] font-medium">Click to learn more</span>
+                <svg className="w-4 h-4 ml-1 text-[#4a7d52]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </div>
+            </div>
+          </motion.div>
+        </Link>
+      ))}
+    </div>
+  </div>
+</section>
+
+   
+     
 
       {/* Testimonials Section */}
       <section className="relative py-20 px-4 text-white overflow-hidden">
@@ -4504,7 +4590,7 @@ const Home: React.FC = () => {
       <GallerySection />
 
       {/* Blog Section */}
-      <section className="py-20 px-4 bg-green-50">
+      {/* <section className="py-20 px-4 bg-green-50">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -4545,7 +4631,62 @@ const Home: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+
+      <section className="py-20 px-4 bg-green-50">
+  <div className="max-w-7xl mx-auto text-center">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="mb-16"
+    >
+      <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-4">
+        Nowal Wisdom
+      </h2>
+      <div className="flex justify-center items-center">
+        <div className="w-16 h-1 bg-[#4a7d52] mr-3"></div>
+        <BadgePlus className="text-[#3E5F44] w-6 h-6" />
+        <div className="w-16 h-1 bg-[#4a7d52] ml-3"></div>
+      </div>
+    </motion.div>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-12">
+      {blogPosts.map((post, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          viewport={{ once: true }}
+          whileHover={{ scale: 1.03 }}
+          className="rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all group"
+        >
+          <div className="aspect-w-16 aspect-h-10">
+            <img
+              src={post.image}
+              alt="Blog post"
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+          </div>
+        </motion.div>
+      ))}
+    </div>
+
+    {/* Free Consultancy Button */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.3 }}
+      viewport={{ once: true }}
+    >
+      <button className="inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-full text-white bg-[#4a7d52] hover:bg-[#3E5F44] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
+        Free consultancy
+      </button>
+    </motion.div>
+  </div>
+    </section>
     </div>
   )
 }

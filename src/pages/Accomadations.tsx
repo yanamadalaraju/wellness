@@ -237,7 +237,9 @@ const EconomyAccommodation: React.FC = () => {
               { icon: '📺', name: 'TV' },
               { icon: '❄️', name: 'AC/Fan' },
               { icon: '🔒', name: 'Lockers' },
-              { icon: '🍸', name: 'Mini Bar' },
+              // { icon: '🍸', name: 'Mini Bar' },
+              { icon: '🧊', name: 'Mini Fridge' },
+
               { icon: '🌿', name: 'Green View' }
             ].map((amenity, index) => (
               <div key={index} className="bg-white p-6 rounded-xl shadow-md text-center">

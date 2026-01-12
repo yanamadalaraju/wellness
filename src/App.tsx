@@ -174,6 +174,7 @@ import AdminWedding from './admin/AdminWedding'
 import RoomTariffSection from './pages/Charges'
 import AdminGallery from './admin/AdminGallerywedding'
 import RoomManager from './admin/RoomManager'
+import BlogPage from './pages/Blog'
 function AppRoutes() {
   const location = useLocation()
 
@@ -238,6 +239,7 @@ function AppRoutes() {
              <Route path="/faq" element={<FAQPage />} />
              <Route path="/charges" element={<RoomTariffSection />} />
             <Route path="/thank-you" element={<ThankYouPage />} />
+            <Route path="/blog" element={<BlogPage />} />
 
           </Routes>
           <WhatsAppButton />

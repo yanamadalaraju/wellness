@@ -73,14 +73,14 @@ const Ayurveda: React.FC = () => {
       </div>
 
       {/* New Content Section */}
-  <section className="py-20 px-6 md:px-10 bg-[#F8F9F4] text-[#435334]">
+  {/* <section className="py-20 px-6 md:px-10 bg-[#F8F9F4] text-[#435334]">
   <div className="max-w-4xl mx-auto text-center">
-    {/* Title */}
+   
     <h2 className="text-3xl md:text-4xl font-serif font-semibold mb-6 tracking-wide">
       We Provide Selective Ayurvedic Treatments
     </h2>
 
-    {/* Decorative line under heading */}
+    
     <div className="flex justify-center items-center mb-8">
       <div className="w-12 h-px bg-[#435334]/40"></div>
       <svg className="mx-3 w-5 h-5 text-[#435334]" fill="currentColor" viewBox="0 0 20 20">
@@ -89,12 +89,12 @@ const Ayurveda: React.FC = () => {
       <div className="w-12 h-px bg-[#435334]/40"></div>
     </div>
 
-    {/* Quote */}
+   
     <blockquote className="text-xl md:text-2xl font-light italic text-[#647160] mb-10 leading-relaxed">
       "Nature cures, not the physician. At nowal, we simply facilitate the body's innate healing capacity through time-tested naturopathic principles."
     </blockquote>
 
-    {/* Content */}
+    
     <div className="text-lg md:text-xl leading-relaxed text-justify space-y-6 text-[#435334]/90">
       <p>
         Ayurveda helps maintain good health and well-being by embracing a preventive and personalized approach to care.
@@ -110,7 +110,84 @@ const Ayurveda: React.FC = () => {
       </p>
     </div>
   </div>
+</section> */}
+
+
+<section className="py-20 px-6 md:px-10 bg-[#F8F9F4] text-[#435334]">
+  <div className="max-w-4xl mx-auto text-center">
+    {/* Title */}
+    <h2 className="text-3xl md:text-4xl font-serif font-semibold mb-6 tracking-wide">
+      We Provide Selective Ayurvedic Treatments
+    </h2>
+
+    {/* Decorative line under heading */}
+    <div className="flex justify-center items-center mb-8">
+      <div className="w-12 h-px bg-[#435334]/40"></div>
+      <svg
+        className="mx-3 w-5 h-5 text-[#435334]"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+      >
+        <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z" />
+      </svg>
+      <div className="w-12 h-px bg-[#435334]/40"></div>
+    </div>
+
+    {/* Quote */}
+    <blockquote className="text-xl md:text-2xl font-light italic text-[#647160] mb-10 leading-relaxed">
+      “Ayurveda empowers individuals to live in harmony with nature, awakening the body’s innate intelligence to heal, restore, and sustain life.”
+    </blockquote>
+
+    {/* Content */}
+    <div className="text-lg md:text-xl leading-relaxed text-justify space-y-6 text-[#435334]/90">
+      <p>
+        Ayurveda, revered as the timeless{" "}
+        <span className="italic font-medium">“Science of Life,”</span> is a
+        comprehensive system of natural healing that promotes lasting health,
+        balance, and well-being through a deeply preventive and personalised
+        approach.
+      </p>
+
+      <p>
+        Originating in India and refined across millennia, Ayurveda stands among
+        the world’s most sophisticated and enduring healing sciences—distinguished
+        by its profound understanding of human vitality, balance, and long-term
+        well-being. Rather than focusing solely on disease, it empowers
+        individuals to maintain harmony between body, mind, and spirit—laying the
+        foundation for sustained wellness.
+      </p>
+
+      <p>
+        Rooted in the wisdom of the{" "}
+        <span className="font-medium">
+          five fundamental elements—Earth, Water, Fire, Air, and Ether—
+        </span>
+        Ayurveda views each individual as a unique expression of the greater
+        cosmic whole. Health is achieved when these elemental energies remain in
+        balance, while imbalance is recognised as the true origin of disease.
+      </p>
+
+      <p>
+        The true essence of Ayurveda lies in its holistic philosophy—addressing
+        not only physical ailments, but also emotional, psychological, and
+        spiritual well-being. Through personalised therapies, herbal
+        formulations, therapeutic diets, lifestyle guidance, and mindful
+        practices, Ayurveda supports natural detoxification, strengthens
+        immunity, improves digestion, and restores inner equilibrium.
+      </p>
+
+      <p>
+        At <span className="font-semibold">Nowal NatureCare</span>, Ayurveda is
+        practised as a sacred art of healing—bringing the body’s energies into
+        balance and nurturing deep, transformative harmony at every level of
+        being. Each treatment is thoughtfully designed to awaken the body’s
+        innate healing intelligence and guide you toward a life of vitality,
+        clarity, and natural wellness.
+      </p>
+    </div>
+  </div>
 </section>
+
 
 
 

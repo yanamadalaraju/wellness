@@ -474,6 +474,95 @@ const DietPage = () => {
         </div>
       </section>
 
+
+      <section className="py-16 px-4 md:px-8 bg-[#F8F9F4]">
+  <div className="max-w-4xl mx-auto text-center">
+    <h2 className="text-3xl md:text-4xl font-playfair text-sage-600 mb-6">
+      Natural Food & Fasting Therapy
+    </h2>
+
+    <blockquote className="text-xl md:text-2xl font-playfair italic text-sage-500 mb-10">
+      “When digestion rests, healing begins.”
+    </blockquote>
+
+    <div className="space-y-6 text-lg text-gray-700 text-justify">
+      <p>
+        Natural Food and Fasting Therapy is an integral healing approach within
+        naturopathy and nature cure, designed to support the body through
+        plant-based nutrition and structured therapeutic fasting. This method is
+        guided by the principle that the human body possesses an inherent
+        capacity for self-healing when supported with pure nourishment,
+        digestive rest, and internal balance.
+      </p>
+
+      <p>
+        Modern dietary habits—characterised by processed foods, irregular eating
+        patterns, excess intake, and chronic stress—place continuous strain on
+        the digestive system. Over time, this can lead to toxin accumulation,
+        metabolic inefficiency, reduced energy levels, and impaired gut
+        function. Natural food therapy emphasises fresh fruits, vegetables,
+        whole grains, sprouts, nuts, and natural fluids, while fasting therapy
+        introduces guided periods of digestive rest—allowing the body to direct
+        its energy toward cleansing, repair, and renewal.
+      </p>
+
+      <p className="font-semibold text-sage-600">
+        How Natural Food & Fasting Therapy Supports Healing
+      </p>
+
+      <ul className="list-disc list-inside space-y-2">
+        <li>Minimises digestive overload and metabolic strain</li>
+        <li>Activates natural detoxification processes</li>
+        <li>Enhances digestion, absorption, and gut balance</li>
+        <li>Supports hormonal regulation and metabolic efficiency</li>
+        <li>Encourages mental clarity, emotional steadiness, and vitality</li>
+      </ul>
+
+      <p>
+        Fasting protocols may include liquid fasting, juice fasting, mono-diet
+        plans, or supervised partial fasting—carefully selected based on
+        individual health status and wellness objectives.
+      </p>
+
+      <p className="font-semibold text-sage-600">Health Benefits</p>
+
+      <ul className="list-disc list-inside space-y-2">
+        <li>Digestive discomfort and reduced appetite regulation</li>
+        <li>Weight balance and improved metabolic health</li>
+        <li>Reduction of toxin buildup and persistent fatigue</li>
+        <li>Support for hormonal balance and lifestyle-related conditions</li>
+        <li>Enhanced immune resilience and sustained energy</li>
+        <li>Mental relaxation, focus, and stress reduction</li>
+      </ul>
+
+      <p className="font-semibold text-sage-600">Role in Naturopathy</p>
+
+      <p>
+        Within naturopathy, Natural Food and Fasting Therapy is considered a
+        core therapeutic discipline, most effective when integrated with
+        hydrotherapy, mud therapy, massage therapy, yoga, and lifestyle
+        modification. By combining nutrient-dense natural foods with guided
+        fasting, the digestive system receives essential rest—allowing the body
+        to re-establish internal balance.
+      </p>
+
+      <p>
+        This integrated approach supports detoxification, cellular restoration,
+        metabolic recalibration, and improved nutrient utilisation—gradually
+        fostering harmony between physical health, mental well-being, and the
+        natural environment.
+      </p>
+
+      <blockquote className="mt-10 border-l-4 border-sage-600 pl-4 italic text-gray-600">
+        At our table, food is more than sustenance—it is a gentle medium of
+        healing. Fresh, natural, and mindfully prepared meals nourish the body
+        while restoring balance from within.
+      </blockquote>
+    </div>
+  </div>
+    </section>
+
+
       {/* Quotes Section */}
       {/* <section>
         <h2 className="text-2xl font-semibold text-green-800 mb-6 border-b-2 border-green-200 pb-2">Words of Wisdom</h2>

@@ -106,7 +106,229 @@
 
 
 
-import React, { useState } from 'react';
+
+
+
+
+
+// import React, { useState } from 'react';
+// import { FaCheckCircle, FaOm, FaWater, FaHandsHelping, FaEye } from 'react-icons/fa';
+// import { motion, AnimatePresence } from 'framer-motion';
+// import jalneti from '../assets/jalneti.jpg';
+// import tratak from '../assets/traktra.jpg';
+// import aquaticyoga from '../assets/auqaticyoga.jpg';
+// import MantraCard from './YogaCompo/MantraCard';
+
+// const therapies = [
+//   {
+//     name: 'Mantra Chanting',
+//     image: 'https://i.pinimg.com/736x/ff/49/d1/ff49d1340c81903735ecf104514453bd.jpg',
+//     content: 'Om Chanting Om chanting is a sacred sound meditation that calms the mind, balances energy, and connects you with universal consciousness—bringing deep peace, clarity, and spiritual alignment',
+//     benefits: [
+//       'Reduces stress and anxiety',
+//       'Enhances mental clarity',
+//       'Elevates spiritual connection',
+//       'Balances energy centers'
+//     ],
+//     icon: <FaOm className="text-purple-400" />
+//   },
+  
+//   {
+//     name: 'Therapeutic Yoga',
+//     image: 'https://www.nimba.in/wp-content/uploads/2020/07/therapeutic-yoga.jpg',
+//     content: 'Yoga Nidra Yoga Nidra is a guided deep relaxation technique that leads the body into a state of conscious rest. It calms the nervous system, reduces stress, and promotes healing—helping you access inner stillness while remaining aware, restoring both mental and physical well-being effortlessly	',
+//     benefits: [
+//       'Alleviates chronic pain',
+//       'Improves joint flexibility',
+//       'Enhances respiratory function',
+//       'Reduces inflammation markers'
+//     ],
+//     icon: <FaHandsHelping className="text-amber-500" />
+//   },
+//   {
+//     name: 'Jal Neti',
+//     image: jalneti,
+//     content: 'The six purification techniques of classical yoga that deeply cleanse the physical and energetic bodies. These powerful detox methods prepare the system for higher yogic practices while removing accumulated toxins and blockages.',
+//     benefits: [
+//       'Cleanses internal organs',
+//       'Balances doshas',
+//       'Enhances pranic flow',
+//       'Prepares for meditation'
+//     ],
+//     icon: <FaWater className="text-blue-400" />
+//   },
+//   {
+//     name: 'Tratak',
+//     image: tratak,
+//     content: 'The ancient yogic practice of focused gazing that develops concentration and inner vision. Through disciplined eye exercises and candle gazing, we cultivate mental focus while activating the third eye center for heightened intuition.',
+//     benefits: [
+//       'Improves eyesight',
+//       'Enhances concentration',
+//       'Calms the mind',
+//       'Activates pineal gland'
+//     ],
+//     icon: <FaEye className="text-emerald-400" />
+//   },
+//   {
+//     name: 'Aquatic Yoga',
+//     image: aquaticyoga,
+//     content: 'Aquatic Yoga or exercise is the best easiest practices in joint pain conditions and compromised health conditions.  ',
+//     benefits: [
+//       'Reduces impact on joints',
+//       'Improves range of motion',
+//       'Enhances proprioception',
+//       'Deepens relaxation response'
+//     ],
+//     icon: <FaWater className="text-cyan-400" />
+//   }
+// ];
+
+// const YogaTherapySection = () => {
+//   const [selected, setSelected] = useState(therapies[2]);
+//   const [isHovering, setIsHovering] = useState(false);
+
+//   return (
+//     <section className="relative bg-gradient-to-br from-[#f8f9f5] to-[#eef0e8] py-16 md:py-24 px-4 md:px-8 overflow-hidden">
+//       {/* Decorative elements */}
+//       <div className="absolute inset-0 pointer-events-none">
+//         <div className="absolute top-20 left-10 w-40 h-40 rounded-full bg-sage-100/30 blur-3xl"></div>
+//         <div className="absolute bottom-1/4 right-20 w-60 h-60 rounded-full bg-cream-200/20 blur-3xl"></div>
+//       </div>
+
+//       <div className="max-w-7xl mx-auto relative z-10">
+//         {/* Section header */}
+//         <div className="text-center mb-12">
+//           <span className="inline-block mb-3 text-sm uppercase tracking-widest text-sage-600 font-semibold">
+//             Yogic Practices
+//           </span>
+//           <h2 className="text-3xl md:text-4xl font-bold font-playfair text-gray-900 mb-3">
+//             Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-sage-600 to-sage-400">Yoga Therapies</span>
+//           </h2>
+//           <p className="text-gray-600 max-w-2xl mx-auto">
+//             Ancient wisdom meets modern therapeutic application for holistic healing
+//           </p>
+//         </div>
+
+//         {/* Therapy Navigation */}
+//         <div className="flex justify-center mb-12">
+//           <div className="inline-flex rounded-full bg-white p-1 shadow-lg border border-gray-100">
+//             {therapies.map((therapy) => (
+//               <button
+//                 key={therapy.name}
+//                 onClick={() => setSelected(therapy)}
+//                 className={`relative px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
+//                   selected.name === therapy.name
+//                     ? 'text-white bg-gradient-to-r from-sage-500 to-sage-600 shadow-md'
+//                     : 'text-gray-700 hover:text-sage-600 hover:bg-sage-50'
+//                 }`}
+//               >
+//                 {therapy.icon}
+//                 {therapy.name}
+//               </button>
+//             ))}
+//           </div>
+//         </div>
+
+//         {/* Therapy Content */}
+//         <div className="relative">
+//           {/* Fixed-size image container */}
+//           <AnimatePresence mode="wait">
+//             <motion.div
+//               key={selected.name}
+//               initial={{ opacity: 0, y: 20 }}
+//               animate={{ opacity: 1, y: 0 }}
+//               exit={{ opacity: 0, y: -20 }}
+//               transition={{ duration: 0.5 }}
+//               className="relative z-10 flex justify-center mb-6 md:-mb-20"
+//               onMouseEnter={() => setIsHovering(true)}
+//               onMouseLeave={() => setIsHovering(false)}
+//             >
+//               <div className="relative w-full max-w-4xl h-56 md:h-72 rounded-2xl overflow-hidden shadow-xl">
+//                 <motion.img
+//                   src={selected.image}
+//                   alt={selected.name}
+//                   className="w-full h-full object-cover"
+//                   animate={{
+//                     scale: isHovering ? 1.05 : 1,
+//                   }}
+//                   transition={{ duration: 0.5 }}
+//                 />
+//                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent"></div>
+//                 <div className="absolute bottom-0 left-0 p-4 md:p-6 text-white">
+//                   <h3 className="text-xl md:text-2xl font-bold">{selected.name}</h3>
+//                   <p className="text-sage-100 text-sm md:text-base">Traditional Yoga Practice</p>
+//                 </div>
+//               </div>
+//             </motion.div>
+//           </AnimatePresence>
+
+//           {/* Content panel */}
+//           <AnimatePresence mode="wait">
+//             <motion.div
+//               key={selected.name + "content"}
+//               initial={{ opacity: 0, y: 20 }}
+//               animate={{ opacity: 1, y: 0 }}
+//               exit={{ opacity: 0, y: -20 }}
+//               transition={{ duration: 0.5, delay: 0.2 }}
+//               className="relative bg-white/90 backdrop-blur-sm border border-gray-100 pt-20 md:pt-24 pb-10 md:pb-12 px-6 md:px-10 rounded-2xl shadow-lg"
+//             >
+//               <div className="grid md:grid-cols-2 gap-8 md:gap-10">
+//                 {/* Description */}
+//                 <div>
+//                   <h3 className="text-2xl font-bold font-playfair text-gray-900 mb-4">
+//                     About {selected.name}
+//                   </h3>
+//                   <p className="text-gray-700 leading-relaxed mb-6">
+//                     {selected.content}
+//                   </p>
+//                   {/* <button className="px-5 py-2.5 bg-gradient-to-r from-sage-500 to-sage-600 text-white font-medium rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 text-sm">
+//                     Book This Session
+//                     <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+//                       <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+//                     </svg>
+//                   </button> */}
+//                 </div>
+
+//                 {/* Benefits */}
+//                 <div>
+//                   <h4 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
+//                     <FaCheckCircle className="text-sage-500" />
+//                     Key Benefits
+//                   </h4>
+//                   <ul className="space-y-3">
+//                     {selected.benefits.map((benefit, idx) => (
+//                       <motion.li
+//                         key={idx}
+//                         initial={{ opacity: 0, x: -20 }}
+//                         animate={{ opacity: 1, x: 0 }}
+//                         transition={{ delay: 0.3 + idx * 0.1 }}
+//                         className="flex items-start gap-3 bg-sage-50/50 px-4 py-3 rounded-lg text-gray-800 border border-sage-100 hover:border-sage-200 transition-colors text-sm"
+//                       >
+//                         <svg className="w-4 h-4 text-sage-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+//                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+//                         </svg>
+//                         <span>{benefit}</span>
+//                       </motion.li>
+//                     ))}
+//                   </ul>
+//                 </div>
+//               </div>
+//             </motion.div>
+//           </AnimatePresence>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default YogaTherapySection;
+
+
+
+
+
+
+import React, { useState, useEffect } from 'react';
 import { FaCheckCircle, FaOm, FaWater, FaHandsHelping, FaEye } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import jalneti from '../assets/jalneti.jpg';
@@ -117,7 +339,8 @@ const therapies = [
   {
     name: 'Mantra Chanting',
     image: 'https://i.pinimg.com/736x/ff/49/d1/ff49d1340c81903735ecf104514453bd.jpg',
-    content: 'Om Chanting Om chanting is a sacred sound meditation that calms the mind, balances energy, and connects you with universal consciousness—bringing deep peace, clarity, and spiritual alignment',
+    content:
+      'Om Chanting is a sacred sound meditation that calms the mind, balances energy, and connects you with universal consciousness—bringing deep peace, clarity, and spiritual alignment.',
     benefits: [
       'Reduces stress and anxiety',
       'Enhances mental clarity',
@@ -129,7 +352,8 @@ const therapies = [
   {
     name: 'Therapeutic Yoga',
     image: 'https://www.nimba.in/wp-content/uploads/2020/07/therapeutic-yoga.jpg',
-    content: 'Yoga Nidra Yoga Nidra is a guided deep relaxation technique that leads the body into a state of conscious rest. It calms the nervous system, reduces stress, and promotes healing—helping you access inner stillness while remaining aware, restoring both mental and physical well-being effortlessly	',
+    content:
+      'Yoga Nidra is a guided deep relaxation technique that leads the body into a state of conscious rest, calming the nervous system and promoting healing.',
     benefits: [
       'Alleviates chronic pain',
       'Improves joint flexibility',
@@ -141,7 +365,8 @@ const therapies = [
   {
     name: 'Jal Neti',
     image: jalneti,
-    content: 'The six purification techniques of classical yoga that deeply cleanse the physical and energetic bodies. These powerful detox methods prepare the system for higher yogic practices while removing accumulated toxins and blockages.',
+    content:
+      'The six purification techniques of classical yoga that deeply cleanse the physical and energetic bodies, preparing the system for higher yogic practices.',
     benefits: [
       'Cleanses internal organs',
       'Balances doshas',
@@ -153,7 +378,8 @@ const therapies = [
   {
     name: 'Tratak',
     image: tratak,
-    content: 'The ancient yogic practice of focused gazing that develops concentration and inner vision. Through disciplined eye exercises and candle gazing, we cultivate mental focus while activating the third eye center for heightened intuition.',
+    content:
+      'The ancient yogic practice of focused gazing that develops concentration and inner vision through disciplined eye exercises.',
     benefits: [
       'Improves eyesight',
       'Enhances concentration',
@@ -165,7 +391,8 @@ const therapies = [
   {
     name: 'Aquatic Yoga',
     image: aquaticyoga,
-    content: 'Aquatic Yoga or exercise is the best easiest practices in joint pain conditions and compromised health conditions.  ',
+    content:
+      'Aquatic Yoga is a gentle yet powerful practice ideal for joint pain and compromised health conditions.',
     benefits: [
       'Reduces impact on joints',
       'Improves range of motion',
@@ -176,20 +403,47 @@ const therapies = [
   }
 ];
 
+/* -------- FULL CONTENT ONLY FOR MANTRA CHANTING -------- */
+const fullTherapyContent: Record<string, string> = {
+  'Mantra Chanting': `
+Mantra chanting is an ancient spiritual practice that uses sacred sound vibrations to harmonise the body, calm the mind, and awaken inner awareness. Rooted in India’s timeless wisdom traditions, mantra chanting has been practiced for thousands of years as a powerful tool for healing, meditation, and spiritual growth.
+ OM Chanting
+All mantra practices traditionally begin with OM (AUM)—the primordial sound believed to be the original vibration of the universe. OM represents the union of creation, preservation, and transformation, resonating through the physical, mental, and subtle layers of the being.
+Chanting OM creates a gentle yet profound vibration that travels through the body, stimulating the nervous system, balancing brain activity, and aligning the breath with awareness. This vibration helps slow the mind, deepen concentration, and prepare the body for meditation and healing practices.
+ How Mantra Chanting Works
+Ancient sages understood that sound is energy. Every mantra, when pronounced correctly (mantra ucharan), generates specific vibrational frequencies that influence the body’s energy channels (nadis) and subtle centers (chakras). These vibrations help dissolve energetic blockages and restore natural balance.
+Modern science supports this wisdom—studies show that rhythmic chanting can regulate the vagus nerve, reduce stress hormones, and enhance emotional stability by calming the autonomic nervous system.
+ Why Our Ancestors Believed in Mantra Vibrations
+Ancient Indian seers observed that the universe itself functions through vibration—from the movement of stars to the rhythm of breath. They recognised that precise sound vibrations could influence consciousness, health, and the environment.
+Mantras were not created as words but experienced as sounds, revealed through deep meditation. When chanted with awareness, these sounds resonate with natural frequencies, creating harmony between the individual and the cosmos.
+ Benefits of Mantra Chanting
+•	Deep relaxation and mental calm
+•	Reduced stress, anxiety, and emotional turbulence
+•	Improved focus and mental clarity
+•	Balanced nervous system and breath rhythm
+•	Enhanced spiritual awareness and inner peace
+•	Supportive healing for lifestyle and stress-related conditions
+
+Mantra Chanting at NNC
+At our centre, mantra chanting is gently integrated into daily wellness routines—beginning with OM chanting and progressing into guided meditative practices. This sacred sound therapy supports emotional detoxification, mental stillness, and a deeper connection to one’s inner self, enhancing the effectiveness of all healing therapies.
+
+`
+};
+
 const YogaTherapySection = () => {
-  const [selected, setSelected] = useState(therapies[2]);
+  const [selected, setSelected] = useState(therapies[0]);
+  const [expanded, setExpanded] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
+
+  /* Reset Learn More when tab changes */
+  useEffect(() => {
+    setExpanded(false);
+  }, [selected.name]);
 
   return (
     <section className="relative bg-gradient-to-br from-[#f8f9f5] to-[#eef0e8] py-16 md:py-24 px-4 md:px-8 overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-10 w-40 h-40 rounded-full bg-sage-100/30 blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-20 w-60 h-60 rounded-full bg-cream-200/20 blur-3xl"></div>
-      </div>
-
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Section header */}
+        {/* Header */}
         <div className="text-center mb-12">
           <span className="inline-block mb-3 text-sm uppercase tracking-widest text-sage-600 font-semibold">
             Yogic Practices
@@ -202,14 +456,14 @@ const YogaTherapySection = () => {
           </p>
         </div>
 
-        {/* Therapy Navigation */}
+        {/* Tabs */}
         <div className="flex justify-center mb-12">
           <div className="inline-flex rounded-full bg-white p-1 shadow-lg border border-gray-100">
             {therapies.map((therapy) => (
               <button
                 key={therapy.name}
                 onClick={() => setSelected(therapy)}
-                className={`relative px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
+                className={`px-6 py-3 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${
                   selected.name === therapy.name
                     ? 'text-white bg-gradient-to-r from-sage-500 to-sage-600 shadow-md'
                     : 'text-gray-700 hover:text-sage-600 hover:bg-sage-50'
@@ -222,92 +476,75 @@ const YogaTherapySection = () => {
           </div>
         </div>
 
-        {/* Therapy Content */}
-        <div className="relative">
-          {/* Fixed-size image container */}
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={selected.name}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
-              className="relative z-10 flex justify-center mb-6 md:-mb-20"
-              onMouseEnter={() => setIsHovering(true)}
-              onMouseLeave={() => setIsHovering(false)}
-            >
-              <div className="relative w-full max-w-4xl h-56 md:h-72 rounded-2xl overflow-hidden shadow-xl">
-                <motion.img
-                  src={selected.image}
-                  alt={selected.name}
-                  className="w-full h-full object-cover"
-                  animate={{
-                    scale: isHovering ? 1.05 : 1,
-                  }}
-                  transition={{ duration: 0.5 }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 p-4 md:p-6 text-white">
-                  <h3 className="text-xl md:text-2xl font-bold">{selected.name}</h3>
-                  <p className="text-sage-100 text-sm md:text-base">Traditional Yoga Practice</p>
-                </div>
-              </div>
-            </motion.div>
-          </AnimatePresence>
+        {/* Image */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={selected.name}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="flex justify-center mb-6 md:-mb-20"
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
+          >
+            <div className="w-full max-w-4xl h-56 md:h-72 rounded-2xl overflow-hidden shadow-xl">
+              <motion.img
+                src={selected.image}
+                alt={selected.name}
+                className="w-full h-full object-cover"
+                animate={{ scale: isHovering ? 1.05 : 1 }}
+                transition={{ duration: 0.5 }}
+              />
+            </div>
+          </motion.div>
+        </AnimatePresence>
 
-          {/* Content panel */}
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={selected.name + "content"}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="relative bg-white/90 backdrop-blur-sm border border-gray-100 pt-20 md:pt-24 pb-10 md:pb-12 px-6 md:px-10 rounded-2xl shadow-lg"
-            >
-              <div className="grid md:grid-cols-2 gap-8 md:gap-10">
-                {/* Description */}
-                <div>
-                  <h3 className="text-2xl font-bold font-playfair text-gray-900 mb-4">
-                    About {selected.name}
-                  </h3>
-                  <p className="text-gray-700 leading-relaxed mb-6">
-                    {selected.content}
-                  </p>
-                  {/* <button className="px-5 py-2.5 bg-gradient-to-r from-sage-500 to-sage-600 text-white font-medium rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 text-sm">
-                    Book This Session
-                    <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
-                  </button> */}
-                </div>
+        {/* Content */}
+        <div className="relative bg-white/90 backdrop-blur-sm border border-gray-100 pt-20 md:pt-24 pb-10 px-6 md:px-10 rounded-2xl shadow-lg">
+          <div className="grid md:grid-cols-2 gap-10">
+            <div>
+              <h3 className="text-2xl font-bold font-playfair mb-4">
+                About {selected.name}
+              </h3>
 
-                {/* Benefits */}
-                <div>
-                  <h4 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                    <FaCheckCircle className="text-sage-500" />
-                    Key Benefits
-                  </h4>
-                  <ul className="space-y-3">
-                    {selected.benefits.map((benefit, idx) => (
-                      <motion.li
-                        key={idx}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.3 + idx * 0.1 }}
-                        className="flex items-start gap-3 bg-sage-50/50 px-4 py-3 rounded-lg text-gray-800 border border-sage-100 hover:border-sage-200 transition-colors text-sm"
-                      >
-                        <svg className="w-4 h-4 text-sage-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                        <span>{benefit}</span>
-                      </motion.li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </motion.div>
-          </AnimatePresence>
+              <p className="text-gray-700 leading-relaxed whitespace-pre-line mb-4">
+                {expanded && fullTherapyContent[selected.name]
+                  ? selected.content + fullTherapyContent[selected.name]
+                  : selected.content}
+              </p>
+
+              {/* Learn More ONLY for Mantra Chanting */}
+              {fullTherapyContent[selected.name] && (
+                <button
+                  onClick={() => setExpanded(!expanded)}
+                  className="text-sage-600 font-medium hover:underline transition"
+                >
+                  {expanded ? 'Show Less ▲' : 'Learn More ▼'}
+                </button>
+              )}
+            </div>
+
+            <div>
+              <h4 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <FaCheckCircle className="text-sage-500" />
+                Key Benefits
+              </h4>
+              <ul className="space-y-3">
+                {selected.benefits.map((benefit, idx) => (
+                  <motion.li
+                    key={idx}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.3 + idx * 0.1 }}
+                    className="flex items-start gap-3 bg-sage-50/50 px-4 py-3 rounded-lg text-sm"
+                  >
+                    <FaCheckCircle className="text-sage-500 mt-1" />
+                    <span>{benefit}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -315,3 +552,4 @@ const YogaTherapySection = () => {
 };
 
 export default YogaTherapySection;
+
