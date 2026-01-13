@@ -18,13 +18,15 @@ interface Room {
   id: number;
   name: string;
   description: string;
-  image_path?: string;
-  image_url?: string;
+  image_path?: string;       // existing single image path
+  image_url?: string;        // existing single image URL
+  images?: string[];         // new: array of multiple image URLs
   display_order: number;
   is_active: boolean;
   created_at?: string;
   updated_at?: string;
 }
+
 
 interface ApiResponse {
   success: boolean;
@@ -39,9 +41,13 @@ const EconomyAccommodation: React.FC = () => {
   const navigate = useNavigate();
   const [rooms, setRooms] = useState<Room[]>([]);
   const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [activeRoomImages, setActiveRoomImages] = useState<string[]>([]);
   const [showBookingModal, setShowBookingModal] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+const [activeRoomIndex, setActiveRoomIndex] = useState<number>(0); // index of room in tabs
+const [activeSlideIndex, setActiveSlideIndex] = useState<number>(0); // index of image inside that room
+
 
   // Fetch rooms from API
   useEffect(() => {
@@ -77,18 +83,21 @@ const EconomyAccommodation: React.FC = () => {
 
     fetchRooms();
   }, []);
+const handleNext = () => {
+  if (rooms.length > 0) {
+    const nextIndex = (activeRoomIndex + 1) % rooms.length;
+    setActiveRoomIndex(nextIndex);
+    setActiveIndex(nextIndex); // sync tab
+  }
+};
 
-  const handleNext = () => {
-    if (rooms.length > 0) {
-      setActiveIndex((prev) => (prev + 1) % rooms.length);
-    }
-  };
-
-  const handlePrev = () => {
-    if (rooms.length > 0) {
-      setActiveIndex((prev) => (prev - 1 + rooms.length) % rooms.length);
-    }
-  };
+const handlePrev = () => {
+  if (rooms.length > 0) {
+    const prevIndex = (activeRoomIndex - 1 + rooms.length) % rooms.length;
+    setActiveRoomIndex(prevIndex);
+    setActiveIndex(prevIndex); // sync tab
+  }
+};
 
   if (loading) {
     return (
@@ -150,65 +159,92 @@ const EconomyAccommodation: React.FC = () => {
               <div className="flex overflow-x-auto pb-2 mb-8 hide-scrollbar">
                 <div className="flex space-x-2 min-w-max">
                   {rooms.map((room, index) => (
-                    <button
-                      key={room.id || index}
-                      onClick={() => setActiveIndex(index)}
-                      className={`px-4 py-3 rounded-lg text-center transition-all flex-shrink-0 relative ${
-                        activeIndex === index
-                          ? 'bg-green-700 text-white shadow-md font-semibold'
-                          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                      }`}
-                    >
-                      <span className="text-sm whitespace-nowrap">{room.name}</span>
-                      {activeIndex === index && (
-                        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-green-700 rotate-45 -mb-1.5"></div>
-                      )}
-                    </button>
+                 <button
+                    key={room.id || index}
+                    onClick={() => {
+                      setActiveIndex(index);          // highlight tab
+                      setActiveRoomIndex(index);      // show correct slide
+                    }}
+                    className={`px-4 py-3 rounded-lg text-center transition-all flex-shrink-0 relative ${
+                      activeIndex === index
+                        ? 'bg-green-700 text-white shadow-md font-semibold'
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    }`}
+                  >
+                    <span className="text-sm whitespace-nowrap">{room.name}</span>
+                    {activeIndex === index && (
+                      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-green-700 rotate-45 -mb-1.5"></div>
+                    )}
+                  </button>
+
                   ))}
                 </div>
               </div>
               
               {/* Room Display */}
-              <div className="relative bg-gray-100 rounded-xl overflow-hidden shadow-lg">
-                {rooms.length > 0 && (
-                  <>
-                    <div className="aspect-w-16 aspect-h-9">
-                      <img
-                        src={rooms[activeIndex].image_url || defaultRoomImage}
-                        alt={rooms[activeIndex].name}
-                        className="w-full h-[500px] object-cover"
-                        onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
-                          console.log('Image load error, using default');
-                          e.currentTarget.src = defaultRoomImage;
-                        }}
-                      />
-                    </div>
-                    
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
-                      <h3 className="text-white text-2xl font-bold mb-2">{rooms[activeIndex].name}</h3>
-                      <p className="text-gray-200">{rooms[activeIndex].description}</p>
-                    </div>
-                    
-                    <button
-                      onClick={handlePrev}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70 transition-all"
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                      </svg>
-                    </button>
-                    
-                    <button
-                      onClick={handleNext}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70 transition-all"
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </button>
-                  </>
-                )}
+<div className="relative bg-gray-100 rounded-xl overflow-hidden shadow-lg">
+  {rooms.length > 0 && (
+    <>
+      {/* Image Slider Container */}
+      <div className="w-full h-[500px] relative overflow-hidden">
+        <div
+          className="flex transition-transform duration-500 ease-in-out h-full"
+          style={{ transform: `translateX(-${activeRoomIndex * 100}%)` }}
+        >
+          {rooms.map((room, index) => (
+            <div key={room.id || index} className="w-full flex-shrink-0 h-full relative">
+              <img
+                src={room.images?.[0] || room.image_url || defaultRoomImage}
+                alt={room.name}
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = defaultRoomImage;
+                }}
+              />
+
+              {/* Overlay text */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+                <h3 className="text-white text-2xl font-bold mb-2">{room.name}</h3>
+                <p className="text-gray-200">{room.description}</p>
               </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Prev Button */}
+        <button
+          onClick={handlePrev}
+          className="absolute left-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70 z-20"
+        >
+          &lt;
+        </button>
+
+        {/* Next Button */}
+        <button
+          onClick={handleNext}
+          className="absolute right-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70 z-20"
+        >
+          &gt;
+        </button>
+
+        {/* Dots */}
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+          {rooms.map((_, index) => (
+            <span
+              key={index}
+              onClick={() => setActiveRoomIndex(index)}
+              className={`w-3 h-3 rounded-full cursor-pointer transition-colors duration-300 ${
+                activeRoomIndex === index ? 'bg-green-700' : 'bg-gray-300'
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+    </>
+  )}
+</div>
+
+
               
               {/* Book Now Button */}
               <div className="text-center mt-8">
