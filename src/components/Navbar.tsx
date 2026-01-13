@@ -26757,7 +26757,7 @@ const Navbar: React.FC = () => {
 
                 {/* Blog - Simple Link */}
                 <NavLink
-                  to="#"
+                  to="/blog"
                   className={({ isActive }) =>
                     `flex items-center px-2.5 py-2 rounded-lg transition-all duration-200 font-medium text-sm font-serif whitespace-nowrap ${
                       isActive 

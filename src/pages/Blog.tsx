@@ -82,9 +82,7 @@ export default function BlogPage() {
                   treatments, rich in minerals that detoxify the body, improve
                   circulation, and promote deep relaxation.
                 </p>
-                <span className="text-emerald-600 font-medium text-sm">
-                  Read More →
-                </span>
+             
               </div>
             </motion.div>
 
@@ -110,9 +108,7 @@ export default function BlogPage() {
                   cleanse toxins, boost immunity, and rejuvenate the nervous
                   system naturally.
                 </p>
-                <span className="text-emerald-600 font-medium text-sm">
-                  Read More →
-                </span>
+              
               </div>
             </motion.div>
 
@@ -138,9 +134,7 @@ export default function BlogPage() {
                   enhance emotional wellbeing, forming the foundation of
                   holistic healing.
                 </p>
-                <span className="text-emerald-600 font-medium text-sm">
-                  Read More →
-                </span>
+              
               </div>
             </motion.div>
           </div>
