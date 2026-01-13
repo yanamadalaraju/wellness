@@ -4518,7 +4518,7 @@ const Home: React.FC = () => {
      
 
       {/* Testimonials Section */}
-      <section className="relative py-20 px-4 text-white overflow-hidden">
+      {/* <section className="relative py-20 px-4 text-white overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
@@ -4585,7 +4585,7 @@ const Home: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <GallerySection />
 
