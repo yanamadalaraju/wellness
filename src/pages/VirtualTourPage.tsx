@@ -4,7 +4,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { Pannellum } from 'pannellum-react';
+import { Pannellum } from "react-pannellum";
+
 
 // Manual CSS import solution (guaranteed to work)
 // 1. Download from: https://cdn.jsdelivr.net/npm/pannellum@2.5.6/src/css/pannellum.css

@@ -2194,7 +2194,7 @@
 
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import logo from '../assets/logo.png'; // Adjust path to your logo
+import logo from '../assets/logo.png'; // Ensure this file exists or adjust the path
 
 const AdminNavbar: React.FC = () => {
   const navigate = useNavigate();
@@ -2270,6 +2270,10 @@ const AdminNavbar: React.FC = () => {
               {/* Room Manager */}
               <NavLink to="/Room-manager" className={linkClasses}>
                 Room Manager
+              </NavLink>
+
+              <NavLink to="/blog-cards" className={linkClasses}>
+                Blogs
               </NavLink>
 
               {/* Logout Button */}
