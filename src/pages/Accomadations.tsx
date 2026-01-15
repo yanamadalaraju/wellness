@@ -48,6 +48,9 @@ const EconomyAccommodation: React.FC = () => {
 const [activeRoomIndex, setActiveRoomIndex] = useState<number>(0); // index of room in tabs
 const [activeSlideIndex, setActiveSlideIndex] = useState<number>(0); // index of image inside that room
 
+useEffect(() => {
+  setActiveSlideIndex(0); // reset to first image when room changes
+}, [activeRoomIndex]);
 
   // Fetch rooms from API
   useEffect(() => {
@@ -182,67 +185,90 @@ const handlePrev = () => {
               </div>
               
               {/* Room Display */}
+{/* Room Image Slider */}
 <div className="relative bg-gray-100 rounded-xl overflow-hidden shadow-lg">
-  {rooms.length > 0 && (
+  {rooms[activeRoomIndex] && (
     <>
-      {/* Image Slider Container */}
-      <div className="w-full h-[500px] relative overflow-hidden">
-        <div
-          className="flex transition-transform duration-500 ease-in-out h-full"
-          style={{ transform: `translateX(-${activeRoomIndex * 100}%)` }}
-        >
-          {rooms.map((room, index) => (
-            <div key={room.id || index} className="w-full flex-shrink-0 h-full relative">
+      {(() => {
+        const room = rooms[activeRoomIndex];
+        const images =
+          room.images && room.images.length > 0
+            ? room.images
+            : [room.image_url || defaultRoomImage];
+
+        return (
+          <>
+            {/* Image */}
+            <div className="w-full h-[500px] relative">
               <img
-                src={room.images?.[0] || room.image_url || defaultRoomImage}
+                src={images[activeSlideIndex]}
                 alt={room.name}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-all duration-500"
                 onError={(e) => {
                   (e.currentTarget as HTMLImageElement).src = defaultRoomImage;
                 }}
               />
 
-              {/* Overlay text */}
+              {/* Overlay */}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
-                <h3 className="text-white text-2xl font-bold mb-2">{room.name}</h3>
+                <h3 className="text-white text-2xl font-bold mb-2">
+                  {room.name}
+                </h3>
                 <p className="text-gray-200">{room.description}</p>
               </div>
             </div>
-          ))}
-        </div>
 
-        {/* Prev Button */}
-        <button
-          onClick={handlePrev}
-          className="absolute left-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70 z-20"
-        >
-          &lt;
-        </button>
+            {/* Prev Image */}
+            {images.length > 1 && (
+              <button
+                onClick={() =>
+                  setActiveSlideIndex(
+                    (activeSlideIndex - 1 + images.length) % images.length
+                  )
+                }
+                className="absolute left-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70"
+              >
+                ‹
+              </button>
+            )}
 
-        {/* Next Button */}
-        <button
-          onClick={handleNext}
-          className="absolute right-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70 z-20"
-        >
-          &gt;
-        </button>
+            {/* Next Image */}
+            {images.length > 1 && (
+              <button
+                onClick={() =>
+                  setActiveSlideIndex(
+                    (activeSlideIndex + 1) % images.length
+                  )
+                }
+                className="absolute right-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70"
+              >
+                ›
+              </button>
+            )}
 
-        {/* Dots */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
-          {rooms.map((_, index) => (
-            <span
-              key={index}
-              onClick={() => setActiveRoomIndex(index)}
-              className={`w-3 h-3 rounded-full cursor-pointer transition-colors duration-300 ${
-                activeRoomIndex === index ? 'bg-green-700' : 'bg-gray-300'
-              }`}
-            />
-          ))}
-        </div>
-      </div>
+            {/* Image Dots */}
+            {images.length > 1 && (
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                {images.map((_, idx) => (
+                  <span
+                    key={idx}
+                    onClick={() => setActiveSlideIndex(idx)}
+                    className={`w-3 h-3 rounded-full cursor-pointer ${
+                      activeSlideIndex === idx
+                        ? 'bg-green-700'
+                        : 'bg-gray-300'
+                    }`}
+                  />
+                ))}
+              </div>
+            )}
+          </>
+        );
+      })()}
     </>
   )}
 </div>
+
 
 
               

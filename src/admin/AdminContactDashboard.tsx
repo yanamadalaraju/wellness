@@ -829,8 +829,11 @@ import DataTable from './Datatable';
 interface ContactFormData {
   id: number;
   name: string;
+  city: string;
   email: string;
   phone: string;
+  hear_about_us: string;
+  your_message: string;
   created_at: string;
 }
 
@@ -919,8 +922,11 @@ const AdminContactDashboard: React.FC = () => {
     const excelData = dataToExport.map((contact, index) => ({
       'S.No': index + 1,
       'Name': contact.name,
+      'City': contact.city,
       'Email': contact.email,
       'Phone': contact.phone,
+      'How did you hear about us': contact.hear_about_us,
+      'Your Message': contact.your_message,
       'Submitted Date': formatDate(contact.created_at)
     }));
 
@@ -942,6 +948,10 @@ const AdminContactDashboard: React.FC = () => {
       accessor: 'name',
     },
     {
+      header: 'City',
+      accessor: 'city',
+    },
+    {
       header: 'Email',
       accessor: 'email',
     },
@@ -949,6 +959,14 @@ const AdminContactDashboard: React.FC = () => {
       header: 'Phone',
       accessor: 'phone',
       render: (value: string) => value || '-'
+    },
+    {
+      header: 'How did you hear about us',
+      accessor: 'hear_about_us',
+    },
+    {
+      header: 'Your Message',
+      accessor: 'your_message',
     },
     {
       header: 'Date',

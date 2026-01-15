@@ -123,7 +123,7 @@
 //           display_order: '', 
 //           is_active: true 
 //         });
-//         setImageFile(null);
+//         setImageFile([]);
 //         setEditingId(null);
         
 //         // Refresh rooms list
@@ -186,7 +186,7 @@
 //       display_order: '', 
 //       is_active: true 
 //     });
-//     setImageFile(null);
+//     setImageFile([]);
 //     setEditingId(null);
 //   };
 
@@ -337,7 +337,7 @@
 //                 display_order: '', 
 //                 is_active: true 
 //               });
-//               setImageFile(null);
+//               setImageFile([]);
 //               setEditingId(null);
 //             }}
 //             className="px-4 py-2 border border-gray-300 rounded text-gray-700 hover:bg-gray-50"
@@ -588,7 +588,7 @@
 //           display_order: '', 
 //           is_active: true 
 //         });
-//         setImageFile(null);
+//         setImageFile([]);
 //         setEditingId(null);
         
 //         // Refresh rooms list
@@ -651,7 +651,7 @@
 //       display_order: '', 
 //       is_active: true 
 //     });
-//     setImageFile(null);
+//     setImageFile([]);
 //     setEditingId(null);
 //   };
 
@@ -801,7 +801,7 @@
 //                 display_order: '', 
 //                 is_active: true 
 //               });
-//               setImageFile(null);
+//               setImageFile([]);
 //               setEditingId(null);
 //             }}
 //             className="px-4 py-2 border border-gray-300 rounded text-gray-700 hover:bg-gray-50"
@@ -937,10 +937,9 @@ interface Room {
   id: number;
   name: string;
   description: string;
-  image_path?: string;
-  image_url?: string;
   display_order: number;
   is_active: boolean;
+  images?: string[]; // ✅ ADD THIS
   created_at?: string;
   updated_at?: string;
 }
@@ -962,7 +961,7 @@ const RoomManager: React.FC = () => {
     display_order: '',
     is_active: true
   });
-  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [imageFile, setImageFile] = useState<File[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [editingId, setEditingId] = useState<number | null>(null); // Track if we're editing
 
@@ -1002,9 +1001,9 @@ const RoomManager: React.FC = () => {
     formDataToSend.append('display_order', formData.display_order);
     formDataToSend.append('is_active', formData.is_active.toString());
     
-    if (imageFile) {
-      formDataToSend.append('image', imageFile);
-    }
+   imageFile.forEach(file => {
+  formDataToSend.append('images', file);
+});
 
     try {
       const url = editingId 
@@ -1052,7 +1051,7 @@ const RoomManager: React.FC = () => {
           display_order: '', 
           is_active: true 
         });
-        setImageFile(null);
+        setImageFile([]);
         setEditingId(null);
         
         // Refresh rooms list
@@ -1115,7 +1114,7 @@ const RoomManager: React.FC = () => {
       display_order: '', 
       is_active: true 
     });
-    setImageFile(null);
+    setImageFile([]);
     setEditingId(null);
   };
 
@@ -1136,16 +1135,19 @@ const RoomManager: React.FC = () => {
     }
   };
 
-  const handleFileChange = (e: ChangeEvent<HTMLInputElement>): void => {
-    if (e.target.files && e.target.files[0]) {
-      setImageFile(e.target.files[0]);
-    }
-  };
+ const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+  if (e.target.files) {
+    setImageFile(Array.from(e.target.files));
+  }
+};
+
 
   return (
     <>
     <AdminNavbar />
-    <div className="pt-16 p-6"> {/* Add pt-16 for navbar space */}
+        <div className="container-max py-8 pt-20">
+        <div className="max-w-6xl mx-auto">
+     {/* Add pt-16 for navbar space */}
       <h2 className="text-2xl font-bold mb-6">Manage Rooms</h2>
       
       {/* Add/Edit Room Form */}
@@ -1218,12 +1220,13 @@ const RoomManager: React.FC = () => {
             <input
               type="file"
               accept="image/*"
+              multiple
               onChange={handleFileChange}
               className="w-full px-3 py-2 border rounded"
             />
-            {imageFile && (
+            {imageFile.length > 0 && (
               <p className="text-sm text-green-600 mt-1">
-                Selected: {imageFile.name}
+                Selected {imageFile.length} image(s)
               </p>
             )}
           </div>
@@ -1265,7 +1268,7 @@ const RoomManager: React.FC = () => {
                 display_order: '', 
                 is_active: true 
               });
-              setImageFile(null);
+              setImageFile([]);
               setEditingId(null);
             }}
             className="px-4 py-2 border border-gray-300 rounded text-gray-700 hover:bg-gray-50"
@@ -1311,16 +1314,22 @@ const RoomManager: React.FC = () => {
                 <tr key={room.id}>
                   <td className="px-6 py-4">
                     <div className="flex items-center">
-                      {room.image_url && (
-                        <img
-                          src={room.image_url}
-                          alt={room.name}
-                          className="w-12 h-12 object-cover rounded mr-3"
-                          onError={(e) => {
-                            (e.target as HTMLImageElement).style.display = 'none';
-                          }}
-                        />
-                      )}
+                     <div className="flex items-center space-x-2">
+  {room.images?.slice(0, 3).map((img, i) => (
+    <img
+      key={i}
+      src={img}
+      alt={room.name}
+      className="w-12 h-12 object-cover rounded"
+    />
+  ))}
+
+  {room.images && room.images.length > 3 && (
+    <span className="text-xs text-gray-500">
+      +{room.images.length - 3}
+    </span>
+  )}
+</div>
                       <div>
                         <span className="font-medium block">{room.name}</span>
                         <span className="text-xs text-gray-500">ID: {room.id}</span>
@@ -1368,7 +1377,8 @@ const RoomManager: React.FC = () => {
           </table>
         )}
       </div>
-      
+      </div>
+   
       {/* Debug Info */}
       {/* <div className="mt-8 p-4 bg-gray-50 rounded text-sm">
         <h4 className="font-medium mb-2">API Information:</h4>
