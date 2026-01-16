@@ -233,7 +233,7 @@ function AppRoutes() {
                <Route path="/events" element={<EventsPage />} />
             <Route path="/EventsGallerySet" element={<EventsGallerySet />} />
             <Route path="/Rulesandregulations" element={<RulesAndRegulations />} />
-            <Route path="/virtual-tour" element={<VirtualTourPage />} />
+            {/* <Route path="/virtual-tour" element={<VirtualTourPage />} /> */}
            <Route path="/accomadation" element={<EconomyAccommodation/>} />
            <Route path="/guidliness" element={<AdmissionGuidelines/>} />
             <Route path="/diet" element={<DietPage/>} />
