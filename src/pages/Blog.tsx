@@ -1,6 +1,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import BlogCards from "../components/BlogCards";
 
 export default function BlogPage() {
   return (
@@ -59,9 +60,10 @@ export default function BlogPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+       
+            <BlogCards />
             {/* Blog Card 1 */}
-            <motion.div
+           {/* <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -72,7 +74,7 @@ export default function BlogPage() {
                 src="https://i.pinimg.com/736x/92/0e/04/920e04a658b79a2f734039e34729df90.jpg"
                 alt="Mud Therapy"
                 className="w-full h-52 object-cover"
-              />
+              /> 
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-emerald-700 mb-3">
                   The Power of Mud Therapy
@@ -84,10 +86,10 @@ export default function BlogPage() {
                 </p>
              
               </div>
-            </motion.div>
+            </motion.div> */}
 
             {/* Blog Card 2 */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
@@ -110,10 +112,10 @@ export default function BlogPage() {
                 </p>
               
               </div>
-            </motion.div>
+            </motion.div> */}
 
             {/* Blog Card 3 */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -136,8 +138,8 @@ export default function BlogPage() {
                 </p>
               
               </div>
-            </motion.div>
-          </div>
+            </motion.div> */}
+         
         </div>
       </section>
     </div>

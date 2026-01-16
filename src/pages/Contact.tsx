@@ -1243,9 +1243,13 @@ import { useEffect } from 'react';
 
 interface ContactFormData {
   name: string;
+  city: string;
   email: string;
   phone: string;
+  hearAboutUs: string;
+  yourMessage: string;
 }
+
 
 const Contact: React.FC = () => {
   const { 
@@ -1487,93 +1491,110 @@ const Contact: React.FC = () => {
                 </div>
               )}
               
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    {...register('name', { 
-                      required: 'Name is required',
-                      minLength: {
-                        value: 2,
-                        message: 'Name must be at least 2 characters'
-                      }
-                    })}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage-400"
-                    placeholder="Your full name"
-                  />
-                  {errors.name && (
-                    <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
-                  )}
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    {...register('email', { 
-                      required: 'Email is required',
-                      pattern: {
-                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                        message: "Invalid email address"
-                      }
-                    })}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage-400"
-                    placeholder="your@email.com"
-                  />
-                  {errors.email && (
-                    <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
-                  )}
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number *
-                  </label>
-                  <input
-                    type="tel"
-                    {...register('phone', { 
-                      required: 'Phone number is required',
-                      pattern: {
-                        value: /^[+]?[\d\s\-()]{10,}$/,
-                        message: 'Please enter a valid phone number'
-                      }
-                    })}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage-400"
-                    placeholder="Your phone number"
-                  />
-                  {errors.phone && (
-                    <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
-                  )}
-                </div>
-                
-                <button
-                  type="submit"
-                  disabled={isSubmitting || serverStatus === 'offline'}
-                  className={`w-full bg-sage-600 hover:bg-sage-700 text-white font-medium py-3 px-6 rounded-lg transition-colors flex items-center justify-center space-x-2 ${
-                    (isSubmitting || serverStatus === 'offline') ? 'opacity-50 cursor-not-allowed' : ''
-                  }`}
-                >
-                  {isSubmitting ? (
-                    <>
-                      <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                      <span>Sending...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-5 h-5" />
-                      <span>{serverStatus === 'offline' ? 'Server Offline' : 'Send Message'}</span>
-                    </>
-                  )}
-                </button>
-              </form>
+         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+  
+  {/* Name */}
+  <div>
+    <input
+      type="text"
+      {...register('name', { required: 'Name is required' })}
+      placeholder="Name"
+      className="w-full px-4 py-2 border rounded-lg"
+    />
+    {errors.name && (
+      <p className="text-red-500 text-sm">{errors.name.message}</p>
+    )}
+  </div>
+
+  {/* City */}
+  <div>
+    <input
+      type="text"
+      {...register('city', { required: 'City is required' })}
+      placeholder="City"
+      className="w-full px-4 py-2 border rounded-lg"
+    />
+    {errors.city && (
+      <p className="text-red-500 text-sm">{errors.city.message}</p>
+    )}
+  </div>
+
+</div>
+
+
+  {/* Email */}
+  <div>
+    <input
+      type="email"
+      {...register('email', {
+        required: 'Email is required',
+        pattern: {
+          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+          message: 'Invalid email address'
+        }
+      })}
+      placeholder="Email"
+      className="w-full px-4 py-2 border rounded-lg"
+    />
+    {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+  </div>
+
+  {/* Phone */}
+  <div>
+    <input
+      type="tel"
+      {...register('phone', { required: 'Phone number is required' })}
+      placeholder="Phone No"
+      className="w-full px-4 py-2 border rounded-lg"
+    />
+    {errors.phone && <p className="text-red-500 text-sm">{errors.phone.message}</p>}
+  </div>
+
+  {/* How did you hear about us */}
+  <div>
+    <select
+      {...register('hearAboutUs', { required: 'This field is required' })}
+      className="w-full px-4 py-2 border rounded-lg text-gray-700"
+    >
+      <option value="">How did you hear about Nowal NatureCare</option>
+      <option value="instagram">Instagram</option>
+      <option value="facebook">Facebook</option>
+      <option value="youtube">YouTube</option>
+      <option value="google">Google Search</option>
+      <option value="whatsapp">WhatsApp</option>
+      <option value="friend">Friends / Family</option>
+      <option value="other">Other</option>
+    </select>
+    {errors.hearAboutUs && (
+      <p className="text-red-500 text-sm">{errors.hearAboutUs.message}</p>
+    )}
+  </div>
+
+  {/* Health Objective */}
+  <div>
+    <textarea
+      {...register('yourMessage', { required: 'Your Message is required' })}
+      placeholder="Your Message"
+      rows={4}
+      className="w-full px-4 py-2 border rounded-lg"
+    />
+    {errors.yourMessage && (
+      <p className="text-red-500 text-sm">{errors.yourMessage.message}</p>
+    )}
+  </div>
+
+  {/* Submit */}
+  <button
+    type="submit"
+    className="bg-gray-200 px-6 py-2 rounded hover:bg-gray-300"
+  >
+    Submit
+  </button>
+
+</form>
+
             </div>
           </div>
         </div>

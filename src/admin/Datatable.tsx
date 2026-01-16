@@ -121,7 +121,7 @@ const DataTable: React.FC<DataTableProps> = ({
                   onClick={() => onRowClick?.(item)}
                 >
                   {columns.map((column, colIndex) => (
-                    <td key={colIndex} className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td key={colIndex} className="px-6 py-4 text-sm text-gray-900">
                       {column.render ? column.render(item[column.accessor], item) : item[column.accessor]}
                     </td>
                   ))}
