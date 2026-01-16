@@ -356,23 +356,81 @@
 
 
 
+
+// import React from "react";
+// import "./charges.css";
+
+// const roomTariffData = [
+//   { sn: 1, type: "Premium Villa Cottage", acc: "2", g1: "20,000", g2: "20,000", g3: "7,500", g4: "7,500" },
+//   { sn: 2, type: "Villa Cottage", acc: "2", g1: "17,000", g2: "17,000", g3: "6,000", g4: "6,000" },
+//   { sn: 3, type: "Deluxe room with backyard", acc: "5", g1: "15,000", g2: "7,000", g3: "-", g4: "-" },
+//   { sn: 4, type: "Premium deluxe room", acc: "2", g1: "12,000", g2: "6,000", g3: "-", g4: "-" },
+//   { sn: 5, type: "Deluxe room", acc: "33", g1: "10,000", g2: "5,000", g3: "3,000", g4: "3,000" },
+//   { sn: 6, type: "Suite 3 Bedroom", acc: "3", g1: "8,000", g2: "6,000", g3: "3,000", g4: "3,000" },
+//   { sn: 7, type: "Suite 2 Bedroom with attender room", acc: "1", g1: "8,000", g2: "6,000", g3: "3,000", g4: "3,000" },
+//   { sn: 8, type: "Suite 2 Bedroom", acc: "5", g1: "8,000", g2: "6,000", g3: "-", g4: "-" },
+//   { sn: 9, type: "Suite 1 Bed Room", acc: "2", g1: "8,000", g2: "4,000", g3: "-", g4: "-" },
+//   { sn: 10, type: "Suite 1 Bed Room", acc: "19", g1: "7,000", g2: "3,000", g3: "-", g4: "-" },
+//   { sn: 11, type: "Premium Double Room", acc: "1", g1: "5,000", g2: "5,000", g3: "3,000", g4: "3,000" },
+//   { sn: 12, type: "Premium Room", acc: "9", g1: "5,000", g2: "3,000", g3: "-", g4: "-" },
+//   { sn: 13, type: "Luxury Wing", acc: "14 + 13 Beds", g1: "3,000", g2: "-", g3: "-", g4: "-" },
+// ];
+
+// const RoomTariffSection: React.FC = () => {
+//   return (
+//     <section className="room-tariff-section">
+//       <h2 className="section-title">Our Room Tariff</h2>
+
+//       <div className="table-wrapper">
+//         <table className="tariff-table">
+//           <thead>
+//             <tr>
+//               <th>S.Num</th>
+//               <th>Room Type</th>
+//               <th>Number of Accommodation Available</th>
+//               <th>Guest 1</th>
+//               <th>Guest 2</th>
+//               <th>Guest 3</th>
+//               <th>Guest 4</th>
+//             </tr>
+//           </thead>
+//           <tbody>
+//             {roomTariffData.map((room) => (
+//               <tr key={room.sn}>
+//                 <td>{room.sn}</td>
+//                 <td>{room.type}</td>
+//                 <td>{room.acc}</td>
+//                 <td>{room.g1}</td>
+//                 <td>{room.g2}</td>
+//                 <td>{room.g3}</td>
+//                 <td>{room.g4}</td>
+//               </tr>
+//             ))}
+//           </tbody>
+//         </table>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default RoomTariffSection;
+
+
+
+
 import React from "react";
 import "./charges.css";
 
 const roomTariffData = [
-  { sn: 1, type: "Premium Villa Cottage", acc: "2", g1: "20,000", g2: "20,000", g3: "7,500", g4: "7,500" },
-  { sn: 2, type: "Villa Cottage", acc: "2", g1: "17,000", g2: "17,000", g3: "6,000", g4: "6,000" },
-  { sn: 3, type: "Deluxe room with backyard", acc: "5", g1: "15,000", g2: "7,000", g3: "-", g4: "-" },
-  { sn: 4, type: "Premium deluxe room", acc: "2", g1: "12,000", g2: "6,000", g3: "-", g4: "-" },
-  { sn: 5, type: "Deluxe room", acc: "33", g1: "10,000", g2: "5,000", g3: "3,000", g4: "3,000" },
-  { sn: 6, type: "Suite 3 Bedroom", acc: "3", g1: "8,000", g2: "6,000", g3: "3,000", g4: "3,000" },
-  { sn: 7, type: "Suite 2 Bedroom with attender room", acc: "1", g1: "8,000", g2: "6,000", g3: "3,000", g4: "3,000" },
-  { sn: 8, type: "Suite 2 Bedroom", acc: "5", g1: "8,000", g2: "6,000", g3: "-", g4: "-" },
-  { sn: 9, type: "Suite 1 Bed Room", acc: "2", g1: "8,000", g2: "4,000", g3: "-", g4: "-" },
-  { sn: 10, type: "Suite 1 Bed Room", acc: "19", g1: "7,000", g2: "3,000", g3: "-", g4: "-" },
-  { sn: 11, type: "Premium Double Room", acc: "1", g1: "5,000", g2: "5,000", g3: "3,000", g4: "3,000" },
-  { sn: 12, type: "Premium Room", acc: "9", g1: "5,000", g2: "3,000", g3: "-", g4: "-" },
-  { sn: 13, type: "Luxury Wing", acc: "14 + 13 Beds", g1: "3,000", g2: "-", g3: "-", g4: "-" },
+  { sn: 1, type: "Premium Villa", g1: "20,000", g2: "20,000", g3: "7,500", g4: "7,500" },
+  { sn: 2, type: "Villa", g1: "17,000", g2: "17,000", g3: "6,000", g4: "5,000" },
+  { sn: 3, type: "Cottage Room (Twin Bed)", g1: "15,000", g2: "7,000", g3: "-", g4: "-" },
+  { sn: 4, type: "Cottage Room (King Bed)", g1: "15,000", g2: "7,000", g3: "-", g4: "-" },
+  { sn: 5, type: "Suite 3 Bedroom", g1: "8,000", g2: "6,000", g3: "6,000", g4: "6,000" },
+  { sn: 6, type: "Suite 2 Bedroom", g1: "8,000", g2: "6,000", g3: "-", g4: "-" },
+  { sn: 7, type: "Cottage Room with Garden & Plung Pool", g1: "15,000", g2: "7,000", g3: "-", g4: "-" },
+  { sn: 8, type: "Delux Room", g1: "7,000", g2: "3,000", g3: "-", g4: "-" },
+  { sn: 9, type: "Luxury Wing", g1: "3,000", g2: "-", g3: "-", g4: "-" },
 ];
 
 const RoomTariffSection: React.FC = () => {
@@ -384,9 +442,8 @@ const RoomTariffSection: React.FC = () => {
         <table className="tariff-table">
           <thead>
             <tr>
-              <th>S.Num</th>
+              <th>Sl No</th>
               <th>Room Type</th>
-              <th>Number of Accommodation Available</th>
               <th>Guest 1</th>
               <th>Guest 2</th>
               <th>Guest 3</th>
@@ -398,7 +455,6 @@ const RoomTariffSection: React.FC = () => {
               <tr key={room.sn}>
                 <td>{room.sn}</td>
                 <td>{room.type}</td>
-                <td>{room.acc}</td>
                 <td>{room.g1}</td>
                 <td>{room.g2}</td>
                 <td>{room.g3}</td>

@@ -19,8 +19,7 @@ const ReachSection = () => {
               How to Reach Nowal by Air
             </h3>
             <p className="text-gray-700">
-              Ahmedabad Airport is the nearest airport to Nowal. The distance is 58 km and you can
-              easily hire a private taxi and or pre-book the taxi service from the centre.
+             Jaipur Airport is the nearest airport to Nowal. The distance is 89 km and you can easily hire a private taxi and or pre-book the taxi service from the centre.
             </p>
           </div>
 
@@ -31,9 +30,7 @@ const ReachSection = () => {
               How to Reach Nowal by Road
             </h3>
             <p className="text-gray-700">
-              Nowal is located on the Ahmedabad–Rajasthan Expressway. The visitor will have to travel
-              approximately 60 km from Ahmedabad city as it is located before Rajasthan. It is
-              advisable to use proper navigation to reach Nowal by road.
+          Nowal is located on the Jaipur Sikkar Expressway. The visitor will have to travel approximately 72.7 km from Jaipur city as it is located Near khatushyam ji  temple do use proper navigation to reach Nowal by road.
             </p>
           </div>
 
@@ -44,9 +41,7 @@ const ReachSection = () => {
               How to Reach Nowal by Rail
             </h3>
             <p className="text-gray-700">
-              The nearest railway stations from Nowal are Rajasthan Railway Station (approximately 25
-              km) and Kalupur Railway Station (approximately 64 km). You can hire a private taxi to
-              get to Nowal from the station.
+              The nearest railway stations from Nowal are Badhal (5.9km), Ringus (25.4 km) and Jaipur (72.7 km) You can hire a private taxi to get to Nowal from the station.
             </p>
           </div>
         </div>

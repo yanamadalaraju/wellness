@@ -44,14 +44,46 @@ const AdmissionGuidelines = () => {
       </div>
 
       {/* Booking Information */}
-      <div className="mb-8 p-6 bg-gray-50 rounded-lg">
+      {/* <div className="mb-8 p-6 bg-gray-50 rounded-lg">
         <h2 className="text-2xl font-semibold text-green-800 mb-4">Booking Information</h2>
         <p className="mb-4">On receipt of your application, Nowal NatureCare will review it. On qualifying, the guest will be updated and will be asked to pay 3 day advance payment for selected accommodation as per the tariff rate if the stay is 7 or more days. In case of stay is less then 7 days, full payment is required to be paid.</p>
         <p className="mb-4">It is to note that few selective treatments are chargeable. A complete briefing will be given on arrival. On average, there will be Rs. 3000/- per day additional charges for treatment per person.</p>
         <p className="mb-4">On receipt of the payment, a confirmation letter will be sent by Email/Whatsapp with all necessary instructions.</p>
         <p className="mb-4"><strong>Cancellation Policy:</strong> In case of cancellation of reservation 2 days before the arrival date, forfeiture of the advance may be applied on sole discretion of the management NNC.</p>
         <p><strong>Transport:</strong> Car facility from Jaipur to Nowal while coming to NNC NatureCare and while returning is available with nominal charges.</p>
-      </div>
+      </div> */}
+
+      <div className="mb-8 p-6 bg-gray-50 rounded-lg">
+  <h2 className="text-2xl font-semibold text-green-800 mb-2">
+    Booking Information
+  </h2>
+
+  {/* Check-in details */}
+  <p className="mb-4 text-sm font-medium text-gray-700">
+    <strong>Check-in Time:</strong> 11:00 AM
+  </p>
+
+  <p className="mb-4">
+    On receipt of your application, Nowal NatureCare will review it. On qualifying, the guest will be updated and will be asked to pay 3 day advance payment for selected accommodation as per the tariff rate if the stay is 7 or more days. In case of stay is less then 7 days, full payment is required to be paid.
+  </p>
+
+  <p className="mb-4">
+    It is to note that few selective treatments are chargeable. A complete briefing will be given on arrival. On average, there will be Rs. 3000/- per day additional charges for treatment per person.
+  </p>
+
+  <p className="mb-4">
+    On receipt of the payment, a confirmation letter will be sent by Email/Whatsapp with all necessary instructions.
+  </p>
+
+  <p className="mb-4">
+    <strong>Cancellation Policy:</strong> In case of cancellation of reservation 2 days before the arrival date, forfeiture of the advance may be applied on sole discretion of the management NNC.
+  </p>
+
+  <p>
+    <strong>Transport:</strong> Car facility from Jaipur to Nowal while coming to NNC NatureCare and while returning is available with nominal charges.
+  </p>
+    </div>
+
 
       {/* Arrival & Check-In */}
       <div className="mb-8">

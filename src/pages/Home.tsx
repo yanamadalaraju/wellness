@@ -3979,6 +3979,8 @@ import image55 from "../assets/physiotherapy.jpg";
 import GallerySection from '../components/Herocompo/Gallerysection';
 import HeroSection from '../components/Herocompo/HeroSection';
 import { Link } from 'react-router-dom';
+import PopularTherapiesSection from '../components/Herocompo/PopularTherapiesSection';
+import PopularTherapies from '../components/Herocompo/PopularTherapies';
 
 
 const Home: React.FC = () => {
@@ -4434,7 +4436,7 @@ const Home: React.FC = () => {
       </section> */}
 
  
-   <section className="py-20 px-4 bg-gradient-to-b from-white to-[#DDF4E7]">
+   {/* <section className="py-20 px-4 bg-gradient-to-b from-white to-[#DDF4E7]">
   <div className="max-w-7xl mx-auto text-center">
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -4512,7 +4514,11 @@ const Home: React.FC = () => {
       ))}
     </div>
   </div>
-</section>
+</section> */}
+
+<PopularTherapies />
+
+
 
    
      
@@ -4681,9 +4687,13 @@ const Home: React.FC = () => {
       transition={{ duration: 0.5, delay: 0.3 }}
       viewport={{ once: true }}
     >
-      <button className="inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-full text-white bg-[#4a7d52] hover:bg-[#3E5F44] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
-        Free consultant
-      </button>
+    <button
+  onClick={() => window.location.href = '/contact'}
+  className="inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-full text-white bg-[#4a7d52] hover:bg-[#3E5F44] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
+>
+  Free consultant
+</button>
+
     </motion.div>
   </div>
     </section>

@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 // Import fallback images
 import defaultRoomImage from '../assets/villaimage.jpg';
-import heroBackground from '../assets/villaimage.jpg';
+import heroBackground from '../assets/room1.jpg';
 import AccommodationTable from '../components/AccommodationTariff';
 import RoomTariffSection from './Charges';
 import { BASE_URL } from '../config';
@@ -236,11 +236,15 @@ const EconomyAccommodation: React.FC = () => {
               { icon: '🧼', name: 'Daily Cleaning' },
               { icon: '📺', name: 'TV' },
               { icon: '❄️', name: 'AC/Fan' },
-              { icon: '🔒', name: 'Lockers' },
+              // { icon: '🔒', name: 'Lockers' },
+              { icon: '🧳', name: 'Lockers' },
               // { icon: '🍸', name: 'Mini Bar' },
               { icon: '🧊', name: 'Mini Fridge' },
-
-              { icon: '🌿', name: 'Green View' }
+              { icon: '🌿', name: 'Green View' },
+              { icon: '📶', name: 'Wi-Fi' },
+               { icon: '🏊', name: 'Swimming Pool' },
+               { icon: '🎯', name: 'Recreational Area' },
+                { icon: '🍽️', name: 'Banquet Hall & Dining' },
             ].map((amenity, index) => (
               <div key={index} className="bg-white p-6 rounded-xl shadow-md text-center">
                 <div className="text-4xl mb-3">{amenity.icon}</div>
