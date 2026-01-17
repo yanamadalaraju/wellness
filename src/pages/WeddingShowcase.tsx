@@ -5438,6 +5438,7 @@ import {
 } from "lucide-react";
 import axios from 'axios';
 import { BASE_URL } from "../config";
+import FacilitiesSection from "../components/WeddingCompo/FacilitiesSection";
 
 const API_URL = `${BASE_URL}/api`;
 
@@ -6115,6 +6116,8 @@ const WeddingPage: React.FC = () => {
         </div>
       </section>
 
+        <FacilitiesSection />
+
       {/* Contact Section with Sparkle Cursor */}
       <section id="wedding-contact" className="relative py-16 px-6 overflow-hidden">
         {/* Background Image with Overlay */}
@@ -6498,6 +6501,8 @@ const WeddingPage: React.FC = () => {
           </motion.div>
         </div>
       </section>
+
+    
 
       {/* CTA Section */}
       <section className="bg-gradient-to-r from-emerald-600 to-green-600 py-16 px-6">
