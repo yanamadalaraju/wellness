@@ -1773,7 +1773,7 @@ const therapies: Therapy[] = [
     icon: <FaWater className="text-blue-400" />
   },
   {
-    name: 'Tratak',
+    name: 'Trataka',
     image: tratak,
     content: 'The ancient yogic practice of focused gazing that develops concentration and inner vision. Through disciplined eye exercises and candle gazing, we cultivate mental focus while activating the third eye center for heightened intuition.',
     benefits: [

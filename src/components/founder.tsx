@@ -25,7 +25,7 @@ const AboutFounder = () => {
             {/* Added some personal details below the image for balance */}
             <div className="mt-6 bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-2xl font-bold text-gray-800 mb-2">
-                SHRI RAM NIVAS NOWAL
+                SHRI RAM NIWAS NOWAL
               </h3>
               <h4 className="text-lg font-semibold text-green-700 mb-4">
                 A VISIONARY LEADER AND SOCIAL REFORMER
