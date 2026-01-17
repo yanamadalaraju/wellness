@@ -434,7 +434,7 @@ const FacilitiesSection: React.FC = () => {
           <div className="w-16 h-16 bg-white/30 rounded-full flex items-center justify-center mb-6 shadow-inner">
             <span className="text-2xl text-black">👨‍🍳</span>
           </div>
-          <h4 className="text-xl font-bold mb-2 text-black">In-house Catering</h4>
+          <h4 className="text-xl font-bold mb-2 text-black">In-house Catering Service</h4>
           <p className="text-black/95 text-base">
             Premium culinary experience with our expert chefs
           </p>
@@ -446,7 +446,7 @@ const FacilitiesSection: React.FC = () => {
           <div className="w-16 h-16 bg-white/30 rounded-full flex items-center justify-center mb-6 shadow-inner">
             <span className="text-2xl text-white">🎯</span>
           </div>
-          <h4 className="text-xl font-bold mb-2 text-black">Outside Catering</h4>
+          <h4 className="text-xl font-bold mb-2 text-black">Outside Catering Service</h4>
           <p className="text-black/95 text-base">
             Flexible service options for your specific needs
           </p>
@@ -460,7 +460,7 @@ const FacilitiesSection: React.FC = () => {
       </p>
     </div>
   </div>
-</div>
+        </div>
 
         
       </div>

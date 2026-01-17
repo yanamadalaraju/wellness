@@ -6502,8 +6502,6 @@ const WeddingPage: React.FC = () => {
         </div>
       </section>
 
-    
-
       {/* CTA Section */}
       <section className="bg-gradient-to-r from-emerald-600 to-green-600 py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
