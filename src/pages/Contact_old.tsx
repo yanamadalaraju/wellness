@@ -1233,11 +1233,13 @@
 // export default Contact;
 
 
-import React, { useState, useEffect } from "react";
-import { useForm } from "react-hook-form";
-import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
-import axios from "axios";
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { MapPin, Phone, Mail, Clock, MessageCircle, Send } from 'lucide-react';
+import { BASE_URL } from '../config';
+import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 interface ContactFormData {
   name: string;
@@ -1250,285 +1252,355 @@ interface ContactFormData {
 
 
 const Contact: React.FC = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
+  const { 
+    register, 
+    handleSubmit, 
+    formState: { errors }, 
+    reset 
   } = useForm<ContactFormData>();
-
+  
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState("");
+  const [submitError, setSubmitError] = useState('');
   const [submitSuccess, setSubmitSuccess] = useState(false);
-
+  const [serverStatus, setServerStatus] = useState<'checking' | 'online' | 'offline'>('checking');
   const location = useLocation();
 
   useEffect(() => {
-    if (location.hash === "#contact-form") {
-      const el = document.getElementById("contact-form");
-      el?.scrollIntoView({ behavior: "smooth" });
+    if (location.hash === '#contact-form') {
+      const element = document.getElementById('contact-form');
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
     }
   }, [location]);
 
-  // ✅ CORRECT onSubmit — INSIDE component
-  const onSubmit = async (data: ContactFormData) => {
-  setIsSubmitting(true);
-  setSubmitError("");
-  setSubmitSuccess(false);
-
-  try {
-    const payload = {
-      name: data.name,
-      email: data.email,
-      phone_no: data.phone,
-      address: data.city,
-      existing_medical_condition: data.hearAboutUs,
-      message: data.yourMessage,
-    };
-
-    /* =====================================================
-       ❌ DIRECT CLIENT → NOWAL API (CORS BLOCKED)
-       ❌ KEEP COMMENTED FOR TESTING / REFERENCE
-       ===================================================== */
-    /*
-    await axios.post(
-      "https://nowalnaturecare.ayushmanager.com/api/inquiry",
-      payload,
-      {
-        headers: {
-          Authorization:
-            "Bearer 6148523063484d364c7939756233646862473568644856795a574e68636d557559586c3163326874595735685a3256794c6d4e766253383d",
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        timeout: 30000,
+  // Test server connection on component mount
+  useEffect(() => {
+    const testServerConnection = async () => {
+      try {
+        console.log('🔍 Testing server connection to:', `${BASE_URL}/api/health`);
+        const response = await fetch(`${BASE_URL}/api/health`);
+        const data = await response.json();
+        console.log('🏥 Server status:', data);
+        setServerStatus('online');
+      } catch (error) {
+        console.error('🔍 Server connection failed:', error);
+        setServerStatus('offline');
+        setSubmitError('Server is currently offline. Please try again later.');
       }
-    );
-    */
+    };
+    
+    testServerConnection();
+  }, []);
 
-    /* =====================================================
-       ✅ ACTIVE METHOD (WORKS LOCALLY + LIVE)
-       ✅ BACKEND PROXY (NO CORS)
-       ===================================================== */
-    await axios.post(
-      "http://localhost:5000/api/send-inquiry",
-      payload
-    );
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSubmitting(true);
+    setSubmitError('');
+    setSubmitSuccess(false);
+    
+    try {
+      console.log('🔄 Starting form submission...');
+      console.log('📝 Form data:', data);
+      console.log('🌐 BASE_URL:', BASE_URL);
 
-    setSubmitSuccess(true);
-    reset();
-  } catch (error: any) {
-    console.error("❌ Inquiry Error:", error);
-    setSubmitError(
-      error?.response?.data?.message ||
-        "Failed to submit form. Please try again."
-    );
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+      const response = await fetch(`${BASE_URL}/api/contacts`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
 
+      console.log('📨 Response status:', response.status);
+      
+      const responseText = await response.text();
+      console.log('📄 Response text:', responseText);
 
-return (
-  <div className="min-h-screen bg-cream-50">
-    {/* Hero Section */}
-    <section className="relative min-h-96 flex items-center justify-center">
-      <div className="absolute inset-0 z-0">
-        <img
-          src="https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg?auto=compress&cs=tinysrgb&w=1920"
-          alt="Get in Touch"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-      </div>
+      let result;
+      try {
+        result = JSON.parse(responseText);
+      } catch (parseError) {
+        console.error('❌ Failed to parse response as JSON:', parseError);
+        throw new Error('Invalid response from server');
+      }
 
-      <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
-        <h1 className="text-5xl md:text-6xl font-playfair font-bold mb-6 text-shadow">
-          Get in Touch
-        </h1>
-        <p className="text-xl md:text-2xl text-shadow">
-          We're here to guide you on your nowal journey
-        </p>
-      </div>
-    </section>
+      if (!response.ok) {
+        console.error('❌ Server returned error:', result);
+        throw new Error(result.error || `Server error: ${response.status}`);
+      }
 
-    {/* Breadcrumbs */}
-    <div className="container mx-auto px-4 py-4 flex justify-center">
-      <nav className="flex" aria-label="Breadcrumb">
-        <ol className="inline-flex items-center space-x-2">
-          <li>
-            <Link to="/" className="text-sage-600 hover:text-sage-800">
-              Home
-            </Link>
-          </li>
-          <li className="text-sage-500">{'>'}</li>
-          <li className="text-sage-800 font-medium">Contact Us</li>
-        </ol>
-      </nav>
-    </div>
+      console.log('🎉 Form submission successful:', result);
+      setSubmitSuccess(true);
+      reset();
+      
+    } catch (error) {
+      console.error('💥 Error submitting form:', error);
+      
+      if (error instanceof TypeError && error.message.includes('Failed to fetch')) {
+        setSubmitError('Cannot connect to server. Please check your internet connection and ensure the backend is running.');
+      } else if (error instanceof Error) {
+        setSubmitError(error.message);
+      } else {
+        setSubmitError('There was an unexpected error submitting your form. Please try again.');
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
-    {/* Contact Section */}
-    <section className="py-16 bg-[#DDF4E7]" id="contact-form">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          
-          {/* Contact Details */}
-          <div>
-            <h2 className="text-4xl font-playfair font-bold text-sage-600 mb-8">
-              Contact Information
-            </h2>
-
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <MapPin className="w-6 h-6 text-sage-400 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-sage-600 mb-1">Address</h3>
-                  <p className="text-gray-600">
-                    Gadri Badhal <br />
-                    Jaipur Rajasthan, 303602 India
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <Phone className="w-6 h-6 text-sage-400 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-sage-600 mb-1">Phone</h3>
-                  <p className="text-gray-600">
-                    Main: +91 9251582672<br />
-                    Emergency: +91 9251582675
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <Mail className="w-6 h-6 text-sage-400 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-sage-600 mb-1">Email</h3>
-                  <p className="text-gray-600">
-                    info@nowalnaturecare.com
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <Clock className="w-6 h-6 text-sage-400 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-sage-600 mb-1">Hours</h3>
-                  <p className="text-gray-600">
-                    Monday – Sunday: 7:00 AM – 7:00 PM
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <MessageCircle className="w-6 h-6 text-sage-400 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-sage-600 mb-1">WhatsApp</h3>
-                  <p className="text-gray-600">
-                    +91 9251582672<br />
-                    Available 24/7
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-8 p-6 bg-yellow-50 border border-yellow-200 rounded-lg">
-              <h3 className="font-semibold text-yellow-800 mb-2">
-                Emergency Contact
-              </h3>
-              <p className="text-yellow-700 text-sm">
-                24/7 Emergency Line:
-                <span className="font-semibold"> +91 9251582675</span>
-              </p>
-            </div>
-          </div>
-
-          {/* Contact Form */}
-          <div className="bg-white p-8 rounded-xl shadow-md">
-            <h2 className="text-3xl font-playfair font-bold text-sage-600 mb-6">
-              Send us a Message
-            </h2>
-
-            {submitSuccess && (
-              <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded">
-                ✅ Thank you for your message! We will get back to you within 24 hours.
-              </div>
-            )}
-
-            {submitError && (
-              <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
-                ❌ {submitError}
-              </div>
-            )}
-
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  {...register("name", { required: "Name is required" })}
-                  placeholder="Name"
-                  className="w-full px-4 py-2 border rounded-lg"
-                />
-                <input
-                  type="text"
-                  {...register("city", { required: "City is required" })}
-                  placeholder="City"
-                  className="w-full px-4 py-2 border rounded-lg"
-                />
-              </div>
-
-              <input
-                type="email"
-                {...register("email", { required: "Email is required" })}
-                placeholder="Email"
-                className="w-full px-4 py-2 border rounded-lg"
-              />
-
-              <input
-                type="tel"
-                {...register("phone", { required: "Phone number is required" })}
-                placeholder="Phone No"
-                className="w-full px-4 py-2 border rounded-lg"
-              />
-
-              <select
-                {...register("hearAboutUs", { required: "This field is required" })}
-                className="w-full px-4 py-2 border rounded-lg"
-              >
-                <option value="">How did you hear about Nowal NatureCare</option>
-                <option value="instagram">Instagram</option>
-                <option value="facebook">Facebook</option>
-                <option value="youtube">YouTube</option>
-                <option value="google">Google</option>
-                <option value="whatsapp">WhatsApp</option>
-                <option value="friend">Friends / Family</option>
-                <option value="other">Other</option>
-              </select>
-
-              <textarea
-                {...register("yourMessage", { required: "Your Message is required" })}
-                rows={4}
-                placeholder="Your Message"
-                className="w-full px-4 py-2 border rounded-lg"
-              />
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="bg-gray-800 text-white px-6 py-2 rounded hover:bg-gray-900 disabled:opacity-50"
-              >
-                {isSubmitting ? "Sending..." : "Submit"}
-              </button>
-            </form>
-          </div>
-
+  return (
+    <div className="min-h-screen bg-cream-50">
+      {/* Hero Section */}
+      <section className="relative min-h-96 flex items-center justify-center">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            alt="Get in Touch"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
         </div>
-      </div>
-    </section>
-  </div>
-);
+        
+        <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+          <h1 className="text-5xl md:text-6xl font-playfair font-bold mb-6 text-shadow">
+            Get in Touch
+          </h1>
+          <p className="text-xl md:text-2xl text-shadow">
+            We're here to guide you on your nowal journey
+          </p>
+        </div>
+      </section>
 
+      {/* Breadcrumbs */}
+      <div className="container mx-auto px-4 py-4 flex justify-center">
+        <nav className="flex" aria-label="Breadcrumb">
+          <ol className="inline-flex items-center space-x-2 md:space-x-2">
+            <li className="inline-flex items-center">
+              <Link to="/" className="text-sage-600 hover:text-sage-800">
+                Home
+              </Link>
+            </li>
+            <li className="flex items-center">
+              <span className="mx-2 text-sage-500">{'>'}</span>
+            </li>
+            <li>
+              <span className="text-sage-800 font-medium">Contact Us</span>
+            </li>
+          </ol>
+        </nav>
+      </div>
+
+      {/* Contact Information */}
+      <section className="py-16 bg-[#DDF4E7]" id="contact-form">
+        <div className="container mx-auto px-4 max-w-6xl">
+          {/* Server Status Indicator */}
+          {serverStatus === 'offline' && (
+            <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg text-center">
+              ⚠️ Server is currently offline. Form submissions will not work until the server is back online.
+            </div>
+          )}
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Contact Details */}
+            <div>
+              <h2 className="text-4xl font-playfair font-bold text-sage-600 mb-8">
+                Contact Information
+              </h2>
+              
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <MapPin className="w-6 h-6 text-sage-400 mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-sage-600 mb-1">Address</h3>
+                    <p className="text-gray-600">
+                      Gadri Badhal <br />
+                      Jaipur Rajasthan,303602 India<br />
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4">
+                  <Phone className="w-6 h-6 text-sage-400 mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-sage-600 mb-1">Phone</h3>
+                    <p className="text-gray-600">
+                      Main: +9251582672<br />
+                      Emergency: +91 9251582675
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4">
+                  <Mail className="w-6 h-6 text-sage-400 mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-sage-600 mb-1">Email</h3>
+                    <p className="text-gray-600">
+                      Support: info@nowalnaturecare.com
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4">
+                  <Clock className="w-6 h-6 text-sage-400 mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-sage-600 mb-1">Hours</h3>
+                    <p className="text-gray-600">
+                      Monday - Sunday: 7:00 AM - 7:00 PM
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4">
+                  <MessageCircle className="w-6 h-6 text-sage-400 mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-sage-600 mb-1">WhatsApp</h3>
+                    <p className="text-gray-600">
+                      +91 9251582672<br />
+                      Available 24/7 for urgent inquiries
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mt-8 p-6 bg-yellow-50 border border-yellow-200 rounded-lg">
+                <h3 className="font-semibold text-yellow-800 mb-2">Emergency Contact</h3>
+                <p className="text-yellow-700 text-sm">
+                  For medical emergencies during your stay, please contact our 24/7 emergency line: 
+                  <span className="font-semibold"> +91 9251582675</span>
+                </p>
+              </div>
+            </div>
+
+            {/* Contact Form */}
+            <div className="bg-white p-8 rounded-xl shadow-md">
+              <h2 className="text-3xl font-playfair font-bold text-sage-600 mb-6">
+                Send us a Message
+              </h2>
+              
+              {submitSuccess && (
+                <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded">
+                  ✅ Thank you for your message! We will get back to you within 24 hours.
+                </div>
+              )}
+              
+              {submitError && (
+                <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+                  ❌ {submitError}
+                </div>
+              )}
+              
+         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+  
+  {/* Name */}
+  <div>
+    <input
+      type="text"
+      {...register('name', { required: 'Name is required' })}
+      placeholder="Name"
+      className="w-full px-4 py-2 border rounded-lg"
+    />
+    {errors.name && (
+      <p className="text-red-500 text-sm">{errors.name.message}</p>
+    )}
+  </div>
+
+  {/* City */}
+  <div>
+    <input
+      type="text"
+      {...register('city', { required: 'City is required' })}
+      placeholder="City"
+      className="w-full px-4 py-2 border rounded-lg"
+    />
+    {errors.city && (
+      <p className="text-red-500 text-sm">{errors.city.message}</p>
+    )}
+  </div>
+
+</div>
+
+
+  {/* Email */}
+  <div>
+    <input
+      type="email"
+      {...register('email', {
+        required: 'Email is required',
+        pattern: {
+          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+          message: 'Invalid email address'
+        }
+      })}
+      placeholder="Email"
+      className="w-full px-4 py-2 border rounded-lg"
+    />
+    {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+  </div>
+
+  {/* Phone */}
+  <div>
+    <input
+      type="tel"
+      {...register('phone', { required: 'Phone number is required' })}
+      placeholder="Phone No"
+      className="w-full px-4 py-2 border rounded-lg"
+    />
+    {errors.phone && <p className="text-red-500 text-sm">{errors.phone.message}</p>}
+  </div>
+
+  {/* How did you hear about us */}
+  <div>
+    <select
+      {...register('hearAboutUs', { required: 'This field is required' })}
+      className="w-full px-4 py-2 border rounded-lg text-gray-700"
+    >
+      <option value="">How did you hear about Nowal NatureCare</option>
+      <option value="instagram">Instagram</option>
+      <option value="facebook">Facebook</option>
+      <option value="youtube">YouTube</option>
+      <option value="google">Google Search</option>
+      <option value="whatsapp">WhatsApp</option>
+      <option value="friend">Friends / Family</option>
+      <option value="other">Other</option>
+    </select>
+    {errors.hearAboutUs && (
+      <p className="text-red-500 text-sm">{errors.hearAboutUs.message}</p>
+    )}
+  </div>
+
+  {/* Health Objective */}
+  <div>
+    <textarea
+      {...register('yourMessage', { required: 'Your Message is required' })}
+      placeholder="Your Message"
+      rows={4}
+      className="w-full px-4 py-2 border rounded-lg"
+    />
+    {errors.yourMessage && (
+      <p className="text-red-500 text-sm">{errors.yourMessage.message}</p>
+    )}
+  </div>
+
+  {/* Submit */}
+  <button
+    type="submit"
+    className="bg-gray-200 px-6 py-2 rounded hover:bg-gray-300"
+  >
+    Submit
+  </button>
+
+</form>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
 };
 
 export default Contact;
