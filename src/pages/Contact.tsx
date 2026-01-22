@@ -1238,6 +1238,7 @@ import { useForm } from "react-hook-form";
 import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
+import { BASE_URL } from '../config';
 
 interface ContactFormData {
   name: string;
@@ -1310,22 +1311,22 @@ const Contact: React.FC = () => {
        ✅ ACTIVE METHOD (WORKS LOCALLY + LIVE)
        ✅ BACKEND PROXY (NO CORS)
        ===================================================== */
-    await axios.post(
-      "http://localhost:5000/api/send-inquiry",
-      payload
-    );
+  await axios.post(
+    `${BASE_URL}/api/send-inquiry`,
+    payload
+  );
 
-    setSubmitSuccess(true);
-    reset();
-  } catch (error: any) {
-    console.error("❌ Inquiry Error:", error);
-    setSubmitError(
-      error?.response?.data?.message ||
-        "Failed to submit form. Please try again."
-    );
-  } finally {
-    setIsSubmitting(false);
-  }
+  setSubmitSuccess(true);
+  reset();
+} catch (error: any) {
+  console.error("❌ Inquiry Error:", error);
+  setSubmitError(
+    error?.response?.data?.message ||
+      "Failed to submit form. Please try again."
+  );
+} finally {
+  setIsSubmitting(false);
+}
 };
 
 
