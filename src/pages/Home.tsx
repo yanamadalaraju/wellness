@@ -215,7 +215,7 @@
 //           Welcome to nimba Nature Cure & Holistic Healthcare Centre
 //         </h2>
 //         <p className="text-xl text-sage-700 font-medium whitespace-nowrap">
-//           Gujarat's Premier NABH Accredited nimba Destination
+//           Rajasthan's Premier NABH Accredited nimba Destination
 //         </p>
         
 //         {/* Bottom strip */}
@@ -748,7 +748,7 @@
 //                 <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#4a7d52] to-[#3E5F44]"></div>
 //               </div>
 //               <p className="text-xl text-[#3E5F44] font-medium mt-4">
-//                 Gujarat's Premier NABH Accredited Nowal Destination
+//                 Rajasthan's Premier NABH Accredited Nowal Destination
 //               </p>
 //             </div>
 //           </div>

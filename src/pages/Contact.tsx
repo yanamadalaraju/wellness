@@ -271,7 +271,7 @@
 //             <address className="not-italic text-sm text-gray-600 mt-1">
 //               Baliyasan, Nr. Mccain Foods<br />
 //               Ahmedabad–Mehsana Expressway<br />
-//               Mehsana – 382732, Gujarat
+//               Mehsana – 382732, Rajasthan
 //             </address>
 //           </div>
 //         </div>
@@ -748,7 +748,7 @@
 //                   <address className="not-italic text-sm text-gray-600 mt-1">
 //                     Baliyasan, Nr. Mccain Foods<br />
 //                     Ahmedabad–Mehsana Expressway<br />
-//                     Mehsana – 382732, Gujarat
+//                     Mehsana – 382732, Rajasthan
 //                   </address>
 //                 </div>
 //               </div>

@@ -411,7 +411,7 @@ const HealingTeam: React.FC = () => {
         These experiences, combined with years of research into naturopathy and natural wellness systems, inspired me to create a center that reflects not just traditional wisdom, but also my personal vision for sustainable, preventive health care.
       </p>
       <p>
-        This dream took shape in Gujarat—with the founding of Nowal NatureCare, a haven where the healing force of nature meets scientific sensibility and mindful living.
+        This dream took shape in  Rajasthan—with the founding of Nowal NatureCare, a haven where the healing force of nature meets scientific sensibility and mindful living.
       </p>
       <p>
         Today, I am proud to see Nowal NatureCare recognized among India’s respected naturopathy destinations. We’ve touched countless lives by encouraging meaningful lifestyle shifts and empowering people to take charge of their own wellness.
@@ -677,7 +677,7 @@ export default HealingTeam;
 //               These experiences, combined with years of research into naturopathy and natural wellness systems, inspired me to create a center that reflects not just traditional wisdom, but also my personal vision for sustainable, preventive health care.
 //             </p>
 //             <p className="bg-white/80 p-6 rounded-lg shadow-sm">
-//               This dream took shape in Gujarat—with the founding of Nowal NatureCare, a haven where the healing force of nature meets scientific sensibility and mindful living.
+//               This dream took shape in Rajasthan—with the founding of Nowal NatureCare, a haven where the healing force of nature meets scientific sensibility and mindful living.
 //             </p>
 //             <p className="bg-white/80 p-6 rounded-lg shadow-sm">
 //               Today, I am proud to see Nowal NatureCare recognized among India's respected naturopathy destinations. We've touched countless lives by encouraging meaningful lifestyle shifts and empowering people to take charge of their own wellness.
