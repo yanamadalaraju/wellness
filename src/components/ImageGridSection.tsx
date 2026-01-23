@@ -360,7 +360,6 @@
 
 
 
-
 import React, { useState, useEffect } from 'react';
 import { BASE_URL } from '../config';
 
@@ -393,11 +392,33 @@ const ImageGridSection = () => {
         throw new Error('Failed to fetch gallery images');
       }
       
-      const data = await response.json();
-      setImages(data);
+      const result = await response.json();
+      
+      // Check if response has data property
+      if (result.success && Array.isArray(result.data)) {
+        // Map the backend response to match frontend interface
+        const mappedImages = result.data.map((item: any) => ({
+          id: item.id,
+          image_url: item.src || item.image_url,
+          title: item.title,
+          description: item.description || '',
+          display_order: 0, // Default value since backend doesn't have this field
+          is_active: true // Default value
+        }));
+        setImages(mappedImages);
+      } else {
+        // If no data property, try to use the response directly
+        if (Array.isArray(result)) {
+          setImages(result);
+        } else {
+          setImages([]);
+          console.warn('Unexpected response format:', result);
+        }
+      }
     } catch (err) {
       console.error('Error fetching gallery images:', err);
       setError('Failed to load gallery images');
+      setImages([]);
     } finally {
       setLoading(false);
     }
@@ -460,7 +481,7 @@ const ImageGridSection = () => {
               onClick={() => openModal(idx)}
             >
               <img
-                src={`${BASE_URL}${image.image_url}`}
+                src={image.image_url.startsWith('http') ? image.image_url : `${BASE_URL}${image.image_url}`}
                 alt={image.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
@@ -497,7 +518,7 @@ const ImageGridSection = () => {
             
             <div className="overflow-hidden rounded-lg">
               <img
-                src={`${BASE_URL}${images[currentIndex].image_url}`}
+                src={images[currentIndex].image_url.startsWith('http') ? images[currentIndex].image_url : `${BASE_URL}${images[currentIndex].image_url}`}
                 alt={images[currentIndex].title}
                 className="w-full max-h-[80vh] object-contain"
               />

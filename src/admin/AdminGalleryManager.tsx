@@ -435,9 +435,6 @@
 
 
 
-
-
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Plus, Edit, Trash2, Image, Save, X, AlertCircle, RefreshCw } from 'lucide-react';
 import { BASE_URL } from '../config';
@@ -488,13 +485,36 @@ const AdminGalleryManager: React.FC = () => {
         throw new Error('Failed to fetch gallery images');
       }
 
-      const data = await response.json();
-      setGalleryImages(data);
+      const result = await response.json();
+      
+      // Check if response has data property
+      if (result.success && Array.isArray(result.data)) {
+        // Map the backend response to match frontend interface
+        const mappedImages = result.data.map((item: any) => ({
+          id: item.id,
+          image_url: item.src || item.image_url,
+          title: item.title,
+          description: item.description || '',
+          display_order: 0, // Default value since backend doesn't have this field
+          is_active: true // Default value
+        }));
+        setGalleryImages(mappedImages);
+      } else {
+        // If no data property, try to use the response directly
+        if (Array.isArray(result)) {
+          setGalleryImages(result);
+        } else {
+          setGalleryImages([]);
+          console.warn('Unexpected response format:', result);
+        }
+      }
+      
       setServerStatus('online');
     } catch (error) {
       console.error('Error fetching gallery images:', error);
-      setError('Failed to load gallery images');
+      setError('Failed to load gallery images. Please check your connection.');
       setServerStatus('offline');
+      setGalleryImages([]);
     } finally {
       setLoading(false);
     }
@@ -519,6 +539,12 @@ const AdminGalleryManager: React.FC = () => {
       setUploading(true);
       setError(null);
       
+      console.log('Sending form data...');
+      // Log what's in the FormData
+      for (let [key, value] of formData.entries()) {
+        console.log(key, value instanceof File ? `File: ${value.name}, size: ${value.size} bytes` : value);
+      }
+      
       const response = await fetch(`${BASE_URL}/api/gallery-images`, {
         method: 'POST',
         body: formData,
@@ -526,13 +552,21 @@ const AdminGalleryManager: React.FC = () => {
 
       if (!response.ok) {
         const errorText = await response.text();
+        console.error('Server error response:', errorText);
         throw new Error(errorText || 'Failed to add image');
       }
 
-      showMessage('Image added successfully!');
-      await fetchGalleryImages();
-      setIsAdding(false);
-      resetFileInput();
+      const result = await response.json();
+      console.log('Server response:', result);
+      
+      if (result.success) {
+        showMessage('Image added successfully!');
+        await fetchGalleryImages();
+        setIsAdding(false);
+        resetFileInput();
+      } else {
+        throw new Error(result.message || 'Failed to add image');
+      }
     } catch (error) {
       console.error('Error adding image:', error);
       showMessage(error instanceof Error ? error.message : 'Failed to add image', true);
@@ -546,6 +580,7 @@ const AdminGalleryManager: React.FC = () => {
       setUploading(true);
       setError(null);
       
+      // Note: Your backend doesn't have update endpoint, you might need to create it
       const response = await fetch(`${BASE_URL}/api/gallery-images/${id}`, {
         method: 'PUT',
         body: formData,
@@ -571,8 +606,14 @@ const AdminGalleryManager: React.FC = () => {
   const handleDeleteImage = async (id: number) => {
     if (window.confirm('Are you sure you want to delete this image?')) {
       try {
-        const response = await fetch(`${BASE_URL}/api/gallery-images/${id}`, {
+        // Note: Your backend only has bulk delete, not single delete
+        // You need to create a single delete endpoint or use the bulk one
+        const response = await fetch(`${BASE_URL}/api/gallery-images/bulk`, {
           method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ imageIds: [id] })
         });
 
         if (!response.ok) {
@@ -608,10 +649,11 @@ const AdminGalleryManager: React.FC = () => {
     const form = e.currentTarget;
     const formData = new FormData(form);
     
+    // Get the image file from the file input
+    const imageFile = (fileInputRef.current?.files?.[0]) as File;
     const title = formData.get('title') as string;
     const description = formData.get('description') as string;
-    const display_order = formData.get('display_order') as string;
-    const imageFile = formData.get('image') as File;
+    const category = formData.get('category') as string;
 
     // Validate required fields
     if (!title) {
@@ -619,26 +661,34 @@ const AdminGalleryManager: React.FC = () => {
       return;
     }
 
-    // For new images, require a file
-    if (isAdding && (!imageFile || imageFile.size === 0)) {
-      showMessage('Please select an image file', true);
+    if (!category) {
+      showMessage('Category is required', true);
       return;
     }
 
-    const submitData = new FormData();
-    submitData.append('title', title);
-    submitData.append('description', description || '');
-    submitData.append('display_order', display_order || '0');
-    submitData.append('is_active', 'true');
+    // For new images, require a file
+    if (isAdding) {
+      if (!imageFile) {
+        showMessage('Please select an image file', true);
+        return;
+      }
+    }
 
-    if (imageFile && imageFile.size > 0) {
-      submitData.append('image', imageFile);
+    // Use the original formData and just ensure everything is included
+    if (imageFile) {
+      formData.set('image', imageFile); // Ensure image is set in FormData
+    }
+
+    // Log FormData contents for debugging
+    console.log('FormData contents before sending:');
+    for (let [key, value] of formData.entries()) {
+      console.log(`${key}:`, value instanceof File ? `File - ${value.name} (${value.size} bytes)` : value);
     }
 
     if (isAdding) {
-      await handleAddImage(submitData);
+      await handleAddImage(formData);
     } else if (editingImage) {
-      await handleUpdateImage(editingImage.id, submitData);
+      await handleUpdateImage(editingImage.id, formData);
     }
   };
 
@@ -758,14 +808,18 @@ const AdminGalleryManager: React.FC = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-2 text-gray-700">Display Order</label>
-                    <input
-                      type="number"
-                      name="display_order"
-                      defaultValue={editingImage?.display_order || 0}
+                    <label className="block text-sm font-medium mb-2 text-gray-700">Category *</label>
+                    <select
+                      name="category"
+                      defaultValue="Weddings"
                       className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      min="0"
-                    />
+                      required
+                    >
+                      <option value="Weddings">Weddings</option>
+                      <option value="Events">Events</option>
+                      <option value="Decor">Decor</option>
+                      <option value="Catering">Catering</option>
+                    </select>
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-2 text-gray-700">
@@ -786,7 +840,7 @@ const AdminGalleryManager: React.FC = () => {
                         </p>
                         <div className="mt-1">
                           <img
-                            src={`${BASE_URL}${editingImage.image_url}`}
+                            src={editingImage.image_url.startsWith('http') ? editingImage.image_url : `${BASE_URL}${editingImage.image_url}`}
                             className="w-32 h-20 object-cover rounded border"
                             alt="Current"
                           />
@@ -818,7 +872,7 @@ const AdminGalleryManager: React.FC = () => {
           )}
 
           {/* Images Grid */}
-          {galleryImages.length === 0 ? (
+          {!Array.isArray(galleryImages) || galleryImages.length === 0 ? (
             <div className="bg-white rounded-lg shadow p-8 text-center">
               <Image className="h-12 w-12 text-gray-400 mx-auto mb-4" />
               <h3 className="text-lg font-medium text-gray-900 mb-1">No gallery images yet</h3>
@@ -830,18 +884,18 @@ const AdminGalleryManager: React.FC = () => {
                 <div key={image.id} className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow">
                   <div className="relative aspect-video bg-gray-200">
                     <img
-                      src={`${BASE_URL}${image.image_url}`}
+                      src={image.image_url.startsWith('http') ? image.image_url : `${BASE_URL}${image.image_url}`}
                       className="w-full h-full object-cover"
                       alt={image.title}
                     />
                     <div className="absolute top-2 right-2 flex gap-1">
-                      {/* <button
+                      <button
                         onClick={() => setEditingImage(image)}
                         className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded transition-colors"
                         title="Edit"
                       >
                         <Edit className="w-4 h-4" />
-                      </button> */}
+                      </button>
                       <button
                         onClick={() => handleDeleteImage(image.id)}
                         className="bg-red-600 hover:bg-red-700 text-white p-2 rounded transition-colors"
@@ -855,9 +909,9 @@ const AdminGalleryManager: React.FC = () => {
                     <h3 className="font-semibold text-lg mb-1 text-gray-800">{image.title}</h3>
                     <p className="text-gray-600 text-sm mb-2 line-clamp-2">{image.description}</p>
                     <div className="flex justify-between text-xs text-gray-500">
-                      <span className="bg-gray-100 px-2 py-1 rounded">Order: {image.display_order}</span>
-                      <span className={`px-2 py-1 rounded ${image.is_active ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
-                        {image.is_active ? 'Active' : 'Inactive'}
+                      <span className="bg-gray-100 px-2 py-1 rounded">ID: {image.id}</span>
+                      <span className="px-2 py-1 rounded bg-green-100 text-green-800">
+                        Active
                       </span>
                     </div>
                   </div>
