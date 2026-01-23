@@ -2242,9 +2242,9 @@ const AdminNavbar: React.FC = () => {
               <NavLink to="/dashboard" className={linkClasses}>
                 Dashboard
               </NavLink>
-              <NavLink to="/customers" className={linkClasses}>
+              {/* <NavLink to="/customers" className={linkClasses}>
                 Contact Submissions
-              </NavLink>
+              </NavLink> */}
               <NavLink to="/applications" className={linkClasses}>
                 Applications
               </NavLink>
@@ -2365,7 +2365,7 @@ const AdminNavbar: React.FC = () => {
           >
             Dashboard
           </NavLink>
-          <NavLink
+          {/* <NavLink
             to="/customers"
             onClick={() => setIsMobileMenuOpen(false)}
             className={({ isActive }) =>
@@ -2377,7 +2377,7 @@ const AdminNavbar: React.FC = () => {
             }
           >
             Contact Submissions
-          </NavLink>
+          </NavLink> */}
           <NavLink
             to="/applications"
             onClick={() => setIsMobileMenuOpen(false)}
