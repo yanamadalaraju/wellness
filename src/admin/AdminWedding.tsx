@@ -1008,35 +1008,42 @@ const AdminWedding: React.FC = () => {
     }
   };
 
-  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      // Validate file type
-      if (!file.type.startsWith('image/')) {
-        setError('Please select an image file (JPG, PNG, GIF, etc.)');
-        return;
-      }
-      
-      // Validate file size (5MB)
-      if (file.size > 5 * 1024 * 1024) {
-        setError('Image size should be less than 5MB');
-        return;
-      }
-      
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        if (event.target?.result) {
-          setHeroContent(prev => ({
-            ...prev,
-            backgroundImage: event.target!.result as string
-          }));
-          setIsSaved(false);
-          setError(null);
-        }
-      };
-      reader.readAsDataURL(file);
+ const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const file = e.target.files?.[0];
+  if (!file) return;
+
+  // ✅ Validate file type
+  if (!file.type.startsWith("image/")) {
+    setError("Please select an image file (JPG, PNG, GIF, etc.)");
+    return;
+  }
+
+  // ✅ Validate file size (5MB)
+  if (file.size > 5 * 1024 * 1024) {
+    setError("Image size should be less than 5MB");
+    return;
+  }
+
+  // ✅ Create lightweight preview URL (NO BASE64)
+  const previewUrl = URL.createObjectURL(file);
+
+  setHeroContent(prev => ({
+    ...prev,
+    backgroundImage: previewUrl
+  }));
+
+  setIsSaved(false);
+  setError(null);
+};
+
+useEffect(() => {
+  return () => {
+    if (heroContent.backgroundImage.startsWith("blob:")) {
+      URL.revokeObjectURL(heroContent.backgroundImage);
     }
   };
+}, [heroContent.backgroundImage]);
+
 
   const addStat = () => {
     setHeroContent(prev => ({

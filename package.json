@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "aos": "^2.3.4",
-    "axios": "^1.11.0",
+    "axios": "^1.13.2",
     "framer-motion": "^11.3.0",
     "keen-slider": "^6.8.6",
     "lucide-react": "^0.400.0",
@@ -44,6 +44,7 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.9",
+    "nodemon": "^3.1.11",
     "postcss": "^8.4.41",
     "tailwindcss": "^3.4.7",
     "typescript": "^5.5.4",

@@ -3666,14 +3666,25 @@ const GalleryAdmin: React.FC = () => {
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4"
             onClick={() => setShowUploadModal(false)}
           >
-            <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              className="bg-white rounded-2xl shadow-2xl w-full max-w-md"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="p-6">
+          <motion.div
+                  initial={{ scale: 0.95, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.95, opacity: 0 }}
+                  className="
+                    bg-white 
+                    rounded-2xl 
+                    shadow-2xl 
+                    w-full 
+                    max-w-lg
+                    max-h-[90vh]
+                    flex 
+                    flex-col
+                  "
+                  onClick={(e) => e.stopPropagation()}
+                >
+
+              <div className="p-6 overflow-y-auto">
+
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-xl font-bold text-gray-900">
                     {editImageId ? 'Edit Image' : 'Upload New Image'}
@@ -3692,7 +3703,8 @@ const GalleryAdmin: React.FC = () => {
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Image File
                     </label>
-                    <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:border-emerald-500 transition-colors">
+                    <div className="relative border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:border-emerald-500 transition-colors">
+
                       {newImage.image ? (
                         <div className="space-y-4">
                           <div className="relative w-32 h-32 mx-auto rounded-lg overflow-hidden bg-gray-100">
@@ -3716,17 +3728,19 @@ const GalleryAdmin: React.FC = () => {
                           <Upload className="w-12 h-12 text-gray-400 mx-auto mb-4" />
                           <p className="text-sm text-gray-600 mb-2">Drag & drop or click to upload</p>
                           <p className="text-xs text-gray-500">JPG, PNG, GIF, WEBP (max 10MB)</p>
-                          <input
+                         <input
                             type="file"
                             accept="image/*"
                             onChange={(e) => {
                               const file = e.target.files?.[0];
                               if (file) {
-                                setNewImage({...newImage, image: file});
+                                setNewImage({ ...newImage, image: file });
                               }
                             }}
-                            className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                            className="absolute inset-0 w-full h-full opacity-0"
+                            style={{ cursor: "pointer" }}
                           />
+
                         </div>
                       )}
                     </div>
