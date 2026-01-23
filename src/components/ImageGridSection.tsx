@@ -358,8 +358,6 @@
 
 // export default ImageGridSection;
 
-
-
 import React, { useState, useEffect } from 'react';
 import { BASE_URL } from '../config';
 
@@ -379,6 +377,16 @@ const ImageGridSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Function to get a local fallback image
+  const getFallbackImage = (width: number, height: number, text: string) => {
+    return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(`
+      <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
+        <rect width="100%" height="100%" fill="#f3f4f6"/>
+        <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle" dy=".3em">${text}</text>
+      </svg>
+    `)}`;
+  };
+
   useEffect(() => {
     fetchGalleryImages();
   }, []);
@@ -386,7 +394,9 @@ const ImageGridSection = () => {
   const fetchGalleryImages = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`${BASE_URL}/api/gallery-images`);
+      
+      // Updated endpoint to fetch from newgallery_images table
+      const response = await fetch(`${BASE_URL}/api/new-gallery-images`);
       
       if (!response.ok) {
         throw new Error('Failed to fetch gallery images');
@@ -394,26 +404,12 @@ const ImageGridSection = () => {
       
       const result = await response.json();
       
-      // Check if response has data property
+      // Only show active images
       if (result.success && Array.isArray(result.data)) {
-        // Map the backend response to match frontend interface
-        const mappedImages = result.data.map((item: any) => ({
-          id: item.id,
-          image_url: item.src || item.image_url,
-          title: item.title,
-          description: item.description || '',
-          display_order: 0, // Default value since backend doesn't have this field
-          is_active: true // Default value
-        }));
-        setImages(mappedImages);
+        const activeImages = result.data.filter((image: GalleryImage) => image.is_active);
+        setImages(activeImages);
       } else {
-        // If no data property, try to use the response directly
-        if (Array.isArray(result)) {
-          setImages(result);
-        } else {
-          setImages([]);
-          console.warn('Unexpected response format:', result);
-        }
+        setImages([]);
       }
     } catch (err) {
       console.error('Error fetching gallery images:', err);
@@ -474,30 +470,43 @@ const ImageGridSection = () => {
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-serif text-center mb-12 text-[#3a3a3a]">Nowal Sanctuary</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {images.map((image, idx) => (
-            <div 
-              key={image.id} 
-              className="relative group overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 h-64 cursor-pointer"
-              onClick={() => openModal(idx)}
-            >
-              <img
-                src={image.image_url.startsWith('http') ? image.image_url : `${BASE_URL}${image.image_url}`}
-                alt={image.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                <span className="text-white text-lg font-medium">
-                  {image.title}
-                </span>
+          {images.map((image, idx) => {
+            const imageUrl = image.image_url || '';
+            
+            return (
+              <div 
+                key={image.id} 
+                className="relative group overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 h-64 cursor-pointer"
+                onClick={() => openModal(idx)}
+              >
+                {imageUrl ? (
+                  <img
+                    src={imageUrl}
+                    alt={image.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    onError={(e) => {
+                      e.currentTarget.src = getFallbackImage(400, 300, 'Image Not Found');
+                    }}
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-gray-200">
+                    <span className="text-gray-500">No image</span>
+                  </div>
+                )}
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <span className="text-white text-lg font-medium">
+                    {image.title}
+                  </span>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
       {/* Modal Carousel */}
-      {isModalOpen && (
+      {isModalOpen && images.length > 0 && (
         <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4">
           <button 
             onClick={closeModal}
@@ -518,9 +527,12 @@ const ImageGridSection = () => {
             
             <div className="overflow-hidden rounded-lg">
               <img
-                src={images[currentIndex].image_url.startsWith('http') ? images[currentIndex].image_url : `${BASE_URL}${images[currentIndex].image_url}`}
+                src={images[currentIndex].image_url || getFallbackImage(800, 600, 'Image Not Found')}
                 alt={images[currentIndex].title}
                 className="w-full max-h-[80vh] object-contain"
+                onError={(e) => {
+                  e.currentTarget.src = getFallbackImage(800, 600, 'Image Not Found');
+                }}
               />
               <div className="bg-black/50 text-white p-4 text-center">
                 <h3 className="text-xl font-medium">{images[currentIndex].title}</h3>
