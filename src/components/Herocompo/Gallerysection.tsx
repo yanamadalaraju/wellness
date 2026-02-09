@@ -1,10 +1,10 @@
 import React from 'react'; // Add this import
 import { useNavigate } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa';
-import image5 from "../../assets/wellness.jpg";
-import image6 from "../../assets/303.jpg";
-import image7 from "../../assets/3d2-1.jpg";
-import image8 from "../../assets/Dormitory .jpg";
+import image5 from "../../assets/DSCF5108.jpg.jpeg";
+import image6 from "../../assets/Pool view 2 .jpeg";
+import image7 from "../../assets/DSC05394.jpg";
+import image8 from "../../assets/DSCF5032.jpg";
 import { motion } from 'framer-motion';
 import { Sprout } from 'lucide-react';
 
