@@ -129,10 +129,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // Import images from assets
-import wellnessImage from '../assets/Wellness.jpg';
-import amenitiesImage from '../assets/2ps-7.png';
-import mediaEventsImage from '../assets/3d1-1.jpg';
-import livingSpaceImage from '../assets/Dormitory .jpg';
+import wellnessImage from '../assets/DSCF5108.jpg.jpeg';
+import amenitiesImage from '../assets/Pool view 2 .jpeg';
+import mediaEventsImage from '../assets/DSC05394.jpg';
+import livingSpaceImage from '../assets/DSCF5032.jpg';
 
 interface GalleryItem {
   title: string;
