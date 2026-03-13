@@ -1384,10 +1384,15 @@ return (
                 <MapPin className="w-6 h-6 text-sage-400 mt-1" />
                 <div>
                   <h3 className="font-semibold text-sage-600 mb-1">Address</h3>
-                  <p className="text-gray-600">
+                  {/* <p className="text-gray-600">
                     Gadri Badhal <br />
                     Jaipur Rajasthan, 303602 India
-                  </p>
+                  </p> */}
+                  <p className="text-gray-600">
+  Nowal Naturecare Resort ,Khasra No. 256/19, Turkiyawas Kishangarh <br />
+  Looniyawas, Jaipur <br />
+  Rajasthan, 305801 India
+              </p>
                 </div>
               </div>
 
