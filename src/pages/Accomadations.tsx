@@ -12,6 +12,7 @@ import heroBackground from '../assets/room1.jpg';
 import AccommodationTable from '../components/AccommodationTariff';
 import RoomTariffSection from './Charges';
 import { BASE_URL } from '../config';
+import CampusMapSection from '../components/celebrations/CampusMapSection';
 
 // Define TypeScript interfaces
 interface Room {
@@ -317,7 +318,10 @@ const handlePrev = () => {
         </div>
       </section>
 
+      <CampusMapSection />
+
       <RoomTariffSection />
+
 
       {/* Booking Modal */}
       {showBookingModal && (
