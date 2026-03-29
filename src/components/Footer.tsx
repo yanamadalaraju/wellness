@@ -617,11 +617,17 @@ const Footer: React.FC = () => {
           <img src={logo} alt="Nowal Logo" className="w-48" />
           <div className="flex items-start gap-3">
             <MapPin className="w-5 h-5 mt-1 flex-shrink-0 text-[#9EB384]" />
-            <address className="not-italic leading-relaxed">
+            {/* <address className="not-italic leading-relaxed">
               Gadri, Badhal <br />
               Jaipur, Rajasthan,<br />
               303602 India.
-            </address>   
+            </address>    */}
+            <address className="not-italic leading-relaxed">
+  Nowal Naturecare Resort ,Khasra No. 256/19, Turkiyawas Kishangarh <br />
+  Looniyawas, Jaipur <br />
+  Rajasthan – 305801 <br />
+  India
+        </address>
           </div>
           
           <div className="flex space-x-4">

@@ -291,6 +291,8 @@
 // export default HealingTeam
 
 
+
+
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Video360Viewer from './Video360Viewer'
@@ -388,7 +390,7 @@ const HealingTeam: React.FC = () => {
   <div className="max-w-5xl mx-auto text-center">
     {/* Decorative Heading */}
     <h2 className="text-3xl md:text-4xl font-extrabold text-[#435334] mb-2 relative inline-block">
-     Thought of Founder  - <span className="text-[ #7E8A59]">Shri Ram Nivas Nowal</span>
+     Thought of Founder  - <span className="text-[ #7E8A59]">Shri Ram Niwas Nowal</span>
       <span className="block h-1 w-20 bg-[#9EB384] mt-2 mx-auto rounded-full"></span>
     </h2>
 
