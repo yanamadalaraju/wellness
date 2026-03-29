@@ -5,7 +5,7 @@ export default function BlogCards() {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/blog-cards")
+    fetch("https://www.nowalnaturecare.com:5000/api/blog-cards")
       .then((res) => res.json())
       .then((data) => setCards(data));
   }, []);
@@ -21,7 +21,7 @@ export default function BlogCards() {
           className="bg-white rounded-2xl shadow-lg overflow-hidden"
         >
           <img
-            src={`http://localhost:5000${card.image_url}`}
+            src={`https://www.nowalnaturecare.com:5000${card.image_url}`}
             className="w-full h-52 object-cover"
           />
 
