@@ -1,0 +1,10 @@
+# public/robots.txt
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /login
+Disallow: /register
+Disallow: /dashboard
+Disallow: /applications
+
+Sitemap: https://www.nowalnaturecare.com/sitemap.xml

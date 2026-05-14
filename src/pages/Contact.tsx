@@ -1239,6 +1239,8 @@ import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from '../config';
+import SEO from '../components/SEO';
+import seoData from '../config/seoData';
 
 interface ContactFormData {
   name: string;
@@ -1331,6 +1333,14 @@ const Contact: React.FC = () => {
 
 
 return (
+  <>
+  <SEO 
+        title={seoData.contact.title}
+        description={seoData.contact.description}
+        keywords={seoData.contact.keywords}
+        canonicalUrl={seoData.contact.canonicalUrl}
+      />
+  
   <div className="min-h-screen bg-cream-50">
     {/* Hero Section */}
     <section className="relative min-h-96 flex items-center justify-center">
@@ -1533,6 +1543,7 @@ return (
       </div>
     </section>
   </div>
+  </>
 );
 
 };

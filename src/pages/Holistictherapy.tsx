@@ -13,9 +13,19 @@ import TherapySection from '../components/EnemaSection';
 import AyurvedsTherapySection from '../components/Ayurvedtheraphy';
 import PhysioTherapySection from '../components/PhysioTherapySection';
 import HolisticTherapySection from '../components/Holistictherapysection';
+import SEO from '../components/SEO';
+import seoData from '../config/seoData';
 
 const Holistictheraphy: React.FC = () => {
   return (
+    <>
+    <SEO 
+        title={seoData.holisticTherapy.title}
+        description={seoData.holisticTherapy.description}
+        keywords={seoData.holisticTherapy.keywords}
+        canonicalUrl={seoData.holisticTherapy.canonicalUrl}
+      />
+
     <div className="min-h-screen bg-cream-50">
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center">
@@ -123,6 +133,7 @@ const Holistictheraphy: React.FC = () => {
 
 
     </div>
+    </>
   );
 };
 

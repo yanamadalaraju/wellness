@@ -200,9 +200,18 @@
 
 import React from 'react';
 import image from "../assets/bascketimage-removebg-preview.png";
+import SEO from '../components/SEO';
+import seoData from '../config/seoData';
 
 const DietPage = () => {
   return (
+    <>
+    <SEO 
+        title={seoData.diet.title}
+        description={seoData.diet.description}
+        keywords={seoData.diet.keywords}
+        canonicalUrl={seoData.diet.canonicalUrl}
+      />
     <div className="max-w-6xl mx-auto px-4 py-8">
       {/* Header with Hero Image */}
       <header className="text-center mb-12 relative">
@@ -606,6 +615,7 @@ const DietPage = () => {
         </div>
       </section> */}
     </div>
+    </>
   );
 };
 

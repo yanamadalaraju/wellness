@@ -2,9 +2,19 @@
 import React from "react";
 import { motion } from "framer-motion";
 import BlogCards from "../components/BlogCards";
+import SEO from '../components/SEO';
+import seoData from '../config/seoData';
 
 export default function BlogPage() {
   return (
+    <>
+    <SEO 
+        title={seoData.blog.title}
+        description={seoData.blog.description}
+        keywords={seoData.blog.keywords}
+        canonicalUrl={seoData.blog.canonicalUrl}
+        ogType="article"
+      />
     <div className="w-full bg-white text-gray-800">
       {/* Hero Section */}
      <section className="relative h-[70vh] flex items-center justify-center bg-gradient-to-r from-emerald-700 to-teal-600 text-white">
@@ -62,6 +72,7 @@ export default function BlogPage() {
 
        
             <BlogCards />
+            
             {/* Blog Card 1 */}
            {/* <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -143,5 +154,6 @@ export default function BlogPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -5,6 +5,8 @@ import ReachSection from '../components/Reachsection';
 import CareerForm from '../components/Careerform';
 import JobOpeningsSection from '../components/JobOpeningsSection';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
+import seoData from '../config/seoData';
 
 const Carrer: React.FC = () => {
   const location = useLocation();
@@ -17,6 +19,14 @@ const Carrer: React.FC = () => {
   }, [location.state]);
 
   return (
+    <>
+    <SEO 
+        title={seoData.career.title}
+        description={seoData.career.description}
+        keywords={seoData.career.keywords}
+        canonicalUrl={seoData.career.canonicalUrl}
+      />
+   
     <div className="min-h-screen bg-cream-50">
       {/* Hero Section */}
       <section className="relative min-h-96 flex items-center justify-center">
@@ -133,6 +143,7 @@ const Carrer: React.FC = () => {
   </div>
 </section>
     </div>
+     </>
   );
 };
 

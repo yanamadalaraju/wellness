@@ -472,10 +472,20 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import image from "../assets/2ps-7.png";
 import image1 from "../assets/physiotherapy.jpg";
+import SEO from '../components/SEO';
+import seoData from '../config/seoData';
 
 const Programs: React.FC = () => {
    const navigate = useNavigate();
   return (
+    <>
+     <SEO 
+        title={seoData.programs.title}
+        description={seoData.programs.description}
+        keywords={seoData.programs.keywords}
+        canonicalUrl={seoData.programs.canonicalUrl}
+      />
+   
     <div className="min-h-screen bg-cream-50">
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center">
@@ -923,6 +933,7 @@ By addressing the root cause and supporting the body holistically, it stands as 
         </div>
       </section> */}
     </div>
+     </>
   );
 };
 

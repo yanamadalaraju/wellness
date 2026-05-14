@@ -296,11 +296,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Video360Viewer from './Video360Viewer'
-import "../../src/pages/HealingTeam.css";
+// import "../../src/pages/HealingTeam.css";
 import img from "../assets/healing.jpeg";
+import SEO from '../components/SEO';
+import seoData from '../config/seoData';
+
 
 const HealingTeam: React.FC = () => {
   return (
+    <>
+    <SEO 
+        title={seoData.healingTeam.title}
+        description={seoData.healingTeam.description}
+        keywords={seoData.healingTeam.keywords}
+        canonicalUrl={seoData.healingTeam.canonicalUrl}
+      />
     <div className="min-h-screen bg-cream-50">
       {/* Hero Section */}
       <section className="relative min-h-96 flex items-center justify-center">
@@ -549,6 +559,7 @@ Together, they create a nurturing space where healing is not just delivered—it
       {/* Add the following CSS for flip cards */}
      
     </div>
+    </>
   )
 }
 

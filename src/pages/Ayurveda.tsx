@@ -11,9 +11,18 @@ import {
 import EnemaSection from '../components/EnemaSection';
 import TherapySection from '../components/EnemaSection';
 import AyurvedsTherapySection from '../components/Ayurvedtheraphy';
+import SEO from '../components/SEO';
+import seoData from '../config/seoData';
 
 const Ayurveda: React.FC = () => {
   return (
+    <>
+    <SEO 
+        title={seoData.ayurveda.title}
+        description={seoData.ayurveda.description}
+        keywords={seoData.ayurveda.keywords}
+        canonicalUrl={seoData.ayurveda.canonicalUrl}
+      />
     <div className="min-h-screen bg-cream-50">
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center">
@@ -221,6 +230,7 @@ const Ayurveda: React.FC = () => {
 
 
     </div>
+    </>
   );
 };
 

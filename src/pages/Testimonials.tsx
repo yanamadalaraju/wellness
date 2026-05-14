@@ -329,9 +329,19 @@ import {
 } from 'lucide-react';
 import VideoCarousel from '../components/VideoCarousel';
 import TestimonialCarousel from '../components/TestimonialCarousel';
+import SEO from '../components/SEO';
+import seoData from '../config/seoData';
+
 
 const Programs: React.FC = () => {
   return (
+    <>
+    <SEO 
+        title={seoData.testimonials.title}
+        description={seoData.testimonials.description}
+        keywords={seoData.testimonials.keywords}
+        canonicalUrl={seoData.testimonials.canonicalUrl}
+      />
     <div className="min-h-screen bg-cream-50">
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center">
@@ -482,6 +492,7 @@ const Programs: React.FC = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

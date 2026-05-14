@@ -176,6 +176,7 @@ import AdminGallery from './admin/AdminGallerywedding'
 import RoomManager from './admin/RoomManager'
 import AdminBlogCard from './admin/AdminBlogCard'
 import BlogPage from './pages/Blog'
+import { HelmetProvider } from 'react-helmet-async';
 function AppRoutes() {
   const location = useLocation()
 
@@ -189,6 +190,7 @@ function AppRoutes() {
     <ScrollToTop />
       {!hideLayout && (
         <Layout>
+           <HelmetProvider>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/experience" element={<Experience />} />
@@ -243,6 +245,7 @@ function AppRoutes() {
             <Route path="/blog" element={<BlogPage />} />
 
           </Routes>
+          </HelmetProvider>
           <WhatsAppButton />
           <ChatBot />
         </Layout>

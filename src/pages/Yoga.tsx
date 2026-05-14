@@ -12,9 +12,18 @@ import EnemaSection from '../components/EnemaSection';
 import TherapySection from '../components/EnemaSection';
 import AyurvedsTherapySection from '../components/Ayurvedtheraphy';
 import YogaTherapySection from '../components/Yogaandmeditation';
+import SEO from '../components/SEO';
+import seoData from '../config/seoData';
 
 const Yoga: React.FC = () => {
   return (
+    <>
+    <SEO 
+        title={seoData.yoga.title}
+        description={seoData.yoga.description}
+        keywords={seoData.yoga.keywords}
+        canonicalUrl={seoData.yoga.canonicalUrl}
+      />
     <div className="min-h-screen bg-cream-50">
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center">
@@ -280,6 +289,7 @@ const Yoga: React.FC = () => {
 
 
     </div>
+    </>
   );
 };
 

@@ -352,10 +352,19 @@ import image3 from "../assets/musclularimage.jpg";
 import image4 from "../assets/nuts.jpg";
 import image5 from "../assets/lifestyle.jpg";
 import { useNavigate } from 'react-router-dom';
+import SEO from '../components/SEO';
+import seoData from '../config/seoData';
 
 const Programs: React.FC = () => {
     const navigate = useNavigate();
   return (
+    <>
+    <SEO 
+        title={seoData.treatments.title}
+        description={seoData.treatments.description}
+        keywords={seoData.treatments.keywords}
+        canonicalUrl={seoData.treatments.canonicalUrl}
+      />
     <div className="min-h-screen bg-cream-50">
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center">
@@ -789,6 +798,7 @@ const Programs: React.FC = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

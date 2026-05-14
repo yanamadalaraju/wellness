@@ -10,9 +10,18 @@ import {
 } from 'lucide-react';
 import EnemaSection from '../components/EnemaSection';
 import TherapySection from '../components/EnemaSection';
+import SEO from '../components/SEO';
+import seoData from '../config/seoData';
 
 const Narutopathy: React.FC = () => {
   return (
+    <>
+     <SEO 
+        title={seoData.naturopathy.title}
+        description={seoData.naturopathy.description}
+        keywords={seoData.naturopathy.keywords}
+        canonicalUrl={seoData.naturopathy.canonicalUrl}
+      />
     <div className="min-h-screen bg-cream-50">
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center">
@@ -312,6 +321,7 @@ const Narutopathy: React.FC = () => {
 
 
     </div>
+    </>
   );
 };
 

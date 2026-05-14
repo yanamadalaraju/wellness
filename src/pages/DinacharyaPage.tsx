@@ -155,6 +155,8 @@ import { Sun, Moon, Droplets, Leaf, ChevronRight, Quote, Clock, Heart, Activity,
 
 import { FaPersonPraying } from 'react-icons/fa6';
 import DinHeroSection from '../components/Dincharyacompo/Dincharyahero';
+import SEO from '../components/SEO';
+import seoData from '../config/seoData';
 
 const DinacharyaPage: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -265,6 +267,14 @@ const DinacharyaPage: React.FC = () => {
   };
 
   return (
+    <>
+          <SEO 
+        title={seoData.dincharya.title}
+        description={seoData.dincharya.description}
+        keywords={seoData.dincharya.keywords}
+        canonicalUrl={seoData.dincharya.canonicalUrl}
+      />
+
     <div className="dinacharya-page bg-gradient-to-b from-amber-50/30 to-white">
       {/* Hero Section with Custom Carousel */}
       {/* <section className="hero-section relative h-[500px] md:h-[700px] lg:h-[800px] overflow-hidden">
@@ -431,6 +441,7 @@ const DinacharyaPage: React.FC = () => {
 
      
     </div>
+    </>
   );
 };
 

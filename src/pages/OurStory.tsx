@@ -3,8 +3,19 @@ import { Link } from 'react-router-dom'
 import Video360Viewer from './Video360Viewer'
 import image from "../assets/wellgif.jpg";
 import img from "../assets/about.jpeg";
+import SEO from '../components/SEO';
+import seoData from '../config/seoData';
+
+
 const OurStory: React.FC = () => {
   return (
+    <>
+    <SEO 
+        title={seoData.ourstory.title}
+        description={seoData.ourstory.description}
+        keywords={seoData.ourstory.keywords}
+        canonicalUrl={seoData.ourstory.canonicalUrl}
+      />
     <div className="min-h-screen bg-cream-50">
       {/* Hero Section */}
       <section className="relative min-h-96 flex items-center justify-center">
@@ -215,6 +226,7 @@ const OurStory: React.FC = () => {
         </div>
       </section>
     </div>
+    </>
   )
 }
 

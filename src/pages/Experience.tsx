@@ -1,132 +1,141 @@
-import React from 'react';
-import { Heart, Users, Award, Clock, Leaf, Mountain } from 'lucide-react'
-import { Link } from 'react-router-dom';
-import image from '../assets/natureimg.jpg';
-import img from '../assets/3d1-1.jpg';
-import AboutFounder from '../components/founder';
+// import React from 'react';
+// import { Heart, Users, Award, Clock, Leaf, Mountain } from 'lucide-react'
+// import { Link } from 'react-router-dom';
+// import image from '../assets/natureimg.jpg';
+// import img from '../assets/3d1-1.jpg';
+// import AboutFounder from '../components/founder';
+// import SEO from '../components/SEO';
+// import seoData from '../config/seoData';
 
-const Experience: React.FC = () => {
-  return (
-    <div className="min-h-screen bg-cream-50">
-      {/* Hero Section */}
-      <section className="relative min-h-96 flex items-center justify-center">
-        <div className="absolute inset-0 z-0">
-          <img
-            src={img}
-            alt="Nowal Experience"
-            className="w-full h-full object-cover"
-          />
-          {/* <div className="absolute inset-0 bg-overlay"></div> */}
-        </div>
+// const Experience: React.FC = () => {
+//   return (
+//     <>
+//     <SEO 
+//         title={seoData.experience.title}
+//         description={seoData.experience.description}
+//         keywords={seoData.experience.keywords}
+//         canonicalUrl={seoData.experience.canonicalUrl}
+//       />
+//     <div className="min-h-screen bg-cream-50">
+//       {/* Hero Section */}
+//       <section className="relative min-h-96 flex items-center justify-center">
+//         <div className="absolute inset-0 z-0">
+//           <img
+//             src={img}
+//             alt="Nowal Experience"
+//             className="w-full h-full object-cover"
+//           />
+//           {/* <div className="absolute inset-0 bg-overlay"></div> */}
+//         </div>
         
-        <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
-          <h1 className="text-5xl md:text-6xl font-playfair font-bold mb-6 text-shadow">
-            The Nowal Experience
-          </h1>
-          <p className="text-xl md:text-2xl text-shadow">
-            Discover the essence of holistic healing through our time-tested approach
-          </p>
-        </div>
-      </section>
+//         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+//           <h1 className="text-5xl md:text-6xl font-playfair font-bold mb-6 text-shadow">
+//             The Nowal Experience
+//           </h1>
+//           <p className="text-xl md:text-2xl text-shadow">
+//             Discover the essence of holistic healing through our time-tested approach
+//           </p>
+//         </div>
+//       </section>
 
-      {/* Breadcrumbs */}
-                  <div className="container mx-auto px-4 py-4 flex justify-center">
-              <nav className="flex" aria-label="Breadcrumb">
-                <ol className="inline-flex items-center space-x-2 md:space-x-2">
-                  <li className="inline-flex items-center">
-                    <Link to="/" className="text-sage-600 hover:text-sage-800">
-                      Home
-                    </Link>
-                  </li>
-                  <li className="flex items-center">
-                    <span className="mx text-sage-500">{'>'}</span>
-                    <span className="mx text-sage-500">{'>'}</span>
-                  </li>
-                  <li>
-                    <span className="text-sage-800 font-medium">About Founder</span>
-                  </li>
-                </ol>
-              </nav>
-            </div>
+//       {/* Breadcrumbs */}
+//                   <div className="container mx-auto px-4 py-4 flex justify-center">
+//               <nav className="flex" aria-label="Breadcrumb">
+//                 <ol className="inline-flex items-center space-x-2 md:space-x-2">
+//                   <li className="inline-flex items-center">
+//                     <Link to="/" className="text-sage-600 hover:text-sage-800">
+//                       Home
+//                     </Link>
+//                   </li>
+//                   <li className="flex items-center">
+//                     <span className="mx text-sage-500">{'>'}</span>
+//                     <span className="mx text-sage-500">{'>'}</span>
+//                   </li>
+//                   <li>
+//                     <span className="text-sage-800 font-medium">About Founder</span>
+//                   </li>
+//                 </ol>
+//               </nav>
+//             </div>
 
-      {/* The Mantra Section */}
-      <section className="bg-[#DDF4E7] text-[#435334] py-24 px-6 text-center">
-  <div className="max-w-5xl mx-auto">
-    <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-wide">
-      Nowal NatureCare
-    </h2>
-    <h3 className="text-2xl md:text-3xl font-medium mb-8 italic">
-      A Sanctuary for Holistic Natural Healing.
-    </h3>
-    <p className="text-lg md:text-xl leading-relaxed mb-6">
-      In the rush of modern life, it's the mindful pause — the moment of embracing natural healing — 
-      that brings us closer to true balance and vitality.
-    </p>
-    <p className="text-base md:text-lg leading-relaxed">
-      At Nowal, our philosophy is simple yet profound: <span className="font-semibold">health and healing always come first. </span> 
-      We believe that every individual deserves the time and space to rejuvenate, rediscover their 
-      inner strength, and heal holistically — not just from today’s stressors, but from the deeper, 
-      unseen imbalances of our times. Step into a journey where Nowal is a way of life.
-    </p>
-  </div>
-</section>
+//       {/* The Mantra Section */}
+//       <section className="bg-[#DDF4E7] text-[#435334] py-24 px-6 text-center">
+//   <div className="max-w-5xl mx-auto">
+//     <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-wide">
+//       Nowal NatureCare
+//     </h2>
+//     <h3 className="text-2xl md:text-3xl font-medium mb-8 italic">
+//       A Sanctuary for Holistic Natural Healing.
+//     </h3>
+//     <p className="text-lg md:text-xl leading-relaxed mb-6">
+//       In the rush of modern life, it's the mindful pause — the moment of embracing natural healing — 
+//       that brings us closer to true balance and vitality.
+//     </p>
+//     <p className="text-base md:text-lg leading-relaxed">
+//       At Nowal, our philosophy is simple yet profound: <span className="font-semibold">health and healing always come first. </span> 
+//       We believe that every individual deserves the time and space to rejuvenate, rediscover their 
+//       inner strength, and heal holistically — not just from today’s stressors, but from the deeper, 
+//       unseen imbalances of our times. Step into a journey where Nowal is a way of life.
+//     </p>
+//   </div>
+// </section>
 
- <AboutFounder />
+//  <AboutFounder />
 
 
-      {/* Our Story Section */}
-     <section className="relative h-[700px] bg-[#DDF4E7] text-[#435334] overflow-visible">
-  {/* Background Image with Overlay */}
-  <div className="relative w-full h-full">
-    <img
-      src={image}
-      alt="Nowal Retreat"
-      className="w-full h-full object-cover"
-    />
-    <div className="absolute inset-0 bg-[#435334] opacity-20"></div>
-  </div>
+//       {/* Our Story Section */}
+//      <section className="relative h-[700px] bg-[#DDF4E7] text-[#435334] overflow-visible">
+//   {/* Background Image with Overlay */}
+//   <div className="relative w-full h-full">
+//     <img
+//       src={image}
+//       alt="Nowal Retreat"
+//       className="w-full h-full object-cover"
+//     />
+//     <div className="absolute inset-0 bg-[#435334] opacity-20"></div>
+//   </div>
 
-  {/* Content Block */}
-  <div className="absolute left-1/2 bottom-[-150px] transform -translate-x-1/2 w-full max-w-4xl bg-[#F2F1E8] text-center px-8 py-12 shadow-lg rounded-lg border border-[#435334]/10">
-    <div className="max-w-3xl mx-auto">
-      <h3 className="text-2xl md:text-3xl font-medium mb-6 leading-snug font-serif italic">
-       Every corner of Nowal NatureCare radiates peace—where lush greenery, gentle serenity, and uplifting energy come together to soothe your soul
-      </h3>
+//   {/* Content Block */}
+//   <div className="absolute left-1/2 bottom-[-150px] transform -translate-x-1/2 w-full max-w-4xl bg-[#F2F1E8] text-center px-8 py-12 shadow-lg rounded-lg border border-[#435334]/10">
+//     <div className="max-w-3xl mx-auto">
+//       <h3 className="text-2xl md:text-3xl font-medium mb-6 leading-snug font-serif italic">
+//        Every corner of Nowal NatureCare radiates peace—where lush greenery, gentle serenity, and uplifting energy come together to soothe your soul
+//       </h3>
       
-      <div className="h-px w-32 bg-[#435334]/30 mx-auto my-6"></div>
+//       <div className="h-px w-32 bg-[#435334]/30 mx-auto my-6"></div>
       
-      <p className="text-base md:text-lg leading-relaxed mb-4 font-sans">
-        At Nowal NatureCare, we gently guide you to a deeper truth—your health has always been in your hands.
-Within our serene, holistic sanctuary, healing isn’t separate from health—it’s woven together through intention, care, and balance.
-We combine the wisdom of ancient traditions, the precision of modern science, and the nurturing touch of natural therapies to help your body and mind return to harmony.
-Here, wellness isn’t treated—it’s awakened.
-You’ll find no shortcuts, only honest, organic pathways to restore what’s already within you.
-Nowal NatureCare is simply your guide—a gentle catalyst on your journey toward healing, renewal, and the quiet magic of holistic living.
+//       <p className="text-base md:text-lg leading-relaxed mb-4 font-sans">
+//         At Nowal NatureCare, we gently guide you to a deeper truth—your health has always been in your hands.
+// Within our serene, holistic sanctuary, healing isn’t separate from health—it’s woven together through intention, care, and balance.
+// We combine the wisdom of ancient traditions, the precision of modern science, and the nurturing touch of natural therapies to help your body and mind return to harmony.
+// Here, wellness isn’t treated—it’s awakened.
+// You’ll find no shortcuts, only honest, organic pathways to restore what’s already within you.
+// Nowal NatureCare is simply your guide—a gentle catalyst on your journey toward healing, renewal, and the quiet magic of holistic living.
 
-      </p>
+//       </p>
       
-      {/* <button className="mt-6 px-8 py-3 bg-[#435334] text-[#F2F1E8] rounded-full font-medium hover:bg-[#353d27] transition-colors">
-        Discover Our Retreat
-      </button> */}
-    </div>
-  </div>
-</section>
+//       {/* <button className="mt-6 px-8 py-3 bg-[#435334] text-[#F2F1E8] rounded-full font-medium hover:bg-[#353d27] transition-colors">
+//         Discover Our Retreat
+//       </button> */}
+//     </div>
+//   </div>
+// </section>
 
 
 
-  <section className="bg-[#DDF4E7] text-[#435334] py-16 px-6 text-center mt-56">
-  <div className="max-w-3xl mx-auto">
-    <blockquote className="text-2xl md:text-3xl italic font-medium leading-relaxed">
-      “Your healing journey begins with a single breath, grounded in nature and nurtured by intention.”
-    </blockquote>
-    <p className="mt-4 text-sm uppercase tracking-wider text-[#6B7A4C]">— Nowal Philosophy</p>
+//   <section className="bg-[#DDF4E7] text-[#435334] py-16 px-6 text-center mt-56">
+//   <div className="max-w-3xl mx-auto">
+//     <blockquote className="text-2xl md:text-3xl italic font-medium leading-relaxed">
+//       “Your healing journey begins with a single breath, grounded in nature and nurtured by intention.”
+//     </blockquote>
+//     <p className="mt-4 text-sm uppercase tracking-wider text-[#6B7A4C]">— Nowal Philosophy</p>
 
-    {/* Heal Now Button */}
-    {/* <button className="mt-10 px-8 py-3 bg-[#435334] text-white rounded-full text-base font-semibold hover:bg-[#6B7A4C] transition-all duration-300">
-      Heal Now
-    </button> */}
-  </div>
-</section>
+//     {/* Heal Now Button */}
+//     {/* <button className="mt-10 px-8 py-3 bg-[#435334] text-white rounded-full text-base font-semibold hover:bg-[#6B7A4C] transition-all duration-300">
+//       Heal Now
+//     </button> */}
+//   </div>
+// </section>
 
 
 
@@ -134,11 +143,12 @@ Nowal NatureCare is simply your guide—a gentle catalyst on your journey toward
 
    
      
-    </div>
-  )
-}
+//     </div>
+//     </>
+//   )
+// }
 
-export default Experience
+// export default Experience
 
 
 
@@ -503,3 +513,154 @@ export default Experience
 // }
 
 // export default Experience
+
+
+
+
+
+import React from 'react';
+import { Heart, Users, Award, Clock, Leaf, Mountain } from 'lucide-react'
+import { Link } from 'react-router-dom';
+import image from '../assets/natureimg.jpg';
+import img from '../assets/3d1-1.jpg';
+import AboutFounder from '../components/founder';
+import SEO from '../components/SEO';
+import seoData from '../config/seoData';
+import { Helmet } from 'react-helmet-async';
+
+const Experience: React.FC = () => {
+  return (
+    <>
+      {/* Google Analytics Tag */}
+      <Helmet>
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-N25Q9NT411"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-N25Q9NT411');
+          `}
+        </script>
+      </Helmet>
+      
+      <SEO 
+        title={seoData.experience.title}
+        description={seoData.experience.description}
+        keywords={seoData.experience.keywords}
+        canonicalUrl={seoData.experience.canonicalUrl}
+      />
+      <div className="min-h-screen bg-cream-50">
+        {/* Hero Section */}
+        <section className="relative min-h-96 flex items-center justify-center">
+          <div className="absolute inset-0 z-0">
+            <img
+              src={img}
+              alt="Nowal Experience"
+              className="w-full h-full object-cover"
+            />
+            {/* <div className="absolute inset-0 bg-overlay"></div> */}
+          </div>
+          
+          <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+            <h1 className="text-5xl md:text-6xl font-playfair font-bold mb-6 text-shadow">
+              The Nowal Experience
+            </h1>
+            <p className="text-xl md:text-2xl text-shadow">
+              Discover the essence of holistic healing through our time-tested approach
+            </p>
+          </div>
+        </section>
+
+        {/* Breadcrumbs */}
+        <div className="container mx-auto px-4 py-4 flex justify-center">
+          <nav className="flex" aria-label="Breadcrumb">
+            <ol className="inline-flex items-center space-x-2 md:space-x-2">
+              <li className="inline-flex items-center">
+                <Link to="/" className="text-sage-600 hover:text-sage-800">
+                  Home
+                </Link>
+              </li>
+              <li className="flex items-center">
+                <span className="mx text-sage-500">{'>'}</span>
+                <span className="mx text-sage-500">{'>'}</span>
+              </li>
+              <li>
+                <span className="text-sage-800 font-medium">About Founder</span>
+              </li>
+            </ol>
+          </nav>
+        </div>
+
+        {/* The Mantra Section */}
+        <section className="bg-[#DDF4E7] text-[#435334] py-24 px-6 text-center">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-wide">
+              Nowal NatureCare
+            </h2>
+            <h3 className="text-2xl md:text-3xl font-medium mb-8 italic">
+              A Sanctuary for Holistic Natural Healing.
+            </h3>
+            <p className="text-lg md:text-xl leading-relaxed mb-6">
+              In the rush of modern life, it's the mindful pause — the moment of embracing natural healing — 
+              that brings us closer to true balance and vitality.
+            </p>
+            <p className="text-base md:text-lg leading-relaxed">
+              At Nowal, our philosophy is simple yet profound: <span className="font-semibold">health and healing always come first. </span> 
+              We believe that every individual deserves the time and space to rejuvenate, rediscover their 
+              inner strength, and heal holistically — not just from today’s stressors, but from the deeper, 
+              unseen imbalances of our times. Step into a journey where Nowal is a way of life.
+            </p>
+          </div>
+        </section>
+
+        <AboutFounder />
+
+        {/* Our Story Section */}
+        <section className="relative h-[700px] bg-[#DDF4E7] text-[#435334] overflow-visible">
+          {/* Background Image with Overlay */}
+          <div className="relative w-full h-full">
+            <img
+              src={image}
+              alt="Nowal Retreat"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-[#435334] opacity-20"></div>
+          </div>
+
+          {/* Content Block */}
+          <div className="absolute left-1/2 bottom-[-150px] transform -translate-x-1/2 w-full max-w-4xl bg-[#F2F1E8] text-center px-8 py-12 shadow-lg rounded-lg border border-[#435334]/10">
+            <div className="max-w-3xl mx-auto">
+              <h3 className="text-2xl md:text-3xl font-medium mb-6 leading-snug font-serif italic">
+                Every corner of Nowal NatureCare radiates peace—where lush greenery, gentle serenity, and uplifting energy come together to soothe your soul
+              </h3>
+              
+              <div className="h-px w-32 bg-[#435334]/30 mx-auto my-6"></div>
+              
+              <p className="text-base md:text-lg leading-relaxed mb-4 font-sans">
+                At Nowal NatureCare, we gently guide you to a deeper truth—your health has always been in your hands.
+                Within our serene, holistic sanctuary, healing isn't separate from health—it's woven together through intention, care, and balance.
+                We combine the wisdom of ancient traditions, the precision of modern science, and the nurturing touch of natural therapies to help your body and mind return to harmony.
+                Here, wellness isn't treated—it's awakened.
+                You'll find no shortcuts, only honest, organic pathways to restore what's already within you.
+                Nowal NatureCare is simply your guide—a gentle catalyst on your journey toward healing, renewal, and the quiet magic of holistic living.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-[#DDF4E7] text-[#435334] py-16 px-6 text-center mt-56">
+          <div className="max-w-3xl mx-auto">
+            <blockquote className="text-2xl md:text-3xl italic font-medium leading-relaxed">
+              “Your healing journey begins with a single breath, grounded in nature and nurtured by intention.”
+            </blockquote>
+            <p className="mt-4 text-sm uppercase tracking-wider text-[#6B7A4C]">— Nowal Philosophy</p>
+          </div>
+        </section>
+      </div>
+    </>
+  )
+}
+
+export default Experience

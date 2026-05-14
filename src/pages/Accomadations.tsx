@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import AccommodationTariff from '../components/AccommodationTariff';
 import RoomAmenities from '../components/Roomamenties';
-import "./Accomadation.css";
+// import "./Accomadation.css";
 import { useNavigate } from "react-router-dom";
 
 // Import fallback images
@@ -13,6 +13,8 @@ import AccommodationTable from '../components/AccommodationTariff';
 import RoomTariffSection from './Charges';
 import { BASE_URL } from '../config';
 import CampusMapSection from '../components/celebrations/CampusMapSection';
+import SEO from '../components/SEO';
+import seoData from '../config/seoData';
 
 // Define TypeScript interfaces
 interface Room {
@@ -116,10 +118,16 @@ const handlePrev = () => {
 
   return (
     <>
-      <Helmet>
+    <SEO 
+        title={seoData.accommodation.title}
+        description={seoData.accommodation.description}
+        keywords={seoData.accommodation.keywords}
+        canonicalUrl={seoData.accommodation.canonicalUrl}
+      />
+      {/* <Helmet>
         <title>Luxury Accommodations | Affordable Hospital Stays</title>
         <meta name="description" content="Affordable accommodation options for patients and attendants at our hospital facility" />
-      </Helmet>
+      </Helmet> */}
 
       {/* Hero Section */}
       <section
@@ -318,7 +326,7 @@ const handlePrev = () => {
         </div>
       </section>
 
-      <CampusMapSection />
+      {/* <CampusMapSection /> */}
 
       <RoomTariffSection />
 

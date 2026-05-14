@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import SEO from '../components/SEO';
+import seoData from '../config/seoData';
 
 const AdmissionGuidelines = () => {
   const [showForm, setShowForm] = useState(false);
@@ -27,6 +29,13 @@ const AdmissionGuidelines = () => {
   };
 
   return (
+    <>
+    <SEO 
+        title={seoData.guidelines.title}
+        description={seoData.guidelines.description}
+        keywords={seoData.guidelines.keywords}
+        canonicalUrl={seoData.guidelines.canonicalUrl}
+      />
     <div className="max-w-4xl mx-auto px-4 py-8 font-sans text-gray-700">
       {/* Header */}
       <div className="text-center mb-8">
@@ -352,6 +361,7 @@ const AdmissionGuidelines = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 

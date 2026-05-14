@@ -101,6 +101,8 @@ import CareerForm from '../components/Careerform';
 import JobOpeningsSection from '../components/JobOpeningsSection';
 import { Link } from 'react-router-dom';
 import SectionGallery from '../components/SectionGallery';
+import SEO from '../components/SEO';
+import seoData from '../config/seoData';
 
 // Import images from assets
 import heroImage from '../assets/3d4-1.jpg';
@@ -117,6 +119,13 @@ const Image: React.FC = () => {
   }, [location.state]);
 
   return (
+    <>
+    <SEO 
+        title={seoData.gallery.title}
+        description={seoData.gallery.description}
+        keywords={seoData.gallery.keywords}
+        canonicalUrl={seoData.gallery.canonicalUrl}
+      />
     <div className="min-h-screen bg-cream-50">
       {/* Hero Section - Now using local image */}
       <section className="relative min-h-96 flex items-center justify-center">
@@ -178,6 +187,7 @@ const Image: React.FC = () => {
         </div>
       </section> */}
     </div>
+    </>
   );
 };
 
