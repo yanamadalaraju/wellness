@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import BlogCards from "../components/BlogCards";
 import SEO from '../components/SEO';
 import seoData from '../config/seoData';
+import CoupleRetreatBlogPage from "../components/CoupleRetreatBlogPage";
 
 export default function BlogPage() {
   return (
@@ -152,6 +153,9 @@ export default function BlogPage() {
             </motion.div> */}
          
         </div>
+
+
+        <CoupleRetreatBlogPage />
       </section>
     </div>
     </>
