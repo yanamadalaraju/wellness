@@ -6738,7 +6738,7 @@ const WeddingPage: React.FC = () => {
     {
       icon: "🎯",
       title: "Expert Planning",
-      description: "Over 20 years of experience in creating dream weddings"
+      description: "Over  of experience in creating dream weddings"
     },
     {
       icon: "💎",
